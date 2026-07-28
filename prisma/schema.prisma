@@ -1,0 +1,35 @@
+// Base du cahier de texte. Volontairement minimale : une séance, et c'est
+// tout. Les comptes élèves viendront s'ajouter ici le jour où le site
+// s'ouvrira au-delà de la classe.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Prisma 7 : l'URL ne vit plus ici. Les commandes CLI la lisent dans
+// prisma.config.ts, et le client la reçoit via l'adaptateur (lib/db.ts).
+datasource db {
+  provider = "postgresql"
+}
+
+model Seance {
+  id        String   @id @default(cuid())
+  /// Date de la séance en classe.
+  date      DateTime
+  /// Nom libre de la classe : permet d'en gérer plusieurs sans modèle dédié.
+  classe    String
+  /// Identifiant du chapitre du site (ex. « dcg-ue11-methode-abc »).
+  chapitre  String
+  /// Sections traitées, telles que saisies : « 1-3 », « 1,4,5 »…
+  sections  String?
+  travail   String?
+  /// Échéance du travail à faire.
+  pourLe    DateTime?
+  remarques String?
+  /// Une séance non publiée reste invisible côté étudiant.
+  publiee   Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([classe, date])
+}

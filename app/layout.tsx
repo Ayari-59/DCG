@@ -46,6 +46,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               >
                 DSCG · UE3
               </Link>
+              <Link
+                href="/classe"
+                className="rounded-lg px-3 py-2 transition hover:bg-slate-100 hover:text-navy"
+              >
+                Ma classe
+              </Link>
             </nav>
           </div>
         </header>
