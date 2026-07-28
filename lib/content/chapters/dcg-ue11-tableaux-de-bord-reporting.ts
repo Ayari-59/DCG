@@ -8,6 +8,9 @@ import { chapter as generated } from "./dcg-ue11-tableaux-de-bord-reporting.gene
  */
 export const tableauxDeBordReporting: Chapter = {
   ...generated,
+  videos: [
+    { youtubeId: "S6SXOrbgIwo", title: "Tableau de bord et pilotage de la performance globale" },
+  ],
   description:
     "Concevoir, analyser, critiquer et améliorer un tableau de bord de gestion : facteurs clés de succès, KPI financiers et extra-financiers (ESG), méthode OVAR, indicateurs par centre de responsabilité et le long de la chaîne de valeur, reporting et sensibilisation au balanced scorecard.",
   flashcards: [
