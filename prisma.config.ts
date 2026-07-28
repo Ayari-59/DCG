@@ -1,5 +1,14 @@
 import { defineConfig } from "prisma/config";
 
+// Avec un fichier de configuration, la CLI Prisma ne charge plus .env
+// d'elle-même. On s'en charge ici (Node ≥ 20.6). En production, les
+// variables viennent de l'hébergeur et le fichier n'existe pas.
+try {
+  process.loadEnvFile(".env");
+} catch {
+  // pas de .env : les variables sont déjà dans l'environnement, ou absentes
+}
+
 /**
  * Configuration des commandes Prisma (db push, studio, migrate).
  * Depuis Prisma 7, l'URL de connexion ne figure plus dans schema.prisma :
