@@ -99,16 +99,32 @@ function calloutVariant(text) {
   return "info";
 }
 
+/** Encadrés de cadrage : leur contenu n'est jamais une partie du cours. */
+const BOX_LABEL =
+  /^[^\p{L}]*\s*(positionnement|plan du chapitre|comp[ée]tences?|objectifs?|pr[ée]requis|savoirs?|mots?[- ]cl[ée]s?)/iu;
+
 function processTable($table) {
-  // 1. Boîte contenant des titres → déplier : on traite le contenu des
-  //    cellules comme s'il était au niveau du document.
-  if ($table.find("h1, h2, h3").length > 0) {
-    for (const cell of $table.find("th, td").toArray()) {
-      for (const child of $(cell).children().toArray()) {
-        processElement(child);
+  const cells = $table.find("th, td").toArray();
+  const hasHeadings = $table.find("h1, h2, h3").length > 0;
+
+  // 1. Bandeau de partie : le manuel met le numéro dans une cellule et le
+  //    titre dans la suivante. Sans ce recollage, le numéro se retrouve seul
+  //    à la fin de la partie précédente et le titre perd sa numérotation.
+  if (hasHeadings && cells.length === 2) {
+    const num = inline($(cells[0])).replace(/\*\*/g, "").trim();
+    const $head = $(cells[1]).children("h1, h2, h3").first();
+    if (/^\d{1,2}$/.test(num) && $head.length) {
+      sawStructure = true;
+      skipping = false;
+      const head = inline($head).replace(/\*\*/g, "").trim();
+      // « Partie 1 — … » porte déjà son numéro : ne pas le préfixer deux fois.
+      const numbered = new RegExp(`^(partie\\s*)?${num}\\b`, "i").test(head);
+      startSection(numbered ? head : `${num}. ${head}`);
+      for (const child of $(cells[1]).children().toArray()) {
+        if (child !== $head[0]) processElement(child);
       }
+      return;
     }
-    return;
   }
 
   const rows = $table
@@ -118,10 +134,38 @@ function processTable($table) {
     .filter((r) => r.some((c) => c));
   if (rows.length === 0) return;
 
+  const firstCell = (rows[0][0] ?? "").replace(/\*\*/g, "").trim();
+
+  // 2. Encadré de cadrage (positionnement, compétences, plan…) : les titres
+  //    qu'il contient énumèrent le plan, ce ne sont pas des parties du cours.
+  if (BOX_LABEL.test(firstCell)) {
+    sawStructure = true;
+    if (/plan du chapitre/i.test(firstCell)) return; // le site a sa propre navigation
+    const body = $table
+      .find("p, li, h1, h2, h3")
+      .toArray()
+      .map((p) => inline($(p)))
+      .filter(Boolean)
+      .slice(1)
+      .join("\n");
+    const title = firstCell.replace(/^[^\p{L}0-9]+\s*/u, "").trim();
+    if (body || title) {
+      push({ type: "callout", variant: calloutVariant(firstCell), title, text: body || title });
+    }
+    return;
+  }
+
+  // 3. Autre boîte contenant des titres → déplier son contenu.
+  if (hasHeadings) {
+    for (const cell of cells) {
+      for (const child of $(cell).children().toArray()) processElement(child);
+    }
+    return;
+  }
+
   const singleColumn = rows.every((r) => r.length === 1);
 
-  // 2. Encadré (une seule colonne) → callout, sauf le plan du chapitre
-  //    (le site a sa propre navigation).
+  // 4. Encadré sur une seule colonne → callout, sauf le plan du chapitre.
   if (singleColumn) {
     sawStructure = true;
     const paragraphs = $table
@@ -146,7 +190,7 @@ function processTable($table) {
     return;
   }
 
-  // 3. Vrai tableau de données.
+  // 5. Vrai tableau de données.
   sawStructure = true;
   if (rows.length >= 2) {
     push({ type: "table", headers: rows[0], rows: rows.slice(1) });
@@ -168,7 +212,12 @@ function processElement(el) {
     skipping = false;
     sawStructure = true;
     if (forcedTitle) {
-      if (text) startSection(text.replace(/\*\*/g, ""));
+      const title = text.replace(/\*\*/g, "").trim();
+      if (!title) return;
+      // Quelques sous-parties sont stylées en titre de niveau 1 dans le Word
+      // (« 3.10 … » sous la partie 3) : les garder comme sous-titres.
+      if (/^\d+\.\d/.test(title)) push({ type: "h3", text: title });
+      else startSection(title);
     } else if (!chapterTitle) {
       chapterTitle = text.replace(/^chapitre\s*[—–-]?\s*/i, "").replace(/\*\*/g, "");
     }

@@ -58,16 +58,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "REMARQUE — Le cadre du programme",
           "text": "Le référentiel cible le **modèle de Wilson simple sans pénurie**, le **modèle avec stock de sécurité**, la notion de **stock d’alerte**, le **tarif dégressif** et l’avenir aléatoire. En revanche, **la pénurie, les méthodes 20/80 et ABC, ainsi que le juste-à-temps ne sont pas au programme** : ils sont signalés comme tels et abordés seulement à titre de culture professionnelle."
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
     {
-      "id": "les-enjeux-de-la-gestion-des-approvisionnements-et-des-stock",
-      "title": "Les enjeux de la gestion des approvisionnements et des stocks",
+      "id": "1-les-enjeux-de-la-gestion-des-approvisionnements-et-des-sto",
+      "title": "1. Les enjeux de la gestion des approvisionnements et des stocks",
       "blocks": [
         {
           "type": "h3",
@@ -222,16 +218,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — Lire les ratios sans les opposer au coût",
           "text": "Une rotation élevée est généralement favorable (peu de capital immobilisé), mais elle n’est pas un objectif en soi : poussée à l’extrême, elle multiplie les commandes et les coûts de passation, et accroît le risque de rupture. Le bon niveau de rotation est celui qui découle du **programme économique**, non l’inverse. Les ratios servent à diagnostiquer et à suivre, le modèle de Wilson à décider."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
     {
-      "id": "le-modele-de-wilson-et-ses-adaptations",
-      "title": "Le modèle de Wilson et ses adaptations",
+      "id": "2-le-modele-de-wilson-et-ses-adaptations",
+      "title": "2. Le modèle de Wilson et ses adaptations",
       "blocks": [
         {
           "type": "p",
@@ -477,16 +469,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "REMARQUE — Hors programme",
           "text": "Le document historique développe aussi un **modèle avec pénurie (rupture)**, où le stock est volontairement limité pour réduire le coût de stockage, ainsi que les **méthodes 20/80 et ABC** de classification des références. Le référentiel précise que **la pénurie et ces méthodes ne sont pas à traiter**. On les mentionne au titre de la culture professionnelle, sans les développer ni les exiger à l’examen."
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
     {
-      "id": "le-reapprovisionnement-et-la-budgetisation-des-approvisionne",
-      "title": "Le réapprovisionnement et la budgétisation des approvisionnements",
+      "id": "3-le-reapprovisionnement-et-la-budgetisation-des-approvision",
+      "title": "3. Le réapprovisionnement et la budgétisation des approvisionnements",
       "blocks": [
         {
           "type": "h3",
@@ -751,16 +739,12 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "*Lecture délicate : la première rupture a lieu fin mars, donc livraison le 15 mars et commande le 15 février ; le stock de mars est rectifié à 500.*"
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
     {
-      "id": "le-pilotage-moderne-des-approvisionnements",
-      "title": "Le pilotage moderne des approvisionnements",
+      "id": "4-le-pilotage-moderne-des-approvisionnements",
+      "title": "4. Le pilotage moderne des approvisionnements",
       "blocks": [
         {
           "type": "h3",

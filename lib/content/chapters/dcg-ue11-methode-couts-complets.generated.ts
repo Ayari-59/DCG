@@ -13,9 +13,15 @@ export const chapter: Chapter = {
   "durationMin": 35,
   "sections": [
     {
-      "id": "partie-2-du-referentiel-calcul-analyse-et-pilotage-des-couts",
-      "title": "Partie 2 du référentiel — calcul, analyse et pilotage des coûts. Compétence : mettre en œuvre la méthode des centres d’analyse (sections homogènes) pour déterminer un coût de revient et un résultat analytique.",
+      "id": "preambule",
+      "title": "Préambule",
       "blocks": [
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "POSITIONNEMENT DANS LE PROGRAMME",
+          "text": "**Partie 2 du référentiel — calcul, analyse et pilotage des coûts. Compétence : mettre en œuvre la méthode des centres d’analyse (sections homogènes) pour déterminer un coût de revient et un résultat analytique.**"
+        },
         {
           "type": "callout",
           "variant": "info",
@@ -46,10 +52,6 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "Le chapitre s’organise en quatre parties, selon une progression « comprendre → calculer → interpréter → critiquer ». La Partie 1 pose les principes et les finalités de la méthode. La Partie 2 détaille le traitement des charges indirectes par les centres d’analyse. La Partie 3 construit les coûts (achat, stocks, production, revient, résultat) et traite les situations particulières. La Partie 4 exploite les coûts pour la décision, intègre les enjeux numériques et de durabilité, et porte une analyse critique de la méthode."
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
@@ -144,10 +146,6 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir — Partie 1",
           "text": "Deux finalités : apprécier la rentabilité (coût de revient) et valoriser les stocks.\nLa démarche suit le processus de production ; l’existence de stocks la structure.\nMéthode des centres d’analyse (= sections homogènes), socle historique du PCG."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
@@ -363,10 +361,6 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir — Partie 2",
           "text": "Affectation (directes) ; répartition + imputation (indirectes).\nCentres homogènes, principaux vs auxiliaires ; répartition primaire puis secondaire.\nUnité d’œuvre = corrélation la plus proche de |1| ; .\nPrestations réciproques = système d’équations."
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
@@ -1240,23 +1234,19 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "Les produits résiduels sont généralement des déchets (fraction de matière non utilisée, « chutes ») ou des rebuts (produits finis « ratés », invendables en l’état). Quand ils peuvent être récupérés ou revendus, leur valeur de revente vient en diminution du coût du produit principal — c’est une exception, admise en comptabilité financière, au principe de valorisation au coût de production."
-        }
-      ]
-    },
-    {
-      "id": "3-10-la-production-d-immobilisations",
-      "title": "3.10 La production d’immobilisations",
-      "blocks": [
+        },
+        {
+          "type": "h3",
+          "text": "3.10 La production d’immobilisations"
+        },
         {
           "type": "p",
           "text": "Une entreprise peut produire ses propres immobilisations (à un certain coût de production), les activer, puis les incorporer en charges sur plusieurs périodes par la dotation aux amortissements. C’est fréquent pour les activités innovantes impliquant de la recherche."
-        }
-      ]
-    },
-    {
-      "id": "3-11-les-adaptations-sectorielles",
-      "title": "3.11 Les adaptations sectorielles",
-      "blocks": [
+        },
+        {
+          "type": "h3",
+          "text": "3.11 Les adaptations sectorielles"
+        },
         {
           "type": "p",
           "text": "Le schéma industriel s’adapte avec bon sens. Dans une entreprise commerciale, il n’y a pas de production : le coût de revient = coût d’achat des marchandises + frais commerciaux et administratifs ; on parle de marge brute (sur coût d’achat) et de marge nette. Dans une entreprise de services, le schéma « implose » : pas de stocks, on passe directement au coût de revient et au résultat. Dans une banque, la « marge » tient au différentiel entre le coût des fonds et le taux des prêts."
@@ -1266,10 +1256,6 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir — Partie 3 (situations particulières)",
           "text": "Produits joints : co-produits (clé physique) / sous-produits (valeur de revente).\nDéchets et rebuts récupérables : déduits du coût du produit principal.\nEn-cours : hors programme DCG réformé (exclus).\nAdapter le schéma au secteur (commerce, services, banque)."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
@@ -1352,13 +1338,11 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "Le référentiel rénové demande explicitement de faire le lien entre le calcul des coûts et la durabilité. La méthode des coûts complets, parce qu’elle recense la totalité des consommations, est un point d’entrée naturel pour intégrer les enjeux environnementaux et sociaux (RSE) dans le pilotage économique."
-        }
-      ]
-    },
-    {
-      "id": "4-6-1-le-cout-du-traitement-des-dechets",
-      "title": "4.6.1 Le coût du traitement des déchets",
-      "blocks": [
+        },
+        {
+          "type": "h3",
+          "text": "4.6.1 Le coût du traitement des déchets"
+        },
         {
           "type": "p",
           "text": "Les coûts liés aux déchets ne sont plus négligeables : collecte, tri, mise aux normes, traitement réglementaire, taxes. Intégrés au coût complet, ils rendent visible l’impact économique de la production de déchets et incitent à les réduire. À l’inverse, la valorisation des déchets (revente, réemploi) vient diminuer le coût du produit principal — mécanisme déjà vu pour les produits résiduels, ici au service de l’économie circulaire."
@@ -1368,13 +1352,11 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "ILLUSTRATION — Le coût du traitement des déchets",
           "text": "Les chutes de matière (déchets de production) génèrent un coût de traitement — collecte, tri, élimination — qui s’ajoute au coût de production. Lorsqu’elles peuvent être revendues ou recyclées, leur valeur de revente vient en déduction du coût du produit principal (produit résiduel). Réduire les déchets améliore donc simultanément le coût et l’empreinte environnementale."
-        }
-      ]
-    },
-    {
-      "id": "4-6-2-l-investissement-vert-arbitrer-cout-et-impact",
-      "title": "4.6.2 L’investissement « vert » : arbitrer coût et impact",
-      "blocks": [
+        },
+        {
+          "type": "h3",
+          "text": "4.6.2 L’investissement « vert » : arbitrer coût et impact"
+        },
         {
           "type": "p",
           "text": "Moderniser l’appareil productif (machines plus économes, chauffage performant, flotte de transport électrique) modifie la structure des coûts : les charges fixes (amortissements) augmentent, mais les charges variables (énergie, carburant) et les émissions de CO₂ baissent. Le coût complet permet de chiffrer cet arbitrage et d’éclairer la décision."
@@ -1415,13 +1397,11 @@ export const chapter: Chapter = {
               "**Coût et performance globale**Une hausse du coût n’est pas nécessairement une mauvaise décision : un coût complet plus élevé peut s’accompagner d’une baisse des émissions, d’une meilleure qualité ou de conditions de travail améliorées. Le contrôleur de gestion doit présenter au décideur une lecture conjointe du coût et de ses effets environnementaux et sociaux — c’est la logique de performance globale du nouveau programme."
             ]
           ]
-        }
-      ]
-    },
-    {
-      "id": "4-6-3-le-cout-de-la-qualite-et-de-la-non-qualite",
-      "title": "4.6.3 Le coût de la qualité (et de la non-qualité)",
-      "blocks": [
+        },
+        {
+          "type": "h3",
+          "text": "4.6.3 Le coût de la qualité (et de la non-qualité)"
+        },
         {
           "type": "p",
           "text": "Produire plus durable, c’est souvent produire mieux. Le coût complet peut intégrer le coût de la qualité (prévention, contrôle) et révéler le coût de la non-qualité (rebuts, retours, garanties, perte d’image). Réduire la non-qualité diminue les coûts tout en améliorant la satisfaction et la durabilité des produits — un cercle vertueux que le pilotage par les coûts aide à objectiver."

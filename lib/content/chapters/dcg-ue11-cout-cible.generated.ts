@@ -13,12 +13,14 @@ export const chapter: Chapter = {
   "durationMin": 30,
   "sections": [
     {
-      "id": "partie-4-du-programme-identifier-et-ameliorer-la-performance",
-      "title": "Partie 4 du programme — « Identifier et améliorer la performance globale ». Le coût cible relève précisément du point 4.2 « Analyser les causes de non-performance » (15 heures), aux côtés des coûts cachés, de l’introduction à l’analyse de la valeur et des coûts liés à la qualité. Il prolonge naturellement les méthodes de coûts de la partie 2 (centres d’analyse, ABC, coûts partiels) en les tournant vers l’amont et vers le marché.",
+      "id": "preambule",
+      "title": "Préambule",
       "blocks": [
         {
-          "type": "p",
-          "text": "Pour le coût cible, la décomposition par fonction et par composant est exigible au DCG. L’analyse de la valeur n’est qu’introduite au DCG : elle est approfondie en DSCG. Ce chapitre la présente donc dans son principe, sans développer l’outillage technique avancé (méthode APTE complète, cahier des charges fonctionnel détaillé), qui dépasse le niveau attendu."
+          "type": "callout",
+          "variant": "info",
+          "title": "POSITIONNEMENT DANS LE PROGRAMME",
+          "text": "**Partie 4 du programme — « Identifier et améliorer la performance globale ». Le coût cible relève précisément du point 4.2 « Analyser les causes de non-performance » (15 heures), aux côtés des coûts cachés, de l’introduction à l’analyse de la valeur et des coûts liés à la qualité. Il prolonge naturellement les méthodes de coûts de la partie 2 (centres d’analyse, ABC, coûts partiels) en les tournant vers l’amont et vers le marché.**\nPour le coût cible, la décomposition par fonction et par composant est exigible au DCG. L’analyse de la valeur n’est qu’introduite au DCG : elle est approfondie en DSCG. Ce chapitre la présente donc dans son principe, sans développer l’outillage technique avancé (méthode APTE complète, cahier des charges fonctionnel détaillé), qui dépasse le niveau attendu."
         },
         {
           "type": "callout",
@@ -144,16 +146,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "ILLUSTRATION — Données de cadrage (à mémoriser)",
           "text": "Le produit (génération actuelle) : prix de vente 90 €, coût complet standard 67 €, coût variable 38 €. Nouvelle génération éco-responsable : prix de marché sous pression concurrentielle (érosion attendue de 90 € à 78 € sur le cycle), exigence forte de réduction de l’empreinte carbone. Cycle de vie estimé : 4 ans, raccourci par l’innovation et les effets de mode."
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
     {
-      "id": "les-fondements-du-cout-cible",
-      "title": "Les fondements du coût cible",
+      "id": "1-les-fondements-du-cout-cible",
+      "title": "1. Les fondements du coût cible",
       "blocks": [
         {
           "type": "p",
@@ -334,16 +332,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — Pourquoi le programme classe le coût cible en « performance »",
           "text": "Dans le programme réformé, le coût cible figure au point 4.2 (« analyser les causes de non-performance »). La logique est claire : un produit dont le coût estimé dépasse durablement le coût cible est une **source structurelle de non-performance**. Le coût cible est donc un **diagnostic stratégique précoce**, pas seulement un calcul. La compétence visée se termine toujours par : ***« rédiger un écrit pour conseiller le décideur »***. Sachez interpréter et recommander, pas seulement calculer."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
     {
-      "id": "la-demarche-de-cout-cible",
-      "title": "La démarche de coût cible",
+      "id": "2-la-demarche-de-cout-cible",
+      "title": "2. La démarche de coût cible",
       "blocks": [
         {
           "type": "p",
@@ -733,16 +727,12 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "*Figure 6 — Le modèle MAKIDO : réduction du coût (conception) puis maintenance du coût (production)*"
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
     {
-      "id": "analyse-de-la-valeur-et-conception-a-cout-objectif",
-      "title": "Analyse de la valeur et conception à coût objectif",
+      "id": "3-analyse-de-la-valeur-et-conception-a-cout-objectif",
+      "title": "3. Analyse de la valeur et conception à coût objectif",
       "blocks": [
         {
           "type": "p",
@@ -977,16 +967,12 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "Cette approche est indissociable du coût cible : puisque 80 % des coûts se décident en conception, c’est à ce moment que toutes les expertises doivent être réunies. Elle raccourcit les délais, réduit les retours en arrière coûteux et garantit que le coût cible est respecté dès l’origine."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
     {
-      "id": "le-cout-cible-outil-de-pilotage-strategique",
-      "title": "Le coût cible, outil de pilotage stratégique",
+      "id": "4-le-cout-cible-outil-de-pilotage-strategique",
+      "title": "4. Le coût cible, outil de pilotage stratégique",
       "blocks": [
         {
           "type": "p",

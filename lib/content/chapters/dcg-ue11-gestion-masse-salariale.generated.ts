@@ -10,23 +10,17 @@ export const chapter: Chapter = {
   "number": 13,
   "title": "La gestion de la masse salariale",
   "description": "",
-  "durationMin": 25,
+  "durationMin": 30,
   "sections": [
     {
-      "id": "partie-3-utiliser-les-outils-et-techniques-budgetaires-pour-",
-      "title": "Partie 3 — « Utiliser les outils et techniques budgétaires pour aider à la prise de décision ».",
+      "id": "preambule",
+      "title": "Préambule",
       "blocks": [
         {
-          "type": "p",
-          "text": "Point 3.2 — les outils de prévision des budgets de ressources humaines sont limités à la masse salariale : prévision des effectifs et des salaires."
-        },
-        {
-          "type": "p",
-          "text": "Point 3.3 — réaliser un contrôle budgétaire en calculant et analysant les écarts sur coûts, dont les charges de personnel."
-        },
-        {
-          "type": "p",
-          "text": "Articulation — prolonge le chapitre sur la procédure budgétaire et celui sur le contrôle budgétaire et l’analyse des écarts ; alimente le chapitre sur les tableaux de bord et le reporting."
+          "type": "callout",
+          "variant": "info",
+          "title": "POSITIONNEMENT DANS LE PROGRAMME",
+          "text": "**Partie 3 — « Utiliser les outils et techniques budgétaires pour aider à la prise de décision ».**\nPoint 3.2 — les outils de prévision des budgets de ressources humaines sont limités à la masse salariale : prévision des effectifs et des salaires.\nPoint 3.3 — réaliser un contrôle budgétaire en calculant et analysant les écarts sur coûts, dont les charges de personnel.\nArticulation — prolonge le chapitre sur la procédure budgétaire et celui sur le contrôle budgétaire et l’analyse des écarts ; alimente le chapitre sur les tableaux de bord et le reporting."
         },
         {
           "type": "callout",
@@ -82,10 +76,6 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "*Figure 1 — La chaîne du pilotage : de la stratégie RH à la performance globale*"
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
@@ -223,10 +213,6 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — la logique d'ensemble du chapitre",
           "text": "**Comprendre** (Partie 1) → **Calculer la prévision** (Partie 2) → **Analyser les écarts** (Partie 3) → **Interpréter et piloter** (Partie 4). C'est exactement la démarche attendue à l'examen : un calcul, puis une analyse argumentée au service d'une décision."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
@@ -762,10 +748,6 @@ export const chapter: Chapter = {
           "variant": "warning",
           "title": "ERREURS FRÉQUENTES — erreurs fréquentes en prévision",
           "text": "Oublier de retrancher les sortants du bloc « stable » → double comptage. Compter un mois de trop ou de moins : une embauche au 1er mars est rémunérée **10 mois** (mars→décembre), pas 9. Confondre salaire annuel moyen et salaire de décembre : la prévision part toujours du **salaire de référence de décembre N**. Additionner les pourcentages d'augmentation au lieu de les **multiplier**."
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
@@ -1090,10 +1072,6 @@ export const chapter: Chapter = {
           "variant": "warning",
           "title": "ERREURS FRÉQUENTES — erreurs fréquentes sur les écarts",
           "text": "Inverser les conventions : l'écart sur quantité se valorise au **prix prévu**, l'écart sur prix à la **quantité réelle**. Se tromper de sens : un écart favorable n'est pas toujours une bonne nouvelle (cf. baisse d'effectif subie). Oublier la vérification : la somme des trois sous-écarts doit *exactement* reconstituer l'écart total. Conclure sans interpréter : à l'examen, le calcul ne vaut que la moitié des points ; l'analyse et le conseil au décideur font la différence."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },

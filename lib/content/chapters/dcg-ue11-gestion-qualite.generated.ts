@@ -13,12 +13,14 @@ export const chapter: Chapter = {
   "durationMin": 30,
   "sections": [
     {
-      "id": "partie-4-du-referentiel-le-controle-de-gestion-comme-aide-au",
-      "title": "Partie 4 du référentiel — le contrôle de gestion comme aide au pilotage de la performance globale.",
+      "id": "preambule",
+      "title": "Préambule",
       "blocks": [
         {
-          "type": "p",
-          "text": "**Compétence 4.3 — aider au pilotage de la qualité (10 h). Le chapitre mobilise aussi la compétence 4.2 (analyser les causes de non-performance : coûts cachés, coûts liés à la qualité et à la non-qualité) et prolonge les compétences 4.1 (indicateurs financiers et extra-financiers) et 4.4 (performance globale).**"
+          "type": "callout",
+          "variant": "info",
+          "title": "POSITIONNEMENT DANS LE PROGRAMME",
+          "text": "**Partie 4 du référentiel — le contrôle de gestion comme aide au pilotage de la performance globale.**\n**Compétence 4.3 — aider au pilotage de la qualité (10 h). Le chapitre mobilise aussi la compétence 4.2 (analyser les causes de non-performance : coûts cachés, coûts liés à la qualité et à la non-qualité) et prolonge les compétences 4.1 (indicateurs financiers et extra-financiers) et 4.4 (performance globale).**"
         },
         {
           "type": "callout",
@@ -56,16 +58,12 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "Ce chapitre adopte la démarche pédagogique du nouveau programme, structurée autour de quatre questions : **comprendre** (pourquoi la qualité existe-t-elle ?), **calculer** (comment mesurer son coût ?), **interpréter** (comment exploiter les outils ?) et **critiquer** (quelles sont les limites ?)."
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
     {
-      "id": "comprendre-la-qualite-et-son-management",
-      "title": "Comprendre : la qualité et son management",
+      "id": "1-comprendre-la-qualite-et-son-management",
+      "title": "1. Comprendre : la qualité et son management",
       "blocks": [
         {
           "type": "h3",
@@ -184,16 +182,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — la formule à retenir",
           "text": "Le jury attend que vous sachiez **renverser l'intuition naïve** : « la qualité ne coûte pas cher, c'est la non-qualité qui coûte cher ». Sachez relier la qualité aux trois performances (économique, commerciale, sociale) et, depuis la réforme, à la **performance globale** (volet environnemental et durable).\n**ERREURS FRÉQUENTES — sur la notion de qualité**\nConfondre **qualité maximale** et **qualité optimale** : viser le « toujours plus » génère de la surqualité non valorisée.\nRéduire la qualité au seul **contrôle final** : la maîtrise se construit en amont, par la prévention.\nOublier que la certification atteste la **conformité d'un processus**, pas la « qualité » perçue par le client."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
     {
-      "id": "les-couts-de-la-qualite",
-      "title": "Les coûts de la qualité",
+      "id": "2-les-couts-de-la-qualite",
+      "title": "2. Les coûts de la qualité",
       "blocks": [
         {
           "type": "p",
@@ -496,16 +490,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "ILLUSTRATION — l’entreprise — l'effet pervers d'une décision « rentable »",
           "text": "Pour réduire le coût de production, le responsable d'atelier accélère les cadences. À court terme, le coût unitaire baisse : il sera félicité. Mais la cadence excessive multiplie les **malfaçons**. Les conséquences — retours, avoirs, perte d'un distributeur — apparaîtront **ailleurs** (chez le directeur commercial) et **plus tard**. Le système de coûts classique **n'impute pas** ces pertes à la décision qui les a causées : un gain visible et localisé masque une perte invisible et transversale, bien supérieure.\n**POINT EXAMEN — coûts cachés**\nQuestion classique : « pourquoi les coûts de la non-qualité sont-ils souvent cachés ? » Réponse attendue : parce qu'ils sont **transversaux** (répartis sur plusieurs services), **différés** dans le temps, et qu'ils ne possèdent **pas de dénomination comptable propre**. D'où l'intérêt d'un suivi spécifique par le contrôle de gestion."
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
     {
-      "id": "les-outils-et-demarches-qualite",
-      "title": "Les outils et démarches qualité",
+      "id": "3-les-outils-et-demarches-qualite",
+      "title": "3. Les outils et démarches qualité",
       "blocks": [
         {
           "type": "p",
@@ -778,16 +768,12 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "Ces indicateurs s'inscrivent dans une **démarche d'amélioration continue** : on ne mesure que pour agir. La logique PDCA, alimentée par Pareto et Ishikawa et portée par les démarches participatives, transforme la mesure en progrès durable. Les **normes et certifications** (ISO 9001) en constituent le cadre formel et la preuve vis-à-vis des parties prenantes."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
     {
-      "id": "la-qualite-au-service-du-pilotage-de-la-performance",
-      "title": "La qualité au service du pilotage de la performance",
+      "id": "4-la-qualite-au-service-du-pilotage-de-la-performance",
+      "title": "4. La qualité au service du pilotage de la performance",
       "blocks": [
         {
           "type": "h3",

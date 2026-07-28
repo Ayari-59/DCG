@@ -13,12 +13,14 @@ export const chapter: Chapter = {
   "durationMin": 45,
   "sections": [
     {
-      "id": "partie-3-du-programme-concevoir-et-adapter-le-processus-budg",
-      "title": "Partie 3 du programme — « Concevoir et adapter le processus budgétaire de l’organisation ».",
+      "id": "preambule",
+      "title": "Préambule",
       "blocks": [
         {
-          "type": "p",
-          "text": "**Compétence 3.3 — Analyser les résultats d’une gestion budgétaire (20 heures). Ce chapitre constitue l’aboutissement de toute la séquence budgétaire (ventes, approvisionnements, production, masse salariale) : il confronte les prévisions aux réalisations pour piloter la performance à court terme.**"
+          "type": "callout",
+          "variant": "info",
+          "title": "POSITIONNEMENT DANS LE PROGRAMME",
+          "text": "**Partie 3 du programme — « Concevoir et adapter le processus budgétaire de l’organisation ».**\n**Compétence 3.3 — Analyser les résultats d’une gestion budgétaire (20 heures). Ce chapitre constitue l’aboutissement de toute la séquence budgétaire (ventes, approvisionnements, production, masse salariale) : il confronte les prévisions aux réalisations pour piloter la performance à court terme.**"
         },
         {
           "type": "callout",
@@ -61,16 +63,12 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "L’unité d’œuvre du centre Montage est l’heure-machine. Les charges fixes indirectes prévues s’élèvent à 30 000 € pour une activité normale de 2 500 UO (soit 5 000 × 0,5). Ces données serviront de fil conducteur à l’ensemble du chapitre."
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
     {
-      "id": "fondements-et-principes-du-controle-budgetaire",
-      "title": "Fondements et principes du contrôle budgétaire",
+      "id": "1-fondements-et-principes-du-controle-budgetaire",
+      "title": "1. Fondements et principes du contrôle budgétaire",
       "blocks": [
         {
           "type": "p",
@@ -396,16 +394,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — Point examen",
           "text": "La structure « Comprendre – Calculer – Interpréter – Critiquer » est la grille de lecture de tout le chapitre. Un candidat qui se contente de calculer plafonne ; celui qui interprète et critique accède à la note maximale."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
     {
-      "id": "les-ecarts-sur-resultats-et-sur-ventes",
-      "title": "Les écarts sur résultats et sur ventes",
+      "id": "2-les-ecarts-sur-resultats-et-sur-ventes",
+      "title": "2. Les écarts sur résultats et sur ventes",
       "blocks": [
         {
           "type": "p",
@@ -887,16 +881,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "VARIANTE — La même décomposition sur le chiffre d’affaires",
           "text": "*Écart sur CA = 126 000 − 97 000 = + 29 000 € (F). Décomposition : écart sur prix + 2 200 € (F) ; écart sur quantité + 26 800 € (F) = volume global + 34 488,89 € (F) − composition 7 688,89 € (D). Le mix est défavorable sur le CA aussi, mais c’est l’analyse en marge qui pilote la performance commerciale.*"
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
     {
-      "id": "les-ecarts-sur-couts-de-production",
-      "title": "Les écarts sur coûts de production",
+      "id": "3-les-ecarts-sur-couts-de-production",
+      "title": "3. Les écarts sur coûts de production",
       "blocks": [
         {
           "type": "p",
@@ -1465,16 +1455,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — Ce qu’il faut retenir",
           "text": "• L’écart sur volume (− 7 400 € F) traduit la seule baisse du programme de production (1 900 au lieu de 2 000) : il n’est PAS imputable aux responsables d’atelier.\n• L’écart relatif à la production constatée (+ 27 271 € D) est l’écart pilotable : rendement MOD et usinage dégradés, prix/taux en dérive. C’est lui qu’il faut expliquer et corriger.\n**• Réflexe de contrôle : pour chaque élément, somme des sous-écarts = écart total. Toujours préciser le sens (F) ou (D).**"
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
     {
-      "id": "interpretation-pilotage-et-limites",
-      "title": "Interprétation, pilotage et limites",
+      "id": "4-interpretation-pilotage-et-limites",
+      "title": "4. Interprétation, pilotage et limites",
       "blocks": [
         {
           "type": "p",
@@ -1765,23 +1751,19 @@ export const chapter: Chapter = {
               "Récompense de la performance relative"
             ]
           ]
-        }
-      ]
-    },
-    {
-      "id": "4-10-le-pilotage-en-temps-reel",
-      "title": "4.10 Le pilotage en temps réel",
-      "blocks": [
+        },
+        {
+          "type": "h3",
+          "text": "4.10 Le pilotage en temps réel"
+        },
         {
           "type": "p",
           "text": "Les systèmes d’information modernes permettent de calculer les écarts en continu, et non plus seulement à la clôture. Le contrôle budgétaire devient prédictif (anticiper les dérives) plutôt que rétrospectif (les constater). Cette évolution est indissociable de la transformation numérique traitée dans le focus ci-après."
-        }
-      ]
-    },
-    {
-      "id": "4-11-controle-budgetaire-et-performance-globale",
-      "title": "4.11 Contrôle budgétaire et performance globale",
-      "blocks": [
+        },
+        {
+          "type": "h3",
+          "text": "4.11 Contrôle budgétaire et performance globale"
+        },
         {
           "type": "p",
           "text": "La principale évolution attendue par la réforme est l’élargissement du contrôle budgétaire à la performance globale : aux côtés de la performance économique, on intègre désormais les dimensions sociale et environnementale (approche ESG / RSE). Le contrôle budgétaire ne pilote plus seulement le profit, mais la création de valeur durable pour l’ensemble des parties prenantes."

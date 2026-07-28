@@ -54,16 +54,12 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "Ce chapitre est le chapitre fondateur de toute la partie consacrée aux coûts. Quatre parties en organisent l’étude : la partie 1 présente le coût comme information de gestion et la matière première qu’il mobilise (les charges) ; la partie 2 détaille les classifications des charges, illustrées par des données chiffrées ; la partie 3 construit pas à pas un coût et introduit les indicateurs de marge et de profitabilité ; la partie 4 situe les grandes méthodes et leur usage décisionnel. L’ensemble prépare l’étude détaillée du coût complet, de l’ABC, des coûts partiels et de l’imputation rationnelle dans les chapitres suivants."
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
     {
-      "id": "le-cout-information-de-gestion",
-      "title": "Le coût, information de gestion",
+      "id": "1-le-cout-information-de-gestion",
+      "title": "1. Le coût, information de gestion",
       "blocks": [
         {
           "type": "h3",
@@ -259,16 +255,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir — Partie 1",
           "text": "Cinq usages (prix, profitabilité, investir, arbitrer, piloter) ; quatre fonctions (informative, décisionnelle, contrôle, stratégique).\nIncorporables (reprises), non incorporables (exclues), supplétives (ajoutées).\nCharges incorporées = CF − non incorporables + supplétives."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
     {
-      "id": "les-classifications-des-charges",
-      "title": "Les classifications des charges",
+      "id": "2-les-classifications-des-charges",
+      "title": "2. Les classifications des charges",
       "blocks": [
         {
           "type": "p",
@@ -459,16 +451,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir — Partie 2",
           "text": "Directes/indirectes (destination) ; fixes/variables (comportement) ; opérationnelles/structure (horizon).\nle produit : 50 € directs (71 %) + 20 € indirects (29 %) ; coût variable 40 €, MCV 50 €, seuil 4 000 unités.\nCharge fixe unitaire ↓ quand l’activité ↑ (absorption). Notions décisionnelles : contrôlables, pertinentes, irrécupérables."
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
     {
-      "id": "les-objets-de-couts-et-la-construction-d-un-cout",
-      "title": "Les objets de coûts et la construction d’un coût",
+      "id": "3-les-objets-de-couts-et-la-construction-d-un-cout",
+      "title": "3. Les objets de coûts et la construction d’un coût",
       "blocks": [
         {
           "type": "h3",
@@ -616,16 +604,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir — Partie 3",
           "text": "Définir l’objet de coût avant tout calcul ; enchaîner coût d’achat → production → revient → résultat.\nMarge = prix − coût ; résultat = CA − coût de revient ; taux de marge = marge/coût ; taux de profitabilité = résultat/CA.\nle produit : MCV 50 €, résultat 10 €, taux de profitabilité 11,1 %."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
     {
-      "id": "les-methodes-et-l-usage-decisionnel-des-couts",
-      "title": "Les méthodes et l’usage décisionnel des coûts",
+      "id": "4-les-methodes-et-l-usage-decisionnel-des-couts",
+      "title": "4. Les méthodes et l’usage décisionnel des coûts",
       "blocks": [
         {
           "type": "h3",

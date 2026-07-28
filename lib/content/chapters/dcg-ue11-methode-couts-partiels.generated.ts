@@ -65,16 +65,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "REMARQUE — Cohérence des données chiffrées",
           "text": "Pour les applications mono-produit, on raisonne sur un atelier produisant 5 000 produits par période, supportant 200 000 € de charges fixes. Les cas multi-produits (arbitrage, abandon) mobilisent des sociétés complémentaires (Nautis, Éditions du Phare) pour disposer de plusieurs gammes."
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
     {
-      "id": "comprendre-les-fondements-des-couts-partiels",
-      "title": "Comprendre — les fondements des coûts partiels",
+      "id": "1-comprendre-les-fondements-des-couts-partiels",
+      "title": "1. Comprendre — les fondements des coûts partiels",
       "blocks": [
         {
           "type": "callout",
@@ -177,16 +173,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "REMARQUE — « Coût direct » n'est pas « coût spécifique »",
           "text": "On évite d'appeler la méthode du coût spécifique « méthode du coût direct », car le coût spécifique intègre aussi des charges variables **indirectes** (énergie, transport), qui ne sont pas directes. Inversement, le coût direct peut inclure des charges fixes directes. Les deux notions se recoupent sans se confondre.\n**POINT EXAMEN — Point examen — Partie 1**\nCoûts partiels : ne retenir que les charges pertinentes ; raisonner en marges.\nMarge = CA − coût partiel = capacité contributive aux charges non réparties.\nQuatre catégories : variables directes/indirectes, fixes spécifiques/de structure.\nTrois coûts partiels : direct, variable, spécifique ; + le coût marginal."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
     {
-      "id": "calculer-les-methodes-et-les-marges",
-      "title": "Calculer — les méthodes et les marges",
+      "id": "2-calculer-les-methodes-et-les-marges",
+      "title": "2. Calculer — les méthodes et les marges",
       "blocks": [
         {
           "type": "p",
@@ -490,16 +482,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — Point examen — Partie 2",
           "text": "Coût variable → marge sur coût variable (MCV) ; .\nCoût spécifique → marge sur coût spécifique (MCS) = MCV − charges fixes spécifiques.\nDirect costing anglo-saxon = méthode du coût variable française.\nUne MCS négative est un signal d'alerte, pas une décision d'abandon."
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
     {
-      "id": "interpreter-les-couts-partiels-outil-de-decision",
-      "title": "Interpréter — les coûts partiels, outil de décision",
+      "id": "3-interpreter-les-couts-partiels-outil-de-decision",
+      "title": "3. Interpréter — les coûts partiels, outil de décision",
       "blocks": [
         {
           "type": "p",
@@ -639,16 +627,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — Point examen — Partie 3",
           "text": "Choisir la méthode selon la décision : c'est un attendu du référentiel.\nCommande supplémentaire : comparer recette marginale et coût marginal.\nAbandon : MCV puis MCS, puis nuancer (seuil de profitabilité spécifique, stratégie).\nPrix plancher = coût marginal unitaire (= coût variable si structure suffisante)."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
     {
-      "id": "critiquer-portee-limites-et-evolutions",
-      "title": "Critiquer — portée, limites et évolutions",
+      "id": "4-critiquer-portee-limites-et-evolutions",
+      "title": "4. Critiquer — portée, limites et évolutions",
       "blocks": [
         {
           "type": "h3",

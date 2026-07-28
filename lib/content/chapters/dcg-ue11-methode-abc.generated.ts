@@ -13,12 +13,14 @@ export const chapter: Chapter = {
   "durationMin": 30,
   "sections": [
     {
-      "id": "partie-2-du-programme-calculer-analyser-et-ameliorer-les-cou",
-      "title": "Partie 2 du programme — « Calculer, analyser et améliorer les coûts ». La méthode ABC est, avec la méthode des centres d'analyse, l'une des deux méthodes de calcul du coût complet exigibles au DCG. Elle prolonge l'étude des coûts complets traditionnels en proposant une analyse des charges indirectes fondée sur les activités et la causalité, au service de la décision et du pilotage de la performance.",
+      "id": "preambule",
+      "title": "Préambule",
       "blocks": [
         {
-          "type": "p",
-          "text": "La mise en œuvre calculatoire de l'ABC (les cinq étapes) est exigible au DCG. L'ABM, l'analyse de la valeur, le reengineering et le benchmarking sont introduits au niveau sensibilisation : ils sont approfondis en DSCG. Ce chapitre les présente dans leur principe, sans développer l'outillage technique avancé."
+          "type": "callout",
+          "variant": "info",
+          "title": "POSITIONNEMENT DANS LE PROGRAMME",
+          "text": "**Partie 2 du programme — « Calculer, analyser et améliorer les coûts ». La méthode ABC est, avec la méthode des centres d'analyse, l'une des deux méthodes de calcul du coût complet exigibles au DCG. Elle prolonge l'étude des coûts complets traditionnels en proposant une analyse des charges indirectes fondée sur les activités et la causalité, au service de la décision et du pilotage de la performance.**\nLa mise en œuvre calculatoire de l'ABC (les cinq étapes) est exigible au DCG. L'ABM, l'analyse de la valeur, le reengineering et le benchmarking sont introduits au niveau sensibilisation : ils sont approfondis en DSCG. Ce chapitre les présente dans leur principe, sans développer l'outillage technique avancé."
         },
         {
           "type": "callout",
@@ -66,16 +68,12 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "**Cas d’étude. Nous suivrons ce cas tout au long du chapitre : analyse du modèle actuel (Partie 1), calcul ABC complet (Partie 2), interprétation pour la décision (Partie 3) et comparaison critique des deux méthodes (Partie 4).**"
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
     {
-      "id": "comprendre-pourquoi-la-methode-abc",
-      "title": "Comprendre : pourquoi la méthode ABC ?",
+      "id": "1-comprendre-pourquoi-la-methode-abc",
+      "title": "1. Comprendre : pourquoi la méthode ABC ?",
       "blocks": [
         {
           "type": "p",
@@ -351,16 +349,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir — Partie 1 (Comprendre)",
           "text": "Le coût complet exige de répartir les charges indirectes, devenues majoritaires (Lorino).\nLa méthode des centres d'analyse suppose des centres homogènes et des UO bien choisies.\nUne UO volumique sur une production différenciée fausse les coûts.\nSubventionnement croisé : jeu à somme nulle ; les grandes séries subventionnent les petites."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
     {
-      "id": "calculer-la-mecanique-de-l-abc",
-      "title": "Calculer : la mécanique de l'ABC",
+      "id": "2-calculer-la-mecanique-de-l-abc",
+      "title": "2. Calculer : la mécanique de l'ABC",
       "blocks": [
         {
           "type": "p",
@@ -701,16 +695,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir — Partie 2 (Calculer)",
           "text": "Activité = tâches coordonnées consommant des ressources ; inducteur = mesure causale.\nCinq étapes : ressources → activités → inducteurs → objets → coût de revient.\nCoût de l'inducteur = coût de l'activité / nombre d'inducteurs.\nChez l’entreprise : produit A = 62,42 € ; produit B = 291,33 € (CI total conservé : 18,9 M€)."
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
     {
-      "id": "interpreter-de-la-mesure-au-pilotage",
-      "title": "Interpréter : de la mesure au pilotage",
+      "id": "3-interpreter-de-la-mesure-au-pilotage",
+      "title": "3. Interpréter : de la mesure au pilotage",
       "blocks": [
         {
           "type": "p",
@@ -856,16 +846,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir — Partie 3 (Interpréter)",
           "text": "L'ABC explique les causes des coûts et révèle des leviers d'action (agir sur l'inducteur).\nL'ABM pilote le rapport valeur / coût des activités (reengineering, benchmarking).\nLe numérique (ERP, process mining, BI, IA) automatise l'ABC et lève le frein du coût.\nDes inducteurs « durables » relient l'ABC à la performance globale."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
     {
-      "id": "critiquer-abc-vs-centres-d-analyse",
-      "title": "Critiquer : ABC vs centres d'analyse",
+      "id": "4-critiquer-abc-vs-centres-d-analyse",
+      "title": "4. Critiquer : ABC vs centres d'analyse",
       "blocks": [
         {
           "type": "p",

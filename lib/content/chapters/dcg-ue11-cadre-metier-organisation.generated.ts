@@ -17,15 +17,11 @@ export const chapter: Chapter = {
       "title": "Préambule",
       "blocks": [
         {
-          "type": "p",
-          "text": "Ce chapitre ouvre l’UE11 et correspond à la première partie du référentiel : « Identifier et caractériser la place du contrôle de gestion comme aide au pilotage de la performance des organisations » (30 heures). Le volume horaire est conséquent car tous les savoirs de cette partie sont réutilisés dans les chapitres suivants : ils constituent le socle d’interprétation de l’ensemble du programme."
-        }
-      ]
-    },
-    {
-      "id": "6-chaine-de-valeur-et-indicateurs-de-performance",
-      "title": "6 — Chaîne de valeur et indicateurs de performance.",
-      "blocks": [
+          "type": "callout",
+          "variant": "info",
+          "title": "POSITIONNEMENT DANS LE PROGRAMME",
+          "text": "Ce chapitre ouvre l’UE11 et correspond à la première partie du référentiel : « Identifier et caractériser la place du contrôle de gestion comme aide au pilotage de la performance des organisations » (30 heures). Le volume horaire est conséquent car tous les savoirs de cette partie sont réutilisés dans les chapitres suivants : ils constituent le socle d’interprétation de l’ensemble du programme.\n**1 — Le cadre et le positionnement du contrôle de gestion.**\n**2 — Valeur, performance et pilotage.**\n**3 — Le métier de contrôleur de gestion et le système d’information.**\n**4 — Outils numériques, Big Data et intelligence artificielle.**\n**5 — Décentralisation et centres de responsabilité.**\n**6 — Chaîne de valeur et indicateurs de performance.**"
+        },
         {
           "type": "callout",
           "variant": "info",
@@ -56,16 +52,12 @@ export const chapter: Chapter = {
           "type": "callout",
           "variant": "info",
           "text": "**FIL ROUGE DU CHAPITRE — Rakéo. Les illustrations et l’application s’appuient sur une même entreprise : Rakéo, PME d’articles de sport écoresponsables (240 salariés, 48 M€ de chiffre d’affaires). Son produit phare est vendu 90 € pour un coût variable unitaire de 38 € et un coût complet de 67 € ; volume annuel : 200 000 unités. Ce cas sert de référence tout au long du chapitre.**"
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
     {
-      "id": "le-cadre-et-le-positionnement-du-controle-de-gestion",
-      "title": "Le cadre et le positionnement du contrôle de gestion",
+      "id": "1-le-cadre-et-le-positionnement-du-controle-de-gestion",
+      "title": "1. Le cadre et le positionnement du contrôle de gestion",
       "blocks": [
         {
           "type": "p",
@@ -351,16 +343,12 @@ export const chapter: Chapter = {
           "variant": "warning",
           "title": "ERREURS FRÉQUENTES — Le piège de l’analyse « hors-sol »",
           "text": "À l’examen, ne plaquez jamais une analyse standard. Un sujet portant sur une association ou une mairie n’appelle pas le même raisonnement qu’une usine : dans le non-marchand, l’efficience et l’impact priment sur le profit. Lisez d’abord le contexte, identifiez la finalité, puis adaptez les outils. C’est précisément cette capacité d’adaptation qui est évaluée.\n**POINT EXAMEN — À retenir**\nLe CG s’adapte à l’organisation (privé, public, associatif, clients des cabinets EC).\nIl s’adapte à l’activité (productive, commerciale, de service).\nDans le non-marchand, efficience et impact priment sur le profit ; LOLF = logique de résultats."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
     {
-      "id": "valeur-performance-et-pilotage",
-      "title": "Valeur, performance et pilotage",
+      "id": "2-valeur-performance-et-pilotage",
+      "title": "2. Valeur, performance et pilotage",
       "blocks": [
         {
           "type": "p",
@@ -517,16 +505,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir",
           "text": "Distinguer valeur, utilité, performance ; maîtriser les 3 E (économie/efficacité/efficience).\nPerformance globale = Triple Bottom Line (Profit/People/Planet), mesurée par les critères ESG ; durabilité = notion nouvelle.\nTableaux de bord présentés tôt ; le CG a deux rôles : piloter et aider à décider.\nÉvolution cumulative ; le numérique (ERP, BI, IA) recentre le contrôleur sur l’analyse."
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
     {
-      "id": "le-metier-de-controleur-de-gestion-et-le-systeme-d-informati",
-      "title": "Le métier de contrôleur de gestion et le système d’information",
+      "id": "3-le-metier-de-controleur-de-gestion-et-le-systeme-d-informa",
+      "title": "3. Le métier de contrôleur de gestion et le système d’information",
       "blocks": [
         {
           "type": "h3",
@@ -946,16 +930,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir",
           "text": "Missions traditionnelles (coûts, budgets, contrôle, reporting) → contemporaines (aide à la décision, business partner).\nProfil complet : savoir, savoir-faire, savoir-être ; trois familles de compétences.\nInterlocuteur transversal de toutes les fonctions ; métier en évolution (automatisation, prédictif, durable)."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
     {
-      "id": "outils-numeriques-big-data-et-intelligence-artificielle",
-      "title": "Outils numériques, Big Data et intelligence artificielle",
+      "id": "4-outils-numeriques-big-data-et-intelligence-artificielle",
+      "title": "4. Outils numériques, Big Data et intelligence artificielle",
       "blocks": [
         {
           "type": "h3",
@@ -1184,16 +1164,12 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "**Idée directrice.**Le contrôle de gestion moderne repose autant sur la maîtrise de l’information et de ses outils que sur celle des calculs. De la donnée brute à la décision, le contrôleur outille toute la chaîne — et son métier se déplace du producteur de chiffres vers le business partner, dans un environnement numérique qu’il doit savoir exploiter… et critiquer."
-        },
-        {
-          "type": "p",
-          "text": "**5**"
         }
       ]
     },
     {
-      "id": "decentralisation-et-centres-de-responsabilite",
-      "title": "Décentralisation et centres de responsabilité",
+      "id": "5-decentralisation-et-centres-de-responsabilite",
+      "title": "5. Décentralisation et centres de responsabilité",
       "blocks": [
         {
           "type": "h3",
@@ -1525,16 +1501,12 @@ export const chapter: Chapter = {
           "variant": "warning",
           "title": "ERREURS FRÉQUENTES — Erreurs fréquentes",
           "text": "Confondre centre de profit et centre d’investissement. Attribuer à un centre un indicateur qui dépasse son périmètre de maîtrise (ex. juger l’atelier sur le chiffre d’affaires)."
-        },
-        {
-          "type": "p",
-          "text": "**6**"
         }
       ]
     },
     {
-      "id": "chaine-de-valeur-et-indicateurs-de-performance",
-      "title": "Chaîne de valeur et indicateurs de performance",
+      "id": "6-chaine-de-valeur-et-indicateurs-de-performance",
+      "title": "6. Chaîne de valeur et indicateurs de performance",
       "blocks": [
         {
           "type": "h3",

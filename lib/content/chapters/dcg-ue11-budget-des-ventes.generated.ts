@@ -62,10 +62,6 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "**PARTIE 1 Comprendre les fondements de la prévision des ventes**"
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
@@ -259,10 +255,6 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "C’est le cœur technique du chapitre. On distingue les méthodes quantitatives (fondées sur l’historique et l’extrapolation mathématique) et les méthodes qualitatives (fondées sur l’expertise et le jugement), complémentaires plus que concurrentes. Chaque ajustement est présenté selon les quatre dimensions comprendre / calculer / interpréter / critiquer."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
@@ -635,10 +627,6 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "**PARTIE 3 Interpréter : la construction du budget des ventes**"
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
@@ -755,10 +743,6 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "**PARTIE 4 Critiquer et piloter : performance, durabilité, numérique**"
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },

@@ -58,16 +58,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "REMARQUE — Une question de vocabulaire",
           "text": "On réserve le terme **budget** aux prévisions chiffrées *en valeur monétaire* (budget des ventes, des investissements…). Une prévision chiffrée *non monétaire* — quantités, heures, tonnes — relève du **programme** : ainsi le « programme des approvisionnements » décrit des quantités et des dates, là où le « budget des approvisionnements » en chiffre le montant."
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
     {
-      "id": "les-fondements-de-la-gestion-budgetaire",
-      "title": "Les fondements de la gestion budgétaire",
+      "id": "1-les-fondements-de-la-gestion-budgetaire",
+      "title": "1. Les fondements de la gestion budgétaire",
       "blocks": [
         {
           "type": "h3",
@@ -197,16 +193,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "REGARD CRITIQUE",
           "text": "Dès ce stade, trois limites doivent être posées : **la rigidité** (un budget annuel fige des hypothèses dans un environnement parfois turbulent), **le coût et la lourdeur** de la procédure (plusieurs mois de travail), et **les effets comportementaux** (le budget engage des personnes, avec des risques de jeux et de dérives). La Partie 4 y reviendra en détail. Le budget n’est ni une vérité ni une fin en soi : c’est un outil dont la valeur dépend de l’intelligence de son usage."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
     {
-      "id": "la-procedure-budgetaire",
-      "title": "La procédure budgétaire",
+      "id": "2-la-procedure-budgetaire",
+      "title": "2. La procédure budgétaire",
       "blocks": [
         {
           "type": "h3",
@@ -362,16 +354,12 @@ export const chapter: Chapter = {
           "variant": "tip",
           "title": "POINT EXAMEN — Démarche budgétaire et types d’organisation",
           "text": "Le référentiel insiste : la démarche doit être appréhendée **dans tout type d’activité**, sans occulter les services. Une copie complète illustre donc la procédure non seulement dans l’industrie, mais aussi dans une société de services (budget calé sur le cycle de prestation : par commande, par client, par période) et dans une organisation publique ou associative (le budget comme autorisation de dépense et arbitrage entre missions). Cette capacité à transposer dans plusieurs contextes est explicitement valorisée."
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
     {
-      "id": "l-articulation-des-budgets-et-les-centres-de-responsabilite",
-      "title": "L’articulation des budgets et les centres de responsabilité",
+      "id": "3-l-articulation-des-budgets-et-les-centres-de-responsabilit",
+      "title": "3. L’articulation des budgets et les centres de responsabilité",
       "blocks": [
         {
           "type": "h3",
@@ -862,16 +850,12 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "Les comptes prévisionnels « bouclent » la procédure budgétaire. Le compte de résultat prévisionnel centralise les produits et charges issus de l’ensemble des budgets ; son solde donne le résultat prévisionnel, qui vient équilibrer le bilan. Dans le bilan prévisionnel, les postes de haut de bilan traduisent les décisions d’investissement et de financement, tandis que les postes de bas de bilan (éléments du besoin en fonds de roulement) découlent directement des budgets d’exploitation et de TVA."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
     {
-      "id": "les-enjeux-contemporains-du-pilotage-budgetaire",
-      "title": "Les enjeux contemporains du pilotage budgétaire",
+      "id": "4-les-enjeux-contemporains-du-pilotage-budgetaire",
+      "title": "4. Les enjeux contemporains du pilotage budgétaire",
       "blocks": [
         {
           "type": "h3",

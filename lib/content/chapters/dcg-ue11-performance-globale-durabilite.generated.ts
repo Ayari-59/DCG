@@ -17,18 +17,10 @@ export const chapter: Chapter = {
       "title": "Préambule",
       "blocks": [
         {
-          "type": "p",
-          "text": "L’aboutissement du contrôle de gestion : du pilotage financier au pilotage multidimensionnel de la performance économique, sociale, environnementale et sociétale."
-        }
-      ]
-    },
-    {
-      "id": "6-data-intelligence-artificielle-et-controleur-augmente",
-      "title": "6 — Data, intelligence artificielle et contrôleur augmenté.",
-      "blocks": [
-        {
-          "type": "p",
-          "text": "Chapitre intégrateur : il mobilise et prolonge les chapitres qualité, coût cible et tableaux de bord."
+          "type": "callout",
+          "variant": "info",
+          "title": "POSITIONNEMENT DANS LE PROGRAMME",
+          "text": "L’aboutissement du contrôle de gestion : du pilotage financier au pilotage multidimensionnel de la performance économique, sociale, environnementale et sociétale.\n1 — Comprendre la performance globale.\n2 — Les dimensions de la performance globale.\n3 — ESG et pilotage de la performance.\n4 — Le contrôle de gestion au service de la durabilité.\n5 — Transformation numérique et systèmes d’information.\n6 — Data, intelligence artificielle et contrôleur augmenté.\nChapitre intégrateur : il mobilise et prolonge les chapitres qualité, coût cible et tableaux de bord."
         },
         {
           "type": "callout",
@@ -52,16 +44,12 @@ export const chapter: Chapter = {
           "type": "callout",
           "variant": "tip",
           "text": "**FIL ROUGE DU CHAPITRE — Rakéo SPORT. Les illustrations et l’application s’appuient sur une même entreprise : Rakéo, PME d’articles de sport (240 salariés, 48 M€ de chiffre d’affaires), engagée dans une démarche de performance globale et durable — suivi des indicateurs ESG, de l’empreinte carbone et d’un tableau de bord équilibré. Ce cas sert de référence tout au long du chapitre.**"
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
     {
-      "id": "comprendre-la-performance-globale",
-      "title": "Comprendre la performance globale",
+      "id": "1-comprendre-la-performance-globale",
+      "title": "1. Comprendre la performance globale",
       "blocks": [
         {
           "type": "h3",
@@ -247,16 +235,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir",
           "text": "Performance = atteinte des objectifs, déclinée en quatre E : économie, efficience, efficacité, pertinence.\nLe pilotage exclusivement financier souffre de trois limites : court-termisme, angles morts comptables, signaux tardifs.\nLa performance globale est multidimensionnelle et s’appuie sur la théorie des parties prenantes et le développement durable."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
     {
-      "id": "les-dimensions-de-la-performance-globale",
-      "title": "Les dimensions de la performance globale",
+      "id": "2-les-dimensions-de-la-performance-globale",
+      "title": "2. Les dimensions de la performance globale",
       "blocks": [
         {
           "type": "p",
@@ -275,29 +259,10 @@ export const chapter: Chapter = {
           "text": "La performance économique mesure la capacité de l’entreprise à produire de la richesse à partir de ses ressources, indépendamment de son mode de financement. Elle s’intéresse à la productivité, à la maîtrise des coûts et à la compétitivité."
         },
         {
-          "type": "table",
-          "headers": [
-            "**Objectif**",
-            "**Indicateurs**",
-            "**Enjeu de pilotage**"
-          ],
-          "rows": [
-            [
-              "Productivité",
-              "Production / heure travaillée ; valeur ajoutée / effectif",
-              "Améliorer l’efficience des processus"
-            ],
-            [
-              "Maîtrise des coûts",
-              "Coût de revient unitaire ; taux de marge sur coût variable",
-              "Rester compétitif sans dégrader la qualité"
-            ],
-            [
-              "Compétitivité",
-              "Part de marché ; délai de mise sur le marché",
-              "Préserver la position concurrentielle"
-            ]
-          ]
+          "type": "callout",
+          "variant": "info",
+          "title": "Objectif",
+          "text": "**Indicateurs**\n**Enjeu de pilotage**\nProductivité\nProduction / heure travaillée ; valeur ajoutée / effectif\nAméliorer l’efficience des processus\nMaîtrise des coûts\nCoût de revient unitaire ; taux de marge sur coût variable\nRester compétitif sans dégrader la qualité\nCompétitivité\nPart de marché ; délai de mise sur le marché\nPréserver la position concurrentielle"
         },
         {
           "type": "h3",
@@ -448,16 +413,12 @@ export const chapter: Chapter = {
           "variant": "warning",
           "title": "ERREURS FRÉQUENTES — Les dimensions sont en tension",
           "text": "Améliorer une dimension peut en dégrader une autre : choisir une matière recyclée plus chère pèse sur la performance économique à court terme. **La performance globale n’est pas la somme des dimensions, mais leur conciliation** — d’où l’importance d’un pilotage qui les met en regard."
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
     {
-      "id": "esg-et-pilotage-de-la-performance",
-      "title": "ESG et pilotage de la performance",
+      "id": "3-esg-et-pilotage-de-la-performance",
+      "title": "3. ESG et pilotage de la performance",
       "blocks": [
         {
           "type": "p",
@@ -717,16 +678,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir",
           "text": "ESG = Environnement, Social, Gouvernance : le cadre des indicateurs de durabilité.\nUn bon indicateur de durabilité est pertinent, fiable, mesurable, rattaché à un responsable ; préférer les indicateurs relatifs (par unité).\nLa CSRD normalise et fait vérifier le reporting extra-financier : le contrôleur de gestion traduit les normes en indicateurs."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
     {
-      "id": "le-controle-de-gestion-au-service-de-la-durabilite",
-      "title": "Le contrôle de gestion au service de la durabilité",
+      "id": "4-le-controle-de-gestion-au-service-de-la-durabilite",
+      "title": "4. Le contrôle de gestion au service de la durabilité",
       "blocks": [
         {
           "type": "p",
@@ -1232,16 +1189,12 @@ export const chapter: Chapter = {
           "type": "callout",
           "variant": "info",
           "text": "**Synthèse finale**"
-        },
-        {
-          "type": "p",
-          "text": "**5**"
         }
       ]
     },
     {
-      "id": "transformation-numerique-et-systemes-d-information",
-      "title": "Transformation numérique et systèmes d’information",
+      "id": "5-transformation-numerique-et-systemes-d-information",
+      "title": "5. Transformation numérique et systèmes d’information",
       "blocks": [
         {
           "type": "p",
@@ -1458,16 +1411,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "REMARQUE — vers la Business Intelligence",
           "text": "L’ERP est excellent pour exécuter et enregistrer les opérations, mais il n’est pas conçu pour l’analyse approfondie ni pour le croisement de grandes masses de données. C’est le rôle de la Business Intelligence, étudiée dans la partie suivante."
-        },
-        {
-          "type": "p",
-          "text": "**6**"
         }
       ]
     },
     {
-      "id": "data-intelligence-artificielle-et-controleur-augmente",
-      "title": "Data, intelligence artificielle et contrôleur augmenté",
+      "id": "6-data-intelligence-artificielle-et-controleur-augmente",
+      "title": "6. Data, intelligence artificielle et contrôleur augmenté",
       "blocks": [
         {
           "type": "p",
@@ -1728,39 +1677,10 @@ export const chapter: Chapter = {
           "text": "6.6 Interpréter : les nouvelles compétences et la performance globale"
         },
         {
-          "type": "table",
-          "headers": [
-            "**Compétence**",
-            "**Contenu**",
-            "**Pourquoi**"
-          ],
-          "rows": [
-            [
-              "**Analyse de données**",
-              "Manipuler, croiser et interpréter des données",
-              "Cœur du métier à l’ère numérique"
-            ],
-            [
-              "**Communication**",
-              "Restituer et convaincre, à l’oral et à l’écrit",
-              "Écrit argumenté valorisé par la réforme"
-            ],
-            [
-              "**Outils numériques**",
-              "Tableur avancé, BI, notions d’ERP et d’IA",
-              "Exploiter la chaîne décisionnelle"
-            ],
-            [
-              "**ESG / durabilité**",
-              "Construire et suivre des indicateurs extra-financiers",
-              "Pilotage de la performance globale"
-            ],
-            [
-              "**Pilotage stratégique**",
-              "Relier les indicateurs aux facteurs-clés de succès",
-              "Aider la décision au bon niveau"
-            ]
-          ]
+          "type": "callout",
+          "variant": "info",
+          "title": "Compétence",
+          "text": "**Contenu**\n**Pourquoi**\n**Analyse de données**\nManipuler, croiser et interpréter des données\nCœur du métier à l’ère numérique\n**Communication**\nRestituer et convaincre, à l’oral et à l’écrit\nÉcrit argumenté valorisé par la réforme\n**Outils numériques**\nTableur avancé, BI, notions d’ERP et d’IA\nExploiter la chaîne décisionnelle\n**ESG / durabilité**\nConstruire et suivre des indicateurs extra-financiers\nPilotage de la performance globale\n**Pilotage stratégique**\nRelier les indicateurs aux facteurs-clés de succès\nAider la décision au bon niveau"
         },
         {
           "type": "p",

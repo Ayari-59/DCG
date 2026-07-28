@@ -65,10 +65,6 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "REMARQUE — Une question de vocabulaire imposée par la réforme",
           "text": "Le programme rénové privilégie l’expression **« seuil de profitabilité »** plutôt que « seuil de rentabilité ». La profitabilité rapporte le résultat au chiffre d’affaires ; la rentabilité rapporte le résultat à l’actif économique (UE 6). Les deux expressions désignent le même calcul ; ce chapitre retient « seuil de profitabilité » tout en signalant l’appellation traditionnelle lorsqu’elle reste d’usage courant."
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
@@ -222,10 +218,6 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "REGARD CRITIQUE",
           "text": "La linéarité est une fiction commode : dans la réalité, les charges variables unitaires peuvent baisser (remises de volume) ou monter (heures supplémentaires majorées), et les charges fixes évoluent par paliers. L’hypothèse « production = ventes » ignore les variations de stocks, fréquentes dans l’industrie. Le modèle est statique : il photographie une structure de coûts à un instant donné et se prête mal aux décisions de long terme.\nCes limites ne disqualifient pas le modèle : elles en délimitent le domaine de validité. Un bon contrôleur de gestion sait que le CVP est un outil de diagnostic rapide, à compléter par d’autres approches."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
@@ -558,10 +550,6 @@ export const chapter: Chapter = {
           "variant": "warning",
           "title": "ERREURS FRÉQUENTES — Le mix produit doit être supposé constant",
           "text": "Le seuil global suppose une structure des ventes (mix produit) constante. Si le mix évolue, le taux de marge moyen change et le seuil global devient faux. Toujours mentionner cette hypothèse lorsqu’on présente un seuil global en multiproduction."
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
@@ -750,10 +738,6 @@ export const chapter: Chapter = {
           "type": "callout",
           "variant": "info",
           "text": "**■ APPLICATION 3 — Variation des charges de structure et opportunité d’investissement**\nUne entreprise vend un produit 50 € l’unité, avec un taux de marge sur coût variable de 40 % et des charges de structure de 300 000 €. Sa structure actuelle limite l’activité à 22 000 unités par an. Pour répondre à une hausse de marché, elle envisage d’investir 2 000 000 € (amortis linéairement sur 10 ans, mise en service le 1er janvier), ce qui porterait la capacité à 35 000 unités, le taux de MCV restant inchangé.\n**Travail à faire : calculer le seuil de profitabilité avant et après investissement, puis déterminer à partir de quel chiffre d’affaires le changement de structure devient opportun.**\n**Corrigé :**\nAvant investissement : seuil tel que 0,40 X = 300 000, soit X = 750 000 € (15 000 unités). Résultat maximal de l’ancienne structure : 22 000 × 20 − 300 000 = 140 000 €, pour un chiffre d’affaires de 1 100 000 €.\nAprès investissement : la dotation aux amortissements ajoute 2 000 000 / 10 = 200 000 € de charges fixes, portées à 500 000 €. Nouveau seuil : 0,40 X = 500 000, soit X = 1 250 000 € (25 000 unités).\nOpportunité : le changement de structure n’est intéressant que s’il procure au moins le résultat antérieur (140 000 €). Il faut 0,40 X − 500 000 ≥ 140 000, soit X ≥ 1 600 000 €.\nConclusion : le changement de structure n’est opportun que si l’entreprise réalise un chiffre d’affaires supérieur à 1 600 000 €."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },

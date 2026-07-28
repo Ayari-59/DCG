@@ -62,16 +62,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "REMARQUE — Le cadre du programme",
           "text": "Le référentiel cible la **programmation linéaire (méthode graphique et facteur rare / goulot d’étranglement)** et l’**ordonnancement par la méthode MPM** (marges libres et totales à calculer et analyser). En revanche, **la méthode du simplexe, le diagramme de Gantt, le suivi des délais et des coûts, ainsi que le juste-à-temps ne sont pas au programme** : ils sont signalés comme tels et abordés à titre de culture professionnelle."
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
     {
-      "id": "les-fondements-de-la-gestion-de-la-production",
-      "title": "Les fondements de la gestion de la production",
+      "id": "1-les-fondements-de-la-gestion-de-la-production",
+      "title": "1. Les fondements de la gestion de la production",
       "blocks": [
         {
           "type": "h3",
@@ -144,16 +140,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "ILLUSTRATION",
           "text": "**Chez l’entreprise,**le positionnement « écoresponsable » privilégie la qualité et la durabilité des produits. Cet arbitrage assumé — une qualité élevée, des matériaux durables — pèse sur les coûts, mais constitue l’avantage concurrentiel de la marque. Le contrôle de gestion doit en mesurer le surcoût et le rapporter à la valeur perçue par le client."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
     {
-      "id": "la-construction-du-budget-de-production",
-      "title": "La construction du budget de production",
+      "id": "2-la-construction-du-budget-de-production",
+      "title": "2. La construction du budget de production",
       "blocks": [
         {
           "type": "h3",
@@ -271,16 +263,12 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "Quand la demande dépasse durablement la capacité, l’entreprise doit ajuster : **heures supplémentaires, intérim, sous-traitance, équipes supplémentaires** à court terme ; **investissement en nouvelles machines** à plus long terme. Inversement, en cas de sous-charge, elle cherche à réduire les coûts fixes ou à réorienter la capacité. Ces décisions relèvent d’un arbitrage entre coût et flexibilité."
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
     {
-      "id": "les-methodes-de-planification-et-d-ordonnancement",
-      "title": "Les méthodes de planification et d’ordonnancement",
+      "id": "3-les-methodes-de-planification-et-d-ordonnancement",
+      "title": "3. Les méthodes de planification et d’ordonnancement",
       "blocks": [
         {
           "type": "h3",
@@ -855,16 +843,12 @@ export const chapter: Chapter = {
           "variant": "warning",
           "title": "ERREURS FRÉQUENTES — Hors programme — Gantt et suivi délais/coûts",
           "text": "Le document historique présente aussi le **diagramme de Gantt** et le suivi des délais et des coûts d’un projet en cours. Le référentiel indique que **le Gantt et le suivi des délais et des coûts ne sont pas abordés au DCG**. On retient que le Gantt, plus simple à lire que le MPM, ne fait apparaître ni les dates au plus tard ni le chemin critique."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
     {
-      "id": "les-evolutions-contemporaines-de-la-gestion-de-production",
-      "title": "Les évolutions contemporaines de la gestion de production",
+      "id": "4-les-evolutions-contemporaines-de-la-gestion-de-production",
+      "title": "4. Les évolutions contemporaines de la gestion de production",
       "blocks": [
         {
           "type": "h3",

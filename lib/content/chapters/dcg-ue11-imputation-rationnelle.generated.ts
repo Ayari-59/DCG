@@ -50,16 +50,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "ILLUSTRATION — Le diagnostic troublant",
           "text": "Un atelier a été dimensionné pour produire 20 000 meubles par mois (activité normale) ; le meuble est vendu 90 €. Charges variables : 38 €/meuble ; charges fixes : 580 000 €/mois. Quand l’activité tombe à 16 000 meubles, le coût de revient unitaire grimpe et le meuble paraît soudain « trop cher » ; quand elle monte à 24 000, il baisse — sans que rien n’ait changé dans la fabrication. Faut-il pour autant réviser le prix — ou se réjouir ? L’imputation rationnelle répond en isolant le coût de sous-activité et le boni de suractivité."
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
     {
-      "id": "comprendre-pourquoi-l-imputation-rationnelle",
-      "title": "Comprendre : pourquoi l'imputation rationnelle ?",
+      "id": "1-comprendre-pourquoi-l-imputation-rationnelle",
+      "title": "1. Comprendre : pourquoi l'imputation rationnelle ?",
       "blocks": [
         {
           "type": "h3",
@@ -265,16 +261,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — Point examen — Partie 1",
           "text": "On n'incorpore les charges fixes qu'au prorata de l'activité.\nActivité normale = niveau de référence pour lequel l'outil a été conçu.\nCoefficient d'activité = activité réelle / activité normale (< 1 sous-activité ; = 1 normale ; > 1 suractivité)."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
     {
-      "id": "calculer-le-mecanisme-de-la-methode",
-      "title": "Calculer : le mécanisme de la méthode",
+      "id": "2-calculer-le-mecanisme-de-la-methode",
+      "title": "2. Calculer : le mécanisme de la méthode",
       "blocks": [
         {
           "type": "h3",
@@ -684,16 +676,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — Point examen — Partie 2",
           "text": "Coût IR = charges variables + charges fixes × coefficient (coût unitaire stable = coût normal).\nDIR = charges fixes × (1 − coefficient) ; coef < 1 → coût de sous-activité ; coef > 1 → boni.\nRésultat réel = résultat rationnel − coût de sous-activité (+ boni).\nUn coefficient par centre : les coûts de sous-activité s'additionnent."
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
     {
-      "id": "interpreter-exploiter-les-resultats-pour-piloter",
-      "title": "Interpréter : exploiter les résultats pour piloter",
+      "id": "3-interpreter-exploiter-les-resultats-pour-piloter",
+      "title": "3. Interpréter : exploiter les résultats pour piloter",
       "blocks": [
         {
           "type": "h3",
@@ -795,16 +783,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — Point examen — Partie 3",
           "text": "Le coût IR isole la performance réelle de l'effet d'activité et rend les coûts comparables.\nLe coût de sous-activité et le boni durable sont des signaux pour piloter les capacités.\nNe pas abandonner un produit sain en sous-activité ; ne pas surestimer une performance dopée par la suractivité."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
     {
-      "id": "critiquer-limites-conditions-et-place-de-la-methode",
-      "title": "Critiquer : limites, conditions et place de la méthode",
+      "id": "4-critiquer-limites-conditions-et-place-de-la-methode",
+      "title": "4. Critiquer : limites, conditions et place de la méthode",
       "blocks": [
         {
           "type": "p",

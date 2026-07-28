@@ -87,16 +87,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "Les chiffres de référence de la raquette Rakéo",
           "text": "Pour fixer les idées, voici les données du transfert interne de la raquette, qui reviendront dans toutes les illustrations :\nPrix de vente final au consommateur (E-commerce) : 90 € ;\nCoût variable de production unitaire : 38 € ;\nCoût standard complet de production : 67 € (dont 29 € de charges fixes réparties) ;\nMarge sur coût standard = 90 − 67 = 23 € ; marge sur coût variable = 90 − 38 = 52 € ;\nPrix de marché d’une raquette comparable (sous-traitant externe) : 75 € ;\nCoûts propres de l’aval (E-commerce) : 8 €."
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
     {
-      "id": "les-fondements-des-prix-de-cession-interne",
-      "title": "Les fondements des prix de cession interne",
+      "id": "1-les-fondements-des-prix-de-cession-interne",
+      "title": "1. Les fondements des prix de cession interne",
       "blocks": [
         {
           "type": "p",
@@ -180,39 +176,10 @@ export const chapter: Chapter = {
           "text": "Enfin, un PCI bien conçu oriente les décisions locales (faire ou faire-faire, accepter ou refuser une commande) dans le sens de l’intérêt global. Un PCI mal conçu, au contraire, peut conduire un centre à prendre une décision rationnelle pour lui mais coûteuse pour le groupe."
         },
         {
-          "type": "table",
-          "headers": [
-            "**Objectif**",
-            "**Ce que le PCI permet**",
-            "**Risque si mal fixé**"
-          ],
-          "rows": [
-            [
-              "Coordination",
-              "Organiser les flux internes par un signal-prix",
-              "Blocage ou conflit entre centres"
-            ],
-            [
-              "Motivation",
-              "Responsabiliser chaque manager sur sa marge",
-              "Démotivation, sentiment d’injustice"
-            ],
-            [
-              "Évaluation",
-              "Mesurer un résultat par centre",
-              "Performance faussée, mal attribuée"
-            ],
-            [
-              "Responsabilisation",
-              "Faire de chaque centre une mini-entreprise",
-              "Repli sur l’intérêt local"
-            ],
-            [
-              "Optimisation",
-              "Aligner décisions locales et intérêt global",
-              "Sous-optimisation, décisions sous-optimales"
-            ]
-          ]
+          "type": "callout",
+          "variant": "info",
+          "title": "Objectif",
+          "text": "**Ce que le PCI permet**\n**Risque si mal fixé**\nCoordination\nOrganiser les flux internes par un signal-prix\nBlocage ou conflit entre centres\nMotivation\nResponsabiliser chaque manager sur sa marge\nDémotivation, sentiment d’injustice\nÉvaluation\nMesurer un résultat par centre\nPerformance faussée, mal attribuée\nResponsabilisation\nFaire de chaque centre une mini-entreprise\nRepli sur l’intérêt local\nOptimisation\nAligner décisions locales et intérêt global\nSous-optimisation, décisions sous-optimales"
         },
         {
           "type": "callout",
@@ -255,16 +222,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — Les quatre temps à maîtriser",
           "text": "Comprendre : le PCI valorise les flux internes pour mesurer la performance des centres décentralisés.\nCalculer : selon le mode retenu (marché, coût, négocié) — objet de la Partie 2.\nInterpréter : analyser comment le PCI répartit la marge et oriente les décisions.\nCritiquer : repérer les risques de conflit, de sous-optimisation et d’évaluation faussée."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
     {
-      "id": "les-modes-de-fixation-des-prix-de-cession-interne",
-      "title": "Les modes de fixation des prix de cession interne",
+      "id": "2-les-modes-de-fixation-des-prix-de-cession-interne",
+      "title": "2. Les modes de fixation des prix de cession interne",
       "blocks": [
         {
           "type": "p",
@@ -519,16 +482,12 @@ export const chapter: Chapter = {
               "Rapport de force ; chronophage ; conflits"
             ]
           ]
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
     {
-      "id": "prix-de-cession-interne-et-evaluation-des-centres-de-respons",
-      "title": "Prix de cession interne et évaluation des centres de responsabilité",
+      "id": "3-prix-de-cession-interne-et-evaluation-des-centres-de-respo",
+      "title": "3. Prix de cession interne et évaluation des centres de responsabilité",
       "blocks": [
         {
           "type": "p",
@@ -695,16 +654,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "ILLUSTRATION — Un comportement dysfonctionnel évité chez Rakéo",
           "text": "La Production dispose de capacité libre. Une commande supplémentaire de l’E-commerce rapporterait au groupe 90 − 38 − 8 = 44 € par raquette. Mais le PCI étant fixé à 75 €, l’E-commerce calcule sa marge à 7 € et juge l’opération peu intéressante face à d’autres priorités.\nLe contrôleur de gestion détecte le risque : un PCI au coût variable (38 €), réservé aux ventes additionnelles sur capacité libre, révélerait à l’aval le vrai coût marginal interne et déclencherait la commande, au bénéfice du groupe. C’est l’illustration du rôle d’arbitrage du PCI."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
     {
-      "id": "le-pilotage-de-la-performance-par-les-prix-de-cession-intern",
-      "title": "Le pilotage de la performance par les prix de cession interne",
+      "id": "4-le-pilotage-de-la-performance-par-les-prix-de-cession-inte",
+      "title": "4. Le pilotage de la performance par les prix de cession interne",
       "blocks": [
         {
           "type": "p",

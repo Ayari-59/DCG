@@ -60,16 +60,12 @@ export const chapter: Chapter = {
         {
           "type": "p",
           "text": "***Problématique.Comment concevoir un système d’indicateurs qui traduise fidèlement la stratégie, alerte à temps sur les dérives, équilibre financier et extra-financier, sans tomber dans la surcharge ni dans les effets pervers du pilotage par les chiffres ?*"
-        },
-        {
-          "type": "p",
-          "text": "**1**"
         }
       ]
     },
     {
-      "id": "comprendre-le-tableau-de-bord-definition-et-finalites",
-      "title": "Comprendre : le tableau de bord, définition et finalités",
+      "id": "1-comprendre-le-tableau-de-bord-definition-et-finalites",
+      "title": "1. Comprendre : le tableau de bord, définition et finalités",
       "blocks": [
         {
           "type": "h3",
@@ -247,16 +243,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir — Partie 1 (Comprendre)",
           "text": "Le tableau de bord est synthétique, sur mesure (contingent) et orienté vers l’action.\nQuatre finalités : pilotage, coordination/communication, responsabilisation, aide à la décision.\nCinq qualités : pertinence, sélectivité, fiabilité, réactivité, lisibilité.\nIl complète la comptabilité (lente, monétaire, exhaustive) par la rapidité et la sélectivité."
-        },
-        {
-          "type": "p",
-          "text": "**2**"
         }
       ]
     },
     {
-      "id": "calculer-construire-le-systeme-d-indicateurs",
-      "title": "Calculer : construire le système d’indicateurs",
+      "id": "2-calculer-construire-le-systeme-d-indicateurs",
+      "title": "2. Calculer : construire le système d’indicateurs",
       "blocks": [
         {
           "type": "p",
@@ -643,16 +635,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir — Partie 2 (Calculer)",
           "text": "La démarche : FCS → KPI → grille OVAR (objectif, indicateur, cible, responsable, fréquence).\nDécliner les indicateurs par centre de responsabilité (contrôlabilité) ET le long de la chaîne de valeur (transversalité).\nTrois niveaux emboîtés (opérationnel, tactique, stratégique) ; reporting = vers le haut, TB = local.\nBalanced scorecard : sensibilisation seulement (approfondissement DSCG)."
-        },
-        {
-          "type": "p",
-          "text": "**3**"
         }
       ]
     },
     {
-      "id": "interpreter-exploiter-le-tableau-de-bord-pour-piloter-la-per",
-      "title": "Interpréter : exploiter le tableau de bord pour piloter la performance globale",
+      "id": "3-interpreter-exploiter-le-tableau-de-bord-pour-piloter-la-p",
+      "title": "3. Interpréter : exploiter le tableau de bord pour piloter la performance globale",
       "blocks": [
         {
           "type": "p",
@@ -895,16 +883,12 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "POINT EXAMEN — À retenir — Partie 3 (Interpréter)",
           "text": "Interpréter, c’est lire l’écart à la cible et arbitrer entre dimensions, pas se contenter du financier.\nLa performance globale intègre l’économique, le social et l’environnemental, pour toutes les parties prenantes.\nLe tableau de bord ESG traduit les enjeux de durabilité en indicateurs reliés à des cibles ; CSRD/ESRS en sensibilisation.\nLe PCI (marché, coût standard, coût réel) aligne les centres ; le numérique automatise et rend le pilotage prédictif.\nLe contrôleur devient business partner : analyste, concepteur, conseiller."
-        },
-        {
-          "type": "p",
-          "text": "**4**"
         }
       ]
     },
     {
-      "id": "critiquer-risques-limites-et-amelioration-des-indicateurs",
-      "title": "Critiquer : risques, limites et amélioration des indicateurs",
+      "id": "4-critiquer-risques-limites-et-amelioration-des-indicateurs",
+      "title": "4. Critiquer : risques, limites et amélioration des indicateurs",
       "blocks": [
         {
           "type": "p",
