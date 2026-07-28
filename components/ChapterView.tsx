@@ -9,9 +9,10 @@ import { Blocks } from "./ContentBlocks";
 import { Quiz } from "./Quiz";
 import { Flashcards } from "./Flashcards";
 import { Fiche } from "./Fiche";
+import { Methodologie, hasMethodologie } from "./Methodologie";
 import { Exercises } from "./Exercises";
 
-type TabId = "lecon" | "fiche" | "applications" | "flashcards" | "quiz";
+type TabId = "lecon" | "methode" | "fiche" | "applications" | "flashcards" | "quiz";
 
 export function ChapterView({ chapter }: { chapter: Chapter }) {
   const [tab, setTab] = useState<TabId>("lecon");
@@ -24,6 +25,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
 
   const tabs: { id: TabId; label: string; badge?: number }[] = [
     { id: "lecon", label: "Leçon", badge: sections.length },
+    ...(hasMethodologie(chapter) ? [{ id: "methode" as const, label: "Méthode" }] : []),
     ...(hasFiche(chapter) ? [{ id: "fiche" as const, label: "Fiche" }] : []),
     ...(chapter.exercises?.length
       ? [{ id: "applications" as const, label: "Applications", badge: chapter.exercises.length }]
@@ -234,6 +236,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
             </article>
           )}
 
+          {tab === "methode" && <Methodologie chapter={chapter} />}
           {tab === "fiche" && <Fiche chapter={chapter} />}
           {tab === "applications" && chapter.exercises && (
             <Exercises exercises={chapter.exercises} />

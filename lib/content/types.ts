@@ -5,6 +5,7 @@ export type ContentBlock =
   | { type: "h3"; text: string }
   | { type: "h4"; text: string }
   | { type: "ul"; items: string[] }
+  | { type: "ol"; items: string[] }
   | { type: "formula"; label?: string; text: string }
   | { type: "table"; caption?: string; headers: string[]; rows: string[][] }
   | { type: "callout"; variant: "info" | "warning" | "tip"; text: string; title?: string }
@@ -44,6 +45,16 @@ export interface ChapterVideo {
   title: string;
 }
 
+/** Démarche à appliquer, issue des encadrés « Méthode » des cahiers. */
+export interface Methode {
+  id: string;
+  /** Thème du cahier auquel la démarche se rattache. */
+  theme: string;
+  /** Compétences visées, telles qu'énoncées par le cahier. */
+  competences: string[];
+  blocks: ContentBlock[];
+}
+
 export interface Exercise {
   id: string;
   /** Repère du cahier source : « A1.1 », « Cas2 »… */
@@ -72,6 +83,8 @@ export interface Chapter {
   videos?: ChapterVideo[];
   /** Applications issues des cahiers d'énoncés et de corrigés. */
   exercises?: Exercise[];
+  /** Démarches méthodologiques issues des cahiers d'énoncés. */
+  methodes?: Methode[];
 }
 
 /** Chapitre annoncé mais pas encore publié */

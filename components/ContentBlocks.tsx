@@ -84,6 +84,20 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
         </ul>
       );
 
+    case "ol":
+      return (
+        <ol className="space-y-3">
+          {block.items.map((item, i) => (
+            <li key={i} className="flex gap-3 text-[17px] leading-[1.7] text-slate-700">
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 text-xs font-bold text-white">
+                {i + 1}
+              </span>
+              <span>{renderInline(item)}</span>
+            </li>
+          ))}
+        </ol>
+      );
+
     case "formula":
       return (
         <div className="rounded-xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-violet-50/50 px-5 py-4">
