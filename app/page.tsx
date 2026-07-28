@@ -99,8 +99,8 @@ export default function Home() {
 
           <Reveal delay={180}>
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/60 sm:text-xl">
-              L&apos;intégralité du programme, travaillée comme il faut : comprendre, appliquer la
-              méthode, mémoriser, se tester.
+              L&apos;intégralité du programme, en quatre temps : comprendre le cours, appliquer la
+              méthode, mémoriser l&apos;essentiel, se tester.
             </p>
           </Reveal>
 
