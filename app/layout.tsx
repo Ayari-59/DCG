@@ -53,11 +53,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main className="flex-1">{children}</main>
 
         <footer className="no-print bg-navy-deep text-white">
-          <div
-            aria-hidden
-            className="h-1.5 w-full"
-            style={{ backgroundImage: "linear-gradient(90deg,#f07e26,#fbb040,#2f6fb5,#16325c)" }}
-          />
+          {/* Les six couleurs de familles, en aplats juxtaposés. */}
+          <div aria-hidden className="flex h-1.5 w-full">
+            <span className="flex-1 bg-amber-500" />
+            <span className="flex-1 bg-orange-600" />
+            <span className="flex-1 bg-blue-700" />
+            <span className="flex-1 bg-teal-600" />
+            <span className="flex-1 bg-sky-500" />
+            <span className="flex-1 bg-emerald-600" />
+          </div>
           <div className="mx-auto max-w-[1400px] px-5 py-12">
             <div className="flex flex-col items-center gap-5 text-center">
               <Logo onDark />

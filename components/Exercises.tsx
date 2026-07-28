@@ -23,7 +23,7 @@ function ExerciseCard({ exercise, index }: { exercise: Exercise; index: number }
         onClick={() => setOpen((o) => !o)}
         className="flex w-full items-center gap-4 px-5 py-4 text-left transition hover:bg-slate-50/70"
       >
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 text-sm font-bold text-white">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-700 text-sm font-bold text-white">
           {index + 1}
         </span>
         <span className="min-w-0 flex-1">
@@ -91,7 +91,7 @@ export function Exercises({ exercises }: { exercises: Exercise[] }) {
 
   return (
     <div>
-      <div className="mb-6 rounded-xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-violet-50/60 px-5 py-4">
+      <div className="mb-6 rounded-xl border-2 border-blue-200 bg-blue-50 px-5 py-4">
         <h2 className="font-serif text-xl font-bold text-ink">Applications</h2>
         <p className="mt-0.5 text-sm text-muted">
           {exercises.length} exercice{exercises.length > 1 ? "s" : ""} du cahier, dont {corriges}{" "}

@@ -15,8 +15,8 @@ const calloutStyles = {
 const CALLOUT_KINDS: { match: RegExp; box: string; label: string; icon: string }[] = [
   {
     match: /d[ée]finition|notion/i,
-    box: "border-violet-300 bg-violet-50",
-    label: "text-violet-700",
+    box: "border-blue-300 bg-blue-50",
+    label: "text-blue-700",
     icon: "📘",
   },
   {
@@ -45,8 +45,8 @@ const CALLOUT_KINDS: { match: RegExp; box: string; label: string; icon: string }
   },
   {
     match: /comp[ée]tence|objectif/i,
-    box: "border-fuchsia-300 bg-fuchsia-50",
-    label: "text-fuchsia-700",
+    box: "border-amber-300 bg-amber-50",
+    label: "text-amber-800",
     icon: "🏅",
   },
 ];
@@ -67,7 +67,7 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
 
     case "h4":
       return (
-        <h4 className="mt-7 text-[15px] font-black uppercase tracking-[0.12em] text-violet-600">
+        <h4 className="mt-7 text-[15px] font-black uppercase tracking-[0.12em] text-brand">
           {renderInline(block.text)}
         </h4>
       );
@@ -77,7 +77,7 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
         <ul className="space-y-2.5">
           {block.items.map((item, i) => (
             <li key={i} className="flex gap-3 text-[17px] leading-[1.7] text-slate-700">
-              <span className="mt-[0.65rem] h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-violet-400 to-indigo-500" />
+              <span className="mt-[0.65rem] h-2 w-2 shrink-0 rounded-full bg-brand" />
               <span>{renderInline(item)}</span>
             </li>
           ))}
@@ -89,7 +89,7 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
         <ol className="space-y-3">
           {block.items.map((item, i) => (
             <li key={i} className="flex gap-3 text-[17px] leading-[1.7] text-slate-700">
-              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 text-xs font-bold text-white">
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-blue-700 text-xs font-bold text-white">
                 {i + 1}
               </span>
               <span>{renderInline(item)}</span>
@@ -100,13 +100,13 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
 
     case "formula":
       return (
-        <div className="rounded-xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-violet-50/50 px-5 py-4">
+        <div className="rounded-xl border-2 border-blue-200 bg-blue-50 px-5 py-4">
           {block.label && (
-            <div className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-500">
+            <div className="mb-1.5 text-xs font-black uppercase tracking-wider text-blue-700">
               {block.label}
             </div>
           )}
-          <div className="font-medium text-indigo-950">{block.text}</div>
+          <div className="font-medium text-blue-950">{block.text}</div>
         </div>
       );
 
@@ -116,7 +116,7 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
           <div className="overflow-x-auto rounded-xl border border-line bg-white shadow-sm">
             <table className="w-full min-w-[30rem] text-[15px]">
               <thead>
-                <tr className="border-b-2 border-violet-200 bg-gradient-to-r from-violet-50 to-indigo-50 text-left">
+                <tr className="border-b-2 border-blue-200 bg-blue-50 text-left">
                   {block.headers.map((h, i) => (
                     <th key={i} className="px-4 py-3 font-semibold text-ink">
                       {renderInline(h)}

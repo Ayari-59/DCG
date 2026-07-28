@@ -51,12 +51,12 @@ const features = [
 
 const programAccent = {
   DCG: {
-    bar: "bg-gradient-to-r from-brand to-amber-400",
+    bar: "bg-brand",
     text: "text-orange-300",
     glowRing: "hover:border-orange-400/60",
   },
   DSCG: {
-    bar: "bg-gradient-to-r from-sky-400 to-blue-500",
+    bar: "bg-sky-500",
     text: "text-sky-300",
     glowRing: "hover:border-sky-400/60",
   },
@@ -79,16 +79,6 @@ export default function Home() {
     <div>
       {/* ── Accroche ─────────────────────────────────────────────────── */}
       <section className="grain relative overflow-hidden bg-navy-deep">
-        <div className="aurora" aria-hidden>
-          <span />
-          <span />
-          <span />
-        </div>
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-paper to-transparent"
-        />
-
         <div className="relative mx-auto max-w-[1100px] px-5 py-28 text-center sm:py-36">
           <Reveal>
             <p className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white/80 backdrop-blur-md">
@@ -101,7 +91,7 @@ export default function Home() {
             <h1 className="mx-auto max-w-4xl font-serif text-[3rem] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[5rem]">
               Réussir le
               <br />
-              <span className="bg-gradient-to-r from-amber-200 via-orange-300 to-orange-400 bg-clip-text text-transparent">
+              <span className="text-brand">
                 contrôle de gestion
               </span>
             </h1>
@@ -124,7 +114,7 @@ export default function Home() {
             <div className="mt-11 flex flex-wrap justify-center gap-4">
               <Link
                 href="/dcg"
-                className="lift gradient-ring rounded-2xl bg-gradient-to-r from-brand to-amber-500 px-9 py-4 font-bold text-white elev-lg"
+                className="lift rounded-2xl bg-brand px-9 py-4 font-bold text-white elev-lg hover:bg-orange-600"
               >
                 Commencer le DCG
               </Link>
@@ -210,10 +200,6 @@ export default function Home() {
 
       {/* ── Diplômes ─────────────────────────────────────────────────── */}
       <section className="grain relative overflow-hidden bg-navy-deep py-24">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(240,126,38,0.22),transparent_70%)]"
-        />
         <div className="relative mx-auto max-w-[1100px] px-5">
           <Reveal>
             <h2 className="text-center font-serif text-4xl font-bold tracking-[-0.02em] text-white sm:text-5xl">

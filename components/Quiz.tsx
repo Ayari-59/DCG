@@ -60,7 +60,7 @@ export function Quiz({ slug, questions }: Props) {
     const pct = Math.round((score / questions.length) * 100);
     return (
       <div className="rounded-xl border border-slate-200 bg-white p-8 text-center">
-        <div className={`bg-clip-text font-serif text-6xl font-bold text-transparent ${theme.bar}`}>
+        <div className={`font-serif text-6xl font-bold ${theme.text}`}>
           {score}/{questions.length}
         </div>
         <p className="mt-2 text-slate-600">
