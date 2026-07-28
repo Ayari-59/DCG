@@ -28,6 +28,7 @@ import { gestionBudgetaire } from "./chapters/dscg-ue3-gestion-budgetaire";
 import { durabilitePerformanceGlobale } from "./chapters/dscg-ue3-durabilite-performance-globale";
 import { annexeReference } from "./chapters/dscg-ue3-annexe-reference";
 import { methodesBySlug } from "./methodes";
+import { annalesBySlug } from "./annales";
 
 const rawPrograms: Program[] = [
   {
@@ -90,7 +91,11 @@ const rawPrograms: Program[] = [
 export const programs: Program[] = rawPrograms.map((p) => ({
   ...p,
   chapters: p.chapters.map((c) =>
-    methodesBySlug[c.slug]?.length ? { ...c, methodes: methodesBySlug[c.slug] } : c
+    ({
+      ...c,
+      ...(methodesBySlug[c.slug]?.length ? { methodes: methodesBySlug[c.slug] } : {}),
+      ...(annalesBySlug[c.slug]?.length ? { annales: annalesBySlug[c.slug] } : {}),
+    })
   ),
 }));
 

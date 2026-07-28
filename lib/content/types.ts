@@ -55,6 +55,16 @@ export interface Methode {
   blocks: ContentBlock[];
 }
 
+/** Sujet d'examen d'une session passée, rattaché à un thème. */
+export interface Annale {
+  id: string;
+  year: number;
+  /** « Dossier 1 », quand le sujet ne porte que sur une partie de l'épreuve. */
+  dossier?: string;
+  entreprise: string;
+  blocks: ContentBlock[];
+}
+
 export interface Exercise {
   id: string;
   /** Repère du cahier source : « A1.1 », « Cas2 »… */
@@ -85,6 +95,8 @@ export interface Chapter {
   exercises?: Exercise[];
   /** Démarches méthodologiques issues des cahiers d'énoncés. */
   methodes?: Methode[];
+  /** Sujets d'annales rattachés au thème du chapitre. */
+  annales?: Annale[];
 }
 
 /** Chapitre annoncé mais pas encore publié */

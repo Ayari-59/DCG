@@ -10,9 +10,10 @@ import { Quiz } from "./Quiz";
 import { Flashcards } from "./Flashcards";
 import { Fiche } from "./Fiche";
 import { Methodologie, hasMethodologie } from "./Methodologie";
+import { Annales } from "./Annales";
 import { Exercises } from "./Exercises";
 
-type TabId = "lecon" | "methode" | "fiche" | "applications" | "flashcards" | "quiz";
+type TabId = "lecon" | "methode" | "fiche" | "annales" | "applications" | "flashcards" | "quiz";
 
 export function ChapterView({ chapter }: { chapter: Chapter }) {
   const [tab, setTab] = useState<TabId>("lecon");
@@ -27,6 +28,9 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
     { id: "lecon", label: "Leçon", badge: sections.length },
     ...(hasMethodologie(chapter) ? [{ id: "methode" as const, label: "Méthode" }] : []),
     ...(hasFiche(chapter) ? [{ id: "fiche" as const, label: "Fiche" }] : []),
+    ...(chapter.annales?.length
+      ? [{ id: "annales" as const, label: "Annales", badge: chapter.annales.length }]
+      : []),
     ...(chapter.exercises?.length
       ? [{ id: "applications" as const, label: "Applications", badge: chapter.exercises.length }]
       : []),
@@ -152,6 +156,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
                 <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
                   <li>⏱ {chapter.durationMin} min de lecture</li>
                   <li>📖 {sections.length} sections</li>
+                  {chapter.annales?.length ? <li>📜 {chapter.annales.length} annales</li> : null}
                   {chapter.exercises?.length ? <li>✏️ {chapter.exercises.length} applications</li> : null}
                   <li>🃏 {chapter.flashcards.length} flashcards</li>
                   <li>✅ {chapter.quiz.length} questions</li>
@@ -244,6 +249,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
 
           {tab === "methode" && <Methodologie chapter={chapter} />}
           {tab === "fiche" && <Fiche chapter={chapter} />}
+          {tab === "annales" && <Annales chapter={chapter} />}
           {tab === "applications" && chapter.exercises && (
             <Exercises exercises={chapter.exercises} />
           )}
