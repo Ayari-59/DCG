@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-methode-abc.generated";
  */
 export const methodeAbc: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "MvBEWK5qio4", title: "Méthode ABC — Décryptage" }],
   description:
     "La méthode ABC (coûts à base d'activités) : pourquoi les unités d'œuvre volumiques faussent les coûts (subventionnement croisé), les cinq étapes du calcul par activités et inducteurs, l'interprétation pour le pilotage (ABM) et la comparaison critique avec la méthode des centres d'analyse.",
   flashcards: [
