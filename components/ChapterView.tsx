@@ -1,60 +1,184 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 import type { Chapter } from "@/lib/content/types";
-import { ContentBlockView } from "./ContentBlocks";
+import { hasFiche } from "@/lib/content/fiche";
+import { Blocks } from "./ContentBlocks";
 import { Quiz } from "./Quiz";
 import { Flashcards } from "./Flashcards";
+import { Fiche } from "./Fiche";
+import { Exercises } from "./Exercises";
 
-const tabs = [
-  { id: "lecon", label: "Leçon" },
-  { id: "flashcards", label: "Flashcards" },
-  { id: "quiz", label: "Quiz" },
-] as const;
-
-type TabId = (typeof tabs)[number]["id"];
+type TabId = "lecon" | "fiche" | "applications" | "flashcards" | "quiz";
 
 export function ChapterView({ chapter }: { chapter: Chapter }) {
   const [tab, setTab] = useState<TabId>("lecon");
+  const [index, setIndex] = useState(0);
+
+  const sections = chapter.sections;
+  const last = sections.length - 1;
+  const section = sections[index];
+
+  const tabs: { id: TabId; label: string; badge?: number }[] = [
+    { id: "lecon", label: "Leçon", badge: sections.length },
+    ...(hasFiche(chapter) ? [{ id: "fiche" as const, label: "Fiche" }] : []),
+    ...(chapter.exercises?.length
+      ? [{ id: "applications" as const, label: "Applications", badge: chapter.exercises.length }]
+      : []),
+    { id: "flashcards", label: "Flashcards", badge: chapter.flashcards.length },
+    { id: "quiz", label: "Quiz", badge: chapter.quiz.length },
+  ];
+
+  const goTo = useCallback(
+    (i: number) => {
+      setIndex(Math.max(0, Math.min(last, i)));
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+    [last]
+  );
+
+  // Navigation au clavier entre les sections de la leçon.
+  useEffect(() => {
+    if (tab !== "lecon") return;
+    function onKey(e: KeyboardEvent) {
+      const el = document.activeElement;
+      if (el && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
+      if (e.key === "ArrowRight") goTo(index + 1);
+      if (e.key === "ArrowLeft") goTo(index - 1);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [tab, index, goTo]);
 
   return (
-    <div>
-      <div className="sticky top-0 z-10 -mx-4 mb-8 border-b border-slate-200 bg-white/90 px-4 backdrop-blur">
-        <nav className="mx-auto flex max-w-3xl gap-1">
-          {tabs.map((t) => (
-            <button
-              key={t.id}
-              onClick={() => setTab(t.id)}
-              className={`border-b-2 px-4 py-3 text-sm font-medium transition ${
-                tab === t.id
-                  ? "border-indigo-600 text-indigo-600"
-                  : "border-transparent text-slate-500 hover:text-slate-800"
-              }`}
-            >
-              {t.label}
-              {t.id === "flashcards" && (
-                <span className="ml-1.5 text-xs text-slate-400">{chapter.flashcards.length}</span>
-              )}
-              {t.id === "quiz" && (
-                <span className="ml-1.5 text-xs text-slate-400">{chapter.quiz.length}</span>
-              )}
-            </button>
-          ))}
-        </nav>
-      </div>
+    <div className="mx-auto max-w-[1400px] px-5 pb-20 pt-8">
+      <Link
+        href={`/${chapter.level.toLowerCase()}`}
+        className="no-print text-sm text-[--muted] transition hover:text-indigo-600"
+      >
+        ← {chapter.level} {chapter.ue}
+      </Link>
 
-      <div className="mx-auto max-w-3xl">
-        {tab === "lecon" && (
-          <div className="space-y-10">
-            {chapter.videos && chapter.videos.length > 0 && (
-              <section className="rounded-xl border border-indigo-100 bg-indigo-50/40 p-5">
-                <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-indigo-600">
-                  🎬 {chapter.videos.length > 1 ? "Vidéos du chapitre" : "Vidéo du chapitre"}
-                </h2>
-                <div className="space-y-6">
+      <header className="mt-3 max-w-4xl">
+        <p className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
+          Chapitre {chapter.number}
+        </p>
+        <h1 className="mt-1 font-serif text-[2.1rem] font-bold leading-[1.15] tracking-tight text-[--ink] sm:text-[2.6rem]">
+          {chapter.title}
+        </h1>
+        <p className="mt-3 text-[17px] leading-relaxed text-[--muted]">{chapter.description}</p>
+      </header>
+
+      <nav className="no-print mt-7 flex gap-1 overflow-x-auto border-b border-[--line]">
+        {tabs.map((t) => (
+          <button
+            key={t.id}
+            onClick={() => setTab(t.id)}
+            className={`-mb-px shrink-0 border-b-2 px-4 py-3 text-sm font-medium transition ${
+              tab === t.id
+                ? "border-indigo-600 text-indigo-700"
+                : "border-transparent text-[--muted] hover:text-[--ink]"
+            }`}
+          >
+            {t.label}
+            {t.badge !== undefined && (
+              <span className="ml-1.5 text-xs text-slate-400">{t.badge}</span>
+            )}
+          </button>
+        ))}
+      </nav>
+
+      <div className="mt-8 lg:grid lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-12">
+        <aside className="no-print mb-8 lg:mb-0">
+          <div className="lg:sticky lg:top-24">
+            {tab === "lecon" ? (
+              <>
+                <p className="mb-3 hidden text-xs font-semibold uppercase tracking-wider text-[--muted] lg:block">
+                  Sommaire
+                </p>
+                {/* Mobile : liste déroulante ; desktop : sommaire cliquable */}
+                <select
+                  value={index}
+                  onChange={(e) => goTo(Number(e.target.value))}
+                  className="w-full rounded-lg border border-[--line] bg-white px-3 py-2.5 text-sm text-[--ink] shadow-sm lg:hidden"
+                >
+                  {sections.map((s, i) => (
+                    <option key={s.id} value={i}>
+                      {i + 1}. {s.title}
+                    </option>
+                  ))}
+                </select>
+                <ol className="hidden max-h-[calc(100vh-12rem)] space-y-0.5 overflow-y-auto pr-2 lg:block">
+                  {sections.map((s, i) => (
+                    <li key={s.id}>
+                      <button
+                        onClick={() => goTo(i)}
+                        className={`flex w-full gap-2.5 rounded-lg px-3 py-2 text-left text-[13px] leading-snug transition ${
+                          i === index
+                            ? "bg-white font-medium text-indigo-700 shadow-sm"
+                            : "text-[--muted] hover:bg-white/70 hover:text-[--ink]"
+                        }`}
+                      >
+                        <span
+                          className={`shrink-0 tabular-nums ${
+                            i === index ? "text-indigo-500" : "text-slate-400"
+                          }`}
+                        >
+                          {i + 1}
+                        </span>
+                        <span className="line-clamp-3">{s.title}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ol>
+              </>
+            ) : (
+              <div className="hidden rounded-xl border border-[--line] bg-white p-5 shadow-sm lg:block">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[--muted]">
+                  Ce chapitre
+                </p>
+                <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
+                  <li>⏱ {chapter.durationMin} min de lecture</li>
+                  <li>📖 {sections.length} sections</li>
+                  {chapter.exercises?.length ? <li>✏️ {chapter.exercises.length} applications</li> : null}
+                  <li>🃏 {chapter.flashcards.length} flashcards</li>
+                  <li>✅ {chapter.quiz.length} questions</li>
+                </ul>
+                <button
+                  onClick={() => setTab("lecon")}
+                  className="mt-4 text-sm font-medium text-indigo-600 underline-offset-2 hover:underline"
+                >
+                  Revenir à la leçon
+                </button>
+              </div>
+            )}
+          </div>
+        </aside>
+
+        <div className="min-w-0">
+          {tab === "lecon" && section && (
+            <article>
+              <div className="no-print mb-6 flex items-center gap-4">
+                <div className="h-1 flex-1 overflow-hidden rounded-full bg-slate-200/70">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 transition-all duration-300"
+                    style={{ width: `${((index + 1) / sections.length) * 100}%` }}
+                  />
+                </div>
+                <span className="shrink-0 text-xs tabular-nums text-[--muted]">
+                  {index + 1} / {sections.length}
+                </span>
+              </div>
+
+              {index === 0 && chapter.videos && chapter.videos.length > 0 && (
+                <div className="mb-10 space-y-6 rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-violet-50/50 p-5">
+                  <h2 className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
+                    {chapter.videos.length > 1 ? "Vidéos du chapitre" : "Vidéo du chapitre"}
+                  </h2>
                   {chapter.videos.map((v) => (
                     <figure key={v.youtubeId}>
-                      <div className="aspect-video overflow-hidden rounded-lg border border-slate-200 bg-black">
+                      <div className="aspect-video overflow-hidden rounded-xl border border-white bg-black shadow-sm">
                         <iframe
                           className="h-full w-full"
                           src={`https://www.youtube-nocookie.com/embed/${v.youtubeId}`}
@@ -63,53 +187,63 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
                           allowFullScreen
                         />
                       </div>
-                      <figcaption className="mt-1.5 text-sm text-slate-600">{v.title}</figcaption>
+                      <figcaption className="mt-2 text-sm text-[--muted]">{v.title}</figcaption>
                     </figure>
                   ))}
                 </div>
-              </section>
-            )}
-            {chapter.sections.map((section) => (
-              <section key={section.id}>
-                <h2 className="mb-4 text-xl font-bold text-slate-900">{section.title}</h2>
-                <div className="space-y-4">
-                  {section.blocks.map((block, i) => (
-                    <ContentBlockView key={i} block={block} />
-                  ))}
-                </div>
-              </section>
-            ))}
-            <div className="rounded-xl border border-indigo-100 bg-indigo-50/50 p-6 text-center">
-              <p className="font-medium text-slate-800">Leçon terminée ?</p>
-              <p className="mt-1 text-sm text-slate-500">
-                Ancrez les définitions avec les flashcards, puis validez le chapitre avec le quiz.
-              </p>
-              <div className="mt-4 flex justify-center gap-3">
-                <button
-                  onClick={() => {
-                    setTab("flashcards");
-                    window.scrollTo({ top: 0 });
-                  }}
-                  className="rounded-lg border border-indigo-200 bg-white px-4 py-2 text-sm font-medium text-indigo-700 transition hover:bg-indigo-50"
-                >
-                  Réviser les flashcards
-                </button>
-                <button
-                  onClick={() => {
-                    setTab("quiz");
-                    window.scrollTo({ top: 0 });
-                  }}
-                  className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-700"
-                >
-                  Passer au quiz
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+              )}
 
-        {tab === "flashcards" && <Flashcards slug={chapter.slug} cards={chapter.flashcards} />}
-        {tab === "quiz" && <Quiz slug={chapter.slug} questions={chapter.quiz} />}
+              <h2 className="mb-6 font-serif text-[1.75rem] font-bold leading-tight tracking-tight text-[--ink]">
+                {section.title}
+              </h2>
+              <Blocks blocks={section.blocks} />
+
+              <div className="no-print mt-12 flex items-center justify-between gap-4 border-t border-[--line] pt-6">
+                <button
+                  onClick={() => goTo(index - 1)}
+                  disabled={index === 0}
+                  className="rounded-lg border border-[--line] bg-white px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50 disabled:invisible"
+                >
+                  ← Précédent
+                </button>
+                {index < last ? (
+                  <button
+                    onClick={() => goTo(index + 1)}
+                    className="rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-600/20 transition hover:brightness-110"
+                  >
+                    Suivant : {sections[index + 1].title.slice(0, 34)}
+                    {sections[index + 1].title.length > 34 ? "…" : ""} →
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      setTab(chapter.exercises?.length ? "applications" : "quiz");
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className="rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-600/20 transition hover:brightness-110"
+                  >
+                    {chapter.exercises?.length ? "Passer aux applications" : "Passer au quiz"} →
+                  </button>
+                )}
+              </div>
+            </article>
+          )}
+
+          {tab === "fiche" && <Fiche chapter={chapter} />}
+          {tab === "applications" && chapter.exercises && (
+            <Exercises exercises={chapter.exercises} />
+          )}
+          {tab === "flashcards" && (
+            <div className="max-w-2xl">
+              <Flashcards slug={chapter.slug} cards={chapter.flashcards} />
+            </div>
+          )}
+          {tab === "quiz" && (
+            <div className="max-w-2xl">
+              <Quiz slug={chapter.slug} questions={chapter.quiz} />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

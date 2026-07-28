@@ -27,8 +27,9 @@ import { controleGestionSociale } from "./chapters/dscg-ue3-controle-gestion-soc
 import { gestionBudgetaire } from "./chapters/dscg-ue3-gestion-budgetaire";
 import { durabilitePerformanceGlobale } from "./chapters/dscg-ue3-durabilite-performance-globale";
 import { annexeReference } from "./chapters/dscg-ue3-annexe-reference";
+import { exercisesBySlug } from "./exercises";
 
-export const programs: Program[] = [
+const rawPrograms: Program[] = [
   {
     level: "DCG",
     ue: "UE11",
@@ -78,6 +79,14 @@ export const programs: Program[] = [
     upcoming: [],
   },
 ];
+
+/** Rattache à chaque chapitre les applications converties depuis les cahiers. */
+export const programs: Program[] = rawPrograms.map((p) => ({
+  ...p,
+  chapters: p.chapters.map((c) =>
+    exercisesBySlug[c.slug]?.length ? { ...c, exercises: exercisesBySlug[c.slug] } : c
+  ),
+}));
 
 export const allChapters: Chapter[] = programs.flatMap((p) => p.chapters);
 

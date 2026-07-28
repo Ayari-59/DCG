@@ -2,11 +2,40 @@
 
 @theme inline {
   --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-source-serif);
   --font-mono: var(--font-geist-mono);
 }
 
+:root {
+  --paper: #faf9f7;
+  --ink: #16181d;
+  --muted: #5b6472;
+  --line: #e6e3de;
+  --accent: #4f46e5;
+}
+
 body {
-  background: #f8fafc;
-  color: #0f172a;
+  background: var(--paper);
+  color: var(--ink);
   font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ancres de section : évite que le titre passe sous l'en-tête collant. */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Fiche de révision imprimable : on ne garde que le contenu. */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+  .print-full {
+    max-width: none !important;
+    padding: 0 !important;
+  }
 }

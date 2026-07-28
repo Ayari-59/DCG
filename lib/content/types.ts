@@ -36,6 +36,19 @@ export interface ChapterVideo {
   title: string;
 }
 
+export interface Exercise {
+  id: string;
+  /** Repère du cahier source : « A1.1 », « Cas2 »… */
+  label: string;
+  title: string;
+  /** Nombre d'étoiles du cahier (1 à 3). */
+  difficulty?: number;
+  durationMin?: number;
+  statement: ContentBlock[];
+  /** Vide si le cahier de corrigés ne couvre pas cet exercice. */
+  correction: ContentBlock[];
+}
+
 export interface Chapter {
   slug: string;
   level: Level;
@@ -49,6 +62,8 @@ export interface Chapter {
   quiz: QuizQuestion[];
   /** Vidéos du chapitre (YouTube), affichées en tête de leçon. */
   videos?: ChapterVideo[];
+  /** Applications issues des cahiers d'énoncés et de corrigés. */
+  exercises?: Exercise[];
 }
 
 /** Chapitre annoncé mais pas encore publié */
