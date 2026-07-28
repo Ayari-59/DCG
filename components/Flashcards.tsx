@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { Flashcard } from "@/lib/content/types";
+import { getTheme } from "@/lib/content/theme";
 
 interface Props {
   slug: string;
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export function Flashcards({ slug, cards }: Props) {
+  const theme = getTheme(slug);
   const storageKey = `dcga:cards:${slug}`;
   const [known, setKnown] = useState<Set<string>>(new Set());
   const [queue, setQueue] = useState<string[]>(() => cards.map((c) => c.id));
@@ -72,7 +74,7 @@ export function Flashcards({ slug, cards }: Props) {
         </p>
         <button
           onClick={() => resetSession(true)}
-          className="mt-6 rounded-lg bg-indigo-600 px-5 py-2.5 font-medium text-white transition hover:bg-indigo-700"
+          className={`mt-6 rounded-xl px-6 py-3 font-bold text-white shadow-md transition hover:brightness-110 ${theme.bar}`}
         >
           Tout revoir depuis le début
         </button>

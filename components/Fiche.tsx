@@ -2,15 +2,17 @@
 
 import type { Chapter } from "@/lib/content/types";
 import { getFicheSections } from "@/lib/content/fiche";
+import { getTheme } from "@/lib/content/theme";
 import { Blocks } from "./ContentBlocks";
 import { renderInline } from "./inline";
 
 export function Fiche({ chapter }: { chapter: Chapter }) {
+  const theme = getTheme(chapter.slug);
   const sections = getFicheSections(chapter);
 
   return (
     <div className="print-full">
-      <div className="no-print mb-8 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-violet-50/60 px-5 py-4">
+      <div className={`no-print mb-8 flex flex-wrap items-center justify-between gap-3 rounded-2xl border-2 px-5 py-4 ${theme.border} ${theme.soft}`}>
         <div>
           <h2 className="font-serif text-xl font-bold text-[--ink]">Fiche de révision</h2>
           <p className="mt-0.5 text-sm text-[--muted]">
@@ -20,7 +22,7 @@ export function Fiche({ chapter }: { chapter: Chapter }) {
         </div>
         <button
           onClick={() => window.print()}
-          className="rounded-lg border border-indigo-200 bg-white px-4 py-2 text-sm font-medium text-indigo-700 shadow-sm transition hover:bg-indigo-50"
+          className={`rounded-xl border-2 bg-white px-5 py-2.5 text-sm font-bold shadow-sm transition hover:brightness-95 ${theme.border} ${theme.text}`}
         >
           Imprimer / PDF
         </button>

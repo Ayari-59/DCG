@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { QuizQuestion } from "@/lib/content/types";
+import { getTheme } from "@/lib/content/theme";
 
 interface Props {
   slug: string;
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export function Quiz({ slug, questions }: Props) {
+  const theme = getTheme(slug);
   const storageKey = `dcga:quiz:${slug}`;
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
@@ -58,7 +60,7 @@ export function Quiz({ slug, questions }: Props) {
     const pct = Math.round((score / questions.length) * 100);
     return (
       <div className="rounded-xl border border-slate-200 bg-white p-8 text-center">
-        <div className="text-5xl font-bold text-indigo-600">
+        <div className={`bg-clip-text font-serif text-6xl font-bold text-transparent ${theme.bar}`}>
           {score}/{questions.length}
         </div>
         <p className="mt-2 text-slate-600">
@@ -73,7 +75,7 @@ export function Quiz({ slug, questions }: Props) {
         )}
         <button
           onClick={restart}
-          className="mt-6 rounded-lg bg-indigo-600 px-5 py-2.5 font-medium text-white transition hover:bg-indigo-700"
+          className={`mt-6 rounded-xl px-6 py-3 font-bold text-white shadow-md transition hover:brightness-110 ${theme.bar}`}
         >
           Recommencer le quiz
         </button>
@@ -91,7 +93,7 @@ export function Quiz({ slug, questions }: Props) {
       </div>
       <div className="mb-2 h-1.5 overflow-hidden rounded-full bg-slate-100">
         <div
-          className="h-full rounded-full bg-indigo-500 transition-all"
+          className={`h-full rounded-full transition-all ${theme.bar}`}
           style={{ width: `${(current / questions.length) * 100}%` }}
         />
       </div>
@@ -100,13 +102,13 @@ export function Quiz({ slug, questions }: Props) {
 
       <div className="mt-5 space-y-2.5">
         {question.choices.map((choice, i) => {
-          let cls = "border-slate-200 bg-white hover:border-indigo-300 hover:bg-indigo-50/50";
+          let cls = "border-slate-200 bg-white hover:border-violet-300 hover:bg-violet-50/50";
           if (validated) {
             if (i === question.answer) cls = "border-emerald-400 bg-emerald-50";
             else if (i === selected) cls = "border-rose-300 bg-rose-50";
             else cls = "border-slate-200 bg-white opacity-60";
           } else if (i === selected) {
-            cls = "border-indigo-500 bg-indigo-50 ring-1 ring-indigo-500";
+            cls = `border-violet-500 bg-violet-50 ring-2 ring-violet-400`;
           }
           return (
             <button
@@ -142,7 +144,7 @@ export function Quiz({ slug, questions }: Props) {
           <button
             onClick={validate}
             disabled={selected === null}
-            className="rounded-lg bg-indigo-600 px-5 py-2.5 font-medium text-white transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-40"
+            className={`rounded-xl px-6 py-3 font-bold text-white shadow-md transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40 ${theme.bar}`}
           >
             Valider
           </button>

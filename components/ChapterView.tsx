@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import type { Chapter } from "@/lib/content/types";
 import { hasFiche } from "@/lib/content/fiche";
+import { getTheme } from "@/lib/content/theme";
 import { Blocks } from "./ContentBlocks";
 import { Quiz } from "./Quiz";
 import { Flashcards } from "./Flashcards";
@@ -16,6 +17,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
   const [tab, setTab] = useState<TabId>("lecon");
   const [index, setIndex] = useState(0);
 
+  const theme = getTheme(chapter.slug);
   const sections = chapter.sections;
   const last = sections.length - 1;
   const section = sections[index];
@@ -55,14 +57,15 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
     <div className="mx-auto max-w-[1400px] px-5 pb-20 pt-8">
       <Link
         href={`/${chapter.level.toLowerCase()}`}
-        className="no-print text-sm text-[--muted] transition hover:text-indigo-600"
+        className={`no-print text-sm font-semibold transition hover:underline ${theme.text}`}
       >
         ← {chapter.level} {chapter.ue}
       </Link>
 
       <header className="mt-3 max-w-4xl">
-        <p className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
-          Chapitre {chapter.number}
+        <p className={`flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] ${theme.text}`}>
+          <span className="text-sm">{theme.emoji}</span>
+          {theme.family} · Chapitre {chapter.number}
         </p>
         <h1 className="mt-1 font-serif text-[2.1rem] font-bold leading-[1.15] tracking-tight text-[--ink] sm:text-[2.6rem]">
           {chapter.title}
@@ -77,7 +80,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
             onClick={() => setTab(t.id)}
             className={`-mb-px shrink-0 border-b-2 px-4 py-3 text-sm font-medium transition ${
               tab === t.id
-                ? "border-indigo-600 text-indigo-700"
+                ? `border-current ${theme.text}`
                 : "border-transparent text-[--muted] hover:text-[--ink]"
             }`}
           >
@@ -116,13 +119,13 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
                         onClick={() => goTo(i)}
                         className={`flex w-full gap-2.5 rounded-lg px-3 py-2 text-left text-[13px] leading-snug transition ${
                           i === index
-                            ? "bg-white font-medium text-indigo-700 shadow-sm"
+                            ? `bg-white font-semibold shadow-sm ${theme.text}`
                             : "text-[--muted] hover:bg-white/70 hover:text-[--ink]"
                         }`}
                       >
                         <span
                           className={`shrink-0 tabular-nums ${
-                            i === index ? "text-indigo-500" : "text-slate-400"
+                            i === index ? theme.text : "text-slate-400"
                           }`}
                         >
                           {i + 1}
@@ -147,7 +150,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
                 </ul>
                 <button
                   onClick={() => setTab("lecon")}
-                  className="mt-4 text-sm font-medium text-indigo-600 underline-offset-2 hover:underline"
+                  className={`mt-4 text-sm font-semibold underline-offset-2 hover:underline ${theme.text}`}
                 >
                   Revenir à la leçon
                 </button>
@@ -162,7 +165,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
               <div className="no-print mb-6 flex items-center gap-4">
                 <div className="h-1 flex-1 overflow-hidden rounded-full bg-slate-200/70">
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 transition-all duration-300"
+                    className={`h-full rounded-full transition-all duration-300 ${theme.bar}`}
                     style={{ width: `${((index + 1) / sections.length) * 100}%` }}
                   />
                 </div>
@@ -172,8 +175,9 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
               </div>
 
               {index === 0 && chapter.videos && chapter.videos.length > 0 && (
-                <div className="mb-10 space-y-6 rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-violet-50/50 p-5">
-                  <h2 className="text-xs font-semibold uppercase tracking-wider text-indigo-600">
+                <div className={`mb-10 space-y-6 rounded-2xl border-2 p-5 ${theme.border} ${theme.soft}`}>
+                  <h2 className={`text-xs font-black uppercase tracking-[0.18em] ${theme.text}`}>
+                    🎬{" "}
                     {chapter.videos.length > 1 ? "Vidéos du chapitre" : "Vidéo du chapitre"}
                   </h2>
                   {chapter.videos.map((v) => (
@@ -194,6 +198,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
               )}
 
               <h2 className="mb-6 font-serif text-[1.75rem] font-bold leading-tight tracking-tight text-[--ink]">
+                <span className={`mr-3 inline-block h-7 w-1.5 translate-y-0.5 rounded-full align-middle ${theme.bar}`} />
                 {section.title}
               </h2>
               <Blocks blocks={section.blocks} />
@@ -209,7 +214,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
                 {index < last ? (
                   <button
                     onClick={() => goTo(index + 1)}
-                    className="rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-600/20 transition hover:brightness-110"
+                    className={`rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:brightness-110 ${theme.bar}`}
                   >
                     Suivant : {sections[index + 1].title.slice(0, 34)}
                     {sections[index + 1].title.length > 34 ? "…" : ""} →
@@ -220,7 +225,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
                       setTab(chapter.exercises?.length ? "applications" : "quiz");
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
-                    className="rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-600/20 transition hover:brightness-110"
+                    className={`rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:brightness-110 ${theme.bar}`}
                   >
                     {chapter.exercises?.length ? "Passer aux applications" : "Passer au quiz"} →
                   </button>
