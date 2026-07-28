@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DCG Académie
 
-## Getting Started
+Site d'enseignement du **contrôle de gestion** pour le DCG (UE11) et le DSCG (UE3) :
+cours, vidéos, méthodologie, fiches de révision, flashcards et quiz corrigés.
 
-First, run the development server:
+28 chapitres publiés — 19 pour l'UE11 du DCG, 9 pour l'UE3 du DSCG.
+
+## Démarrer
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # build de production (34 pages statiques)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Comment le contenu est fabriqué
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Le contenu **n'est pas écrit à la main** : il est converti depuis les manuels Word
+de l'auteur, qui restent hors du dépôt (dossier `sources/`, ignoré par git).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Script | Rôle | Sortie |
+|---|---|---|
+| `scripts/convert-docx.mjs` | Un chapitre Word → leçon (sections, tableaux, encadrés, figures) | `lib/content/chapters/<slug>.generated.ts` + `public/figures/<slug>/` |
+| `scripts/convert-methodes.mjs` | Encadrés « Compétences visées » + « Méthode » des cahiers d'énoncés | `lib/content/methodes/` |
+| `scripts/convert-exercises.mjs` | Cahiers d'énoncés appariés aux cahiers de corrigés | `lib/content/exercises/` |
 
-## Learn More
+Exemple :
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+node scripts/convert-docx.mjs "sources/.../CHAPITRE_05....docx" \
+  --slug dcg-ue11-methode-couts-complets --level DCG --ue UE11 --number 5 \
+  --title "La méthode des coûts complets"
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Fichiers générés et fichiers édités à la main
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Pour chaque chapitre il existe **deux** fichiers :
 
-## Deploy on Vercel
+- `<slug>.generated.ts` — la leçon. Régénérée depuis le Word, **ne pas éditer**.
+- `<slug>.ts` — le wrapper : description, flashcards, quiz, vidéos.
+  **C'est celui qu'on édite** ; il survit à toutes les regénérations.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/                     pages (accueil, /dcg, /dscg, /cours/[slug])
+components/              ChapterView, Methodologie, Fiche, Quiz, Flashcards…
+lib/content/
+  types.ts               types des blocs de contenu
+  index.ts               registre des programmes et des chapitres
+  theme.ts               charte couleur : une teinte par famille du programme
+  chapters/ methodes/ exercises/
+public/figures/<slug>/   figures extraites des manuels
+```
+
+## Points à connaître
+
+- **Progression stockée dans le navigateur** (localStorage) : pas de compte utilisateur.
+- **Les applications sont générées mais non publiées.** Pour les réafficher, rattacher
+  `exercisesBySlug` aux chapitres dans `lib/content/index.ts` (voir le commentaire sur place).
+- **Charte couleur** : les classes Tailwind sont écrites en entier dans `theme.ts` —
+  ne jamais construire un nom de classe à l'exécution, Tailwind ne le verrait pas.
+- **Flashcards et quiz** ont été rédigés à partir des cours et demandent une relecture
+  pédagogique avant toute mise en ligne publique.
