@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-budget-des-ventes.generated";
  */
 export const budgetDesVentes: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "slHszzS0BPo", title: "Le budget des ventes" }],
   description:
     "Le budget des ventes, point de départ de toute la construction budgétaire : corrélation et élasticités, ajustements linéaire (moindres carrés), exponentiel et puissance, saisonnalité par les rapports à la tendance, lissage exponentiel et méthodes qualitatives, jusqu'à la valorisation du budget et son pilotage.",
   flashcards: [

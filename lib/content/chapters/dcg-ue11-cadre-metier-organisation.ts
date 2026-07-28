@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-cadre-metier-organisation.gener
  */
 export const cadreMetierOrganisation: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "HfyQWYzDuag", title: "Contrôle de gestion" }],
   description:
     "Le socle conceptuel de l'UE11 : définition et positionnement du contrôle de gestion (Anthony, trois niveaux, boucle de pilotage), valeur et performance (les 3 E, performance globale, ESG), métier de contrôleur et système d'information, outils numériques (ERP, BI, Big Data, IA), centres de responsabilité et chaîne de valeur avec les indicateurs ROI, ROCE et EVA.",
   flashcards: [
