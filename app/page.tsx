@@ -18,11 +18,6 @@ const features = [
     text: "La synthèse du chapitre et toutes les notions à mémoriser sur une page, imprimable en un clic pour réviser hors ligne.",
   },
   {
-    icon: "✏️",
-    title: "Applications corrigées",
-    text: "Les cas du cahier d'exercices à faire en ligne, avec le corrigé détaillé que l'on n'affiche qu'une fois qu'on a cherché.",
-  },
-  {
     icon: "🃏",
     title: "Flashcards",
     text: "Définitions et formules à ancrer, avec suivi des cartes acquises et retour automatique de celles à revoir.",
@@ -37,11 +32,11 @@ const features = [
 export default function Home() {
   const totals = allChapters.reduce(
     (acc, c) => ({
-      exercises: acc.exercises + (c.exercises?.length ?? 0),
+      minutes: acc.minutes + c.durationMin,
       cards: acc.cards + c.flashcards.length,
       questions: acc.questions + c.quiz.length,
     }),
-    { exercises: 0, cards: 0, questions: 0 }
+    { minutes: 0, cards: 0, questions: 0 }
   );
 
   return (
@@ -62,9 +57,8 @@ export default function Home() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[--muted]">
-            Cours complets, vidéos, fiches de révision, applications corrigées, flashcards et quiz
-            pour préparer l&apos;UE11 du DCG et l&apos;UE3 du DSCG. Comprendre, s&apos;entraîner,
-            mémoriser.
+            Cours complets, vidéos, fiches de révision, flashcards et quiz corrigés pour préparer
+            l&apos;UE11 du DCG et l&apos;UE3 du DSCG. Comprendre, s&apos;entraîner, mémoriser.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <Link
@@ -84,7 +78,7 @@ export default function Home() {
           <dl className="mx-auto mt-14 flex max-w-2xl flex-wrap justify-center gap-x-12 gap-y-6">
             {[
               { v: allChapters.length, l: "chapitres" },
-              { v: totals.exercises, l: "applications" },
+              { v: `${Math.round(totals.minutes / 60)} h`, l: "de cours" },
               { v: totals.cards, l: "flashcards" },
               { v: totals.questions, l: "questions de quiz" },
             ].map((s) => (

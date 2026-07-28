@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s · DCG Académie",
   },
   description:
-    "Cours, vidéos, fiches de révision, applications corrigées, flashcards et quiz pour réussir le contrôle de gestion au DCG (UE11) et au DSCG (UE3).",
+    "Cours, vidéos, fiches de révision, flashcards et quiz pour réussir le contrôle de gestion au DCG (UE11) et au DSCG (UE3).",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -59,7 +59,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <footer className="no-print border-t border-[--line] bg-white">
           <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-2 px-5 py-7 text-sm text-[--muted] sm:flex-row">
             <span>© {new Date().getFullYear()} DCG Académie</span>
-            <span>Cours, fiches, applications et quiz de contrôle de gestion — DCG &amp; DSCG</span>
+            <span>Cours, fiches de révision et quiz de contrôle de gestion — DCG &amp; DSCG</span>
           </div>
         </footer>
       </body>

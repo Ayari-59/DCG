@@ -27,7 +27,6 @@ import { controleGestionSociale } from "./chapters/dscg-ue3-controle-gestion-soc
 import { gestionBudgetaire } from "./chapters/dscg-ue3-gestion-budgetaire";
 import { durabilitePerformanceGlobale } from "./chapters/dscg-ue3-durabilite-performance-globale";
 import { annexeReference } from "./chapters/dscg-ue3-annexe-reference";
-import { exercisesBySlug } from "./exercises";
 
 const rawPrograms: Program[] = [
   {
@@ -80,13 +79,14 @@ const rawPrograms: Program[] = [
   },
 ];
 
-/** Rattache à chaque chapitre les applications converties depuis les cahiers. */
-export const programs: Program[] = rawPrograms.map((p) => ({
-  ...p,
-  chapters: p.chapters.map((c) =>
-    exercisesBySlug[c.slug]?.length ? { ...c, exercises: exercisesBySlug[c.slug] } : c
-  ),
-}));
+/**
+ * Les applications issues des cahiers d'énoncés et de corrigés sont générées
+ * dans lib/content/exercises mais volontairement pas publiées pour l'instant.
+ * Pour les réactiver, rattacher exercisesBySlug aux chapitres ici :
+ *   chapters: p.chapters.map((c) =>
+ *     exercisesBySlug[c.slug]?.length ? { ...c, exercises: exercisesBySlug[c.slug] } : c)
+ */
+export const programs: Program[] = rawPrograms;
 
 export const allChapters: Chapter[] = programs.flatMap((p) => p.chapters);
 
