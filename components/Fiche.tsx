@@ -14,8 +14,8 @@ export function Fiche({ chapter }: { chapter: Chapter }) {
     <div className="print-full">
       <div className={`no-print mb-8 flex flex-wrap items-center justify-between gap-3 rounded-2xl border-2 px-5 py-4 ${theme.border} ${theme.soft}`}>
         <div>
-          <h2 className="font-serif text-xl font-bold text-[--ink]">Fiche de révision</h2>
-          <p className="mt-0.5 text-sm text-[--muted]">
+          <h2 className="font-serif text-xl font-bold text-ink">Fiche de révision</h2>
+          <p className="mt-0.5 text-sm text-muted">
             La synthèse du chapitre et les {chapter.flashcards.length} notions à mémoriser, sur une
             seule page.
           </p>
@@ -39,7 +39,7 @@ export function Fiche({ chapter }: { chapter: Chapter }) {
         <div className="space-y-10">
           {sections.map((section) => (
             <section key={section.id}>
-              <h3 className="mb-4 font-serif text-2xl font-bold tracking-tight text-[--ink]">
+              <h3 className="mb-4 font-serif text-2xl font-bold tracking-tight text-ink">
                 {section.title}
               </h3>
               <Blocks blocks={section.blocks} />
@@ -50,18 +50,18 @@ export function Fiche({ chapter }: { chapter: Chapter }) {
 
       {chapter.flashcards.length > 0 && (
         <section className="mt-12">
-          <h3 className="mb-4 font-serif text-2xl font-bold tracking-tight text-[--ink]">
+          <h3 className="mb-4 font-serif text-2xl font-bold tracking-tight text-ink">
             Les notions à connaître
           </h3>
-          <dl className="overflow-hidden rounded-xl border border-[--line] bg-white shadow-sm">
+          <dl className="overflow-hidden rounded-xl border border-line bg-white shadow-sm">
             {chapter.flashcards.map((card, i) => (
               <div
                 key={card.id}
                 className={`grid gap-1 px-5 py-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] sm:gap-6 ${
-                  i > 0 ? "border-t border-[--line]/70" : ""
+                  i > 0 ? "border-t border-line/70" : ""
                 }`}
               >
-                <dt className="font-semibold text-[--ink]">{renderInline(card.front)}</dt>
+                <dt className="font-semibold text-ink">{renderInline(card.front)}</dt>
                 <dd className="text-[15px] leading-relaxed text-slate-600">
                   {renderInline(card.back)}
                 </dd>
@@ -72,7 +72,7 @@ export function Fiche({ chapter }: { chapter: Chapter }) {
       )}
 
       {sections.length === 0 && chapter.flashcards.length === 0 && (
-        <p className="text-[--muted]">Aucune fiche de révision pour ce chapitre.</p>
+        <p className="text-muted">Aucune fiche de révision pour ce chapitre.</p>
       )}
     </div>
   );

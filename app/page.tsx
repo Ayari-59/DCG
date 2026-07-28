@@ -2,6 +2,7 @@ import Link from "next/link";
 import { programs, allChapters } from "@/lib/content";
 import { familiesOf } from "@/lib/content/theme";
 import { Reveal, Sheen } from "@/components/Reveal";
+import { TargetMark, Tagline } from "@/components/Logo";
 
 const features = [
   {
@@ -50,14 +51,14 @@ const features = [
 
 const programAccent = {
   DCG: {
-    bar: "bg-gradient-to-r from-violet-500 to-indigo-600",
-    text: "text-violet-300",
-    glowRing: "hover:border-violet-400/60",
+    bar: "bg-gradient-to-r from-brand to-amber-400",
+    text: "text-orange-300",
+    glowRing: "hover:border-orange-400/60",
   },
   DSCG: {
-    bar: "bg-gradient-to-r from-emerald-400 to-teal-500",
-    text: "text-emerald-300",
-    glowRing: "hover:border-emerald-400/60",
+    bar: "bg-gradient-to-r from-sky-400 to-blue-500",
+    text: "text-sky-300",
+    glowRing: "hover:border-sky-400/60",
   },
 } as const;
 
@@ -77,7 +78,7 @@ export default function Home() {
   return (
     <div>
       {/* ── Accroche ─────────────────────────────────────────────────── */}
-      <section className="grain relative overflow-hidden bg-[#0b0d14]">
+      <section className="grain relative overflow-hidden bg-navy-deep">
         <div className="aurora" aria-hidden>
           <span />
           <span />
@@ -85,13 +86,13 @@ export default function Home() {
         </div>
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[--paper] to-transparent"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-paper to-transparent"
         />
 
         <div className="relative mx-auto max-w-[1100px] px-5 py-28 text-center sm:py-36">
           <Reveal>
             <p className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white/80 backdrop-blur-md">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+              <TargetMark className="h-4 w-4" />
               DCG UE11 · DSCG UE3
             </p>
           </Reveal>
@@ -100,14 +101,20 @@ export default function Home() {
             <h1 className="mx-auto max-w-4xl font-serif text-[3rem] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[5rem]">
               Réussir le
               <br />
-              <span className="bg-gradient-to-r from-orange-300 via-violet-300 to-emerald-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber-200 via-orange-300 to-orange-400 bg-clip-text text-transparent">
                 contrôle de gestion
               </span>
             </h1>
           </Reveal>
 
-          <Reveal delay={180}>
-            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/60 sm:text-xl">
+          <Reveal delay={150}>
+            <div className="mt-7">
+              <Tagline />
+            </div>
+          </Reveal>
+
+          <Reveal delay={210}>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/60 sm:text-xl">
               L&apos;intégralité du programme, travaillée comme il faut : comprendre, appliquer la
               méthode, mémoriser, se tester.
             </p>
@@ -117,7 +124,7 @@ export default function Home() {
             <div className="mt-11 flex flex-wrap justify-center gap-4">
               <Link
                 href="/dcg"
-                className="lift gradient-ring rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 px-9 py-4 font-bold text-white elev-lg"
+                className="lift gradient-ring rounded-2xl bg-gradient-to-r from-brand to-amber-500 px-9 py-4 font-bold text-white elev-lg"
               >
                 Commencer le DCG
               </Link>
@@ -155,10 +162,10 @@ export default function Home() {
       {/* ── Familles ─────────────────────────────────────────────────── */}
       <section className="mx-auto max-w-[1100px] px-5 py-24">
         <Reveal>
-          <h2 className="text-center font-serif text-4xl font-bold tracking-[-0.02em] text-[--ink] sm:text-5xl">
+          <h2 className="text-center font-serif text-4xl font-bold tracking-[-0.02em] text-ink sm:text-5xl">
             Une couleur par famille
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-[17px] leading-relaxed text-[--muted]">
+          <p className="mx-auto mt-4 max-w-2xl text-center text-[17px] leading-relaxed text-muted">
             Le contrôle de gestion s&apos;organise en grands blocs. Chacun garde sa teinte sur tout
             le site — sommaire, progression, boutons — pour vous situer d&apos;un coup d&apos;œil.
           </p>
@@ -166,7 +173,7 @@ export default function Home() {
         <div className="mt-12 flex flex-wrap justify-center gap-3">
           {families.map((f, i) => (
             <Reveal key={f.family} delay={i * 60}>
-              <span className="lift elev-sm inline-flex items-center gap-2.5 rounded-full border-2 border-[--line] bg-white px-5 py-2.5 text-sm font-bold text-[--ink]">
+              <span className="lift elev-sm inline-flex items-center gap-2.5 rounded-full border-2 border-line bg-white px-5 py-2.5 text-sm font-bold text-ink">
                 <span className={`h-3 w-3 rounded-full ${f.bar}`} />
                 {f.emoji} {f.family}
               </span>
@@ -178,7 +185,7 @@ export default function Home() {
       {/* ── Fonctionnalités ──────────────────────────────────────────── */}
       <section className="mx-auto max-w-[1100px] px-5 pb-24">
         <Reveal>
-          <h2 className="text-center font-serif text-4xl font-bold tracking-[-0.02em] text-[--ink] sm:text-5xl">
+          <h2 className="text-center font-serif text-4xl font-bold tracking-[-0.02em] text-ink sm:text-5xl">
             Six façons de travailler un chapitre
           </h2>
         </Reveal>
@@ -186,15 +193,15 @@ export default function Home() {
           {features.map((f, i) => (
             <Reveal key={f.title} delay={(i % 3) * 80}>
               <Sheen
-                className={`lift elev-sm h-full rounded-3xl border-2 border-[--line] bg-white p-7 ${f.hover}`}
+                className={`lift elev-sm h-full rounded-3xl border-2 border-line bg-white p-7 ${f.hover}`}
               >
                 <div
                   className={`relative flex h-14 w-14 items-center justify-center rounded-2xl text-2xl ${f.chip}`}
                 >
                   {f.icon}
                 </div>
-                <h3 className="relative mt-5 font-serif text-xl font-bold text-[--ink]">{f.title}</h3>
-                <p className="relative mt-2.5 text-[15px] leading-relaxed text-[--muted]">{f.text}</p>
+                <h3 className="relative mt-5 font-serif text-xl font-bold text-ink">{f.title}</h3>
+                <p className="relative mt-2.5 text-[15px] leading-relaxed text-muted">{f.text}</p>
               </Sheen>
             </Reveal>
           ))}
@@ -202,10 +209,10 @@ export default function Home() {
       </section>
 
       {/* ── Diplômes ─────────────────────────────────────────────────── */}
-      <section className="grain relative overflow-hidden bg-[#0b0d14] py-24">
+      <section className="grain relative overflow-hidden bg-navy-deep py-24">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(124,58,237,0.28),transparent_70%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(240,126,38,0.22),transparent_70%)]"
         />
         <div className="relative mx-auto max-w-[1100px] px-5">
           <Reveal>

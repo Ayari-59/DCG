@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import Link from "next/link";
+import { Logo, Tagline } from "@/components/Logo";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -13,11 +14,11 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: {
-    default: "DCG Académie — Réussir le contrôle de gestion",
-    template: "%s · DCG Académie",
+    default: "Objectif-DCG.fr — Cap sur l'expertise comptable",
+    template: "%s · Objectif-DCG.fr",
   },
   description:
-    "Cours, vidéos, fiches de révision, flashcards et quiz pour réussir le contrôle de gestion au DCG (UE11) et au DSCG (UE3).",
+    "Cours, vidéos, méthodologie, fiches de révision, flashcards et quiz pour réussir le contrôle de gestion au DCG (UE11) et au DSCG (UE3).",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -27,26 +28,21 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <header className="no-print sticky top-0 z-30 border-b border-[--line]/80 bg-[--paper]/70 backdrop-blur-xl backdrop-saturate-150">
+        <header className="no-print sticky top-0 z-30 border-b border-line/80 bg-paper/70 backdrop-blur-xl backdrop-saturate-150">
           <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-3">
-            <Link href="/" className="group flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-orange-400 via-violet-600 to-emerald-500 text-[13px] font-black text-white shadow-md shadow-violet-500/30 transition group-hover:scale-105">
-                CG
-              </span>
-              <span className="font-serif text-lg font-bold tracking-tight text-[--ink]">
-                DCG Académie
-              </span>
+            <Link href="/" aria-label="Objectif-DCG.fr — accueil" className="transition hover:opacity-85">
+              <Logo />
             </Link>
-            <nav className="flex items-center gap-1 text-sm font-medium text-[--muted]">
+            <nav className="flex items-center gap-1 text-sm font-semibold text-muted">
               <Link
                 href="/dcg"
-                className="rounded-lg px-3 py-2 font-semibold transition hover:bg-violet-50 hover:text-violet-700"
+                className="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-brand"
               >
                 DCG · UE11
               </Link>
               <Link
                 href="/dscg"
-                className="rounded-lg px-3 py-2 font-semibold transition hover:bg-emerald-50 hover:text-emerald-700"
+                className="rounded-lg px-3 py-2 transition hover:bg-slate-100 hover:text-navy"
               >
                 DSCG · UE3
               </Link>
@@ -56,19 +52,32 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
         <main className="flex-1">{children}</main>
 
-        <footer className="no-print bg-white">
-          {/* Le dégradé reprend, dans l'ordre, les couleurs des familles du programme. */}
+        <footer className="no-print bg-navy-deep text-white">
           <div
             aria-hidden
             className="h-1.5 w-full"
-            style={{
-              backgroundImage:
-                "linear-gradient(90deg,#fb923c,#f43f5e,#8b5cf6,#10b981,#0ea5e9,#84cc16)",
-            }}
+            style={{ backgroundImage: "linear-gradient(90deg,#f07e26,#fbb040,#2f6fb5,#16325c)" }}
           />
-          <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-2 px-5 py-7 text-sm text-[--muted] sm:flex-row">
-            <span>© {new Date().getFullYear()} DCG Académie</span>
-            <span>Cours, fiches de révision et quiz de contrôle de gestion — DCG &amp; DSCG</span>
+          <div className="mx-auto max-w-[1400px] px-5 py-12">
+            <div className="flex flex-col items-center gap-5 text-center">
+              <Logo onDark />
+              <Tagline />
+              <p className="max-w-xl text-sm leading-relaxed text-white/50">
+                Cours, méthodologie, fiches de révision, flashcards et quiz de contrôle de gestion —
+                DCG UE11 et DSCG UE3.
+              </p>
+            </div>
+            <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-white/40 sm:flex-row">
+              <span>© {new Date().getFullYear()} Objectif-DCG.fr</span>
+              <span className="flex gap-5">
+                <Link href="/dcg" className="transition hover:text-white/80">
+                  DCG · UE11
+                </Link>
+                <Link href="/dscg" className="transition hover:text-white/80">
+                  DSCG · UE3
+                </Link>
+              </span>
+            </div>
           </div>
         </footer>
       </body>

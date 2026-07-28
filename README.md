@@ -1,4 +1,6 @@
-# DCG Académie
+# Objectif-DCG.fr
+
+*Cap sur l'expertise comptable.*
 
 Site d'enseignement du **contrôle de gestion** pour le DCG (UE11) et le DSCG (UE3) :
 cours, vidéos, méthodologie, fiches de révision, flashcards et quiz corrigés.

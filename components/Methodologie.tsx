@@ -46,8 +46,8 @@ export function Methodologie({ chapter }: { chapter: Chapter }) {
         className={`no-print mb-8 flex flex-wrap items-center justify-between gap-3 rounded-2xl border-2 px-5 py-4 ${theme.border} ${theme.soft}`}
       >
         <div>
-          <h2 className="font-serif text-xl font-bold text-[--ink]">Méthodologie</h2>
-          <p className="mt-0.5 text-sm text-[--muted]">
+          <h2 className="font-serif text-xl font-bold text-ink">Méthodologie</h2>
+          <p className="mt-0.5 text-sm text-muted">
             Les démarches à appliquer le jour de l&apos;épreuve, étape par étape.
           </p>
         </div>
@@ -64,7 +64,7 @@ export function Methodologie({ chapter }: { chapter: Chapter }) {
           {demarches.map((m, i) => (
             <article
               key={m.id}
-              className="overflow-hidden rounded-2xl border-2 border-[--line] bg-white shadow-sm"
+              className="overflow-hidden rounded-2xl border-2 border-line bg-white shadow-sm"
             >
               <header className={`flex items-start gap-4 border-b-2 px-5 py-4 ${theme.border} ${theme.soft}`}>
                 <span
@@ -73,7 +73,7 @@ export function Methodologie({ chapter }: { chapter: Chapter }) {
                   {i + 1}
                 </span>
                 <div className="min-w-0">
-                  <h3 className="font-serif text-lg font-bold leading-snug text-[--ink]">
+                  <h3 className="font-serif text-lg font-bold leading-snug text-ink">
                     {m.theme}
                   </h3>
                   {m.competences.length > 0 && (
@@ -100,7 +100,7 @@ export function Methodologie({ chapter }: { chapter: Chapter }) {
 
       {rappels.length > 0 && (
         <section className={demarches.length ? "mt-12" : ""}>
-          <h3 className="mb-4 font-serif text-2xl font-bold tracking-tight text-[--ink]">
+          <h3 className="mb-4 font-serif text-2xl font-bold tracking-tight text-ink">
             Rappels de méthode du cours
           </h3>
           <div className="space-y-4">

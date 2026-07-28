@@ -60,7 +60,7 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
 
     case "h3":
       return (
-        <h3 className="mt-10 font-serif text-2xl font-bold tracking-tight text-[--ink]">
+        <h3 className="mt-10 font-serif text-2xl font-bold tracking-tight text-ink">
           {renderInline(block.text)}
         </h3>
       );
@@ -113,12 +113,12 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
     case "table":
       return (
         <figure className="-mx-1">
-          <div className="overflow-x-auto rounded-xl border border-[--line] bg-white shadow-sm">
+          <div className="overflow-x-auto rounded-xl border border-line bg-white shadow-sm">
             <table className="w-full min-w-[30rem] text-[15px]">
               <thead>
                 <tr className="border-b-2 border-violet-200 bg-gradient-to-r from-violet-50 to-indigo-50 text-left">
                   {block.headers.map((h, i) => (
-                    <th key={i} className="px-4 py-3 font-semibold text-[--ink]">
+                    <th key={i} className="px-4 py-3 font-semibold text-ink">
                       {renderInline(h)}
                     </th>
                   ))}
@@ -126,7 +126,7 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
               </thead>
               <tbody>
                 {block.rows.map((row, i) => (
-                  <tr key={i} className="border-t border-[--line]/70 transition hover:bg-slate-50/60">
+                  <tr key={i} className="border-t border-line/70 transition hover:bg-slate-50/60">
                     {row.map((cell, j) => (
                       <td key={j} className="px-4 py-2.5 align-top leading-relaxed text-slate-700">
                         {renderInline(cell)}
@@ -138,7 +138,7 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
             </table>
           </div>
           {block.caption && (
-            <figcaption className="mt-2 px-1 text-xs text-[--muted]">{block.caption}</figcaption>
+            <figcaption className="mt-2 px-1 text-xs text-muted">{block.caption}</figcaption>
           )}
         </figure>
       );
@@ -172,7 +172,7 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
     case "image":
       return (
         <figure className="my-2">
-          <div className="overflow-hidden rounded-xl border-2 border-[--line] bg-white p-3 shadow-sm">
+          <div className="overflow-hidden rounded-xl border-2 border-line bg-white p-3 shadow-sm">
             {/* Figures issues des manuels : dimensions variables, rendu fluide. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -185,7 +185,7 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
             />
           </div>
           {block.caption && (
-            <figcaption className="mt-2 text-center text-sm italic text-[--muted]">
+            <figcaption className="mt-2 text-center text-sm italic text-muted">
               {block.caption}
             </figcaption>
           )}
@@ -195,7 +195,7 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
     case "video":
       return (
         <figure>
-          <div className="aspect-video overflow-hidden rounded-xl border border-[--line] bg-black">
+          <div className="aspect-video overflow-hidden rounded-xl border border-line bg-black">
             <iframe
               className="h-full w-full"
               src={`https://www.youtube-nocookie.com/embed/${block.youtubeId}`}
@@ -204,7 +204,7 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
               allowFullScreen
             />
           </div>
-          <figcaption className="mt-2 text-xs text-[--muted]">{block.title}</figcaption>
+          <figcaption className="mt-2 text-xs text-muted">{block.title}</figcaption>
         </figure>
       );
   }

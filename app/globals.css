@@ -6,13 +6,26 @@
   --font-mono: var(--font-geist-mono);
 }
 
-:root {
-  --paper: #faf9f7;
-  --ink: #16181d;
-  --muted: #5b6472;
-  --line: #e6e3de;
-  --accent: #4f46e5;
+/*
+ * Couleurs de marque déclarées dans @theme : Tailwind en fait de vraies
+ * utilitaires (text-muted, border-line, bg-navy-deep…) et les expose aussi
+ * en variables --color-* pour le CSS et les SVG.
+ * Ne pas revenir à la forme text-[--muted] : elle est ignorée en Tailwind 4.
+ */
+@theme {
+  --color-paper: #f9f8f6;
+  --color-ink: #14202e;
+  --color-muted: #5a6779;
+  --color-line: #e3e2dd;
 
+  /* Objectif-DCG.fr : bleu marine, orange, ambre. */
+  --color-navy: #16325c;
+  --color-navy-deep: #0e2244;
+  --color-brand: #f07e26;
+  --color-brand-amber: #fbb040;
+}
+
+:root {
   /* Élévation : ombres multi-couches plutôt qu'une ombre unique et plate. */
   --shadow-sm: 0 1px 2px rgb(16 24 40 / 0.04), 0 1px 3px rgb(16 24 40 / 0.06);
   --shadow-md: 0 2px 4px rgb(16 24 40 / 0.04), 0 6px 16px -4px rgb(16 24 40 / 0.08);
@@ -21,8 +34,8 @@
 }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--color-paper);
+  color: var(--color-ink);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -63,7 +76,7 @@ body {
   height: 52%;
   left: 4%;
   top: 6%;
-  background: #f97316;
+  background: #f07e26;
   animation-delay: -2s;
 }
 .aurora span:nth-child(2) {
@@ -71,7 +84,7 @@ body {
   height: 58%;
   left: 32%;
   top: 0%;
-  background: #7c3aed;
+  background: #fbb040;
   animation-delay: -8s;
 }
 .aurora span:nth-child(3) {
@@ -79,7 +92,7 @@ body {
   height: 50%;
   right: 2%;
   top: 14%;
-  background: #10b981;
+  background: #2f6fb5;
   animation-delay: -14s;
 }
 

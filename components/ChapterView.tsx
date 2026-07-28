@@ -75,13 +75,13 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
           <span className="text-sm">{theme.emoji}</span>
           {theme.family} · Chapitre {chapter.number}
         </p>
-        <h1 className="mt-2 font-serif text-[2.4rem] font-bold leading-[1.05] tracking-[-0.03em] text-[--ink] sm:text-[3.4rem]">
+        <h1 className="mt-2 font-serif text-[2.4rem] font-bold leading-[1.05] tracking-[-0.03em] text-ink sm:text-[3.4rem]">
           {chapter.title}
         </h1>
-        <p className="mt-4 text-[17px] leading-relaxed text-[--muted]">{chapter.description}</p>
+        <p className="mt-4 text-[17px] leading-relaxed text-muted">{chapter.description}</p>
       </header>
 
-      <nav className="no-print mt-7 flex gap-1 overflow-x-auto border-b border-[--line]">
+      <nav className="no-print mt-7 flex gap-1 overflow-x-auto border-b border-line">
         {tabs.map((t) => (
           <button
             key={t.id}
@@ -89,7 +89,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
             className={`-mb-px shrink-0 border-b-2 px-4 py-3 text-sm font-medium transition ${
               tab === t.id
                 ? `border-current ${theme.text}`
-                : "border-transparent text-[--muted] hover:text-[--ink]"
+                : "border-transparent text-muted hover:text-ink"
             }`}
           >
             {t.label}
@@ -105,14 +105,14 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
           <div className="lg:sticky lg:top-24">
             {tab === "lecon" ? (
               <>
-                <p className="mb-3 hidden text-xs font-semibold uppercase tracking-wider text-[--muted] lg:block">
+                <p className="mb-3 hidden text-xs font-semibold uppercase tracking-wider text-muted lg:block">
                   Sommaire
                 </p>
                 {/* Mobile : liste déroulante ; desktop : sommaire cliquable */}
                 <select
                   value={index}
                   onChange={(e) => goTo(Number(e.target.value))}
-                  className="w-full rounded-lg border border-[--line] bg-white px-3 py-2.5 text-sm text-[--ink] shadow-sm lg:hidden"
+                  className="w-full rounded-lg border border-line bg-white px-3 py-2.5 text-sm text-ink shadow-sm lg:hidden"
                 >
                   {sections.map((s, i) => (
                     <option key={s.id} value={i}>
@@ -128,7 +128,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
                         className={`flex w-full gap-2.5 rounded-lg px-3 py-2 text-left text-[13px] leading-snug transition ${
                           i === index
                             ? `bg-white font-semibold shadow-sm ${theme.text}`
-                            : "text-[--muted] hover:bg-white/70 hover:text-[--ink]"
+                            : "text-muted hover:bg-white/70 hover:text-ink"
                         }`}
                       >
                         <span
@@ -145,8 +145,8 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
                 </ol>
               </>
             ) : (
-              <div className="hidden rounded-xl border border-[--line] bg-white p-5 shadow-sm lg:block">
-                <p className="text-xs font-semibold uppercase tracking-wider text-[--muted]">
+              <div className="hidden rounded-xl border border-line bg-white p-5 shadow-sm lg:block">
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted">
                   Ce chapitre
                 </p>
                 <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
@@ -177,7 +177,7 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
                     style={{ width: `${((index + 1) / sections.length) * 100}%` }}
                   />
                 </div>
-                <span className="shrink-0 text-xs tabular-nums text-[--muted]">
+                <span className="shrink-0 text-xs tabular-nums text-muted">
                   {index + 1} / {sections.length}
                 </span>
               </div>
@@ -199,23 +199,23 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
                           allowFullScreen
                         />
                       </div>
-                      <figcaption className="mt-2 text-sm text-[--muted]">{v.title}</figcaption>
+                      <figcaption className="mt-2 text-sm text-muted">{v.title}</figcaption>
                     </figure>
                   ))}
                 </div>
               )}
 
-              <h2 className="mb-6 font-serif text-[1.75rem] font-bold leading-tight tracking-tight text-[--ink]">
+              <h2 className="mb-6 font-serif text-[1.75rem] font-bold leading-tight tracking-tight text-ink">
                 <span className={`mr-3 inline-block h-7 w-1.5 translate-y-0.5 rounded-full align-middle ${theme.bar}`} />
                 {section.title}
               </h2>
               <Blocks blocks={section.blocks} />
 
-              <div className="no-print mt-12 flex items-center justify-between gap-4 border-t border-[--line] pt-6">
+              <div className="no-print mt-12 flex items-center justify-between gap-4 border-t border-line pt-6">
                 <button
                   onClick={() => goTo(index - 1)}
                   disabled={index === 0}
-                  className="rounded-lg border border-[--line] bg-white px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50 disabled:invisible"
+                  className="rounded-lg border border-line bg-white px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50 disabled:invisible"
                 >
                   ← Précédent
                 </button>

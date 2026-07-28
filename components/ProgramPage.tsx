@@ -15,8 +15,8 @@ export function ProgramPage({ program }: { program: Program }) {
   );
 
   const stats = [
-    { value: program.chapters.length, label: "chapitres", color: "text-violet-600" },
-    { value: `${Math.round(totals.minutes / 60)} h`, label: "de cours", color: "text-orange-600" },
+    { value: program.chapters.length, label: "chapitres", color: "text-navy" },
+    { value: `${Math.round(totals.minutes / 60)} h`, label: "de cours", color: "text-brand" },
     ...(totals.videos ? [{ value: totals.videos, label: "vidéos", color: "text-rose-600" }] : []),
     { value: totals.cards, label: "flashcards", color: "text-emerald-600" },
     { value: totals.questions, label: "questions", color: "text-sky-600" },
@@ -33,21 +33,21 @@ export function ProgramPage({ program }: { program: Program }) {
 
   return (
     <div className="mx-auto max-w-[1100px] px-5 py-12">
-      <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-600">
+      <p className="text-xs font-black uppercase tracking-[0.2em] text-brand">
         {program.level} · {program.ue}
       </p>
-      <h1 className="mt-2 font-serif text-5xl font-bold tracking-[-0.03em] text-[--ink] sm:text-6xl">
+      <h1 className="mt-2 font-serif text-5xl font-bold tracking-[-0.03em] text-ink sm:text-6xl">
         {program.title}
       </h1>
-      <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-[--muted]">
+      <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-muted">
         {program.description}
       </p>
 
-      <dl className="elev-md mt-8 flex flex-wrap gap-x-12 gap-y-5 rounded-3xl border-2 border-[--line] bg-white px-8 py-6">
+      <dl className="elev-md mt-8 flex flex-wrap gap-x-12 gap-y-5 rounded-3xl border-2 border-line bg-white px-8 py-6">
         {stats.map((s) => (
           <div key={s.label}>
             <dt className={`font-serif text-3xl font-bold tabular-nums ${s.color}`}>{s.value}</dt>
-            <dd className="text-xs font-semibold uppercase tracking-wide text-[--muted]">
+            <dd className="text-xs font-semibold uppercase tracking-wide text-muted">
               {s.label}
             </dd>
           </div>
@@ -70,7 +70,7 @@ export function ProgramPage({ program }: { program: Program }) {
                   <Reveal key={c.slug} delay={Math.min(i, 4) * 70}>
                   <Link
                     href={`/cours/${c.slug}`}
-                    className={`lift elev-sm sheen group flex items-start gap-5 rounded-3xl border-2 border-[--line] bg-white p-5 sm:p-6 ${theme.borderHover}`}
+                    className={`lift elev-sm sheen group flex items-start gap-5 rounded-3xl border-2 border-line bg-white p-5 sm:p-6 ${theme.borderHover}`}
                   >
                     <span
                       className={`elev-md flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl font-serif text-2xl font-bold text-white ${theme.badge}`}
@@ -79,11 +79,11 @@ export function ProgramPage({ program }: { program: Program }) {
                     </span>
                     <span className="min-w-0 flex-1">
                       <span
-                        className={`block font-serif text-xl font-bold leading-snug text-[--ink] transition ${theme.textHover}`}
+                        className={`block font-serif text-xl font-bold leading-snug text-ink transition ${theme.textHover}`}
                       >
                         {c.title}
                       </span>
-                      <span className="mt-1.5 block text-[15px] leading-relaxed text-[--muted]">
+                      <span className="mt-1.5 block text-[15px] leading-relaxed text-muted">
                         {c.description}
                       </span>
                       <span className="mt-3 flex flex-wrap items-center gap-2 text-xs">
@@ -115,7 +115,7 @@ export function ProgramPage({ program }: { program: Program }) {
             {program.upcoming.map((c) => (
               <div
                 key={c.number}
-                className="flex items-center gap-5 rounded-2xl border-2 border-dashed border-[--line] px-5 py-5 sm:px-6"
+                className="flex items-center gap-5 rounded-2xl border-2 border-dashed border-line px-5 py-5 sm:px-6"
               >
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-100 font-serif text-xl font-bold text-slate-400">
                   {c.number}
