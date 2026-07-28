@@ -46,6 +46,29 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
       <div className="mx-auto max-w-3xl">
         {tab === "lecon" && (
           <div className="space-y-10">
+            {chapter.videos && chapter.videos.length > 0 && (
+              <section className="rounded-xl border border-indigo-100 bg-indigo-50/40 p-5">
+                <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-indigo-600">
+                  🎬 {chapter.videos.length > 1 ? "Vidéos du chapitre" : "Vidéo du chapitre"}
+                </h2>
+                <div className="space-y-6">
+                  {chapter.videos.map((v) => (
+                    <figure key={v.youtubeId}>
+                      <div className="aspect-video overflow-hidden rounded-lg border border-slate-200 bg-black">
+                        <iframe
+                          className="h-full w-full"
+                          src={`https://www.youtube-nocookie.com/embed/${v.youtubeId}`}
+                          title={v.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
+                      <figcaption className="mt-1.5 text-sm text-slate-600">{v.title}</figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </section>
+            )}
             {chapter.sections.map((section) => (
               <section key={section.id}>
                 <h2 className="mb-4 text-xl font-bold text-slate-900">{section.title}</h2>

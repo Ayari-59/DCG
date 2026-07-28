@@ -31,6 +31,11 @@ export interface QuizQuestion {
   explanation: string;
 }
 
+export interface ChapterVideo {
+  youtubeId: string;
+  title: string;
+}
+
 export interface Chapter {
   slug: string;
   level: Level;
@@ -42,6 +47,8 @@ export interface Chapter {
   sections: Section[];
   flashcards: Flashcard[];
   quiz: QuizQuestion[];
+  /** Vidéos du chapitre (YouTube), affichées en tête de leçon. */
+  videos?: ChapterVideo[];
 }
 
 /** Chapitre annoncé mais pas encore publié */
