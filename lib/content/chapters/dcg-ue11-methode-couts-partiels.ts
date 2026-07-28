@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-methode-couts-partiels.generate
  */
 export const methodeCoutsPartiels: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "TCZ8wbW68ic", title: "Coûts partiels — Décider" }],
   description:
     "Coût direct, coût variable, coût spécifique et coût marginal : trier les charges selon leur variabilité et leur traçabilité, calculer les marges (MCV, MCS) dans un compte de résultat différentiel, et éclairer les décisions de court terme — commande supplémentaire, make or buy, maintien ou abandon d'un produit, prix plancher.",
   flashcards: [
