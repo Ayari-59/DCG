@@ -2,7 +2,7 @@ import Link from "next/link";
 import { programs, allChapters } from "@/lib/content";
 import { familiesOf } from "@/lib/content/theme";
 import { Reveal, Sheen } from "@/components/Reveal";
-import { TargetMark, Tagline } from "@/components/Logo";
+import { TargetMark } from "@/components/Logo";
 
 const features = [
   {
@@ -97,14 +97,8 @@ export default function Home() {
             </h1>
           </Reveal>
 
-          <Reveal delay={150}>
-            <div className="mt-7">
-              <Tagline />
-            </div>
-          </Reveal>
-
-          <Reveal delay={210}>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/60 sm:text-xl">
+          <Reveal delay={180}>
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/60 sm:text-xl">
               L&apos;intégralité du programme, travaillée comme il faut : comprendre, appliquer la
               méthode, mémoriser, se tester.
             </p>

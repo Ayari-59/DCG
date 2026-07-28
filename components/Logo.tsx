@@ -52,16 +52,3 @@ export function Logo({ onDark = false, className = "" }: LogoProps) {
     </span>
   );
 }
-
-export function Tagline({ className = "" }: { className?: string }) {
-  return (
-    <span
-      className={`inline-flex items-center gap-3 text-brand ${className}`}
-      aria-label="Cap sur l'expertise comptable"
-    >
-      <span aria-hidden className="h-px w-6 bg-current opacity-50" />
-      <span className="text-sm font-bold tracking-wide">Cap sur l&apos;expertise comptable</span>
-      <span aria-hidden className="h-px w-6 bg-current opacity-50" />
-    </span>
-  );
-}

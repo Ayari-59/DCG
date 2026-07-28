@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import Link from "next/link";
-import { Logo, Tagline } from "@/components/Logo";
+import { Logo } from "@/components/Logo";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -14,7 +14,7 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: {
-    default: "Objectif-DCG.fr — Cap sur l'expertise comptable",
+    default: "Objectif-DCG.fr — Réussir le contrôle de gestion",
     template: "%s · Objectif-DCG.fr",
   },
   description:
@@ -65,7 +65,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="mx-auto max-w-[1400px] px-5 py-12">
             <div className="flex flex-col items-center gap-5 text-center">
               <Logo onDark />
-              <Tagline />
               <p className="max-w-xl text-sm leading-relaxed text-white/50">
                 Cours, méthodologie, fiches de révision, flashcards et quiz de contrôle de gestion —
                 DCG UE11 et DSCG UE3.
