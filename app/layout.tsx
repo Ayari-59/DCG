@@ -27,7 +27,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <header className="no-print sticky top-0 z-30 border-b border-[--line] bg-[--paper]/85 backdrop-blur-md">
+        <header className="no-print sticky top-0 z-30 border-b border-[--line]/80 bg-[--paper]/70 backdrop-blur-xl backdrop-saturate-150">
           <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-3">
             <Link href="/" className="group flex items-center gap-2.5">
               <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-orange-400 via-violet-600 to-emerald-500 text-[13px] font-black text-white shadow-md shadow-violet-500/30 transition group-hover:scale-105">

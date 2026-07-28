@@ -64,15 +64,21 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
         ← {chapter.level} {chapter.ue}
       </Link>
 
-      <header className="mt-3 max-w-4xl">
-        <p className={`flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] ${theme.text}`}>
+      <header className="relative mt-4 max-w-4xl">
+        <span
+          aria-hidden
+          className={`absolute -left-5 top-1 hidden h-[calc(100%-0.5rem)] w-1.5 rounded-full sm:block ${theme.bar}`}
+        />
+        <p
+          className={`flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] ${theme.text}`}
+        >
           <span className="text-sm">{theme.emoji}</span>
           {theme.family} · Chapitre {chapter.number}
         </p>
-        <h1 className="mt-1 font-serif text-[2.1rem] font-bold leading-[1.15] tracking-tight text-[--ink] sm:text-[2.6rem]">
+        <h1 className="mt-2 font-serif text-[2.4rem] font-bold leading-[1.05] tracking-[-0.03em] text-[--ink] sm:text-[3.4rem]">
           {chapter.title}
         </h1>
-        <p className="mt-3 text-[17px] leading-relaxed text-[--muted]">{chapter.description}</p>
+        <p className="mt-4 text-[17px] leading-relaxed text-[--muted]">{chapter.description}</p>
       </header>
 
       <nav className="no-print mt-7 flex gap-1 overflow-x-auto border-b border-[--line]">

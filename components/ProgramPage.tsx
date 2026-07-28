@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Chapter, Program } from "@/lib/content/types";
 import { getTheme } from "@/lib/content/theme";
+import { Reveal } from "@/components/Reveal";
 
 export function ProgramPage({ program }: { program: Program }) {
   const totals = program.chapters.reduce(
@@ -35,14 +36,14 @@ export function ProgramPage({ program }: { program: Program }) {
       <p className="text-xs font-black uppercase tracking-[0.2em] text-violet-600">
         {program.level} · {program.ue}
       </p>
-      <h1 className="mt-2 font-serif text-4xl font-bold tracking-tight text-[--ink] sm:text-5xl">
+      <h1 className="mt-2 font-serif text-5xl font-bold tracking-[-0.03em] text-[--ink] sm:text-6xl">
         {program.title}
       </h1>
       <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-[--muted]">
         {program.description}
       </p>
 
-      <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4 rounded-2xl border-2 border-[--line] bg-white px-6 py-5 shadow-sm">
+      <dl className="elev-md mt-8 flex flex-wrap gap-x-12 gap-y-5 rounded-3xl border-2 border-[--line] bg-white px-8 py-6">
         {stats.map((s) => (
           <div key={s.label}>
             <dt className={`font-serif text-3xl font-bold tabular-nums ${s.color}`}>{s.value}</dt>
@@ -65,14 +66,14 @@ export function ProgramPage({ program }: { program: Program }) {
               </div>
 
               <div className="space-y-3">
-                {group.chapters.map((c) => (
+                {group.chapters.map((c, i) => (
+                  <Reveal key={c.slug} delay={Math.min(i, 4) * 70}>
                   <Link
-                    key={c.slug}
                     href={`/cours/${c.slug}`}
-                    className={`group flex items-start gap-5 rounded-2xl border-2 border-[--line] bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl sm:p-6 ${theme.borderHover} ${theme.glow}`}
+                    className={`lift elev-sm sheen group flex items-start gap-5 rounded-3xl border-2 border-[--line] bg-white p-5 sm:p-6 ${theme.borderHover}`}
                   >
                     <span
-                      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl font-serif text-xl font-bold text-white shadow-md ${theme.badge}`}
+                      className={`elev-md flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl font-serif text-2xl font-bold text-white ${theme.badge}`}
                     >
                       {c.number}
                     </span>
@@ -102,6 +103,7 @@ export function ProgramPage({ program }: { program: Program }) {
                       →
                     </span>
                   </Link>
+                  </Reveal>
                 ))}
               </div>
             </section>
