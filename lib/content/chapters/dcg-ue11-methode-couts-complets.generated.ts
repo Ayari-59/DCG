@@ -46,8 +46,12 @@ export const chapter: Chapter = {
           "text": "Pour comprendre ce cheminement, il faut garder en tête **l’objectif** pour lequel les coûts complets sont calculés. La méthode répond à deux finalités : **connaître la rentabilité** d’une activité (le coût de revient est-il inférieur au chiffre d’affaires ?) et **valoriser les stocks** au bilan, comme l’exige la comptabilité financière."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — La logique d’ensemble : le calcul épouse le processus de production*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-complets/01.png",
+          "alt": "Figure du cours",
+          "width": 1440,
+          "height": 420,
+          "caption": "Figure 1 — La logique d’ensemble : le calcul épouse le processus de production"
         },
         {
           "type": "p",
@@ -164,8 +168,12 @@ export const chapter: Chapter = {
           "text": "**Affectation :**attribution directe d’une charge directe à un coût (sans calcul intermédiaire).\n**Répartition :**ventilation des charges indirectes sur les centres d’analyse, à l’aide de clés de répartition.\n**Imputation :**transfert des charges des centres vers les coûts des produits, via les unités d’œuvre."
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — Charges directes affectées ; charges indirectes réparties puis imputées*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-complets/02.png",
+          "alt": "Partie 2 — Calculer (1) : le traitement des charges indirectes par les centres d’analyse",
+          "width": 1733,
+          "height": 481,
+          "caption": "Figure 2 — Charges directes affectées ; charges indirectes réparties puis imputées"
         },
         {
           "type": "callout",
@@ -311,8 +319,12 @@ export const chapter: Chapter = {
           "text": "Les charges indirectes sont d’abord réparties sur tous les centres — auxiliaires comme principaux. Pour certaines charges, la répartition ne pose pas de problème (les charges de personnel suivent l’affectation connue des salariés aux services). Pour d’autres, on recourt à une clé de répartition, plus ou moins arbitraire : le loyer global, par exemple, peut être réparti au prorata des mètres carrés occupés."
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — Les trois temps du traitement des charges indirectes*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-complets/03.png",
+          "alt": "Partie 2 — Calculer (1) : le traitement des charges indirectes par les centres d’analyse",
+          "width": 1440,
+          "height": 430,
+          "caption": "Figure 3 — Les trois temps du traitement des charges indirectes"
         },
         {
           "type": "h3",
@@ -343,8 +355,12 @@ export const chapter: Chapter = {
           "text": "E engage 19 500 € de frais propres et produit 1 000 UO, dont 100 fournies à G. G engage 3 000 € et produit 500 UO, dont 50 fournies à E.\n**Travail à faire :**déterminer le coût de l’unité d’œuvre de chacun des deux centres E et G en résolvant le système des prestations réciproques.\n**Corrigé :**\nSoit e et g les coûts d’UO : 1 000 e = 19 500 + 50 g (1) ; 500 g = 3 000 + 100 e (2).\n**Par substitution : e = 19,5 + 0,05 g, reporté dans (2) → 495 g = 4 950 → g = 10 €, puis e = 20 €.**"
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — Prestations réciproques entre centres*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-complets/04.png",
+          "alt": "Partie 2 — Calculer (1) : le traitement des charges indirectes par les centres d’analyse",
+          "width": 1064,
+          "height": 554,
+          "caption": "Figure 4 — Prestations réciproques entre centres"
         },
         {
           "type": "callout",
@@ -353,8 +369,12 @@ export const chapter: Chapter = {
           "text": "Si « n » centres sont en interaction réciproque, il faut résoudre un système de n équations à n inconnues. Le tableur ou l’ERP automatise cette résolution."
         },
         {
-          "type": "p",
-          "text": "*Figure 5 — Le traitement des charges indirectes : affectation, répartition, imputation*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-complets/05.png",
+          "alt": "Partie 2 — Calculer (1) : le traitement des charges indirectes par les centres d’analyse",
+          "width": 1338,
+          "height": 446,
+          "caption": "Figure 5 — Le traitement des charges indirectes : affectation, répartition, imputation"
         },
         {
           "type": "callout",
@@ -373,8 +393,12 @@ export const chapter: Chapter = {
           "text": "Les calculs suivent toujours le même ordre : coût d’achat → fiche de stock des matières → coût de production → fiche de stock des produits finis → coût de revient des produits vendus. Les calculs se présentent sous forme de tableaux à double entrée, avec les produits en colonnes et les éléments (directs et indirects) en lignes."
         },
         {
-          "type": "p",
-          "text": "*Figure 6 — La construction progressive du coût de revient*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-complets/06.png",
+          "alt": "Partie 3 — Calculer (2) : construire les coûts, le résultat analytique et traiter les situations particulières",
+          "width": 1326,
+          "height": 626,
+          "caption": "Figure 6 — La construction progressive du coût de revient"
         },
         {
           "type": "h3",
@@ -863,8 +887,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 7 — En période de hausse des prix, le PEPS minore la sortie, le DEPS la majore*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-complets/07.png",
+          "alt": "Partie 3 — Calculer (2) : construire les coûts, le résultat analytique et traiter les situations particulières",
+          "width": 1772,
+          "height": 886,
+          "caption": "Figure 7 — En période de hausse des prix, le PEPS minore la sortie, le DEPS la majore"
         },
         {
           "type": "p",
@@ -1362,8 +1390,12 @@ export const chapter: Chapter = {
           "text": "Moderniser l’appareil productif (machines plus économes, chauffage performant, flotte de transport électrique) modifie la structure des coûts : les charges fixes (amortissements) augmentent, mais les charges variables (énergie, carburant) et les émissions de CO₂ baissent. Le coût complet permet de chiffrer cet arbitrage et d’éclairer la décision."
         },
         {
-          "type": "p",
-          "text": "*Figure 8 — Investissement vert : l’amortissement augmente, l’énergie et le CO₂ baissent*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-complets/08.png",
+          "alt": "Partie 4 — Interpréter et porter un regard critique : décision, durabilité et analyse de la méthode",
+          "width": 1360,
+          "height": 600,
+          "caption": "Figure 8 — Investissement vert : l’amortissement augmente, l’énergie et le CO₂ baissent"
         },
         {
           "type": "table",
@@ -1489,8 +1521,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 9 — Des limites du coût complet aux méthodes alternatives*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-complets/09.png",
+          "alt": "Partie 4 — Interpréter et porter un regard critique : décision, durabilité et analyse de la méthode",
+          "width": 1634,
+          "height": 748,
+          "caption": "Figure 9 — Des limites du coût complet aux méthodes alternatives"
         },
         {
           "type": "h3",

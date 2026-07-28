@@ -47,8 +47,12 @@ export const chapter: Chapter = {
           "text": "**Le principe des coûts partiels**"
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — La logique des coûts partiels : du tri des charges à la marge contributive*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-partiels/01.png",
+          "alt": "Figure du cours",
+          "width": 1683,
+          "height": 594,
+          "caption": "Figure 1 — La logique des coûts partiels : du tri des charges à la marge contributive"
         },
         {
           "type": "p",
@@ -131,8 +135,12 @@ export const chapter: Chapter = {
           "text": "Certaines charges comportent une part fixe (un abonnement) et une part proportionnelle à l'activité (la consommation) : ce sont les **charges semi-variables** (ou mixtes). Pour appliquer la méthode du coût variable, on les décompose sous la forme **Y = aX + b**, par ajustement linéaire (régression) des coûts totaux sur l'activité."
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — Comportement des charges variables et fixes selon le niveau d’activité (total et unitaire)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-partiels/02.png",
+          "alt": "1. Comprendre — les fondements des coûts partiels",
+          "width": 1186,
+          "height": 916,
+          "caption": "Figure 2 — Comportement des charges variables et fixes selon le niveau d’activité (total et unitaire)"
         },
         {
           "type": "callout",
@@ -149,8 +157,12 @@ export const chapter: Chapter = {
           "text": "La typologie la plus utile croise **deux critères** — direct/indirect et fixe/variable — et fait apparaître quatre catégories de charges."
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — Les quatre catégories de charges au croisement des deux critères*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-partiels/03.png",
+          "alt": "1. Comprendre — les fondements des coûts partiels",
+          "width": 1360,
+          "height": 760,
+          "caption": "Figure 3 — Les quatre catégories de charges au croisement des deux critères"
         },
         {
           "type": "p",
@@ -322,8 +334,12 @@ export const chapter: Chapter = {
           "text": "Nautis conçoit et commercialise trois gammes de produits nautiques : kayaks, paddles et planches à voile. Données du dernier exercice (en euros) : **Kayak** — CA 300 000, charges variables 180 000, charges fixes spécifiques 40 000 ; **Paddle** — CA 200 000, charges variables 140 000, charges fixes spécifiques 20 000 ; **Voile** — CA 150 000, charges variables 120 000, charges fixes spécifiques 50 000. Charges fixes communes (non réparties) : 60 000."
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — La cascade des marges, du chiffre d'affaires au résultat (cas Nautis)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-partiels/04.png",
+          "alt": "2. Calculer — les méthodes et les marges",
+          "width": 1854,
+          "height": 930,
+          "caption": "Figure 4 — La cascade des marges, du chiffre d'affaires au résultat (cas Nautis)"
         },
         {
           "type": "callout",
@@ -474,8 +490,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 5 — Marges par produit : la MCS négative de Voile saute aux yeux (cas Nautis)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-partiels/05.png",
+          "alt": "2. Calculer — les méthodes et les marges",
+          "width": 1694,
+          "height": 933,
+          "caption": "Figure 5 — Marges par produit : la MCS négative de Voile saute aux yeux (cas Nautis)"
         },
         {
           "type": "callout",
@@ -581,8 +601,12 @@ export const chapter: Chapter = {
           "text": "C'est la décision emblématique des coûts partiels. Un produit déficitaire en coût complet ne doit **jamais** être abandonné sur ce seul critère : il faut dérouler la lecture par marges."
         },
         {
-          "type": "p",
-          "text": "*Figure 6 — L'arbre de décision : faut-il abandonner un produit déficitaire en coût complet ?*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-partiels/06.png",
+          "alt": "3. Interpréter — les coûts partiels, outil de décision",
+          "width": 1440,
+          "height": 860,
+          "caption": "Figure 6 — L'arbre de décision : faut-il abandonner un produit déficitaire en coût complet ?"
         },
         {
           "type": "callout",
@@ -599,8 +623,12 @@ export const chapter: Chapter = {
           "text": "**Comprendre.**Le coût marginal mesure ce que coûte réellement « une unité de plus ». C'est lui — et non le coût complet — qui détermine le prix minimal acceptable d'une commande."
         },
         {
-          "type": "p",
-          "text": "*Figure 7 — Le coût moyen : allure en U selon les rendements (croissants → décroissants)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-partiels/07.png",
+          "alt": "3. Interpréter — les coûts partiels, outil de décision",
+          "width": 1168,
+          "height": 600,
+          "caption": "Figure 7 — Le coût moyen : allure en U selon les rendements (croissants → décroissants)"
         },
         {
           "type": "callout",
@@ -619,8 +647,12 @@ export const chapter: Chapter = {
           "text": "Méca-Précision (sous-traitance industrielle) reçoit une commande de 300 pièces à 70 €, mais l'atelier est déjà saturé : l'honorer impose 12 000 € de location de machine (répercutés sur la seule commande). Coût variable unitaire majoré : 48 € (heures supplémentaires). Coût marginal total = 48 × 300 + 12 000 = 26 400 €, soit 88 € l'unité.\n**Travail à faire : déterminer le résultat marginal de la commande et le prix plancher ; conclure.**\n**Corrigé :**\n**Recette marginale unitaire = 70 € < coût marginal unitaire = 88 € → résultat marginal = − 18 € par pièce (− 5 400 € au total).**\nDécision : **refuser** la commande. Le **prix plancher** (prix de vente minimum acceptable) serait de **88 €** — le coût marginal unitaire.\n**REMARQUE — Optimum économique et optimum technique**\nL'analyse marginale montre que les rendements sont généralement décroissants. Deux repères : l'**optimum économique** est atteint quand la recette marginale égale le coût marginal ; l'**optimum technique**, quand le coût moyen est minimum. (Les démonstrations mathématiques ne sont pas exigées au DCG.)"
         },
         {
-          "type": "p",
-          "text": "*Figure 9 — La décision se lit d'un coup d'œil : accepter si la recette dépasse le coût marginal*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-partiels/08.png",
+          "alt": "3. Interpréter — les coûts partiels, outil de décision",
+          "width": 1167,
+          "height": 1093,
+          "caption": "Figure 9 — La décision se lit d'un coup d'œil : accepter si la recette dépasse le coût marginal"
         },
         {
           "type": "callout",
@@ -667,8 +699,12 @@ export const chapter: Chapter = {
           "text": "4.3 Comparaison raisonnée avec les autres méthodes"
         },
         {
-          "type": "p",
-          "text": "*Figure 10 — Quelle méthode de coûts pour quelle décision ?*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-partiels/09.png",
+          "alt": "4. Critiquer — portée, limites et évolutions",
+          "width": 1440,
+          "height": 660,
+          "caption": "Figure 10 — Quelle méthode de coûts pour quelle décision ?"
         },
         {
           "type": "table",
@@ -713,8 +749,12 @@ export const chapter: Chapter = {
           "text": "La principale difficulté pratique des coûts partiels — **séparer charges fixes et variables** — est aujourd'hui largement facilitée par les outils numériques."
         },
         {
-          "type": "p",
-          "text": "*Figure 11 — Les outils numériques au service des coûts partiels*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-couts-partiels/10.png",
+          "alt": "4. Critiquer — portée, limites et évolutions",
+          "width": 1440,
+          "height": 600,
+          "caption": "Figure 11 — Les outils numériques au service des coûts partiels"
         },
         {
           "type": "callout",

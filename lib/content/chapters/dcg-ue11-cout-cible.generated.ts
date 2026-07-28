@@ -138,8 +138,12 @@ export const chapter: Chapter = {
           "text": "Toute la logique du coût cible tient dans une cascade qui inverse le raisonnement traditionnel : on part du marché pour remonter vers la conception."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — La cascade du coût cible : du prix de marché à la performance*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cout-cible/01.png",
+          "alt": "Le schéma directeur de la démarche",
+          "width": 1440,
+          "height": 860,
+          "caption": "Figure 1 — La cascade du coût cible : du prix de marché à la performance"
         },
         {
           "type": "callout",
@@ -186,8 +190,12 @@ export const chapter: Chapter = {
           "text": "Le coût n’est plus une donnée de sortie mais une **contrainte d’entrée** : il devient une variable d’action, encadrée par deux limites — le prix accepté par le marché et la marge voulue par l’entreprise."
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — Le renversement de l’équation : de la logique « coût + marge » à la logique « prix − profit »*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cout-cible/02.png",
+          "alt": "1. Les fondements du coût cible",
+          "width": 1440,
+          "height": 600,
+          "caption": "Figure 2 — Le renversement de l’équation : de la logique « coût + marge » à la logique « prix − profit »"
         },
         {
           "type": "callout",
@@ -296,8 +304,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — Coûts engagés vs coûts dépensés : l’essentiel se décide en conception*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cout-cible/03.png",
+          "alt": "3.2 La prédominance de la phase amont de conception",
+          "width": 1687,
+          "height": 885,
+          "caption": "Figure 3 — Coûts engagés vs coûts dépensés : l’essentiel se décide en conception"
         },
         {
           "type": "callout",
@@ -344,8 +356,12 @@ export const chapter: Chapter = {
           "text": "Cette partie constitue le cœur technique du chapitre. Elle décompose la démarche en six étapes, du prix de marché jusqu’à la réduction du coût objectif, en l’illustrant par un exemple chiffré complet appliqué à Rakéo."
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — Les six étapes de la démarche de coût cible*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cout-cible/04.png",
+          "alt": "2. La démarche de coût cible",
+          "width": 1440,
+          "height": 600,
+          "caption": "Figure 4 — Les six étapes de la démarche de coût cible"
         },
         {
           "type": "h3",
@@ -668,8 +684,12 @@ export const chapter: Chapter = {
           "text": "L’écart de coût mesure le chemin à parcourir. Pour la nouvelle raquette, le bureau d’études aboutit en l’état à un coût estimé de **74,00 €** face à un coût cible de **68,24 €**."
         },
         {
-          "type": "p",
-          "text": "*Figure 5 — L’écart de coût (cost gap) à résorber par la conception*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cout-cible/05.png",
+          "alt": "1.2 La détermination du prix psychologique (prix d’acceptabilité)",
+          "width": 1360,
+          "height": 800,
+          "caption": "Figure 5 — L’écart de coût (cost gap) à résorber par la conception"
         },
         {
           "type": "p",
@@ -725,8 +745,12 @@ export const chapter: Chapter = {
           "text": "Une fois le produit lancé, l’optimisation se poursuit par l’**effet d’apprentissage** et par une dynamique d’amélioration continue (***kaizen***). La « maintenance des coûts » consiste à maintenir les coûts réels proches des coûts cibles et à éliminer les causes d’écarts. Le **modèle MAKIDO** résume cet enchaînement."
         },
         {
-          "type": "p",
-          "text": "*Figure 6 — Le modèle MAKIDO : réduction du coût (conception) puis maintenance du coût (production)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cout-cible/06.png",
+          "alt": "6.2 Pendant la production : la maintenance des coûts (kaizen)",
+          "width": 1440,
+          "height": 760,
+          "caption": "Figure 6 — Le modèle MAKIDO : réduction du coût (conception) puis maintenance du coût (production)"
         }
       ]
     },
@@ -766,8 +790,12 @@ export const chapter: Chapter = {
           "text": "Un produit n’est pas acheté pour lui-même mais pour les **fonctions** qu’il remplit. L’analyse fonctionnelle classe ces fonctions selon plusieurs axes."
         },
         {
-          "type": "p",
-          "text": "*Figure 7 — La taxonomie des fonctions d’un produit*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cout-cible/07.png",
+          "alt": "3. Analyse de la valeur et conception à coût objectif",
+          "width": 1440,
+          "height": 760,
+          "caption": "Figure 7 — La taxonomie des fonctions d’un produit"
         },
         {
           "type": "table",
@@ -873,8 +901,12 @@ export const chapter: Chapter = {
           "text": "Pour chaque fonction, on compare le pourcentage de valeur perçue par le client au pourcentage du coût estimé. L’idéal est l’alignement ; tout écart appelle une décision."
         },
         {
-          "type": "p",
-          "text": "*Figure 8 — Confrontation valeur perçue / coût estimé par fonction (produit)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cout-cible/08.png",
+          "alt": "4.1 La confrontation valeur perçue / coût estimé",
+          "width": 1440,
+          "height": 840,
+          "caption": "Figure 8 — Confrontation valeur perçue / coût estimé par fonction (produit)"
         },
         {
           "type": "callout",
@@ -951,8 +983,12 @@ export const chapter: Chapter = {
           "text": "Toute la conception à coût objectif est un jeu d’arbitrages entre trois pôles indissociables : le **coût**, la **valeur perçue** et les **fonctionnalités**. L’optimum n’est pas un sommet du triangle mais un équilibre."
         },
         {
-          "type": "p",
-          "text": "*Figure 9 — Le triangle des arbitrages : viser la qualité optimale*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cout-cible/09.png",
+          "alt": "4.2 Le raisonnement par fonction : un exemple chiffré complet",
+          "width": 1240,
+          "height": 760,
+          "caption": "Figure 9 — Le triangle des arbitrages : viser la qualité optimale"
         },
         {
           "type": "h3",
@@ -987,8 +1023,12 @@ export const chapter: Chapter = {
           "text": "Le coût cible relie directement la **satisfaction du client** (valeur perçue) et la **rentabilité de l’entreprise** (profit cible). En orientant la conception vers ce que le client valorise vraiment, il évite deux écueils symétriques : la sur-qualité (coûts inutiles) et la sous-qualité (produit rejeté). C’est une démarche transversale qui mobilise toute la chaîne de valeur."
         },
         {
-          "type": "p",
-          "text": "*Figure 10 — Le coût cible, démarche transversale orientée client*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cout-cible/10.png",
+          "alt": "4. Le coût cible, outil de pilotage stratégique",
+          "width": 1440,
+          "height": 600,
+          "caption": "Figure 10 — Le coût cible, démarche transversale orientée client"
         },
         {
           "type": "h3",
@@ -1007,8 +1047,12 @@ export const chapter: Chapter = {
           "text": "Le coût cible raisonne sur le **coût global** (***life-cycle cost***) : conception, production, distribution, usage, maintenance, fin de vie. Cette vision longue est essentielle car la profitabilité d’un produit se construit sur l’ensemble de son cycle, et non sur une année isolée."
         },
         {
-          "type": "p",
-          "text": "*Figure 11 — Le coût cible dans le cycle de vie du produit*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cout-cible/11.png",
+          "alt": "4. Le coût cible, outil de pilotage stratégique",
+          "width": 1440,
+          "height": 760,
+          "caption": "Figure 11 — Le coût cible dans le cycle de vie du produit"
         },
         {
           "type": "h3",

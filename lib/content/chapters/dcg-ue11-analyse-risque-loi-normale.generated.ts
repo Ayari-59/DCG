@@ -84,8 +84,12 @@ export const chapter: Chapter = {
           "text": "On distingue traditionnellement trois cadres décisionnels, du plus simple au plus difficile à piloter."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — Les trois univers de la décision : du déterministe au probabiliste.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-analyse-risque-loi-normale/01.png",
+          "alt": "Risque, incertitude et variables aléatoires",
+          "width": 1400,
+          "height": 500,
+          "caption": "Figure 1 — Les trois univers de la décision : du déterministe au probabiliste."
         },
         {
           "type": "h4",
@@ -166,8 +170,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — De l’expérience aléatoire à la variable aléatoire et à sa loi de probabilité.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-analyse-risque-loi-normale/02.png",
+          "alt": "L’avenir incertain",
+          "width": 1400,
+          "height": 460,
+          "caption": "Figure 2 — De l’expérience aléatoire à la variable aléatoire et à sa loi de probabilité."
         },
         {
           "type": "callout",
@@ -190,8 +198,12 @@ export const chapter: Chapter = {
           "text": "Pour une variable discrète, la loi se représente par un tableau ou un diagramme en bâtons. Pour une variable continue, elle se décrit par une fonction de densité dont l’aire totale sous la courbe vaut 1."
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — Fonction de répartition d’une variable discrète : courbe en escalier de la loi de probabilité.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-analyse-risque-loi-normale/03.png",
+          "alt": "L’avenir incertain",
+          "width": 1029,
+          "height": 741,
+          "caption": "Figure 3 — Fonction de répartition d’une variable discrète : courbe en escalier de la loi de probabilité."
         },
         {
           "type": "h4",
@@ -240,8 +252,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — Diagramme en bâtons de la loi de probabilité (variable discrète).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-analyse-risque-loi-normale/04.png",
+          "alt": "Construction d’un tableau probabiliste",
+          "width": 1400,
+          "height": 600,
+          "caption": "Figure 4 — Diagramme en bâtons de la loi de probabilité (variable discrète)."
         },
         {
           "type": "p",
@@ -434,12 +450,20 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 5 — Même espérance, dispersions différentes : l’écart-type mesure le risque.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-analyse-risque-loi-normale/05.png",
+          "alt": "Interpréter — comparer deux projets",
+          "width": 1400,
+          "height": 560,
+          "caption": "Figure 5 — Même espérance, dispersions différentes : l’écart-type mesure le risque."
         },
         {
-          "type": "p",
-          "text": "*Figure 6 — À espérance égale, le projet le plus étalé est le plus risqué.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-analyse-risque-loi-normale/06.png",
+          "alt": "Interpréter — comparer deux projets",
+          "width": 1400,
+          "height": 600,
+          "caption": "Figure 6 — À espérance égale, le projet le plus étalé est le plus risqué."
         },
         {
           "type": "callout",
@@ -472,16 +496,24 @@ export const chapter: Chapter = {
           "text": "La loi normale est entièrement déterminée par deux paramètres : l’espérance m (position du sommet, valeur la plus probable) et l’écart-type σ (largeur de la cloche : plus σ est grand, plus la courbe est aplatie). La courbe est symétrique par rapport à x = m, l’aire totale vaut 1, et la probabilité se répartit selon une règle empirique."
         },
         {
-          "type": "p",
-          "text": "*Figure 7 — Fonction de répartition d’une variable continue (loi normale) : courbe croissante de 0 à 1.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-analyse-risque-loi-normale/07.png",
+          "alt": "Interpréter — comparer deux projets",
+          "width": 1011,
+          "height": 636,
+          "caption": "Figure 7 — Fonction de répartition d’une variable continue (loi normale) : courbe croissante de 0 à 1."
         },
         {
           "type": "h4",
           "text": "La règle 68 – 95 – 99,7"
         },
         {
-          "type": "p",
-          "text": "*Figure 8 — La courbe de Gauss et la répartition de la probabilité par intervalles d’écarts-types.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-analyse-risque-loi-normale/08.png",
+          "alt": "La règle 68 – 95 – 99,7",
+          "width": 1400,
+          "height": 600,
+          "caption": "Figure 8 — La courbe de Gauss et la répartition de la probabilité par intervalles d’écarts-types."
         },
         {
           "type": "ul",
@@ -506,8 +538,12 @@ export const chapter: Chapter = {
           "text": "La table de la loi normale n’est tabulée que pour la loi centrée réduite N(0 ; 1). Pour toute autre loi normale, un changement de variable ramène X à une variable T standard."
         },
         {
-          "type": "p",
-          "text": "*Figure 9 — Arbre des conditions d’approximation : passage à la loi normale ou à la loi de Poisson.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-analyse-risque-loi-normale/09.png",
+          "alt": "Le centrage-réduction",
+          "width": 2226,
+          "height": 1380,
+          "caption": "Figure 9 — Arbre des conditions d’approximation : passage à la loi normale ou à la loi de Poisson."
         },
         {
           "type": "callout",
@@ -516,8 +552,12 @@ export const chapter: Chapter = {
           "text": "T suit alors la loi N(0 ; 1), dont la fonction de répartition est notée π(t) et lue dans la table."
         },
         {
-          "type": "p",
-          "text": "*Figure 10 — Le centrage-réduction ramène toute loi N(m ; σ) à la loi de référence N(0 ; 1).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-analyse-risque-loi-normale/10.png",
+          "alt": "Le centrage-réduction",
+          "width": 1400,
+          "height": 500,
+          "caption": "Figure 10 — Le centrage-réduction ramène toute loi N(m ; σ) à la loi de référence N(0 ; 1)."
         },
         {
           "type": "callout",
@@ -572,8 +612,12 @@ export const chapter: Chapter = {
           "text": "**Étape 3 — Traiter le signe. P(Q ≥ 15 000) = P(T ≥ −1,25). Par symétrie, P(T ≥ −1,25) = P(T ≤ 1,25) = π(1,25).**"
         },
         {
-          "type": "p",
-          "text": "*Figure 11 — Symétrie de la loi normale centrée réduite : π(−t) = 1 − π(t).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-analyse-risque-loi-normale/11.png",
+          "alt": "Le seuil de profitabilité probabilisé et l’estimation",
+          "width": 2073,
+          "height": 441,
+          "caption": "Figure 11 — Symétrie de la loi normale centrée réduite : π(−t) = 1 − π(t)."
         },
         {
           "type": "p",
@@ -584,8 +628,12 @@ export const chapter: Chapter = {
           "text": "**P(Q ≥ 15 000) = 0,8944 = 89,44 %**"
         },
         {
-          "type": "p",
-          "text": "*Figure 12 — Seuil de profitabilité probabilisé : P(Q ≥ 15 000) = 89,44 %.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-analyse-risque-loi-normale/12.png",
+          "alt": "Le seuil de profitabilité probabilisé et l’estimation",
+          "width": 1400,
+          "height": 640,
+          "caption": "Figure 12 — Seuil de profitabilité probabilisé : P(Q ≥ 15 000) = 89,44 %."
         },
         {
           "type": "p",
@@ -855,8 +903,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 13 — Élasticité prix de la demande : zones élastique et inélastique.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-analyse-risque-loi-normale/13.png",
+          "alt": "Indicateurs de risque d’exploitation et élasticité",
+          "width": 1400,
+          "height": 560,
+          "caption": "Figure 13 — Élasticité prix de la demande : zones élastique et inélastique."
         },
         {
           "type": "h4",

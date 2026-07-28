@@ -76,8 +76,12 @@ export const chapter: Chapter = {
           "text": "Le contrôle de gestion ne peut rester à l’écart de ce mouvement. Il dispose précisément des outils — indicateurs, tableaux de bord, analyse des écarts, calcul de coûts — qui permettent de traduire ces nouveaux enjeux en grandeurs pilotables. Sa mission s’élargit : il ne s’agit plus seulement de mesurer la performance financière, mais de piloter une performance globale, c’est-à-dire la combinaison des performances économique, financière, sociale, environnementale et sociétale."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — Du pilotage financier au pilotage de la performance globale : un élargissement progressif du périmètre de la performance.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/01.png",
+          "alt": "1. Comprendre la performance globale",
+          "width": 1520,
+          "height": 600,
+          "caption": "Figure 1 — Du pilotage financier au pilotage de la performance globale : un élargissement progressif du périmètre de la performance."
         },
         {
           "type": "callout",
@@ -108,8 +112,12 @@ export const chapter: Chapter = {
           "text": "On décompose classiquement la performance en quatre notions qui se complètent. Elles relient les trois pôles de toute action de gestion — les objectifs, les moyens, les résultats."
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — Le triangle de la performance : économie, efficience, efficacité et pertinence relient moyens, résultats et objectifs.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/02.png",
+          "alt": "Les quatre « E » de la performance",
+          "width": 1320,
+          "height": 760,
+          "caption": "Figure 2 — Le triangle de la performance : économie, efficience, efficacité et pertinence relient moyens, résultats et objectifs."
         },
         {
           "type": "table",
@@ -191,8 +199,12 @@ export const chapter: Chapter = {
           "text": "Sur trois exercices, le résultat net de Rakéo progresse légèrement (indice 100 → 104). Lue seule, cette courbe est rassurante. Mais deux indicateurs extra-financiers racontent une autre histoire : la satisfaction client recule (100 → 88) et l’empreinte CO₂ par unité produite augmente (100 → 117), sous l’effet d’achats de matière moins coûteuse mais plus carbonée.\n**Lecture : le résultat « tient » à court terme parce qu’Rakéo consomme son capital immatériel (satisfaction) et reporte un risque (carbone, réglementation) sur les exercices futurs. Le tout-financier masque une dégradation de la performance globale.**"
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — Rakéo : un résultat net stable masque la dégradation de la satisfaction client et la hausse de l’empreinte carbone (indices base 100 en N).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/03.png",
+          "alt": "L’insuffisance des seuls indicateurs financiers",
+          "width": 1466,
+          "height": 859,
+          "caption": "Figure 3 — Rakéo : un résultat net stable masque la dégradation de la satisfaction client et la hausse de l’empreinte carbone (indices base 100 en N)."
         },
         {
           "type": "callout",
@@ -247,8 +259,12 @@ export const chapter: Chapter = {
           "text": "La performance globale se décline en cinq dimensions complémentaires. Aucune ne se suffit à elle-même ; c’est leur équilibre qui fait la performance. Pour chacune, le contrôle de gestion identifie des objectifs et propose des indicateurs adaptés à l’organisation — sans plaquer des indicateurs standards sur toutes les entreprises."
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — Les cinq dimensions de la performance globale gravitant autour d’un pilotage intégré.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/04.png",
+          "alt": "2. Les dimensions de la performance globale",
+          "width": 1400,
+          "height": 840,
+          "caption": "Figure 4 — Les cinq dimensions de la performance globale gravitant autour d’un pilotage intégré."
         },
         {
           "type": "h3",
@@ -435,8 +451,12 @@ export const chapter: Chapter = {
           "text": "Les critères ESG regroupent les facteurs **E**nvironnementaux, **S**ociaux et de **G**ouvernance utilisés pour évaluer la performance extra-financière et la durabilité d’une organisation. Ils servent de cadre commun aux investisseurs, aux entreprises et aux régulateurs."
         },
         {
-          "type": "p",
-          "text": "*Figure 5 — Les trois piliers ESG et leurs principaux domaines.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/05.png",
+          "alt": "3. ESG et pilotage de la performance",
+          "width": 1532,
+          "height": 811,
+          "caption": "Figure 5 — Les trois piliers ESG et leurs principaux domaines."
         },
         {
           "type": "h4",
@@ -793,8 +813,12 @@ export const chapter: Chapter = {
           "text": "Le contrôle de gestion construit un radar à cinq branches, une par dimension de la performance globale, avec une cible commune à 80 (sur 100) et le réalisé de l’exercice N.\n**Lecture : Rakéo dépasse sa cible sur l’économique (88) et le social (84), mais reste en deçà sur le financier (72) et surtout l’environnemental (65). Le profil n’est pas équilibré : la dimension environnementale est le point faible à traiter en priorité.**"
         },
         {
-          "type": "p",
-          "text": "*Figure 6 — Tableau de bord intégré de Rakéo : radar des cinq dimensions, cible (80) vs réalisé en N. La dimension environnementale décroche.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/06.png",
+          "alt": "Le modèle du Balanced Scorecard",
+          "width": 1248,
+          "height": 1156,
+          "caption": "Figure 6 — Tableau de bord intégré de Rakéo : radar des cinq dimensions, cible (80) vs réalisé en N. La dimension environnementale décroche."
         },
         {
           "type": "h3",
@@ -811,8 +835,12 @@ export const chapter: Chapter = {
           "text": "Piloter la performance globale suppose d’identifier les attentes de chaque partie prenante, puis de hiérarchiser l’attention qu’on leur accorde. La cartographie pouvoir / intérêt est l’outil classique : elle positionne chaque acteur selon son pouvoir sur l’entreprise et son intérêt dans l’activité."
         },
         {
-          "type": "p",
-          "text": "*Figure 7 — Cartographie des parties prenantes de l’entreprise selon leur pouvoir et leur intérêt.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/07.png",
+          "alt": "Le modèle du Balanced Scorecard",
+          "width": 1320,
+          "height": 920,
+          "caption": "Figure 7 — Cartographie des parties prenantes de l’entreprise selon leur pouvoir et leur intérêt."
         },
         {
           "type": "table",
@@ -924,8 +952,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 8 — Prix de cession interne de Rakéo selon les trois bases : le PCI retenu se compare au coût de production du centre cédant (38 €).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/08.png",
+          "alt": "Les trois bases de fixation du PCI",
+          "width": 1389,
+          "height": 893,
+          "caption": "Figure 8 — Prix de cession interne de Rakéo selon les trois bases : le PCI retenu se compare au coût de production du centre cédant (38 €)."
         },
         {
           "type": "callout",
@@ -942,8 +974,12 @@ export const chapter: Chapter = {
           "text": "L’objectif ultime du pilotage de la performance globale est la création de valeur durable : concilier rentabilité, durabilité et responsabilité. Loin d’être contradictoires, ces trois exigences peuvent se renforcer mutuellement sur le long terme."
         },
         {
-          "type": "p",
-          "text": "*Figure 9 — La triple performance (« profit, planète, personnes ») : la valeur durable naît de l’intersection des trois cercles.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/09.png",
+          "alt": "Les trois bases de fixation du PCI",
+          "width": 1280,
+          "height": 840,
+          "caption": "Figure 9 — La triple performance (« profit, planète, personnes ») : la valeur durable naît de l’intersection des trois cercles."
         },
         {
           "type": "ul",
@@ -1213,8 +1249,12 @@ export const chapter: Chapter = {
           "text": "Le contrôle de gestion **moderne** s’appuie sur des systèmes intégrés qui collectent automatiquement la donnée à la source. Le **pilotage en temps réel** devient possible : un tableau de bord peut se mettre à jour en continu, et les écarts sont détectés au moment où ils se produisent, et non en fin de mois."
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — Frise chronologique de l’évolution du contrôle de gestion*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/10.png",
+          "alt": "5. Transformation numérique et systèmes d’information",
+          "width": 1440,
+          "height": 420,
+          "caption": "Figure 2 — Frise chronologique de l’évolution du contrôle de gestion"
         },
         {
           "type": "callout",
@@ -1290,8 +1330,12 @@ export const chapter: Chapter = {
           "text": "En supprimant les ressaisies, la digitalisation a inversé la répartition du temps du contrôleur : avant, environ 70 % était consacré à la collecte et au traitement, 30 % à l’analyse ; après, le rapport s’inverse (25 % / 75 %). Le temps libéré est réinvesti dans l’interprétation et le conseil — là où se crée la valeur."
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — Rakéo : l’automatisation déplace le temps du traitement vers l’analyse*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/11.png",
+          "alt": "5. Transformation numérique et systèmes d’information",
+          "width": 1202,
+          "height": 924,
+          "caption": "Figure 3 — Rakéo : l’automatisation déplace le temps du traitement vers l’analyse"
         },
         {
           "type": "h3",
@@ -1326,8 +1370,12 @@ export const chapter: Chapter = {
           "text": "Le SIG remplit trois fonctions : la **collecte** (saisie de la donnée à la source), le **traitement et le stockage** (mise en qualité, calcul, conservation) et la **restitution** (production des états utiles à la décision). Son rôle dans le pilotage est central : il constitue la « matière première » de toutes les méthodes étudiées dans les chapitres précédents."
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — Le système d’information de gestion : des sources à la décision*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/12.png",
+          "alt": "5. Transformation numérique et systèmes d’information",
+          "width": 1440,
+          "height": 500,
+          "caption": "Figure 4 — Le système d’information de gestion : des sources à la décision"
         },
         {
           "type": "h3",
@@ -1348,8 +1396,12 @@ export const chapter: Chapter = {
           "text": "Le principe fondateur de l’ERP est l’**unicité de la donnée** : chaque donnée est saisie une fois, à la source, puis partagée. Comme l’expliquait déjà le chapitre 1, on passe d’un système en partie double cloisonné à un « cube » informationnel multidimensionnel dont on extrait les états financiers et de gestion. Cette architecture supprime les ressaisies, les doublons et les incohérences."
         },
         {
-          "type": "p",
-          "text": "*Figure 5 — Architecture d’un ERP autour d’une base de données unique*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/13.png",
+          "alt": "Principes et architecture",
+          "width": 1440,
+          "height": 600,
+          "caption": "Figure 5 — Architecture d’un ERP autour d’une base de données unique"
         },
         {
           "type": "h4",
@@ -1466,8 +1518,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 6 — La chaîne décisionnelle : des sources à la data visualisation*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/14.png",
+          "alt": "6. Data, intelligence artificielle et contrôleur augmenté",
+          "width": 1765,
+          "height": 626,
+          "caption": "Figure 6 — La chaîne décisionnelle : des sources à la data visualisation"
         },
         {
           "type": "callout",
@@ -1509,8 +1565,12 @@ export const chapter: Chapter = {
           "text": "Analyse des données visant à en extraire des connaissances utiles à la décision. On distingue quatre niveaux, de plus en plus sophistiqués et créateurs de valeur."
         },
         {
-          "type": "p",
-          "text": "*Figure 7 — Les quatre niveaux du Data Analytics*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/15.png",
+          "alt": "La data visualisation",
+          "width": 1538,
+          "height": 894,
+          "caption": "Figure 7 — Les quatre niveaux du Data Analytics"
         },
         {
           "type": "table",
@@ -1558,8 +1618,12 @@ export const chapter: Chapter = {
           "text": "Ensemble de données si volumineuses, variées et rapidement produites que les outils traditionnels (tableur, base relationnelle classique) ne suffisent plus à les traiter. On le caractérise par cinq propriétés, les « 5 V »."
         },
         {
-          "type": "p",
-          "text": "*Figure 8 — Les 5 V du Big Data*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/16.png",
+          "alt": "La data visualisation",
+          "width": 1176,
+          "height": 1181,
+          "caption": "Figure 8 — Les 5 V du Big Data"
         },
         {
           "type": "p",
@@ -1600,8 +1664,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 9 — Rakéo : de l’analyse descriptive (réalisé) à l’analyse prédictive (prévision IA)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/17.png",
+          "alt": "La data visualisation",
+          "width": 1440,
+          "height": 640,
+          "caption": "Figure 9 — Rakéo : de l’analyse descriptive (réalisé) à l’analyse prédictive (prévision IA)"
         },
         {
           "type": "h4",
@@ -1655,8 +1723,12 @@ export const chapter: Chapter = {
           "text": "Le chapitre 1 rappelait que le rôle du contrôleur peut être plus ou moins large, du simple producteur d’états de contrôle au véritable conseiller du décideur. Le numérique fait pencher la balance vers ce second rôle : une fois la **collecte et le traitement automatisés**, le contrôleur « peut se détacher d’actions liées à la collecte et au traitement de la donnée pour se concentrer sur l’analyse et les restitutions » (guide pédagogique)."
         },
         {
-          "type": "p",
-          "text": "*Figure 10 — Les quatre postures du contrôleur de gestion*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/18.png",
+          "alt": "L’IA générative",
+          "width": 1440,
+          "height": 440,
+          "caption": "Figure 10 — Les quatre postures du contrôleur de gestion"
         },
         {
           "type": "p",
@@ -1687,8 +1759,12 @@ export const chapter: Chapter = {
           "text": "La compétence **ESG / durabilité** mérite une attention particulière : le référentiel 2027 demande de « calculer et analyser les indicateurs financiers et extra-financiers (de durabilité) ». Le numérique facilite la collecte et le suivi automatisé de ces indicateurs au sein de tableaux de bord intégrant la performance globale."
         },
         {
-          "type": "p",
-          "text": "*Figure 11 — Rakéo : tableau de bord ESG automatisé (indicateurs de durabilité)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/19.png",
+          "alt": "L’IA générative",
+          "width": 1440,
+          "height": 600,
+          "caption": "Figure 11 — Rakéo : tableau de bord ESG automatisé (indicateurs de durabilité)"
         },
         {
           "type": "h4",
@@ -1755,8 +1831,12 @@ export const chapter: Chapter = {
           "text": "Le risque ultime serait de laisser la machine décider à la place de l’humain. Or la décision engage une responsabilité, mobilise des valeurs et intègre des informations que les données ne contiennent pas. **L’humain doit rester au centre de la décision**: la technologie éclaire le choix, elle ne le remplace pas."
         },
         {
-          "type": "p",
-          "text": "*Figure 12 — Opportunités et risques de la transformation numérique*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/20.png",
+          "alt": "La place de l’humain dans la décision",
+          "width": 1440,
+          "height": 560,
+          "caption": "Figure 12 — Opportunités et risques de la transformation numérique"
         },
         {
           "type": "callout",
@@ -1932,8 +2012,12 @@ export const chapter: Chapter = {
           "text": "Stock de sécurité juillet : 10 % × 1 700 = 170 u. Quantité à produire = demande prévue + stock de sécurité − stock initial = 1 700 + 170 − 300 = **1 570 unités**, soit une valorisation au coût standard de 1 570 × 67 = 105 190 €. Constituer ce stock de sécurité évite une rupture qui coûterait jusqu’à 170 × 52 = 8 840 € de marge perdue."
         },
         {
-          "type": "p",
-          "text": "*Figure 14 — Application Rakéo : du constat à la décision, les 4 niveaux d’analytics*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-performance-globale-durabilite/21.png",
+          "alt": "4. Niveau prescriptif — que faut-il faire ?",
+          "width": 1440,
+          "height": 680,
+          "caption": "Figure 14 — Application Rakéo : du constat à la décision, les 4 niveaux d’analytics"
         }
       ]
     },

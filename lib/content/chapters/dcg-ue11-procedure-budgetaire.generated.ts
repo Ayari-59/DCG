@@ -50,8 +50,12 @@ export const chapter: Chapter = {
           "text": "La planification suit une cascade logique : la vision stratégique se décline en objectifs, puis en plans d’action, puis en programmes et budgets, dont l’exécution est enfin confrontée aux réalisations par le contrôle budgétaire. Cette boucle de régulation — dite cybernétique — fait du budget la « boussole » de l’action quotidienne."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — De la vision stratégique au contrôle : la boucle de régulation budgétaire*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-procedure-budgetaire/01.png",
+          "alt": "Figure du cours",
+          "width": 1640,
+          "height": 600,
+          "caption": "Figure 1 — De la vision stratégique au contrôle : la boucle de régulation budgétaire"
         },
         {
           "type": "callout",
@@ -209,8 +213,12 @@ export const chapter: Chapter = {
           "text": "La gestion budgétaire illustre la conception du contrôle de gestion comme moyen de décliner la stratégie. Trois niveaux s’emboîtent, du plus global au plus opérationnel."
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — L’articulation plan — programmes — budgets : décliner la stratégie*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-procedure-budgetaire/02.png",
+          "alt": "2. La procédure budgétaire",
+          "width": 1520,
+          "height": 640,
+          "caption": "Figure 2 — L’articulation plan — programmes — budgets : décliner la stratégie"
         },
         {
           "type": "p",
@@ -233,8 +241,12 @@ export const chapter: Chapter = {
           "text": "Les budgets s’enchaînent selon une logique précise. On distingue les **budgets opérationnels (ou fonctionnels)** — ventes, production, approvisionnements, services administratifs, investissements — et les **budgets financiers (ou de synthèse)**, qui récapitulent l’impact des premiers : essentiellement le budget de trésorerie."
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — Le réseau des budgets : tout découle des ventes, tout converge vers la trésorerie*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-procedure-budgetaire/03.png",
+          "alt": "2. La procédure budgétaire",
+          "width": 1640,
+          "height": 760,
+          "caption": "Figure 3 — Le réseau des budgets : tout découle des ventes, tout converge vers la trésorerie"
         },
         {
           "type": "p",
@@ -255,8 +267,12 @@ export const chapter: Chapter = {
           "text": "La procédure budgétaire est une activité cyclique qui rythme annuellement la vie de l’entreprise. Pour une entreprise calant son exercice sur l’année civile, le scénario classique se déroule de septembre à décembre, puis se prolonge par un suivi mensuel."
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — Le calendrier budgétaire type et la procédure de navette*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-procedure-budgetaire/04.png",
+          "alt": "2. La procédure budgétaire",
+          "width": 1640,
+          "height": 600,
+          "caption": "Figure 4 — Le calendrier budgétaire type et la procédure de navette"
         },
         {
           "type": "h3",
@@ -388,8 +404,12 @@ export const chapter: Chapter = {
           "text": "Comme on peut faire une infinité d’hypothèses sur N, on raisonne en pratique dans le cadre d’une « fourchette » budgétaire, en présentant au moins trois hypothèses : moyenne (la plus probable), basse (pessimiste) et haute (optimiste)."
         },
         {
-          "type": "p",
-          "text": "*Figure 5 — Le budget flexible : une droite B = v·N + F et sa fourchette d’hypothèses*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-procedure-budgetaire/05.png",
+          "alt": "3. L’articulation des budgets et les centres de responsabilité",
+          "width": 1520,
+          "height": 840,
+          "caption": "Figure 5 — Le budget flexible : une droite B = v·N + F et sa fourchette d’hypothèses"
         },
         {
           "type": "p",
@@ -509,8 +529,12 @@ export const chapter: Chapter = {
           "text": "On distingue quatre types de centres, selon le degré d’autonomie et l’ampleur des missions confiées."
         },
         {
-          "type": "p",
-          "text": "*Figure 6 — Les quatre types de centres de responsabilité*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-procedure-budgetaire/06.png",
+          "alt": "3. L’articulation des budgets et les centres de responsabilité",
+          "width": 1600,
+          "height": 600,
+          "caption": "Figure 6 — Les quatre types de centres de responsabilité"
         },
         {
           "type": "h3",
@@ -559,8 +583,12 @@ export const chapter: Chapter = {
           "text": "Selon la taille, plusieurs étages de délégation se superposent : ateliers dans une usine, usines dans une division. Les budgets se consolident de bas en haut, comme des poupées russes. À chaque niveau, le responsable est à la fois contrôleur (de l’échelon inférieur) et contrôlé (par sa hiérarchie)."
         },
         {
-          "type": "p",
-          "text": "*Figure 7 — L’emboîtement gigogne des centres et des budgets*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-procedure-budgetaire/07.png",
+          "alt": "*L’emboîtement « gigogne » des centres*",
+          "width": 1440,
+          "height": 640,
+          "caption": "Figure 7 — L’emboîtement gigogne des centres et des budgets"
         },
         {
           "type": "callout",
@@ -890,8 +918,12 @@ export const chapter: Chapter = {
           "text": "Ces dérives ont nourri une critique radicale : certains préconisent d’**abandonner le budget annuel** au profit d’un pilotage plus réactif. C’est le mouvement du **Beyond Budgeting**, qui propose de remplacer les objectifs fixes et négociés par des objectifs relatifs (benchmark interne ou externe), de décentraliser la décision et de substituer au budget figé des **prévisions glissantes** (*rolling forecasts*) régulièrement réactualisées."
         },
         {
-          "type": "p",
-          "text": "*Figure 8 — Du budget traditionnel au Beyond Budgeting : deux philosophies du pilotage*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-procedure-budgetaire/08.png",
+          "alt": "4. Les enjeux contemporains du pilotage budgétaire",
+          "width": 1600,
+          "height": 640,
+          "caption": "Figure 8 — Du budget traditionnel au Beyond Budgeting : deux philosophies du pilotage"
         },
         {
           "type": "p",

@@ -13,11 +13,47 @@ export const chapter: Chapter = {
   "durationMin": 15,
   "sections": [
     {
+      "id": "preambule",
+      "title": "Préambule",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**DSCG — UE3**"
+        },
+        {
+          "type": "p",
+          "text": "Management et contrôle de gestion"
+        },
+        {
+          "type": "p",
+          "text": "**Annexe de référence**"
+        },
+        {
+          "type": "p",
+          "text": "*Manuel premium de préparation à l'épreuve nationale*"
+        },
+        {
+          "type": "p",
+          "text": "Glossaire · Répertoires · Bibliographie · Correspondances"
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "text": "**Manuel premium de préparation à l'épreuve nationale du DSCG — UE3 « Management et contrôle de gestion »** Appareil de référence : glossaire, répertoires, bibliographie et table de correspondance avec le référentiel officiel."
+        },
+        {
+          "type": "p",
+          "text": "Cette annexe transforme l'ouvrage en instrument de référence pour la préparation de l'UE3. Elle rassemble, dans un format consultable rapidement, les définitions, les auteurs, les modèles, les schémas, les sources et la cartographie du programme couverts par les huit chapitres. Elle se lit transversalement, en complément des fiches de révision de chaque chapitre."
+        }
+      ]
+    },
+    {
       "id": "1-glossaire-complet-de-l-ue3",
       "title": "1. Glossaire complet de l'UE3",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "Définitions synthétiques des notions clés de l'ensemble du programme, classées par ordre alphabétique. Le numéro entre crochets renvoie au chapitre principal de traitement."
         },
         {
@@ -215,7 +251,8 @@ export const chapter: Chapter = {
       "title": "2. Répertoire des auteurs à connaître",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "Auteurs et théoriciens mobilisés dans l'ouvrage, avec leur apport principal et le(s) chapitre(s) de référence."
         },
         {
@@ -355,7 +392,8 @@ export const chapter: Chapter = {
       "title": "3. Répertoire des modèles et référentiels",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "Modèles, méthodes et référentiels structurants du programme, avec leur usage et le chapitre de traitement."
         },
         {
@@ -500,7 +538,8 @@ export const chapter: Chapter = {
       "title": "4. Répertoire des schémas de synthèse",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "Liste des principales représentations graphiques de l'ouvrage (schémas, matrices, graphiques, cartes mentales), par chapitre. Chaque chapitre se clôt en outre sur une **carte mentale** récapitulative."
         },
         {
@@ -542,7 +581,8 @@ export const chapter: Chapter = {
       "title": "5. Bibliographie académique commentée",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "Sélection d'ouvrages et de travaux de référence pour approfondir le programme. Les commentaires en signalent l'intérêt pour la préparation de l'UE3."
         },
         {
@@ -608,7 +648,8 @@ export const chapter: Chapter = {
       "title": "6. Webographie et rapports institutionnels",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "Ressources institutionnelles pour actualiser les connaissances, en particulier sur les cadres réglementaires évolutifs (durabilité, normalisation). Les intitulés sont donnés à titre indicatif ; il convient de rechercher les versions en vigueur à la date de préparation."
         },
         {
@@ -624,7 +665,8 @@ export const chapter: Chapter = {
           "text": "**Cadre professionnel et institutionnel.** Ordre des experts-comptables et instances de la profession comptable — doctrine et publications. Sites institutionnels relatifs au DSCG et aux référentiels d'examen — textes officiels du diplôme et programmes. Instituts et associations de contrôle de gestion (par exemple les associations professionnelles du domaine) — publications et retours de pratiques."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "*Conseil de méthode.* Les cadres de durabilité (CSRD, ESRS) évoluent rapidement : pour un sujet d'examen, vérifier systématiquement l'état du droit et les seuils en vigueur à la date de l'épreuve auprès des sources officielles (Commission européenne, EFRAG, textes de transposition nationale)."
         }
       ]
@@ -634,7 +676,8 @@ export const chapter: Chapter = {
       "title": "7. Tableau de correspondance — référentiel officiel DSCG ↔ chapitres de l'ouvrage",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "Cartographie de la couverture du référentiel par les huit chapitres rédigés. Elle permet de situer chaque chapitre dans le programme et d'identifier les zones traitées et les compléments éventuels à mobiliser."
         },
         {

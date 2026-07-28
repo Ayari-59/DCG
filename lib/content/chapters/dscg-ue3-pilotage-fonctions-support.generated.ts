@@ -13,6 +13,37 @@ export const chapter: Chapter = {
   "durationMin": 45,
   "sections": [
     {
+      "id": "preambule",
+      "title": "Préambule",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**DSCG — UE3**"
+        },
+        {
+          "type": "p",
+          "text": "Management et contrôle de gestion"
+        },
+        {
+          "type": "p",
+          "text": "**Le pilotage des fonctions support**"
+        },
+        {
+          "type": "p",
+          "text": "*Manuel premium de préparation à l'épreuve nationale*"
+        },
+        {
+          "type": "p",
+          "text": "Partie 2 — Sous-partie 2.3 — Volume indicatif : 10 heures"
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "text": "**Manuel premium de préparation à l'épreuve nationale du DSCG — UE3 « Management et contrôle de gestion »** Nouveau référentiel — Partie 2 « Favoriser le déploiement de la stratégie de l'organisation grâce à des outils de contrôle de gestion » — **Sous-partie 2.3 — Volume indicatif : 10 heures**"
+        }
+      ]
+    },
+    {
       "id": "note-de-conformite-au-referentiel-a-lire-avant-le-chapitre",
       "title": "Note de conformité au référentiel (à lire avant le chapitre)",
       "blocks": [
@@ -131,7 +162,8 @@ export const chapter: Chapter = {
           "text": "1.4 Problématique centrale"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Problématique centrale.** Comment le contrôle de gestion peut-il dépasser la vision réductrice des fonctions support comme simples centres de coûts, pour rendre visible et pilotable leur contribution — indirecte mais stratégique — à la création de valeur et à la performance globale de l'organisation ?"
         },
         {
@@ -171,7 +203,8 @@ export const chapter: Chapter = {
           "text": "2.1 Définition et caractéristiques"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : cadre conceptuel créé, s'appuyant sur la chaîne de valeur de Porter reprise de l'ancien cours.*"
         },
         {
@@ -187,7 +220,8 @@ export const chapter: Chapter = {
           "text": "2.1.2 La place dans la chaîne de valeur de Porter"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté (Cours 2).*"
         },
         {
@@ -199,7 +233,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Regard DSCG"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "warning",
           "text": "**Regard DSCG.** Le piège classique consiste à raisonner les fonctions support uniquement en coûts. L'examinateur attend l'inverse : montrer comment une fonction support *crée de la valeur* (réduction du coût total, amélioration de la qualité, du délai, de l'innovation ou de l'expérience client interne) et comment cette valeur, bien que diffuse, peut être *mesurée* par des indicateurs pertinents. Toujours relier la fonction support à la stratégie et à la performance globale."
         },
         {
@@ -207,7 +242,8 @@ export const chapter: Chapter = {
           "text": "2.1.3 De Porter à Kaplan et Norton : mesurer la contribution indirecte"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté (Cours 2 & 4).*"
         },
         {
@@ -219,7 +255,8 @@ export const chapter: Chapter = {
           "text": "2.2 Typologie des fonctions support"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé.*"
         },
         {
@@ -294,12 +331,20 @@ export const chapter: Chapter = {
           "text": "Schéma 1 — Cartographie des fonctions support dans l'entreprise *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-fonctions-support/01.png",
+          "alt": "Schéma 1 — Cartographie des fonctions support dans l'entreprise *(obligatoire)*",
+          "width": 2200,
+          "height": 1320
+        },
+        {
           "type": "h4",
           "text": "Encadré — Focus professionnel"
         },
         {
-          "type": "p",
-          "text": "**Focus professionnel.** Beaucoup de grands groupes ont regroupé leurs fonctions support dans des **centres de services partagés** (CSP, ou *Shared Service Centers*) : une entité unique mutualise, par exemple, la paie, la comptabilité fournisseurs ou le support informatique pour l'ensemble des filiales. L'objectif est de réaliser des économies d'échelle, de standardiser les processus et de professionnaliser le service — tout en facturant les prestations aux entités clientes (cf. §7). On y reviendra dans les approfondissements (§10).**Transition.** Après cette vue d'ensemble, examinons le pilotage de la performance des quatre fonctions support les plus fréquemment mobilisées dans les sujets DSCG, en commençant par les achats."
+          "type": "callout",
+          "variant": "info",
+          "text": "**Focus professionnel.** Beaucoup de grands groupes ont regroupé leurs fonctions support dans des **centres de services partagés** (CSP, ou *Shared Service Centers*) : une entité unique mutualise, par exemple, la paie, la comptabilité fournisseurs ou le support informatique pour l'ensemble des filiales. L'objectif est de réaliser des économies d'échelle, de standardiser les processus et de professionnaliser le service — tout en facturant les prestations aux entités clientes (cf. §7). On y reviendra dans les approfondissements (§10).\n**Transition.** Après cette vue d'ensemble, examinons le pilotage de la performance des quatre fonctions support les plus fréquemment mobilisées dans les sujets DSCG, en commençant par les achats."
         }
       ]
     },
@@ -308,7 +353,8 @@ export const chapter: Chapter = {
       "title": "3. Le pilotage de la fonction achats",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé (Kraljic, Pareto, TCO) ; effet pervers de sous-optimisation repris de l'ancien cours.*"
         },
         {
@@ -324,7 +370,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Erreurs fréquentes"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "warning",
           "text": "**Erreurs fréquentes.** Réduire la performance achats au seul **prix unitaire** est l'erreur la plus répandue. L'ancien cours en donne l'illustration : un acheteur qui « fait des économies sur les achats, mais au détriment de la qualité des matières premières » augmente les rebuts en production — le responsable production doit alors consommer davantage de matière, ce qui **dégrade la performance globale**. C'est l'effet pervers classique de la responsabilisation par centres : optimiser localement un centre peut détériorer le résultat d'ensemble. D'où la nécessité de raisonner en **coût total** et en performance transverse."
         },
         {
@@ -413,6 +460,13 @@ export const chapter: Chapter = {
           "text": "Graphique 2 — Diagramme de Pareto des dépenses fournisseurs *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-fonctions-support/02.png",
+          "alt": "Graphique 2 — Diagramme de Pareto des dépenses fournisseurs *(obligatoire)*",
+          "width": 1804,
+          "height": 1100
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Sur le graphique, les fournisseurs F1 à F3 (classe A) concentrent environ 75 % de la dépense alors qu'ils ne représentent que 3 sur 10 des fournisseurs : ils justifient une gestion stratégique (contrats-cadres, revues de performance, codéveloppement). Les fournisseurs F4-F6 (classe B) appellent un suivi standard. Les fournisseurs F7 à F10 (classe C), nombreux mais marginaux en valeur, doivent être gérés au moindre coût administratif. Le contrôle de gestion exploite cette segmentation pour allouer la ressource rare — le temps d'acheteur — là où elle crée le plus de valeur."
         },
@@ -429,6 +483,13 @@ export const chapter: Chapter = {
           "text": "Matrice 3 — La matrice de Kraljic *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-fonctions-support/03.png",
+          "alt": "Matrice 3 — La matrice de Kraljic *(obligatoire)*",
+          "width": 1672,
+          "height": 1320
+        },
+        {
           "type": "p",
           "text": "**Interprétation et exploitation managériale.** Les achats **simples** (faible risque, faible poids : fournitures de bureau) se gèrent au moindre coût administratif (automatisation, catalogues). Les achats **leviers** (faible risque, fort poids : matières premières standard à plusieurs sources) se pilotent par la mise en concurrence pour maximiser les économies. Les achats **critiques / goulots** (fort risque, faible poids : composant rare mais peu coûteux) exigent de sécuriser l'approvisionnement (stocks de sécurité, fournisseurs alternatifs). Les achats **stratégiques** (fort risque, fort poids : composant clé en source unique) appellent un **partenariat de long terme** avec le fournisseur (codéveloppement, contrats pluriannuels, intégration). La matrice de Kraljic illustre parfaitement le passage d'une fonction achats « tactique » (acheter au meilleur prix) à une fonction « stratégique » (gérer un portefeuille de relations fournisseurs créatrices de valeur)."
         },
@@ -437,8 +498,9 @@ export const chapter: Chapter = {
           "text": "Encadré — Point méthode"
         },
         {
-          "type": "p",
-          "text": "**Point méthode.** Pour positionner un achat dans la matrice de Kraljic : (1) évaluer le **poids financier** (part dans le total des achats, impact sur le coût de revient) ; (2) évaluer le **risque d'approvisionnement** (nombre de fournisseurs disponibles, substituabilité, situation géopolitique, dépendance technique) ; (3) placer l'achat dans le quadrant correspondant ; (4) en déduire la stratégie (gérer, mettre en concurrence, sécuriser, ou nouer un partenariat). Ne jamais appliquer une stratégie uniforme à tous les achats : c'est la différenciation qui crée de la valeur.**Transition.** Une fois les achats sécurisés, c'est la fonction logistique qui assure le flux des biens depuis les fournisseurs jusqu'aux clients."
+          "type": "callout",
+          "variant": "tip",
+          "text": "**Point méthode.** Pour positionner un achat dans la matrice de Kraljic : (1) évaluer le **poids financier** (part dans le total des achats, impact sur le coût de revient) ; (2) évaluer le **risque d'approvisionnement** (nombre de fournisseurs disponibles, substituabilité, situation géopolitique, dépendance technique) ; (3) placer l'achat dans le quadrant correspondant ; (4) en déduire la stratégie (gérer, mettre en concurrence, sécuriser, ou nouer un partenariat). Ne jamais appliquer une stratégie uniforme à tous les achats : c'est la différenciation qui crée de la valeur.\n**Transition.** Une fois les achats sécurisés, c'est la fonction logistique qui assure le flux des biens depuis les fournisseurs jusqu'aux clients."
         }
       ]
     },
@@ -447,7 +509,8 @@ export const chapter: Chapter = {
       "title": "4. Le pilotage de la fonction logistique",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; Supply Chain Management et flux physiques/d'information repris de l'ancien cours (Cours 3).*"
         },
         {
@@ -461,6 +524,13 @@ export const chapter: Chapter = {
         {
           "type": "h4",
           "text": "Cartographie 4 — Flux physiques et flux d'information *(obligatoire)*"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-fonctions-support/04.png",
+          "alt": "Cartographie 4 — Flux physiques et flux d'information *(obligatoire)*",
+          "width": 2200,
+          "height": 968
         },
         {
           "type": "p",
@@ -540,6 +610,13 @@ export const chapter: Chapter = {
           "text": "Graphique 5 — Évolution du taux de service et du coût logistique *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-fonctions-support/05.png",
+          "alt": "Graphique 5 — Évolution du taux de service et du coût logistique *(obligatoire)*",
+          "width": 1804,
+          "height": 1056
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le graphique met en regard deux courbes sur douze mois : le taux de service (en %) et le coût logistique (en % du CA). On observe le **dilemme fondamental** de la logistique : viser un taux de service très élevé (proche de 100 %) fait croître le coût de manière plus que proportionnelle (stocks de sécurité, transports express). Le pilotage ne consiste pas à maximiser le service ni à minimiser le coût, mais à trouver le **point d'équilibre** cohérent avec le positionnement stratégique : une enseigne de luxe ou de la santé privilégiera le service ; un *discounter* privilégiera le coût. Le contrôle de gestion éclaire cet arbitrage en chiffrant le coût marginal de chaque point de service supplémentaire."
         },
@@ -548,8 +625,9 @@ export const chapter: Chapter = {
           "text": "Encadré — Bonnes pratiques"
         },
         {
-          "type": "p",
-          "text": "**Bonnes pratiques.** Les organisations logistiques performantes (Amazon, Zara, Toyota) partagent quelques principes : pilotage par la demande réelle plutôt que par les prévisions (logique « tirée » du *lean*, lien chapitre 1) ; partage de l'information le long de la chaîne pour atténuer l'effet coup de fouet ; segmentation des flux (un circuit rapide et coûteux pour les produits stratégiques, un circuit économique pour les autres) ; mesure systématique du taux de service du point de vue du client final, et non de chaque maillon isolé.**Transition.** Au-delà des flux de biens, c'est le capital humain qui constitue, dans l'économie de la connaissance, la ressource support la plus stratégique."
+          "type": "callout",
+          "variant": "info",
+          "text": "**Bonnes pratiques.** Les organisations logistiques performantes (Amazon, Zara, Toyota) partagent quelques principes : pilotage par la demande réelle plutôt que par les prévisions (logique « tirée » du *lean*, lien chapitre 1) ; partage de l'information le long de la chaîne pour atténuer l'effet coup de fouet ; segmentation des flux (un circuit rapide et coûteux pour les produits stratégiques, un circuit économique pour les autres) ; mesure systématique du taux de service du point de vue du client final, et non de chaque maillon isolé.\n**Transition.** Au-delà des flux de biens, c'est le capital humain qui constitue, dans l'économie de la connaissance, la ressource support la plus stratégique."
         }
       ]
     },
@@ -558,7 +636,8 @@ export const chapter: Chapter = {
       "title": "5. Le pilotage de la fonction ressources humaines",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé pour les KPI ; HR Scorecard repris de l'ancien cours (Cours 4). Le pilotage*de la performance*RH relève de 2.3 ; la GRH proprement dite relève de 2.6.*"
         },
         {
@@ -647,6 +726,13 @@ export const chapter: Chapter = {
           "text": "Graphique 6 — Radar de comparaison de trois entités (BU) *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-fonctions-support/06.png",
+          "alt": "Graphique 6 — Radar de comparaison de trois entités (BU) *(obligatoire)*",
+          "width": 1804,
+          "height": 1232
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le radar compare trois unités (BU A, B, C) sur cinq dimensions normalisées (turnover inversé, absentéisme inversé, productivité, satisfaction, formation — toutes orientées « plus c'est grand, mieux c'est »). La **BU A** présente un profil équilibré et performant ; la **BU B** affiche une bonne productivité mais une satisfaction et une formation faibles — situation à risque, car une productivité élevée obtenue au prix d'un climat dégradé n'est pas durable (risque de turnover et d'absentéisme différés) ; la **BU C** investit fortement dans la formation et la satisfaction mais peine encore en productivité — profil d'une unité en construction. Le radar, en superposant les profils, révèle d'un coup d'œil les forces, les faiblesses et surtout les **déséquilibres** qu'un simple tableau de chiffres masquerait. Il oriente l'action RH différenciée par unité."
         },
@@ -720,7 +806,8 @@ export const chapter: Chapter = {
           "text": "**Lecture.** Le tableau de bord RH met en évidence une amélioration générale, à l'exception notable de l'**absentéisme**, qui se dégrade malgré la hausse de l'engagement déclaré (eNPS) — signal d'alerte appelant une analyse fine (conditions de travail d'une population spécifique ? effet de la charge liée aux postes non pourvus ?). C'est tout l'intérêt d'un tableau de bord : faire apparaître les **dissonances** entre indicateurs et déclencher l'investigation."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** La quatrième grande fonction support, le système d'information, est devenue l'infrastructure critique sur laquelle reposent toutes les autres."
         }
       ]
@@ -730,7 +817,8 @@ export const chapter: Chapter = {
       "title": "6. Le pilotage de la fonction informatique (SI)",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; lien avec l'UE5 (systèmes d'information) du DSCG.*"
         },
         {
@@ -815,6 +903,13 @@ export const chapter: Chapter = {
           "text": "Schéma 7 — Architecture simplifiée d'un système d'information *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-fonctions-support/07.png",
+          "alt": "Schéma 7 — Architecture simplifiée d'un système d'information *(obligatoire)*",
+          "width": 1936,
+          "height": 1056
+        },
+        {
           "type": "p",
           "text": "**Interprétation.** L'architecture en couches montre comment le SI soutient l'organisation : la couche **infrastructure** (serveurs, réseaux, cloud) supporte la couche **données** (bases, entrepôts), elle-même exploitée par la couche **applications** (ERP, CRM, outils métiers), au service de la couche **métiers / utilisateurs**. La **sécurité** et la **gouvernance** sont transverses à toutes les couches. Cette représentation aide à situer où se créent la valeur (applications métiers) et les risques (sécurité transverse), et à comprendre pourquoi une défaillance d'infrastructure se propage à tout l'édifice."
         },
@@ -823,8 +918,9 @@ export const chapter: Chapter = {
           "text": "Encadré — Regard DSCG"
         },
         {
-          "type": "p",
-          "text": "**Regard DSCG.** Un sujet portant sur la DSI attend généralement : (1) l'identification des indicateurs pertinents distinguant coût, qualité de service et risque ; (2) une réflexion sur l'**alignement stratégique** (le SI sert-il la stratégie ?) ; (3) éventuellement un calcul de coût (TCO d'une solution, *make or buy* entre solution interne et cloud) ; (4) la question de la **facturation interne** des services SI aux directions métiers (cf. §7). Penser à relier au pilotage par la valeur et non au seul coût.**Transition.** Ces quatre fonctions partagent les mêmes mécanismes transversaux de contrôle de gestion : la responsabilisation par centres et la facturation interne."
+          "type": "callout",
+          "variant": "info",
+          "text": "**Regard DSCG.** Un sujet portant sur la DSI attend généralement : (1) l'identification des indicateurs pertinents distinguant coût, qualité de service et risque ; (2) une réflexion sur l'**alignement stratégique** (le SI sert-il la stratégie ?) ; (3) éventuellement un calcul de coût (TCO d'une solution, *make or buy* entre solution interne et cloud) ; (4) la question de la **facturation interne** des services SI aux directions métiers (cf. §7). Penser à relier au pilotage par la valeur et non au seul coût.\n**Transition.** Ces quatre fonctions partagent les mêmes mécanismes transversaux de contrôle de gestion : la responsabilisation par centres et la facturation interne."
         }
       ]
     },
@@ -833,7 +929,8 @@ export const chapter: Chapter = {
       "title": "7. Le contrôle de gestion des fonctions support",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "*Statut : repris-adapté (centres de responsabilité, PCI, effets pervers — Cours 1 & 3) ; méthodes de facturation et exemple chiffré créés.*"
         },
         {
@@ -841,7 +938,8 @@ export const chapter: Chapter = {
           "text": "7.1 Les centres de responsabilité"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté (Cours 1).*"
         },
         {
@@ -892,7 +990,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Erreurs fréquentes"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "warning",
           "text": "**Erreurs fréquentes : la sous-optimisation.** La responsabilisation par centres « introduit de la concurrence dans l'organisation », ce qui peut « se faire au détriment de la coopération ». Chaque responsable optimise *son* centre, parfois au détriment du tout : l'acheteur économise sur la matière mais dégrade la production ; la DSI réduit ses coûts mais détériore le service aux métiers. Le contrôle de gestion doit donc compléter les objectifs locaux par des **indicateurs transverses** (orientés client interne et performance globale) pour prévenir ces effets pervers."
         },
         {
@@ -900,7 +999,8 @@ export const chapter: Chapter = {
           "text": "7.2 La facturation interne et les prix de cession interne"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "*Statut : PCI repris (Cours 1 & 3) ; méthodes et exemple créés.*"
         },
         {
@@ -1089,7 +1189,8 @@ export const chapter: Chapter = {
           "text": "**Interprétation managériale.** La méthode du coût complet, en refacturant au seul prorata des postes, **surfacture la Commerciale** (nombreux postes mais consommation modérée d'applications et de projets) et **sous-facture la Production** (peu de postes mais forte consommation d'hébergement et de projets). L'ABC révèle la consommation *réelle* : la Production est en fait le principal consommateur de ressources IT. Conséquence : sous coût complet, la Commerciale subventionne la Production sans le savoir, ce qui fausse les décisions (la Commerciale pourrait être tentée d'externaliser une IT qu'elle juge « trop chère », alors qu'elle paie en réalité pour autrui). L'ABC, plus juste, responsabilise correctement chaque direction et éclaire mieux les arbitrages — au prix d'une complexité accrue. **C'est l'arbitrage classique : justesse contre simplicité.**"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Indicateurs et facturation alimentent l'instrument de synthèse du pilotage : le tableau de bord."
         }
       ]
@@ -1099,7 +1200,8 @@ export const chapter: Chapter = {
       "title": "8. Les tableaux de bord des fonctions support",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; Balanced Scorecard repris de l'ancien cours (Cours 2 & 4).*"
         },
         {
@@ -1115,7 +1217,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Point méthode"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "**Point méthode — sélectionner les indicateurs.** Un bon indicateur de fonction support respecte quatre critères : il **mesure le service rendu** (et pas seulement la dépense) ; il est **actionnable** (le responsable peut agir dessus) ; il est **équilibré** (on associe des indicateurs de coût, de qualité, de délai et de risque pour éviter la sous-optimisation) ; il est **relié à la valeur** (on peut expliquer en quoi il contribue à la performance globale). Évitez les indicateurs purement budgétaires, qui ramènent la fonction à un centre de coûts."
         },
         {
@@ -1199,7 +1302,8 @@ export const chapter: Chapter = {
           "text": "8.2 Le Balanced Scorecard appliqué aux fonctions support"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté (Cours 2 & 4).*"
         },
         {
@@ -1211,6 +1315,13 @@ export const chapter: Chapter = {
           "text": "Graphique 10 — Balanced Scorecard appliqué aux fonctions support *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-fonctions-support/08.png",
+          "alt": "Graphique 10 — Balanced Scorecard appliqué aux fonctions support *(obligatoire)*",
+          "width": 1892,
+          "height": 1144
+        },
+        {
           "type": "p",
           "text": "**Interprétation.** Le schéma représente les quatre perspectives empilées et reliées par des flèches de causalité ascendantes, avec pour chacune un exemple d'objectif et d'indicateur propre aux fonctions support. La lecture « de bas en haut » (comme le préconise l'ancien cours : « le BSC se construit à partir du bas et en remontant vers le haut ») raconte l'histoire de la création de valeur : investir dans les compétences et le SI → améliorer les processus support → satisfaire les clients internes → contribuer au résultat. Cette logique de causalité est ce qui distingue le BSC d'un simple empilement d'indicateurs."
         },
@@ -1219,11 +1330,19 @@ export const chapter: Chapter = {
           "text": "Schéma 11 — Architecture d'un système de pilotage intégré des fonctions support *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-fonctions-support/09.png",
+          "alt": "Schéma 11 — Architecture d'un système de pilotage intégré des fonctions support *(obligatoire)*",
+          "width": 1980,
+          "height": 1100
+        },
+        {
           "type": "p",
           "text": "**Interprétation.** L'architecture intégrée articule trois niveaux : au sommet, le **pilotage stratégique** (BSC global, direction générale) ; au centre, les **tableaux de bord par fonction** (achats, RH, logistique, IT) alimentés par leurs KPI ; à la base, les **systèmes d'information de gestion** (ERP, SIRH, outils achats/logistique) qui produisent la donnée. La **facturation interne** (§7) circule transversalement, reliant les fonctions support à leurs clients. Ce système intégré transforme des données opérationnelles en information de pilotage stratégique — réalisant concrètement la promesse du contrôle de gestion appliqué aux fonctions support."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ce dispositif de pilotage est aujourd'hui profondément transformé par la digitalisation et l'intelligence artificielle."
         }
       ]
@@ -1233,7 +1352,8 @@ export const chapter: Chapter = {
       "title": "9. Digitalisation et intelligence artificielle des fonctions support",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; ouverture contemporaine.*"
         },
         {
@@ -1307,11 +1427,19 @@ export const chapter: Chapter = {
           "text": "Schéma 12 — L'entreprise support augmentée par l'IA *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-fonctions-support/10.png",
+          "alt": "Schéma 12 — L'entreprise support augmentée par l'IA *(obligatoire)*",
+          "width": 1804,
+          "height": 1232
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma représente les fonctions support gravitant autour d'un socle commun de **données** et d'**IA**, qui les irrigue toutes. Le message clé est que la valeur ne naît plus de chaque fonction isolée mais de la **circulation et de l'exploitation transversale de la donnée** : les données RH, achats, logistiques et IT, croisées et analysées, produisent une intelligence collective supérieure à la somme des parties. Le rôle du contrôleur de gestion s'en trouve réhaussé : de producteur de chiffres, il devient l'**architecte du pilotage par la donnée** et le garant de l'interprétation. Mais cette transformation appelle une vigilance constante sur la qualité des données, la sécurité et l'éthique."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ces évolutions ne dispensent pas de maîtriser les arbitrages fondamentaux qu'examinent les approfondissements DSCG."
         }
       ]
@@ -1321,7 +1449,8 @@ export const chapter: Chapter = {
       "title": "10. Approfondissements DSCG",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; centres de services partagés et externalisation s'appuient sur l'ancien cours.*"
         },
         {
@@ -1382,7 +1511,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Regard DSCG"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "warning",
           "text": "**Regard DSCG : le raisonnement*make or buy*. Un sujet d'externalisation attend un raisonnement structuré : (1) comparer les coûts pertinents (coût interne évitable vs prix externe — attention aux coûts fixes non évitables et aux coûts irrécupérables, lien chapitre 1) ; (2) intégrer les coûts cachés (coordination, contrôle du prestataire, réversibilité) ; (3) apprécier la dimension stratégique (ne pas externaliser ce qui fonde l'avantage concurrentiel) et le risque** (dépendance, confidentialité). La décision n'est jamais purement comptable."
         },
         {
@@ -1426,6 +1556,13 @@ export const chapter: Chapter = {
         {
           "type": "h3",
           "text": "11.2 Carte mentale"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-fonctions-support/11.png",
+          "alt": "11.2 Carte mentale",
+          "width": 2244,
+          "height": 1320
         },
         {
           "type": "h3",

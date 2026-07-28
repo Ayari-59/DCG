@@ -46,8 +46,12 @@ export const chapter: Chapter = {
           "text": "Le PCI n’est donc pas une simple écriture comptable. C’est un instrument de pilotage : il détermine la marge de chaque centre, oriente les décisions des responsables, et conditionne la convergence entre l’intérêt local de chaque unité et l’intérêt global de l’organisation. Mal fixé, il provoque des conflits, des sous-optimisations, des comportements opportunistes. Bien fixé, il aligne les décisions locales sur la performance d’ensemble."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — Les flux internes et les prix de cession entre les centres de l’entreprise.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-prix-cession-interne/01.png",
+          "alt": "Figure du cours",
+          "width": 1520,
+          "height": 600,
+          "caption": "Figure 1 — Les flux internes et les prix de cession entre les centres de l’entreprise."
         },
         {
           "type": "p",
@@ -234,8 +238,12 @@ export const chapter: Chapter = {
           "text": "Le référentiel rénové cadre précisément les méthodes attendues : le prix de cession interne s’apprécie « par rapport au prix de marché, au coût standard, au coût réel (partiel ou complet) ». À ces références fondées sur le coût ou le marché s’ajoute, en pratique managériale, le prix négocié. Cette partie présente chaque mode selon les quatre temps : principe, calcul, intérêts, limites."
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — Positionnement des cinq modes sur l’axe du prix (raquette Rakéo).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-prix-cession-interne/02.png",
+          "alt": "2. Les modes de fixation des prix de cession interne",
+          "width": 1520,
+          "height": 580,
+          "caption": "Figure 2 — Positionnement des cinq modes sur l’axe du prix (raquette Rakéo)."
         },
         {
           "type": "h3",
@@ -292,8 +300,12 @@ export const chapter: Chapter = {
           "text": "Le PCI est fixé sur la base du coût réellement constaté du bien cédé. Le référentiel distingue deux assiettes : le coût réel partiel (charges variables seules) et le coût réel complet (charges variables + quote-part de charges fixes). Une variante très fréquente ajoute une marge au coût complet : c’est le coût complet majoré, ou « cost plus ».\nÀ ce coût réel s’oppose le coût standard (section 2.4), prévu et stable. La différence est capitale : le coût réel transmet à l’aval les écarts de gestion de l’amont, le coût standard les isole."
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — Décomposition en cascade : du coût variable au prix « coût complet + marge » (raquette Rakéo).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-prix-cession-interne/03.png",
+          "alt": "Limites",
+          "width": 1430,
+          "height": 920,
+          "caption": "Figure 3 — Décomposition en cascade : du coût variable au prix « coût complet + marge » (raquette Rakéo)."
         },
         {
           "type": "callout",
@@ -406,8 +418,12 @@ export const chapter: Chapter = {
           "text": "Le PCI résulte d’une négociation directe entre le responsable du centre vendeur et celui du centre acheteur, généralement à l’intérieur d’une fourchette définie par la direction."
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — Prix plancher et prix plafond : la zone de négociation acceptable (raquette Rakéo).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-prix-cession-interne/04.png",
+          "alt": "Intérêt pour le pilotage",
+          "width": 1330,
+          "height": 535,
+          "caption": "Figure 4 — Prix plancher et prix plafond : la zone de négociation acceptable (raquette Rakéo)."
         },
         {
           "type": "p",
@@ -504,8 +520,12 @@ export const chapter: Chapter = {
           "text": "Un centre de responsabilité est une unité de gestion dotée d’objectifs propres, de moyens pour les atteindre, et d’un responsable jugé sur ses résultats. On les classe selon l’étendue de l’autonomie déléguée."
         },
         {
-          "type": "p",
-          "text": "*Figure 5 — Les quatre types de centres de responsabilité et leurs critères d’évaluation.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-prix-cession-interne/05.png",
+          "alt": "3. Prix de cession interne et évaluation des centres de responsabilité",
+          "width": 1548,
+          "height": 843,
+          "caption": "Figure 5 — Les quatre types de centres de responsabilité et leurs critères d’évaluation."
         },
         {
           "type": "h4",
@@ -598,8 +618,12 @@ export const chapter: Chapter = {
           "text": "C’est le cœur de l’analyse : le même flux interne, valorisé différemment, fait apparaître des performances très contrastées. Reprenons la raquette Rakéo (vente finale 90 €, coût variable amont 38 €, coûts propres aval 8 €) selon trois PCI."
         },
         {
-          "type": "p",
-          "text": "*Figure 6 — Répartition de la marge entre Production et E-commerce selon le PCI retenu.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-prix-cession-interne/06.png",
+          "alt": "Centre d’investissement",
+          "width": 1440,
+          "height": 796,
+          "caption": "Figure 6 — Répartition de la marge entre Production et E-commerce selon le PCI retenu."
         },
         {
           "type": "callout",
@@ -646,8 +670,12 @@ export const chapter: Chapter = {
           "text": "À force d’optimisations locales, l’ensemble perd. Chaque centre maximise sa marge, mais les décisions accumulées (refus de cession, achats externes, surstockage) dégradent le résultat consolidé."
         },
         {
-          "type": "p",
-          "text": "*Figure 7 — Matrice autonomie locale / intérêt global : repérer les situations à risque.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-prix-cession-interne/07.png",
+          "alt": "La sous-performance globale",
+          "width": 1120,
+          "height": 880,
+          "caption": "Figure 7 — Matrice autonomie locale / intérêt global : repérer les situations à risque."
         },
         {
           "type": "callout",

@@ -50,8 +50,12 @@ export const chapter: Chapter = {
           "text": "Le budget des ventes irrigue toute la construction budgétaire : il commande la production, qui commande les approvisionnements, jusqu’au budget de trésorerie. Maîtriser la prévision commerciale, c’est donc tenir le premier maillon de toute la chaîne."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — Le budget des ventes, pivot de la construction budgétaire*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-budget-des-ventes/01.png",
+          "alt": "Figure du cours",
+          "width": 1520,
+          "height": 600,
+          "caption": "Figure 1 — Le budget des ventes, pivot de la construction budgétaire"
         },
         {
           "type": "callout",
@@ -205,8 +209,12 @@ export const chapter: Chapter = {
           "text": "La direction de l’entreprise envisage de porter le prix du produit de 90 € à 99 €. Une étude estime que les ventes passeraient de 214 à 180 milliers d’unités.\n= +10,0 %\n= −15,9 %\n**e = −15,9 % ÷ +10,0 % = −1,59**\n**|e| = 1,59 > 1 : la demande du produit est élastique.**"
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — Élasticité-prix de la demande du produit*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-budget-des-ventes/02.png",
+          "alt": "*Point examen*",
+          "width": 1120,
+          "height": 865,
+          "caption": "Figure 2 — Élasticité-prix de la demande du produit"
         },
         {
           "type": "p",
@@ -271,8 +279,12 @@ export const chapter: Chapter = {
           "text": "Les méthodes quantitatives expriment les ventes (*y*, variable à expliquer) en fonction du temps (*x*, variable explicative). La fonction d’ajustement dépend de la forme du nuage de points. Avant tout calcul, il est essentiel de **tracer la série** et d’observer l’écart entre deux valeurs successives."
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — Quatre allures de croissance et l’ajustement correspondant*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-budget-des-ventes/03.png",
+          "alt": "Partie 2 — Les techniques de prévision des ventes",
+          "width": 1520,
+          "height": 640,
+          "caption": "Figure 3 — Quatre allures de croissance et l’ajustement correspondant"
         },
         {
           "type": "callout",
@@ -337,8 +349,12 @@ export const chapter: Chapter = {
           "text": "Le coefficient a est la **pente** : l’entreprise vend en moyenne **+1 700 produits par an**. Le coefficient b (38,5) est l’ordonnée à l’origine (valeur théorique pour x = 0). À 90 € l’unité, la prévision N+1 représente un chiffre d’affaires le produit d’environ 48,7 × 90 = 19,95 M€. Interpréter ces nombres — et pas seulement les calculer — fait partie de l’analyse attendue."
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — Ajustement linéaire des ventes annuelles du produit*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-budget-des-ventes/04.png",
+          "alt": "Partie 2 — Les techniques de prévision des ventes",
+          "width": 1400,
+          "height": 720,
+          "caption": "Figure 4 — Ajustement linéaire des ventes annuelles du produit"
         },
         {
           "type": "callout",
@@ -371,8 +387,12 @@ export const chapter: Chapter = {
           "text": "Les ventes (milliers d’unités) du nouveau modèle la version Trail sur six années :\nx : 1 2 3 4 5 6\ny : 12 16 21 28 37 49\n**Travail à faire : justifier l'allure exponentielle, linéariser et prévoir les ventes futures.**\n**Corrigé :**\nLes ratios yᵢ₊₁/yᵢ (≈ 1,33 ; 1,31 ; 1,33 ; 1,32 ; 1,32) sont quasi constants → allure exponentielle.\nOn linéarise en posant Y = ln y, puis on ajuste Y = (ln a)·x + ln b :\nx : 1 2 3 4 5 6\nln y: 2,485 2,773 3,045 3,332 3,611 3,892\nRégression : ln y = 0,2811 x + 2,2058 → ; .\n**Ajustement : y = 9,08 × 1,3245ˣ (≈ +32,5 % par an)**\nPrévision x = 7 : ≈ 65 milliers d’unités."
         },
         {
-          "type": "p",
-          "text": "*Figure 6 — Ajustement exponentiel : le lancement du produit Trail*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-budget-des-ventes/05.png",
+          "alt": "Partie 2 — Les techniques de prévision des ventes",
+          "width": 1194,
+          "height": 859,
+          "caption": "Figure 6 — Ajustement exponentiel : le lancement du produit Trail"
         },
         {
           "type": "p",
@@ -403,8 +423,12 @@ export const chapter: Chapter = {
           "text": "Sur une série tendant vers un palier (≈ 1 600), deux ajustements concurrents :\nPuissance : — R² = 98,95 % — prévision mois 19/20 : 1 854 / 1 926\nLogarithme : y = 557,88 ln x − 62,45 — R² = 95,26 % — prévision mois 19/20 : 1 580 / 1 609\nLe R² favorise la puissance, mais celle-ci prédit ≈ 1 900 alors que la série tend visiblement vers ≈ 1 600. **Le logarithme, malgré un R² plus faible, donne de meilleures prévisions** là où elles comptent. Leçon : ne jamais se fier au seul R², toujours tracer la série."
         },
         {
-          "type": "p",
-          "text": "*Figure 7 — Puissance contre logarithme : le R² ne suffit pas*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-budget-des-ventes/06.png",
+          "alt": "Partie 2 — Les techniques de prévision des ventes",
+          "width": 1186,
+          "height": 859,
+          "caption": "Figure 7 — Puissance contre logarithme : le R² ne suffit pas"
         },
         {
           "type": "callout",
@@ -425,8 +449,12 @@ export const chapter: Chapter = {
           "text": "Chez l’entreprise, les ventes du produit culminent au printemps et en été (T2 et T3) et chutent en automne-hiver (T1 et T4). Superposer les courbes annuelles fait apparaître ce profil, stable d’une année à l’autre."
         },
         {
-          "type": "p",
-          "text": "*Figure 8 — Profil saisonnier des ventes du produit (superposition des années)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-budget-des-ventes/07.png",
+          "alt": "Partie 2 — Les techniques de prévision des ventes",
+          "width": 1400,
+          "height": 660,
+          "caption": "Figure 8 — Profil saisonnier des ventes du produit (superposition des années)"
         },
         {
           "type": "callout",
@@ -443,8 +471,12 @@ export const chapter: Chapter = {
           "text": "**Calculer.**C’est la méthode explicitement au programme. Elle se déroule en trois étapes."
         },
         {
-          "type": "p",
-          "text": "*Figure 9 — La méthode des rapports à la tendance en trois étapes*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-budget-des-ventes/08.png",
+          "alt": "Partie 2 — Les techniques de prévision des ventes",
+          "width": 1520,
+          "height": 420,
+          "caption": "Figure 9 — La méthode des rapports à la tendance en trois étapes"
         },
         {
           "type": "ul",
@@ -509,8 +541,12 @@ export const chapter: Chapter = {
           "text": "Au T3 de l’année N, l’entreprise a vendu 72 milliers du produit. Cette valeur brute, dopée par la haute saison, surestime la tendance réelle. On la corrige des variations saisonnières :\n**valeur CVS = 72 ÷ 1,223 = 58,9 milliers d’unités**\nLa série CVS (corrigée des variations saisonnières) révèle le mouvement de fond, débarrassé de l’effet saison : c’est sur elle que l’on apprécie une véritable accélération ou un ralentissement des ventes — démarche utilisée par l’INSEE pour les statistiques de conjoncture."
         },
         {
-          "type": "p",
-          "text": "*Figure 10 — Désaisonnalisation : série brute et série corrigée (CVS) du produit*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-budget-des-ventes/09.png",
+          "alt": "Partie 2 — Les techniques de prévision des ventes",
+          "width": 1227,
+          "height": 852,
+          "caption": "Figure 10 — Désaisonnalisation : série brute et série corrigée (CVS) du produit"
         },
         {
           "type": "callout",
@@ -549,8 +585,12 @@ export const chapter: Chapter = {
           "text": "Sur les huit premiers trimestres (38, 55, 60, 40, 42, 60, 66, 45), avec S₁ = 38 :\nS₂ = 0,3×55 + 0,7×38 = 43,1 ; … ; S₈ = 51,5\n**Prévision du trimestre suivant ≈ 51,5 milliers d’unités (avant correction saisonnière).**"
         },
         {
-          "type": "p",
-          "text": "*Figure 11 — Le lissage exponentiel des ventes trimestrielles du produit (α = 0,3)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-budget-des-ventes/10.png",
+          "alt": "Partie 2 — Les techniques de prévision des ventes",
+          "width": 1204,
+          "height": 852,
+          "caption": "Figure 11 — Le lissage exponentiel des ventes trimestrielles du produit (α = 0,3)"
         },
         {
           "type": "p",
@@ -573,8 +613,12 @@ export const chapter: Chapter = {
           "text": "Un produit traverse quatre phases — lancement, développement, maturité, déclin — qui appellent chacune un ajustement différent. L’le produit est en maturité (linéaire), la version Trail en lancement (exponentiel) : le contrôleur combine statistique et analyse stratégique."
         },
         {
-          "type": "p",
-          "text": "*Figure 12 — Le cycle de vie du produit et l’ajustement adapté*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-budget-des-ventes/11.png",
+          "alt": "Partie 2 — Les techniques de prévision des ventes",
+          "width": 1400,
+          "height": 600,
+          "caption": "Figure 12 — Le cycle de vie du produit et l’ajustement adapté"
         },
         {
           "type": "h3",
@@ -615,8 +659,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 13 — Arbre de décision : quelle méthode de prévision choisir ?*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-budget-des-ventes/12.png",
+          "alt": "Partie 2 — Les techniques de prévision des ventes",
+          "width": 1419,
+          "height": 985,
+          "caption": "Figure 13 — Arbre de décision : quelle méthode de prévision choisir ?"
         },
         {
           "type": "callout",

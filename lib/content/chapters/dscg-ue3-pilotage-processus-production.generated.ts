@@ -13,6 +13,37 @@ export const chapter: Chapter = {
   "durationMin": 50,
   "sections": [
     {
+      "id": "preambule",
+      "title": "Préambule",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**DSCG — UE3**"
+        },
+        {
+          "type": "p",
+          "text": "Management et contrôle de gestion"
+        },
+        {
+          "type": "p",
+          "text": "**Le pilotage des processus de production**"
+        },
+        {
+          "type": "p",
+          "text": "*Manuel premium de préparation à l'épreuve nationale*"
+        },
+        {
+          "type": "p",
+          "text": "Partie 2 — Sous-partie 2.1 — Volume indicatif : 10 heures"
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "text": "**Manuel premium de préparation à l'épreuve nationale du DSCG — UE3 « Management et contrôle de gestion »** Nouveau référentiel — Partie 2 « Favoriser le déploiement de la stratégie de l'organisation grâce à des outils de contrôle de gestion » — **Sous-partie 2.1 — Volume indicatif : 10 heures**"
+        }
+      ]
+    },
+    {
       "id": "note-de-conformite-au-referentiel-a-lire-avant-le-chapitre",
       "title": "Note de conformité au référentiel (à lire avant le chapitre)",
       "blocks": [
@@ -143,7 +174,8 @@ export const chapter: Chapter = {
           "text": "1.5 Problématique générale du chapitre"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Problématique centrale.** Comment le contrôle de gestion peut-il aider l'organisation à piloter ses processus de production — qu'ils soient industriels, artisanaux, agricoles ou de service — de manière à transformer la stratégie en performance opérationnelle durable, en calculant le coût réel des activités, en optimisant les capacités sous contrainte, et en arbitrant entre des objectifs partiellement contradictoires de coût, de qualité et de délai ?"
         },
         {
@@ -179,7 +211,8 @@ export const chapter: Chapter = {
       "title": "2. Les fondements de l'approche processus",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut des contenus : repris et adaptés de l'ancien cours (Cours 3, « Vision processuelle de l'organisation et gestion par les activités »), réorganisés et enrichis pour le nouveau référentiel.*"
         },
         {
@@ -199,7 +232,8 @@ export const chapter: Chapter = {
           "text": "On retiendra la définition synthétique, directement reprise de l'ancien cours et conforme à la doctrine DSCG :"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Définition.** Un processus est un *enchaînement d'activités* qui concourent à la création d'un bien ou d'un service destiné à un client final, ou à d'autres services ou processus internes. Il regroupe un ensemble d'activités finalisées par un *objectif global*, et donc par un *output* matériel ou immatériel qui doit représenter une *valeur* pour un client interne ou externe."
         },
         {
@@ -278,7 +312,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "warning",
           "text": "**Lien avec le référentiel — vigilance.** La chaîne de valeur de Porter est ici présentée *uniquement* comme repère conceptuel reliant processus et stratégie. Son développement (activités principales/soutien, sources d'avantage) appartient aux sous-parties 1.1 et 1.3 et y est traité. Dans une copie portant sur 2.1, mobiliser Porter en une phrase de cadrage suffit ; le cœur attendu est le calcul de coûts et l'optimisation des capacités."
         },
         {
@@ -286,7 +321,8 @@ export const chapter: Chapter = {
           "text": "2.2 Pourquoi gérer par les processus ? Les limites de l'organisation fonctionnelle"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté de l'ancien cours (Cours 3, « Les limites de l'organisation fonctionnelle »).*"
         },
         {
@@ -313,7 +349,15 @@ export const chapter: Chapter = {
           "text": "Schéma 1 — Du fonctionnel au processus *(schéma textuel obligatoire)*"
         },
         {
-          "type": "p",
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-processus-production/01.png",
+          "alt": "Schéma 1 — Du fonctionnel au processus *(schéma textuel obligatoire)*",
+          "width": 2156,
+          "height": 1012
+        },
+        {
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Avant de calculer le coût d'un processus ou d'en optimiser le débit, encore faut-il le *rendre visible*. C'est l'objet de la cartographie, que le référentiel inscrit explicitement parmi les savoirs associés de 2.1."
         }
       ]
@@ -323,7 +367,8 @@ export const chapter: Chapter = {
       "title": "3. La cartographie des processus",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé. La cartographie figure explicitement dans les savoirs associés de 2.1 (« cartographie de processus ») et la limite de champ précise qu'« il est attendu de pouvoir construire des diagrammes à partir de données brutes (textes) ». Ce point est un attendu opératoire directement évaluable.*"
         },
         {
@@ -398,6 +443,13 @@ export const chapter: Chapter = {
           "text": "Schéma 2 — Logigramme avec point de contrôle qualité *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-processus-production/02.png",
+          "alt": "Schéma 2 — Logigramme avec point de contrôle qualité *(obligatoire)*",
+          "width": 1584,
+          "height": 1364
+        },
+        {
           "type": "h4",
           "text": "3.2.3 Le BPMN — la norme de référence"
         },
@@ -450,8 +502,9 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "**Conseil de méthode (épreuve).** Face à un énoncé décrivant « en mots » un processus, la démarche gagnante est : (1) un SIPOC pour borner ; (2) un logigramme à couloirs pour faire apparaître les acteurs et les points de contrôle ; (3) une lecture critique localisant attente, reprise et goulot — qui amorce naturellement l'analyse de coûts et de capacité des sections suivantes.**Transition.** La carte rend le processus visible ; il faut maintenant lui attacher un *coût*. Or les processus de production réels engendrent des situations de calcul que le référentiel cible nommément : en-cours, produits conjoints, sous-produits, déchets et externalités."
+          "type": "callout",
+          "variant": "tip",
+          "text": "**Conseil de méthode (épreuve).** Face à un énoncé décrivant « en mots » un processus, la démarche gagnante est : (1) un SIPOC pour borner ; (2) un logigramme à couloirs pour faire apparaître les acteurs et les points de contrôle ; (3) une lecture critique localisant attente, reprise et goulot — qui amorce naturellement l'analyse de coûts et de capacité des sections suivantes.\n**Transition.** La carte rend le processus visible ; il faut maintenant lui attacher un *coût*. Or les processus de production réels engendrent des situations de calcul que le référentiel cible nommément : en-cours, produits conjoints, sous-produits, déchets et externalités."
         }
       ]
     },
@@ -460,7 +513,8 @@ export const chapter: Chapter = {
       "title": "4. Le calcul des coûts de production complexes",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé et complété. C'est le premier savoir associé explicitement listé par le référentiel pour 2.1 : « calcul de coûts prenant en compte les en-cours de production, les produits conjoints, les produits dérivés, les sous-produits, le traitement des déchets et autres externalités négatives ». Les outils de DCG (coûts complets, imputation rationnelle) sont supposés acquis et sont ici approfondis au service de la décision.*"
         },
         {
@@ -484,7 +538,8 @@ export const chapter: Chapter = {
           "text": "La technique de référence est celle des **équivalents-produits finis (EPF)** (ou unités équivalentes). On convertit les en-cours en un nombre d'unités finies « équivalentes » selon leur **degré d'avancement**, distinct pour les matières (souvent injectées à 100 % en début de processus) et pour les coûts de transformation (engagés progressivement)."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "**Méthode (coût moyen pondéré).** 1. Calculer la **production équivalente** par catégorie de coût : unités terminées + (en-cours finals × % d'avancement). 2. Calculer un **coût unitaire d'équivalent** par catégorie : coût total de la catégorie / production équivalente. 3. **Valoriser** : produits finis au coût unitaire complet ; en-cours en appliquant le % d'avancement à chaque catégorie."
         },
         {
@@ -658,7 +713,8 @@ export const chapter: Chapter = {
           "text": "4.5 Structure de coûts, coûts pertinents et *sunk costs*"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé. Savoir associé explicite : « structure de coûts, approche marginale, coûts pertinents et sunk costs ».*"
         },
         {
@@ -693,7 +749,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** L'exemple ci-dessus supposait une capacité disponible. Lorsque la capacité est *saturée*, la question bascule : il ne s'agit plus de savoir si une unité est rentable, mais quelle unité produire en priorité quand une ressource manque. C'est l'objet de l'optimisation des capacités et de la théorie des contraintes."
         }
       ]
@@ -703,7 +760,8 @@ export const chapter: Chapter = {
       "title": "5. Optimisation des capacités, théorie des contraintes et *yield management*",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : adapté-complété (capacités, goulot, exemple chiffré : repris de l'ancien cours, Cours 1) et créé (formalisation TOC de Goldratt, yield management). Savoir associé : « optimisation des capacités : gestion des goulots d'étranglement et yield management ».*"
         },
         {
@@ -773,7 +831,8 @@ export const chapter: Chapter = {
           "text": "5.2 La théorie des contraintes (Goldratt) : le débit avant le coût"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé (formalisation), s'appuyant sur l'exemple chiffré de goulot de l'ancien cours.*"
         },
         {
@@ -793,12 +852,20 @@ export const chapter: Chapter = {
           "text": "5.2.2 Les cinq étapes focalisées d'amélioration continue"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "**Méthode (cycle TOC).** 1. **Identifier** la contrainte (le goulot) du système. 2. **Exploiter** la contrainte : en tirer le maximum sans investissement (éliminer ses temps morts, ne lui faire traiter que du bon, la faire tourner pendant les pauses). 3. **Subordonner** tout le reste à la contrainte : les postes non-goulots travaillent au rythme du goulot (inutile de produire plus vite en amont). 4. **Élever** la contrainte : si nécessaire, investir pour augmenter sa capacité (heures sup., machine supplémentaire, sous-traitance). 5. **Recommencer** : une fois la contrainte levée, une autre apparaît ailleurs — la contrainte se déplace. Ne jamais laisser l'inertie devenir la nouvelle contrainte."
         },
         {
           "type": "h4",
           "text": "Schéma 3 — Système de production avec goulot *(obligatoire)*"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-processus-production/03.png",
+          "alt": "Schéma 3 — Système de production avec goulot *(obligatoire)*",
+          "width": 1980,
+          "height": 836
         },
         {
           "type": "h4",
@@ -877,7 +944,8 @@ export const chapter: Chapter = {
           "text": "5.3 *Yield management* / *revenue management* : optimiser le revenu d'une capacité périssable"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé. Le yield management était listé comme « concept à connaître » dans l'ancien cours mais non développé ; le nouveau référentiel l'inscrit dans les savoirs associés de 2.1.*"
         },
         {
@@ -1009,7 +1077,15 @@ export const chapter: Chapter = {
           "text": "Graphique 6 — Prix, taux de remplissage et revenu dans le temps *(obligatoire)*"
         },
         {
-          "type": "p",
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-processus-production/04.png",
+          "alt": "Graphique 6 — Prix, taux de remplissage et revenu dans le temps *(obligatoire)*",
+          "width": 1672,
+          "height": 1012
+        },
+        {
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Coûts maîtrisés, capacités optimisées : reste à orienter le processus vers la *valeur* attendue par le client et le marché — au juste coût. C'est la fonction des outils de pilotage de la valeur que sont le *target costing* et l'analyse de la valeur."
         }
       ]
@@ -1019,7 +1095,8 @@ export const chapter: Chapter = {
       "title": "6. Piloter la valeur : *target costing* et analyse de la valeur",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris et adapté de l'ancien cours (Cours 3, « Target costing et analyse de la valeur »). Savoir associé : « gestion des processus de production : analyse de la valeur, coûts cibles ».*"
         },
         {
@@ -1035,7 +1112,8 @@ export const chapter: Chapter = {
           "text": "Le ***target costing***(méthode des coûts cibles), formalisé au Japon (Toyota, années 1960-70) et théorisé notamment par Tanaka et Monden, opère un renversement par rapport à la logique comptable traditionnelle. Le raisonnement classique est additif : `coût + marge = prix`. Le*target costing*part du marché** :"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Équation fondatrice.** Coût cible = Prix de vente cible (accepté par le marché) − Marge cible (exigée par la stratégie)"
         },
         {
@@ -1055,6 +1133,13 @@ export const chapter: Chapter = {
           "text": "Schéma 4 — La boucle du *target costing*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-processus-production/05.png",
+          "alt": "Schéma 4 — La boucle du *target costing*",
+          "width": 1804,
+          "height": 924
+        },
+        {
           "type": "h4",
           "text": "Exemple chiffré 5 — Détermination d'un coût cible"
         },
@@ -1071,7 +1156,8 @@ export const chapter: Chapter = {
           "text": "L'**analyse de la valeur** (Lawrence Miles, General Electric, années 1940 ; norme AFNOR) est la méthode complémentaire qui rend le *target costing* opérationnel. Elle définit la **valeur** comme le rapport entre la **fonction** rendue (ce que le produit fait pour l'utilisateur) et le **coût** nécessaire pour l'assurer :"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "Valeur = Fonctions (satisfaction du besoin) / Coût"
         },
         {
@@ -1113,8 +1199,9 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "**Lien processus.** *Target costing* et analyse de la valeur ne portent pas que sur le produit : ils s'appliquent au **processus de production lui-même**, dont on questionne chaque activité — apporte-t-elle de la valeur au client (au sens du *lean*, qui distingue activités à valeur ajoutée et gaspillages, *muda*) ? On rejoint ici la cartographie du §3 : chaque activité cartographiée peut être qualifiée « VA » ou « non-VA ».**Transition.** Maîtriser le coût et la valeur ne suffit pas si le processus produit des défauts. La qualité — et le coût de la non-qualité — constitue le dernier pilier opérationnel du référentiel pour cette sous-partie."
+          "type": "callout",
+          "variant": "info",
+          "text": "**Lien processus.** *Target costing* et analyse de la valeur ne portent pas que sur le produit : ils s'appliquent au **processus de production lui-même**, dont on questionne chaque activité — apporte-t-elle de la valeur au client (au sens du *lean*, qui distingue activités à valeur ajoutée et gaspillages, *muda*) ? On rejoint ici la cartographie du §3 : chaque activité cartographiée peut être qualifiée « VA » ou « non-VA ».\n**Transition.** Maîtriser le coût et la valeur ne suffit pas si le processus produit des défauts. La qualité — et le coût de la non-qualité — constitue le dernier pilier opérationnel du référentiel pour cette sous-partie."
         }
       ]
     },
@@ -1123,7 +1210,8 @@ export const chapter: Chapter = {
       "title": "7. Gestion stratégique de la qualité et analyse des dysfonctionnements",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé. Savoir associé : « gestion stratégique de la qualité et analyse des dysfonctionnements ».*"
         },
         {
@@ -1182,7 +1270,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Principe de pilotage.** Les coûts de prévention et d'évaluation sont des **coûts de conformité** (maîtrisés, choisis) ; les défaillances internes et externes sont des **coûts de non-conformité** (subis). L'arbitrage stratégique consiste à augmenter les premiers pour faire chuter les seconds — les défaillances externes étant les plus destructrices car elles ajoutent au coût direct une perte de confiance difficilement chiffrable."
         },
         {
@@ -1198,7 +1287,15 @@ export const chapter: Chapter = {
           "text": "Schéma 5 — Diagramme d'Ishikawa (arête de poisson, 5M)"
         },
         {
-          "type": "p",
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-processus-production/06.png",
+          "alt": "Schéma 5 — Diagramme d'Ishikawa (arête de poisson, 5M)",
+          "width": 1804,
+          "height": 924
+        },
+        {
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Coûts, capacités, valeur, qualité : l'outillage classique est posé. Le nouveau référentiel impose d'y ajouter la lecture des transformations contemporaines, qui reconfigurent en profondeur le pilotage des processus."
         }
       ]
@@ -1208,7 +1305,8 @@ export const chapter: Chapter = {
       "title": "8. Les transformations contemporaines des processus",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé. Exigé par la dimension « ouverture contemporaine » du nouveau référentiel et par la limite de champ (liens digital, ESG, automatisation).*"
         },
         {
@@ -1277,6 +1375,13 @@ export const chapter: Chapter = {
           "text": "Schéma 6 — Processus traditionnel *vs* processus augmenté par l'IA *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-processus-production/07.png",
+          "alt": "Schéma 6 — Processus traditionnel *vs* processus augmenté par l'IA *(obligatoire)*",
+          "width": 1936,
+          "height": 946
+        },
+        {
           "type": "h3",
           "text": "8.3 ESG, durabilité et performance durable"
         },
@@ -1285,7 +1390,8 @@ export const chapter: Chapter = {
           "text": "L'intégration des critères **ESG** (environnement, social, gouvernance) reconfigure le pilotage des processus de production. L'**internalisation des externalités** (§4.4) — prix du carbone, coût de retraitement, écotaxes — modifie les arbitrages de coût et peut renverser un classement de rentabilité entre produits ou procédés. La logique d'**économie circulaire** transforme les déchets en ressources (les sous-produits du §4.3 deviennent des intrants). Les processus sont désormais évalués non seulement sur le triptyque coût-qualité-délai, mais sur leur **empreinte environnementale et sociale**. Ce point ouvre directement sur le pilotage stratégique de la durabilité (renvoi sous-partie 3.2 : double matérialité, bilan carbone, KPI ESG) et sur la performance globale (renvoi 3.3)."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ces transformations ne suppriment pas les arbitrages fondamentaux du pilotage : elles les déplacent et les intensifient. C'est l'objet des approfondissements DSCG."
         }
       ]
@@ -1295,7 +1401,8 @@ export const chapter: Chapter = {
       "title": "9. Approfondissements DSCG",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé, orienté préparation à l'épreuve.*"
         },
         {
@@ -1309,6 +1416,13 @@ export const chapter: Chapter = {
         {
           "type": "h4",
           "text": "Graphique 7 — Le triangle Coût – Qualité – Délai *(obligatoire)*"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-processus-production/08.png",
+          "alt": "Graphique 7 — Le triangle Coût – Qualité – Délai *(obligatoire)*",
+          "width": 1364,
+          "height": 968
         },
         {
           "type": "h3",
@@ -1358,6 +1472,13 @@ export const chapter: Chapter = {
         {
           "type": "h3",
           "text": "10.2 Carte mentale textuelle"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-processus-production/09.png",
+          "alt": "10.2 Carte mentale textuelle",
+          "width": 2200,
+          "height": 1232
         },
         {
           "type": "h3",
@@ -1452,7 +1573,8 @@ export const chapter: Chapter = {
       "title": "11. Fiche de révision DSCG",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Format de révision express — sous-partie 2.1.*"
         },
         {

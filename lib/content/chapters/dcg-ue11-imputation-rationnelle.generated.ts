@@ -76,8 +76,12 @@ export const chapter: Chapter = {
           "text": "*Explication — l'effet mécanique du volume*"
         },
         {
-          "type": "p",
-          "text": "*Le coût unitaire complet réel varie en hyperbole avec l'activité*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-imputation-rationnelle/01.png",
+          "alt": "*Explication — l'effet mécanique du volume*",
+          "width": 2000,
+          "height": 1056,
+          "caption": "Le coût unitaire complet réel varie en hyperbole avec l'activité"
         },
         {
           "type": "p",
@@ -843,8 +847,12 @@ export const chapter: Chapter = {
           "text": "L'imputation rationnelle se situe dans la famille des méthodes de coûts au programme. Elle ne s'oppose pas aux autres : elle répond à une question précise — neutraliser l'effet du niveau d'activité."
         },
         {
-          "type": "p",
-          "text": "*L'imputation rationnelle parmi les méthodes de coûts*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-imputation-rationnelle/02.png",
+          "alt": "4. Critiquer : limites, conditions et place de la méthode",
+          "width": 2000,
+          "height": 917,
+          "caption": "L'imputation rationnelle parmi les méthodes de coûts"
         },
         {
           "type": "table",

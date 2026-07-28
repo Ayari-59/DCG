@@ -13,6 +13,37 @@ export const chapter: Chapter = {
   "durationMin": 45,
   "sections": [
     {
+      "id": "preambule",
+      "title": "Préambule",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**DSCG — UE3**"
+        },
+        {
+          "type": "p",
+          "text": "Management et contrôle de gestion"
+        },
+        {
+          "type": "p",
+          "text": "**Le management du changement et la transformation des organisations**"
+        },
+        {
+          "type": "p",
+          "text": "*Manuel premium de préparation à l'épreuve nationale*"
+        },
+        {
+          "type": "p",
+          "text": "Partie 2 — Sous-partie 2.4 — Volume indicatif : 10 heures"
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "text": "**Manuel premium de préparation à l'épreuve nationale du DSCG — UE3 « Management et contrôle de gestion »** Nouveau référentiel — Partie 2 « Favoriser le déploiement de la stratégie de l'organisation grâce à des outils de contrôle de gestion » — **Sous-partie 2.4 — Volume indicatif : 10 heures**"
+        }
+      ]
+    },
+    {
       "id": "note-de-conformite-au-referentiel-a-lire-avant-le-chapitre",
       "title": "Note de conformité au référentiel (à lire avant le chapitre)",
       "blocks": [
@@ -136,7 +167,8 @@ export const chapter: Chapter = {
           "text": "1.4 Problématique centrale"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Problématique centrale.** Comment les organisations peuvent-elles conduire les transformations indispensables à leur adaptation stratégique, en surmontant les résistances humaines et organisationnelles, et comment le contrôle de gestion contribue-t-il à accompagner, mesurer et sécuriser ce changement pour en garantir la création de valeur ?"
         },
         {
@@ -188,7 +220,8 @@ export const chapter: Chapter = {
           "text": "2.1 Définition du changement"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : cadre conceptuel créé ; auteurs (Crozier, Mintzberg, Weick) mobilisés, Crozier repris de l'ancien cours.*"
         },
         {
@@ -204,7 +237,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Regard DSCG"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Regard DSCG.** Un sujet de changement attend rarement une simple récitation de modèles. Il attend une **analyse de situation** : quel type de changement ? quels acteurs et quelles résistances ? quel modèle de conduite mobiliser ? et surtout — c'est l'angle UE3 — **quels indicateurs** pour piloter et mesurer la transformation ? Toujours relier le changement à la stratégie (pourquoi changer ?) et à la performance (comment mesurer la réussite ?)."
         },
         {
@@ -212,7 +246,8 @@ export const chapter: Chapter = {
           "text": "2.2 Les formes du changement"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé.*"
         },
         {
@@ -272,11 +307,19 @@ export const chapter: Chapter = {
           "text": "Schéma 2 — Typologie des changements (ampleur × rythme) *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-changement/01.png",
+          "alt": "Schéma 2 — Typologie des changements (ampleur × rythme) *(obligatoire)*",
+          "width": 1672,
+          "height": 1276
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le positionnement sur la matrice oriente la démarche de conduite. Un changement incrémental (bas-gauche) se conduit par l'amélioration continue et l'implication des équipes ; un changement radical (haut-droite) exige une gouvernance forte, un sponsor de haut niveau et une gestion intensive des résistances (§3, §5). L'erreur fréquente consiste à conduire un changement radical avec les méthodes douces de l'incrémental — ou l'inverse, à brutaliser un changement qui aurait gagné à être progressif. Le diagnostic du *type* de changement est donc le préalable au choix de la *méthode*."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Quelle que soit sa forme, le changement se heurte à un obstacle universel : la résistance des acteurs."
         }
       ]
@@ -286,7 +329,8 @@ export const chapter: Chapter = {
       "title": "3. Les résistances au changement",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : jeux d'acteurs et zones d'incertitude (Crozier & Friedberg) repris de l'ancien cours ; typologie des facteurs créée.*"
         },
         {
@@ -306,7 +350,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Erreurs fréquentes"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "warning",
           "text": "**Erreurs fréquentes.** L'erreur cardinale est de traiter la résistance comme un obstacle à écraser plutôt que comme une **information à exploiter**. La résistance signale souvent un problème réel (un risque mal évalué, un impact non anticipé, un déficit de sens). L'ignorer ou la réprimer la renforce ; l'écouter et y répondre la transforme en levier. Autre erreur : croire qu'une communication descendante suffit à lever les résistances — elle est nécessaire mais très insuffisante sans participation et accompagnement (§5)."
         },
         {
@@ -322,6 +367,13 @@ export const chapter: Chapter = {
           "text": "Graphique 3bis — La courbe du changement *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-changement/02.png",
+          "alt": "Graphique 3bis — La courbe du changement *(obligatoire)*",
+          "width": 1804,
+          "height": 1144
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Cette courbe a une portée opérationnelle directe. D'abord, elle **dédramatise** la baisse de performance initiale : elle est normale et transitoire, non un signe d'échec. Ensuite, elle **calibre l'accompagnement** : la communication et le soutien sont les plus nécessaires dans la phase descendante (choc, résistance) et au point bas, là où le risque d'abandon est maximal. Enfin, elle rappelle que les individus ne traversent pas la courbe au même rythme : un manager peut être en phase d'intégration quand ses équipes sont encore dans le déni — décalage qui explique bien des incompréhensions. Le rôle de l'accompagnement est de **raccourcir et d'adoucir** la vallée, non de prétendre la supprimer."
         },
@@ -330,7 +382,8 @@ export const chapter: Chapter = {
           "text": "3.2 Les jeux d'acteurs (Crozier et Friedberg)"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté de l'ancien cours (analyse stratégique, pouvoir, zones d'incertitude).*"
         },
         {
@@ -346,7 +399,8 @@ export const chapter: Chapter = {
           "text": "Point méthode"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "**Point méthode — analyser les jeux d'acteurs.** (1) Identifier les acteurs concernés par le changement. (2) Pour chacun, repérer sa **stratégie** (que cherche-t-il à préserver ou à obtenir ?) et la **zone d'incertitude** qu'il maîtrise (sa source de pouvoir). (3) Évaluer l'impact du changement sur cette zone (gain ou perte de pouvoir). (4) En déduire son positionnement probable (allié, opposant, hésitant) et la stratégie d'accompagnement adaptée (impliquer les alliés, écouter et compenser les perdants, convaincre les hésitants)."
         },
         {
@@ -401,11 +455,19 @@ export const chapter: Chapter = {
           "text": "Graphique 3 — Cartographie des résistances (influence × opposition) *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-changement/03.png",
+          "alt": "Graphique 3 — Cartographie des résistances (influence × opposition) *(obligatoire)*",
+          "width": 1672,
+          "height": 1276
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** La matrice répartit les acteurs en quadrants. Les **opposants influents** (haut-gauche) sont les plus dangereux : ils peuvent faire échouer le projet et exigent une attention prioritaire (négociation, recherche de compromis, voire neutralisation politique). Les **soutiens influents** (haut-droite) sont les alliés à mobiliser comme sponsors et ambassadeurs. Les **opposants peu influents** (bas-gauche) appellent écoute et pédagogie sans y consacrer une énergie disproportionnée. Les **soutiens peu influents** (bas-droite) constituent une base à élargir. Cette cartographie, à actualiser au fil du projet, oriente l'allocation de la ressource rare qu'est le temps d'accompagnement — exactement comme le Pareto orientait le temps d'acheteur au chapitre précédent."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "**Transition.** Comprendre les résistances ne suffit pas : il faut une méthode de conduite. Les grands modèles du changement structurent cette démarche."
         }
       ]
@@ -419,7 +481,8 @@ export const chapter: Chapter = {
           "text": "4.1 Le modèle de Kurt Lewin"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté de l'ancien cours (Lewin, dynamique des groupes).*"
         },
         {
@@ -435,6 +498,13 @@ export const chapter: Chapter = {
           "text": "Schéma 4 — Le modèle de Lewin et le champ de forces *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-changement/04.png",
+          "alt": "Schéma 4 — Le modèle de Lewin et le champ de forces *(obligatoire)*",
+          "width": 2024,
+          "height": 1100
+        },
+        {
           "type": "p",
           "text": "**Interprétation.** Le schéma articule les trois phases (sur un axe temporel) et le champ de forces (forces motrices vers le haut, forces de résistance vers le bas, de part et d'autre de la ligne d'équilibre). Sa lecture managériale : la phase de décristallisation consiste à rompre l'équilibre en agissant sur les forces ; la transition est la zone d'instabilité où l'accompagnement est le plus crucial ; la recristallisation rétablit un équilibre, à un niveau de performance supérieur. **Limite contemporaine** : le modèle suppose un retour à la stabilité, vision contestée par les approches du changement continu (§4.3) — mais il reste un cadre pédagogique de référence."
         },
@@ -443,7 +513,8 @@ export const chapter: Chapter = {
           "text": "4.2 Le modèle de John Kotter"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé.*"
         },
         {
@@ -518,6 +589,13 @@ export const chapter: Chapter = {
           "text": "Frise 5 — Le processus de changement de Kotter *(frise chronologique obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-changement/05.png",
+          "alt": "Frise 5 — Le processus de changement de Kotter *(frise chronologique obligatoire)*",
+          "width": 2200,
+          "height": 1012
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** La frise visualise la progression des huit étapes en trois phases (créer le climat → engager → ancrer). Son enseignement central, issu de l'observation des échecs : les transformations échouent le plus souvent faute d'avoir suffisamment travaillé les **premières étapes** (urgence, coalition, vision) — on se précipite sur la mise en œuvre sans avoir créé les conditions de l'adhésion. Les **victoires rapides** (étape 6) sont un levier psychologique décisif : elles entretiennent la motivation et désarment les sceptiques. La dernière étape (ancrage culturel) est la plus négligée et explique nombre de retours en arrière."
         },
@@ -526,7 +604,8 @@ export const chapter: Chapter = {
           "text": "4.3 Les approches contemporaines"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : organisation apprenante reprise de l'ancien cours ; autres approches créées.*"
         },
         {
@@ -579,7 +658,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ces modèles fournissent le « quoi ». Le « comment » opérationnel relève du pilotage : gouvernance, communication, accompagnement."
         }
       ]
@@ -589,7 +669,8 @@ export const chapter: Chapter = {
       "title": "5. Le pilotage du changement",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; conduite du changement et dialogue social repris de l'ancien cours (Cours 4).*"
         },
         {
@@ -603,6 +684,13 @@ export const chapter: Chapter = {
         {
           "type": "h4",
           "text": "Organigramme 6 — Gouvernance d'un projet de transformation *(obligatoire)*"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-changement/06.png",
+          "alt": "Organigramme 6 — Gouvernance d'un projet de transformation *(obligatoire)*",
+          "width": 1980,
+          "height": 1144
         },
         {
           "type": "p",
@@ -678,7 +766,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Bonnes pratiques"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "**Bonnes pratiques.** Une communication de changement efficace : explique le **pourquoi** avant le **comment** (le sens précède la méthode) ; est **incarnée** par le management (l'exemplarité prime sur les discours) ; est **bidirectionnelle** (elle écoute autant qu'elle informe) ; est **répétée** (un message de changement doit être entendu de multiples fois pour être intégré) ; et reconnaît les **difficultés** plutôt que de les nier (la transparence construit la confiance)."
         },
         {
@@ -690,7 +779,8 @@ export const chapter: Chapter = {
           "text": "Le changement requiert souvent de nouvelles compétences ; le **développement des compétences** (formation) en est donc un levier majeur. L'ancien cours souligne que la formation « accompagne le changement de culture » et « facilite l'évolution des métiers ». L'accompagnement se décline en plusieurs modalités complémentaires : le **coaching** (accompagnement individuel des managers et dirigeants face au changement), le **mentoring** (transmission par un pair expérimenté), et l'**accompagnement collectif** (ateliers, groupes de travail, communautés de pratique) qui favorise l'apprentissage entre pairs et l'appropriation collective. L'enjeu est de combler l'écart entre les compétences actuelles et celles requises par la cible — écart dont la non-prise en compte est une cause fréquente d'échec (les acteurs adhèrent mais ne *savent pas* faire)."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Gouvernance, communication et formation déploient le changement. Mais sans mesure, on ne pilote pas : c'est l'apport spécifique du contrôle de gestion."
         }
       ]
@@ -700,7 +790,8 @@ export const chapter: Chapter = {
       "title": "6. Le rôle du contrôle de gestion dans le changement",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; cœur de l'angle UE3 de la sous-partie 2.4.*"
         },
         {
@@ -783,7 +874,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Regard DSCG"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Regard DSCG.** C'est ici que se situe le cœur de l'attendu UE3. Un sujet de changement demandera typiquement : (1) de **justifier** économiquement la transformation (diagnostic, business case) ; (2) de proposer des **indicateurs** de pilotage couvrant les dimensions financière, opérationnelle, sociale et comportementale ; (3) de construire un **tableau de bord** de la transformation ; (4) d'**interpréter** des résultats et de formuler des préconisations. Ne jamais se cantonner aux modèles sociologiques : montrer la **valeur ajoutée chiffrée** du contrôle de gestion."
         },
         {
@@ -937,7 +1029,8 @@ export const chapter: Chapter = {
           "text": "**Interprétation managériale.** Ce tableau de bord équilibré révèle une transformation **globalement en marche mais fragile sur le plan humain** : l'avancement et les gains sont à peu près au rendez-vous, mais l'adoption et l'utilisation effective restent en deçà des cibles, et surtout l'absentéisme se dégrade — signal d'un coût humain de la transformation qui appelle un renforcement de l'accompagnement (§5.3) avant que la résistance ne compromette les résultats. Le croisement des dimensions est essentiel : des gains économiques obtenus au prix d'une dégradation sociale ne sont pas durables. C'est tout l'apport d'un tableau de bord multidimensionnel par rapport à un suivi purement budgétaire."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Parmi les transformations contemporaines, la transformation digitale et l'IA occupent une place singulière, à la fois objet et moteur du changement."
         }
       ]
@@ -947,7 +1040,8 @@ export const chapter: Chapter = {
       "title": "7. Transformation digitale et intelligence artificielle",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; ouverture contemporaine ; lien UE5.*"
         },
         {
@@ -1022,6 +1116,13 @@ export const chapter: Chapter = {
           "text": "Schéma 8 — Organisation traditionnelle vs organisation augmentée par l'IA *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-changement/07.png",
+          "alt": "Schéma 8 — Organisation traditionnelle vs organisation augmentée par l'IA *(obligatoire)*",
+          "width": 2024,
+          "height": 1100
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma oppose deux configurations. L'organisation **traditionnelle** est pyramidale, cloisonnée, avec une information qui circule lentement et une décision concentrée au sommet. L'organisation **augmentée par l'IA** est plus plate, décloisonnée autour d'un socle de données partagé, avec une information en temps réel et une décision distribuée, éclairée par l'IA à tous les niveaux. Le message clé : l'IA ne se surajoute pas à l'organisation existante, elle en **reconfigure la structure même**. D'où l'ampleur du changement à conduire — et le risque d'échec si l'on déploie l'IA sans transformer l'organisation qui l'accueille."
         },
@@ -1030,11 +1131,19 @@ export const chapter: Chapter = {
           "text": "Graphique 9 — Évolution des compétences attendues *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-changement/08.png",
+          "alt": "Graphique 9 — Évolution des compétences attendues *(obligatoire)*",
+          "width": 1892,
+          "height": 1144
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le graphique compare le poids des grandes familles de compétences « hier » et « demain » : décroissance des compétences d'**exécution / tâches routinières** (automatisables), croissance des compétences **cognitives de haut niveau** (analyse critique, résolution de problèmes complexes), **relationnelles** (collaboration, communication, intelligence émotionnelle) et **d'adaptabilité** (apprentissage continu, agilité). Cette recomposition fonde la priorité donnée à la **formation** et à la **gestion des compétences** (lien §5.3 et sous-partie 2.6) dans toute transformation. L'enjeu social est majeur : accompagner la montée en compétence pour éviter que la transformation ne laisse des collaborateurs sur le bord du chemin."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Malgré ces leviers, une majorité de transformations échouent. Comprendre pourquoi est la condition pour réussir."
         }
       ]
@@ -1044,7 +1153,8 @@ export const chapter: Chapter = {
       "title": "8. Les échecs du changement",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; Kotter, Beer & Nohria.*"
         },
         {
@@ -1122,11 +1232,19 @@ export const chapter: Chapter = {
           "text": "Matrice 10 — Analyse des risques d'un projet de transformation *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-changement/09.png",
+          "alt": "Matrice 10 — Analyse des risques d'un projet de transformation *(obligatoire)*",
+          "width": 1672,
+          "height": 1232
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** La matrice positionne les principaux risques d'une transformation selon leur probabilité et leur impact (logique de criticité, lien chapitre 2). Les risques **critiques** (forte probabilité, fort impact) — typiquement la résistance des acteurs clés et le défaut de sponsorship — appellent un traitement prioritaire. Les risques de **dérive budgétaire** ou de **retard** se pilotent par le tableau de bord (§6). Les risques **sociaux** (dégradation du climat, conflits) se préviennent par l'accompagnement (§5). Cette cartographie, intégrée à la gouvernance, transforme la gestion du risque de transformation en démarche proactive plutôt que subie."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ces enseignements s'incarnent dans des transformations réelles, dont l'analyse nourrit la réflexion."
         }
       ]
@@ -1136,7 +1254,8 @@ export const chapter: Chapter = {
       "title": "9. Cas d'entreprises et études professionnelles",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé — illustrations pédagogiques simplifiées à partir d'éléments de notoriété publique (voir avertissement en tête de chapitre).*"
         },
         {
@@ -1209,7 +1328,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ces cas et ces modèles convergent vers les attendus de l'épreuve, que synthétisent les approfondissements DSCG."
         }
       ]
@@ -1219,7 +1339,8 @@ export const chapter: Chapter = {
       "title": "10. Approfondissements DSCG",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; orienté préparation à l'épreuve.*"
         },
         {
@@ -1287,6 +1408,13 @@ export const chapter: Chapter = {
         {
           "type": "h3",
           "text": "11.2 Carte mentale"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-changement/10.png",
+          "alt": "11.2 Carte mentale",
+          "width": 2244,
+          "height": 1320
         },
         {
           "type": "h3",

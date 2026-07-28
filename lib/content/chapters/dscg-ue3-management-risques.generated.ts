@@ -13,6 +13,37 @@ export const chapter: Chapter = {
   "durationMin": 55,
   "sections": [
     {
+      "id": "preambule",
+      "title": "Préambule",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**DSCG — UE3**"
+        },
+        {
+          "type": "p",
+          "text": "Management et contrôle de gestion"
+        },
+        {
+          "type": "p",
+          "text": "**Le management des risques et le contrôle interne**"
+        },
+        {
+          "type": "p",
+          "text": "*Manuel premium de préparation à l'épreuve nationale*"
+        },
+        {
+          "type": "p",
+          "text": "Partie 2 — Sous-partie 2.5 — Volume indicatif : 10 heures"
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "text": "**Manuel premium de préparation à l'épreuve nationale du DSCG — UE3 « Management et contrôle de gestion »** Nouveau référentiel — Partie 2 « Favoriser le déploiement de la stratégie de l'organisation grâce à des outils de contrôle de gestion » — **Sous-partie 2.5 — Volume indicatif : 10 heures**"
+        }
+      ]
+    },
+    {
       "id": "note-de-conformite-au-referentiel-a-lire-avant-le-chapitre",
       "title": "Note de conformité au référentiel (à lire avant le chapitre)",
       "blocks": [
@@ -136,7 +167,8 @@ export const chapter: Chapter = {
           "text": "1.4 Problématique centrale"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Problématique centrale.** Comment les organisations peuvent-elles identifier, évaluer, hiérarchiser et maîtriser leurs risques — au moyen du contrôle interne et des référentiels de management des risques — afin de protéger leurs ressources, de sécuriser leur stratégie et de transformer la maîtrise des risques en un véritable levier de création de valeur durable, et quel rôle le contrôle de gestion joue-t-il dans ce dispositif ?"
         },
         {
@@ -176,7 +208,8 @@ export const chapter: Chapter = {
           "text": "2.1 La notion de risque"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; définitions de référence (Knight, ISO 31000, COSO ERM).*"
         },
         {
@@ -247,7 +280,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Regard DSCG"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Regard DSCG.** Retenir impérativement la définition ISO 31000 (« effet de l'incertitude sur l'atteinte des objectifs ») et la double nature menace/opportunité du risque. Une copie qui ne voit le risque que comme un danger passe à côté de la vision moderne attendue. Toujours relier le risque aux **objectifs** et donc à la **stratégie**."
         },
         {
@@ -255,7 +289,8 @@ export const chapter: Chapter = {
           "text": "2.2 Les catégories de risques"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé.*"
         },
         {
@@ -343,8 +378,9 @@ export const chapter: Chapter = {
           "text": "Encadré — Focus professionnel"
         },
         {
-          "type": "p",
-          "text": "**Focus professionnel.** Les risques sont **interdépendants** : un risque cyber (attaque) peut déclencher un risque opérationnel (interruption), financier (perte, rançon), juridique (sanctions RGPD) et réputationnel (perte de confiance). Cette propagation, ou « effet domino », explique pourquoi on ne gère pas les risques en silos mais de façon **intégrée** (logique ERM, *Enterprise Risk Management*, §6). Un risque réputationnel est presque toujours la conséquence amplifiée d'un autre risque mal maîtrisé.**Transition.** Une fois les risques catégorisés, la démarche consiste à les identifier concrètement puis à les évaluer."
+          "type": "callout",
+          "variant": "info",
+          "text": "**Focus professionnel.** Les risques sont **interdépendants** : un risque cyber (attaque) peut déclencher un risque opérationnel (interruption), financier (perte, rançon), juridique (sanctions RGPD) et réputationnel (perte de confiance). Cette propagation, ou « effet domino », explique pourquoi on ne gère pas les risques en silos mais de façon **intégrée** (logique ERM, *Enterprise Risk Management*, §6). Un risque réputationnel est presque toujours la conséquence amplifiée d'un autre risque mal maîtrisé.\n**Transition.** Une fois les risques catégorisés, la démarche consiste à les identifier concrètement puis à les évaluer."
         }
       ]
     },
@@ -353,7 +389,8 @@ export const chapter: Chapter = {
       "title": "3. L'identification et l'évaluation des risques",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; logique probabilité × impact reprise de l'ancien cours (Cours 4).*"
         },
         {
@@ -369,7 +406,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Point méthode"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "**Point méthode — réussir l'identification.** Combiner systématiquement les méthodes (aucune n'est exhaustive) ; partir d'une **typologie** structurée (§2.2) pour garantir la complétude ; impliquer les opérationnels (qui connaissent les risques réels) autant que les experts ; ne pas se limiter aux risques connus — chercher activement les **signaux faibles** et les scénarios extrêmes ; documenter chaque risque dans un **registre des risques** (description, causes, conséquences, propriétaire)."
         },
         {
@@ -499,6 +537,13 @@ export const chapter: Chapter = {
           "text": "Matrice 4 — Matrice Impact × Probabilité *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-risques/01.png",
+          "alt": "Matrice 4 — Matrice Impact × Probabilité *(obligatoire)*",
+          "width": 1584,
+          "height": 1320
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** La matrice croise probabilité (en abscisse) et impact (en ordonnée), chaque case correspondant à un niveau de criticité matérialisé par une couleur (vert = acceptable, jaune = modéré, orange = élevé, rouge = critique). Elle permet de **positionner** chaque risque et d'en **déduire la stratégie de traitement** : les risques de la zone rouge (forte probabilité ET fort impact) exigent un traitement prioritaire et immédiat ; les risques de forte gravité mais faible probabilité appellent des plans de continuité et des transferts (assurance) ; les risques fréquents mais peu graves se traitent par la prévention et la réduction ; les risques de la zone verte sont acceptés en l'état. C'est l'outil de hiérarchisation par excellence, qui transforme une liste de risques en priorités d'action."
         },
@@ -507,11 +552,19 @@ export const chapter: Chapter = {
           "text": "Heat map 5 — Cartographie visuelle des risques *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-risques/02.png",
+          "alt": "Heat map 5 — Cartographie visuelle des risques *(obligatoire)*",
+          "width": 1672,
+          "height": 1320
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** La *heat map* enrichit la matrice en y positionnant les **risques réels** de l'organisation (points numérotés), offrant une vue synthétique de l'exposition globale. Sa lecture est immédiate : la concentration de points dans la zone rouge/orange signale une exposition préoccupante appelant un renforcement des dispositifs ; une répartition majoritairement verte traduit une bonne maîtrise. Au-delà de l'instantané, le suivi de la *heat map* dans le **temps** (déplacement des points d'une revue à l'autre) montre si la maîtrise progresse — un risque qui « descend » de la zone rouge vers le vert atteste de l'efficacité des plans d'action. C'est l'outil de pilotage et de communication des risques auprès de la direction et du conseil."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Matrice et heat map sont les briques de l'outil de synthèse du management des risques : la cartographie."
         }
       ]
@@ -521,7 +574,8 @@ export const chapter: Chapter = {
       "title": "4. La cartographie des risques",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "*Statut : créé ; démarche reprise de l'ancien cours (Cours 4).*"
         },
         {
@@ -555,6 +609,13 @@ export const chapter: Chapter = {
         {
           "type": "h4",
           "text": "Cartographie 6 — Exemple complet d'entreprise *(obligatoire)*"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-risques/03.png",
+          "alt": "Cartographie 6 — Exemple complet d'entreprise *(obligatoire)*",
+          "width": 1672,
+          "height": 1320
         },
         {
           "type": "p",
@@ -605,7 +666,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** La principale stratégie de réduction des risques passe par un dispositif structuré : le contrôle interne."
         }
       ]
@@ -615,7 +677,8 @@ export const chapter: Chapter = {
       "title": "5. Le contrôle interne",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : définition et principes (sauvegarde du patrimoine, séparation des fonctions) repris de l'ancien cours ; composantes COSO créées.*"
         },
         {
@@ -643,7 +706,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Erreurs fréquentes"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "warning",
           "text": "**Erreurs fréquentes.** Le contrôle interne ne donne qu'une **assurance raisonnable**, jamais absolue : aucun dispositif n'élimine totalement le risque (collusion, contournement par la direction, événement imprévu). L'affaire Société Générale (§11) illustre les **limites** : des procédures existaient, mais la fraude a contourné les contrôles. Autre erreur : confondre contrôle interne (dispositif permanent, porté par le management) et audit interne (évaluation périodique de ce dispositif par une fonction indépendante, §7-8). Enfin, un contrôle interne trop lourd (sur-procéduré) nuit à l'efficacité : il faut un équilibre coût/maîtrise."
         },
         {
@@ -651,7 +715,8 @@ export const chapter: Chapter = {
           "text": "5.2 Les composantes du contrôle interne (modèle COSO)"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé (cadre COSO).*"
         },
         {
@@ -665,6 +730,13 @@ export const chapter: Chapter = {
         {
           "type": "h4",
           "text": "Schéma 8 — Le modèle COSO du contrôle interne *(obligatoire)*"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-risques/04.png",
+          "alt": "Schéma 8 — Le modèle COSO du contrôle interne *(obligatoire)*",
+          "width": 1804,
+          "height": 1144
         },
         {
           "type": "p",
@@ -716,7 +788,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Le contrôle interne (COSO) s'inscrit dans des référentiels plus larges de management des risques, qu'il convient de connaître."
         }
       ]
@@ -726,7 +799,8 @@ export const chapter: Chapter = {
       "title": "6. Les référentiels internationaux",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé.*"
         },
         {
@@ -803,11 +877,19 @@ export const chapter: Chapter = {
           "text": "Schéma 9 — Le processus de management des risques (ISO 31000) *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-risques/05.png",
+          "alt": "Schéma 9 — Le processus de management des risques (ISO 31000) *(obligatoire)*",
+          "width": 1892,
+          "height": 1100
+        },
+        {
           "type": "p",
           "text": "**Interprétation.** Le schéma représente le processus ISO 31000 en boucle : établissement du contexte → appréciation du risque (identifier, analyser, évaluer) → traitement → suivi et revue, le tout enveloppé par la communication/concertation permanente. Sa lecture souligne deux traits essentiels : le caractère **itératif** (le management des risques n'est pas linéaire mais cyclique, réactualisé en continu) et le rôle **transversal de la communication** (à toutes les étapes, la concertation avec les parties prenantes est requise). Cette représentation processuelle est directement mobilisable pour structurer une réponse d'examen."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ce processus suppose une organisation des responsabilités, qu'incarne le modèle des trois lignes de maîtrise."
         }
       ]
@@ -817,7 +899,8 @@ export const chapter: Chapter = {
       "title": "7. Les trois lignes de maîtrise",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé (modèle IIA) ; audit interne repris de l'ancien cours.*"
         },
         {
@@ -847,6 +930,13 @@ export const chapter: Chapter = {
         {
           "type": "h4",
           "text": "Schéma 10 — Le modèle des trois lignes de maîtrise *(obligatoire)*"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-risques/06.png",
+          "alt": "Schéma 10 — Le modèle des trois lignes de maîtrise *(obligatoire)*",
+          "width": 1980,
+          "height": 1144
         },
         {
           "type": "p",
@@ -897,7 +987,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** La troisième ligne — l'audit interne — et le contrôle de gestion entretiennent des relations de complémentarité qu'il faut clarifier."
         }
       ]
@@ -907,7 +998,8 @@ export const chapter: Chapter = {
       "title": "8. Audit interne, audit externe et contrôle de gestion",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : audit légal/contractuel et comité d'audit repris de l'ancien cours ; comparaison créée.*"
         },
         {
@@ -990,11 +1082,19 @@ export const chapter: Chapter = {
           "text": "Matrice 11 — Interactions entre les fonctions de maîtrise *(matrice obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-risques/07.png",
+          "alt": "Matrice 11 — Interactions entre les fonctions de maîtrise *(matrice obligatoire)*",
+          "width": 1672,
+          "height": 1276
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** La matrice positionne les fonctions selon deux axes : leur **indépendance** (vis-à-vis du management) et leur **continuité** (ponctuelle vs permanente). Le contrôle de gestion est permanent mais peu indépendant (il est partie prenante du management) ; l'audit interne est indépendant mais périodique ; l'audit externe est indépendant et ponctuel. Cette complémentarité est précieuse : aucune fonction ne couvre seule tout l'espace, mais leur **combinaison** assure une maîtrise à la fois continue (contrôle de gestion), indépendante (audit interne) et certifiée (audit externe). L'enjeu de gouvernance est de les **coordonner** sans les confondre, en préservant l'indépendance de l'audit."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Le panorama des risques se transforme profondément sous l'effet du numérique, qui fait émerger des risques inédits."
         }
       ]
@@ -1004,7 +1104,8 @@ export const chapter: Chapter = {
       "title": "9. Les nouveaux risques à l'ère numérique",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; ouverture contemporaine ; lien UE5.*"
         },
         {
@@ -1065,11 +1166,19 @@ export const chapter: Chapter = {
           "text": "Graphique 12 — Niveau d'exposition aux risques numériques (radar) *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-risques/08.png",
+          "alt": "Graphique 12 — Niveau d'exposition aux risques numériques (radar) *(obligatoire)*",
+          "width": 1804,
+          "height": 1232
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le radar compare le niveau d'exposition d'une organisation sur les grandes dimensions de risque numérique (cybersécurité, IA, données, cloud, dépendance), éventuellement face à un niveau de maîtrise cible. Sa lecture révèle les **déséquilibres** d'exposition : une organisation peut être bien protégée sur la cybersécurité classique mais très exposée sur la gouvernance de l'IA, domaine émergent où les dispositifs sont encore immatures. Le radar oriente ainsi l'investissement en maîtrise vers les axes les plus exposés et les moins maîtrisés. Il constitue aussi un puissant outil de communication auprès de la direction, en visualisant d'un coup d'œil le profil de risque numérique."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Aux risques numériques s'ajoutent les risques de durabilité, désormais au cœur des préoccupations et de la réglementation."
         }
       ]
@@ -1079,7 +1188,8 @@ export const chapter: Chapter = {
       "title": "10. ESG, durabilité et risques émergents",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; ouverture contemporaine ; lien fort avec la Partie 3 (durabilité).*"
         },
         {
@@ -1134,11 +1244,19 @@ export const chapter: Chapter = {
           "text": "Schéma 13 — Intégration des risques ESG dans la stratégie *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-risques/09.png",
+          "alt": "Schéma 13 — Intégration des risques ESG dans la stratégie *(obligatoire)*",
+          "width": 1980,
+          "height": 1056
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma montre comment les risques ESG s'intègrent au pilotage stratégique : identifiés via une analyse de **double matérialité**, ils alimentent la cartographie des risques globale, nourrissent la stratégie (plan de transition, objectifs de durabilité) et font l'objet d'un reporting (CSRD) audité. Le message clé : les risques ESG ne sont pas un sujet périphérique de conformité mais une composante à part entière du management stratégique des risques et de la création de valeur durable. Une entreprise qui anticipe les risques de transition (en décarbonant) transforme une menace réglementaire en avantage concurrentiel — illustration de la symétrie risque/opportunité (§2). C'est le pont direct vers la Partie 3 du référentiel (performance globale et durabilité). Il convient d'insister sur la spécificité des **risques climatiques**, dont l'horizon et la nature défient les outils classiques. Leur horizon est **long** (plusieurs décennies), ce qui les rend difficiles à intégrer dans des cartographies traditionnellement annuelles ; leur réalisation est **non linéaire** (effets de seuil, points de bascule) ; et ils sont **systémiques** (ils affectent simultanément toute l'économie, échappant à la logique de diversification). Les autorités de supervision financière (banques centrales, régulateurs) imposent désormais des **tests de résistance climatiques** (*stress tests*) aux institutions financières, signe de la reconnaissance du risque climatique comme risque financier à part entière. Pour les entreprises, l'enjeu est de construire des **scénarios** (alignés sur les trajectoires de réchauffement) pour évaluer leur exposition et adapter leur stratégie. La maîtrise de ces risques rejoint alors pleinement la **création de valeur durable** : anticiper la transition, c'est éviter de se retrouver avec des actifs échoués (*stranded assets*) et capter les opportunités de la décarbonation. La gestion des risques ESG n'est donc pas une contrainte périphérique mais un déterminant de la pérennité même de l'organisation."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ces concepts s'incarnent dans des cas réels, dont l'analyse éclaire les enjeux concrets de la maîtrise des risques."
         }
       ]
@@ -1148,7 +1266,8 @@ export const chapter: Chapter = {
       "title": "11. Cas d'entreprises et illustrations professionnelles",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé — illustrations pédagogiques simplifiées (voir avertissement en tête de chapitre) ; cas Société Générale repris de l'ancien cours.*"
         },
         {
@@ -1217,7 +1336,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ces cas et ces concepts convergent vers les attendus de l'épreuve, que synthétisent les approfondissements DSCG."
         }
       ]
@@ -1227,7 +1347,8 @@ export const chapter: Chapter = {
       "title": "12. Approfondissements DSCG",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; orienté préparation à l'épreuve.*"
         },
         {
@@ -1295,6 +1416,13 @@ export const chapter: Chapter = {
         {
           "type": "h3",
           "text": "13.2 Carte mentale"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-management-risques/10.png",
+          "alt": "13.2 Carte mentale",
+          "width": 2244,
+          "height": 1320
         },
         {
           "type": "h3",

@@ -17,8 +17,8 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import mammoth from "mammoth";
 import * as cheerio from "cheerio";
+import { docxToHtml, imageExtractor, mammoth } from "./lib/docx-blocks.mjs";
 
 const args = process.argv.slice(2);
 const file = args[0];
@@ -36,7 +36,15 @@ const number = Number(opt("number", "1"));
 const slug = opt("slug", `${level.toLowerCase()}-${ue.toLowerCase()}-chapitre-${number}`);
 const forcedTitle = opt("title", null);
 
-const { value: html } = await mammoth.convertToHtml({ path: file });
+// Les figures du manuel sont indispensables à la compréhension : on les
+// extrait dans public/figures/<slug>/ et on les replace dans le fil du cours.
+const figuresDir = path.join("public", "figures", slug);
+fs.rmSync(figuresDir, { recursive: true, force: true });
+fs.mkdirSync(figuresDir, { recursive: true });
+const imageSizes = {};
+const html = await docxToHtml(file, {
+  convertImage: imageExtractor(mammoth, figuresDir, `/figures/${slug}`, imageSizes),
+});
 const $ = cheerio.load(html);
 
 /** Texte inline : <strong> → **, <em> → *, le reste à plat. */
@@ -81,7 +89,24 @@ function push(block) {
   current.blocks.push(block);
 }
 
+/** Dernier titre rencontré : sert de texte alternatif aux figures. */
+let lastHeading = "";
+
+function pushImage($img) {
+  const src = $img.attr("src");
+  if (!src || !src.startsWith("/figures/")) return;
+  sawStructure = true;
+  const size = imageSizes[src];
+  push({
+    type: "image",
+    src,
+    alt: lastHeading || "Figure du cours",
+    ...(size ? { width: size.width, height: size.height } : {}),
+  });
+}
+
 function startSection(title) {
+  lastHeading = title;
   current = { id: slugify(title) || `section-${sections.length + 1}`, title, blocks: [] };
   sections.push(current);
 }
@@ -242,12 +267,23 @@ function processElement(el) {
   if (tag === "h3" || tag === "h4" || tag === "h5") {
     if (!text) return;
     sawStructure = true;
+    const clean = text.replace(/\*\*/g, "");
+    lastHeading = clean;
     const sub = tag === "h3" && (sectionOnH2 || !forcedTitle);
-    push({ type: sub ? "h3" : "h4", text: text.replace(/\*\*/g, "") });
+    push({ type: sub ? "h3" : "h4", text: clean });
+    return;
+  }
+
+  if (tag === "img") {
+    pushImage($el);
     return;
   }
 
   if (tag === "p") {
+    // Les figures sont portées par un paragraphe : on les sort en blocs
+    // à part, avant l'éventuel texte du même paragraphe.
+    const images = $el.find("img").toArray();
+    for (const img of images) pushImage($(img));
     if (!text) return;
     // Page de garde (mode --title) : courtes lignes avant le premier
     // titre/encadré → ignorées, le site affiche son propre en-tête.
@@ -274,6 +310,21 @@ function processElement(el) {
 
 for (const el of $("body").children().toArray()) {
   processElement(el);
+}
+
+// Dans le manuel, la légende suit la figure en italique : on la rattache
+// à l'image plutôt que de la laisser en paragraphe orphelin.
+for (const section of sections) {
+  for (let i = section.blocks.length - 1; i > 0; i--) {
+    const prev = section.blocks[i - 1];
+    const cur = section.blocks[i];
+    if (prev.type !== "image" || cur.type !== "p") continue;
+    const t = cur.text.trim();
+    if (t.length < 200 && /^\*[^*].*\*$/.test(t)) {
+      prev.caption = t.slice(1, -1).trim();
+      section.blocks.splice(i, 1);
+    }
+  }
 }
 
 // Sections vides (titres de structure sans contenu direct) : supprimées.

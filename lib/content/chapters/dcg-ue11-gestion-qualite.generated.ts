@@ -52,8 +52,12 @@ export const chapter: Chapter = {
           "text": "Le contrôle de gestion joue ici un rôle central. Il lui revient de **mesurer** ce qui était jusque-là invisible (les coûts cachés de la non-qualité), de **piloter** l'amélioration continue à l'aide d'indicateurs pertinents, et de **conseiller** le décideur sur les arbitrages entre l'effort de prévention et le coût des défaillances. La réforme 2027 du DCG accorde une place renforcée à cette dimension qualitative et extra-financière de la performance : la qualité y est explicitement reliée à la performance globale et à la durabilité."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — De la qualité à la création de valeur : une logique en cascade.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-qualite/01.png",
+          "alt": "Figure du cours",
+          "width": 1440,
+          "height": 600,
+          "caption": "Figure 1 — De la qualité à la création de valeur : une logique en cascade."
         },
         {
           "type": "p",
@@ -194,8 +198,12 @@ export const chapter: Chapter = {
           "text": "Mesurer la qualité, c'est d'abord en chiffrer le coût. Le **coût d'obtention de la qualité (COQ)**, parfois appelé coût total de la qualité, regroupe l'ensemble des dépenses engagées pour **obtenir** la qualité et l'ensemble des pertes subies du fait de la **non-qualité**. La typologie de référence, héritée des travaux de Feigenbaum et de l'AFNOR, distingue quatre catégories regroupées en deux familles."
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — Cartographie du coût d'obtention de la qualité (COQ).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-qualite/02.png",
+          "alt": "2. Les coûts de la qualité",
+          "width": 1440,
+          "height": 680,
+          "caption": "Figure 2 — Cartographie du coût d'obtention de la qualité (COQ)."
         },
         {
           "type": "h3",
@@ -272,8 +280,12 @@ export const chapter: Chapter = {
           "text": "En additionnant les coûts de conformité (croissants avec l'effort qualité) et les coûts de non-conformité (décroissants avec cet effort), on obtient le **coût total de la qualité**. Sa représentation graphique fait apparaître un **minimum** : l'optimum économique, qui correspond à la qualité optimale."
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — Courbe du coût total de la qualité et optimum économique (Q*).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-qualite/03.png",
+          "alt": "2. Les coûts de la qualité",
+          "width": 1440,
+          "height": 760,
+          "caption": "Figure 3 — Courbe du coût total de la qualité et optimum économique (Q*)."
         },
         {
           "type": "p",
@@ -453,8 +465,12 @@ export const chapter: Chapter = {
           "text": "Les coûts cachés **existent** mais ne sont pas identifiés correctement : confondus avec d'autres coûts, ils ne sont pas pris en compte dans la décision. Les coûts de la non-qualité sont, par nature, largement cachés et **transversaux**. Selon l'ISÉOR, leur origine réside dans cinq **dysfonctionnements** qui se traduisent en cinq composantes de coût :"
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — Mécanisme des coûts cachés : des composants aux impacts.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-qualite/04.png",
+          "alt": "Corrigé — regroupement par famille",
+          "width": 906,
+          "height": 858,
+          "caption": "Figure 4 — Mécanisme des coûts cachés : des composants aux impacts."
         },
         {
           "type": "table",
@@ -512,8 +528,12 @@ export const chapter: Chapter = {
           "text": "Le cycle **PDCA** (*Plan – Do – Check – Act*) est une méthode d'amélioration continue en quatre étapes, représentée par une roue qui « monte » progressivement la pente du progrès."
         },
         {
-          "type": "p",
-          "text": "*Figure 5 — La roue de Deming (PDCA) et le principe d'amélioration continue.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-qualite/05.png",
+          "alt": "3. Les outils et démarches qualité",
+          "width": 1240,
+          "height": 720,
+          "caption": "Figure 5 — La roue de Deming (PDCA) et le principe d'amélioration continue."
         },
         {
           "type": "p",
@@ -611,8 +631,12 @@ export const chapter: Chapter = {
           "text": "Travail à faire : construire le tableau de Pareto (fréquences, fréquences cumulées, rang), tracer le diagramme et identifier les défauts prioritaires sur lesquels concentrer les actions correctives."
         },
         {
-          "type": "p",
-          "text": "*Figure 6 — Diagramme de Pareto des défauts (l’entreprise).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-qualite/06.png",
+          "alt": "3. Les outils et démarches qualité",
+          "width": 1485,
+          "height": 839,
+          "caption": "Figure 6 — Diagramme de Pareto des défauts (l’entreprise)."
         },
         {
           "type": "p",
@@ -639,8 +663,12 @@ export const chapter: Chapter = {
           "text": "Le **diagramme d'Ishikawa** (ou diagramme « en arêtes de poisson », ou causes-effets) est un **support de réflexion collective** destiné à examiner les causes profondes d'un problème. Les causes sont classées en cinq familles, les **« 5 M »** : Matière, Matériel, Méthode, Main-d'œuvre, Milieu."
         },
         {
-          "type": "p",
-          "text": "*Figure 7 — Diagramme d'Ishikawa (5 M) appliqué aux retours clients de l’entreprise.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-qualite/07.png",
+          "alt": "3. Les outils et démarches qualité",
+          "width": 1520,
+          "height": 760,
+          "caption": "Figure 7 — Diagramme d'Ishikawa (5 M) appliqué aux retours clients de l’entreprise."
         },
         {
           "type": "p",
@@ -699,8 +727,12 @@ export const chapter: Chapter = {
           "text": "Soit une population mère Ω de taille N et une variable aléatoire X. On en tire des échantillons de taille n. La variable Xₙ qui associe à chaque échantillon sa moyenne, et la variable Fₙ qui lui associe sa fréquence, obéissent (sous conditions) à une loi normale :"
         },
         {
-          "type": "p",
-          "text": "*Figure 8 — Estimation : de l’échantillon à la population mère.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-qualite/08.png",
+          "alt": "3. Les outils et démarches qualité",
+          "width": 1444,
+          "height": 422,
+          "caption": "Figure 8 — Estimation : de l’échantillon à la population mère."
         },
         {
           "type": "callout",
@@ -1085,8 +1117,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 9 — Diagramme de Pareto des défauts du produit.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-qualite/09.png",
+          "alt": "Le pilotage qualité de l'atelier de production",
+          "width": 1485,
+          "height": 839,
+          "caption": "Figure 9 — Diagramme de Pareto des défauts du produit."
         },
         {
           "type": "p",

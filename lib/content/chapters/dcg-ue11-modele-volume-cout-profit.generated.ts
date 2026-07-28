@@ -57,8 +57,12 @@ export const chapter: Chapter = {
           "text": "La formation du résultat suit une cascade logique : le chiffre d’affaires absorbe d’abord les charges variables pour dégager une marge sur coût variable, laquelle doit ensuite couvrir les charges fixes avant de laisser apparaître un résultat."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — La cascade de formation du résultat (en k€)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-modele-volume-cout-profit/01.png",
+          "alt": "Introduction générale",
+          "width": 1400,
+          "height": 840,
+          "caption": "Figure 1 — La cascade de formation du résultat (en k€)"
         },
         {
           "type": "callout",
@@ -174,8 +178,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — Comportement des charges en fonction du volume (Brasserie du Mont)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-modele-volume-cout-profit/02.png",
+          "alt": "Partie 1 — Les fondements du modèle Volume-Coût-Profit",
+          "width": 1400,
+          "height": 800,
+          "caption": "Figure 2 — Comportement des charges en fonction du volume (Brasserie du Mont)"
         },
         {
           "type": "callout",
@@ -318,8 +326,12 @@ export const chapter: Chapter = {
           "text": "Seuil en volume : 750 000 / 50 = 15 000 sodas (soit 300 000 / 20). Graphiquement, on trace la droite de la MCV et la droite des charges fixes ; leur intersection donne le seuil."
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — Détermination graphique du seuil : intersection MCV / CF*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-modele-volume-cout-profit/03.png",
+          "alt": "Partie 2 — Le seuil de profitabilité et le point mort",
+          "width": 1200,
+          "height": 642,
+          "caption": "Figure 3 — Détermination graphique du seuil : intersection MCV / CF"
         },
         {
           "type": "h3",
@@ -338,8 +350,12 @@ export const chapter: Chapter = {
           "text": "Graphiquement, on trace la droite du résultat et on lit son intersection avec l’axe des abscisses (là où le résultat passe de négatif à positif)."
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — Le seuil comme point d’annulation du résultat*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-modele-volume-cout-profit/04.png",
+          "alt": "Partie 2 — Le seuil de profitabilité et le point mort",
+          "width": 1207,
+          "height": 613,
+          "caption": "Figure 4 — Le seuil comme point d’annulation du résultat"
         },
         {
           "type": "h3",
@@ -358,8 +374,12 @@ export const chapter: Chapter = {
           "text": "Graphiquement, on trace la première bissectrice (le chiffre d’affaires) et la droite des charges totales ; leur intersection donne le seuil."
         },
         {
-          "type": "p",
-          "text": "*Figure 5 — Le seuil comme intersection CA / charges totales*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-modele-volume-cout-profit/05.png",
+          "alt": "Partie 2 — Le seuil de profitabilité et le point mort",
+          "width": 1400,
+          "height": 800,
+          "caption": "Figure 5 — Le seuil comme intersection CA / charges totales"
         },
         {
           "type": "callout",
@@ -434,8 +454,12 @@ export const chapter: Chapter = {
           "text": "**0,4 X = 500 000 ⟹ X = 1 250 000 € soit 25 000 sodas**"
         },
         {
-          "type": "p",
-          "text": "*Figure 6 — Le déplacement du seuil lors d’un changement de structure*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-modele-volume-cout-profit/06.png",
+          "alt": "Partie 2 — Le seuil de profitabilité et le point mort",
+          "width": 1428,
+          "height": 826,
+          "caption": "Figure 6 — Le déplacement du seuil lors d’un changement de structure"
         },
         {
           "type": "h4",
@@ -518,8 +542,12 @@ export const chapter: Chapter = {
           "text": "Fin T2, la MCV cumulée (450 000 €) ne couvre pas encore les 800 000 € de charges fixes. Le seuil est franchi pendant le T3. Marge restant à couvrir : 800 000 − 450 000 = 350 000 €. Sur les 3 mois du T3 la MCV est de 600 000 € ; pour m mois : m = (350 000 × 3) / 600 000 = 1,75 mois. Le point mort tombe 1 mois et 23 jours après la fin du T2, soit le 23 août."
         },
         {
-          "type": "p",
-          "text": "*Figure 7 — Seuil en activité saisonnière : cumul de MCV contre charges fixes*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-modele-volume-cout-profit/07.png",
+          "alt": "*L’opportunité de l’investissement*",
+          "width": 1326,
+          "height": 677,
+          "caption": "Figure 7 — Seuil en activité saisonnière : cumul de MCV contre charges fixes"
         },
         {
           "type": "h3",
@@ -586,8 +614,12 @@ export const chapter: Chapter = {
           "text": "Pour la Brasserie du Mont : IS = 250 000 / 1 000 000 = 25 %. Le chiffre d’affaires peut chuter de 25 % avant la perte."
         },
         {
-          "type": "p",
-          "text": "*Figure 8 — Marge de sécurité et indice de sécurité (Brasserie du Mont)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-modele-volume-cout-profit/08.png",
+          "alt": "Partie 3 — Les indicateurs de risque d’exploitation",
+          "width": 1400,
+          "height": 600,
+          "caption": "Figure 8 — Marge de sécurité et indice de sécurité (Brasserie du Mont)"
         },
         {
           "type": "h3",
@@ -692,8 +724,12 @@ export const chapter: Chapter = {
           "text": "LO = (60 000 − 100 000)/100 000 ÷ (900 000 − 1 000 000)/1 000 000 = (−40 %)/(−10 %) = 4. Le calcul direct est plus rapide : LO = MCV / Résultat = 400 000 / 100 000 = 4."
         },
         {
-          "type": "p",
-          "text": "*Figure 9 — Le levier opérationnel : un amplificateur du résultat… et du risque*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-modele-volume-cout-profit/09.png",
+          "alt": "Partie 3 — Les indicateurs de risque d’exploitation",
+          "width": 1400,
+          "height": 720,
+          "caption": "Figure 9 — Le levier opérationnel : un amplificateur du résultat… et du risque"
         },
         {
           "type": "h3",

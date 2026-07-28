@@ -8,7 +8,15 @@ export type ContentBlock =
   | { type: "formula"; label?: string; text: string }
   | { type: "table"; caption?: string; headers: string[]; rows: string[][] }
   | { type: "callout"; variant: "info" | "warning" | "tip"; text: string; title?: string }
-  | { type: "video"; youtubeId: string; title: string };
+  | { type: "video"; youtubeId: string; title: string }
+  | {
+      type: "image";
+      src: string;
+      alt: string;
+      width?: number;
+      height?: number;
+      caption?: string;
+    };
 
 export interface Section {
   id: string;

@@ -94,8 +94,12 @@ export const chapter: Chapter = {
           "text": "Le référentiel rénové insiste : le contrôleur doit délimiter les besoins en information **quantitative ET qualitative**. L’information quantitative (coûts, marges, volumes, ratios) reste le cœur du métier, mais elle ne suffit plus. L’information qualitative (satisfaction client, climat social, image, impact environnemental, signaux faibles) est devenue indispensable pour piloter la performance globale. Réduire le pilotage aux seuls chiffres financiers serait une erreur d’analyse aujourd’hui sanctionnée à l’examen."
         },
         {
-          "type": "p",
-          "text": "*Les deux natures d’information mobilisées par le contrôle de gestion*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/01.png",
+          "alt": "Information quantitative et information qualitative",
+          "width": 1480,
+          "height": 720,
+          "caption": "Les deux natures d’information mobilisées par le contrôle de gestion"
         },
         {
           "type": "h4",
@@ -172,8 +176,12 @@ export const chapter: Chapter = {
           "text": "Le contrôle de gestion n’est pas la seule forme de contrôle dans l’organisation. Il faut le distinguer du contrôle interne (dispositif de maîtrise des risques et de fiabilité des procédures), de l’audit (vérification de conformité a posteriori, interne ou externe) et du contrôle stratégique (orientations de long terme). Tous visent une forme de maîtrise, mais le contrôle de gestion se caractérise par sa finalité : piloter la performance et aider à la décision au quotidien et à moyen terme."
         },
         {
-          "type": "p",
-          "text": "*Le contrôle de gestion parmi les autres formes de contrôle*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/02.png",
+          "alt": "Le contrôle de gestion parmi les autres formes de contrôle",
+          "width": 1440,
+          "height": 680,
+          "caption": "Le contrôle de gestion parmi les autres formes de contrôle"
         },
         {
           "type": "h4",
@@ -184,8 +192,12 @@ export const chapter: Chapter = {
           "text": "R. Anthony distingue trois niveaux de contrôle, emboîtés selon l’horizon temporel et le degré de généralité de la décision. Le contrôle de gestion occupe le niveau intermédiaire : il fait la charnière entre la stratégie (le sommet) et l’opérationnel (la base), traduisant les orientations en objectifs et faisant remonter l’information du terrain."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — La pyramide des trois niveaux de contrôle (stratégique, gestion, opérationnel).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/03.png",
+          "alt": "Les trois niveaux de contrôle",
+          "width": 1520,
+          "height": 760,
+          "caption": "Figure 1 — La pyramide des trois niveaux de contrôle (stratégique, gestion, opérationnel)."
         },
         {
           "type": "h3",
@@ -210,16 +222,28 @@ export const chapter: Chapter = {
           "text": "Le pilotage emprunte sa logique à la cybernétique : on fixe un cap, on observe ses instruments, on constate les écarts par rapport à la route prévue, et on agit pour y revenir. Le cœur du dispositif est la **boucle de rétroaction (feed-back)** : l’information sur le résultat obtenu est renvoyée vers le décideur pour ajuster l’action future. C’est elle qui distingue un véritable pilotage d’une simple constatation a posteriori."
         },
         {
-          "type": "p",
-          "text": "*La boucle de pilotage (modèle cybernétique)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/04.png",
+          "alt": "Les trois niveaux de contrôle",
+          "width": 1400,
+          "height": 840,
+          "caption": "La boucle de pilotage (modèle cybernétique)"
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — La boucle de pilotage (modèle cybernétique) : objectifs, décisions, action, écarts et rétroaction.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/05.png",
+          "alt": "Les trois niveaux de contrôle",
+          "width": 1585,
+          "height": 578,
+          "caption": "Figure 2 — La boucle de pilotage (modèle cybernétique) : objectifs, décisions, action, écarts et rétroaction."
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — La régulation thermostatique : illustration de la rétroaction (boucle de correction).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/06.png",
+          "alt": "Les trois niveaux de contrôle",
+          "width": 1580,
+          "height": 505,
+          "caption": "Figure 3 — La régulation thermostatique : illustration de la rétroaction (boucle de correction)."
         },
         {
           "type": "p",
@@ -331,8 +355,12 @@ export const chapter: Chapter = {
           "text": "Les services posent une difficulté particulière : la prestation est immatérielle, souvent produite et consommée en même temps, et variable d’un client à l’autre. Définir une **unité d’œuvre** pertinente et mesurer une qualité perçue y est plus délicat que dans l’industrie."
         },
         {
-          "type": "p",
-          "text": "*Le contrôle de gestion s’adapte à l’organisation et à l’activité*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/07.png",
+          "alt": "Les clients des cabinets d’expertise comptable",
+          "width": 1480,
+          "height": 840,
+          "caption": "Le contrôle de gestion s’adapte à l’organisation et à l’activité"
         },
         {
           "type": "p",
@@ -427,8 +455,12 @@ export const chapter: Chapter = {
           "text": "Le **Triple Bottom Line** (J. Elkington) mesure la performance sur trois « lignes de résultat » — Profit (économique), People (social), Planet (environnemental). Pour la rendre mesurable, on recourt aux critères **ESG** (Environnement, Social, Gouvernance). La RSE en est la déclinaison managériale : l’organisation prend volontairement en compte les impacts sociaux et environnementaux, et pilote une création de valeur non plus seulement actionnariale, mais partenariale."
         },
         {
-          "type": "p",
-          "text": "*La performance globale selon le Triple Bottom Line*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/08.png",
+          "alt": "Efficacité, efficience et économie",
+          "width": 1360,
+          "height": 800,
+          "caption": "La performance globale selon le Triple Bottom Line"
         },
         {
           "type": "callout",
@@ -449,8 +481,12 @@ export const chapter: Chapter = {
           "text": "Le référentiel place les tableaux de bord dès le début du programme pour montrer leur importance, avant de les décliner dans les autres parties. Un tableau de bord est un ensemble synthétique d’indicateurs, financiers et extra-financiers, qui permet au responsable de suivre sa performance, de détecter les écarts et de déclencher des actions correctives. C’est l’instrument concret de la boucle de pilotage vue précédemment."
         },
         {
-          "type": "p",
-          "text": "*Le tableau de bord, instrument central du pilotage*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/09.png",
+          "alt": "Efficacité, efficience et économie",
+          "width": 1440,
+          "height": 600,
+          "caption": "Le tableau de bord, instrument central du pilotage"
         },
         {
           "type": "callout",
@@ -475,8 +511,12 @@ export const chapter: Chapter = {
           "text": "Le contrôle de gestion s’est construit par couches successives, chacune enrichissant la précédente sans l’effacer : contrôle des coûts (début XXᵉ), contrôle budgétaire (entre-deux-guerres, modèle General Motors d’A. Sloan), pilotage de la performance (années 1980, tableaux de bord multidimensionnels), pilotage stratégique (années 1990), performance globale (depuis 2000)."
         },
         {
-          "type": "p",
-          "text": "*Les cinq âges du contrôle de gestion : un enrichissement cumulatif*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/10.png",
+          "alt": "Efficacité, efficience et économie",
+          "width": 1520,
+          "height": 760,
+          "caption": "Les cinq âges du contrôle de gestion : un enrichissement cumulatif"
         },
         {
           "type": "h4",
@@ -487,8 +527,12 @@ export const chapter: Chapter = {
           "text": "Le contrôleur de gestion n’est pas le décideur : il est l’architecte du système d’information de pilotage et le conseiller des managers. Ses missions s’articulent autour de cinq verbes : **analyser**, **prévoir**, **contrôler**, **conseiller** et **communiquer**. Son évolution majeure : le passage du « contrôleur-comptable » tourné vers le passé au business partner, partenaire de la décision."
         },
         {
-          "type": "p",
-          "text": "*Du contrôleur-comptable au business partner*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/11.png",
+          "alt": "Le contrôleur, du comptable au business partner",
+          "width": 1440,
+          "height": 520,
+          "caption": "Du contrôleur-comptable au business partner"
         },
         {
           "type": "callout",
@@ -631,8 +675,12 @@ export const chapter: Chapter = {
           "text": "Pour aider réellement à la décision, une information doit présenter plusieurs qualités. Une information fausse, tardive ou inaccessible peut être plus nuisible qu’une absence d’information, car elle induit en erreur."
         },
         {
-          "type": "p",
-          "text": "*Les six qualités d’une information utile au pilotage*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/12.png",
+          "alt": "Point examen",
+          "width": 1520,
+          "height": 880,
+          "caption": "Les six qualités d’une information utile au pilotage"
         },
         {
           "type": "table",
@@ -688,8 +736,12 @@ export const chapter: Chapter = {
           "text": "Le SI ne se réduit pas à l’informatique : il englobe aussi les hommes et les règles de gestion. L’informatique en est le support technique. Le SI poursuit quatre finalités successives : collecter, stocker, traiter et diffuser l’information vers ceux qui en ont besoin pour décider."
         },
         {
-          "type": "p",
-          "text": "*Les cinq composantes du système d’information et sa finalité*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/13.png",
+          "alt": "Point examen",
+          "width": 1840,
+          "height": 680,
+          "caption": "Les cinq composantes du système d’information et sa finalité"
         },
         {
           "type": "h4",
@@ -708,8 +760,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Les trois types de flux d’information dans l’organisation*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/14.png",
+          "alt": "Les trois flux d’information",
+          "width": 1640,
+          "height": 840,
+          "caption": "Les trois types de flux d’information dans l’organisation"
         },
         {
           "type": "h4",
@@ -769,8 +825,12 @@ export const chapter: Chapter = {
           "text": "Les missions historiques forment le socle du métier. Elles restent d’actualité, même si leur exécution est de plus en plus automatisée."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — La boucle de pilotage : cadre des missions du contrôleur de gestion (objectifs, décisions, action, écarts).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/15.png",
+          "alt": "Les missions traditionnelles",
+          "width": 634,
+          "height": 231,
+          "caption": "Figure 1 — La boucle de pilotage : cadre des missions du contrôleur de gestion (objectifs, décisions, action, écarts)."
         },
         {
           "type": "ul",
@@ -799,8 +859,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Du producteur de chiffres au business partner*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/16.png",
+          "alt": "Les missions contemporaines",
+          "width": 1800,
+          "height": 680,
+          "caption": "Du producteur de chiffres au business partner"
         },
         {
           "type": "callout",
@@ -817,8 +881,12 @@ export const chapter: Chapter = {
           "text": "Le contrôleur moderne est un profil complet, qui combine savoir, savoir-faire et savoir-être. Aucune dimension ne suffit seule : la technicité sans communication reste stérile ; le numérique sans esprit critique devient dangereux."
         },
         {
-          "type": "p",
-          "text": "*Les qualités attendues du contrôleur de gestion*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/17.png",
+          "alt": "Les missions contemporaines",
+          "width": 2000,
+          "height": 940,
+          "caption": "Les qualités attendues du contrôleur de gestion"
         },
         {
           "type": "table",
@@ -862,8 +930,12 @@ export const chapter: Chapter = {
           "text": "Le contrôleur de gestion est un interlocuteur transversal : il ne travaille pas isolé, mais en relation constante avec l’ensemble des fonctions de l’entreprise, dont il collecte les données et auxquelles il restitue une information de gestion."
         },
         {
-          "type": "p",
-          "text": "*Le contrôleur de gestion au cœur des relations de l’entreprise*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/18.png",
+          "alt": "Point examen",
+          "width": 2080,
+          "height": 1200,
+          "caption": "Le contrôleur de gestion au cœur des relations de l’entreprise"
         },
         {
           "type": "table",
@@ -914,8 +986,12 @@ export const chapter: Chapter = {
           "text": "Quatre tendances redessinent le métier. L’automatisation décharge le contrôleur des tâches répétitives (collecte, consolidation, reporting). La digitalisation outille l’analyse. Le contrôle de gestion devient prédictif : il anticipe plutôt qu’il ne constate. Enfin, il intègre la performance globale et les critères ESG dans le pilotage."
         },
         {
-          "type": "p",
-          "text": "*Les outils numériques au service des activités du contrôleur*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/19.png",
+          "alt": "Point examen",
+          "width": 2160,
+          "height": 880,
+          "caption": "Les outils numériques au service des activités du contrôleur"
         },
         {
           "type": "h4",
@@ -952,8 +1028,19 @@ export const chapter: Chapter = {
           "text": "La logique d’intégration est la clé : au lieu d’une mosaïque de logiciels qui ne communiquent pas, un seul système relie achats, production, stocks, ventes, comptabilité et contrôle de gestion. Une vente saisie en caisse met à jour automatiquement les stocks, la comptabilité et les indicateurs, sans ressaisie."
         },
         {
-          "type": "p",
-          "text": "*ERP / PGI : avantages et limites*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/20.png",
+          "alt": "4. Outils numériques, Big Data et intelligence artificielle",
+          "width": 2360,
+          "height": 1240
+        },
+        {
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/21.png",
+          "alt": "4. Outils numériques, Big Data et intelligence artificielle",
+          "width": 1720,
+          "height": 640,
+          "caption": "ERP / PGI : avantages et limites"
         },
         {
           "type": "h4",
@@ -980,8 +1067,12 @@ export const chapter: Chapter = {
           "text": "La data analytics désigne les techniques d’exploitation des données pour en tirer de la valeur. On distingue quatre niveaux, de complexité et de valeur croissantes."
         },
         {
-          "type": "p",
-          "text": "*Les quatre niveaux de la data analytics*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/22.png",
+          "alt": "Erreurs fréquentes",
+          "width": 1800,
+          "height": 760,
+          "caption": "Les quatre niveaux de la data analytics"
         },
         {
           "type": "table",
@@ -1103,8 +1194,12 @@ export const chapter: Chapter = {
           "text": "Les IA génératives produisent du contenu nouveau (texte, tableaux, code) à partir d’instructions en langage naturel. Elles permettent au contrôleur de rédiger des synthèses, d’explorer des données ou d’automatiser des tâches répétitives en dialoguant simplement avec la machine. L’apport est considérable en productivité, mais l’IA ne remplace pas le jugement : elle propose, l’humain valide. On parle d’intelligence augmentée."
         },
         {
-          "type": "p",
-          "text": "*Applications de l’IA générative au contrôle de gestion*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/23.png",
+          "alt": "Les IA génératives",
+          "width": 1800,
+          "height": 640,
+          "caption": "Applications de l’IA générative au contrôle de gestion"
         },
         {
           "type": "h3",
@@ -1115,8 +1210,12 @@ export const chapter: Chapter = {
           "text": "La transformation numérique doit être appréciée de façon nuancée : elle ouvre des opportunités majeures mais comporte des limites et des risques réels."
         },
         {
-          "type": "p",
-          "text": "*Analyse SWOT de la transformation numérique du contrôle de gestion*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/24.png",
+          "alt": "Les IA génératives",
+          "width": 1720,
+          "height": 960,
+          "caption": "Analyse SWOT de la transformation numérique du contrôle de gestion"
         },
         {
           "type": "h4",
@@ -1292,8 +1391,12 @@ export const chapter: Chapter = {
           "text": "La décentralisation ne peut fonctionner sans contrôle : donner de l’autonomie sans rendre des comptes mènerait à l’anarchie ; contrôler sans déléguer ruinerait la décentralisation. L’équilibre repose sur une boucle vertueuse : délégation, autonomie, responsabilité, contrôle."
         },
         {
-          "type": "p",
-          "text": "*La boucle autonomie – délégation – responsabilité – contrôle*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/25.png",
+          "alt": "5. Décentralisation et centres de responsabilité",
+          "width": 1240,
+          "height": 740,
+          "caption": "La boucle autonomie – délégation – responsabilité – contrôle"
         },
         {
           "type": "p",
@@ -1304,8 +1407,12 @@ export const chapter: Chapter = {
           "text": "Les centres se distinguent par la nature des éléments que leur responsable maîtrise, du seul coût jusqu’à la rentabilité des capitaux investis. Cette gradation — coûts, recettes, profit, investissement — correspond à une autonomie croissante."
         },
         {
-          "type": "p",
-          "text": "*Les quatre types de centres de responsabilité, par autonomie croissante*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/26.png",
+          "alt": "5. Décentralisation et centres de responsabilité",
+          "width": 1440,
+          "height": 640,
+          "caption": "Les quatre types de centres de responsabilité, par autonomie croissante"
         },
         {
           "type": "h3",
@@ -1555,8 +1662,12 @@ export const chapter: Chapter = {
           "text": "Les activités de soutien irriguent transversalement les précédentes : infrastructure de l’entreprise (dont le contrôle de gestion), gestion des ressources humaines, développement technologique (R&D, SI) et approvisionnements."
         },
         {
-          "type": "p",
-          "text": "*La chaîne de valeur de Michael Porter (1985)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/27.png",
+          "alt": "6. Chaîne de valeur et indicateurs de performance",
+          "width": 2920,
+          "height": 1520,
+          "caption": "La chaîne de valeur de Michael Porter (1985)"
         },
         {
           "type": "h3",
@@ -1618,8 +1729,12 @@ export const chapter: Chapter = {
           "text": "La traduction concrète des principes précédents est l’organigramme de l’entreprise « lu » en centres de responsabilité. Chaque unité y est qualifiée selon ce que son responsable maîtrise réellement."
         },
         {
-          "type": "p",
-          "text": "*L’organigramme de l’entreprise décliné en centres de responsabilité*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/28.png",
+          "alt": "6. Chaîne de valeur et indicateurs de performance",
+          "width": 1440,
+          "height": 800,
+          "caption": "L’organigramme de l’entreprise décliné en centres de responsabilité"
         },
         {
           "type": "ul",
@@ -1649,8 +1764,12 @@ export const chapter: Chapter = {
           "text": "La chaîne de valeur n’est pas qu’un schéma stratégique : c’est un puissant outil de contrôle de gestion. En analysant chaque activité, le contrôleur peut identifier où se crée la valeur, où se concentrent les coûts, où se nichent les dysfonctionnements et comment piloter la performance."
         },
         {
-          "type": "p",
-          "text": "*Quatre usages de la chaîne de valeur en contrôle de gestion*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/29.png",
+          "alt": "6. Chaîne de valeur et indicateurs de performance",
+          "width": 1280,
+          "height": 640,
+          "caption": "Quatre usages de la chaîne de valeur en contrôle de gestion"
         },
         {
           "type": "ul",
@@ -1666,8 +1785,12 @@ export const chapter: Chapter = {
           "text": "Appliquée à l’entreprise, la confrontation activité par activité de la part des coûts et de la part de la valeur perçue distingue les maillons créateurs nets de valeur des maillons destructeurs nets."
         },
         {
-          "type": "p",
-          "text": "*l’entreprise : coût et valeur perçue par activité (produit)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/30.png",
+          "alt": "6. Chaîne de valeur et indicateurs de performance",
+          "width": 1440,
+          "height": 680,
+          "caption": "l’entreprise : coût et valeur perçue par activité (produit)"
         },
         {
           "type": "callout",
@@ -1688,8 +1811,12 @@ export const chapter: Chapter = {
           "text": "Un système de centres ne vaut que par la qualité de ses indicateurs : un indicateur mal conçu oriente les comportements dans la mauvaise direction. Quatre qualités guident leur construction."
         },
         {
-          "type": "p",
-          "text": "*Les quatre qualités d’un bon indicateur*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/31.png",
+          "alt": "6. Chaîne de valeur et indicateurs de performance",
+          "width": 1440,
+          "height": 340,
+          "caption": "Les quatre qualités d’un bon indicateur"
         },
         {
           "type": "ul",
@@ -1758,8 +1885,12 @@ export const chapter: Chapter = {
           "text": "Le ROI (= résultat / capitaux investis) rapporte le résultat aux capitaux investis et peut se décomposer en taux de marge et rotation de l’actif, révélant les deux leviers d’amélioration. Le ROCE (= résultat d’exploitation après impôt / capitaux engagés) mesure la rentabilité économique des capitaux engagés, indépendamment du financement. L’EVA (= résultat d’exploitation après impôt − capitaux investis × coût du capital) mesure la valeur créée au-delà du coût des capitaux : positive, le centre crée de la valeur ; négative, il en détruit, même s’il dégage un profit comptable."
         },
         {
-          "type": "p",
-          "text": "*La décomposition du ROI selon la formule de DuPont (données Rakéo)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/32.png",
+          "alt": "6. Chaîne de valeur et indicateurs de performance",
+          "width": 1440,
+          "height": 520,
+          "caption": "La décomposition du ROI selon la formule de DuPont (données Rakéo)"
         },
         {
           "type": "h3",
@@ -1770,8 +1901,12 @@ export const chapter: Chapter = {
           "text": "Les indicateurs de rentabilité comportent un biais célèbre : un responsable jugé sur son ROI moyen peut refuser un bon projet dont la rentabilité, bien que supérieure au coût du capital, est inférieure à son ROI actuel — car il ferait baisser sa moyenne. L’EVA, qui raisonne en valeur absolue créée, corrige ce travers : tout projet à EVA positive est accepté."
         },
         {
-          "type": "p",
-          "text": "*ROI moyen vs EVA : pourquoi un bon projet peut être refusé à tort*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/33.png",
+          "alt": "6. Chaîne de valeur et indicateurs de performance",
+          "width": 1440,
+          "height": 680,
+          "caption": "ROI moyen vs EVA : pourquoi un bon projet peut être refusé à tort"
         },
         {
           "type": "callout",
@@ -1820,8 +1955,12 @@ export const chapter: Chapter = {
           "text": "Le numérique transforme le pilotage des centres : il automatise la collecte, fiabilise les indicateurs et permet un suivi en temps réel. Le contrôleur passe de la production de rapports figés à l’animation d’un pilotage interactif."
         },
         {
-          "type": "p",
-          "text": "*Le pilotage numérique des centres de responsabilité*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/34.png",
+          "alt": "6. Chaîne de valeur et indicateurs de performance",
+          "width": 1440,
+          "height": 400,
+          "caption": "Le pilotage numérique des centres de responsabilité"
         },
         {
           "type": "callout",
@@ -1844,8 +1983,12 @@ export const chapter: Chapter = {
           "text": "Le système des centres de responsabilité est puissant mais comporte des effets pervers bien documentés. L’esprit du référentiel impose d’en faire l’analyse critique — rubrique que ce chapitre traite explicitement et qui sert de modèle aux autres chapitres du manuel."
         },
         {
-          "type": "p",
-          "text": "*Forces et limites du système des centres de responsabilité*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-cadre-metier-organisation/35.png",
+          "alt": "6. Chaîne de valeur et indicateurs de performance",
+          "width": 1400,
+          "height": 540,
+          "caption": "Forces et limites du système des centres de responsabilité"
         },
         {
           "type": "h4",

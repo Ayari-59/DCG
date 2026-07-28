@@ -13,6 +13,37 @@ export const chapter: Chapter = {
   "durationMin": 60,
   "sections": [
     {
+      "id": "preambule",
+      "title": "Préambule",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**DSCG — UE3**"
+        },
+        {
+          "type": "p",
+          "text": "Management et contrôle de gestion"
+        },
+        {
+          "type": "p",
+          "text": "**La gestion budgétaire et le pilotage prévisionnel de la performance**"
+        },
+        {
+          "type": "p",
+          "text": "*Manuel premium de préparation à l'épreuve nationale*"
+        },
+        {
+          "type": "p",
+          "text": "Partie 3 — Volume indicatif : 20 heures"
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "text": "**Manuel premium de préparation à l'épreuve nationale du DSCG — UE3 « Management et contrôle de gestion »** Nouveau référentiel — Partie 3 « Concevoir et mettre en place des outils permettant d'analyser et de piloter la performance » — **Volume indicatif : 20 heures**"
+        }
+      ]
+    },
+    {
       "id": "note-de-conformite-au-referentiel-a-lire-avant-le-chapitre",
       "title": "Note de conformité au référentiel (à lire avant le chapitre)",
       "blocks": [
@@ -135,7 +166,8 @@ export const chapter: Chapter = {
           "text": "Pourquoi formaliser un budget plutôt que piloter « à l'intuition » ? Parce que dans une organisation complexe, l'intuition ne suffit pas à coordonner des centaines d'acteurs, à anticiper les besoins de trésorerie, à détecter à temps les dérives. Le budget apporte la **rigueur** de l'anticipation chiffrée et la **discipline** du suivi. Mais — et c'est tout l'enjeu contemporain — le modèle budgétaire traditionnel souffre de limites réelles (lourdeur, rigidité, jeux d'acteurs) qui ont nourri des critiques radicales (beyond budgeting) et l'émergence de nouvelles approches (rolling forecast, pilotage en temps réel)."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Problématique centrale.** Comment la gestion budgétaire permet-elle de traduire les orientations stratégiques en objectifs opérationnels et financiers, d'en piloter la réalisation par le contrôle budgétaire et l'analyse des écarts, et comment dépasser les limites du modèle traditionnel pour concevoir un pilotage prévisionnel agile, au service de la création de valeur ?"
         },
         {
@@ -175,7 +207,8 @@ export const chapter: Chapter = {
           "text": "2.1 Définition et finalités"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; auteurs repris (Anthony, Bouquin) ; Kaplan, Simons.*"
         },
         {
@@ -250,7 +283,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Regard DSCG"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Regard DSCG.** Le budget n'est pas qu'un tableau de chiffres : c'est un **outil de management** aux cinq finalités (prévision, coordination, communication, motivation, contrôle). Une copie qui réduit le budget à un calcul passe à côté de l'attendu. Toujours relier le budget à la **stratégie** (en amont) et à la **performance** (en aval), et savoir en discuter les **finalités** et les **limites**."
         },
         {
@@ -258,7 +292,8 @@ export const chapter: Chapter = {
           "text": "2.2 Le budget dans le système de contrôle de gestion"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté (Anthony, Bouquin).*"
         },
         {
@@ -270,11 +305,19 @@ export const chapter: Chapter = {
           "text": "Schéma 1 — Architecture du système de pilotage *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-gestion-budgetaire/01.png",
+          "alt": "Schéma 1 — Architecture du système de pilotage *(obligatoire)*",
+          "width": 1892,
+          "height": 1144
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma étage les niveaux de pilotage — plan stratégique, plan opérationnel, budget, contrôle budgétaire, reporting — reliés par une double flèche : descendante (le déploiement, de la stratégie vers l'action) et ascendante (le feedback, des réalisations vers la décision). Sa lecture met en évidence le rôle **charnière du budget** : il est le point de bascule entre l'horizon stratégique (qualitatif, long terme) et l'horizon opérationnel (quantitatif, court terme). Le bouclage par le contrôle et le reporting matérialise l'apprentissage : les écarts constatés nourrissent la révision des budgets et, parfois, de la stratégie elle-même. Cette architecture montre que le budget n'est pas une fin en soi mais un maillon d'un système d'apprentissage continu."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Cette architecture se concrétise dans un processus, le processus budgétaire, qui mobilise des acteurs aux rôles définis."
         }
       ]
@@ -284,7 +327,8 @@ export const chapter: Chapter = {
       "title": "3. Le processus budgétaire",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté (procédure budgétaire, jeux d'acteurs — Cours 3) ; étapes créées.*"
         },
         {
@@ -300,7 +344,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Point méthode"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "**Point méthode — l'ordre de construction des budgets.** Les budgets s'enchaînent dans un ordre logique dicté par les contraintes. On part du **budget des ventes** (généralement le budget déterminant, car l'activité est limitée par la demande), dont découle le **budget de production** (combien produire pour vendre, compte tenu des stocks), puis le **budget des approvisionnements** (combien acheter pour produire) et les **budgets de charges** (frais généraux, personnel, investissements). Tous convergent enfin vers le **budget de trésorerie** et les **états prévisionnels** de synthèse. Identifier le budget déterminant (souvent les ventes, parfois la capacité de production si elle est saturée) est la première décision méthodologique."
         },
         {
@@ -308,7 +353,8 @@ export const chapter: Chapter = {
           "text": "3.2 Les acteurs"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté (jeux d'acteurs — Cours 3).*"
         },
         {
@@ -359,11 +405,19 @@ export const chapter: Chapter = {
           "text": "Schéma 2 — Le processus budgétaire complet *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-gestion-budgetaire/02.png",
+          "alt": "Schéma 2 — Le processus budgétaire complet *(obligatoire)*",
+          "width": 1980,
+          "height": 1034
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma déroule le cycle budgétaire — cadrage (hypothèses), prévisions ascendantes, navettes et arbitrages, validation, mise en œuvre, contrôle — en faisant apparaître les flux descendants (top-down) et ascendants (bottom-up). Sa lecture révèle le caractère **itératif** du processus : les navettes budgétaires, allers-retours entre direction et opérationnels, ajustent progressivement les budgets jusqu'à la cohérence. Elle met aussi en évidence le **bouclage** : le contrôle budgétaire, en fin de cycle, alimente le cadrage du cycle suivant (apprentissage). Le bon dosage entre top-down (discipline stratégique) et bottom-up (réalisme et adhésion) est la clé d'un processus budgétaire efficace : trop descendant, il démotive ; trop ascendant, il perd la cohérence stratégique."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Le processus se matérialise dans la construction enchaînée des budgets opérationnels."
         }
       ]
@@ -373,7 +427,8 @@ export const chapter: Chapter = {
       "title": "4. Les budgets opérationnels",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé — technique budgétaire de niveau DSCG, exemples chiffrés.*"
         },
         {
@@ -563,11 +618,19 @@ export const chapter: Chapter = {
           "text": "Schéma 3 — Les flux d'informations budgétaires *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-gestion-budgetaire/03.png",
+          "alt": "Schéma 3 — Les flux d'informations budgétaires *(obligatoire)*",
+          "width": 1936,
+          "height": 1100
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma matérialise l'enchaînement et l'interdépendance des budgets : du budget des ventes (déterminant) découlent en cascade la production, les approvisionnements et les charges, qui convergent tous vers le budget de trésorerie et les états prévisionnels de synthèse. Sa lecture souligne la **cohérence systémique** de la construction budgétaire : modifier une hypothèse de ventes se répercute mécaniquement sur toute la chaîne. C'est cette interdépendance qui justifie l'orchestration par le contrôle de gestion et qui rend les outils numériques (tableurs, ERP, §10) indispensables pour gérer la complexité des simulations."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Tous les budgets opérationnels convergent vers la synthèse financière : trésorerie et états prévisionnels."
         }
       ]
@@ -577,7 +640,8 @@ export const chapter: Chapter = {
       "title": "5. Le budget de trésorerie et les états prévisionnels",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé — technique de synthèse budgétaire, exemples chiffrés.*"
         },
         {
@@ -807,11 +871,19 @@ export const chapter: Chapter = {
           "text": "Graphique 4 — Évolution prévisionnelle de la trésorerie *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-gestion-budgetaire/04.png",
+          "alt": "Graphique 4 — Évolution prévisionnelle de la trésorerie *(obligatoire)*",
+          "width": 1892,
+          "height": 1034
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le graphique trace la trajectoire mensuelle du solde de trésorerie prévisionnel sur l'année. Sa lecture révèle les **points bas** (creux de trésorerie, souvent liés à la saisonnalité ou à des décaissements ponctuels — paiement de l'IS, dividendes, investissements) et les **points hauts** (excédents à placer). C'est l'outil d'anticipation par excellence : repérer trois mois à l'avance un creux permet de négocier sereinement un financement, là où la découverte au dernier moment impose des conditions défavorables. La gestion prévisionnelle de trésorerie illustre parfaitement la valeur de l'anticipation budgétaire : prévoir pour agir à temps plutôt que subir."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Le budget construit, le pilotage se joue dans la comparaison du réalisé au prévu : le contrôle budgétaire."
         }
       ]
@@ -821,7 +893,8 @@ export const chapter: Chapter = {
       "title": "6. Le contrôle budgétaire et l'analyse des écarts",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : écarts sur coûts standards repris-adaptés (origine taylorienne) ; décomposition et exemples créés.*"
         },
         {
@@ -965,11 +1038,19 @@ export const chapter: Chapter = {
           "text": "Graphique 5 — Décomposition visuelle des écarts *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-gestion-budgetaire/05.png",
+          "alt": "Graphique 5 — Décomposition visuelle des écarts *(obligatoire)*",
+          "width": 1804,
+          "height": 1078
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le graphique en cascade décompose l'écart global en ses composantes (effet prix, effet volume pour le CA), en distinguant par la couleur les contributions favorables (vert) et défavorables (rouge). Sa lecture rend immédiatement visible ce que le seul chiffre global masque : ici, un effet prix favorable largement compensé par un effet volume défavorable. Cette visualisation est précieuse en reporting : elle permet à un dirigeant de saisir en un coup d'œil l'origine d'un écart et de cibler les questions (« pourquoi le volume a-t-il baissé ? »). La décomposition visuelle des écarts est l'aboutissement pédagogique du contrôle budgétaire."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Les écarts et les budgets se synthétisent dans des tableaux de bord, supports du pilotage et du reporting."
         }
       ]
@@ -979,7 +1060,8 @@ export const chapter: Chapter = {
       "title": "7. Tableaux de bord et reporting budgétaire",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; lien tableaux de bord (chapitres 2.3 et 2.6).*"
         },
         {
@@ -1096,11 +1178,19 @@ export const chapter: Chapter = {
           "text": "Schéma 6 — Le circuit du reporting *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-gestion-budgetaire/06.png",
+          "alt": "Schéma 6 — Le circuit du reporting *(obligatoire)*",
+          "width": 1892,
+          "height": 1012
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma représente le circuit du reporting : remontée de l'information du terrain (centres opérationnels) vers le contrôle de gestion (consolidation, analyse), puis vers la direction (décision), et redescente des décisions et objectifs ajustés. Sa lecture met en évidence la **boucle de feedback** chère à Anthony : l'information sur les écarts remonte, est analysée, et déclenche des décisions qui redescendent — c'est le mécanisme d'apprentissage et de régulation du pilotage. La qualité du circuit (fiabilité des données, rapidité, lisibilité) conditionne la réactivité de l'organisation. Les outils numériques (BI, §10) transforment ce circuit en le rendant plus rapide et plus riche."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Malgré sa puissance, le modèle budgétaire traditionnel fait l'objet de critiques substantielles qu'il faut connaître."
         }
       ]
@@ -1110,7 +1200,8 @@ export const chapter: Chapter = {
       "title": "8. Les limites du modèle budgétaire traditionnel",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; Argyris, Hope & Fraser.*"
         },
         {
@@ -1174,11 +1265,19 @@ export const chapter: Chapter = {
           "text": "Graphique 7 — Budget traditionnel vs pilotage agile *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-gestion-budgetaire/07.png",
+          "alt": "Graphique 7 — Budget traditionnel vs pilotage agile *(obligatoire)*",
+          "width": 1804,
+          "height": 1232
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le graphique oppose, sur plusieurs critères (réactivité, coût du processus, fréquence de révision, adaptabilité, fiabilité de la prévision), le budget traditionnel et un pilotage agile (rolling forecast / beyond budgeting). Sa lecture met en évidence les **arbitrages** : le budget traditionnel offre stabilité et discipline mais pèche par sa lenteur de réaction et sa rigidité ; le pilotage agile gagne en réactivité et en adaptabilité, au prix d'une moindre prévisibilité et d'exigences accrues (culture, outils, confiance). Il n'y a pas de modèle universellement supérieur : le choix dépend de la **stabilité de l'environnement** (le budget convient aux environnements stables, l'agilité aux environnements turbulents) et de la maturité de l'organisation. C'est cette réflexion que les nouvelles approches viennent nourrir."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Face à ces limites, de nouvelles approches du pilotage prévisionnel ont émergé."
         }
       ]
@@ -1188,7 +1287,8 @@ export const chapter: Chapter = {
       "title": "9. Les nouvelles approches du pilotage prévisionnel",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; ouverture contemporaine.*"
         },
         {
@@ -1285,11 +1385,19 @@ export const chapter: Chapter = {
           "text": "Schéma 9 — Architecture du pilotage moderne *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-gestion-budgetaire/08.png",
+          "alt": "Schéma 9 — Architecture du pilotage moderne *(obligatoire)*",
+          "width": 1936,
+          "height": 1034
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma articule les composantes du pilotage prévisionnel moderne : un socle stratégique stable (cap, objectifs relatifs), des prévisions glissantes réactualisées, une allocation dynamique des ressources, un pilotage en temps réel par la donnée, et une boucle d'apprentissage continue. Sa lecture montre le déplacement de paradigme : du budget comme **camisole** (objectif annuel figé à respecter) vers le pilotage comme **boussole** (cap maintenu, trajectoire ajustée en continu). Cette évolution ne supprime pas la discipline prévisionnelle — elle la rend continue et adaptative. Pour le contrôleur de gestion, c'est un changement de rôle majeur : de gardien du budget à partenaire de la décision agile."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Cette modernisation du pilotage est portée par la révolution numérique et l'intelligence artificielle."
         }
       ]
@@ -1299,7 +1407,8 @@ export const chapter: Chapter = {
       "title": "10. Digitalisation, data et intelligence artificielle",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; ouverture contemporaine ; lien UE5.*"
         },
         {
@@ -1366,11 +1475,19 @@ export const chapter: Chapter = {
           "text": "Schéma 10 — Le contrôle de gestion augmenté par l'IA *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-gestion-budgetaire/09.png",
+          "alt": "Schéma 10 — Le contrôle de gestion augmenté par l'IA *(obligatoire)*",
+          "width": 1892,
+          "height": 1188
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma représente le contrôle de gestion augmenté : autour d'un socle de **données intégrées** (ERP, sources internes et externes) et d'outils d'**IA/analytics**, gravitent les activités du pilotage (prévision, budgétisation, contrôle des écarts, reporting), toutes accélérées et enrichies par la donnée. Au centre, le rôle du contrôleur se déplace de la **production de chiffres** (automatisée) vers l'**analyse, le conseil et l'anticipation** — la valeur ajoutée se concentrant sur l'interprétation, le jugement et la relation avec les décideurs. Le message rejoint les chapitres précédents : la technologie ne remplace pas le contrôleur de gestion, elle le **recentre sur sa valeur de partenaire stratégique**, à condition d'accompagner cette transformation (compétences data, conduite du changement)."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ces concepts et outils s'incarnent dans les pratiques d'entreprises."
         }
       ]
@@ -1380,7 +1497,8 @@ export const chapter: Chapter = {
       "title": "11. Cas d'entreprises et illustrations professionnelles",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé — illustrations pédagogiques simplifiées (voir avertissement en tête de chapitre).*"
         },
         {
@@ -1449,7 +1567,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ces pratiques et concepts convergent vers les attendus de l'épreuve."
         }
       ]
@@ -1459,7 +1578,8 @@ export const chapter: Chapter = {
       "title": "12. Approfondissements DSCG",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; orienté préparation à l'épreuve.*"
         },
         {
@@ -1548,6 +1668,13 @@ export const chapter: Chapter = {
         {
           "type": "h3",
           "text": "13.2 Carte mentale"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-gestion-budgetaire/10.png",
+          "alt": "13.2 Carte mentale",
+          "width": 2288,
+          "height": 1364
         },
         {
           "type": "h3",

@@ -106,8 +106,12 @@ export const chapter: Chapter = {
           "text": "Philippe Lorino parle d'un **« renversement de la pyramide des coûts »** : là où, dans les années 1930, les charges directes dominaient, ce sont aujourd'hui les charges indirectes qui pèsent le plus. La pyramide « repose désormais sur son sommet »."
         },
         {
-          "type": "p",
-          "text": "*Le renversement de la pyramide des coûts (P. Lorino)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-abc/01.png",
+          "alt": "1. Comprendre : pourquoi la méthode ABC ?",
+          "width": 1440,
+          "height": 600,
+          "caption": "Le renversement de la pyramide des coûts (P. Lorino)"
         },
         {
           "type": "callout",
@@ -365,8 +369,12 @@ export const chapter: Chapter = {
           "text": "2.1 Les activités au cœur du modèle"
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — La chaîne de valeur de Porter : activités principales et de soutien*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-abc/02.png",
+          "alt": "2. Calculer : la mécanique de l'ABC",
+          "width": 1296,
+          "height": 536,
+          "caption": "Figure 1 — La chaîne de valeur de Porter : activités principales et de soutien"
         },
         {
           "type": "callout",
@@ -379,8 +387,12 @@ export const chapter: Chapter = {
           "text": "*L'enchaînement fondamental : ressources → activités → inducteurs → objets de coûts*"
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — Le vocabulaire ABC : ressources, activités, inducteurs et objets de coûts*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-abc/03.png",
+          "alt": "2. Calculer : la mécanique de l'ABC",
+          "width": 1268,
+          "height": 306,
+          "caption": "Figure 2 — Le vocabulaire ABC : ressources, activités, inducteurs et objets de coûts"
         },
         {
           "type": "callout",
@@ -397,8 +409,12 @@ export const chapter: Chapter = {
           "text": "La mise en œuvre commence par une carte des activités, élaborée à partir d'entretiens avec les opérationnels : quelles activités existent ? quelles ressources consomment-elles ? quelle est leur production ? La carte est ensuite simplifiée (on regroupe les activités partageant le même inducteur). Les activités se classent selon le niveau auquel elles consomment des ressources :"
         },
         {
-          "type": "p",
-          "text": "*Les quatre niveaux de la hiérarchie des activités*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-abc/04.png",
+          "alt": "2. Calculer : la mécanique de l'ABC",
+          "width": 1440,
+          "height": 500,
+          "caption": "Les quatre niveaux de la hiérarchie des activités"
         },
         {
           "type": "table",
@@ -447,8 +463,12 @@ export const chapter: Chapter = {
           "text": "*Méca-Précision — carte des activités et flux de coûts vers les deux pièces*"
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — La méthode ABC : du regroupement des charges indirectes aux objets de coûts*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-abc/05.png",
+          "alt": "2. Calculer : la mécanique de l'ABC",
+          "width": 1436,
+          "height": 1504,
+          "caption": "Figure 3 — La méthode ABC : du regroupement des charges indirectes aux objets de coûts"
         },
         {
           "type": "h3",
@@ -524,8 +544,12 @@ export const chapter: Chapter = {
           "text": "2.3 Les cinq étapes du calcul"
         },
         {
-          "type": "p",
-          "text": "*Les cinq étapes du calcul des coûts à base d'activités*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-abc/06.png",
+          "alt": "2. Calculer : la mécanique de l'ABC",
+          "width": 1440,
+          "height": 600,
+          "caption": "Les cinq étapes du calcul des coûts à base d'activités"
         },
         {
           "type": "ul",
@@ -784,8 +808,12 @@ export const chapter: Chapter = {
           "text": "La principale limite de l'ABC — sa lourdeur de mise en œuvre — est aujourd'hui fortement atténuée par les outils numériques, qui automatisent la collecte des données d'activité et le calcul des inducteurs."
         },
         {
-          "type": "p",
-          "text": "*Les technologies numériques au service de la méthode ABC*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-abc/07.png",
+          "alt": "3. Interpréter : de la mesure au pilotage",
+          "width": 1440,
+          "height": 400,
+          "caption": "Les technologies numériques au service de la méthode ABC"
         },
         {
           "type": "ul",
@@ -978,8 +1006,12 @@ export const chapter: Chapter = {
           "text": "Analyse critique — l'impact sur la décision"
         },
         {
-          "type": "p",
-          "text": "*La décision faussée : marge unitaire de la pièce B selon la méthode*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-abc/08.png",
+          "alt": "4. Critiquer : ABC vs centres d'analyse",
+          "width": 1440,
+          "height": 400,
+          "caption": "La décision faussée : marge unitaire de la pièce B selon la méthode"
         },
         {
           "type": "p",
@@ -1047,8 +1079,12 @@ export const chapter: Chapter = {
           "text": "La sophistication n'est une qualité que si elle améliore réellement la décision. Le tableau suivant synthétise la confrontation et guide le choix."
         },
         {
-          "type": "p",
-          "text": "*Deux logiques de répartition des charges indirectes*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-methode-abc/09.png",
+          "alt": "4. Critiquer : ABC vs centres d'analyse",
+          "width": 1440,
+          "height": 460,
+          "caption": "Deux logiques de répartition des charges indirectes"
         },
         {
           "type": "table",

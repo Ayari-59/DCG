@@ -13,6 +13,37 @@ export const chapter: Chapter = {
   "durationMin": 55,
   "sections": [
     {
+      "id": "preambule",
+      "title": "Préambule",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**DSCG — UE3**"
+        },
+        {
+          "type": "p",
+          "text": "Management et contrôle de gestion"
+        },
+        {
+          "type": "p",
+          "text": "**Le management et le pilotage des projets**"
+        },
+        {
+          "type": "p",
+          "text": "*Manuel premium de préparation à l'épreuve nationale*"
+        },
+        {
+          "type": "p",
+          "text": "Partie 2 — Sous-partie 2.2 — Volume indicatif : 20 heures"
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "text": "**Manuel premium de préparation à l'épreuve nationale du DSCG — UE3 « Management et contrôle de gestion »** Nouveau référentiel — Partie 2 « Favoriser le déploiement de la stratégie de l'organisation grâce à des outils de contrôle de gestion » — **Sous-partie 2.2 — Volume indicatif : 20 heures**"
+        }
+      ]
+    },
+    {
       "id": "note-de-conformite-au-referentiel-a-lire-avant-le-chapitre",
       "title": "Note de conformité au référentiel (à lire avant le chapitre)",
       "blocks": [
@@ -162,7 +193,8 @@ export const chapter: Chapter = {
           "text": "1.5 Problématique générale du chapitre"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Problématique centrale.** Comment l'organisation peut-elle, à l'aide des outils du contrôle de gestion, planifier, financer et piloter un projet — entreprise unique, temporaire et risquée — de manière à déployer sa stratégie tout en maîtrisant simultanément la qualité, les coûts et les délais, et en arbitrant ces objectifs lorsqu'ils entrent en tension ?"
         },
         {
@@ -198,7 +230,8 @@ export const chapter: Chapter = {
       "title": "2. Les fondements du management de projet",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé (définition, référentiels), enrichi de la culture professionnelle. Le référentiel cible « spécificités de l'organisation projet : caractéristiques du projet ».*"
         },
         {
@@ -375,7 +408,8 @@ export const chapter: Chapter = {
           "text": "Dans le **secteur associatif et l'événementiel**, enfin, le projet (festival, campagne, événement caritatif) se caractérise par une date butoir non négociable (le délai est figé : l'événement a lieu à la date prévue ou n'a pas lieu) et des ressources souvent bénévoles, ce qui déplace l'arbitrage QCD vers l'ajustement du périmètre et de la qualité."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Quelle que soit la famille, un projet exige une organisation *ad hoc* qui se superpose à la structure permanente. C'est l'objet de la gouvernance et des structures projet."
         }
       ]
@@ -385,7 +419,8 @@ export const chapter: Chapter = {
       "title": "3. Gouvernance et organisation des projets",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté de l'ancien cours (Cours 3, structures temporaires) pour les structures ; créé pour les acteurs et le PMO. Le référentiel cible « acteurs » du projet.*"
         },
         {
@@ -452,7 +487,8 @@ export const chapter: Chapter = {
           "text": "3.2 Les structures organisationnelles de projet"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté de l'ancien cours (Cours 3).*"
         },
         {
@@ -475,6 +511,13 @@ export const chapter: Chapter = {
         {
           "type": "h4",
           "text": "Schéma 1 — Les structures organisationnelles de projet *(obligatoire)*"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-projets/01.png",
+          "alt": "Schéma 1 — Les structures organisationnelles de projet *(obligatoire)*",
+          "width": 2200,
+          "height": 1672
         },
         {
           "type": "h4",
@@ -521,7 +564,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Quelle que soit la structure retenue, tout projet suit une trajectoire temporelle balisée : son cycle de vie."
         }
       ]
@@ -531,7 +575,8 @@ export const chapter: Chapter = {
       "title": "4. Le cycle de vie du projet",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé. Le référentiel cible « cycle de vie et phases du projet (conception, exécution et post-mortem) ».*"
         },
         {
@@ -557,6 +602,13 @@ export const chapter: Chapter = {
           "text": "Schéma 2 — Cycle de vie du projet et effort *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-projets/02.png",
+          "alt": "Schéma 2 — Cycle de vie du projet et effort *(obligatoire)*",
+          "width": 2068,
+          "height": 1034
+        },
+        {
           "type": "h3",
           "text": "4.2 Les livrables"
         },
@@ -565,7 +617,8 @@ export const chapter: Chapter = {
           "text": "Le projet jalonne sa trajectoire de **livrables** : le **cahier des charges** (expression formalisée du besoin et des exigences), la **charte de projet** (acte de naissance officiel mandatant le chef de projet et cadrant le projet), les **livrables intermédiaires** (prototypes, maquettes, documents de conception validés en revue) et les **livrables finaux** (le produit ou service achevé et réceptionné). Les **jalons** (*milestones*) sont des points de contrôle de durée nulle marquant l'achèvement d'une étape et conditionnant — en gouvernance « go / no-go » — la poursuite du projet."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Pour piloter cette trajectoire, il faut d'abord la rendre planifiable : décomposer, ordonnancer, dater."
         }
       ]
@@ -575,7 +628,8 @@ export const chapter: Chapter = {
       "title": "5. La planification des projets",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé. Cœur du référentiel : « diagramme de Gantt : processus, tâches, durées, marges de temps, jalons, ressources, livrables, chemin critique ». Attendu explicite : construire un diagramme à partir de données brutes.*"
         },
         {
@@ -583,7 +637,8 @@ export const chapter: Chapter = {
           "text": "5.1 La décomposition du projet (WBS)"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "*Le WBS est présenté comme outil-méthode amont, ouverture professionnelle au service du Gantt exigé par le référentiel.*"
         },
         {
@@ -593,6 +648,13 @@ export const chapter: Chapter = {
         {
           "type": "h4",
           "text": "Schéma 3 — Exemple de WBS (lancement d'une application mobile) *(illustration obligatoire)*"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-projets/03.png",
+          "alt": "Schéma 3 — Exemple de WBS (lancement d'une application mobile) *(illustration obligatoire)*",
+          "width": 2200,
+          "height": 1034
         },
         {
           "type": "h3",
@@ -816,7 +878,15 @@ export const chapter: Chapter = {
           "text": "Graphique 4 — Diagramme de Gantt du projet e-commerce *(obligatoire)*"
         },
         {
-          "type": "p",
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-projets/04.png",
+          "alt": "Graphique 4 — Diagramme de Gantt du projet e-commerce *(obligatoire)*",
+          "width": 2156,
+          "height": 1012
+        },
+        {
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** La planification dit *quand* et *avec quoi*. Reste à dire *combien* : c'est le pilotage économique et financier."
         }
       ]
@@ -826,7 +896,8 @@ export const chapter: Chapter = {
       "title": "6. Le pilotage économique et financier du projet",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé. Cœur du référentiel : « plan de financement (budget) du projet » ; « outils de pilotage des coûts : courbe en S, suivi budgétaire (CBTP, CRTE, CBTE), calcul et analyse des écarts ».*"
         },
         {
@@ -988,7 +1059,8 @@ export const chapter: Chapter = {
           "text": "6.2.2 Les deux écarts fondamentaux"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Formules clés.** - **Écart de coût** : EC = CBTE − CRTE ( = EV − AC ). Positif → on dépense moins que la valeur produite (favorable). - **Écart de délai (planning)** : ED = CBTE − CBTP ( = EV − PV ). Positif → on a produit plus que prévu à cette date (avance)."
         },
         {
@@ -1002,6 +1074,13 @@ export const chapter: Chapter = {
         {
           "type": "h4",
           "text": "Graphique 5 — Courbe en S : CBTP, CBTE, CRTE *(obligatoire)*"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-projets/05.png",
+          "alt": "Graphique 5 — Courbe en S : CBTP, CBTE, CRTE *(obligatoire)*",
+          "width": 1804,
+          "height": 1100
         },
         {
           "type": "h4",
@@ -1039,7 +1118,8 @@ export const chapter: Chapter = {
           "text": "6.3 L'Earned Value Management (EVM) et les indices"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*L'EVM formalise le suivi CBTP/CBTE/CRTE par des indices et des prévisions à terminaison. Présenté comme prolongement, vocabulaire français privilégié.*"
         },
         {
@@ -1109,7 +1189,8 @@ export const chapter: Chapter = {
           "text": "**Lecture managériale.** CPI et SPI tous deux < 1 signalent un projet en difficulté sur les deux fronts. L'EAC transforme un constat en **prévision** : c'est l'apport décisif de l'EVM, qui permet d'alerter *avant* que le dépassement ne soit consommé et de décider (réduire le périmètre, renforcer les moyens, renégocier le délai)."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Coûts et délais dérivent rarement par hasard : ils sont la matérialisation de risques. D'où la nécessité d'une gestion explicite des risques projet."
         }
       ]
@@ -1119,7 +1200,8 @@ export const chapter: Chapter = {
       "title": "7. La gestion des risques projet",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé / complété. Le référentiel cible « risques du projet ». Lien explicite avec la gestion des risques (sous-partie 2.5) et l'analyse des dysfonctionnements (2.1).*"
         },
         {
@@ -1166,7 +1248,15 @@ export const chapter: Chapter = {
           "text": "Matrice 6 — Cartographie des risques projet (probabilité × impact) *(obligatoire)*"
         },
         {
-          "type": "p",
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-projets/06.png",
+          "alt": "Matrice 6 — Cartographie des risques projet (probabilité × impact) *(obligatoire)*",
+          "width": 1584,
+          "height": 1232
+        },
+        {
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Planification, coûts et risques convergent vers un même besoin : un dispositif de mesure et de décision. C'est le rôle du contrôle de gestion de projet."
         }
       ]
@@ -1176,7 +1266,8 @@ export const chapter: Chapter = {
       "title": "8. Le rôle du contrôle de gestion dans les projets",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé. Le référentiel cible « revues d'avancement », « tableau de bord du projet et reporting ».*"
         },
         {
@@ -1261,7 +1352,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ce dispositif classique, dit « prédictif » (on planifie tout en amont), montre ses limites dans les environnements incertains. D'où l'essor des approches agiles."
         }
       ]
@@ -1271,7 +1363,8 @@ export const chapter: Chapter = {
       "title": "9. Agilité et nouvelles formes de gestion de projet",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé. Ouverture contemporaine ; signalée comme culture professionnelle, non comme objet central du référentiel.*"
         },
         {
@@ -1300,6 +1393,13 @@ export const chapter: Chapter = {
         {
           "type": "h4",
           "text": "Schéma 7 — Fonctionnement d'un projet agile (Scrum) *(obligatoire)*"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-projets/07.png",
+          "alt": "Schéma 7 — Fonctionnement d'un projet agile (Scrum) *(obligatoire)*",
+          "width": 2156,
+          "height": 1034
         },
         {
           "type": "h4",
@@ -1351,7 +1451,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Prédictif ou agile, le pilotage de projet est aujourd'hui profondément reconfiguré par le numérique et l'intelligence artificielle."
         }
       ]
@@ -1361,7 +1462,8 @@ export const chapter: Chapter = {
       "title": "10. Transformation numérique et intelligence artificielle",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé. Ouverture contemporaine exigée ; lien UE5 (systèmes d'information) prévu par le référentiel.*"
         },
         {
@@ -1420,7 +1522,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ces évolutions ne dispensent pas de la maîtrise des fondamentaux, qu'éclairent les approfondissements DSCG."
         }
       ]
@@ -1430,7 +1533,8 @@ export const chapter: Chapter = {
       "title": "11. Approfondissements DSCG",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé, orienté préparation à l'épreuve.*"
         },
         {
@@ -1494,6 +1598,13 @@ export const chapter: Chapter = {
         {
           "type": "h3",
           "text": "12.2 Carte mentale textuelle"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-pilotage-projets/08.png",
+          "alt": "12.2 Carte mentale textuelle",
+          "width": 2244,
+          "height": 1320
         },
         {
           "type": "h3",

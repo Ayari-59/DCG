@@ -54,8 +54,12 @@ export const chapter: Chapter = {
           "text": "La production traduit les prévisions de ventes en un programme réalisable : elle détermine les quantités à produire, en déduit les besoins en ressources et en approvisionnements, jusqu’à la production réalisée et la performance."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — La production, charnière entre ventes et approvisionnements*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-production/01.png",
+          "alt": "*Présentation du chapitre*",
+          "width": 1440,
+          "height": 540,
+          "caption": "Figure 1 — La production, charnière entre ventes et approvisionnements"
         },
         {
           "type": "callout",
@@ -132,8 +136,12 @@ export const chapter: Chapter = {
           "text": "Toute décision de production met en tension trois objectifs souvent contradictoires : le **coût**, le **délai** et la **qualité**. Améliorer l’un pèse fréquemment sur les autres : accélérer la production peut dégrader la qualité ou renchérir les coûts. Le pilotage industriel consiste à trouver le bon compromis selon la stratégie de l’entreprise."
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — L’arbitrage fondamental coûts-délais-qualité*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-production/02.png",
+          "alt": "1. Les fondements de la gestion de la production",
+          "width": 1120,
+          "height": 720,
+          "caption": "Figure 2 — L’arbitrage fondamental coûts-délais-qualité"
         },
         {
           "type": "callout",
@@ -253,8 +261,12 @@ export const chapter: Chapter = {
           "text": "*L’entreprise produit au maximum (100) en mai pour constituer le stock qui couvrira juin (atelier fermé) et juillet (ventes de 120). La production est lissée à 100, le stock absorbe l’irrégularité des ventes.*"
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — Lisser la charge de production malgré des ventes irrégulières*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-production/03.png",
+          "alt": "2. La construction du budget de production",
+          "width": 1440,
+          "height": 760,
+          "caption": "Figure 3 — Lisser la charge de production malgré des ventes irrégulières"
         },
         {
           "type": "h3",
@@ -309,8 +321,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — Flux poussés (pilotage amont) et flux tirés (pilotage aval)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-production/04.png",
+          "alt": "3. Les méthodes de planification et d’ordonnancement",
+          "width": 1891,
+          "height": 1025,
+          "caption": "Figure 4 — Flux poussés (pilotage amont) et flux tirés (pilotage aval)"
         },
         {
           "type": "h3",
@@ -321,8 +337,12 @@ export const chapter: Chapter = {
           "text": "Le **MRP** (Management Resources Planning, ou planification des besoins en composants — PBC) est une technique de pilotage par l’amont. À partir des prévisions de ventes, elle planifie l’ensemble de l’activité : elle part du produit fini et utilise les **nomenclatures**, les **gammes opératoires**, les stocks actuels et souhaités pour calculer, par calculs matriciels, les **besoins dépendants** (matières et composants). Tous les flux sont orientés dans le même sens : des prévisions vers le produit fini."
         },
         {
-          "type": "p",
-          "text": "*Figure 5 — Le MRP : des données d’entrée aux ordres de fabrication*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-production/05.png",
+          "alt": "3. Les méthodes de planification et d’ordonnancement",
+          "width": 1440,
+          "height": 600,
+          "caption": "Figure 5 — Le MRP : des données d’entrée aux ordres de fabrication"
         },
         {
           "type": "callout",
@@ -375,8 +395,12 @@ export const chapter: Chapter = {
           "text": "Transformer l’inéquation en égalité (la droite frontière) : 6x + 5y = 900.\nTrouver deux points simples pour la tracer : si x = 0 → y = 180 ; si y = 0 → x = 150.\nJoindre (150 ; 0) et (0 ; 180).\nTester le point origine (0 ; 0) : 6(0) + 5(0) = 0 ≤ 900, c’est vrai → le demi-plan acceptable contient l’origine. Hachurer ce demi-plan. (Si le test était faux, on hachurerait l’autre côté.)"
         },
         {
-          "type": "p",
-          "text": "*Figure 6 — Représenter une contrainte : droite frontière, test de l’origine, demi-plan acceptable*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-production/06.png",
+          "alt": "*Comment représenter une contrainte*",
+          "width": 1080,
+          "height": 780,
+          "caption": "Figure 6 — Représenter une contrainte : droite frontière, test de l’origine, demi-plan acceptable"
         },
         {
           "type": "callout",
@@ -409,8 +433,12 @@ export const chapter: Chapter = {
           "text": "Tracer chaque contrainte (droite frontière + test de l’origine) et hachurer son demi-plan acceptable.\nDélimiter le domaine des solutions acceptables (DSA), intersection de tous les demi-plans.\nTracer une première droite objectif F = k, puis la translater parallèlement vers les valeurs croissantes.\nIdentifier le dernier sommet du DSA touché : c’est l’optimum.\nLire ses coordonnées en projetant sur les axes.\nVérifier au besoin par la méthode énumérative (valeur de F en chaque sommet)."
         },
         {
-          "type": "p",
-          "text": "*Figure 7 — Résolution graphique : DSA, translation de l’objectif et lecture de l’optimum*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-production/07.png",
+          "alt": "*Déterminer l’optimum*",
+          "width": 1140,
+          "height": 900,
+          "caption": "Figure 7 — Résolution graphique : DSA, translation de l’objectif et lecture de l’optimum"
         },
         {
           "type": "callout",
@@ -462,8 +490,12 @@ export const chapter: Chapter = {
           "text": "Au-delà de deux produits, la résolution graphique devient impossible. Lorsqu’une **seule contrainte est commune à tous les produits** (un atelier goulot d’étranglement), on applique la **méthode du facteur rare** : on classe les produits selon la marge sur coût variable dégagée **par unité de facteur rare consommée**, et on sature la capacité en commençant par le plus rentable."
         },
         {
-          "type": "p",
-          "text": "*Figure 8 — Le facteur rare : classer les produits par marge / unité d’œuvre*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-production/08.png",
+          "alt": "*Déterminer l’optimum*",
+          "width": 1440,
+          "height": 720,
+          "caption": "Figure 8 — Le facteur rare : classer les produits par marge / unité d’œuvre"
         },
         {
           "type": "callout",
@@ -706,20 +738,36 @@ export const chapter: Chapter = {
           "text": "**Dates au plus tôt (gauche → droite).**A et D n’ont pas d’antériorité : début au plus tôt = 0. C : après A → 0 + 6 = 6 ; E : après C → 6 + 6 = 12. G converge (B et J) : max(6 + 10 ; 12 + 7) = max(16 ; 19) = 19 → chemin le plus long. I converge (F et G) : max(26 + 5 ; 19 + 9) = max(31 ; 28) = 31 ; puis FIN : 31 + 7 = 38 semaines.\n**Dates au plus tard (droite → gauche).**On part de 38 et on recule. J précède G : date au plus tard = 22 − 7 = 15 ; sa date au plus tôt est 12 → J dispose d’une marge. A converge en arrière (B et C) : min(12 − 6 ; 6 − 6) = 0 → chemin le plus court.\n**Chemin critique.**Les tâches A, C, E, F, I ont une date au plus tôt égale à leur date au plus tard. Le chemin A – C – E – F – I dure 6 + 6 + 14 + 5 + 7 = 38 semaines, soit la durée minimale du projet."
         },
         {
-          "type": "p",
-          "text": "*Figure 9 — Ordonnancement, étape 1 : le tracé du graphe (tâches, contraintes, durées)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-production/09.png",
+          "alt": "*Le dictionnaire des antériorités*",
+          "width": 1770,
+          "height": 990,
+          "caption": "Figure 9 — Ordonnancement, étape 1 : le tracé du graphe (tâches, contraintes, durées)"
         },
         {
-          "type": "p",
-          "text": "*Figure 10 — Étape 2 : les dates au plus tôt (calcul de gauche à droite)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-production/10.png",
+          "alt": "*Le dictionnaire des antériorités*",
+          "width": 1770,
+          "height": 990,
+          "caption": "Figure 10 — Étape 2 : les dates au plus tôt (calcul de gauche à droite)"
         },
         {
-          "type": "p",
-          "text": "*Figure 11 — Étape 3 : les dates au plus tard (calcul de droite à gauche)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-production/11.png",
+          "alt": "*Le dictionnaire des antériorités*",
+          "width": 1770,
+          "height": 990,
+          "caption": "Figure 11 — Étape 3 : les dates au plus tard (calcul de droite à gauche)"
         },
         {
-          "type": "p",
-          "text": "*Figure 12 — Étape 4 : le chemin critique A‑C‑E‑F‑I (38 semaines)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-production/12.png",
+          "alt": "*Le dictionnaire des antériorités*",
+          "width": 1770,
+          "height": 990,
+          "caption": "Figure 12 — Étape 4 : le chemin critique A‑C‑E‑F‑I (38 semaines)"
         },
         {
           "type": "h3",
@@ -736,8 +784,12 @@ export const chapter: Chapter = {
           "text": "Marge totale (MT) = date au plus tard − date au plus tôt de la tâche.\nMarge libre (ML) = date au plus tôt de la tâche suivante − durée de la tâche − date au plus tôt de la tâche.\nUne tâche critique a MT = ML = 0 ; et toujours ML ≤ MT.\nExemple — tâche J : MT = 15 − 12 = 3 ; ML = 19 − 7 − 12 = 0 (la tâche suivante, G, démarre au plus tôt en 19)."
         },
         {
-          "type": "p",
-          "text": "*Figure 13 — Marge totale et marge libre : l’exemple de la tâche J*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-production/13.png",
+          "alt": "*Le dictionnaire des antériorités*",
+          "width": 1440,
+          "height": 600,
+          "caption": "Figure 13 — Marge totale et marge libre : l’exemple de la tâche J"
         },
         {
           "type": "table",
@@ -859,8 +911,12 @@ export const chapter: Chapter = {
           "text": "Issu du modèle Toyota, le **Lean Management** vise l’élimination des gaspillages (muda) et la création de valeur au plus juste. Il s’appuie sur le **juste-à-temps** (produire la bonne quantité au bon moment) et la démarche de **qualité totale**, résumée par les « cinq zéros »."
         },
         {
-          "type": "p",
-          "text": "*Figure 14 — Le Lean Management et les « cinq zéros »*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-production/14.png",
+          "alt": "4. Les évolutions contemporaines de la gestion de production",
+          "width": 1280,
+          "height": 720,
+          "caption": "Figure 14 — Le Lean Management et les « cinq zéros »"
         },
         {
           "type": "callout",

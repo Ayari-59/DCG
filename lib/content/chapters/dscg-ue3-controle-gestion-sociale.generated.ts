@@ -13,6 +13,37 @@ export const chapter: Chapter = {
   "durationMin": 65,
   "sections": [
     {
+      "id": "preambule",
+      "title": "Préambule",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**DSCG — UE3**"
+        },
+        {
+          "type": "p",
+          "text": "Management et contrôle de gestion"
+        },
+        {
+          "type": "p",
+          "text": "**Le contrôle de gestion sociale et le pilotage des ressources humaines**"
+        },
+        {
+          "type": "p",
+          "text": "*Manuel premium de préparation à l'épreuve nationale*"
+        },
+        {
+          "type": "p",
+          "text": "Partie 2 — Sous-partie 2.6 — Volume indicatif : 20 heures"
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "text": "**Manuel premium de préparation à l'épreuve nationale du DSCG — UE3 « Management et contrôle de gestion »** Nouveau référentiel — Partie 2 « Favoriser le déploiement de la stratégie de l'organisation grâce à des outils de contrôle de gestion » — **Sous-partie 2.6 — Volume indicatif : 20 heures**"
+        }
+      ]
+    },
+    {
       "id": "note-de-conformite-au-referentiel-a-lire-avant-le-chapitre",
       "title": "Note de conformité au référentiel (à lire avant le chapitre)",
       "blocks": [
@@ -136,7 +167,8 @@ export const chapter: Chapter = {
           "text": "1.4 Problématique centrale"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Problématique centrale.** Comment le contrôle de gestion sociale permet-il de piloter le capital humain comme un levier stratégique de création de valeur, en articulant simultanément la performance économique (maîtrise de la masse salariale, productivité), la performance sociale (climat, engagement, équité) et la performance organisationnelle (compétences, adaptation), au service d'une performance globale et durable ?"
         },
         {
@@ -176,7 +208,8 @@ export const chapter: Chapter = {
           "text": "2.1 Définition et finalités"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; auteurs Martory, Crozet, Peretti, Ulrich.*"
         },
         {
@@ -196,7 +229,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Regard DSCG"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Regard DSCG.** Le contrôle de gestion sociale n'est pas la GRH : il en est l'**instrumentation de pilotage**. Un sujet attend que l'on mobilise des **outils** (indicateurs, tableaux de bord, calcul de masse salariale, GPEC) au service d'une **décision** ou d'un **diagnostic**, en reliant systématiquement le social à l'économique. La tentation à éviter : un développement « RH » général et qualitatif, sans mesure ni chiffrage."
         },
         {
@@ -204,7 +238,8 @@ export const chapter: Chapter = {
           "text": "2.2 Le contrôle de gestion sociale comme outil stratégique"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé.*"
         },
         {
@@ -220,42 +255,14 @@ export const chapter: Chapter = {
           "text": "Tableau 1 — Les registres du pilotage social *(obligatoire)*"
         },
         {
-          "type": "table",
-          "headers": [
-            "**Objectif**",
-            "**Outils**",
-            "**Indicateurs clés**",
-            "**Décisions associées**"
-          ],
-          "rows": [
-            [
-              "**Piloter les compétences**",
-              "GPEC, cartographie, matrice de compétences",
-              "Écarts de compétences, % de polyvalence",
-              "Recruter, former, mobilité, externaliser"
-            ],
-            [
-              "**Piloter la masse salariale**",
-              "Décomposition en effets, budget, prévision",
-              "Effets niveau/masse/report, GVT, ratio MS/VA",
-              "Politique salariale, recrutements, NAO"
-            ],
-            [
-              "**Piloter la performance sociale**",
-              "Indicateurs sociaux, tableaux de bord, bilan social",
-              "Turnover, absentéisme, climat, AT",
-              "Plans d'action sociaux, QVT"
-            ],
-            [
-              "**Piloter la création de valeur**",
-              "BSC, ratios de productivité, ROI formation",
-              "VA/salarié, engagement, ROI capital humain",
-              "Investissement RH, marque employeur"
-            ]
-          ]
+          "type": "callout",
+          "variant": "info",
+          "title": "Objectif",
+          "text": "**Outils**\n**Indicateurs clés**\n**Décisions associées**\n**Piloter les compétences**\nGPEC, cartographie, matrice de compétences\nÉcarts de compétences, % de polyvalence\nRecruter, former, mobilité, externaliser\n**Piloter la masse salariale**\nDécomposition en effets, budget, prévision\nEffets niveau/masse/report, GVT, ratio MS/VA\nPolitique salariale, recrutements, NAO\n**Piloter la performance sociale**\nIndicateurs sociaux, tableaux de bord, bilan social\nTurnover, absentéisme, climat, AT\nPlans d'action sociaux, QVT\n**Piloter la création de valeur**\nBSC, ratios de productivité, ROI formation\nVA/salarié, engagement, ROI capital humain\nInvestissement RH, marque employeur"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "**Transition.** Le premier registre, le pilotage des compétences, se déploie à travers la démarche de GPEC."
         }
       ]
@@ -265,7 +272,8 @@ export const chapter: Chapter = {
       "title": "3. La gestion prévisionnelle des emplois et des compétences (GPEC)",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté de l'ancien cours (Cours 4, GPEC) ; matrices créées.*"
         },
         {
@@ -285,7 +293,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Focus professionnel"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Focus professionnel.** La GPEC s'est enrichie d'une dimension territoriale (GPEC-T, à l'échelle d'un bassin d'emploi) et d'une logique de « GEPP » (gestion des emplois et des parcours professionnels), terminologie introduite par les ordonnances de 2017, qui met l'accent sur les parcours et la mobilité. Au-delà du vocabulaire, la logique reste la même : anticiper pour adapter les compétences aux besoins stratégiques."
         },
         {
@@ -293,7 +302,8 @@ export const chapter: Chapter = {
           "text": "3.2 Le processus de GPEC"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté (Cours 4).*"
         },
         {
@@ -309,6 +319,13 @@ export const chapter: Chapter = {
           "text": "Schéma 2 — Le processus complet de GPEC *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-controle-gestion-sociale/01.png",
+          "alt": "Schéma 2 — Le processus complet de GPEC *(obligatoire)*",
+          "width": 2024,
+          "height": 1056
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma articule les deux branches de la GPEC — les **besoins futurs** (dérivés de la stratégie) et les **ressources actuelles** (inventaire) — qui convergent vers l'**analyse des écarts**, d'où découlent les **plans d'action**. Sa lecture met en évidence le caractère **stratégique** (tout part de la stratégie) et **dynamique** (la démarche se réactualise) de la GPEC. Le point clé : la GPEC n'a de sens que reliée à la stratégie ; une cartographie des compétences déconnectée des besoins futurs n'est qu'un inventaire stérile. Les plans d'action, enfin, doivent être chiffrés et suivis — c'est là qu'intervient le contrôle de gestion sociale."
         },
@@ -317,7 +334,8 @@ export const chapter: Chapter = {
           "text": "3.3 La cartographie et la matrice des compétences"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé.*"
         },
         {
@@ -329,55 +347,21 @@ export const chapter: Chapter = {
           "text": "Tableau 3 — Exemple de cartographie des compétences (par emploi) *(obligatoire)*"
         },
         {
-          "type": "table",
-          "headers": [
-            "**Compétence**",
-            "**Niveau requis**",
-            "**Criticité stratégique**",
-            "**Nb de salariés maîtrisant**",
-            "**Vulnérabilité**"
-          ],
-          "rows": [
-            [
-              "Analyse de données",
-              "Expert",
-              "Élevée",
-              "2 / 12",
-              "**Forte** (dépendance)"
-            ],
-            [
-              "Gestion de projet",
-              "Confirmé",
-              "Élevée",
-              "6 / 12",
-              "Modérée"
-            ],
-            [
-              "Maîtrise de l'ERP",
-              "Confirmé",
-              "Moyenne",
-              "9 / 12",
-              "Faible"
-            ],
-            [
-              "Relation client",
-              "Confirmé",
-              "Élevée",
-              "8 / 12",
-              "Faible"
-            ],
-            [
-              "Réglementation sectorielle",
-              "Expert",
-              "Élevée",
-              "3 / 12",
-              "Modérée"
-            ]
-          ]
+          "type": "callout",
+          "variant": "info",
+          "title": "Compétence",
+          "text": "**Niveau requis**\n**Criticité stratégique**\n**Nb de salariés maîtrisant**\n**Vulnérabilité**\nAnalyse de données\nExpert\nÉlevée\n2 / 12\n**Forte** (dépendance)\nGestion de projet\nConfirmé\nÉlevée\n6 / 12\nModérée\nMaîtrise de l'ERP\nConfirmé\nMoyenne\n9 / 12\nFaible\nRelation client\nConfirmé\nÉlevée\n8 / 12\nFaible\nRéglementation sectorielle\nExpert\nÉlevée\n3 / 12\nModérée"
         },
         {
           "type": "h4",
           "text": "Matrice 4 — Matrice compétences × collaborateurs *(obligatoire)*"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-controle-gestion-sociale/02.png",
+          "alt": "Matrice 4 — Matrice compétences × collaborateurs *(obligatoire)*",
+          "width": 1958,
+          "height": 1201
         },
         {
           "type": "p",
@@ -404,7 +388,8 @@ export const chapter: Chapter = {
           "text": "**Interprétation.** Sur le strict plan du coût de première année, la formation (27 000 €) est moins coûteuse que le recrutement (36 000 € + 24 000 € de surcoût). Mais l'arbitrage ne se réduit pas au coût : le recrutement apporte la compétence **plus vite** (enjeu si le besoin est urgent), tandis que la formation **fidélise** et **valorise** les collaborateurs internes (enjeu d'engagement et de rétention, lien §7). Le bon choix dépend de l'**urgence** du besoin, de la **disponibilité** de profils internes formables et du **caractère stratégique** de la compétence. C'est un arbitrage type des sujets DSCG, qui appelle un raisonnement combinant chiffrage économique et logique stratégique — jamais un calcul mécanique."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Au-delà des compétences, le contrôle de gestion sociale pilote le premier poste de charges de l'organisation : la masse salariale."
         }
       ]
@@ -414,7 +399,8 @@ export const chapter: Chapter = {
       "title": "4. Le pilotage de la masse salariale",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté de l'ancien cours (Cours 4, contrôle de l'évolution de la masse salariale) — cœur technique de la sous-partie.*"
         },
         {
@@ -473,7 +459,8 @@ export const chapter: Chapter = {
           "text": "4.2 L'analyse des variations de la masse salariale"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "*Statut : repris-adapté — méthode et formules conformes à l'enseignement DSCG.*"
         },
         {
@@ -509,8 +496,9 @@ export const chapter: Chapter = {
           "text": "Ces trois effets sont reliés par deux égalités essentielles, que l'ancien cours établit et que le candidat doit maîtriser :"
         },
         {
-          "type": "p",
-          "text": "**Variation de la masse salariale (N–1 → N) = Effet de masse (N) × Effet de report (N–1 sur N)Effet de niveau (N) = Effet de masse (N) × Effet de report (N sur N+1)**"
+          "type": "callout",
+          "variant": "info",
+          "text": "**Variation de la masse salariale (N–1 → N) = Effet de masse (N) × Effet de report (N–1 sur N)**\n**Effet de niveau (N) = Effet de masse (N) × Effet de report (N sur N+1)**"
         },
         {
           "type": "p",
@@ -604,6 +592,13 @@ export const chapter: Chapter = {
           "text": "Graphique 5 — Décomposition des variations de la masse salariale *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-controle-gestion-sociale/03.png",
+          "alt": "Graphique 5 — Décomposition des variations de la masse salariale *(obligatoire)*",
+          "width": 1892,
+          "height": 1100
+        },
+        {
           "type": "p",
           "text": "**Interprétation.** Le graphique en cascade (waterfall) décompose la variation totale de la masse salariale entre N–1 et N en ses contributions : effet de report hérité de N–1, effet de masse des augmentations de N, effet d'effectif (recrutements/départs), effet de structure (déformation de la composition — par exemple un *effet Noria* lorsque des départs de seniors bien rémunérés sont remplacés par des juniors moins payés, qui réduit la masse). La visualisation rend tangible la contribution de chaque facteur et identifie les leviers d'action : on voit immédiatement si la hausse provient des augmentations, des effectifs ou de la structure — diagnostic indispensable avant toute décision corrective."
         },
@@ -640,7 +635,8 @@ export const chapter: Chapter = {
           "text": "4.2.4 L'effet GVT (Glissement-Vieillissement-Technicité)"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris de l'ancien cours.*"
         },
         {
@@ -652,7 +648,8 @@ export const chapter: Chapter = {
           "text": "Encadré — Point méthode"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "warning",
           "text": "**Point méthode — réussir un calcul de masse salariale en DSCG.** (1) Bien identifier le **périmètre** (brut ou chargé) et la **date** des augmentations. (2) Calculer la masse salariale de chaque année **mois par mois** si les augmentations sont en cours d'année. (3) Définir tous les effets comme des **coefficients multiplicateurs** (1 + taux). (4) Vérifier les relations : variation MS = masse × report (N–1→N) ; niveau = masse × report (N→N+1). (5) **Interpréter** systématiquement : un effet n'a de valeur que commenté (qui paie quoi, quand, et avec quel report futur). L'erreur classique est de confondre effet de masse (sur l'année courante) et effet de niveau (en fin d'année)."
         },
         {
@@ -660,7 +657,8 @@ export const chapter: Chapter = {
           "text": "4.3 La prévision budgétaire de la masse salariale"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé / complété à partir de la logique de l'ancien cours.*"
         },
         {
@@ -721,7 +719,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** La masse salariale n'est qu'une dimension du pilotage social ; les indicateurs sociaux en élargissent la mesure."
         }
       ]
@@ -731,7 +730,8 @@ export const chapter: Chapter = {
       "title": "5. Les indicateurs sociaux",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé / complété ; s'appuie sur le bilan social et la pratique professionnelle.*"
         },
         {
@@ -749,6 +749,13 @@ export const chapter: Chapter = {
         {
           "type": "h4",
           "text": "Graphique 6 — Pyramide des âges *(obligatoire)*"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-controle-gestion-sociale/04.png",
+          "alt": "Graphique 6 — Pyramide des âges *(obligatoire)*",
+          "width": 1892,
+          "height": 1144
         },
         {
           "type": "p",
@@ -842,6 +849,13 @@ export const chapter: Chapter = {
           "text": "Graphique 7 — Évolution des indicateurs sociaux *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-controle-gestion-sociale/05.png",
+          "alt": "Graphique 7 — Évolution des indicateurs sociaux *(obligatoire)*",
+          "width": 1804,
+          "height": 1056
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le graphique suit l'évolution sur plusieurs périodes de quelques indicateurs sociaux clés (turnover, absentéisme, engagement). Sa lecture révèle les **tendances** et les **corrélations** : une hausse simultanée du turnover et de l'absentéisme, accompagnée d'une baisse de l'engagement, signale une dégradation du climat social appelant une action. Le suivi dans le temps est plus instructif que la valeur ponctuelle : c'est la **trajectoire** qui alerte. Le contrôle de gestion sociale exploite ces séries pour anticiper (un turnover qui monte annonce des coûts de recrutement futurs) et pour évaluer l'effet des actions RH engagées."
         },
@@ -850,8 +864,9 @@ export const chapter: Chapter = {
           "text": "Encadré — Erreurs fréquentes"
         },
         {
-          "type": "p",
-          "text": "**Erreurs fréquentes.** (1) Confondre les notions d'effectif (inscrit, présent, moyen, ETP) : toujours préciser laquelle on utilise. (2) Interpréter un indicateur isolément : le turnover ne se juge qu'au regard du secteur, du contexte et croisé avec d'autres indicateurs. (3) Oublier le **coût caché** des indicateurs dégradés (l'absentéisme et le turnover coûtent bien plus que leur mesure apparente — lien Savall). (4) Négliger que « tout ce qui se mesure n'est pas important, et tout ce qui est important ne se mesure pas » : les indicateurs éclairent mais ne remplacent pas le jugement managérial.**Transition.** Ces indicateurs ne prennent leur sens que rassemblés et hiérarchisés dans un tableau de bord social."
+          "type": "callout",
+          "variant": "warning",
+          "text": "**Erreurs fréquentes.** (1) Confondre les notions d'effectif (inscrit, présent, moyen, ETP) : toujours préciser laquelle on utilise. (2) Interpréter un indicateur isolément : le turnover ne se juge qu'au regard du secteur, du contexte et croisé avec d'autres indicateurs. (3) Oublier le **coût caché** des indicateurs dégradés (l'absentéisme et le turnover coûtent bien plus que leur mesure apparente — lien Savall). (4) Négliger que « tout ce qui se mesure n'est pas important, et tout ce qui est important ne se mesure pas » : les indicateurs éclairent mais ne remplacent pas le jugement managérial.\n**Transition.** Ces indicateurs ne prennent leur sens que rassemblés et hiérarchisés dans un tableau de bord social."
         }
       ]
     },
@@ -860,7 +875,8 @@ export const chapter: Chapter = {
       "title": "6. Les tableaux de bord RH",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; lien tableaux de bord (2.3) et bilan social.*"
         },
         {
@@ -977,11 +993,19 @@ export const chapter: Chapter = {
           "text": "Schéma 9 — Architecture d'un système de pilotage RH *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-controle-gestion-sociale/06.png",
+          "alt": "Schéma 9 — Architecture d'un système de pilotage RH *(obligatoire)*",
+          "width": 1980,
+          "height": 1056
+        },
+        {
           "type": "p",
           "text": "**Interprétation.** Le schéma articule les niveaux du système de pilotage social : à la base, le **SIRH** (système d'information RH) qui collecte les données (paie, temps, formation, recrutement) ; au-dessus, les **indicateurs** et **tableaux de bord** par destinataire ; au sommet, le **pilotage stratégique** reliant la performance sociale à la performance globale (Balanced Scorecard, perspective apprentissage). Le **bilan social** et le **reporting de durabilité** (CSRD) constituent les sorties réglementaires. Cette architecture montre que le contrôle de gestion sociale transforme une donnée administrative (la paie) en information de pilotage stratégique — réalisant la promesse du chapitre."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ce pilotage n'a de sens que s'il démontre la contribution du social à la performance globale."
         }
       ]
@@ -991,7 +1015,8 @@ export const chapter: Chapter = {
       "title": "7. Contrôle de gestion sociale et performance globale",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; capital humain repris de l'ancien cours ; Becker, Barney, Kaplan & Norton.*"
         },
         {
@@ -1078,8 +1103,9 @@ export const chapter: Chapter = {
           "text": "Encadré — Bonnes pratiques"
         },
         {
-          "type": "p",
-          "text": "**Bonnes pratiques.** Pour démontrer le ROI d'un investissement social (ex. un programme de formation ou de QVT) : (1) chiffrer le **coût** complet (direct + temps mobilisé) ; (2) identifier les **gains** attendus (productivité, baisse de l'absentéisme/turnover, des coûts cachés) ; (3) les **monétiser** prudemment ; (4) comparer sur un horizon pertinent. Cette démarche, proche du business case de transformation (chapitre 4), transforme un débat d'opinion (« la formation, ça sert ») en décision étayée.**Transition.** Le pilotage social s'exerce aussi dans le cadre particulier du dialogue avec les parties prenantes sociales."
+          "type": "callout",
+          "variant": "tip",
+          "text": "**Bonnes pratiques.** Pour démontrer le ROI d'un investissement social (ex. un programme de formation ou de QVT) : (1) chiffrer le **coût** complet (direct + temps mobilisé) ; (2) identifier les **gains** attendus (productivité, baisse de l'absentéisme/turnover, des coûts cachés) ; (3) les **monétiser** prudemment ; (4) comparer sur un horizon pertinent. Cette démarche, proche du business case de transformation (chapitre 4), transforme un débat d'opinion (« la formation, ça sert ») en décision étayée.\n**Transition.** Le pilotage social s'exerce aussi dans le cadre particulier du dialogue avec les parties prenantes sociales."
         }
       ]
     },
@@ -1088,7 +1114,8 @@ export const chapter: Chapter = {
       "title": "8. Dialogue social et gouvernance RH",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; dialogue social repris de l'ancien cours (Cours 3 & 4).*"
         },
         {
@@ -1171,11 +1198,19 @@ export const chapter: Chapter = {
           "text": "Schéma 10 — L'écosystème social de l'entreprise *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-controle-gestion-sociale/07.png",
+          "alt": "Schéma 10 — L'écosystème social de l'entreprise *(obligatoire)*",
+          "width": 1892,
+          "height": 1188
+        },
+        {
           "type": "p",
           "text": "**Interprétation.** Le schéma place l'entreprise au centre d'un écosystème d'acteurs sociaux — internes (direction, salariés, représentants, managers) et externes (pouvoirs publics, investisseurs, société civile) — reliés par des flux d'attentes et d'informations. Le contrôle de gestion sociale y joue un rôle de **tiers de confiance** : en produisant des indicateurs objectifs et partagés, il fonde le dialogue sur des faits plutôt que sur des perceptions, désamorçant une partie des tensions. La qualité du dialogue social, longtemps perçue comme une contrainte, apparaît ainsi comme un facteur de performance (anticipation des conflits, adhésion aux transformations — lien chapitre 4)."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ce pilotage social est profondément transformé par la digitalisation et l'intelligence artificielle."
         }
       ]
@@ -1185,7 +1220,8 @@ export const chapter: Chapter = {
       "title": "9. La digitalisation de la fonction RH",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; ouverture contemporaine ; lien chapitre 4 et UE5.*"
         },
         {
@@ -1272,6 +1308,13 @@ export const chapter: Chapter = {
           "text": "Graphique 11 — Maturité digitale de la fonction RH (radar) *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-controle-gestion-sociale/08.png",
+          "alt": "Graphique 11 — Maturité digitale de la fonction RH (radar) *(obligatoire)*",
+          "width": 1804,
+          "height": 1232
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le radar évalue la maturité digitale de la fonction RH sur plusieurs axes (SIRH intégré, dématérialisation des processus, people analytics, IA, expérience collaborateur digitale, compétences data de l'équipe RH), en comparant éventuellement l'existant à une cible. Sa lecture révèle les **chantiers prioritaires** : une fonction RH peut disposer d'un bon SIRH (socle) mais accuser un retard sur le people analytics et l'IA — axes d'investissement. Le radar est un outil de diagnostic et de feuille de route de la transformation digitale RH (lien chapitre 4), reliant la modernisation de l'outillage à la montée en compétences de l'équipe RH elle-même."
         },
@@ -1280,11 +1323,19 @@ export const chapter: Chapter = {
           "text": "Schéma 11 — La fonction RH augmentée par l'IA *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-controle-gestion-sociale/09.png",
+          "alt": "Schéma 11 — La fonction RH augmentée par l'IA *(obligatoire)*",
+          "width": 1892,
+          "height": 1232
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma représente la fonction RH augmentée : autour d'un socle de **données RH** (SIRH) et d'**IA/analytics**, gravitent les processus RH (recrutement, formation, compétences, engagement, paie), tous enrichis par l'exploitation de la donnée. Au centre, le rôle du professionnel RH se déplace de l'**exécution administrative** (automatisée) vers le **conseil, l'analyse et l'accompagnement humain** — la valeur ajoutée se concentrant sur ce que l'IA ne peut faire : le jugement, l'empathie, la décision éthique. Le message clé rejoint le chapitre 4 : la technologie ne remplace pas la fonction RH, elle la **recentre sur sa valeur humaine**, à condition d'accompagner cette transformation."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** La fonction RH est enfin au cœur des enjeux ESG, dont elle porte la dimension sociale."
         }
       ]
@@ -1294,7 +1345,8 @@ export const chapter: Chapter = {
       "title": "10. Enjeux ESG et pilotage social",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; ouverture contemporaine ; lien fort Partie 3 (durabilité, CSRD).*"
         },
         {
@@ -1361,11 +1413,19 @@ export const chapter: Chapter = {
           "text": "Matrice 12 — Lien entre objectifs ESG et pilotage RH *(matrice obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-controle-gestion-sociale/10.png",
+          "alt": "Matrice 12 — Lien entre objectifs ESG et pilotage RH *(matrice obligatoire)*",
+          "width": 1870,
+          "height": 1192
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** La matrice croise les **objectifs ESG sociaux** (égalité, diversité, QVT, santé, formation, dialogue) et les **leviers du pilotage RH** (recrutement, rémunération, formation, organisation, dialogue social), en identifiant les points d'action. Sa lecture montre que les objectifs ESG ne sont pas un domaine séparé mais s'**incarnent dans les processus RH ordinaires** : l'égalité se joue dans les politiques de rémunération et de promotion, la diversité dans le recrutement, la QVT dans l'organisation du travail. Le contrôle de gestion sociale, en mesurant ces objectifs par des indicateurs (tableau 12), permet de les **piloter** comme tout autre objectif de performance — et de répondre aux exigences croissantes de transparence (CSRD). C'est l'aboutissement de la vision du chapitre : un pilotage social qui intègre l'économique, le social et le durable dans une performance globale."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ces concepts s'incarnent dans les pratiques d'entreprises réelles."
         }
       ]
@@ -1375,7 +1435,8 @@ export const chapter: Chapter = {
       "title": "11. Cas d'entreprises et illustrations professionnelles",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé — illustrations pédagogiques simplifiées (voir avertissement en tête de chapitre).*"
         },
         {
@@ -1444,7 +1505,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ces pratiques et ces concepts convergent vers les attendus de l'épreuve."
         }
       ]
@@ -1454,7 +1516,8 @@ export const chapter: Chapter = {
       "title": "12. Approfondissements DSCG",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; orienté préparation à l'épreuve.*"
         },
         {
@@ -1542,6 +1605,13 @@ export const chapter: Chapter = {
         {
           "type": "h3",
           "text": "13.2 Carte mentale"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-controle-gestion-sociale/11.png",
+          "alt": "13.2 Carte mentale",
+          "width": 2288,
+          "height": 1364
         },
         {
           "type": "h3",

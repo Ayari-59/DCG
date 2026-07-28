@@ -50,8 +50,12 @@ export const chapter: Chapter = {
           "text": "Les stocks sont un maillon de la chaîne de valeur : bien gérés, les approvisionnements alimentent la production sans rupture, soutiennent les ventes et servent la performance globale (coût, trésorerie, durabilité)."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — Les stocks, maillon de la chaîne de valeur*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/01.png",
+          "alt": "Figure du cours",
+          "width": 1880,
+          "height": 500,
+          "caption": "Figure 1 — Les stocks, maillon de la chaîne de valeur"
         },
         {
           "type": "callout",
@@ -90,8 +94,12 @@ export const chapter: Chapter = {
           "text": "On classe les stocks selon leur place dans le cycle d’exploitation."
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — Les types de stocks le long du processus*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/02.png",
+          "alt": "1. Les enjeux de la gestion des approvisionnements et des stocks",
+          "width": 1880,
+          "height": 480,
+          "caption": "Figure 2 — Les types de stocks le long du processus"
         },
         {
           "type": "table",
@@ -186,8 +194,12 @@ export const chapter: Chapter = {
           "text": "Les coûts de passation et de possession évoluent en sens inverse de la quantité commandée Q : commander en grandes quantités réduit le nombre de commandes (donc le coût de passation), mais gonfle le stock moyen (donc le coût de possession). L’art de la gestion des stocks consiste à trouver le **point d’équilibre** qui minimise leur somme — le coût total de gestion."
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — L’arbitrage économique : minimiser le coût total de gestion*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/03.png",
+          "alt": "1. Les enjeux de la gestion des approvisionnements et des stocks",
+          "width": 1760,
+          "height": 940,
+          "caption": "Figure 3 — L’arbitrage économique : minimiser le coût total de gestion"
         },
         {
           "type": "callout",
@@ -298,8 +310,12 @@ export const chapter: Chapter = {
           "text": "Sous ces hypothèses, le stock évolue selon un profil en « dent de scie » : il décroît régulièrement de Q à 0, puis est reconstitué instantanément. Le stock moyen est donc **Q/2**."
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — L’évolution du stock dans le modèle de Wilson*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/04.png",
+          "alt": "2. Le modèle de Wilson et ses adaptations",
+          "width": 1760,
+          "height": 720,
+          "caption": "Figure 4 — L’évolution du stock dans le modèle de Wilson"
         },
         {
           "type": "h3",
@@ -326,24 +342,44 @@ export const chapter: Chapter = {
           "text": "**La quantité économique de Wilson se construit pas à pas :**"
         },
         {
-          "type": "p",
-          "text": "*Figure 5 — Wilson, étape 1 : le problème (arbitrer entre deux coûts opposés)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/05.png",
+          "alt": "2. Le modèle de Wilson et ses adaptations",
+          "width": 1140,
+          "height": 780,
+          "caption": "Figure 5 — Wilson, étape 1 : le problème (arbitrer entre deux coûts opposés)"
         },
         {
-          "type": "p",
-          "text": "*Figure 6 — Étape 2 : le coût de passation = c_l × (D / Q)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/06.png",
+          "alt": "2. Le modèle de Wilson et ses adaptations",
+          "width": 1140,
+          "height": 780,
+          "caption": "Figure 6 — Étape 2 : le coût de passation = c_l × (D / Q)"
         },
         {
-          "type": "p",
-          "text": "*Figure 7 — Étape 3 : le coût de possession = (Q / 2) × c_s*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/07.png",
+          "alt": "2. Le modèle de Wilson et ses adaptations",
+          "width": 1140,
+          "height": 780,
+          "caption": "Figure 7 — Étape 3 : le coût de possession = (Q / 2) × c_s"
         },
         {
-          "type": "p",
-          "text": "*Figure 8 — Étape 4 : le coût total de gestion (courbe en U)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/08.png",
+          "alt": "2. Le modèle de Wilson et ses adaptations",
+          "width": 1140,
+          "height": 780,
+          "caption": "Figure 8 — Étape 4 : le coût total de gestion (courbe en U)"
         },
         {
-          "type": "p",
-          "text": "*Figure 9 — Étape 5 : l'optimum Q* (où coût de passation = coût de possession)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/09.png",
+          "alt": "2. Le modèle de Wilson et ses adaptations",
+          "width": 1140,
+          "height": 780,
+          "caption": "Figure 9 — Étape 5 : l'optimum Q* (où coût de passation = coût de possession)"
         },
         {
           "type": "callout",
@@ -378,8 +414,12 @@ export const chapter: Chapter = {
           "text": "Pour se prémunir des aléas (retards de livraison, accélération de la demande), l’entreprise peut détenir un **stock de sécurité**. Celui-ci s’ajoute en permanence au stock, relevant d’autant le stock moyen — et donc le coût de possession."
         },
         {
-          "type": "p",
-          "text": "*Figure 10 — Le stock de sécurité relève le niveau moyen du stock*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/10.png",
+          "alt": "Interpréter le résultat",
+          "width": 1760,
+          "height": 720,
+          "caption": "Figure 10 — Le stock de sécurité relève le niveau moyen du stock"
         },
         {
           "type": "callout",
@@ -418,8 +458,12 @@ export const chapter: Chapter = {
           "text": "Consommation 900 litres/an, cl = 800 €, taux de possession 10 %/an. Le fournisseur propose : p = 400 € (Q < 100), p = 350 € (100 ≤ Q < 300), p = 300 € (Q ≥ 300).\nTravail à faire : déterminer la quantité à commander qui minimise le coût total d'approvisionnement.\n**Corrigé — quantité optimale :**\nEn étudiant chaque tranche, le coût total minimal est atteint pour Q = 300 litres (CA = 276 900 €), soit 3 commandes de 300 litres, une tous les 4 mois."
         },
         {
-          "type": "p",
-          "text": "*Figure 11 — Le coût total minimal par tranche de tarif*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/11.png",
+          "alt": "Interpréter le résultat",
+          "width": 1168,
+          "height": 902,
+          "caption": "Figure 11 — Le coût total minimal par tranche de tarif"
         },
         {
           "type": "callout",
@@ -487,8 +531,12 @@ export const chapter: Chapter = {
           "text": "Le **stock d’alerte** (ou stock critique, ou point de commande) est le niveau de stock qui **déclenche une commande**. Il doit permettre de satisfaire la demande pendant le délai de livraison et de maintenir le stock de sécurité s’il existe :\n**Stock d’alerte = consommation pendant le délai de livraison + stock de sécurité**"
         },
         {
-          "type": "p",
-          "text": "*Figure 12 — Le stock d’alerte déclenche la commande*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/12.png",
+          "alt": "3. Le réapprovisionnement et la budgétisation des approvisionnements",
+          "width": 1270,
+          "height": 859,
+          "caption": "Figure 12 — Le stock d’alerte déclenche la commande"
         },
         {
           "type": "callout",
@@ -535,8 +583,12 @@ export const chapter: Chapter = {
           "text": "On détermine ensuite S par lecture de la table de la loi normale centrée réduite, après le changement de variable t = (S − μ) / σ. Le **stock de sécurité** est alors l’écart entre ce stock optimal et la demande moyenne : S* − μ."
         },
         {
-          "type": "p",
-          "text": "*Figure 13 — Le seuil optimal S* sur la loi de la demande (avenir aléatoire continu)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/13.png",
+          "alt": "La demande est une variable aléatoire continue",
+          "width": 1760,
+          "height": 760,
+          "caption": "Figure 13 — Le seuil optimal S* sur la loi de la demande (avenir aléatoire continu)"
         },
         {
           "type": "callout",
@@ -559,8 +611,12 @@ export const chapter: Chapter = {
           "text": "Lorsque la demande ne prend qu’un petit nombre de valeurs, on construit une **matrice des coûts de gestion** : chaque ligne correspond à un niveau de stock possible, chaque colonne à une valeur de la demande (pondérée par sa probabilité). On calcule, pour chaque stock, l’**espérance de coût**, et l’on retient le stock qui la minimise (ou, de façon équivalente, qui maximise l’espérance de gain)."
         },
         {
-          "type": "p",
-          "text": "*Figure 14 — La matrice des coûts en avenir aléatoire discret*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/14.png",
+          "alt": "La demande est une variable aléatoire discrète",
+          "width": 1760,
+          "height": 680,
+          "caption": "Figure 14 — La matrice des coûts en avenir aléatoire discret"
         },
         {
           "type": "callout",
@@ -623,8 +679,12 @@ export const chapter: Chapter = {
           "text": "Quand la consommation est irrégulière, deux logiques de réapprovisionnement s’offrent au gestionnaire."
         },
         {
-          "type": "p",
-          "text": "*Figure 15 — Deux logiques de réapprovisionnement*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/15.png",
+          "alt": "La demande est une variable aléatoire discrète",
+          "width": 1760,
+          "height": 600,
+          "caption": "Figure 15 — Deux logiques de réapprovisionnement"
         },
         {
           "type": "table",
@@ -658,8 +718,12 @@ export const chapter: Chapter = {
           "text": "La budgétisation fait apparaître l’échelonnement dans le temps des consommations, commandes, livraisons et niveaux de stock. Quand la consommation est régulière, elle ne pose pas de difficulté. Quand elle est irrégulière (cas fréquent, saisonnalité), on retient l’une des deux politiques précédentes. Deux méthodes coexistent : la méthode **graphique** et la méthode **comptable** (tableau)."
         },
         {
-          "type": "p",
-          "text": "*Figure 16 — Budgétisation graphique : consommations cumulées et livraisons*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-approvisionnements/16.png",
+          "alt": "La demande est une variable aléatoire discrète",
+          "width": 1760,
+          "height": 840,
+          "caption": "Figure 16 — Budgétisation graphique : consommations cumulées et livraisons"
         },
         {
           "type": "callout",

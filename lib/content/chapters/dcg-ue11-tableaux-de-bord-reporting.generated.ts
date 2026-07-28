@@ -54,8 +54,12 @@ export const chapter: Chapter = {
           "text": "La logique d’ensemble peut se représenter comme une chaîne continue : la stratégie fixe le cap, les objectifs la chiffrent, les facteurs clés de succès identifient les leviers décisifs, les indicateurs les mesurent, le tableau de bord les rassemble, l’action corrige, et la performance en résulte. Chaque maillon conditionne le suivant."
         },
         {
-          "type": "p",
-          "text": "*De la stratégie à la performance : la chaîne du pilotage*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-tableaux-de-bord-reporting/01.png",
+          "alt": "Figure du cours",
+          "width": 1800,
+          "height": 420,
+          "caption": "De la stratégie à la performance : la chaîne du pilotage"
         },
         {
           "type": "p",
@@ -401,12 +405,20 @@ export const chapter: Chapter = {
           "text": "**OVAR** (Objectifs — Variables d’Action — Responsables) est la démarche de référence pour concevoir un tableau de bord et sélectionner ses indicateurs. Son principe : ne jamais partir des indicateurs disponibles, mais **descendre de la stratégie vers les indicateurs**."
         },
         {
-          "type": "p",
-          "text": "*La logique OVAR : des objectifs aux responsables*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-tableaux-de-bord-reporting/02.png",
+          "alt": "Les indicateurs qualitatifs",
+          "width": 1640,
+          "height": 600,
+          "caption": "La logique OVAR : des objectifs aux responsables"
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — La logique OVAR : de la mission aux indicateurs (objectifs, facteurs clés de succès, indicateurs).*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-tableaux-de-bord-reporting/03.png",
+          "alt": "Les indicateurs qualitatifs",
+          "width": 1806,
+          "height": 1650,
+          "caption": "Figure 1 — La logique OVAR : de la mission aux indicateurs (objectifs, facteurs clés de succès, indicateurs)."
         },
         {
           "type": "h4",
@@ -532,8 +544,12 @@ export const chapter: Chapter = {
           "text": "La satisfaction du client final ne dépend pas d’un seul centre, mais de l’enchaînement de toutes les activités. Suivre un indicateur par maillon permet de localiser où se crée — ou se perd — la valeur, et de dépasser la vision cloisonnée par centre."
         },
         {
-          "type": "p",
-          "text": "*l’entreprise — indicateurs le long de la chaîne de valeur*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-tableaux-de-bord-reporting/04.png",
+          "alt": "Les trois étapes",
+          "width": 1800,
+          "height": 640,
+          "caption": "l’entreprise — indicateurs le long de la chaîne de valeur"
         },
         {
           "type": "p",
@@ -548,16 +564,28 @@ export const chapter: Chapter = {
           "text": "Le contrôle de gestion n’établit pas un, mais des tableaux de bord, organisés selon le principe de l’emboîtement gigogne, parallèlement à la ligne hiérarchique. Chaque niveau ne fait remonter au niveau supérieur que l’information essentielle."
         },
         {
-          "type": "p",
-          "text": "*L’emboîtement gigogne : un tableau de bord par centre, remontée sélective*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-tableaux-de-bord-reporting/05.png",
+          "alt": "Les trois étapes",
+          "width": 1520,
+          "height": 600,
+          "caption": "L’emboîtement gigogne : un tableau de bord par centre, remontée sélective"
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — L’emboîtement gigogne des tableaux de bord : intégration verticale parallèle à la ligne hiérarchique.*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-tableaux-de-bord-reporting/06.png",
+          "alt": "Les trois étapes",
+          "width": 1515,
+          "height": 761,
+          "caption": "Figure 2 — L’emboîtement gigogne des tableaux de bord : intégration verticale parallèle à la ligne hiérarchique."
         },
         {
-          "type": "p",
-          "text": "*Opérationnel, tactique, stratégique : trois horizons de pilotage*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-tableaux-de-bord-reporting/07.png",
+          "alt": "Les trois étapes",
+          "width": 1640,
+          "height": 500,
+          "caption": "Opérationnel, tactique, stratégique : trois horizons de pilotage"
         },
         {
           "type": "table",
@@ -603,8 +631,12 @@ export const chapter: Chapter = {
           "text": "Reporting et tableau de bord sont proches mais distincts. Le reporting est tourné **vers le haut** (rendre compte à la hiérarchie ou aux actionnaires) ; il est plutôt standardisé, exhaustif et financier. Le tableau de bord est tourné **vers l’action locale** (piloter son propre périmètre) ; il est sur mesure, sélectif et mêle financier et extra-financier. En pratique, les deux coexistent et se nourrissent."
         },
         {
-          "type": "p",
-          "text": "*Reporting et tableau de bord : deux logiques complémentaires*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-tableaux-de-bord-reporting/08.png",
+          "alt": "Les trois étapes",
+          "width": 1640,
+          "height": 580,
+          "caption": "Reporting et tableau de bord : deux logiques complémentaires"
         },
         {
           "type": "h3",
@@ -621,8 +653,12 @@ export const chapter: Chapter = {
           "text": "Son apport, qu’il faut connaître au niveau de la sensibilisation : sortir du tout-financier en reliant des indicateurs d’effet (axe financier) à des indicateurs de cause (client, processus, apprentissage)."
         },
         {
-          "type": "p",
-          "text": "*Les quatre axes du balanced scorecard, reliés par la stratégie*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-tableaux-de-bord-reporting/09.png",
+          "alt": "Les trois étapes",
+          "width": 1440,
+          "height": 840,
+          "caption": "Les quatre axes du balanced scorecard, reliés par la stratégie"
         },
         {
           "type": "callout",
@@ -805,8 +841,12 @@ export const chapter: Chapter = {
           "text": "Le numérique transforme en profondeur la production et l’usage des tableaux de bord : la donnée circule en continu, le reporting s’automatise, et le pilotage devient prédictif."
         },
         {
-          "type": "p",
-          "text": "*De la donnée à la décision : la chaîne numérique du pilotage*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-tableaux-de-bord-reporting/10.png",
+          "alt": "3. Interpréter : exploiter le tableau de bord pour piloter la performance globale",
+          "width": 1800,
+          "height": 400,
+          "caption": "De la donnée à la décision : la chaîne numérique du pilotage"
         },
         {
           "type": "ul",
@@ -871,8 +911,12 @@ export const chapter: Chapter = {
           "text": "Cette évolution du pilotage transforme le métier. Le contrôleur de gestion n’est plus un simple producteur de chiffres : il devient l’analyste des données, le concepteur des tableaux de bord et le conseiller du décideur — un business partner."
         },
         {
-          "type": "p",
-          "text": "*L’évolution du rôle du contrôleur de gestion*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-tableaux-de-bord-reporting/11.png",
+          "alt": "3. Interpréter : exploiter le tableau de bord pour piloter la performance globale",
+          "width": 1640,
+          "height": 460,
+          "caption": "L’évolution du rôle du contrôleur de gestion"
         },
         {
           "type": "p",
@@ -903,8 +947,12 @@ export const chapter: Chapter = {
           "text": "Le référentiel demande d’identifier les risques liés aux indicateurs et à leur mesure. On peut en distinguer six grandes catégories, qui se combinent souvent."
         },
         {
-          "type": "p",
-          "text": "*Typologie des risques liés aux indicateurs et à leur mesure*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-tableaux-de-bord-reporting/12.png",
+          "alt": "4. Critiquer : risques, limites et amélioration des indicateurs",
+          "width": 1720,
+          "height": 700,
+          "caption": "Typologie des risques liés aux indicateurs et à leur mesure"
         },
         {
           "type": "ul",

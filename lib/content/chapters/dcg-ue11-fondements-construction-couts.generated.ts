@@ -123,8 +123,12 @@ export const chapter: Chapter = {
           "text": "Au-delà de ses usages concrets, le coût remplit quatre grandes fonctions dans l’organisation."
         },
         {
-          "type": "p",
-          "text": "*Les quatre fonctions du coût*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-fondements-construction-couts/01.png",
+          "alt": "1. Le coût, information de gestion",
+          "width": 1440,
+          "height": 660,
+          "caption": "Les quatre fonctions du coût"
         },
         {
           "type": "table",
@@ -166,8 +170,12 @@ export const chapter: Chapter = {
           "text": "Toutes les charges de la comptabilité financière ne sont pas reprises telles quelles pour calculer les coûts. La comptabilité de gestion opère un tri : elle écarte certaines charges (non incorporables), retient les autres (incorporables) et en ajoute parfois de nouvelles (supplétives)."
         },
         {
-          "type": "p",
-          "text": "*Du résultat financier aux charges incorporées aux coûts (illustration chiffrée)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-fondements-construction-couts/02.png",
+          "alt": "1. Le coût, information de gestion",
+          "width": 1440,
+          "height": 720,
+          "caption": "Du résultat financier aux charges incorporées aux coûts (illustration chiffrée)"
         },
         {
           "type": "h3",
@@ -267,8 +275,12 @@ export const chapter: Chapter = {
           "text": "Une même charge peut être analysée selon plusieurs critères complémentaires. Ces classifications ne s’excluent pas : elles répondent à des questions différentes et fondent les différentes méthodes de calcul des coûts. Les deux distinctions majeures — directes/indirectes et fixes/variables — sont ici illustrées sur les données du produit."
         },
         {
-          "type": "p",
-          "text": "*Une charge se classe simultanément selon plusieurs critères*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-fondements-construction-couts/03.png",
+          "alt": "2. Les classifications des charges",
+          "width": 1440,
+          "height": 600,
+          "caption": "Une charge se classe simultanément selon plusieurs critères"
         },
         {
           "type": "h3",
@@ -473,8 +485,12 @@ export const chapter: Chapter = {
           "text": "L’objet de coût peut être un produit, un service, une activité, un client, un projet ou un processus. Le même ensemble de charges peut être réorganisé selon différents objets : on peut calculer le coût d’un produit (le produit), mais aussi le coût d’un client (intéressant pour la profitabilité commerciale) ou d’un processus (utile en ABC)."
         },
         {
-          "type": "p",
-          "text": "*Un coût se rapporte toujours à un objet*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-fondements-construction-couts/04.png",
+          "alt": "3. Les objets de coûts et la construction d’un coût",
+          "width": 1440,
+          "height": 480,
+          "caption": "Un coût se rapporte toujours à un objet"
         },
         {
           "type": "h3",
@@ -485,8 +501,12 @@ export const chapter: Chapter = {
           "text": "Dans une entreprise, le coût se construit progressivement, en suivant le cycle d’exploitation : on achète, on produit, on vend. À chaque étape, le coût précédent est repris et enrichi de nouvelles charges."
         },
         {
-          "type": "p",
-          "text": "*La construction des coûts, étape par étape (produit, l’entreprise)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-fondements-construction-couts/05.png",
+          "alt": "3. Les objets de coûts et la construction d’un coût",
+          "width": 1640,
+          "height": 720,
+          "caption": "La construction des coûts, étape par étape (produit, l’entreprise)"
         },
         {
           "type": "h4",
@@ -596,8 +616,12 @@ export const chapter: Chapter = {
           "text": "Les charges directes sont affectées sans difficulté aux produits. Les charges indirectes, elles, ne peuvent l’être directement : elles transitent d’abord par des centres d’analyse (méthode du coût complet) ou par des activités (méthode ABC) avant d’être imputées aux produits. C’est ce cheminement qui distingue les différentes méthodes."
         },
         {
-          "type": "p",
-          "text": "*Le cheminement général des coûts : des charges aux résultats*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-fondements-construction-couts/06.png",
+          "alt": "*Le résultat analytique*",
+          "width": 1440,
+          "height": 660,
+          "caption": "Le cheminement général des coûts : des charges aux résultats"
         },
         {
           "type": "callout",
@@ -620,8 +644,12 @@ export const chapter: Chapter = {
           "text": "Il n’existe pas un coût « vrai » et unique, mais des coûts construits selon des conventions adaptées à des besoins. La coexistence de plusieurs méthodes répond à trois diversités : la diversité des besoins (fixer un prix de long terme n’appelle pas le même calcul qu’une décision ponctuelle), la diversité des organisations (industrie, services, structures à fortes charges indirectes) et la diversité des décisions (court terme vs structurel)."
         },
         {
-          "type": "p",
-          "text": "*Les quatre grandes méthodes de calcul des coûts*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-fondements-construction-couts/07.png",
+          "alt": "4. Les méthodes et l’usage décisionnel des coûts",
+          "width": 1440,
+          "height": 600,
+          "caption": "Les quatre grandes méthodes de calcul des coûts"
         },
         {
           "type": "h3",
@@ -699,8 +727,12 @@ export const chapter: Chapter = {
           "text": "Le coût n’est pas une fin en soi, mais un outil au service de la décision. Quatre grands champs de décision en dépendent."
         },
         {
-          "type": "p",
-          "text": "*Le coût alimente quatre grands champs de décision*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-fondements-construction-couts/08.png",
+          "alt": "4. Les méthodes et l’usage décisionnel des coûts",
+          "width": 1440,
+          "height": 500,
+          "caption": "Le coût alimente quatre grands champs de décision"
         },
         {
           "type": "h3",
@@ -749,8 +781,12 @@ export const chapter: Chapter = {
           "text": "Le calcul des coûts a longtemps été un travail manuel, long et fastidieux. Le numérique l’a transformé : la collecte et le calcul sont automatisés, et le contrôleur se concentre sur l’analyse et l’interprétation."
         },
         {
-          "type": "p",
-          "text": "*Les outils numériques au service du calcul des coûts*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-fondements-construction-couts/09.png",
+          "alt": "4. Les méthodes et l’usage décisionnel des coûts",
+          "width": 1440,
+          "height": 460,
+          "caption": "Les outils numériques au service du calcul des coûts"
         },
         {
           "type": "callout",
@@ -773,8 +809,12 @@ export const chapter: Chapter = {
           "text": "Le calcul des coûts s’élargit : intégration des coûts environnementaux et sociaux (coûts cachés, coût du carbone), coût du cycle de vie, coût de la non-qualité. La performance globale appelle des coûts qui dépassent la seule dimension financière. Pour une entreprise éco-responsable comme l’entreprise, la question des déchets de production est centrale."
         },
         {
-          "type": "p",
-          "text": "*Le coût des déchets : charge subie ou ressource valorisée ?*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-fondements-construction-couts/10.png",
+          "alt": "4. Les méthodes et l’usage décisionnel des coûts",
+          "width": 1440,
+          "height": 600,
+          "caption": "Le coût des déchets : charge subie ou ressource valorisée ?"
         },
         {
           "type": "callout",
@@ -922,8 +962,12 @@ export const chapter: Chapter = {
           "text": "La commande porte sur 800 produits à 60 €, soit un prix inférieur au coût de revient complet de 80 €. Un raisonnement naïf en coût complet conduirait à refuser (marge apparente de 60 − 80 = − 20 €). Mais les charges fixes sont déjà couvertes par l’activité courante (5 000 > 4 000) et la capacité est disponible : seules les charges variables sont pertinentes pour cette commande supplémentaire."
         },
         {
-          "type": "p",
-          "text": "*Commande spéciale : coût complet (refus) vs coût pertinent (acceptation)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-fondements-construction-couts/11.png",
+          "alt": "Solution détaillée",
+          "width": 1440,
+          "height": 600,
+          "caption": "Commande spéciale : coût complet (refus) vs coût pertinent (acceptation)"
         },
         {
           "type": "table",

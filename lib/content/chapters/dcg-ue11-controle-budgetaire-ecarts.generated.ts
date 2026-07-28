@@ -43,8 +43,12 @@ export const chapter: Chapter = {
           "text": "Le contrôle budgétaire est ainsi le principal mécanisme de pilotage à court terme de l’entreprise. Il referme la boucle du processus budgétaire et lui donne son sens : sans contrôle, la prévision n’est qu’un exercice formel ; avec lui, elle devient un instrument de management."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — La boucle du pilotage budgétaire : des objectifs à la performance, avec rétroaction*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-controle-budgetaire-ecarts/01.png",
+          "alt": "Introduction générale",
+          "width": 1440,
+          "height": 760,
+          "caption": "Figure 1 — La boucle du pilotage budgétaire : des objectifs à la performance, avec rétroaction"
         },
         {
           "type": "p",
@@ -57,8 +61,12 @@ export const chapter: Chapter = {
           "text": "Le contrôle budgétaire est l’utilisation des prévisions budgétaires pour (1) inciter les acteurs de l’entreprise à atteindre des objectifs convergents avec ceux de la direction et (2) vérifier que ces objectifs sont atteints, par le calcul et l’analyse des écarts.\n**REMARQUE — L’analyse des écarts n’est pas une fin en soi**\nCalculer un écart ne présente aucun intérêt si l’on ne se demande pas pourquoi il s’est formé, qui en est responsable et ce qu’il convient de faire. L’analyse des écarts doit identifier les dérives significatives et déboucher sur des décisions. C’est l’esprit de la réforme : « la rédaction d’un écrit structuré est aussi importante que les calculs »."
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — Décomposition d’un écart et responsabilité des centres (commercial / production)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-controle-budgetaire-ecarts/02.png",
+          "alt": "Introduction générale",
+          "width": 1872,
+          "height": 1073,
+          "caption": "Figure 2 — Décomposition d’un écart et responsabilité des centres (commercial / production)"
         },
         {
           "type": "p",
@@ -184,8 +192,12 @@ export const chapter: Chapter = {
           "text": "La valeur relative (l’écart exprimé en pourcentage du prévu) est ici déterminante. Un écart de 1 million d’euros sur un chiffre d’affaires prévu de 100 millions est faible (1 %) ; le même écart sur un coût prévu de 5 millions est un dérapage majeur (20 %). C’est pourquoi les entreprises fixent des seuils de tolérance, par exemple « tout écart sur coût inférieur à 5 % est ignoré »."
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — Gestion par exception : seuls les écarts hors zone de tolérance sont analysés*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-controle-budgetaire-ecarts/03.png",
+          "alt": "Les conditions d’un contrôle budgétaire efficace",
+          "width": 1440,
+          "height": 800,
+          "caption": "Figure 3 — Gestion par exception : seuls les écarts hors zone de tolérance sont analysés"
         },
         {
           "type": "callout",
@@ -355,8 +367,12 @@ export const chapter: Chapter = {
           "text": "Écart sur VOLUME, valorisé au PRIX PRÉVU :\nÉcart sur PRIX, rapporté aux QUANTITÉS RÉELLES :\n**ILLUSTRATION — Effet volume et effet prix (illustration)**\nVentes prévues : 90 unités à 10 € (CA prévu = 900 €). Ventes réelles : 100 unités à 11 € (CA réel = 1 100 €). L’écart sur CA est de +200 € (Fav.). Il combine un effet volume et un effet prix, tous deux favorables.\n**Solution 1 (conforme) :**Δ/prix = (11 − 10) × 100 = +100 ; Δ/volume = (100 − 90) × 10 = +100. Total = +200.\n**Solution 2 (à proscrire) :**Δ/prix au volume prévu = (11 − 10) × 90 = +90 ; Δ/volume au prix réel = (100 − 90) × 11 = +110. Total = +200 également… Les deux solutions retrouvent l’écart total, mais seule la solution 1 respecte la convention. La solution 2 est une erreur de méthode."
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — Écart sur CA : effet volume (au prix prévu) et effet prix (au volume réel)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-controle-budgetaire-ecarts/04.png",
+          "alt": "b. L’écart d’un produit : l’effet volume et l’effet prix",
+          "width": 1185,
+          "height": 352,
+          "caption": "Figure 4 — Écart sur CA : effet volume (au prix prévu) et effet prix (au volume réel)"
         },
         {
           "type": "h4",
@@ -406,8 +422,17 @@ export const chapter: Chapter = {
           "text": "Le résultat est le solde ultime de l’organisation : la différence entre l’ensemble des produits et l’ensemble des charges. L’écart sur résultat synthétise donc tous les autres écarts. Le décomposer permet d’attribuer la performance (ou la contre-performance) à chaque centre de responsabilité."
         },
         {
-          "type": "p",
-          "text": "*Figure 5 — Arbre de décomposition de l’écart sur résultat : logiques soustractive et multiplicative*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-controle-budgetaire-ecarts/05.png",
+          "alt": "2. Les écarts sur résultats et sur ventes",
+          "width": 1492,
+          "height": 926,
+          "caption": "Figure 5 — Arbre de décomposition de l’écart sur résultat : logiques soustractive et multiplicative"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dcg-ue11-controle-budgetaire-ecarts/06.jpg",
+          "alt": "2. Les écarts sur résultats et sur ventes"
         },
         {
           "type": "p",
@@ -543,8 +568,12 @@ export const chapter: Chapter = {
           "text": "Sous-écart qui mesure l’impact, sur le chiffre d’affaires ou la marge, de la modification de la structure des ventes (la part relative de chaque produit), indépendamment du volume global et du niveau général des prix.\n**REMARQUE — Deux conditions pour calculer un écart de composition**\nIl faut une multiproduction (au moins deux produits, en pratique plus de 4 ou 5 pour que l’écart soit pertinent). Les produits doivent être interdépendants et substituables : sans effet de substitution possible, l’écart n’a pas de sens économique."
         },
         {
-          "type": "p",
-          "text": "*Figure 7 — Décomposition de l’écart sur quantité en multiproduction : volume global et composition*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-controle-budgetaire-ecarts/07.png",
+          "alt": "c. L’écart sur marge sur coût préétabli (précision essentielle)",
+          "width": 1440,
+          "height": 760,
+          "caption": "Figure 7 — Décomposition de l’écart sur quantité en multiproduction : volume global et composition"
         },
         {
           "type": "p",
@@ -562,8 +591,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 8 — Décomposition de l’écart sur quantité : volume global et composition (illustration)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-controle-budgetaire-ecarts/08.png",
+          "alt": "c. L’écart sur marge sur coût préétabli (précision essentielle)",
+          "width": 1508,
+          "height": 1104,
+          "caption": "Figure 8 — Décomposition de l’écart sur quantité : volume global et composition (illustration)"
         },
         {
           "type": "h4",
@@ -1303,8 +1336,12 @@ export const chapter: Chapter = {
           "text": "L’écart sur budget (+ 4 600 €) est lui-même la somme d’un écart sur charges variables indirectes et d’un écart sur charges fixes indirectes : CV 50 600 − 48 000 = + 2 600 € (D) et CF 22 000 − 20 000 = + 2 000 € (D). L’expression « écart sur charges variables » parfois employée pour le seul écart sur budget est donc impropre."
         },
         {
-          "type": "p",
-          "text": "*Figure 9 — Décomposition de l’écart sur charges indirectes : du budget simple au budget flexible*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-controle-budgetaire-ecarts/09.png",
+          "alt": "3. Les écarts sur coûts de production",
+          "width": 1034,
+          "height": 892,
+          "caption": "Figure 9 — Décomposition de l’écart sur charges indirectes : du budget simple au budget flexible"
         },
         {
           "type": "h3",
@@ -1404,8 +1441,12 @@ export const chapter: Chapter = {
           "text": "*Le centre usinage se traite de même (activité allouée = 3 880 × 0,25 = 970 UO ; écart total = 95 000 − 100 000 = − 5 000 € (F)). Seule la base de calcul change : la production équivalente remplace la production achevée.*"
         },
         {
-          "type": "p",
-          "text": "*Figure 10 — Les en-cours de production : équivalents ECI / ECF par période*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-controle-budgetaire-ecarts/10.png",
+          "alt": "3. Les écarts sur coûts de production",
+          "width": 1932,
+          "height": 513,
+          "caption": "Figure 10 — Les en-cours de production : équivalents ECI / ECF par période"
         },
         {
           "type": "h3",
@@ -1475,8 +1516,12 @@ export const chapter: Chapter = {
           "text": "Un écart est un symptôme, non un diagnostic. Avant d’agir, il faut remonter aux causes — internes (organisation, méthodes, qualité) ou externes (marché, conjoncture, fournisseurs). Un outil simple, l’analyse causale en arête de poisson, aide à structurer cette recherche."
         },
         {
-          "type": "p",
-          "text": "*Figure 11 — Recherche des causes et des responsabilités d’un écart (diagramme causal, méthode des 5M)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-controle-budgetaire-ecarts/11.png",
+          "alt": "4. Interprétation, pilotage et limites",
+          "width": 1440,
+          "height": 720,
+          "caption": "Figure 11 — Recherche des causes et des responsabilités d’un écart (diagramme causal, méthode des 5M)"
         },
         {
           "type": "callout",
@@ -1548,8 +1593,12 @@ export const chapter: Chapter = {
           "text": "Écart entre la marge réelle évaluée au coût standard (Mr/cp = Vr × (Pr − Cup)) et la marge prévue (Mp = Vp × (Pp − Cup)). En neutralisant l’effet des coûts, il isole la seule performance commerciale."
         },
         {
-          "type": "p",
-          "text": "*Figure 12 — Logique de l’écart sur marge commerciale et sa décomposition volume / prix*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-controle-budgetaire-ecarts/12.png",
+          "alt": "4. Interprétation, pilotage et limites",
+          "width": 1440,
+          "height": 760,
+          "caption": "Figure 12 — Logique de l’écart sur marge commerciale et sa décomposition volume / prix"
         },
         {
           "type": "callout",

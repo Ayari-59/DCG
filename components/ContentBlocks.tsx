@@ -155,6 +155,29 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
       );
     }
 
+    case "image":
+      return (
+        <figure className="my-2">
+          <div className="overflow-hidden rounded-xl border-2 border-[--line] bg-white p-3 shadow-sm">
+            {/* Figures issues des manuels : dimensions variables, rendu fluide. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={block.src}
+              alt={block.alt}
+              width={block.width}
+              height={block.height}
+              loading="lazy"
+              className="mx-auto h-auto w-full max-w-3xl"
+            />
+          </div>
+          {block.caption && (
+            <figcaption className="mt-2 text-center text-sm italic text-[--muted]">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+
     case "video":
       return (
         <figure>

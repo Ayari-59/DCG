@@ -10,7 +10,7 @@ export const chapter: Chapter = {
   "number": 13,
   "title": "La gestion de la masse salariale",
   "description": "",
-  "durationMin": 30,
+  "durationMin": 25,
   "sections": [
     {
       "id": "preambule",
@@ -74,8 +74,12 @@ export const chapter: Chapter = {
           "text": "Ce chapitre adopte la démarche d'ensemble du programme réformé : pour chaque outil, il s'agit de comprendre pourquoi il existe, de savoir le calculer, d'interpréter ses résultats et d'en critiquer les limites. La masse salariale n'est jamais réduite à une suite de calculs : elle est resituée dans la chaîne qui relie la stratégie RH à la performance globale de l'organisation."
         },
         {
-          "type": "p",
-          "text": "*Figure 1 — La chaîne du pilotage : de la stratégie RH à la performance globale*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-masse-salariale/01.png",
+          "alt": "Partie 4 Le pilotage RH et la performance globale",
+          "width": 1480,
+          "height": 600,
+          "caption": "Figure 1 — La chaîne du pilotage : de la stratégie RH à la performance globale"
         }
       ]
     },
@@ -113,8 +117,12 @@ export const chapter: Chapter = {
           "text": "**Masse salariale chargée = Rémunérations brutes × (1 + taux de charges patronales)**"
         },
         {
-          "type": "p",
-          "text": "*Figure 2 — Décomposition de la masse salariale chargée*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-masse-salariale/02.png",
+          "alt": "Des coûts de personnel à la masse salariale",
+          "width": 1307,
+          "height": 392,
+          "caption": "Figure 2 — Décomposition de la masse salariale chargée"
         },
         {
           "type": "callout",
@@ -254,8 +262,12 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 3 — Les trois populations de la prévision et la logique par indices*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-masse-salariale/03.png",
+          "alt": "Le principe : faire évoluer une situation de référence",
+          "width": 2154,
+          "height": 540,
+          "caption": "Figure 3 — Les trois populations de la prévision et la logique par indices"
         },
         {
           "type": "callout",
@@ -770,8 +782,12 @@ export const chapter: Chapter = {
           "text": "L'écart total se décompose alors en trois sous-écarts, sur le modèle des écarts sur charges directes du PCG. Par convention, l'écart sur quantité s'évalue au prix prévu, et l'écart sur prix à la quantité réelle, afin de ne jamais croiser simultanément un effet quantité et un effet prix."
         },
         {
-          "type": "p",
-          "text": "*Figure 4 — Décomposition de l'écart sur masse salariale (cas l’entreprise)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-masse-salariale/04.png",
+          "alt": "La masse salariale comme charge directe",
+          "width": 1440,
+          "height": 760,
+          "caption": "Figure 4 — Décomposition de l'écart sur masse salariale (cas l’entreprise)"
         },
         {
           "type": "table",
@@ -1299,12 +1315,20 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
-          "text": "*Figure 5 — Les effets niveau, masse et report sur la masse salariale (N, N+1, N+2)*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-masse-salariale/05.png",
+          "alt": "Regard critique : apports et limites du budget de masse salariale",
+          "width": 2142,
+          "height": 468,
+          "caption": "Figure 5 — Les effets niveau, masse et report sur la masse salariale (N, N+1, N+2)"
         },
         {
-          "type": "p",
-          "text": "*Figure 6 — Lecture graphique : variation relative de la masse salariale d’un exercice à l’autre*"
+          "type": "image",
+          "src": "/figures/dcg-ue11-gestion-masse-salariale/06.png",
+          "alt": "Regard critique : apports et limites du budget de masse salariale",
+          "width": 2664,
+          "height": 948,
+          "caption": "Figure 6 — Lecture graphique : variation relative de la masse salariale d’un exercice à l’autre"
         },
         {
           "type": "callout",

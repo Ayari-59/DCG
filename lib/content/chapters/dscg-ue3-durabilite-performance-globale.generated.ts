@@ -13,6 +13,37 @@ export const chapter: Chapter = {
   "durationMin": 40,
   "sections": [
     {
+      "id": "preambule",
+      "title": "Préambule",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "**DSCG — UE3**"
+        },
+        {
+          "type": "p",
+          "text": "Management et contrôle de gestion"
+        },
+        {
+          "type": "p",
+          "text": "**Le pilotage stratégique de la durabilité et de la performance globale**"
+        },
+        {
+          "type": "p",
+          "text": "*Manuel premium de préparation à l'épreuve nationale*"
+        },
+        {
+          "type": "p",
+          "text": "Partie 3 — Volume indicatif : 5 heures (approfondi)"
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "text": "**Manuel premium de préparation à l'épreuve nationale du DSCG — UE3 « Management et contrôle de gestion »** Nouveau référentiel — Partie 3 « Concevoir et mettre en place des outils permettant d'analyser et de piloter la performance » — **Volume indicatif : 5 heures (traitées avec un haut niveau d'approfondissement)**"
+        }
+      ]
+    },
+    {
       "id": "note-de-conformite-au-referentiel-a-lire-avant-le-chapitre",
       "title": "Note de conformité au référentiel (à lire avant le chapitre)",
       "blocks": [
@@ -139,7 +170,8 @@ export const chapter: Chapter = {
           "text": "La performance économique demeure nécessaire — une entreprise non rentable disparaît — mais elle n'est plus **suffisante**. D'abord parce qu'une partie de la performance financière de court terme peut être obtenue en dégradant le capital naturel, humain ou social, créant une dette future (une « performance » illusoire). Ensuite parce que la performance durable est devenue une **condition de la performance économique de long terme** : une entreprise qui néglige ses impacts s'expose à des risques (réglementaires, réputationnels, physiques) et se prive d'opportunités (innovation, attractivité, accès au capital). Performance économique et performance durable, loin de s'opposer, se conditionnent mutuellement sur le long terme."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Problématique centrale.** Comment les organisations dépassent-elles la mesure financière traditionnelle pour piloter une **performance globale** intégrant les dimensions économique, sociale, environnementale et de gouvernance ; comment les outils du contrôle de gestion — indicateurs ESG, double matérialité, reporting CSRD, bilan carbone, tableaux de bord durables — permettent-ils de mesurer et de créer une valeur durable au service de l'ensemble des parties prenantes ?"
         },
         {
@@ -179,7 +211,8 @@ export const chapter: Chapter = {
           "text": "2.1 Les limites des indicateurs financiers"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté ; Kaplan & Norton, Freeman, Porter, Elkington.*"
         },
         {
@@ -195,7 +228,8 @@ export const chapter: Chapter = {
           "text": "2.2 La notion de performance globale"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté.*"
         },
         {
@@ -250,11 +284,19 @@ export const chapter: Chapter = {
           "text": "Schéma 2 — Le modèle de performance globale *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-durabilite-performance-globale/01.png",
+          "alt": "Schéma 2 — Le modèle de performance globale *(obligatoire)*",
+          "width": 1804,
+          "height": 1188
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma articule les dimensions de la performance globale autour de leur intersection — la **création de valeur durable**, qui ne se situe ni dans le seul économique, ni dans le seul environnemental ou social, mais dans leur **conjonction**. Sa lecture déplace le regard : la performance n'est plus un point (le profit) mais un **équilibre** entre dimensions parfois convergentes, parfois en tension. Le rôle du pilotage durable est précisément de gérer cet équilibre : maximiser les zones de convergence (où économique et durable se renforcent) et arbitrer explicitement les tensions, plutôt que de les ignorer. Ce modèle fonde toute la démarche du chapitre."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Cette performance élargie se comprend à la lumière de la théorie des parties prenantes."
         }
       ]
@@ -264,7 +306,8 @@ export const chapter: Chapter = {
       "title": "3. Les parties prenantes et la création de valeur durable",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : repris-adapté (Cours 1, gouvernance) ; Freeman, Clarkson, Mitchell, Porter & Kramer.*"
         },
         {
@@ -284,7 +327,8 @@ export const chapter: Chapter = {
           "text": "3.2 La création de valeur partagée"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; Porter & Kramer.*"
         },
         {
@@ -294,6 +338,13 @@ export const chapter: Chapter = {
         {
           "type": "h4",
           "text": "Cartographie 3 — Cartographie des parties prenantes *(obligatoire)*"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-durabilite-performance-globale/02.png",
+          "alt": "Cartographie 3 — Cartographie des parties prenantes *(obligatoire)*",
+          "width": 1804,
+          "height": 1232
         },
         {
           "type": "p",
@@ -357,7 +408,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ces attentes se structurent autour de trois familles de critères : les critères ESG."
         }
       ]
@@ -367,7 +419,8 @@ export const chapter: Chapter = {
       "title": "4. Les critères ESG",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé / complété ; lien chapitres 2.5 (risques) et 2.6 (social).*"
         },
         {
@@ -484,11 +537,19 @@ export const chapter: Chapter = {
           "text": "Graphique 4 — Profil ESG d'une organisation (radar) *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-durabilite-performance-globale/03.png",
+          "alt": "Graphique 4 — Profil ESG d'une organisation (radar) *(obligatoire)*",
+          "width": 1804,
+          "height": 1232
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le radar ESG positionne l'organisation sur les trois piliers déclinés en sous-dimensions (climat, ressources, social interne, chaîne de valeur, éthique, transparence), en comparant le profil actuel à une cible ou à un référentiel sectoriel. Sa lecture révèle les **forces** et les **axes de progrès** : une entreprise peut exceller en gouvernance et en social mais accuser un retard environnemental (ou l'inverse). Le radar est un outil de diagnostic et de communication précieux — pour le pilotage interne (où investir l'effort ?) comme pour le dialogue avec les investisseurs (objectiver le profil ESG). Sa limite : il agrège des dimensions hétérogènes, et la note globale peut masquer une faiblesse critique sur un pilier — d'où l'importance de ne pas se contenter du score agrégé."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Pour déterminer les enjeux ESG à piloter en priorité, un concept central s'impose : la double matérialité."
         }
       ]
@@ -498,7 +559,8 @@ export const chapter: Chapter = {
       "title": "5. La double matérialité",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé / complété ; lien chapitre 2.5 ; cadre CSRD.*"
         },
         {
@@ -534,6 +596,13 @@ export const chapter: Chapter = {
           "text": "Matrice 5 — Matrice de double matérialité *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-durabilite-performance-globale/04.png",
+          "alt": "Matrice 5 — Matrice de double matérialité *(obligatoire)*",
+          "width": 1804,
+          "height": 1276
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** La matrice croise les deux axes — matérialité d'impact (en abscisse : impact de l'entreprise sur la société/environnement) et matérialité financière (en ordonnée : impact des enjeux sur l'entreprise) — et y positionne les enjeux de durabilité. Sa lecture identifie quatre zones. Les enjeux **doublement matériels** (en haut à droite : forts sur les deux axes, comme le climat pour une entreprise industrielle) sont prioritaires : ils doivent être pilotés et reportés en priorité. Les enjeux à forte matérialité **financière seule** (risque pour l'entreprise) relèvent du pilotage des risques (chapitre 2.5). Les enjeux à forte matérialité **d'impact seule** engagent la responsabilité de l'entreprise même sans enjeu financier immédiat. Les enjeux faibles sur les deux axes sont secondaires. La matrice est l'outil de **priorisation** qui fonde le rapport de durabilité et concentre l'effort de pilotage sur l'essentiel."
         },
@@ -546,7 +615,8 @@ export const chapter: Chapter = {
           "text": "Considérons une entreprise agroalimentaire. L'analyse de double matérialité pourrait faire ressortir : l'**eau** comme enjeu doublement matériel (l'entreprise dépend de la ressource — matérialité financière — et son prélèvement affecte les territoires — matérialité d'impact) ; les **émissions carbone** comme doublement matérielles (risque réglementaire et de transition ; contribution au changement climatique) ; la **nutrition/santé** des produits comme enjeu d'impact majeur (santé publique) doublé d'un enjeu financier (réglementation, attentes consommateurs) ; les **conditions de travail agricoles** dans la chaîne d'approvisionnement comme enjeu d'impact fort. À l'inverse, certains enjeux génériques peuvent s'avérer peu matériels pour ce secteur. Cette analyse oriente le rapport de durabilité et le système de pilotage : l'entreprise construira des indicateurs et des objectifs sur l'eau, le carbone, la nutrition et la chaîne d'approvisionnement en priorité."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Cette analyse s'inscrit dans le cadre réglementaire de la CSRD et des normes ESRS."
         }
       ]
@@ -556,7 +626,8 @@ export const chapter: Chapter = {
       "title": "6. La CSRD et les normes ESRS",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; cadre réglementaire européen (évolutif — voir note de conformité).*"
         },
         {
@@ -653,11 +724,19 @@ export const chapter: Chapter = {
           "text": "Schéma 6 — Architecture du reporting CSRD *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-durabilite-performance-globale/05.png",
+          "alt": "Schéma 6 — Architecture du reporting CSRD *(obligatoire)*",
+          "width": 1936,
+          "height": 968
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma représente l'architecture du reporting CSRD : en amont, l'**analyse de double matérialité** détermine les enjeux à reporter ; au centre, les **normes ESRS** (transversales et thématiques E/S/G) structurent l'information ; en aval, le **rapport de durabilité** intégré au rapport de gestion, soumis à une **vérification** par un tiers indépendant. Sa lecture met en évidence la logique d'ensemble : la double matérialité **filtre** (que reporter ?), les ESRS **normalisent** (comment reporter ?), l'audit **fiabilise** (l'information est-elle crédible ?). Cette chaîne fait du reporting de durabilité un dispositif aussi rigoureux que le reporting financier — et explique pourquoi il mobilise désormais le contrôle de gestion, garant de la fiabilité des données."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Produire et piloter cette information durable redéfinit le rôle du contrôle de gestion."
         }
       ]
@@ -667,7 +746,8 @@ export const chapter: Chapter = {
       "title": "7. Le rôle du contrôle de gestion dans la durabilité",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; Kaplan & Norton ; lien Partie 3.*"
         },
         {
@@ -687,7 +767,8 @@ export const chapter: Chapter = {
           "text": "7.2 L'intégration dans le système de pilotage"
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; Kaplan & Norton.*"
         },
         {
@@ -823,11 +904,19 @@ export const chapter: Chapter = {
           "text": "Schéma 7 — Architecture d'un système de pilotage durable *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-durabilite-performance-globale/06.png",
+          "alt": "Schéma 7 — Architecture d'un système de pilotage durable *(obligatoire)*",
+          "width": 1892,
+          "height": 1034
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma articule les niveaux d'un système de pilotage durable : à la base, la **collecte des données ESG** (systèmes d'information dédiés, capteurs, données fournisseurs) ; au-dessus, les **indicateurs et tableaux de bord ESG** ; au sommet, l'**intégration stratégique** (BSC durable reliant durabilité et stratégie) et le **reporting** (CSRD). Sa lecture montre le parallèle avec le pilotage financier : même architecture (donnée → indicateur → pilotage → reporting), appliquée à de nouveaux objets. Le message clé : la durabilité n'est pas un système de pilotage parallèle mais une **extension intégrée** du système de pilotage existant, sous la responsabilité d'un contrôle de gestion élargi."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Au cœur de la performance environnementale, un instrument s'impose : le bilan carbone."
         }
       ]
@@ -837,7 +926,8 @@ export const chapter: Chapter = {
       "title": "8. La mesure et le pilotage de l'empreinte environnementale",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; méthodologie GHG Protocol / Bilan Carbone.*"
         },
         {
@@ -916,11 +1006,19 @@ export const chapter: Chapter = {
           "text": "Graphique 8 — Répartition des émissions carbone par scope *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-durabilite-performance-globale/07.png",
+          "alt": "Graphique 8 — Répartition des émissions carbone par scope *(obligatoire)*",
+          "width": 1804,
+          "height": 968
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le graphique répartit les émissions totales entre les trois scopes, faisant ressortir le poids dominant du **scope 3** (chaîne de valeur). Cette visualisation est stratégiquement décisive : elle montre que l'essentiel du levier de décarbonation se situe **hors des murs** de l'entreprise (chez ses fournisseurs et dans l'usage de ses produits), ce qui appelle une action collaborative (engager les fournisseurs, écoconcevoir les produits) plutôt que de seules mesures internes. Une entreprise qui ne piloterait que ses scopes 1 et 2 négligerait 70 à 90 % de son empreinte. Le graphique oriente ainsi la stratégie climatique vers là où elle compte vraiment — et illustre pourquoi la durabilité est un enjeu de chaîne de valeur, non de périmètre juridique étroit."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Le pilotage durable est puissamment outillé — et questionné — par le numérique et l'intelligence artificielle."
         }
       ]
@@ -930,7 +1028,8 @@ export const chapter: Chapter = {
       "title": "9. Digitalisation, IA et durabilité",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; ouverture contemporaine.*"
         },
         {
@@ -990,11 +1089,19 @@ export const chapter: Chapter = {
           "text": "Schéma 9 — Système de pilotage ESG augmenté par l'IA *(obligatoire)*"
         },
         {
+          "type": "image",
+          "src": "/figures/dscg-ue3-durabilite-performance-globale/08.png",
+          "alt": "Schéma 9 — Système de pilotage ESG augmenté par l'IA *(obligatoire)*",
+          "width": 1892,
+          "height": 1188
+        },
+        {
           "type": "p",
           "text": "**Interprétation managériale.** Le schéma représente le système de pilotage ESG augmenté : autour d'un socle de **données ESG intégrées** (interne, fournisseurs, capteurs IoT) et d'outils d'**IA/analytics**, gravitent les activités du pilotage durable (mesure d'empreinte, suivi des indicateurs, simulation de trajectoires, reporting CSRD). Au centre, le rôle du contrôleur de gestion durable se concentre sur la fiabilisation, l'analyse et l'aide à la décision. Le message rejoint les chapitres précédents : la technologie augmente le pilotage durable (couverture, finesse, rapidité), mais ne dispense ni de la rigueur sur les données, ni du jugement humain — d'autant plus nécessaire que la durabilité engage des arbitrages de valeurs, non de simples calculs."
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "tip",
           "text": "**Transition.** Ces démarches s'incarnent dans des stratégies d'entreprises."
         }
       ]
@@ -1004,7 +1111,8 @@ export const chapter: Chapter = {
       "title": "10. Cas d'entreprises et illustrations professionnelles",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé — illustrations pédagogiques simplifiées (voir avertissement en tête de chapitre).*"
         },
         {
@@ -1073,7 +1181,8 @@ export const chapter: Chapter = {
           ]
         },
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "**Transition.** Ces cas et concepts convergent vers les attendus de l'épreuve."
         }
       ]
@@ -1083,7 +1192,8 @@ export const chapter: Chapter = {
       "title": "11. Approfondissements DSCG",
       "blocks": [
         {
-          "type": "p",
+          "type": "callout",
+          "variant": "info",
           "text": "*Statut : créé ; orienté préparation à l'épreuve.*"
         },
         {
@@ -1159,6 +1269,13 @@ export const chapter: Chapter = {
         {
           "type": "h3",
           "text": "12.2 Carte mentale"
+        },
+        {
+          "type": "image",
+          "src": "/figures/dscg-ue3-durabilite-performance-globale/09.png",
+          "alt": "12.2 Carte mentale",
+          "width": 2288,
+          "height": 1320
         },
         {
           "type": "h3",
