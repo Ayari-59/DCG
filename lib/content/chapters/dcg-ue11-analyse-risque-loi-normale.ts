@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-analyse-risque-loi-normale.gene
  */
 export const analyseRisqueLoiNormale: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "DTvhhB9bR00", title: "Analyse du risque" }],
   description:
     "Modéliser une grandeur de gestion par une variable aléatoire suivant une loi normale : espérance, variance et écart-type, centrage-réduction et lecture de la table, seuil de profitabilité probabilisé, intervalle de confiance d'une moyenne, indicateurs de risque d'exploitation et élasticités prix.",
   flashcards: [

@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-methode-couts-complets.generate
  */
 export const methodeCoutsComplets: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "1s7_gUOqeKk", title: "Coûts complets" }],
   description:
     "La méthode fondatrice des centres d'analyse (sections homogènes) : traitement des charges directes et indirectes, répartitions primaire et secondaire, prestations réciproques, unités d'œuvre et taux de frais, jusqu'à la chaîne coût d'achat → coût de production → coût de revient et au résultat analytique, avec la valorisation des stocks (CMUP, PEPS).",
   flashcards: [

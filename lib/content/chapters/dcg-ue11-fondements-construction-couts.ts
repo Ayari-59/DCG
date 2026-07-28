@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-fondements-construction-couts.g
  */
 export const fondementsConstructionCouts: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "2YOsTf33DaM", title: "Comptabilité de gestion" }],
   description:
     "Chapitre fondateur du bloc « coûts » : le coût comme construction au service de la décision, le tri des charges (incorporables, non incorporables, supplétives), les classifications directes/indirectes et fixes/variables, puis l'enchaînement coût d'achat → coût de production → coût de revient → résultat analytique, avec marges, taux et panorama des grandes méthodes.",
   flashcards: [
