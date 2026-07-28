@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-imputation-rationnelle.generate
  */
 export const imputationRationnelle: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "FhSVj47rWdI", title: "Imputation rationnelle" }],
   description:
     "Neutraliser l'effet du niveau d'activité sur le coût unitaire : coefficient d'imputation rationnelle, charges fixes imputées au prorata de l'activité, coût de sous-activité et boni de suractivité. La méthode isole la performance productive de l'utilisation de l'outil pour éclairer les décisions de pilotage des capacités.",
   flashcards: [
