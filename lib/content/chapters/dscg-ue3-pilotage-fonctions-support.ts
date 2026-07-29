@@ -103,7 +103,7 @@ export const pilotageFonctionsSupport: Chapter = {
         "La gestion des ressources humaines",
         "Les services (après-vente)",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Porter distingue 5 activités primaires (logistique interne, production, logistique externe, commercialisation/vente, services) et 4 activités de soutien (achats, développement technologique, GRH, infrastructure). Piège classique : la logistique interne est une activité PRIMAIRE, pas de soutien.",
     },
@@ -116,7 +116,7 @@ export const pilotageFonctionsSupport: Chapter = {
         "La qualité fournisseur et le délai de livraison",
         "La part de marché et la croissance du marché",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "La matrice de Kraljic (1983) croise l'impact sur le résultat / poids financier (ordonnée) et le risque d'approvisionnement / complexité du marché fournisseur (abscisse). Part de marché × croissance, c'est la matrice BCG — ne pas confondre.",
     },
@@ -130,7 +130,7 @@ export const pilotageFonctionsSupport: Chapter = {
         "Stratégiques, appelant un partenariat de long terme",
         "Critiques (goulots), exigeant de sécuriser l'approvisionnement",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Fort risque + faible poids = achats critiques/goulots : la priorité est de sécuriser l'approvisionnement (stocks de sécurité, fournisseurs alternatifs). Les achats stratégiques combinent fort risque ET fort poids ; les leviers, fort poids et faible risque.",
     },
@@ -139,7 +139,7 @@ export const pilotageFonctionsSupport: Chapter = {
       question:
         "Un CSP informatique coûte 1 200 000 € par an et sert 3 directions. En coût complet au prorata des postes (Commerciale 250, Production 150, Administrative 100), combien est refacturé à la Direction Production ?",
       choices: ["240 000 €", "360 000 €", "600 000 €", "576 000 €"],
-      answer: 1,
+      answers: [1],
       explanation:
         "Total = 500 postes. Production = 150/500 = 30 %. Refacturation = 1 200 000 × 30 % = 360 000 €. La Commerciale (50 %) reçoit 600 000 € et l'Administrative (20 %) 240 000 €. 576 000 € est le montant obtenu par la méthode ABC, pas par le coût complet.",
     },
@@ -153,7 +153,7 @@ export const pilotageFonctionsSupport: Chapter = {
         "Que le coût complet sous-facturait la Production, subventionnée à son insu par la Commerciale",
         "Que le CSP est inefficient et doit être externalisé",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "L'ABC révèle la consommation réelle : la Production, avec peu de postes mais une forte consommation d'hébergement et de projets, est le principal consommateur de ressources IT. Sous coût complet, la Commerciale la subventionnait sans le savoir, ce qui faussait les arbitrages (risque d'externalisation à tort d'une IT jugée « trop chère »).",
     },
@@ -167,7 +167,7 @@ export const pilotageFonctionsSupport: Chapter = {
         "Elle exige un marché de référence externe pas toujours disponible",
         "Elle est trop complexe et coûteuse à mettre en œuvre",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Le coût complet est simple et couvre tous les coûts, mais il refacture aussi l'inefficience éventuelle du support, et le choix de la clé (unité d'œuvre) peut être arbitraire. L'absence de marché de référence est la limite du prix de marché ; la complexité, celle de l'ABC.",
     },
@@ -180,7 +180,7 @@ export const pilotageFonctionsSupport: Chapter = {
         "Un coût unitaire piloté par rapport à un standard, pour un volume donné",
         "La responsabilité de sa marge et de ses investissements",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Le centre de coûts discrétionnaire (DRH, DSI, communication, juridique) a une dépense non liée mécaniquement au volume : impossible de juger le « bon montant » par une relation coût/production. On le pilote par le respect du budget complété d'indicateurs de service. Coûts + CA = centre de profit ; marge + investissements = centre d'investissement.",
     },
@@ -189,7 +189,7 @@ export const pilotageFonctionsSupport: Chapter = {
       question:
         "Une entreprise a un coût des ventes annuel de 2 400 000 € et un stock moyen de 300 000 €. Quelle est la rotation de ses stocks ?",
       choices: ["0,125", "6", "12,5", "8"],
-      answer: 3,
+      answers: [3],
       explanation:
         "Rotation des stocks = coût des ventes ÷ stock moyen = 2 400 000 ÷ 300 000 = 8. Le stock « tourne » 8 fois par an. 0,125 est le ratio inverse. Une rotation élevée libère de la trésorerie (BFR) mais accroît le risque de rupture.",
     },
@@ -203,7 +203,7 @@ export const pilotageFonctionsSupport: Chapter = {
         "De l'effet coup de fouet (bullwhip effect)",
         "D'un coût irrécupérable (sunk cost)",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "C'est l'effet pervers classique de la responsabilisation par centres : l'acheteur optimise SON centre (prix d'achat) au détriment du tout. D'où la nécessité de raisonner en coût total (TCO) et de compléter les objectifs locaux par des indicateurs transverses. L'effet coup de fouet concerne l'amplification de la demande dans la supply chain.",
     },
@@ -217,7 +217,7 @@ export const pilotageFonctionsSupport: Chapter = {
         "La perspective apprentissage (compétences, SI, climat)",
         "La perspective processus internes",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "La chaîne de causalité est ascendante : apprentissage → processus internes → client → financière. Le BSC « se construit à partir du bas et en remontant vers le haut » : compétences et SI (domaine des fonctions support) améliorent les processus, donc la satisfaction client, donc le résultat. Les fonctions support sont à la racine de la valeur, pas en bout de chaîne.",
     },

@@ -97,7 +97,7 @@ export const performanceGlobaleDurabilite: Chapter = {
       id: "q1",
       question: "Parmi les quatre « E » de la performance, lequel mesure le rapport entre les résultats obtenus et les moyens engagés ?",
       choices: ["La pertinence", "L'économie", "L'efficience", "L'efficacité"],
-      answer: 2,
+      answers: [2],
       explanation:
         "Efficience = résultats / moyens engagés (bien utiliser les ressources). L'efficacité rapporte les résultats aux objectifs, l'économie mesure le coût d'acquisition des ressources, la pertinence l'adéquation des moyens aux objectifs. Piège classique : confondre efficacité (objectif atteint) et efficience (sans gaspiller).",
     },
@@ -110,7 +110,7 @@ export const performanceGlobaleDurabilite: Chapter = {
         "Chaque indicateur ESG doit être calculé selon deux méthodes différentes",
         "Le reporting doit couvrir à la fois la maison mère et ses filiales",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "La double matérialité combine la matérialité financière (impact des enjeux de durabilité sur la situation de l'entreprise) et la matérialité d'impact (impact de l'activité sur l'environnement et la société). C'est, avec les normes communes ESRS et la vérification par un tiers, l'un des trois principes de la CSRD.",
     },
@@ -123,7 +123,7 @@ export const performanceGlobaleDurabilite: Chapter = {
         "Le prix de transfert est toujours égal au prix de marché, le PCI au coût réel",
         "Le PCI s'applique entre centres de responsabilité d'une même entité ; le prix de transfert entre entités juridiquement distinctes d'un groupe (enjeu fiscal), hors programme UE11",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le référentiel précise que seul le prix de cession interne est au programme : transaction entre centres d'une même organisation, à finalité de pilotage. Le prix de transfert vise les transactions entre entités juridiquement distinctes d'un groupe, avec un enjeu fiscal et international — il n'est pas traité en UE11. Confusion signalée dans les pièges à éviter.",
     },
@@ -136,7 +136,7 @@ export const performanceGlobaleDurabilite: Chapter = {
         "Il subit les fluctuations du marché",
         "Il exige l'existence d'un marché de référence",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Avec un PCI au coût réel, tout dérapage de coûts du cédant est automatiquement facturé au preneur : le cédant n'est plus incité à maîtriser ses coûts. Les fluctuations et l'exigence d'un marché de référence sont les limites du PCI au prix de marché ; le coût standard, lui, motive le cédant à tenir ses coûts.",
     },
@@ -150,7 +150,7 @@ export const performanceGlobaleDurabilite: Chapter = {
         "1,80 kg/unité, en dégradation de + 12,5 %",
         "0,56 kg/unité, en amélioration",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Indicateur unitaire = impact total / volume d'activité : 117 000 / 65 000 = 1,80 kg CO₂/unité contre 96 000 / 60 000 = 1,60 en N−1, soit (1,80 − 1,60) / 1,60 = + 12,5 %. L'indicateur relatif révèle une dégradation que la seule hausse de production aurait masquée — toujours préférer l'indicateur par unité à la donnée brute.",
     },
@@ -163,7 +163,7 @@ export const performanceGlobaleDurabilite: Chapter = {
         "Restituer l'information sous forme de tableaux de bord interactifs",
         "Fournir un sous-ensemble de données dédié à un métier",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "ETL = Extraire, Transformer, Charger : c'est le maillon de la qualité, où les données sont nettoyées, dédoublonnées et harmonisées. Le stockage consolidé est le rôle du Data Warehouse, le sous-ensemble métier celui du Data Mart, la restitution celui des outils de visualisation. « Garbage in, garbage out » : un ETL défaillant produit des tableaux de bord trompeurs.",
     },
@@ -171,7 +171,7 @@ export const performanceGlobaleDurabilite: Chapter = {
       id: "q7",
       question: "Quel niveau du Data Analytics répond à la question « Que faut-il faire ? » ?",
       choices: ["Le niveau prédictif", "Le niveau prescriptif", "Le niveau diagnostique", "Le niveau descriptif"],
-      answer: 1,
+      answers: [1],
       explanation:
         "Descriptif : que s'est-il passé ? Diagnostique : pourquoi ? Prédictif : que va-t-il se passer ? Prescriptif : que faut-il faire ? (optimisation, IA — ex. : niveau de stock optimal). Piège signalé dans la fiche de révision : ne pas confondre prédictif (anticiper) et prescriptif (recommander une action).",
     },
@@ -184,7 +184,7 @@ export const performanceGlobaleDurabilite: Chapter = {
         "Véracité et valeur",
         "Vitesse et variété",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "La véracité (fiabilité de la donnée) conditionne la confiance dans l'analyse ; la valeur rappelle qu'une masse de données n'a d'intérêt que si elle débouche sur une information utile au pilotage. Volume, vitesse et variété caractérisent la masse de données, mais ne garantissent ni sa fiabilité ni son utilité décisionnelle.",
     },
@@ -197,7 +197,7 @@ export const performanceGlobaleDurabilite: Chapter = {
         "Remplacer tous les indicateurs financiers par des indicateurs environnementaux",
         "Externaliser la production dans des pays aux normes environnementales moins strictes",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Le greenwashing (écoblanchiment) détourne le reporting extra-financier en outil de communication plutôt que de pilotage : indicateurs flatteurs mis en avant, impacts négatifs masqués. La vérification par un tiers et la double matérialité introduites par la CSRD visent précisément à limiter ce risque.",
     },
@@ -206,7 +206,7 @@ export const performanceGlobaleDurabilite: Chapter = {
       question:
         "Le centre cédant de Rakéo facture ses cadres au coût standard majoré d'une marge, soit un PCI de 42 € pour un coût de production de 38 €, et cède 65 000 unités. Quelle est la contribution du centre cédant ?",
       choices: ["2 730 000 €", "130 000 €", "442 000 €", "260 000 €"],
-      answer: 3,
+      answers: [3],
       explanation:
         "Résultat du centre cédant = (PCI − coût de production) × quantités cédées = (42 − 38) × 65 000 = 260 000 €. Le PCI au coût standard + marge responsabilise le cédant (il doit tenir son standard de 38 €) tout en lui reconnaissant une contribution au résultat. 2 730 000 € correspondrait au chiffre d'affaires interne (42 × 65 000), pas à la contribution.",
     },

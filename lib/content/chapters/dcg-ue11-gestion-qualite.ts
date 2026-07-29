@@ -102,7 +102,7 @@ export const gestionQualite: Chapter = {
         "L'aptitude d'un ensemble de caractéristiques à satisfaire des besoins ou attentes, exprimés ou implicites",
         "L'absence totale de défauts constatée au contrôle final",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "La qualité n'est pas une propriété objective et absolue : elle se juge relativement à l'usage et aux attentes du client (exprimés OU implicites). D'où l'objectif de qualité optimale — satisfaire le client au meilleur coût — et non de qualité maximale.",
     },
@@ -115,7 +115,7 @@ export const gestionQualite: Chapter = {
         "Des coûts de défaillance interne",
         "Des coûts de défaillance externe",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Ce sont des dépenses engagées pour éviter préventivement l'apparition des anomalies, AVANT que le défaut ne survienne : formation, maintenance préventive, conception soignée, sélection et audit des fournisseurs. Un contrôle serait de l'évaluation, une retouche une défaillance interne.",
     },
@@ -128,7 +128,7 @@ export const gestionQualite: Chapter = {
         "Des coûts de défaillance interne",
         "Des coûts de défaillance externe",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le défaut est détecté APRÈS la livraison au client : garanties, SAV, indemnités, rappels, et surtout l'atteinte à l'image et le manque à gagner. C'est la catégorie la plus dangereuse, car aux coûts directs s'ajoutent des coûts difficilement chiffrables.",
     },
@@ -137,7 +137,7 @@ export const gestionQualite: Chapter = {
       question:
         "Chez CERAMIX, le COQ se décompose en : prévention 55 k€, évaluation 53 k€, défaillance interne 83 k€, défaillance externe 99 k€. Quelle est la part des coûts de non-conformité dans le COQ total ?",
       choices: ["37,2 %", "62,8 %", "34,1 %", "50,0 %"],
-      answer: 1,
+      answers: [1],
       explanation:
         "COQ total = 55 + 53 + 83 + 99 = 290 k€. Non-conformité (coûts subis) = défaillances interne + externe = 83 + 99 = 182 k€, soit 182 ÷ 290 = 62,8 %. La conformité (prévention + évaluation = 108 k€) ne pèse que 37,2 % : l'entreprise se situe à gauche de l'optimum, un rééquilibrage vers la prévention est justifié.",
     },
@@ -150,7 +150,7 @@ export const gestionQualite: Chapter = {
         "Les coûts non repérés par les systèmes d'information classiques (comptabilité, budgets, tableaux de bord)",
         "Les charges exceptionnelles non budgétées",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Par opposition aux coûts visibles qui possèdent une dénomination comptable, les coûts cachés existent mais ne sont pas identifiés : ils sont transversaux, différés dans le temps et sans dénomination comptable propre. Les 5 composantes de l'ISÉOR : sursalaires, surtemps, surconsommations, non-productions, non-création de potentiel stratégique.",
     },
@@ -163,7 +163,7 @@ export const gestionQualite: Chapter = {
         "Standardiser et généraliser ce qui fonctionne",
         "Mettre en œuvre les actions à titre expérimental",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Plan = planifier (analyser, fixer les objectifs), Do = réaliser (mise en œuvre expérimentale), Check = vérifier (mesurer et comparer aux objectifs), Act = agir (corriger puis standardiser). La standardisation joue le rôle de cale qui empêche la roue de redescendre la pente du progrès.",
     },
@@ -176,7 +176,7 @@ export const gestionQualite: Chapter = {
         "Il classe les causes par ordre croissant de fréquence",
         "Il repose sur le principe qu'environ 20 % des causes produisent environ 80 % des effets",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "C'est la loi des 20/80 : on classe les défauts par fréquence DÉCROISSANTE, on calcule les fréquences cumulées et on hiérarchise les priorités d'action. Sa limite : il dit où agir mais pas pourquoi le problème survient — c'est le rôle complémentaire du diagramme d'Ishikawa (5 M).",
     },
@@ -189,7 +189,7 @@ export const gestionQualite: Chapter = {
         "Matière, Machine, Maintenance, Management, Marketing",
         "Moyens, Méthode, Mesure, Milieu, Management",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Le diagramme causes-effets « en arêtes de poisson » classe les causes d'un dysfonctionnement en 5 familles : Matière, Matériel, Méthode, Main-d'œuvre, Milieu (on ajoute parfois un 6ᵉ M, le Management). C'est un outil de réflexion collective, non mathématique, animé par la question « pourquoi ? » (les 5 pourquoi).",
     },
@@ -203,7 +203,7 @@ export const gestionQualite: Chapter = {
         "[17,3 ; 19,7] minutes",
         "[14,9 ; 22,1] minutes",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "On corrige d'abord l'écart type : s = √(36/35) × 3,6 ≈ 3,65 min. Puis IC = [x̄ ± t × s/√n] = [18,5 ± 1,96 × 3,65/6] = [18,5 ± 1,19] ≈ [17,3 ; 19,7] minutes. Piège classique : oublier de corriger σ' en s avant le calcul. Rappel : t = 1,96 à 95 % et 2,575 à 99 %.",
     },
@@ -216,7 +216,7 @@ export const gestionQualite: Chapter = {
         "L'intervalle de confiance d'une proportion",
         "Les lois de Poisson et binomiale appliquées aux défauts",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Le guide pédagogique encadre strictement le programme : seule la loi normale est mobilisée, et l'échantillonnage est abordé sous le seul angle des estimations. L'IC ne concerne que la MOYENNE ; les tests d'hypothèse et l'IC d'une proportion sont hors programme (pour une proportion, seule l'estimation ponctuelle p ≈ f est admise).",
     },

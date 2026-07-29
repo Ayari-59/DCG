@@ -97,7 +97,7 @@ export const pilotageProcessusProduction: Chapter = {
       id: "q1",
       question: "Dans l'acronyme SIPOC, que désigne le « S » ?",
       choices: ["Standards", "Suppliers (fournisseurs)", "Stocks", "Séquences"],
-      answer: 1,
+      answers: [1],
       explanation:
         "SIPOC = Suppliers, Inputs, Process, Outputs, Customers. C'est la vue macroscopique d'un processus, du fournisseur au client.",
     },
@@ -106,7 +106,7 @@ export const pilotageProcessusProduction: Chapter = {
       question:
         "Un atelier termine 4 000 unités ; l'en-cours final est de 1 000 unités avancées à 50 % en transformation. Les coûts de transformation de la période sont de 45 000 €. Quel est le coût de transformation par équivalent-produit fini ?",
       choices: ["11,25 €", "9,00 €", "10,00 €", "45,00 €"],
-      answer: 2,
+      answers: [2],
       explanation:
         "Production équivalente = 4 000 + (1 000 × 50 %) = 4 500 EPF. Coût unitaire = 45 000 ÷ 4 500 = 10 €. Diviser par 4 000 (11,25 €) ignorerait les en-cours.",
     },
@@ -120,7 +120,7 @@ export const pilotageProcessusProduction: Chapter = {
         "Autant de A que de B",
         "A, car il utilise mieux la capacité disponible",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Sous contrainte, on classe par marge par unité de facteur rare : A = 60/2 = 30 €/h de goulot, B = 40/1 = 40 €/h. B sature le goulot plus profitablement — c'est LE piège classique de l'épreuve.",
     },
@@ -134,7 +134,7 @@ export const pilotageProcessusProduction: Chapter = {
         "Un coût irrécupérable, non pertinent pour la décision",
         "À amortir sur la durée de vie du produit dans le calcul décisionnel",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "L'étude est payée quelle que soit la décision : c'est un sunk cost. Seuls les coûts futurs ET différentiels sont pertinents pour décider.",
     },
@@ -147,7 +147,7 @@ export const pilotageProcessusProduction: Chapter = {
         "Au prix de vente final diminué des coûts spécifiques engagés après le point de séparation",
         "Aux marges cibles de chaque produit",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "VNR = prix de vente final − coûts spécifiques après séparation. Utile quand les produits ne sont pas vendables en l'état au point de séparation.",
     },
@@ -160,7 +160,7 @@ export const pilotageProcessusProduction: Chapter = {
         "Subordonner les autres ressources à la contrainte",
         "Équilibrer les capacités de tous les postes",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Les 5 étapes : identifier → exploiter → subordonner → élever → recommencer. Goldratt rejette d'ailleurs l'idée d'équilibrer les capacités : il faut équilibrer le flux, pas les capacités.",
     },
@@ -173,7 +173,7 @@ export const pilotageProcessusProduction: Chapter = {
         "La possibilité de vendre à l'avance",
         "Une part prépondérante de coûts variables dans la structure de coûts",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "C'est l'inverse : le yield management suppose des coûts fixes élevés et des coûts variables faibles — chaque siège ou chambre vendu en plus est presque intégralement de la marge.",
     },
@@ -182,7 +182,7 @@ export const pilotageProcessusProduction: Chapter = {
       question:
         "Un produit doit être vendu 250 € avec une marge cible de 20 % du prix. Le coût estimé actuel est de 230 €. Quel est l'effort de réduction de coût à réaliser ?",
       choices: ["20 €", "30 €", "50 €", "80 €"],
-      answer: 1,
+      answers: [1],
       explanation:
         "Coût cible = 250 − (250 × 20 %) = 200 €. Effort de réduction = coût estimé − coût cible = 230 − 200 = 30 €. C'est la boucle du target costing : le marché impose le coût, pas l'inverse.",
     },
@@ -195,7 +195,7 @@ export const pilotageProcessusProduction: Chapter = {
         "Des coûts de défaillance interne",
         "Des coûts de défaillance externe",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le défaut a atteint le client : défaillance externe (retours, garantie, rappels, atteinte à l'image) — la catégorie la plus coûteuse, car elle touche la réputation.",
     },
@@ -208,7 +208,7 @@ export const pilotageProcessusProduction: Chapter = {
         "L'activité moyenne attendue sur le cycle d'exploitation",
         "L'activité réellement constatée sur la période",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Hiérarchie : théorique (maximum absolu) > pratique (− arrêts inévitables) > normale (activité moyenne attendue, base de l'imputation rationnelle) > réelle (constatée).",
     },

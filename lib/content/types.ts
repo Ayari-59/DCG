@@ -35,9 +35,19 @@ export interface QuizQuestion {
   id: string;
   question: string;
   choices: string[];
-  /** index de la bonne réponse dans choices */
-  answer: number;
+  /**
+   * Index des bonnes réponses dans choices. Une liste plutôt qu'un seul
+   * indice : les QCM du manuel comptent une question sur cinq à réponses
+   * multiples, et ce sont souvent les plus discriminantes.
+   */
+  answers: number[];
   explanation: string;
+  /**
+   * Vrai lorsque les propositions n'ont pas été écrites par l'auteur mais
+   * reconstituées : l'énoncé, la bonne réponse et la justification viennent
+   * de son corrigé, les distracteurs restent à relire.
+   */
+  distracteursARelire?: boolean;
 }
 
 export interface ChapterVideo {

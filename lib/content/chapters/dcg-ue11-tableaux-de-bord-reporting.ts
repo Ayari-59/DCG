@@ -105,7 +105,7 @@ export const tableauxDeBordReporting: Chapter = {
         "Un document de synthèse sur mesure, constitué d'indicateurs sélectifs régulièrement mis à jour, orienté vers l'action",
         "Un fichier standardisé identique pour tous les centres de responsabilité",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Le tableau de bord est synthétique (une page, une dizaine d'indicateurs), sur mesure (contingent, jamais standardisé) et orienté vers l'action. L'exhaustivité et la standardisation sont précisément ce qu'il évite — un tableau de bord de 40 lignes est « un fichier comptable déguisé ».",
     },
@@ -118,7 +118,7 @@ export const tableauxDeBordReporting: Chapter = {
         "Parce qu'elle ne mesure que des données extra-financières",
         "Parce qu'elle est réservée à la direction générale",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Trois limites rendent la comptabilité insuffisante pour le pilotage : la lenteur (états disponibles avec retard, or piloter c'est réagir vite), la nature monétaire des données (elle ne capte ni la qualité, ni la satisfaction, ni l'empreinte carbone) et l'exhaustivité (elle enregistre tout sans distinguer l'essentiel de l'accessoire). C'est la réponse attendue à une question récurrente d'examen.",
     },
@@ -131,7 +131,7 @@ export const tableauxDeBordReporting: Chapter = {
         "Un objectif chiffré fixé par la direction générale",
         "Une variable d'action essentielle dont la maîtrise conditionne l'atteinte des objectifs",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le FCS est le levier décisif issu de l'analyse stratégique (ex. : rapidité de livraison pour la vente à distance, budget R&D pour un laboratoire). Il ne faut pas le confondre avec le KPI, qui est la mesure quantifiée du FCS comparée à une référence. Attention : il n'existe pas de liste universelle de FCS — ils sont contingents à chaque activité.",
     },
@@ -144,7 +144,7 @@ export const tableauxDeBordReporting: Chapter = {
         "Responsables → budgets → écarts",
         "Reporting → tableau de bord → stratégie",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "OVAR = Objectifs, Variables d'Action, Responsables. On descend de la stratégie vers les indicateurs : préciser l'objectif de chaque entité, identifier les leviers essentiels (FCS), puis rattacher chaque variable — donc chaque indicateur — à un responsable qui maîtrise le levier. Partir des indicateurs disponibles est exactement l'erreur que la méthode interdit ; à l'examen, c'est la démarche et la justification qui sont évaluées, pas la liste d'indicateurs.",
     },
@@ -157,7 +157,7 @@ export const tableauxDeBordReporting: Chapter = {
         "Le reporting est tourné vers le haut (rendre compte), standardisé et plutôt financier ; le tableau de bord est tourné vers l'action locale, sélectif et mixte",
         "Le tableau de bord est exclusivement financier ; le reporting mêle financier et extra-financier",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "C'est le piège classique du chapitre. Le reporting remonte périodiquement des informations normalisées vers les niveaux supérieurs pour rendre compte ; le tableau de bord sert au responsable à piloter son propre périmètre, avec des indicateurs sur mesure, sélectifs, financiers et extra-financiers. En pratique, les deux coexistent et se nourrissent.",
     },
@@ -170,7 +170,7 @@ export const tableauxDeBordReporting: Chapter = {
         "Environnement, social, gouvernance, finance",
         "Opérationnel, tactique, stratégique, prospectif",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Le balanced scorecard (tableau de bord prospectif, 1992) équilibre quatre axes — financier, client, processus internes, apprentissage organisationnel — pour traduire la stratégie en indicateurs cohérents, en reliant indicateurs d'effet (financier) et de cause (les trois autres). Au DCG, il relève de la sensibilisation : sa construction complète est réservée au DSCG.",
     },
@@ -184,7 +184,7 @@ export const tableauxDeBordReporting: Chapter = {
         "Le principe d'exhaustivité du reporting",
         "Le principe de contrôlabilité : on ne mesure un responsable que sur ce qu'il maîtrise",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Chaque type de centre appelle des indicateurs adaptés à ce que son responsable maîtrise réellement : coût unitaire et taux de rebut pour un centre de coûts, CA pour un centre de revenus, marge pour un centre de profit, ROCE/ROI/EVA pour un centre d'investissement. Le chef d'atelier ne maîtrise pas les capitaux engagés : lui plaquer le ROCE est l'erreur signalée dans le cours (exemple Rakéo).",
     },
@@ -198,7 +198,7 @@ export const tableauxDeBordReporting: Chapter = {
         "Le risque de cloisonnement entre centres",
         "Le principe de l'emboîtement gigogne",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "C'est un effet pervers du pilotage par les indicateurs : les acteurs optimisent l'indicateur, pas la performance réelle (risque de manipulation). La loi de Goodhart résume ce danger. Parades : préciser le mode de calcul et croiser l'indicateur avec un indicateur de contrôle. Les autres effets pervers cités : court-termisme (repousser la maintenance pour tenir la marge) et sous-optimisation locale.",
     },
@@ -212,7 +212,7 @@ export const tableauxDeBordReporting: Chapter = {
         "Le taux de conversion (commandes / visites), car il mesure le FCS « transformer le trafic en ventes »",
         "Le résultat net, car il est le seul indicateur objectif",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Le nombre de visites mesure le trafic, pas la performance : c'est le piège de l'indicateur « facile à mesurer » plutôt que pertinent (risque de pertinence). Le taux de conversion — complété du taux d'abandon de panier — est directement relié au facteur clé de succès. À l'examen, c'est la justification de l'indicateur par le FCS qu'il mesure qui fait la qualité de la réponse.",
     },
@@ -226,7 +226,7 @@ export const tableauxDeBordReporting: Chapter = {
         "Le prix de marché, car il est toujours disponible",
         "La moyenne du coût réel et du prix de marché",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Avec le coût réel, toute dérive de l'atelier amont est supportée par le centre aval qui ne la maîtrise pas : l'évaluation devient injuste. Le coût standard laisse à l'amont ses propres écarts et respecte la contrôlabilité. Le prix de marché est objectif et incitatif mais suppose qu'un marché externe existe. Au DCG, le PCI est abordé en comparaison de méthodes, sans la négociation ni la fiscalité internationale (DSCG).",
     },

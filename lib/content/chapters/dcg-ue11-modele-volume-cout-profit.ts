@@ -102,7 +102,7 @@ export const modeleVolumeCoutProfit: Chapter = {
         "Ce qui reste, après couverture des charges variables, pour financer les charges fixes puis dégager un résultat",
         "Le résultat dégagé par chaque unité vendue au-delà du seuil de profitabilité uniquement",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "MCV = CA − charges variables. La formation du résultat suit une cascade : le CA absorbe d'abord les charges variables pour dégager la MCV, laquelle doit couvrir les charges fixes avant de laisser apparaître un résultat. C'est le pivot de tout le modèle CVP.",
     },
@@ -111,7 +111,7 @@ export const modeleVolumeCoutProfit: Chapter = {
       question:
         "Une entreprise monoproduit supporte 240 000 € de charges fixes ; le prix de vente unitaire est de 8 € et le coût variable unitaire de 4 €. Quel est le seuil de profitabilité en volume ?",
       choices: ["30 000 produits", "60 000 produits", "48 000 produits", "120 000 produits"],
-      answer: 1,
+      answers: [1],
       explanation:
         "MCV unitaire = 8 − 4 = 4 € ; taux de MCV = 4 / 8 = 50 %. Seuil en volume = CF / MCV unitaire = 240 000 / 4 = 60 000 produits (cohérent avec le seuil en valeur : 240 000 / 0,50 = 480 000 €, soit 480 000 / 8 = 60 000 unités).",
     },
@@ -120,7 +120,7 @@ export const modeleVolumeCoutProfit: Chapter = {
       question:
         "La Brasserie du Mont réalise un chiffre d'affaires annuel de 1 000 000 €, régulier sur l'année, et son seuil de profitabilité est de 750 000 €. À quelle date le point mort est-il atteint ?",
       choices: ["Fin juin", "Fin août", "Fin septembre", "Fin octobre"],
-      answer: 2,
+      answers: [2],
       explanation:
         "Activité régulière : règle de trois. m = (750 000 × 12) / 1 000 000 = 9 mois. Le seuil est donc atteint à la fin du 9ᵉ mois, c'est-à-dire fin septembre. Attention : le point mort est une date, le seuil un montant.",
     },
@@ -129,7 +129,7 @@ export const modeleVolumeCoutProfit: Chapter = {
       question:
         "Une entreprise affiche une MCV de 400 000 € et un résultat de 100 000 €. Si son chiffre d'affaires baisse de 10 % (taux de MCV et charges fixes stables), de combien varie son résultat ?",
       choices: ["−40 %", "−10 %", "−4 %", "−25 %"],
-      answer: 0,
+      answers: [0],
       explanation:
         "Levier opérationnel LO = MCV / Résultat = 400 000 / 100 000 = 4. Variation du résultat = LO × variation du CA = 4 × (−10 %) = −40 %. Vérification : à 18 000 sodas au lieu de 20 000, la MCV tombe à 360 000 € et le résultat à 60 000 €, soit bien −40 %.",
     },
@@ -142,7 +142,7 @@ export const modeleVolumeCoutProfit: Chapter = {
         "Les charges fixes sont stables sur la période (structure stable)",
         "La production est supérieure aux ventes pour constituer des stocks",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "C'est l'inverse : le modèle suppose l'absence de stock, c'est-à-dire production = ventes (tout ce qui est produit est vendu). Les autres propositions correspondent bien aux hypothèses de linéarité des charges, de prix constant et de structure stable.",
     },
@@ -156,7 +156,7 @@ export const modeleVolumeCoutProfit: Chapter = {
         "Parce que le seuil de rentabilité intègre les charges financières",
         "Parce que « seuil de rentabilité » est réservé aux entreprises industrielles",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "La profitabilité rapporte le résultat au chiffre d'affaires ; la rentabilité rapporte le résultat à l'actif économique (notion étudiée en UE 6). Les deux expressions désignent le même calcul, mais le programme rénové attend le terme « profitabilité ».",
     },
@@ -165,7 +165,7 @@ export const modeleVolumeCoutProfit: Chapter = {
       question:
         "La société Lumina réalise un chiffre d'affaires de 1 800 000 € pour un seuil de profitabilité de 1 200 000 €. Quel est son indice de sécurité ?",
       choices: ["33,3 %", "25 %", "66,7 %", "40 %"],
-      answer: 0,
+      answers: [0],
       explanation:
         "Marge de sécurité MS = 1 800 000 − 1 200 000 = 600 000 €. Indice de sécurité IS = MS / CA = 600 000 / 1 800 000 = 33,3 % : le chiffre d'affaires peut reculer d'un tiers avant que l'entreprise ne tombe en perte. On retrouve d'ailleurs LO = 1 / 0,333 = 3.",
     },
@@ -178,7 +178,7 @@ export const modeleVolumeCoutProfit: Chapter = {
         "L'entreprise ne produit que deux produits",
         "La structure des ventes (mix produit) reste constante",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le seuil global repose sur un taux de MCV moyen : si le mix évolue, ce taux moyen change et le seuil global devient faux. Le raisonnement rigoureux exprime le seuil en fonction des quantités (ex. 20 A + 60 B ≥ 300 000) : le seuil n'est plus un point mais une droite.",
     },
@@ -187,7 +187,7 @@ export const modeleVolumeCoutProfit: Chapter = {
       question:
         "La Brasserie du Mont supporte 300 000 € de charges de structure pour un chiffre d'affaires de 1 000 000 €. Quel est son indice de prélèvement ?",
       choices: ["40 %", "25 %", "30 %", "70 %"],
-      answer: 2,
+      answers: [2],
       explanation:
         "IP = (CF / CA) × 100 = 300 000 / 1 000 000 = 30 % : près d'un tiers du chiffre d'affaires sert à couvrir les charges fixes. Plus cet indice est faible, plus l'entreprise atteint facilement son seuil. Ne pas confondre avec le taux de MCV (40 %) ni l'indice de sécurité (25 %).",
     },
@@ -200,7 +200,7 @@ export const modeleVolumeCoutProfit: Chapter = {
         "Le point mort n'existe que pour les activités saisonnières",
         "Le seuil intègre les charges variables, le point mort seulement les charges fixes",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Rigoureusement, le seuil est un montant (ex. 750 000 €) et le point mort une date (ex. fin septembre). En pratique les deux sont atteints au même instant, mais c'est un piège classique de l'épreuve : il faut savoir préciser l'un ou l'autre selon ce que demande l'énoncé.",
     },

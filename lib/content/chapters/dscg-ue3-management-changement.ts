@@ -103,7 +103,7 @@ export const managementChangement: Chapter = {
         "De son ancienneté dans l'organisation",
         "De son adhésion à la stratégie de la direction",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Pour Crozier et Friedberg (L'Acteur et le système, 1977), le pouvoir n'est pas un attribut hiérarchique mais une relation : il naît de la maîtrise d'une zone d'incertitude (compétence rare, information clé, relation à l'environnement, application des règles). L'exemple canonique est l'ouvrier d'entretien qui maîtrise la réparation des machines.",
     },
@@ -116,7 +116,7 @@ export const managementChangement: Chapter = {
         "Décristallisation → transition → recristallisation",
         "Décristallisation → recristallisation → transition",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Le modèle de Lewin s'enchaîne ainsi : décristallisation (unfreezing — ébranler l'équilibre, créer la prise de conscience), transition (moving — opérer le changement), recristallisation (refreezing — ancrer les nouvelles pratiques pour éviter le retour en arrière).",
     },
@@ -129,7 +129,7 @@ export const managementChangement: Chapter = {
         "Générer des victoires rapides",
         "Communiquer la vision",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Les 8 étapes de Kotter commencent par la création d'un sentiment d'urgence : faire prendre conscience de la nécessité de changer, sans sous-estimer la force de l'inertie. Les transformations échouent le plus souvent faute d'avoir suffisamment travaillé les premières étapes (urgence, coalition, vision).",
     },
@@ -143,7 +143,7 @@ export const managementChangement: Chapter = {
         "L'institutionnalisation de l'apprentissage continu",
         "Une logique descendante centrée sur la valeur actionnariale",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "La théorie E (Economic) est centrée sur la valeur actionnariale : descendante, brutale, par restructuration. La théorie O (Organizational) est participative et centrée sur les capacités humaines. La thèse de Beer & Nohria : les transformations réussies combinent les deux logiques.",
     },
@@ -157,7 +157,7 @@ export const managementChangement: Chapter = {
         "Utiliser trop de canaux différents",
         "Réserver la communication aux managers de proximité",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Kotter en fait sa cause d'échec n°4 : sous-communiquer. Un message de changement doit être diffusé largement et de façon répétée pour être intégré. La communication efficace explique le pourquoi avant le comment, est incarnée par le management et bidirectionnelle.",
     },
@@ -171,7 +171,7 @@ export const managementChangement: Chapter = {
         "Réduire les forces de résistance plutôt qu'accentuer la pression",
         "Supprimer toute communication pour éviter d'alimenter les résistances",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Renforcer les forces motrices accroît souvent symétriquement la résistance. Lewin enseigne qu'il est plus efficace de réduire les forces de résistance : il vaut souvent mieux lever les freins qu'accentuer la pression.",
     },
@@ -185,7 +185,7 @@ export const managementChangement: Chapter = {
         "Le taux d'absentéisme",
         "Le taux d'utilisation effective des nouvelles pratiques",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le taux d'utilisation effective est un indicateur comportemental : il mesure l'adhésion réelle (au-delà du déclaratif). Un usage faible malgré la formation est un signal d'alerte — une faible adoption détruit le business case de la transformation. Les jalons mesurent l'avancement, l'absentéisme l'impact social.",
     },
@@ -198,7 +198,7 @@ export const managementChangement: Chapter = {
         "Henry Mintzberg (configurations organisationnelles)",
         "Peter Senge (organisation apprenante)",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "La courbe du changement est adaptée des travaux d'Elisabeth Kübler-Ross sur le deuil : choc, déni, colère, résistance, résignation (la « vallée du désespoir »), puis acceptation, expérimentation et intégration. Elle dédramatise la baisse de performance initiale, normale et transitoire.",
     },
@@ -211,7 +211,7 @@ export const managementChangement: Chapter = {
         "Une organisation qui exploite l'existant tout en explorant le nouveau",
         "Une organisation qui conduit deux transformations en parallèle",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "L'entreprise ambidextre, selon March, concilie exploitation (tirer parti de l'existant, performance) et exploration (chercher le nouveau, innovation). Son apport : concilier performance et innovation ; sa limite : une tension organisationnelle à gérer.",
     },
@@ -225,7 +225,7 @@ export const managementChangement: Chapter = {
         "Citer des cas d'entreprises réelles en illustration",
         "Relier le changement à la stratégie de l'organisation",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "La fiche de révision liste parmi les pièges fréquents : « ne proposer aucun indicateur de pilotage (erreur fatale en UE3) ». L'angle UE3 attend la valeur ajoutée chiffrée du contrôle de gestion : objectiver, évaluer (business case), piloter (tableau de bord équilibré) et mesurer ex post — sans se cantonner aux modèles sociologiques.",
     },

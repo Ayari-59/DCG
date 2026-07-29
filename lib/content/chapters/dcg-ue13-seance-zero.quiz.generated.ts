@@ -12,7 +12,7 @@ export const quiz: QuizQuestion[] = [
       "Contrôle de gestion",
       "Droit fiscal"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "UE13 = Communication professionnelle."
   },
   {
@@ -24,7 +24,7 @@ export const quiz: QuizQuestion[] = [
       "Seulement au téléphone",
       "Uniquement en réunion"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Quatre dimensions : écrit, oral, numérique, relationnel."
   },
   {
@@ -36,7 +36,7 @@ export const quiz: QuizQuestion[] = [
       "Un QCM national",
       "Uniquement un oral"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Deux volets : rapport + analyse d'une situation."
   },
   {
@@ -48,7 +48,7 @@ export const quiz: QuizQuestion[] = [
       "Trois parties",
       "Dix parties"
     ],
-    "answer": 2,
+    "answers": [2],
     "explanation": "Trois parties : organisation, missions, situation de communication."
   },
   {
@@ -60,7 +60,7 @@ export const quiz: QuizQuestion[] = [
       "8 semaines",
       "6 mois"
     ],
-    "answer": 2,
+    "answers": [2],
     "explanation": "8 semaines minimum, support de l'épreuve."
   },
   {
@@ -72,7 +72,7 @@ export const quiz: QuizQuestion[] = [
       "Faire joli",
       "Perdre du temps"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "La communication est au cœur du métier."
   },
   {
@@ -84,7 +84,7 @@ export const quiz: QuizQuestion[] = [
       "Rien",
       "Une blague"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Ex. : « Bonjour Madame Durand, »."
   },
   {
@@ -96,7 +96,7 @@ export const quiz: QuizQuestion[] = [
       "Jouer",
       "Rien"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Il valorise l'identité professionnelle et le réseau."
   },
   {
@@ -108,7 +108,7 @@ export const quiz: QuizQuestion[] = [
       "Interdit",
       "Systématique"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Transparence et responsabilité (charte DCG/DSCG/DEC)."
   },
   {
@@ -120,7 +120,7 @@ export const quiz: QuizQuestion[] = [
       "En recopiant",
       "En dormant"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Pédagogie active : on apprend en faisant."
   }
 ];

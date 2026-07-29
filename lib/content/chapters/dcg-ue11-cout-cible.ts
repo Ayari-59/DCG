@@ -102,7 +102,7 @@ export const coutCible: Chapter = {
         "Coût cible = Prix de vente imposé par le marché − Profit cible",
         "Coût cible = Coût complet standard − Coûts cachés",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Le coût cible renverse la logique « ingénieur » (Prix = Coût + Marge) : le prix est imposé par le marché, la marge est voulue par l'entreprise, et le coût devient une contrainte d'entrée, une variable d'action encadrée par ces deux limites.",
     },
@@ -111,7 +111,7 @@ export const coutCible: Chapter = {
       question:
         "Un produit doit être vendu 80 € (prix imposé par le marché) avec une marge cible de 20 % du prix. Le bureau d'études annonce un coût estimé de 70 €. Quel est l'effort de réduction de coût (cost gap) ?",
       choices: ["10 €", "6 €", "16 €", "14 €"],
-      answer: 1,
+      answers: [1],
       explanation:
         "Coût cible = 80 × (1 − 20 %) = 64 €. Cost gap = coût estimé − coût cible = 70 − 64 = 6 €. Répondre 10 € (80 − 70) confondrait le cost gap avec la marge actuelle : l'écart se mesure toujours par rapport au coût cible, pas au prix.",
     },
@@ -119,7 +119,7 @@ export const coutCible: Chapter = {
       id: "q3",
       question: "Selon le constat fondateur du coût cible, quelle proportion des coûts du cycle de vie est pré-engagée dès la phase de conception ?",
       choices: ["Environ 80 %", "Environ 20 %", "Environ 50 %", "La totalité (100 %)"],
-      answer: 0,
+      answers: [0],
       explanation:
         "≈ 80 % des coûts du cycle de vie sont décidés (engagés) dès la conception, même s'ils ne seront décaissés que bien plus tard. La production ne peut au mieux optimiser que les 20 % restants — d'où la prédominance de la phase amont et l'ingénierie simultanée.",
     },
@@ -132,7 +132,7 @@ export const coutCible: Chapter = {
         "Le coût cible est un coût complet constaté a posteriori",
         "Le coût cible est une approche prospective (ex ante), utilisée lors du développement de nouveaux produits",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le coût cible n'est ni un coût complet, ni un coût partiel, et ne remplace pas les centres d'analyse ou l'ABC. C'est une approche prospective (ex ante) réservée au développement de nouveaux produits ou services ; le coût estimé s'appuie d'ailleurs souvent sur l'ABC — les approches sont complémentaires. L'utiliser pour valoriser des stocks est l'erreur classique.",
     },
@@ -141,7 +141,7 @@ export const coutCible: Chapter = {
       question:
         "Un produit est lancé sur un cycle de 3 ans : N+1 prix 60 €, marge cible 25 %, volume 20 000 ; N+2 prix 56 €, marge 22 %, volume 30 000 ; N+3 prix 52 €, marge 18 %, volume 18 000. Quel est le coût cible moyen pondéré par les volumes ?",
       choices: ["43,77 €", "45,00 €", "43,79 €", "42,64 €"],
-      answer: 2,
+      answers: [2],
       explanation:
         "Coûts cibles annuels : 60 × 75 % = 45,00 € ; 56 × 78 % = 43,68 € ; 52 × 82 % = 42,64 €. Moyenne pondérée = (45 × 20 000 + 43,68 × 30 000 + 42,64 × 18 000) / 68 000 = (900 000 + 1 310 400 + 767 520) / 68 000 = 2 977 920 / 68 000 = 43,79 €. La moyenne arithmétique simple (43,77 €) est le piège : il faut toujours pondérer par les quantités vendues.",
     },
@@ -150,7 +150,7 @@ export const coutCible: Chapter = {
       question:
         "Lors d'un sondage de prix psychologique, au prix de 180 €, 33 % des sondés trouvent le produit trop cher (cumul croissant) et 18 % jugent la qualité insuffisante (cumul décroissant). Quel est le taux d'acceptabilité à ce prix ?",
       choices: ["51 %", "49 %", "67 %", "82 %"],
-      answer: 1,
+      answers: [1],
       explanation:
         "% de non-acheteurs = 33 % + 18 % = 51 %. Taux d'acceptabilité = 100 % − 51 % = 49 %. Le prix psychologique est celui qui maximise ce taux, c'est-à-dire qui minimise la proportion de non-acheteurs.",
     },
@@ -163,7 +163,7 @@ export const coutCible: Chapter = {
         "Provisionner les coûts de maintenance et de garantie du produit",
         "Maintenir les coûts réels proches des coûts cibles par l'amélioration continue (kaizen) et l'effet d'apprentissage",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Pendant la production, l'optimisation se poursuit par l'effet d'apprentissage et le kaizen : maintenir les coûts réels proches des coûts cibles et éliminer les causes d'écarts. Le modèle MAKIDO résume l'enchaînement : réduction du coût en conception, puis maintenance du coût en production.",
     },
@@ -177,7 +177,7 @@ export const coutCible: Chapter = {
         "1,18 : la fonction est correctement alignée sur la valeur perçue",
         "0,86 : l'écart est trop faible pour justifier une action",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Indice = 10 % / 24 % ≈ 0,42, très inférieur à 1 : la part de coût dépasse largement la contribution à la valeur perçue. Le produit sur-investit dans une fonction peu valorisée — c'est là qu'il faut chercher l'essentiel des réductions (rationaliser les coloris, simplifier les finitions), sans dégrader la valeur perçue.",
     },
@@ -190,7 +190,7 @@ export const coutCible: Chapter = {
         "Situation favorable : l'entreprise peut investir le surplus disponible dans cette fonction pour renforcer son avantage concurrentiel",
         "Il faut transférer mécaniquement l'écart vers les fonctions déficitaires",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "C'est le piège de l'interprétation mécanique : un coût estimé inférieur au coût cible n'est pas simplement une bonne nouvelle à classer sans suite. Si la fonction est très valorisée par le client (ex. la performance de jeu chez Rakéo, écart de − 15 %), l'entreprise a intérêt à investir le surplus pour renforcer son avantage concurrentiel.",
     },
@@ -198,7 +198,7 @@ export const coutCible: Chapter = {
       id: "q10",
       question: "Pour estimer le coût d'un produit peu innovant, dans des conditions stables, à partir du coût d'un produit existant corrigé des modifications, on utilise la méthode :",
       choices: ["Paramétrique", "Analogique", "Analytique", "Des coûts partiels"],
-      answer: 1,
+      answers: [1],
       explanation:
         "La méthode analogique part du coût d'un produit existant analogue, corrigé des modifications : adaptée aux produits peu innovants, elle est inadaptée à l'innovation. La paramétrique (Y = aX + b sur des paramètres physiques) donne une première approximation très en amont ; l'analytique (composant par composant) fournit l'estimation fine juste avant la décision.",
     },

@@ -103,7 +103,7 @@ export const imputationRationnelle: Chapter = {
         "Activité réelle / activité normale",
         "Capacité maximale / activité réelle",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Coefficient = activité RÉELLE / activité NORMALE. L'erreur classique est d'inverser le rapport. Coef < 1 : sous-activité ; coef = 1 : activité normale ; coef > 1 : suractivité. Attention aussi à ne pas confondre activité normale et capacité maximale : la normale est inférieure à la capacité.",
     },
@@ -112,7 +112,7 @@ export const imputationRationnelle: Chapter = {
       question:
         "Un atelier a une activité normale de 25 000 produits par mois. En mars, il n'en a traité que 20 000. Quel est son coefficient d'imputation rationnelle ?",
       choices: ["1,25", "0,80", "0,75", "0,20"],
-      answer: 1,
+      answers: [1],
       explanation:
         "Coefficient = activité réelle / activité normale = 20 000 / 25 000 = 0,80, soit une sous-activité de 20 %. Répondre 1,25 reviendrait à inverser le rapport (25 000 / 20 000) ; 0,20 est le taux de sous-activité (1 − 0,80), pas le coefficient.",
     },
@@ -121,7 +121,7 @@ export const imputationRationnelle: Chapter = {
       question:
         "Un centre supporte 580 000 € de charges fixes ; son activité normale est de 20 000 unités et son activité réelle de 18 000 unités. Quel montant de charges fixes est imputé rationnellement ?",
       choices: ["522 000 €", "580 000 €", "58 000 €", "644 444 €"],
-      answer: 0,
+      answers: [0],
       explanation:
         "Coefficient = 18 000 / 20 000 = 0,90. Charges fixes imputées = 580 000 × 0,90 = 522 000 €. Les 58 000 € restants (580 000 × 0,10) constituent le coût de sous-activité. 580 000 € serait le coût complet classique ; 644 444 € résulterait d'une division par le coefficient au lieu d'une multiplication.",
     },
@@ -130,7 +130,7 @@ export const imputationRationnelle: Chapter = {
       question:
         "Un atelier a des charges fixes mensuelles de 300 000 €, une activité normale de 25 000 produits et une activité réelle de 20 000 produits. Quel est le coût de sous-activité ?",
       choices: ["240 000 €", "75 000 €", "60 000 €", "30 000 €"],
-      answer: 2,
+      answers: [2],
       explanation:
         "Coefficient = 20 000 / 25 000 = 0,80. Coût de sous-activité (DIR) = CF × (1 − coef) = 300 000 × 0,20 = 60 000 €. C'est le coût de la capacité inemployée. 240 000 € correspond aux charges fixes imputées (300 000 × 0,80), pas au coût de sous-activité.",
     },
@@ -139,7 +139,7 @@ export const imputationRationnelle: Chapter = {
       question:
         "Même atelier : charges variables de 12 €/produit, charges fixes de 300 000 €, activité normale de 25 000 produits, activité réelle de 20 000 produits. Quel est le coût unitaire d'imputation rationnelle ?",
       choices: ["12 €", "27 €", "30 €", "24 €"],
-      answer: 3,
+      answers: [3],
       explanation:
         "Coût IR total = (12 × 20 000) + (300 000 × 0,80) = 240 000 + 240 000 = 480 000 €. Coût IR unitaire = 480 000 / 20 000 = 24 €. On vérifie qu'il est égal au coût unitaire à l'activité normale : 12 + 300 000 / 25 000 = 12 + 12 = 24 €. Le coût réel, lui, serait de 540 000 / 20 000 = 27 € : l'écart de 3 € est le coût de sous-activité unitaire.",
     },
@@ -153,7 +153,7 @@ export const imputationRationnelle: Chapter = {
         "Il est toujours inférieur au coût complet réel",
         "Il ne comprend que les charges variables",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "En « variabilisant » les charges fixes, la méthode rend le coût unitaire IR indépendant du volume : il reste rivé au coût normal (67 € dans l'exemple du chapitre, à 16 000 comme à 24 000 unités). Il n'est inférieur au coût réel qu'en sous-activité ; en suractivité, c'est l'inverse. Et il comprend bien toutes les charges : c'est toujours un coût complet.",
     },
@@ -167,7 +167,7 @@ export const imputationRationnelle: Chapter = {
         "Positive : c'est un bonus d'activité",
         "Négative : c'est un boni de suractivité, un gain non récurrent",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "DIR = CF × (1 − coef). Si coef > 1, la DIR est négative : on a imputé plus de charges fixes qu'il n'y en a réellement, d'où un boni de suractivité (ex. : 580 000 × (1 − 1,20) = −116 000 €). On dit « boni », jamais « bonus ». Ce gain, obtenu au prix d'une usure accélérée de l'outil, ne doit pas être considéré comme acquis.",
     },
@@ -180,7 +180,7 @@ export const imputationRationnelle: Chapter = {
         "Aux seules charges variables",
         "Aux seules charges directes",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Le coefficient ne porte QUE sur les charges fixes : ce sont elles qui créent la distorsion du coût unitaire. Les charges variables suivent naturellement l'activité réelle et sont incorporées en totalité, sans coefficient. Appliquer le coefficient aux charges variables est une erreur fréquente signalée par le chapitre.",
     },
@@ -194,7 +194,7 @@ export const imputationRationnelle: Chapter = {
         "En calculant un coefficient par centre, puis en additionnant les coûts de sous-activité de chaque centre",
         "En appliquant le coefficient du centre principal à tous les centres",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "La méthode s'applique centre par centre : chaque centre a son propre coefficient, appliqué à ses propres charges fixes, et les coûts de sous-activité s'additionnent. Dans l'exemple du chapitre (Montage 58 000 € + Finition 60 000 € = 118 000 €), un coefficient global (≈ 0,844) appliqué aux 880 000 € de CF totales donnerait environ 137 000 €, un résultat faux, car il « moyenne » à tort des centres de tailles et de sous-activités différentes.",
     },
@@ -208,7 +208,7 @@ export const imputationRationnelle: Chapter = {
         "Au coût variable uniquement",
         "Au coût réel majoré du boni de suractivité",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Les stocks sont valorisés au coût IR et non au coût réel : conformément au principe de prudence, on n'incorpore pas le coût de sous-activité dans la valeur des stocks, et on ne les gonfle pas davantage d'un boni non réalisé. Le coût variable seul relèverait d'une autre méthode (coûts partiels), pas de l'imputation rationnelle.",
     },

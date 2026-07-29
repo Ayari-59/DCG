@@ -103,7 +103,7 @@ export const budgetDesVentes: Chapter = {
         "Parce qu'il conditionne tous les autres budgets : production, approvisionnements, jusqu'à la trésorerie",
         "Parce que la force de vente doit être payée en premier",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "La prévision des ventes est le point de départ de la démarche budgétaire : la production s'aligne sur les quantités à vendre, les approvisionnements sur la production, et la trésorerie sur les encaissements attendus. Une erreur de prévision commerciale se propage à toute la construction budgétaire.",
     },
@@ -112,7 +112,7 @@ export const budgetDesVentes: Chapter = {
       question:
         "Une série de ventes (milliers d'unités) donne : x = 1 à 5, y = 40 ; 42 ; 45 ; 43 ; 48, avec x̄ = 3, ȳ = 43,6, cov(X,Y) = 3,4 et V(X) = 2. Quelle est la prévision pour x = 6 ?",
       choices: ["43,6 milliers d'unités", "48,7 milliers d'unités", "50,4 milliers d'unités", "45,3 milliers d'unités"],
-      answer: 1,
+      answers: [1],
       explanation:
         "a = cov(X,Y) ÷ V(X) = 3,4 ÷ 2 = 1,7 ; b = ȳ − a·x̄ = 43,6 − 1,7 × 3 = 38,5. Droite : y = 1,7x + 38,5. Prévision N+1 (x = 6) : 1,7 × 6 + 38,5 = 48,7 milliers d'unités. Attention au piège classique : la prévision correspond à x = 6, pas à x = 1.",
     },
@@ -126,7 +126,7 @@ export const budgetDesVentes: Chapter = {
         "e = −1,59 : la demande est inélastique, la hausse de prix est conseillée",
         "e = −1,59 : la demande est élastique, la hausse de prix ferait baisser le chiffre d'affaires",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "ΔP/P = +9/90 = +10,0 % ; ΔQ/Q = −34/214 = −15,9 %. e = −15,9 % ÷ +10,0 % = −1,59. |e| = 1,59 > 1 : la demande est élastique. Vérification : CA₀ = 90 × 214 = 19 260 k€ contre CA₁ = 99 × 180 = 17 820 k€, soit −7,5 %. La hausse de prix serait contre-productive en volume comme en valeur.",
     },
@@ -139,7 +139,7 @@ export const budgetDesVentes: Chapter = {
         "La demande de A est insensible au prix de B",
         "La demande de A est élastique à son propre prix",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "L'élasticité croisée mesure la sensibilité de la demande de A à la variation du prix de B. Positive : A et B sont substituts (si le prix de B baisse, la demande de A recule car le client se reporte sur B). Négative : ils sont complémentaires (ils se vendent ensemble).",
     },
@@ -153,7 +153,7 @@ export const budgetDesVentes: Chapter = {
         "Des moyennes mobiles centrées",
         "Un ajustement exponentiel, car la progression est géométrique",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Ratios constants → progression géométrique (taux de croissance ≈ constant) → ajustement exponentiel y = b·aˣ, linéarisé par ln y = (ln a)·x + ln b. Écarts constants auraient indiqué un ajustement linéaire. Les moyennes mobiles sont hors programme et ne permettent pas d'extrapoler.",
     },
@@ -162,7 +162,7 @@ export const budgetDesVentes: Chapter = {
       question:
         "La tendance trimestrielle des ventes est Tᵢ = 1,280 xᵢ + 45,02 et le coefficient saisonnier du T3 vaut 1,223. Quelle est la prévision du T3 de N+1 (x = 15), en milliers d'unités ?",
       choices: ["52,5", "64,2", "78,5", "88,1"],
-      answer: 2,
+      answers: [2],
       explanation:
         "Tendance prolongée : T(15) = 1,280 × 15 + 45,02 = 64,21. Prévision saisonnalisée = tendance × coefficient = 64,21 × 1,223 ≈ 78,5 milliers d'unités. 64,2 est la tendance seule (oubli du coefficient) ; la prévision se calcule bien sur la tendance prolongée, pas sur la dernière observation.",
     },
@@ -171,7 +171,7 @@ export const budgetDesVentes: Chapter = {
       question:
         "Au T3 de l'année N, les ventes brutes s'élèvent à 72 milliers d'unités et le coefficient saisonnier du T3 vaut 1,223. Quelle est la valeur corrigée des variations saisonnières (CVS) ?",
       choices: ["88,1 milliers d'unités", "58,9 milliers d'unités", "72,0 milliers d'unités", "60,2 milliers d'unités"],
-      answer: 1,
+      answers: [1],
       explanation:
         "On divise pour désaisonnaliser : valeur CVS = 72 ÷ 1,223 = 58,9 milliers d'unités. Multiplier (88,1) est l'erreur classique : on multiplie la tendance par le coefficient pour prévoir, on divise l'observation par le coefficient pour désaisonnaliser. La série CVS révèle le mouvement de fond, hors effet saison.",
     },
@@ -180,7 +180,7 @@ export const budgetDesVentes: Chapter = {
       question:
         "Lissage exponentiel simple avec α = 0,3 : la valeur lissée initiale est S₁ = 38 et l'observation suivante Y₂ = 55. Que vaut S₂ ?",
       choices: ["43,1", "46,5", "49,9", "55,0"],
-      answer: 0,
+      answers: [0],
       explanation:
         "Sₜ = α·Yₜ + (1 − α)·Sₜ₋₁, soit S₂ = 0,3 × 55 + 0,7 × 38 = 16,5 + 26,6 = 43,1. Avec α = 0,3, proche de 0, la prévision lisse fortement les variations récentes ; un α proche de 1 la rendrait plus réactive mais plus nerveuse.",
     },
@@ -193,7 +193,7 @@ export const budgetDesVentes: Chapter = {
         "Leur moyenne doit être égale au R² de la tendance",
         "Leur somme doit être égale au nombre de périodes (4 pour des trimestres)",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "La somme des coefficients saisonniers doit égaler le nombre de périodes p : par exemple 0,823 + 1,146 + 1,223 + 0,808 = 4,00 pour 4 trimestres. Sinon, on normalise en multipliant chaque coefficient par p ÷ Σ. Un coefficient > 1 signale une saison forte, < 1 une saison creuse.",
     },
@@ -206,7 +206,7 @@ export const budgetDesVentes: Chapter = {
         "Le lissage exponentiel simple",
         "L'ajustement linéaire par les moindres carrés",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Le référentiel précise que les moyennes mobiles ne sont pas à traiter : elles lissent la série mais n'expriment pas de relation mathématique et ne permettent pas d'extrapoler. La méthode au programme pour la saisonnalité est la tendance par les moindres carrés puis les rapports à la tendance. Le lissage exponentiel et l'élasticité sont, eux, bien au programme.",
     },

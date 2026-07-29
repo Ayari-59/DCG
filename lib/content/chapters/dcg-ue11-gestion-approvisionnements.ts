@@ -98,7 +98,7 @@ export const gestionApprovisionnements: Chapter = {
       question:
         "Une entreprise consomme 14 400 m² de textile par an. Le coût de lancement d'une commande est de 200 € et le coût de stockage de 16 € par m² et par an. Quelle est la quantité économique Q* ?",
       choices: ["400 m²", "600 m²", "1 200 m²", "300 m²"],
-      answer: 1,
+      answers: [1],
       explanation:
         "Q* = √(2 × D × cl / cs) = √(2 × 14 400 × 200 / 16) = √360 000 = 600 m². On en déduit n* = 14 400/600 = 24 commandes, T* = 360/24 = 15 jours et CG = 4 800 + 4 800 = 9 600 € (le coût de lancement égale le coût de stockage à l'optimum).",
     },
@@ -112,7 +112,7 @@ export const gestionApprovisionnements: Chapter = {
         "18 commandes, T* = 20 jours",
         "36 commandes, T* = 10 jours",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "n* = D / Q* = 7 200 / 400 = 18 commandes par an, et T* = P / n* = 360 / 18 = 20 jours. C'est le programme optimal de l'application du chapitre (coût de gestion : 3 240 + 3 240 = 6 480 €).",
     },
@@ -121,7 +121,7 @@ export const gestionApprovisionnements: Chapter = {
       question:
         "Une entreprise consomme 14 400 m² par an (360 jours). Le délai de livraison est de 9 jours et elle conserve un stock de sécurité de 80 m². Quel est le stock d'alerte ?",
       choices: ["360 m²", "400 m²", "440 m²", "520 m²"],
-      answer: 2,
+      answers: [2],
       explanation:
         "Demande quotidienne = 14 400/360 = 40 m²/jour. Consommation pendant le délai = 40 × 9 = 360 m². Stock d'alerte = 360 + 80 = 440 m². Le délai (9 j) étant inférieur à T* (15 j), il n'y a pas de commande en cours à retrancher.",
     },
@@ -134,7 +134,7 @@ export const gestionApprovisionnements: Chapter = {
         "Les ruptures de stock sont fréquentes et valorisées",
         "Le réapprovisionnement est instantané (délai nul)",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Les hypothèses de Wilson : demande régulière et connue avec certitude, réapprovisionnement instantané (délai nul), donc ruptures exclues et stock de sécurité en principe inutile. Demande aléatoire et tarif dégressif relèvent des adaptations du modèle.",
     },
@@ -148,7 +148,7 @@ export const gestionApprovisionnements: Chapter = {
         "n* diminue car le stock moyen est plus élevé",
         "Il faut recalculer Q* avec un stock moyen de Q/2 + 50",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Le stock de sécurité est une constante : sa dérivée est nulle, donc Q* = 400, n* = 18 et T* = 20 jours sont strictement inchangés. Seul le coût global passe de 6 480 à 7 290 € (+810 €). « Recalculer » Q* avec le stock de sécurité est l'erreur classique à éviter.",
     },
@@ -161,7 +161,7 @@ export const gestionApprovisionnements: Chapter = {
         "Le coût de rupture égale le coût de possession",
         "Le coût de passation est nul",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "À l'optimum (Q*, n*, T*), obtenu en annulant la dérivée de CG, le coût de lancement égale le coût de stockage. Exemple du chapitre : CG = 3 240 + 3 240 = 6 480 €. C'est aussi un moyen de vérifier ses calculs à l'examen.",
     },
@@ -170,7 +170,7 @@ export const gestionApprovisionnements: Chapter = {
       question:
         "Dans le modèle de Wilson, le stock évolue en « dent de scie » de Q à 0. Quel est le stock moyen ?",
       choices: ["Q/2", "Q", "Q × n", "D/2"],
-      answer: 0,
+      answers: [0],
       explanation:
         "Le stock décroît régulièrement de Q à 0 puis est reconstitué instantanément : le stock moyen est donc Q/2. C'est lui qui supporte le coût de possession : CS = (Q/2) × cs.",
     },
@@ -184,7 +184,7 @@ export const gestionApprovisionnements: Chapter = {
         "Sur le nombre minimal de commandes",
         "Sur le coût total d'approvisionnement CA = coût d'achat + coût de gestion, comparé tranche par tranche",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "On étudie CA(Q) pour chaque tranche de tarif (optimum de la tranche ou bornes) et on retient le minimum global. Dans l'application du chapitre, Q = 1 000 m² à 144 € l'emporte : la remise sur l'achat dépasse le surcoût de gestion, alors que le seul coût de gestion resterait minimal vers 400 m².",
     },
@@ -198,7 +198,7 @@ export const gestionApprovisionnements: Chapter = {
         "P(D ≤ S) = cp / (cp + cs)",
         "P(D ≤ S) = cp / cs",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Le seuil optimal vérifie P(D ≤ S) = cp / (cp + cs), où cp est le coût de pénurie et cs le coût d'un invendu : c'est le taux de service optimal. Exemple du chapitre : cp = 10, cs = 8 → P(D ≤ S) = 0,5555, t ≈ 0,14, S* = 500 + 0,14 × 75 = 510,5 kg.",
     },
@@ -207,7 +207,7 @@ export const gestionApprovisionnements: Chapter = {
       question:
         "Un m² de cuir synthétique vaut 150 € et supporte un taux de possession financier de 0,5 % par mois, plus un coût physique de 0,02 € par jour (année de 360 jours). Quel est le coût de possession annuel cs par m² ?",
       choices: ["9,00 €", "16,20 €", "7,20 €", "0,77 €"],
-      answer: 1,
+      answers: [1],
       explanation:
         "Il faut d'abord tout ramener à la même unité de temps (l'année) : part financière = 150 × 0,5 % × 12 = 9 € ; part physique = 0,02 × 360 = 7,2 €. D'où cs = 9 + 7,2 = 16,2 € par m² et par an. Mélanger les unités de temps (cs mensuel avec P annuel) est l'erreur la plus fréquente.",
     },

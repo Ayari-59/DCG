@@ -12,7 +12,7 @@ export const quiz: QuizQuestion[] = [
       "Copier le premier résultat",
       "Demander à un collègue"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "On cadre le besoin et la question avant de chercher."
   },
   {
@@ -24,7 +24,7 @@ export const quiz: QuizQuestion[] = [
       "Trier par date",
       "Traduire"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Les guillemets recherchent l'expression exacte."
   },
   {
@@ -36,7 +36,7 @@ export const quiz: QuizQuestion[] = [
       "Un forum",
       "Une publicité"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "La source primaire est officielle : Légifrance, BOFiP, etc."
   },
   {
@@ -48,7 +48,7 @@ export const quiz: QuizQuestion[] = [
       "Un réseau social",
       "Un blog anonyme"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Pour un dossier client, on remonte à la source officielle."
   },
   {
@@ -60,7 +60,7 @@ export const quiz: QuizQuestion[] = [
       "Géographie",
       "Littérature"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Le droit et la fiscalité évoluent : l'information doit être à jour."
   },
   {
@@ -72,7 +72,7 @@ export const quiz: QuizQuestion[] = [
       "L'absence de source citée",
       "Une source officielle"
     ],
-    "answer": 2,
+    "answers": [2],
     "explanation": "Sans source citée, l'information n'est pas vérifiable."
   },
   {
@@ -84,7 +84,7 @@ export const quiz: QuizQuestion[] = [
       "La couleur du site",
       "Le nombre d'images"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "CRAAP : Currency, Relevance, Authority, Accuracy, Purpose."
   },
   {
@@ -96,7 +96,7 @@ export const quiz: QuizQuestion[] = [
       "L'ignore",
       "La modifie"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Recouper avec une source fiable est le bon réflexe."
   },
   {
@@ -108,7 +108,7 @@ export const quiz: QuizQuestion[] = [
       "Archiver ses mails",
       "Classer des factures"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "La veille continue suit un domaine dans le temps (ex. évolutions fiscales)."
   },
   {
@@ -120,7 +120,7 @@ export const quiz: QuizQuestion[] = [
       "Une imprimante",
       "Un agenda papier"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Flux RSS, alertes et newsletters outillent la veille."
   },
   {
@@ -132,7 +132,7 @@ export const quiz: QuizQuestion[] = [
       "Donner son avis",
       "Traduire"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "On retient et organise l'essentiel, sans tout dire."
   },
   {
@@ -144,7 +144,7 @@ export const quiz: QuizQuestion[] = [
       "Sans plan",
       "Une opinion"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Elle reste neutre, structurée et appuyée sur les sources."
   },
   {
@@ -156,7 +156,7 @@ export const quiz: QuizQuestion[] = [
       "Photographie le texte",
       "Ne note rien"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Reformuler dès la prise de notes évite le copier-coller."
   },
   {
@@ -168,7 +168,7 @@ export const quiz: QuizQuestion[] = [
       "La couleur des dossiers",
       "Le nombre de fichiers"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Secret professionnel et RGPD : les données clients sont sensibles."
   },
   {
@@ -180,7 +180,7 @@ export const quiz: QuizQuestion[] = [
       "Ne jamais sauvegarder",
       "Désactiver l'historique"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Droits d'accès maîtrisés, nommage clair, traçabilité : les bons réflexes."
   }
 ];

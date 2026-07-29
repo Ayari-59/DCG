@@ -97,7 +97,7 @@ export const prixCessionInterne: Chapter = {
         "Comme un produit pour le centre vendeur et une charge pour le centre acheteur",
         "Elle n'est pas enregistrée : seul le résultat consolidé compte",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Le PCI donne lieu à un double enregistrement de gestion : « chiffre d'affaires interne » pour le vendeur, « achat interne » pour l'acheteur. C'est ce mécanisme qui permet de calculer un résultat par centre.",
     },
@@ -106,7 +106,7 @@ export const prixCessionInterne: Chapter = {
       question:
         "La raquette Rakéo a un coût variable de production de 38 € et supporte 29 € de charges fixes réparties. La direction ajoute une marge de 7 € sur le coût complet. Quel est le PCI au coût complet majoré (« cost plus ») ?",
       choices: ["67 €", "74 €", "75 €", "45 €"],
-      answer: 1,
+      answers: [1],
       explanation:
         "Coût complet = 38 + 29 = 67 €. Coût complet majoré = 67 + 7 = 74 €. Attention : 67 € est le coût complet sans marge, 75 € est le prix de marché et 45 € (38 + 7) oublierait les charges fixes.",
     },
@@ -115,7 +115,7 @@ export const prixCessionInterne: Chapter = {
       question:
         "La raquette est cédée par la Production à l'E-commerce au coût standard de 67 €. L'E-commerce supporte 8 € de coûts propres et vend 90 € au consommateur. Quelle est la marge du centre E-commerce ?",
       choices: ["15 €", "23 €", "7 €", "29 €"],
-      answer: 0,
+      answers: [0],
       explanation:
         "Marge E-commerce = 90 − 67 − 8 = 15 €. La marge de la Production est de 67 − 38 = 29 € ; 7 € correspondrait à un PCI au prix de marché (90 − 75 − 8) ; 23 € oublierait les coûts propres de l'aval.",
     },
@@ -129,7 +129,7 @@ export const prixCessionInterne: Chapter = {
         "Elle diminue, car l'E-commerce vend moins",
         "Elle reste inchangée à 44 € : le PCI ne fait que répartir la marge",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Marge globale = 90 − 38 − 8 = 44 € dans tous les cas (29 + 15 = 37 + 7 = 44). Le PCI ne crée ni ne détruit de richesse : il répartit la marge globale entre les centres. C'est LE piège classique à éviter.",
     },
@@ -142,7 +142,7 @@ export const prixCessionInterne: Chapter = {
         "Au coût complet standard du centre vendeur",
         "Au prix de vente final diminué des coûts de l'aval",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Prix plancher = coût variable du vendeur (en deçà, il perd à céder) ; prix plafond = prix de marché pour l'acheteur (au-delà, il achète à l'extérieur). Chez Rakéo, la zone de négociation acceptable est [38 € ; 75 €].",
     },
@@ -155,7 +155,7 @@ export const prixCessionInterne: Chapter = {
         "Il isole le centre acheteur des inefficiences de l'amont : l'écart réel/standard reste à la charge du centre qui l'a généré",
         "Il reflète fidèlement les coûts constatés de la période",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Au coût réel, l'amont transmet ses écarts de gestion à l'aval, qui subit des inefficiences qu'il ne maîtrise pas. Le coût standard, prévu et stable, laisse l'écart au centre qui l'a généré : chaque centre est responsabilisé sur ce qu'il maîtrise.",
     },
@@ -169,7 +169,7 @@ export const prixCessionInterne: Chapter = {
         "Le coût complet réel, car il couvre toutes les charges",
         "Le coût standard majoré d'une marge",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "PCI optimal = coût variable + coût d'opportunité. Capacité libre ⇒ coût d'opportunité nul ⇒ PCI = coût variable : l'acheteur voit le vrai coût marginal interne. Capacité saturée ⇒ on ajoute la marge externe perdue et le PCI rejoint le prix de marché.",
     },
@@ -183,7 +183,7 @@ export const prixCessionInterne: Chapter = {
         "E-commerce : −3 € ; groupe : −3 €",
         "E-commerce : −3 € ; groupe : +34 €",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Marge E-commerce = 80 − 75 − 8 = −3 € : il refusera l'opération. Pour le groupe, capacité libre donc coût pertinent = coût variable : marge = 80 − 38 − 8 = 34 € par raquette. Le PCI au prix de marché provoque ici une sous-optimisation ; un PCI au coût variable (38 €) assurerait la convergence.",
     },
@@ -197,7 +197,7 @@ export const prixCessionInterne: Chapter = {
         "Un centre de coûts",
         "Un centre d'investissement",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Le centre de recettes est jugé sur le CA, le volume et le mix de ventes. Le centre de profit maîtrise à la fois recettes et coûts (ex. E-commerce), le centre de coûts uniquement les coûts (ex. Production), le centre d'investissement maîtrise en outre les capitaux engagés.",
     },
@@ -210,7 +210,7 @@ export const prixCessionInterne: Chapter = {
         "La valorisation fiscale des transactions intra-groupe transfrontalières, encadrée par l'OCDE — hors programme DCG",
         "Le PCI appliqué entre une fonction support et les fonctions opérationnelles",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Le prix de transfert est une notion fiscale (principe de pleine concurrence, cadre OCDE) réservée au DSCG. Le programme DCG rénové l'exclut expressément : il ne faut pas le confondre avec le prix de cession interne, notion de gestion interne.",
     },

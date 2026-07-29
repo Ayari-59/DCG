@@ -99,7 +99,7 @@ export const fondementsConstructionCouts: Chapter = {
         "Une charge supplétive, ajoutée aux coûts alors qu'elle est absente de la comptabilité financière",
         "Une charge exceptionnelle",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Les capitaux propres ont un coût d'opportunité réel qui n'apparaît pas en charges comptables. On l'ajoute en comptabilité de gestion (charge supplétive), comme la rémunération du travail de l'exploitant, pour assurer la comparabilité entre entreprises financées différemment.",
     },
@@ -113,7 +113,7 @@ export const fondementsConstructionCouts: Chapter = {
         "Ajoutée comme charge supplétive",
         "Répartie entre les produits via une unité d'œuvre",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Les charges exceptionnelles (pénalités, amendes, créances irrécouvrables) et les dotations à caractère fiscal ou exceptionnel ne relèvent pas de l'exploitation normale : les intégrer fausserait le coût des produits. Elles sont enregistrées en comptabilité financière mais exclues des coûts.",
     },
@@ -126,7 +126,7 @@ export const fondementsConstructionCouts: Chapter = {
         "Une charge non incorporable",
         "Une charge supplétive",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Le critère est la possibilité d'affectation : le chef d'atelier travaille pour toutes les références, sa rémunération ne peut être affectée sans ambiguïté à un seul produit. C'est une charge indirecte, contrairement au salaire d'un ouvrier dédié à un seul produit (MOD, directe).",
     },
@@ -135,7 +135,7 @@ export const fondementsConstructionCouts: Chapter = {
       question:
         "COMPOSAL vend son composant 90 € ; le coût variable unitaire est de 40 € et les charges fixes annuelles de 200 000 €. Quel est le seuil de profitabilité en quantité ?",
       choices: ["2 222 produits", "5 000 produits", "2 500 produits", "4 000 produits"],
-      answer: 3,
+      answers: [3],
       explanation:
         "Marge sur coût variable unitaire = 90 − 40 = 50 €. Seuil = charges fixes ÷ MCV unitaire = 200 000 ÷ 50 = 4 000 produits. Diviser les charges fixes par le prix de vente (200 000 ÷ 90 ≈ 2 222) est l'erreur classique : c'est la marge, et non le prix, qui couvre les charges fixes.",
     },
@@ -149,7 +149,7 @@ export const fondementsConstructionCouts: Chapter = {
         "Erroné : les 100 000 € sont un coût irrécupérable, perdu quoi qu'il arrive ; seuls comptent les coûts et recettes futurs",
         "Erroné : il fallait amortir l'investissement avant de décider",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "C'est le piège des coûts irréversibles (sunk costs) signalé par le chapitre : une dépense déjà engagée et non récupérable ne doit jamais influencer une décision future. Seules les charges pertinentes — celles qui changent selon la décision — entrent dans le raisonnement.",
     },
@@ -163,7 +163,7 @@ export const fondementsConstructionCouts: Chapter = {
         "(80 ÷ 90) × 100 ≈ 88,9 %",
         "(90 − 80) = 10 %",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Le taux de profitabilité rapporte le résultat au CHIFFRE D'AFFAIRES : (10 ÷ 90) × 100 ≈ 11,1 %. Le rapport (10 ÷ 80) × 100 = 12,5 % est le taux de marge, qui rapporte la marge au COÛT. Les deux taux mesurent des choses différentes et ne doivent pas être confondus.",
     },
@@ -176,7 +176,7 @@ export const fondementsConstructionCouts: Chapter = {
         "La somme des seules charges directes du produit",
         "Le prix de vente diminué de la marge cible",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "L'enchaînement suit le cycle d'exploitation : coût d'achat (prix d'achat + frais d'approvisionnement) → coût de production (+ MOD + charges indirectes d'atelier) → coût de revient (+ charges hors production). C'est le coût complet et final du produit vendu ; résultat analytique = prix de vente − coût de revient.",
     },
@@ -190,7 +190,7 @@ export const fondementsConstructionCouts: Chapter = {
         "+ 16 000 €, car chaque produit dégage 60 − 40 = 20 € de marge sur coût variable",
         "+ 48 000 €, soit 800 × 60 €",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Les charges fixes étant déjà absorbées par l'activité courante et la capacité disponible, seules les charges variables sont pertinentes : marge = 800 × (60 − 40) = 16 000 € qui s'ajoutent intégralement au résultat. Raisonner en coût complet (60 − 80 = − 20 €) conduirait à refuser à tort — c'est le piège signalé par le chapitre. La décision ne vaut que si la commande reste ponctuelle et ne cannibalise pas les ventes à 90 €.",
     },
@@ -203,7 +203,7 @@ export const fondementsConstructionCouts: Chapter = {
         "Charges de la comptabilité financière − supplétives",
         "Charges de la comptabilité financière − non incorporables + supplétives",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "On part des charges de la comptabilité financière, on RETIRE les non incorporables (hors exploitation normale) et on AJOUTE les supplétives (rémunération de l'exploitant, des capitaux propres). La différence d'incorporation (supplétives − non incorporables) permet de réconcilier résultat analytique et résultat comptable.",
     },
@@ -216,7 +216,7 @@ export const fondementsConstructionCouts: Chapter = {
         "Augmente proportionnellement au volume",
         "Devient une charge variable",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "En TOTAL, les charges fixes sont constantes ; à L'UNITÉ, elles diminuent quand l'activité augmente (effet d'absorption, « économies d'échelle »), tandis que la charge variable unitaire reste constante. Attention : une charge n'est fixe que sur sa zone de pertinence — au-delà, elle augmente par paliers.",
     },

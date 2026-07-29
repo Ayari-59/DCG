@@ -99,7 +99,7 @@ export const gestionProduction: Chapter = {
       question:
         "Une entreprise prévoit 500 ventes pour le mois. Son stock initial est de 80 unités et elle souhaite un stock final de 120 unités. Quelle quantité doit-elle produire ?",
       choices: ["460 unités", "500 unités", "540 unités", "700 unités"],
-      answer: 2,
+      answers: [2],
       explanation:
         "Production = Ventes prévues + Stock final souhaité − Stock initial = 500 + 120 − 80 = 540. Répondre 460 reviendrait à inverser les stocks (500 + 80 − 120) : c'est le piège classique de l'équation du programme de production.",
     },
@@ -112,7 +112,7 @@ export const gestionProduction: Chapter = {
         "Le résultat net comptable",
         "Le taux d'utilisation des capacités",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "On maximise la marge sur coûts variables (et non le chiffre d'affaires — erreur classique signalée par le cours), les coûts fixes étant considérés comme non pertinents à court terme.",
     },
@@ -125,7 +125,7 @@ export const gestionProduction: Chapter = {
         "À l'origine du repère",
         "À l'intersection des deux axes de coordonnées",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "On admet qu'une solution optimale, si elle existe, correspond à un sommet du DSA. On translate la droite objectif F = k parallèlement vers les valeurs croissantes : le dernier sommet touché est l'optimum. La méthode énumérative (valeur de F à chaque sommet) permet de vérifier.",
     },
@@ -134,7 +134,7 @@ export const gestionProduction: Chapter = {
       question:
         "ALTIS Sport fabrique des Bet (marge 260 €) et des Num (marge 200 €). Les contraintes atelier (6x + 5y ≤ 900) et MOD (6x + 3y ≤ 720) sont saturées à l'optimum. Quelle est la marge sur coûts variables maximale ?",
       choices: ["34 000 €", "36 500 €", "37 500 €", "39 000 €"],
-      answer: 2,
+      answers: [2],
       explanation:
         "On résout 6x + 5y = 900 et 6x + 3y = 720. Par soustraction : 2y = 180 → y = 90 ; puis 6x + 270 = 720 → x = 75. F = (75 × 260) + (90 × 200) = 19 500 + 18 000 = 37 500 €. Le programme optimal est 75 Bet et 90 Num.",
     },
@@ -148,7 +148,7 @@ export const gestionProduction: Chapter = {
         "A, car il consomme le moins d'unités d'œuvre",
         "Les trois à parts égales",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Méthode du facteur rare : on classe par marge PAR UNITÉ d'œuvre du goulot. A = 100/2 = 50 €/uo ; B = 300/4 = 75 €/uo ; C = 360/6 = 60 €/uo. On sature l'atelier en commençant par B, puis C, puis A — et non par la marge unitaire brute, qui désignerait C à tort.",
     },
@@ -161,7 +161,7 @@ export const gestionProduction: Chapter = {
         "La suppression totale des stocks (« zéro stock »)",
         "L'ordonnancement des tâches d'un projet par un graphe",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Le MRP est une technique de pilotage par l'amont (flux poussés) : à partir des prévisions de ventes, elle utilise les nomenclatures, les gammes opératoires et les stocks pour calculer les besoins dépendants. Le pilotage par l'aval (flux tirés) correspond au juste-à-temps et au Kanban.",
     },
@@ -174,7 +174,7 @@ export const gestionProduction: Chapter = {
         "Le chemin passant par le moins de tâches",
         "Le chemin le plus long",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Date au plus tôt : calcul de gauche à droite, en retenant le chemin le PLUS LONG en cas de convergence (la tâche ne peut démarrer que lorsque toutes ses antérieures sont finies). À l'inverse, la date au plus tard (de droite à gauche) retient le chemin le plus court.",
     },
@@ -188,7 +188,7 @@ export const gestionProduction: Chapter = {
         "Marge totale = 3 ; marge libre = 3",
         "Marge totale = 0 ; marge libre = 0",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Marge totale = date au plus tard − date au plus tôt = 15 − 12 = 3 : J peut prendre 3 semaines de retard sans allonger le projet. Marge libre = date au plus tôt de la suivante − durée − date au plus tôt = 19 − 7 − 12 = 0 : tout retard décalerait le début au plus tôt de G. On vérifie bien ML ≤ MT.",
     },
@@ -201,7 +201,7 @@ export const gestionProduction: Chapter = {
         "Leur date au plus tôt est égale à leur date au plus tard (marges nulles)",
         "Elles se situent toutes en début de projet",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Le chemin critique est le chemin le plus long ; ses tâches ont une date au plus tôt égale à la date au plus tard, donc des marges nulles : aucun retard n'y est toléré. Dans l'application du cours, il s'agit de A – C – E – F – I, soit 6 + 6 + 14 + 5 + 7 = 38 semaines.",
     },
@@ -214,7 +214,7 @@ export const gestionProduction: Chapter = {
         "L'ordonnancement par la méthode MPM",
         "La méthode du simplexe",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le référentiel cible la programmation linéaire (méthode graphique et facteur rare) et l'ordonnancement MPM. En revanche, la méthode du simplexe — comme le diagramme de Gantt, le suivi des délais et des coûts et le juste-à-temps — n'est pas au programme : culture professionnelle seulement.",
     },

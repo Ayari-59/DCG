@@ -104,7 +104,7 @@ export const cadreMetierOrganisation: Chapter = {
         "Maîtrise de la gestion (sens anglais de to control)",
         "Sanction des écarts budgétaires",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "« Contrôler » signifie ici « maîtriser » : contrôler la gestion, c'est en garder la maîtrise. C'est ce qui distingue le contrôle de gestion de l'audit (vérification a posteriori) et du contrôle interne (maîtrise des risques et des procédures).",
     },
@@ -118,7 +118,7 @@ export const cadreMetierOrganisation: Chapter = {
         "À la fois efficace et efficiente",
         "Ni efficace ni efficiente",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Efficacité = Résultats / Objectifs : l'objectif est dépassé, l'équipe est efficace. Efficience = Résultats / Ressources : en doublant le budget, elle consomme trop de ressources pour son résultat — elle est peu efficiente. C'est LA confusion classique à éviter : produire beaucoup en gaspillant n'est pas être performant.",
     },
@@ -132,7 +132,7 @@ export const cadreMetierOrganisation: Chapter = {
         "L'atelier n'est pas efficace car il n'a pas respecté le budget de charges",
         "L'atelier est efficient mais pas efficace",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Efficacité = 5 200 / 5 000 = 104 % : objectif dépassé. Efficience : coût unitaire réel = 360 000 / 5 200 ≈ 69,23 €, inférieur au coût prévu de 350 000 / 5 000 = 70 € : moins de ressources par unité. Le dépassement global des charges (360 000 > 350 000) ne suffit pas à conclure : il faut raisonner par unité produite.",
     },
@@ -145,7 +145,7 @@ export const cadreMetierOrganisation: Chapter = {
         "Pertinence, fiabilité, rapidité",
         "Profit (économique), People (social), Planet (environnemental)",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le Triple Bottom Line mesure la performance globale sur trois « lignes de résultat » : Profit, People, Planet. Attention au piège : ESG (Environnement, Social, Gouvernance) désigne les CRITÈRES utilisés pour rendre cette performance mesurable, et les 3 E (économie/efficacité/efficience) relèvent du triangle de la performance opérationnelle.",
     },
@@ -158,7 +158,7 @@ export const cadreMetierOrganisation: Chapter = {
         "Une connaissance",
         "Une intelligence décisionnelle",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Une donnée est un fait brut non interprété. Mise en contexte (« le magasin A a vendu 12 000 € hier, +8 % »), elle devient information ; interprétée pour agir (« la hausse vient de la promotion, il faut la reconduire »), elle devient connaissance. Une donnée brute ne pilote rien : seule l'information puis la connaissance permettent de décider.",
     },
@@ -166,7 +166,7 @@ export const cadreMetierOrganisation: Chapter = {
       id: "q6",
       question: "Lequel de ces « V » ne fait PAS partie des 5 V du Big Data ?",
       choices: ["Vélocité", "Véracité", "Volatilité", "Variété"],
-      answer: 2,
+      answers: [2],
       explanation:
         "Les 5 V sont : Volume, Variété, Vélocité, Véracité et Valeur. La « volatilité » n'en fait pas partie. La Valeur est l'enjeu final — extraire une utilité décisionnelle — et la Véracité rappelle que la fiabilité des données doit être contrôlée (« garbage in, garbage out »).",
     },
@@ -179,7 +179,7 @@ export const cadreMetierOrganisation: Chapter = {
         "Des coûts de production",
         "Des prix de cession interne",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Le centre de profit maîtrise recettes ET coûts (jugé sur la marge) ; le centre d'investissement maîtrise EN PLUS les capitaux investis (jugé sur ROI, ROCE, EVA). C'est le niveau d'autonomie le plus élevé. Confondre ces deux centres est une erreur fréquente explicitement signalée dans le chapitre.",
     },
@@ -193,7 +193,7 @@ export const cadreMetierOrganisation: Chapter = {
         "Une pratique acceptable si l'atelier est efficient",
         "Une violation du principe de contrôlabilité",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le principe de contrôlabilité, principe cardinal des centres de responsabilité, impose de ne juger un responsable que sur ce qu'il maîtrise. L'atelier maîtrise ses charges, pas le volume vendu ni les prix : le juger sur le CA est injuste, démotivant et fausse l'évaluation. Ses indicateurs pertinents : coût unitaire, écarts sur coûts, productivité.",
     },
@@ -207,7 +207,7 @@ export const cadreMetierOrganisation: Chapter = {
         "ROI = 12 % ; EVA = +2 M€",
         "ROI = 12 % ; EVA = +6 M€",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "ROI = Résultat / Capitaux investis = 6 / 50 = 12 %. EVA = Résultat − (Capitaux × coût du capital) = 6 − (50 × 8 %) = 6 − 4 = +2 M€ : le centre crée de la valeur au-delà du coût des capitaux. Attention à ne pas confondre ROI (résultat/capitaux) et taux de marge (résultat/CA, ici 6/48 = 12,5 %).",
     },
@@ -221,7 +221,7 @@ export const cadreMetierOrganisation: Chapter = {
         "Le principe de contrôlabilité",
         "Un effet de la décomposition de DuPont",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "C'est le biais célèbre du ROI : le projet à 10 % est supérieur au coût du capital (8 %), donc créateur de valeur (EVA positive), mais il abaisserait le ROI moyen du centre — le responsable le refuse à tort. L'EVA, qui raisonne en valeur absolue créée, corrige ce travers : tout projet à EVA positive doit être accepté.",
     },

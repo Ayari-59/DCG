@@ -103,7 +103,7 @@ export const controleBudgetaireEcarts: Chapter = {
         "Écart sur volume au prix prévu, écart sur prix aux quantités réelles",
         "Peu importe, puisque la somme des sous-écarts retombe toujours sur l'écart total",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Convention à retenir absolument : Δ/Volume = (Vr − Vp) × Pp (au prix PRÉVU) et Δ/Prix = (Pr − Pp) × Vr (aux quantités RÉELLES). La décomposition inverse retrouve aussi l'écart total, mais c'est une erreur de méthode : seule la convention du cours est admise.",
     },
@@ -117,7 +117,7 @@ export const controleBudgetaireEcarts: Chapter = {
         "− 400 € (défavorable)",
         "+ 560 € (favorable)",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Écart sur prix = (Pr − Pp) × Vr = (48 − 50) × 220 = − 440 € (D) : la baisse du prix ampute le CA. − 400 € serait l'erreur de méthode (valorisation au volume prévu 200). L'écart sur volume vaut (220 − 200) × 50 = + 1 000 € (F), et l'écart total sur CA = 10 560 − 10 000 = + 560 € (F) = + 1 000 − 440. La cohérence est vérifiée.",
     },
@@ -130,7 +130,7 @@ export const controleBudgetaireEcarts: Chapter = {
         "Ni favorable ni défavorable : seul le montant compte",
         "Défavorable, car tout écart sur coût dégrade le résultat",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Pour un coût, écart = Réel − Prévu : un écart NÉGATIF signifie que le coût a baissé, ce qui est FAVORABLE au résultat. Le signe arithmétique n'a pas de sens en soi : positif = défavorable pour un coût, favorable pour un produit (CA, marge). Écrire « − 529 » sans préciser (F) est l'erreur fréquente signalée par le cours.",
     },
@@ -144,7 +144,7 @@ export const controleBudgetaireEcarts: Chapter = {
         "+ 2 470 € (favorable)",
         "+ 2 470 € (défavorable)",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Quantité allouée à la production réelle : Qs = 2 × 1 900 = 3 800 kg. Écart sur quantité = (Qr − Qs) × Cs = (3 990 − 3 800) × 13 = + 2 470 € : positif sur un coût, donc DÉFAVORABLE (surconsommation, 2,1 kg réels contre 2 kg standard). − 399 € est l'écart sur prix (12,90 − 13) × 3 990 (F), et + 2 071 € l'écart global (− 399 + 2 470).",
     },
@@ -158,7 +158,7 @@ export const controleBudgetaireEcarts: Chapter = {
         "+ 1 000 € (défavorable)",
         "+ 1 100 € (favorable)",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Écart sur taux = (taux réel − taux prévu) × heures RÉELLES = (21 − 20) × 1 100 = + 1 100 € (D) : le taux horaire a dérapé. + 1 000 € serait l'erreur de valorisation aux heures allouées (2 × 500 = 1 000 h). L'écart sur temps vaut (1 100 − 1 000) × 20 = + 2 000 € (D), et l'écart global = + 3 100 € (D) = 23 100 − 20 000.",
     },
@@ -171,7 +171,7 @@ export const controleBudgetaireEcarts: Chapter = {
         "À la direction commerciale, qui détermine le programme des ventes",
         "Au contrôleur de gestion, qui a établi les standards",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "L'écart sur volume = (Vr − Vp) × Qp × Pp traduit la seule variation du niveau de production, que l'atelier SUBIT : le programme est décidé par le commercial. L'imputer au directeur de production serait une erreur de management qui sanctionnerait injustement un responsable — c'est le « piège de l'écart sur volume » du cours.",
     },
@@ -185,7 +185,7 @@ export const controleBudgetaireEcarts: Chapter = {
         "− 4 000 € (défavorable)",
         "+ 600 € (défavorable)",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Coût variable de l'UO : a = (60 000 − 20 000) / 1 000 = 40 € → budget flexible : Y = 40·X + 20 000. Pour Ar = 1 200 UO : Y = 68 000 €. Écart sur activité = budget flexible − (Ar × 60) = 68 000 − 72 000 = − 4 000 € (F) : la suractivité améliore l'absorption des charges fixes. L'écart sur budget = 72 600 − 68 000 = + 4 600 € (D) ; leur somme redonne l'écart sur coût de + 600 € (D).",
     },
@@ -199,7 +199,7 @@ export const controleBudgetaireEcarts: Chapter = {
         "0 € (aucun écart)",
         "− 100 € (défavorable)",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Marge prévue = 80 × (12 − 7) = 400 €. Marge réelle SUR COÛT PRÉÉTABLI = 100 × (10 − 7) = 300 €. Écart = 300 − 400 = − 100 € (D). Décomposition : effet volume = (100 − 80) × 5 = + 100 € (F) ; effet prix = (10 − 12) × 100 = − 200 € (D). La baisse de prix détruit deux fois plus de marge que la hausse de volume n'en crée : le CA progresse mais l'action commerciale détruit de la marge.",
     },
@@ -213,7 +213,7 @@ export const controleBudgetaireEcarts: Chapter = {
         "Parce que le PCG interdit d'utiliser le coût réel dans une marge",
         "Pour majorer systématiquement la marge des commerciaux",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Le coût est figé au standard dans la marge prévue ET dans la marge réelle (Pr − Cp). Ainsi, l'écart ne reflète que ce que le commercial maîtrise : prix et quantités vendues. Les dérives de coûts réels relèvent des écarts sur coûts, imputés aux centres de production ou d'achats. C'est une exigence de contrôlabilité : on n'évalue un responsable que sur ce qu'il maîtrise.",
     },
@@ -226,7 +226,7 @@ export const controleBudgetaireEcarts: Chapter = {
         "Éviter de trop sur-performer pour ne pas voir ses objectifs relevés l'année suivante",
         "Faire porter les écarts défavorables sur un autre centre de responsabilité",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Le slack budgétaire est la constitution d'une « marge de sécurité » par sous-estimation des objectifs lors de la négociation budgétaire. Les autres propositions sont d'autres comportements opportunistes du cours : la consommation de fin d'exercice, l'effet cliquet et les jeux sur la décomposition des écarts.",
     },

@@ -102,7 +102,7 @@ export const gestionBudgetaire: Chapter = {
         "Le budget des ventes, car l'activité est le plus souvent limitée par la demande",
         "Le budget des frais généraux, car ce sont des charges fixes",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "On part du budget des ventes (déterminant), dont découlent la production, les approvisionnements et les charges, qui convergent vers la trésorerie et les états prévisionnels. Exception : si la capacité de production est saturée, c'est elle qui devient déterminante.",
     },
@@ -110,7 +110,7 @@ export const gestionBudgetaire: Chapter = {
       id: "q2",
       question: "Laquelle de ces fonctions ne fait PAS partie des cinq finalités du budget présentées dans le chapitre ?",
       choices: ["La prévision", "La coordination", "La motivation", "La consolidation comptable des filiales"],
-      answer: 3,
+      answers: [3],
       explanation:
         "Les cinq finalités sont : prévision, coordination, communication, motivation et contrôle. La consolidation comptable est une technique de comptabilité de groupe, pas une finalité du budget. À noter la tension classique entre prévision (réalisme) et motivation (ambition).",
     },
@@ -119,7 +119,7 @@ export const gestionBudgetaire: Chapter = {
       question:
         "Une entreprise prévoit de vendre 12 000 unités. Stock initial de produits finis : 800 unités ; stock final souhaité : 1 200 unités. Quelle est la production à budgéter ?",
       choices: ["11 600 unités", "12 400 unités", "12 000 unités", "14 000 unités"],
-      answer: 1,
+      answers: [1],
       explanation:
         "Production = Ventes + Stock final − Stock initial = 12 000 + 1 200 − 800 = 12 400 unités. Piège classique : inverser les stocks (12 000 + 800 − 1 200 = 11 600) ou oublier la variation de stock (12 000).",
     },
@@ -133,7 +133,7 @@ export const gestionBudgetaire: Chapter = {
         "− 25 000 € (défavorable)",
         "− 6 000 € (défavorable)",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Écart sur prix = (Prix réel − Prix budgété) × Quantité réelle = (52 − 50) × 9 500 = + 19 000 € favorable. Le piège est de multiplier par la quantité budgétée (20 000 €). L'écart sur volume vaut (9 500 − 10 000) × 50 = − 25 000 € D, et l'écart global − 6 000 € D (vérification : 19 000 − 25 000).",
     },
@@ -147,7 +147,7 @@ export const gestionBudgetaire: Chapter = {
         "+ 7 600 € (défavorable)",
         "+ 3 610 € (défavorable)",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Quantité standard = 9 500 × 2 = 19 000 kg. Écart sur quantité = (19 950 − 19 000) × 8 (coût STANDARD) = + 7 600 € défavorable (surconsommation de 950 kg). Valoriser au coût réel 7,80 € (7 410 €) est le piège. L'écart sur prix vaut (7,80 − 8) × 19 950 = − 3 990 € F, et l'écart total + 3 610 € D.",
     },
@@ -160,7 +160,7 @@ export const gestionBudgetaire: Chapter = {
         "À rendre les objectifs négociables entre direction et opérationnels",
         "À remplacer le budget annuel par une prévision glissante",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Le budget flexible applique les standards unitaires au volume réel. Écart sur volume = budget flexible − budget initial ; écart sur performance = réalisé − budget flexible. Sans lui, on impute à un atelier une « mauvaise performance » qui n'est qu'un effet de la baisse d'activité décidée ailleurs. Ne pas confondre avec le rolling forecast.",
     },
@@ -173,7 +173,7 @@ export const gestionBudgetaire: Chapter = {
         "Parce qu'il remplace le bilan prévisionnel",
         "Parce qu'il intègre les décalages d'encaissement/décaissement : une entreprise rentable peut faire faillite par défaut de trésorerie",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le compte de résultat raisonne en produits/charges (rentabilité), la trésorerie en flux monétaires avec les décalages de paiement (liquidité). Un client réglant à 30 jours encaisse le mois suivant la vente. Confondre les deux logiques est un piège signalé par la fiche de révision.",
     },
@@ -187,7 +187,7 @@ export const gestionBudgetaire: Chapter = {
         "− 4 000 € (favorable) : bon rendement",
         "+ 20 000 € (défavorable) : écart global",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Budget flexible pour 9 000 h = 120 000 + 8 × 9 000 = 192 000 €. Coût imputé = 20 × 9 000 = 180 000 €. Écart sur activité = 192 000 − 180 000 = + 12 000 € défavorable : la sous-activité (9 000 h au lieu de 10 000) a mal absorbé les charges fixes (« coût de chômage »). L'écart sur budget (− 2 000 € F) et l'écart sur rendement (− 4 000 € F) sont les deux autres sous-écarts de l'exemple.",
     },
@@ -195,7 +195,7 @@ export const gestionBudgetaire: Chapter = {
       id: "q9",
       question: "Quel auteur a montré, dès les années 1950, les effets pervers de la pression budgétaire sur les comportements ?",
       choices: ["Hope & Fraser", "Chris Argyris", "Henri Bouquin", "Robert Simons"],
-      answer: 1,
+      answers: [1],
       explanation:
         "Argyris a mis en évidence résistances, tensions et jeux défensifs induits par la pression budgétaire : le budget mal utilisé démotive plus qu'il ne mobilise. Hope & Fraser portent la critique radicale du Beyond Budgeting (années 2000), Bouquin la lecture contractuelle du budget, Simons la distinction diagnostique/interactive.",
     },
@@ -208,7 +208,7 @@ export const gestionBudgetaire: Chapter = {
         "Rien de définitif : un écart est une information à interpréter — un écart favorable peut masquer un risque (sous-investissement, baisse de qualité)",
         "Qu'il faut réduire le budget du centre l'année suivante",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Un écart n'est pas en soi une faute ni une réussite : c'est une information à interpréter. Un écart défavorable peut résulter d'un choix délibéré (qualité supérieure), un écart favorable peut masquer un sous-investissement risqué. Confondre écart favorable et bonne gestion est un piège explicitement signalé ; réduire mécaniquement le budget illustrerait l'effet cliquet.",
     },

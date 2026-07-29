@@ -12,7 +12,7 @@ export const quiz: QuizQuestion[] = [
       "La lecture du rapport",
       "Aucune structure"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Une idée par diapo, un titre-message, peu de texte, des visuels."
   },
   {
@@ -24,7 +24,7 @@ export const quiz: QuizQuestion[] = [
       "Remplacer la présentation",
       "Cacher vos notes"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Le support appuie la parole, il ne se lit pas."
   },
   {
@@ -36,7 +36,7 @@ export const quiz: QuizQuestion[] = [
       "La bibliographie",
       "Les remerciements"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Missions + situation de communication sont le cœur."
   },
   {
@@ -48,7 +48,7 @@ export const quiz: QuizQuestion[] = [
       "Rester sur les notes",
       "Éviter le jury"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Regarder le jury crée le contact et la crédibilité."
   },
   {
@@ -60,7 +60,7 @@ export const quiz: QuizQuestion[] = [
       "Parler très vite",
       "Ne pas répéter"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Bien préparé, on maîtrise son trac."
   },
   {
@@ -72,7 +72,7 @@ export const quiz: QuizQuestion[] = [
       "Se taire",
       "Changer de sujet"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "L'honnêteté vaut mieux que le bluff."
   },
   {
@@ -84,7 +84,7 @@ export const quiz: QuizQuestion[] = [
       "Répondre au hasard",
       "Ignorer"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Écouter et reformuler sécurise la réponse."
   },
   {
@@ -96,7 +96,7 @@ export const quiz: QuizQuestion[] = [
       "Monocorde",
       "Chuchoté"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Un débit posé et audible, avec de l'intonation."
   },
   {
@@ -108,7 +108,7 @@ export const quiz: QuizQuestion[] = [
       "Dépasser largement",
       "Ne pas faire de plan"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Le minutage se prépare et se répète."
   },
   {
@@ -120,7 +120,7 @@ export const quiz: QuizQuestion[] = [
       "Que des remerciements",
       "La lecture d'une annexe"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Bilan + compétences + ouverture."
   },
   {
@@ -132,7 +132,7 @@ export const quiz: QuizQuestion[] = [
       "À cacher absolument",
       "Un signe d'échec"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Un trac maîtrisé est une ressource."
   },
   {
@@ -144,7 +144,7 @@ export const quiz: QuizQuestion[] = [
       "Doit être figé",
       "Remplace la parole"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "La congruence verbal/non-verbal rend crédible."
   },
   {
@@ -156,7 +156,7 @@ export const quiz: QuizQuestion[] = [
       "Remplacer la soutenance",
       "Noter le cabinet"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Il valorise le parcours et outille l'entretien."
   },
   {
@@ -168,7 +168,7 @@ export const quiz: QuizQuestion[] = [
       "Abandonner",
       "Changer de sujet"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "On cible et on mesure le progrès."
   },
   {
@@ -180,7 +180,7 @@ export const quiz: QuizQuestion[] = [
       "Seulement l'orthographe",
       "La longueur du rapport"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Fond + forme + échange."
   }
 ];

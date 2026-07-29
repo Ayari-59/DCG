@@ -103,7 +103,7 @@ export const procedureBudgetaire: Chapter = {
         "Du programme",
         "De la liasse budgétaire",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "On réserve le terme budget aux prévisions chiffrées en valeur monétaire. Une prévision non monétaire (quantités, heures, tonnes) relève du programme : le « programme des approvisionnements » décrit quantités et dates, le « budget des approvisionnements » en chiffre le montant. C'est un piège de vocabulaire signalé par le chapitre.",
     },
@@ -117,7 +117,7 @@ export const procedureBudgetaire: Chapter = {
         "Le budget des investissements en premier, le budget de production en dernier",
         "Le budget de trésorerie en premier, le budget des ventes en dernier",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Deux principes gouvernent l'enchaînement : en amont, tous les budgets découlent des prévisions de ventes (le budget des ventes est donc le premier construit) ; en aval, tous les budgets ont des conséquences sur la trésorerie (le budget de trésorerie est le dernier établi, il fait la synthèse et vérifie « si ça passe ou si ça casse »).",
     },
@@ -131,7 +131,7 @@ export const procedureBudgetaire: Chapter = {
         "En décembre, lors de l'arrêté du budget définitif",
         "En novembre, lors de l'harmonisation des projets de budgets",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le scénario classique : septembre = note d'orientation (lettre de cadrage) ; octobre = budgets décentralisés ; novembre = navette budgétaire (allers-retours itératifs entre unités et cellule de coordination, par analogie avec la navette parlementaire) ; décembre = budget définitif, ensuite mensualisé.",
     },
@@ -145,7 +145,7 @@ export const procedureBudgetaire: Chapter = {
         "Un centre de profit",
         "Un centre d'investissement",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "C'est un centre de chiffre d'affaires. Attention à l'effet pervers signalé par le cours : pour « faire du chiffre », un commercial peut casser les prix par des remises excessives ou négliger la solvabilité d'un client. Le centre de profit, jugé sur charges ET produits, limite précisément ce risque.",
     },
@@ -154,7 +154,7 @@ export const procedureBudgetaire: Chapter = {
       question:
         "Un atelier a un coût variable de 5 € par heure-machine et 10 000 € de frais fixes. Quel est son budget flexible pour une activité de 6 000 heures ?",
       choices: ["30 000 €", "40 000 €", "45 000 €", "35 000 €"],
-      answer: 1,
+      answers: [1],
       explanation:
         "B = v · N + F = 5 × 6 000 + 10 000 = 40 000 €. Le budget combine une part fixe constante (10 000 €) et une part variable proportionnelle au volume (30 000 €). Répondre 30 000 € oublierait les frais fixes ; 35 000 € et 45 000 € correspondent aux hypothèses basse (5 000 h) et haute (7 000 h).",
     },
@@ -167,7 +167,7 @@ export const procedureBudgetaire: Chapter = {
         "Justifier chaque dépense chaque année, indépendamment des pratiques antérieures",
         "Supprimer le budget annuel au profit de prévisions glissantes",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Le BBZ (Pyhrr, 1970) exclut par principe la reconduction : rien n'est jamais acquis, chaque dépense doit être justifiée, on « recommence à zéro » chaque année. La reconduction mécanique (base + pourcentage) est exactement ce qu'il combat ; l'abandon du budget au profit des rolling forecasts relève du Beyond Budgeting, pas du BBZ.",
     },
@@ -181,7 +181,7 @@ export const procedureBudgetaire: Chapter = {
         "La procédure « sunset »",
         "Le principe de contrôlabilité",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "C'est le slack budgétaire (Cyert et March) : la marge de sécurité ou « matelas » négociée lors de la construction des budgets. Il devient alors facile de tenir le budget, voire de dégager un écart favorable en dépensant 109. Effet pervers : au lieu de réduire les coûts, la négociation les augmente.",
     },
@@ -195,7 +195,7 @@ export const procedureBudgetaire: Chapter = {
         "Doit minimiser ses coûts à tout prix",
         "Ne répond que des éléments qu'il maîtrise",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le principe de contrôlabilité veut qu'un responsable ne réponde que des éléments qu'il maîtrise — d'où l'intérêt de raisonner sur une contribution (coûts partiels) ou de neutraliser les éléments non contrôlables (coûts standards), plutôt que d'imputer arbitrairement des frais de siège. Et un centre de coûts doit optimiser ses coûts compte tenu de la qualité, pas les minimiser à tout prix.",
     },
@@ -209,7 +209,7 @@ export const procedureBudgetaire: Chapter = {
         "De généraliser la reconduction du budget de l'année précédente",
         "D'allonger le cycle budgétaire annuel à cinq ans",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Le Beyond Budgeting préconise d'abandonner le budget annuel : objectifs relatifs (benchmark interne ou externe) au lieu d'objectifs fixes négociés, décentralisation de la décision, et prévisions glissantes (rolling forecasts) régulièrement réactualisées. Le cours nuance : l'abandonner totalement serait « jeter le bébé avec l'eau du bain » — la plupart des organisations assouplissent le budget sans le supprimer.",
     },
@@ -223,7 +223,7 @@ export const procedureBudgetaire: Chapter = {
         "Un budget équilibré en résultat peut être en tension de trésorerie, car le résultat n'est pas la trésorerie",
         "Le budget de trésorerie détaillé est au cœur de la compétence 3.1",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Le résultat n'est pas la trésorerie : créances, stocks et décalages d'encaissement/décaissement peuvent mettre en tension la trésorerie d'un budget pourtant équilibré en résultat. Erreur classique signalée : les dotations aux amortissements et provisions n'entraînent aucun décaissement. Enfin, le budget de trésorerie détaillé et les comptes prévisionnels sont hors programme de la compétence 3.1.",
     },

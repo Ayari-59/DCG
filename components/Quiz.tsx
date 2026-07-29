@@ -3,17 +3,23 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { QuizQuestion } from "@/lib/content/types";
 import { getTheme } from "@/lib/content/theme";
+import { Icone } from "./Icones";
 
 interface Props {
   slug: string;
   questions: QuizQuestion[];
 }
 
+/** Deux séries d'indices sont égales si elles désignent les mêmes cases. */
+function memeReponse(a: number[], b: number[]) {
+  return a.length === b.length && [...a].sort().every((v, i) => v === [...b].sort()[i]);
+}
+
 export function Quiz({ slug, questions }: Props) {
   const theme = getTheme(slug);
   const storageKey = `dcga:quiz:${slug}`;
   const [current, setCurrent] = useState(0);
-  const [selected, setSelected] = useState<number | null>(null);
+  const [selected, setSelected] = useState<number[]>([]);
   const [validated, setValidated] = useState(false);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
@@ -25,7 +31,8 @@ export function Quiz({ slug, questions }: Props) {
   }, [storageKey]);
 
   const question = questions[current];
-  const isCorrect = validated && selected === question.answer;
+  const multiple = question.answers.length > 1;
+  const isCorrect = validated && memeReponse(selected, question.answers);
 
   /**
    * La réponse choisie est doublée dans une référence : au clavier, « 2 »
@@ -33,16 +40,32 @@ export function Quiz({ slug, questions }: Props) {
    * gestionnaire lirait alors une valeur périmée — la validation serait
    * silencieusement ignorée.
    */
-  const selectedRef = useRef<number | null>(null);
+  const selectedRef = useRef<number[]>([]);
   useEffect(() => {
     selectedRef.current = selected;
   }, [selected]);
 
+  /**
+   * Une question à réponse unique remplace le choix précédent ; une
+   * question à réponses multiples les cumule. Sans cette distinction, il
+   * faudrait décocher à la main avant de changer d'avis sur les trois
+   * quarts des questions.
+   */
+  const choisir = useCallback(
+    (i: number) => {
+      setSelected((s) => {
+        const suivant = !multiple ? [i] : s.includes(i) ? s.filter((x) => x !== i) : [...s, i];
+        selectedRef.current = suivant;
+        return suivant;
+      });
+    },
+    [multiple]
+  );
+
   const validate = useCallback(() => {
-    const choix = selectedRef.current;
-    if (choix === null) return;
+    if (selectedRef.current.length === 0) return;
     setValidated(true);
-    if (choix === question.answer) setScore((s) => s + 1);
+    if (memeReponse(selectedRef.current, question.answers)) setScore((s) => s + 1);
   }, [question]);
 
   const next = useCallback(() => {
@@ -54,14 +77,15 @@ export function Quiz({ slug, questions }: Props) {
       }
     } else {
       setCurrent((c) => c + 1);
-      setSelected(null);
+      setSelected([]);
       setValidated(false);
     }
   }, [current, questions.length, score, best, storageKey]);
 
   /**
-   * Répondre au clavier : 1 à 4 pour choisir, Entrée pour valider puis
-   * enchaîner. Faire une série de dix questions ne demande plus la souris.
+   * Répondre au clavier : les chiffres pour cocher, Entrée pour valider
+   * puis enchaîner. Faire une série de vingt-six questions ne demande plus
+   * la souris.
    */
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -71,8 +95,7 @@ export function Quiz({ slug, questions }: Props) {
       const chiffre = Number(e.key);
       if (!validated && chiffre >= 1 && chiffre <= question.choices.length) {
         e.preventDefault();
-        selectedRef.current = chiffre - 1;
-        setSelected(chiffre - 1);
+        choisir(chiffre - 1);
       } else if (e.key === "Enter") {
         e.preventDefault();
         if (validated) next();
@@ -81,11 +104,11 @@ export function Quiz({ slug, questions }: Props) {
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [validated, finished, question, validate, next]);
+  }, [validated, finished, question, choisir, validate, next]);
 
   function restart() {
     setCurrent(0);
-    setSelected(null);
+    setSelected([]);
     setValidated(false);
     setScore(0);
     setFinished(false);
@@ -106,7 +129,9 @@ export function Quiz({ slug, questions }: Props) {
               : "Reprenez la leçon et les flashcards, puis retentez le quiz."}
         </p>
         {best !== null && (
-          <p className="mt-1 text-sm text-slate-400">Meilleur score : {best}/{questions.length}</p>
+          <p className="mt-1 text-sm text-slate-400">
+            Meilleur score : {best}/{questions.length}
+          </p>
         )}
         <button
           onClick={restart}
@@ -135,27 +160,42 @@ export function Quiz({ slug, questions }: Props) {
 
       <h3 className="mt-4 text-lg font-semibold text-slate-900">{question.question}</h3>
 
+      {/* Le nombre de bonnes réponses est annoncé : le chercher est un
+          exercice de devinette, pas de contrôle de gestion. */}
+      {multiple && (
+        <p className={`mt-2 text-xs font-black uppercase tracking-[0.15em] ${theme.text}`}>
+          {question.answers.length} bonnes réponses à cocher
+        </p>
+      )}
+
       <div className="mt-5 space-y-2.5">
         {question.choices.map((choice, i) => {
+          const coche = selected.includes(i);
+          const juste = question.answers.includes(i);
           let cls = "border-line bg-white hover:border-brand/60 hover:bg-orange-50/50";
           if (validated) {
-            if (i === question.answer) cls = "border-emerald-400 bg-emerald-50";
-            else if (i === selected) cls = "border-rose-300 bg-rose-50";
+            if (juste) cls = "border-emerald-400 bg-emerald-50";
+            else if (coche) cls = "border-rose-300 bg-rose-50";
             else cls = "border-slate-200 bg-white opacity-60";
-          } else if (i === selected) {
+          } else if (coche) {
             cls = "border-brand bg-orange-50 ring-2 ring-brand/40";
           }
           return (
             <button
               key={i}
               disabled={validated}
-              onClick={() => setSelected(i)}
-              className={`block w-full rounded-lg border px-4 py-3 text-left text-slate-800 transition ${cls}`}
+              onClick={() => choisir(i)}
+              aria-pressed={coche}
+              className={`flex w-full items-start gap-3 rounded-lg border px-4 py-3 text-left text-slate-800 transition ${cls}`}
             >
-              <kbd className="mr-3 inline-flex h-6 w-6 items-center justify-center rounded border border-line bg-slate-50 text-xs font-bold text-muted">
+              <kbd
+                className={`mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center border text-xs font-bold ${
+                  multiple ? "rounded" : "rounded-full"
+                } ${coche ? "border-brand bg-brand text-white" : "border-line bg-slate-50 text-muted"}`}
+              >
                 {i + 1}
               </kbd>
-              {choice}
+              <span className="min-w-0">{choice}</span>
             </button>
           );
         })}
@@ -174,15 +214,26 @@ export function Quiz({ slug, questions }: Props) {
         </div>
       )}
 
+      {/* Les propositions reconstituées sont signalées : l'étudiant doit
+          savoir ce qui vient du manuel et ce qui ne s'y trouvait pas. */}
+      {validated && question.distracteursARelire && (
+        <p className="mt-3 flex items-start gap-2 text-xs leading-relaxed text-muted">
+          <Icone nom="info" className="mt-px h-3.5 w-3.5" />
+          Énoncé, bonne réponse et justification sont ceux du manuel. Les propositions fausses ont
+          été reconstituées et n&apos;ont pas encore été relues.
+        </p>
+      )}
+
       <div className="mt-6 flex items-center justify-between gap-4">
         <p className="hidden text-xs text-muted sm:block">
-          <kbd className="font-semibold">1</kbd>–<kbd className="font-semibold">{question.choices.length}</kbd> pour répondre ·{" "}
-          <kbd className="font-semibold">↵</kbd> pour valider
+          <kbd className="font-semibold">1</kbd>–
+          <kbd className="font-semibold">{question.choices.length}</kbd> pour{" "}
+          {multiple ? "cocher" : "répondre"} · <kbd className="font-semibold">↵</kbd> pour valider
         </p>
         {!validated ? (
           <button
             onClick={validate}
-            disabled={selected === null}
+            disabled={selected.length === 0}
             className={`rounded-xl px-6 py-3 font-bold text-white shadow-md transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40 ${theme.bar}`}
           >
             Valider

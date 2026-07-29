@@ -12,7 +12,7 @@ export const quiz: QuizQuestion[] = [
       "Ce n'est pas nécessaire",
       "Pour éviter les cours"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "En période fiscale (janv-avril), les cabinets répondent peu : il faut anticiper."
   },
   {
@@ -24,7 +24,7 @@ export const quiz: QuizQuestion[] = [
       "En juin",
       "Peu importe"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Candidatures envoyées en oct-nov, stage sécurisé en décembre."
   },
   {
@@ -36,7 +36,7 @@ export const quiz: QuizQuestion[] = [
       "Cinq pages",
       "Une ligne"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Une page, claire et hiérarchisée."
   },
   {
@@ -48,7 +48,7 @@ export const quiz: QuizQuestion[] = [
       "Un atout",
       "Obligatoire"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "La rigueur est un signal clé pour un futur comptable."
   },
   {
@@ -60,7 +60,7 @@ export const quiz: QuizQuestion[] = [
       "Être en langue étrangère",
       "Changer à chaque ligne"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Un intitulé clair oriente le CV vers le stage visé."
   },
   {
@@ -72,7 +72,7 @@ export const quiz: QuizQuestion[] = [
       "Intro – annexes",
       "Qui – quoi – où"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Vous (le cabinet) – moi (le profil) – nous (la rencontre)."
   },
   {
@@ -84,7 +84,7 @@ export const quiz: QuizQuestion[] = [
       "Lister ses défauts",
       "Remercier"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Commencer par le cabinet prouve un intérêt réel."
   },
   {
@@ -96,7 +96,7 @@ export const quiz: QuizQuestion[] = [
       "Sur cinq pages",
       "Sans politesse"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "La personnalisation fait la différence."
   },
   {
@@ -108,7 +108,7 @@ export const quiz: QuizQuestion[] = [
       "Renvoie 10 fois/jour",
       "Change de métier"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Une relance courtoise réaffirme l'intérêt."
   },
   {
@@ -120,7 +120,7 @@ export const quiz: QuizQuestion[] = [
       "Ne pas préparer",
       "Parler très vite"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Un appel préparé, bref et courtois est efficace."
   },
   {
@@ -132,7 +132,7 @@ export const quiz: QuizQuestion[] = [
       "À éviter",
       "Réservé aux diplômés"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Beaucoup de stages se trouvent par le réseau."
   },
   {
@@ -144,7 +144,7 @@ export const quiz: QuizQuestion[] = [
       "Remplacer le CV",
       "Noter ses cours"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Il structure et fiabilise la recherche."
   },
   {
@@ -156,7 +156,7 @@ export const quiz: QuizQuestion[] = [
       "Ne postule qu'à un cabinet",
       "Arrête"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Élargir les cibles augmente les chances."
   },
   {
@@ -168,7 +168,7 @@ export const quiz: QuizQuestion[] = [
       "Arriver en retard",
       "Improviser"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Se renseigner et préparer son pitch d'une minute."
   },
   {
@@ -180,7 +180,7 @@ export const quiz: QuizQuestion[] = [
       "Se plaindre",
       "Supprimer le contact"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Remercier et tracer chaque contact."
   }
 ];

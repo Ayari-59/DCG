@@ -12,7 +12,7 @@ export const quiz: QuizQuestion[] = [
       "Le bruit qui perturbe",
       "Le codage du message"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Le feedback est le retour du récepteur : il permet de vérifier que le message a bien été reçu et compris."
   },
   {
@@ -24,7 +24,7 @@ export const quiz: QuizQuestion[] = [
       "Le silence du récepteur",
       "La signature du courriel"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Le bruit est tout ce qui gêne la transmission : bruit matériel, mais aussi jargon, malentendu, surcharge d'information."
   },
   {
@@ -36,7 +36,7 @@ export const quiz: QuizQuestion[] = [
       "Seuls les mots comptent",
       "Le feedback est inutile"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Premier axiome de Palo Alto : même le silence ou l'absence de réponse est un message."
   },
   {
@@ -48,7 +48,7 @@ export const quiz: QuizQuestion[] = [
       "Conative",
       "Poétique"
     ],
-    "answer": 2,
+    "answers": [2],
     "explanation": "La fonction conative cherche à faire réagir le récepteur (ex. : une relance client)."
   },
   {
@@ -60,7 +60,7 @@ export const quiz: QuizQuestion[] = [
       "La voix : ton, débit, volume, silences",
       "La mise en forme d'un écrit"
     ],
-    "answer": 2,
+    "answers": [2],
     "explanation": "Le para-verbal, c'est « comment on le dit » : la voix. Le non-verbal, c'est le corps."
   },
   {
@@ -72,7 +72,7 @@ export const quiz: QuizQuestion[] = [
       "Ni l'un ni l'autre",
       "Le canal"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Le non-verbal l'emporte : d'où l'importance de la congruence entre les mots, la voix et le corps."
   },
   {
@@ -84,7 +84,7 @@ export const quiz: QuizQuestion[] = [
       "Interrompre pour aller plus vite",
       "Consulter son téléphone"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Écouter activement, c'est chercher à comprendre : reformulation, questions ouvertes, signes d'écoute."
   },
   {
@@ -96,7 +96,7 @@ export const quiz: QuizQuestion[] = [
       "Courant soigné",
       "Exclusivement soutenu"
     ],
-    "answer": 2,
+    "answers": [2],
     "explanation": "En cabinet, le registre courant soigné est la norme ; le familier est proscrit à l'écrit professionnel."
   },
   {
@@ -108,7 +108,7 @@ export const quiz: QuizQuestion[] = [
       "Tutoyer le client",
       "Éviter tout contact"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "La juste distance : ni trop froid, ni trop familier. Elle protège la relation et le secret professionnel."
   },
   {
@@ -120,7 +120,7 @@ export const quiz: QuizQuestion[] = [
       "Court et explicite",
       "Écrit en majuscules"
     ],
-    "answer": 2,
+    "answers": [2],
     "explanation": "Un objet court et explicite indique immédiatement le sujet et l'action attendue."
   },
   {
@@ -132,7 +132,7 @@ export const quiz: QuizQuestion[] = [
       "Être poli",
       "Gagner du temps"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Les majuscules sont perçues comme un cri : à éviter en communication professionnelle."
   },
   {
@@ -144,7 +144,7 @@ export const quiz: QuizQuestion[] = [
       "Indiquer l'objet",
       "Ajouter une pièce jointe"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "« À » = ceux qui doivent agir ; « Cc » = en copie pour information. (Cci masque les destinataires.)"
   },
   {
@@ -156,7 +156,7 @@ export const quiz: QuizQuestion[] = [
       "Humoristique",
       "Le plus long possible"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Le compte rendu rapporte fidèlement et sans opinion personnelle les échanges et décisions."
   },
   {
@@ -168,7 +168,7 @@ export const quiz: QuizQuestion[] = [
       "La météo du jour",
       "Le nombre de pages"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Un bon relevé d'actions indique la tâche, le responsable et l'échéance : il rend le CR exploitable."
   },
   {
@@ -180,7 +180,7 @@ export const quiz: QuizQuestion[] = [
       "L'absence de règles",
       "L'interdiction complète"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "La charte IA commune DCG/DSCG/DEC impose transparence, éthique et déontologie ; l'IA assiste sans remplacer l'analyse."
   }
 ];

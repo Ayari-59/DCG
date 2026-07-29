@@ -12,7 +12,7 @@ export const quiz: QuizQuestion[] = [
       "Trois parties",
       "Cinq parties"
     ],
-    "answer": 2,
+    "answers": [2],
     "explanation": "Trois parties : organisation, missions, situation de communication."
   },
   {
@@ -24,7 +24,7 @@ export const quiz: QuizQuestion[] = [
       "La liste des clients",
       "Les congés"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "La partie 3 est l'analyse d'une situation de communication vécue."
   },
   {
@@ -36,7 +36,7 @@ export const quiz: QuizQuestion[] = [
       "La bibliographie",
       "La soutenance"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "La partie 1 présente le cabinet et son organisation."
   },
   {
@@ -48,7 +48,7 @@ export const quiz: QuizQuestion[] = [
       "Faire un schéma",
       "Citer ses sources"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Rester concis et utile ; éviter le catalogue."
   },
   {
@@ -60,7 +60,7 @@ export const quiz: QuizQuestion[] = [
       "La recopie du carnet de bord",
       "Un tableau de chiffres"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "On analyse les missions et on les relie aux compétences."
   },
   {
@@ -72,7 +72,7 @@ export const quiz: QuizQuestion[] = [
       "Intro / conclusion",
       "Débit / volume / ton"
     ],
-    "answer": 0,
+    "answers": [0],
     "explanation": "Ce gabarit structure et fait apparaître l'analyse."
   },
   {
@@ -84,7 +84,7 @@ export const quiz: QuizQuestion[] = [
       "Juger le cabinet",
       "Copier une fiche de poste"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Passer du « fait » au « appris » : relier aux compétences."
   },
   {
@@ -96,7 +96,7 @@ export const quiz: QuizQuestion[] = [
       "Lire/résumer/conclure",
       "Émettre/coder/décoder"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "C'est la démarche de l'analyse de situation (période 3)."
   },
   {
@@ -108,7 +108,7 @@ export const quiz: QuizQuestion[] = [
       "Sans lien avec le cabinet",
       "Non anonymisée"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Une situation authentique, ancrée et anonymisée."
   },
   {
@@ -120,7 +120,7 @@ export const quiz: QuizQuestion[] = [
       "N'utilise aucune source",
       "Copie un forum"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Reformuler et citer : la règle de l'intégrité."
   },
   {
@@ -132,7 +132,7 @@ export const quiz: QuizQuestion[] = [
       "Ignorées",
       "Envoyées au jury"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Le secret professionnel impose l'anonymisation."
   },
   {
@@ -144,7 +144,7 @@ export const quiz: QuizQuestion[] = [
       "Toujours interdit",
       "Systématique"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Transparence : signaler l'usage et ce qu'il a apporté."
   },
   {
@@ -156,7 +156,7 @@ export const quiz: QuizQuestion[] = [
       "Au client",
       "Au jury"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "L'analyse et le contenu restent la responsabilité de l'étudiant."
   },
   {
@@ -168,7 +168,7 @@ export const quiz: QuizQuestion[] = [
       "Un seul bloc",
       "Que des tableaux"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Une structure complète et paginée."
   },
   {
@@ -180,7 +180,7 @@ export const quiz: QuizQuestion[] = [
       "Noter le cabinet",
       "Remplacer la rédaction"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Elle sécurise la finalisation avant remise."
   }
 ];

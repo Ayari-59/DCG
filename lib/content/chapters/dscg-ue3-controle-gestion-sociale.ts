@@ -102,7 +102,7 @@ export const controleGestionSociale: Chapter = {
         "Le contrôle de gestion sociale est un dispositif permanent de pilotage ; l'audit social est une démarche périodique d'évaluation",
         "L'audit social porte sur les coûts, le contrôle de gestion sociale sur la conformité",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Le contrôle de gestion sociale pilote en continu (indicateurs, tableaux de bord, budgets), tandis que l'audit social évalue périodiquement la conformité, l'efficacité et la cohérence des politiques sociales. Peretti distingue trois niveaux d'audit : conformité, efficacité, stratégique.",
     },
@@ -111,7 +111,7 @@ export const controleGestionSociale: Chapter = {
       question:
         "Le salaire mensuel total de décembre N–1 est de 100 000 €. Une augmentation générale de 3 % est accordée au 1ᵉʳ juillet N (effectif constant, pas de hausse en N–1). Quel est l'effet de masse de l'année N ?",
       choices: ["+ 3 %", "+ 1,5 %", "+ 1,48 %", "+ 6 %"],
-      answer: 1,
+      answers: [1],
       explanation:
         "MS(N) = (100 000 × 6) + (103 000 × 6) = 1 218 000 €. Masse de référence sans augmentation = 100 000 × 12 = 1 200 000 €. Effet de masse = 1 218 000 / 1 200 000 = 1,015, soit + 1,5 % : la hausse de 3 % à mi-année ne porte que sur 6 mois. + 3 % est l'effet de niveau, + 1,48 % l'effet de report sur N+1.",
     },
@@ -124,7 +124,7 @@ export const controleGestionSociale: Chapter = {
         "Peu importe la date, seul le taux compte",
         "Tôt dans l'année (début d'année)",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Une augmentation en janvier produit son plein effet sur les 12 mois de l'année ; la même en décembre n'a d'effet que sur un mois. C'est l'inverse pour l'effet de report, maximal quand les hausses sont tardives. Confondre ces deux logiques est un piège classique de l'épreuve.",
     },
@@ -137,7 +137,7 @@ export const controleGestionSociale: Chapter = {
         "Variation de la MS = Effet de niveau (N) / Effet de report (N–1 sur N)",
         "Variation de la MS = Effet de masse (N) + Effet de report (N–1 sur N)",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "La variation observée se décompose en deux causes multiplicatives (les effets sont des coefficients 1 + taux) : ce qui a été décidé en N (effet de masse) et l'héritage des décisions de N–1 (effet de report). La seconde relation du cours est : effet de niveau (N) = effet de masse (N) × effet de report (N sur N+1).",
     },
@@ -146,7 +146,7 @@ export const controleGestionSociale: Chapter = {
       question:
         "Une augmentation générale de 4 % est accordée au 1ᵉʳ octobre N (aucune autre hausse, effectif constant). Quel est l'effet de masse sur l'année N ?",
       choices: ["+ 4 %", "+ 3 %", "+ 1 %", "+ 2 %"],
-      answer: 2,
+      answers: [2],
       explanation:
         "L'augmentation ne porte que sur 3 mois (octobre à décembre). Pour un salaire mensuel S : MS(N) = 9S + 3 × 1,04S = 12,12S, contre 12S sans hausse, soit 12,12/12 = 1,01 = + 1 % (4 % × 3/12). Le report sur N+1 sera en revanche élevé : c'est le coût « en année pleine » que subira l'exercice suivant.",
     },
@@ -159,7 +159,7 @@ export const controleGestionSociale: Chapter = {
         "Les augmentations liées à une promotion ou un changement de qualification",
         "Le départ en retraite des salariés les plus âgés",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "GVT = Glissement (mérite, sans changement de catégorie) + Vieillissement (ancienneté) + Technicité (promotion, changement de qualification). Le GVT mesure la dérive « naturelle » du salaire moyen à effectif constant, hors augmentations générales — le départ des seniors relève, lui, de l'effet Noria.",
     },
@@ -168,7 +168,7 @@ export const controleGestionSociale: Chapter = {
       question:
         "Au cours de l'année N, 4 salariés seniors payés en moyenne 52 000 € partent en retraite et sont remplacés par 4 juniors payés 34 000 €. Quel est l'impact de ces remplacements sur la masse salariale annuelle (effet Noria) ?",
       choices: ["+ 72 000 €", "− 18 000 €", "0 € (effectif constant)", "− 72 000 €"],
-      answer: 3,
+      answers: [3],
       explanation:
         "Effet Noria = 4 × (34 000 − 52 000) = 4 × (− 18 000) = − 72 000 €. À effectif constant, la déformation de la structure (seniors remplacés par des juniors moins payés) réduit la masse salariale. Attention : − 18 000 € n'est que l'écart par personne, et l'effectif constant n'implique pas une masse constante. Ce gain de coût peut masquer une perte de compétences (lien GPEC).",
     },
@@ -181,7 +181,7 @@ export const controleGestionSociale: Chapter = {
         "Uniquement les frais d'annonces et de cabinet de recrutement",
         "Environ trois fois le salaire annuel, quel que soit le poste",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Le coût de remplacement cumule les coûts de départ, de recrutement, d'intégration et de formation, et la moindre productivité pendant la montée en compétence : souvent 6 mois à 1 an de salaire. Exemple du cours : 500 salariés, turnover de 12 % (60 départs) à 30 000 € par remplacement = 1,8 M€ par an — un coût caché qui justifie les investissements de fidélisation.",
     },
@@ -195,7 +195,7 @@ export const controleGestionSociale: Chapter = {
         "Le montant des charges sociales patronales",
         "La non-qualité",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Les cinq dysfonctionnements de Savall (ISEOR) sont : absentéisme, accidents du travail, rotation du personnel, non-qualité et écarts de productivité directe. Les charges patronales sont un coût visible et comptabilisé, pas un coût caché : la thèse de Savall porte précisément sur les coûts invisibles dans la comptabilité classique (sursalaires, surtemps, non-production...).",
     },
@@ -208,7 +208,7 @@ export const controleGestionSociale: Chapter = {
         "Le ratio masse salariale / valeur ajoutée calculé par sexe",
         "Le pourcentage de femmes dans l'effectif total de l'entreprise",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "L'index agrège plusieurs indicateurs (écart de rémunération F/H, écarts d'augmentations et de promotions, salariées augmentées au retour de congé maternité, parité des plus hautes rémunérations) en une note sur 100, publiée chaque année ; sous un seuil, l'entreprise doit prendre des mesures correctives sous peine de sanction. Il illustre la quantification réglementaire des enjeux sociaux, dont le contrôle de gestion sociale produit les indicateurs.",
     },

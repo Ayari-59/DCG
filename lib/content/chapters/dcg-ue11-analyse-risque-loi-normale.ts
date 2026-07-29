@@ -104,7 +104,7 @@ export const analyseRisqueLoiNormale: Chapter = {
         "De l'avenir incertain",
         "Du risque d'exploitation",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "C'est l'incertitude au sens strict : on sait ce qui peut arriver, mais pas avec quelle probabilité. Le risque, lui, est probabilisable et se mesure (espérance, écart-type) ; l'incertitude se gère par le jugement et les scénarios.",
     },
@@ -113,7 +113,7 @@ export const analyseRisqueLoiNormale: Chapter = {
       question:
         "La demande annuelle de TONIK suit Q ~ N(20 000 ; 4 000) et le seuil de profitabilité est de 15 000 articles. Sachant que π(1,25) = 0,8944, quelle est la probabilité d'atteindre le seuil ?",
       choices: ["89,44 %", "10,56 %", "84,13 %", "73,40 %"],
-      answer: 0,
+      answers: [0],
       explanation:
         "t = (15 000 − 20 000) / 4 000 = −1,25. Par symétrie, P(Q ≥ 15 000) = P(T ≥ −1,25) = π(1,25) = 0,8944, soit 89,44 %. Contrôle de cohérence : la borne étant inférieure à la moyenne, la probabilité de la dépasser doit être supérieure à 50 %. Le risque résiduel de déficit est de 10,56 %.",
     },
@@ -121,7 +121,7 @@ export const analyseRisqueLoiNormale: Chapter = {
       id: "q3",
       question: "Quelle est la valeur de V(aX + b) ?",
       choices: ["a·V(X) + b", "a²·V(X)", "a²·V(X) + b", "a·V(X)"],
-      answer: 1,
+      answers: [1],
       explanation:
         "V(aX + b) = a²·V(X) : le coefficient a sort au carré et la constante b ne joue pas sur la dispersion. Deux pièges classiques : oublier le carré, et faire jouer la constante. Troisième piège associé : additionner les écarts-types au lieu des variances.",
     },
@@ -130,7 +130,7 @@ export const analyseRisqueLoiNormale: Chapter = {
       question:
         "La demande du soin premium de Boréal Cosmétiques suit N(6 000 ; 1 000). Sachant que π(1) = 0,8413, quelle est la probabilité que la demande soit comprise entre 5 000 et 7 000 unités ?",
       choices: ["84,13 %", "95,00 %", "50,00 %", "68,26 %"],
-      answer: 3,
+      answers: [3],
       explanation:
         "Bornes centrées réduites : (5 000 − 6 000)/1 000 = −1 et (7 000 − 6 000)/1 000 = +1. P(−1 ≤ T ≤ 1) = 2π(1) − 1 = 2 × 0,8413 − 1 = 0,6826, soit 68,26 %. On retrouve la règle empirique des 68 % de l'intervalle [m − σ ; m + σ] — un bon contrôle de cohérence.",
     },
@@ -144,7 +144,7 @@ export const analyseRisqueLoiNormale: Chapter = {
         "[m − 2σ ; m + 2σ]",
         "[m − 0,5σ ; m + 0,5σ]",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Règle 68 – 95 – 99,7 : environ 68 % des valeurs dans [m − σ ; m + σ], 95 % dans [m − 2σ ; m + 2σ] et 99,7 % dans [m − 3σ ; m + 3σ]. Avec Q ~ N(20 000 ; 4 000), 95 % des réalisations tombent ainsi dans [12 000 ; 28 000] sans aucun calcul.",
     },
@@ -153,7 +153,7 @@ export const analyseRisqueLoiNormale: Chapter = {
       question:
         "Pour TONIK, R = 20·Q − 300 000 avec Q ~ N(20 000 ; 4 000). La direction vise un résultat d'au moins 50 000 €. Sachant que π(0,625) ≈ 0,734, quelle est la probabilité d'atteindre cet objectif ?",
       choices: ["89,44 %", "Environ 73 %", "50,00 %", "Environ 26,6 %"],
-      answer: 1,
+      answers: [1],
       explanation:
         "R ≥ 50 000 impose 20·Q − 300 000 ≥ 50 000, soit Q ≥ 17 500. t = (17 500 − 20 000) / 4 000 = −0,625. Par symétrie, P(R ≥ 50 000) = π(0,625) ≈ 0,734, soit environ 73 %. L'objectif de résultat est plus ambitieux que le simple seuil de profitabilité (89,44 %), mais reste probable.",
     },
@@ -162,7 +162,7 @@ export const analyseRisqueLoiNormale: Chapter = {
       question:
         "Le produit affiche une MCV de 400 000 € et un résultat de 100 000 €. Si le chiffre d'affaires varie de 10 %, le résultat varie de :",
       choices: ["± 40 %", "± 10 %", "± 4 %", "± 25 %"],
-      answer: 0,
+      answers: [0],
       explanation:
         "Levier opérationnel = MCV / Résultat = 400 000 / 100 000 = 4. Le LO mesure l'élasticité du résultat au CA : une variation de 10 % du chiffre d'affaires entraîne une variation de 4 × 10 % = 40 % du résultat — dans les deux sens : le levier amplifie aussi les pertes.",
     },
@@ -176,7 +176,7 @@ export const analyseRisqueLoiNormale: Chapter = {
         "La demande recule d'environ 10,8 % (≈ 17 840 unités) et le CA baisse",
         "Le CA reste inchangé, l'élasticité étant unitaire",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Une hausse de prix de 1 % réduit la demande de 1,08 % : pour +10 %, la demande recule d'environ 10,8 %, passant de 20 000 à ≈ 17 840 unités. CA : 55 × 17 840 = 981 200 € contre 1 000 000 €, soit −1,88 % (−18 800 €). La demande étant élastique (|e| = 1,08 > 1), la hausse de prix fait baisser le chiffre d'affaires.",
     },
@@ -190,7 +190,7 @@ export const analyseRisqueLoiNormale: Chapter = {
         "Les produits sont indépendants",
         "La demande des deux produits est élastique",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Pour l'élasticité croisée, le SIGNE est l'information clé : e croisée > 0 = substituts (ex. du cours : +4 % / +10 % = +0,40), e croisée < 0 = compléments (−3 % / +10 % = −0,30), e croisée ≈ 0 = indépendants. Ne pas confondre avec l'élasticité prix simple, interprétée en valeur absolue.",
     },
@@ -204,7 +204,7 @@ export const analyseRisqueLoiNormale: Chapter = {
         "Il faut réduire la taille de l'échantillon",
         "L'intervalle s'élargit : ce qui est gagné en certitude est perdu en précision",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Plus la confiance augmente, plus t est grand (1,96 → 2,575) et plus l'intervalle x̄ ± t·s/√n s'élargit : on gagne en certitude ce qu'on perd en précision. Rappels du cours : corriger σ′ en s, n ≥ 30, l'estimation porte sur une MOYENNE et les tests d'hypothèse sont hors programme.",
     },

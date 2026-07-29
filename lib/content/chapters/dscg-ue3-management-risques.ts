@@ -102,7 +102,7 @@ export const managementRisques: Chapter = {
         "L'effet de l'incertitude sur l'atteinte des objectifs",
         "Un aléa non probabilisable",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "ISO 31000 : « l'effet de l'incertitude sur l'atteinte des objectifs ». Définition à retenir impérativement : elle relie le risque aux objectifs et reconnaît sa double nature menace/opportunité. Une copie qui ne voit le risque que comme un danger passe à côté de la vision moderne attendue.",
     },
@@ -115,7 +115,7 @@ export const managementRisques: Chapter = {
         "Le risque est externe, l'incertitude est interne",
         "Le risque est financier, l'incertitude est stratégique",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Distinction fondatrice de Knight (Risk, Uncertainty and Profit, 1921) : le risque désigne des issues connues et probabilisables (comme au jeu de dés) ; l'incertitude, des issues ou probabilités inconnues. Face à l'incertitude radicale, on privilégie la résilience plutôt que le calcul.",
     },
@@ -129,7 +129,7 @@ export const managementRisques: Chapter = {
         "Criticité 12, zone critique (rouge)",
         "Criticité 1, zone faible (verte)",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Criticité = Probabilité × Impact = 4 × 3 = 12 (et non 4 + 3 = 7). Selon la grille de lecture du cours : critique 15-25 (rouge), élevé 8-14 (orange), modéré 4-7 (jaune), faible 1-3 (vert). Une criticité de 12 est donc en zone élevée : à traiter en priorité, réduire et/ou transférer.",
     },
@@ -138,7 +138,7 @@ export const managementRisques: Chapter = {
       question:
         "Dans le triangle de la fraude de Cressey, sur quel facteur le contrôle interne agit-il principalement ?",
       choices: ["La pression", "La rationalisation", "La collusion", "L'opportunité"],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le triangle de Cressey réunit pression, opportunité et rationalisation. Le contrôle interne agit principalement sur l'opportunité (séparation des fonctions, contrôles, supervision) — le seul facteur sur lequel l'organisation a une prise directe. La prévention complète suppose aussi d'agir sur la pression (objectifs réalistes) et la rationalisation (éthique, culture).",
     },
@@ -151,7 +151,7 @@ export const managementRisques: Chapter = {
         "Aux fonctions de risk management et de conformité",
         "Au management opérationnel qui gère les risques au quotidien",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "1ʳᵉ ligne : management opérationnel (détient et gère les risques). 2ᵉ ligne : fonctions spécialisées (risk management, conformité, contrôle interne). 3ᵉ ligne : audit interne, seule fonction véritablement indépendante car rattachée à la gouvernance (comité d'audit). Le CAC et les régulateurs sont une assurance externe, parfois qualifiée de « quatrième ligne ».",
     },
@@ -165,7 +165,7 @@ export const managementRisques: Chapter = {
         "Le transférer par assurance",
         "Le réduire en priorité absolue avant tout autre risque",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Les risques de forte gravité mais faible probabilité relèvent typiquement du transfert par assurance (et des plans de continuité), plutôt que d'une coûteuse réduction. C'est l'exemple R3 du cours : incendie P=2, I=5, criticité 10, traité par assurance à 18 000 €. L'arbitrage optimise le rapport réduction de criticité / coût de maîtrise.",
     },
@@ -178,7 +178,7 @@ export const managementRisques: Chapter = {
         "Le pilotage (monitoring)",
         "L'information et la communication",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "L'environnement de contrôle est le socle de la pyramide COSO : culture, intégrité, valeurs éthiques, compétence, « ton donné par le sommet » (tone at the top). Sans un environnement sain, les meilleurs contrôles restent lettre morte — le contrôle interne est autant affaire de culture que de procédures.",
     },
@@ -192,7 +192,7 @@ export const managementRisques: Chapter = {
         "A, car criticité 10 contre 8 pour B",
         "B, car sa criticité (12) dépasse celle de A (10)",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Criticité A = 5 × 2 = 10 ; criticité B = 3 × 4 = 12. B est prioritaire malgré la probabilité maximale de A : la hiérarchisation se fonde sur le produit probabilité × impact, pas sur une seule dimension. L'arbitrage final intègre ensuite le coût de maîtrise et le niveau de maîtrise existant (risque résiduel).",
     },
@@ -205,7 +205,7 @@ export const managementRisques: Chapter = {
         "Elle ne s'applique qu'aux institutions financières",
         "Elle est centrée sur le reporting financier américain",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "ISO 31000 (2009, révisée 2018) est le standard international du management des risques : elle ne certifie pas (lignes directrices) et s'articule en trois éléments — principes, cadre organisationnel (framework) et processus (contexte, appréciation, traitement, suivi, communication). Elle est universelle, applicable à toute organisation. Le reporting financier est l'origine du COSO, pas d'ISO 31000.",
     },
@@ -218,7 +218,7 @@ export const managementRisques: Chapter = {
         "L'audit interne est permanent, le contrôle interne est périodique",
         "Le contrôle interne est un dispositif permanent porté par le management ; l'audit interne l'évalue périodiquement de façon indépendante",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Piège classique signalé par le cours : le contrôle interne est le dispositif permanent de maîtrise, conçu et porté par le management ; l'audit interne est une fonction indépendante qui évalue périodiquement (par missions) l'efficacité de ce dispositif et rapporte au comité d'audit. Confondre les deux — ou inverser permanent/périodique — est une erreur fréquente à l'examen.",
     },

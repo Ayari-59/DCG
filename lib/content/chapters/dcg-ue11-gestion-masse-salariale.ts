@@ -102,7 +102,7 @@ export const gestionMasseSalariale: Chapter = {
         "Rémunérations brutes × (1 + taux de charges patronales)",
         "Salaires nets + primes et avantages en nature",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "MS chargée = rémunérations brutes × (1 + taux de charges patronales). Elle recouvre les rémunérations brutes (nets + cotisations salariales) et les cotisations patronales — c'est le coût total employeur, parfois dit « super-brut ».",
     },
@@ -111,7 +111,7 @@ export const gestionMasseSalariale: Chapter = {
       question:
         "Un salarié perçoit 2 000 € en décembre N. En N+1, il bénéficie de +2 % au 1er mai puis de +1 % au 1er octobre. Quel est l'effet de niveau sur N+1 ?",
       choices: ["+3 %", "+3,02 %", "+2 %", "+1,51 %"],
-      answer: 1,
+      answers: [1],
       explanation:
         "L'effet de niveau compare les salaires de décembre : 2 000 × 1,02 × 1,01 = 2 060,40 €, soit 2 060,40 / 2 000 = 1,0302 → +3,02 %. Les augmentations se multiplient (1,02 × 1,01 = 1,0302), elles ne s'additionnent pas ; et l'effet de niveau est indépendant des dates d'augmentation.",
     },
@@ -120,7 +120,7 @@ export const gestionMasseSalariale: Chapter = {
       question:
         "Un salarié gagne 2 000 € par mois en janvier N. Une seule augmentation de +6 % est accordée au 1er octobre N. Quel est l'effet de masse sur l'année N ?",
       choices: ["+6 %", "+4,5 %", "+3 %", "+1,5 %"],
-      answer: 3,
+      answers: [3],
       explanation:
         "MS annuelle réelle = 2 000 × 9 + 2 120 × 3 = 24 360 €. MS au salaire de janvier sur 12 mois = 2 000 × 12 = 24 000 €. Effet de masse = 24 360 / 24 000 = 1,015 → +1,5 % (soit 6 % × 3/12 : la hausse n'agit que 3 mois sur 12). Plus l'augmentation est tardive, plus l'effet de masse est faible.",
     },
@@ -129,7 +129,7 @@ export const gestionMasseSalariale: Chapter = {
       question:
         "Suite de la question précédente : salaire de 2 000 € en janvier N, +6 % au 1er octobre N (MS annuelle N = 24 360 €). Quel est l'effet de report sur N+1, si aucune nouvelle augmentation n'intervient ?",
       choices: ["+4,43 %", "+6 %", "+1,5 %", "0 %"],
-      answer: 0,
+      answers: [0],
       explanation:
         "Effet de report = (salaire de janvier N+1 × 12) / MS annuelle N = (2 120 × 12) / 24 360 = 25 440 / 24 360 ≈ 1,0443 → +4,43 %. L'augmentation d'octobre pèse sur N+1 en année pleine, même sans nouvelle hausse. Vérification par la relation fondamentale : 1,015 × 1,0443 ≈ 1,06 = effet de niveau.",
     },
@@ -142,7 +142,7 @@ export const gestionMasseSalariale: Chapter = {
         "Effet de report = effet de niveau × effet de masse",
         "Effet de niveau = effet de masse + effet de report",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Effet de niveau (N) = Effet de masse (N) × Effet de report (N → N+1). Les coefficients se multiplient, ils ne s'additionnent pas. Si l'effet de masse égale l'effet de niveau, c'est qu'une seule augmentation a eu lieu au 1er janvier.",
     },
@@ -156,7 +156,7 @@ export const gestionMasseSalariale: Chapter = {
         "− 70 000 € (favorable)",
         "− 40 000 € (favorable)",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Effet de noria = 3 × (40 000 − 50 000) + 5 × (22 000 − 30 000) = − 30 000 − 40 000 = − 70 000 €, favorable : le remplacement de salariés âgés par de plus jeunes, de même catégorie mais moins bien payés, allège la masse salariale. Il se calcule poste par poste, à compter du remplacement.",
     },
@@ -169,7 +169,7 @@ export const gestionMasseSalariale: Chapter = {
         "Variation : les variations d'effectif de la période",
         "Vacance : le coût des postes non pourvus",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "GVT = Glissement (augmentations au mérite, hors ancienneté), Vieillissement (hausses automatiques liées à l'ancienneté), Technicité (accès à une qualification supérieure). L'effet GVT regroupe les facteurs structurels autres que l'effectif.",
     },
@@ -178,7 +178,7 @@ export const gestionMasseSalariale: Chapter = {
       question:
         "Deux augmentations générales successives de +1 % puis +1,5 % sont accordées. Quelle est la hausse cumulée en niveau ?",
       choices: ["+2,25 %", "+1,5 %", "+2,5 %", "+2,515 %"],
-      answer: 3,
+      answers: [3],
       explanation:
         "Les augmentations successives sont multiplicatives : 1,01 × 1,015 = 1,02515, soit +2,515 %. Additionner les pourcentages (+2,5 %) est l'une des erreurs les plus fréquentes signalées par le chapitre — la seconde hausse s'applique à un salaire déjà augmenté.",
     },
@@ -192,7 +192,7 @@ export const gestionMasseSalariale: Chapter = {
         "Tous les sous-écarts aux valeurs réelles",
         "Tous les sous-écarts aux valeurs prévues",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Par convention (modèle des écarts sur charges directes du PCG), l'écart sur quantité s'évalue au prix prévu et l'écart sur prix à la quantité réelle, afin de ne jamais croiser simultanément un effet quantité et un effet prix. D'où : écart sur effectif = (Nr − Np) × Hp × Sp et écart sur salaire = Nr × Hr × (Sr − Sp).",
     },
@@ -206,7 +206,7 @@ export const gestionMasseSalariale: Chapter = {
         "La population s'est déformée vers les catégories les mieux rémunérées",
         "Le temps de travail par salarié a dépassé la prévision",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "L'écart de structure mesure l'impact du changement de répartition des effectifs entre catégories, à salaires prévus constants. Défavorable, il traduit une « montée en gamme » : la part des employés recule au profit des cadres et techniciens. Ce surcoût peut néanmoins être un investissement RH justifié — à l'examen, l'interprétation nuancée fait la différence.",
     },

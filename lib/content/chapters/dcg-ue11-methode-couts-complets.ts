@@ -99,7 +99,7 @@ export const methodeCoutsComplets: Chapter = {
       question:
         "L'atelier de finition est fortement automatisé ; ses charges indirectes du mois s'élèvent à 8 000 € pour 200 heures-robot. Une commande a consommé 60 heures-robot. Quel montant de charges indirectes lui est imputé ?",
       choices: ["8 000 €", "2 400 €", "4 000 €", "1 600 €"],
-      answer: 1,
+      answers: [1],
       explanation:
         "Coût de l'unité d'œuvre = 8 000 ÷ 200 = 40 € par heure-robot. Imputation à la commande : 60 × 40 = 2 400 €. L'imputation se fait toujours au prorata des unités d'œuvre consommées.",
     },
@@ -113,7 +113,7 @@ export const methodeCoutsComplets: Chapter = {
         "e = 20,00 € et g = 10,00 €",
         "e = 22,50 € et g = 12,00 €",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Prestations fournies = frais propres + prestations reçues : 1 000e = 19 500 + 50g et 500g = 3 000 + 100e. Par substitution, e = 19,5 + 0,05g, d'où 500g = 3 000 + 1 950 + 5g, soit 495g = 4 950 → g = 10 €, puis e = 19,5 + 0,5 = 20 €. Vérification : 1 000 × 20 = 19 500 + 50 × 10 = 20 000 €.",
     },
@@ -122,7 +122,7 @@ export const methodeCoutsComplets: Chapter = {
       question:
         "Stock initial de hêtre : 1 000 kg à 8,40 € (8 400 €). Entrée du mois : 3 000 kg au coût d'achat de 9,60 € (28 800 €). Quel est le CMUP de fin de période ?",
       choices: ["9,30 €", "9,00 €", "9,60 €", "8,40 €"],
-      answer: 0,
+      answers: [0],
       explanation:
         "CMUP = (valeur du stock initial + valeur des entrées) ÷ (quantités initiales + entrées) = (8 400 + 28 800) ÷ (1 000 + 3 000) = 37 200 ÷ 4 000 = 9,30 € le kg. Les sorties de stock se valorisent à ce CMUP, pas au dernier coût d'entrée.",
     },
@@ -135,7 +135,7 @@ export const methodeCoutsComplets: Chapter = {
         "Répartition secondaire, puis répartition primaire, puis imputation",
         "Affectation directe aux produits, puis répartition sur les centres",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "La répartition se fait toujours en deux temps : primaire (sur tous les centres, auxiliaires comme principaux), puis secondaire (déversement des auxiliaires sur les principaux). Les centres auxiliaires doivent être « vidés » avant de calculer les coûts d'unité d'œuvre — inverser l'ordre fausse les coûts.",
     },
@@ -148,7 +148,7 @@ export const methodeCoutsComplets: Chapter = {
         "Toujours l'heure de main-d'œuvre directe",
         "Celle dont le coefficient de corrélation charges/activité est le plus proche de |1|",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "On retient l'unité d'œuvre qui donne le meilleur ajustement linéaire des charges par rapport à l'activité, c'est-à-dire le coefficient de corrélation le plus proche de |1|. Si aucun bon coefficient n'est trouvé, c'est que le centre n'est pas homogène : il faut le redécouper.",
     },
@@ -161,7 +161,7 @@ export const methodeCoutsComplets: Chapter = {
         "Le pourcentage de charges directes dans le coût de revient",
         "La clé de répartition des centres auxiliaires",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Quand le « nombre d'unités d'œuvre » est une assiette monétaire, le résultat n'est pas un coût d'UO mais un taux de frais, en pourcentage (ex. : 15 000 € de charges de distribution pour 200 000 € de CA = 7,5 %). Sa limite : une assiette monétaire n'exprime pas toujours une relation causale.",
     },
@@ -170,7 +170,7 @@ export const methodeCoutsComplets: Chapter = {
       question:
         "Achats de matières de la période : 100 000 €. Stock initial : 20 000 € ; stock final : 30 000 €. Quel est le montant des consommations de matières ?",
       choices: ["110 000 €", "130 000 €", "90 000 €", "100 000 €"],
-      answer: 2,
+      answers: [2],
       explanation:
         "Pour les éléments achetés, Variation = SI − SF = 20 000 − 30 000 = − 10 000 €. Consommations = Achats + variation de stock = 100 000 − 10 000 = 90 000 €. Le stock ayant augmenté de 10 000 €, on a consommé moins que ce qu'on a acheté.",
     },
@@ -183,7 +183,7 @@ export const methodeCoutsComplets: Chapter = {
         "Le CMUP après chaque entrée",
         "Le DEPS (dernier entré, premier sorti)",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le DEPS (LIFO) n'est pas admis comptablement ni fiscalement : un retraitement est nécessaire s'il est utilisé en gestion. Le CMUP (fondé sur la fongibilité des lots) et le PEPS sont admis. En période de hausse des prix, le DEPS majore les sorties et minore le stock final.",
     },
@@ -192,7 +192,7 @@ export const methodeCoutsComplets: Chapter = {
       question:
         "À la sortie de l'atelier, le coût de production conjoint du produit principal P et du sous-produit S est de 100 €. S nécessite un traitement complémentaire de 5 € pour être vendu 20 €. Quel est le coût de production retenu pour P ?",
       choices: ["100 €", "85 €", "80 €", "95 €"],
-      answer: 1,
+      answers: [1],
       explanation:
         "Raisonnement « à rebours » : coût de S à la sortie de l'atelier = 20 − 5 = 15 €. Ce montant est déduit du coût conjoint : coût de production de P = 100 − 15 = 85 €. Même logique pour les déchets et rebuts revendables : leur valeur nette vient en diminution du coût du produit principal.",
     },
@@ -205,7 +205,7 @@ export const methodeCoutsComplets: Chapter = {
         "Du coût de production des produits VENDUS (sortis du stock, en principe au CMUP), plus le coût de distribution de ces produits",
         "De la totalité des charges de la période, stockées ou non",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Erreur fréquente signalée par le cours : le coût de revient ne porte que sur les produits VENDUS pendant la période, sortis du stock au coût de production (en principe au CMUP), augmenté du coût de distribution (direct, comme les commissions, et indirect). Attention à la variation de stock de produits finis — et on dit « coût », non « prix » de revient (terme désuet depuis 1982).",
     },

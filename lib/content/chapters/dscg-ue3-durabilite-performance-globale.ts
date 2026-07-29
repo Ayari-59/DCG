@@ -102,7 +102,7 @@ export const durabilitePerformanceGlobale: Chapter = {
         "Tout groupe ou individu qui peut affecter ou être affecté par la réalisation des objectifs de l'organisation",
         "Tout investisseur intégrant les critères ESG dans ses décisions",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "La théorie des parties prenantes (stakeholder theory) élargit la responsabilité de l'entreprise au-delà des seuls actionnaires (shareholders) : salariés, clients, fournisseurs, pouvoirs publics, communautés, environnement. C'est le socle conceptuel de la performance durable.",
     },
@@ -115,7 +115,7 @@ export const durabilitePerformanceGlobale: Chapter = {
         "Uniquement s'il présente un risque financier pour l'entreprise",
         "Uniquement s'il figure dans la liste des normes ESRS thématiques",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "C'est le piège classique : la double matérialité fonctionne en OU, pas en ET. Un enjeu significatif selon l'une seule des deux perspectives doit être reporté — l'entreprise rend compte de ses impacts même sans conséquence financière (encore) pour elle.",
     },
@@ -128,7 +128,7 @@ export const durabilitePerformanceGlobale: Chapter = {
         "De l'investisseur : la durabilité comme risque ou opportunité financière",
         "Du régulateur : la conformité aux normes ESRS",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Matérialité d'impact = inside-out (l'entreprise affecte le monde, indépendamment des conséquences financières pour elle). Matérialité financière = outside-in (les enjeux affectent l'entreprise), qui est la perspective traditionnelle de l'investisseur. Ne pas les confondre est un piège signalé par la fiche de révision.",
     },
@@ -141,7 +141,7 @@ export const durabilitePerformanceGlobale: Chapter = {
         "Les émissions de la chaîne de valeur en amont et en aval",
         "Les émissions liées à l'utilisation des produits vendus",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Scope 1 = émissions directes (sources détenues ou contrôlées). Scope 2 = émissions indirectes liées à l'énergie achetée et consommée. Scope 3 = autres émissions indirectes de la chaîne de valeur (dont l'utilisation des produits vendus, qui relève de l'aval du scope 3).",
     },
@@ -149,7 +149,7 @@ export const durabilitePerformanceGlobale: Chapter = {
       id: "q5",
       question: "Quelle part des émissions totales le scope 3 représente-t-il généralement ?",
       choices: ["Moins de 10 %", "Environ 20 à 30 %", "Environ 40 à 50 %", "Souvent 70 à 90 %"],
-      answer: 3,
+      answers: [3],
       explanation:
         "Le scope 3 (chaîne de valeur) est généralement le poste le plus important — souvent 70 à 90 % du total — et le plus difficile à maîtriser car il dépend de tiers. Une entreprise qui ne piloterait que ses scopes 1 et 2 négligerait l'essentiel de son empreinte : piège classique d'examen.",
     },
@@ -162,7 +162,7 @@ export const durabilitePerformanceGlobale: Chapter = {
         "Les travailleurs de la chaîne de valeur",
         "Les consommateurs et utilisateurs finaux",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Normes sociales : S1 = effectifs de l'entreprise, S2 = travailleurs de la chaîne de valeur (devoir de vigilance, audits fournisseurs), S3 = communautés affectées, S4 = consommateurs et utilisateurs finaux. Les normes E1 à E5 couvrent l'environnement et G1 la conduite des affaires.",
     },
@@ -175,7 +175,7 @@ export const durabilitePerformanceGlobale: Chapter = {
         "La légitimité, la rentabilité et l'influence",
         "L'urgence, la taille et l'ancienneté de la relation",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Mitchell (avec Agle et Wood) retient le pouvoir (capacité d'influence), la légitimité (du lien avec l'entreprise) et l'urgence (des attentes). Une partie prenante cumulant les trois est « définitive » et prioritaire ; avec un seul attribut, elle est « latente » — mais peut devenir définitive (ex. : une ONG qui mobilise les médias).",
     },
@@ -188,7 +188,7 @@ export const durabilitePerformanceGlobale: Chapter = {
         "Consiste à redistribuer les profits aux parties prenantes",
         "Intègre les enjeux sociétaux au cœur de la stratégie comme source d'avantage concurrentiel",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "La valeur partagée (CSV, 2011) déplace la RSE de la périphérie (mécénat, communication) vers le cœur stratégique : résoudre un problème de société crée simultanément de la valeur économique et sociétale. Limite signalée par le cours : la convergence entre intérêt privé et bien commun n'est pas toujours réelle.",
     },
@@ -201,7 +201,7 @@ export const durabilitePerformanceGlobale: Chapter = {
         "La CSRD ne concerne que la matérialité financière des enjeux climatiques",
         "La CSRD restreint le périmètre des entreprises soumises au reporting par rapport à la NFRD",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "La CSRD renforce et remplace la NFRD : normes communes (ESRS), vérification par un tiers indépendant, double matérialité obligatoire et périmètre considérablement élargi (calendrier progressif). Piège signalé : ne pas confondre la RSE (démarche volontaire) et la CSRD (obligation réglementaire).",
     },
@@ -214,7 +214,7 @@ export const durabilitePerformanceGlobale: Chapter = {
         "Isoler les enjeux ESG du reste de la stratégie (silo ESG)",
         "Rendre impossible l'établissement de relations de cause à effet",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "La perspective dédiée donne de la visibilité et un porteur clair (utile au démarrage), mais risque d'isoler l'ESG dans un silo. L'alternative — intégrer les enjeux ESG dans les quatre perspectives existantes — ancre la durabilité au cœur de chaque dimension, au prix d'une moindre visibilité. Le choix dépend de la maturité de l'organisation.",
     },

@@ -87,10 +87,11 @@ for (const [relatif, slug] of QUIZ) {
       id: `q${i + 1}`,
       question: String(q.q).trim(),
       choices: q.o.map((c) => String(c).trim()),
-      answer: q.c,
+      // Le kit ne code qu'une bonne réponse ; le site en attend une liste.
+      answers: [q.c],
       explanation: String(q.e ?? "").trim(),
     }))
-    .filter((q) => q.answer >= 0 && q.answer < q.choices.length);
+    .filter((q) => q.answers[0] >= 0 && q.answers[0] < q.choices.length);
 
   if (!quiz.length) {
     console.log(`    ${slug} : aucune question exploitable`);

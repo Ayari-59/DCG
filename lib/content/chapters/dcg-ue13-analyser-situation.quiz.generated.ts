@@ -12,7 +12,7 @@ export const quiz: QuizQuestion[] = [
       "Donner son avis",
       "La résumer"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Analyser, c'est expliquer les mécanismes, pas seulement raconter."
   },
   {
@@ -24,7 +24,7 @@ export const quiz: QuizQuestion[] = [
       "Écouter, parler, écrire",
       "Intro, développement, conclusion"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Décrire → Analyser → Préconiser : le triptyque de la séquence."
   },
   {
@@ -36,7 +36,7 @@ export const quiz: QuizQuestion[] = [
       "Préconiser",
       "Évaluer une source"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "QQOQCP (qui, quoi, où, quand, comment, pourquoi) structure la description."
   },
   {
@@ -48,7 +48,7 @@ export const quiz: QuizQuestion[] = [
       "Juger les acteurs",
       "Donner son opinion"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "La description est factuelle ; l'interprétation vient à l'étape d'analyse."
   },
   {
@@ -60,7 +60,7 @@ export const quiz: QuizQuestion[] = [
       "Une coupure réseau",
       "Une faute de frappe"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Le bruit sémantique gêne la compréhension : jargon, terme ambigu."
   },
   {
@@ -72,7 +72,7 @@ export const quiz: QuizQuestion[] = [
       "Préconiser",
       "Conclure"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "L'analyse mobilise les concepts pour expliquer les faits."
   },
   {
@@ -84,7 +84,7 @@ export const quiz: QuizQuestion[] = [
       "Une préconisation",
       "Une conclusion"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "On relie une cause (débit, jargon) à un effet : c'est de l'analyse."
   },
   {
@@ -96,7 +96,7 @@ export const quiz: QuizQuestion[] = [
       "Sans lien avec l'analyse",
       "Inapplicable"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Elle répond à une difficulté identifiée et s'appuie sur un concept."
   },
   {
@@ -108,7 +108,7 @@ export const quiz: QuizQuestion[] = [
       "Qui → quoi → où",
       "Émetteur → canal → récepteur"
     ],
-    "answer": 0,
+    "answers": [0],
     "explanation": "Constat → proposition → effet attendu rend l'argumentation visible."
   },
   {
@@ -120,7 +120,7 @@ export const quiz: QuizQuestion[] = [
       "Est irréaliste",
       "Concerne un autre métier"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Elle se généralise en bonne pratique réutilisable."
   },
   {
@@ -132,7 +132,7 @@ export const quiz: QuizQuestion[] = [
       "Les préconisations",
       "La conclusion"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "L'analyse est le cœur de la copie ; la description reste concise."
   },
   {
@@ -144,7 +144,7 @@ export const quiz: QuizQuestion[] = [
       "Publier la situation",
       "Ignorer le secret pro"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Le secret professionnel impose d'anonymiser les données clients."
   },
   {
@@ -156,7 +156,7 @@ export const quiz: QuizQuestion[] = [
       "Faire le bilan comptable",
       "Remplacer le rapport"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "Il constitue la matière première de l'analyse."
   },
   {
@@ -168,7 +168,7 @@ export const quiz: QuizQuestion[] = [
       "N'a aucun effet",
       "Améliore l'écoute"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "En cas de contradiction, le non-verbal l'emporte et décrédibilise."
   },
   {
@@ -180,7 +180,7 @@ export const quiz: QuizQuestion[] = [
       "Rédige sans plan",
       "Commence par préconiser"
     ],
-    "answer": 1,
+    "answers": [1],
     "explanation": "La méthode express en 5 étapes structure le temps limité."
   }
 ];

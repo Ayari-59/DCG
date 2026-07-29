@@ -103,7 +103,7 @@ export const methodeAbc: Chapter = {
         "Les charges indirectes sont affectées aux produits au prorata du chiffre d'affaires",
         "Les centres de responsabilité consomment des produits, qui consomment des activités",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "L'enchaînement fondamental de l'ABC est : ressources → activités → inducteurs → objets de coûts. Les activités consomment des ressources, et les produits consomment des activités — c'est ce passage par les activités qui fait reculer l'arbitraire de la répartition.",
     },
@@ -112,7 +112,7 @@ export const methodeAbc: Chapter = {
       question:
         "L'activité « lancement (réglages) » coûte 3 600 000 € ; son inducteur est le nombre de lots, avec un volume total de 3 600 lots. Quel est le coût de l'inducteur ?",
       choices: ["600 € par lot", "1 000 € par lot", "1 200 € par lot", "100 € par lot"],
-      answer: 1,
+      answers: [1],
       explanation:
         "Coût de l'inducteur = coût de l'activité ÷ nombre total d'inducteurs = 3 600 000 ÷ 3 600 = 1 000 € par lot. Chaque lot lancé exige un réglage, quelle que soit sa taille : ce coût se ventile ensuite selon le nombre de lots consommés par chaque produit, jamais directement par unité.",
     },
@@ -125,7 +125,7 @@ export const methodeAbc: Chapter = {
         "Les produits standards en grandes séries subventionnent les produits différenciés en petites séries",
         "Les charges directes subventionnent les charges indirectes",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "La répartition des charges indirectes est un jeu à somme nulle : surévaluer un produit, c'est en sous-évaluer un autre. Avec une clé volumique unique, les grandes séries standard portent une partie du coût réellement causé par la complexité des petites séries : elles les « subventionnent ».",
     },
@@ -138,7 +138,7 @@ export const methodeAbc: Chapter = {
         "La mesurabilité : être facile à recenser dans le système d'information",
         "La normalisation : être défini par le Plan comptable général",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Les trois qualités d'un bon inducteur sont la causalité, la représentativité et la mesurabilité. Le vocabulaire ABC, issu de la stratégie, n'est justement pas normalisé par le PCG — contrairement à celui des centres d'analyse.",
     },
@@ -147,7 +147,7 @@ export const methodeAbc: Chapter = {
       question:
         "Chez Méca-Précision, l'ABC impute 7 180 000 € de charges indirectes au produit B, fabriqué à 30 000 unités. Quel est le coût indirect unitaire du produit B ?",
       choices: ["24,42 €", "122,00 €", "239,33 €", "291,33 €"],
-      answer: 2,
+      answers: [2],
       explanation:
         "Coût indirect unitaire = 7 180 000 ÷ 30 000 = 239,33 €. C'est dix fois celui du produit A (24,42 €), car le produit B consomme massivement les activités de déclenchement (2 400 commandes, 3 000 lots, 2 200 contrôles). 291,33 € est son coût de revient complet (239,33 + 52 € de charges directes).",
     },
@@ -161,7 +161,7 @@ export const methodeAbc: Chapter = {
         "Soutien aux produits (par référence)",
         "Soutien à l'organisation (global)",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Le réglage est déclenché par chaque lot lancé, quelle que soit sa taille : son inducteur logique est le nombre de lots. Ces activités de niveau « lot » échappent à toute logique volumique — c'est précisément ce que les unités d'œuvre volumiques ne savent pas capter.",
     },
@@ -174,7 +174,7 @@ export const methodeAbc: Chapter = {
         "Choisir les inducteurs et déterminer leur volume",
         "Construire le coût de revient en ajoutant les charges directes",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "Les cinq étapes s'enchaînent : 1. affecter les ressources aux activités ; 2. calculer le coût de chaque activité ; 3. choisir l'inducteur et calculer son coût (coût de l'activité ÷ nombre d'inducteurs) ; 4. imputer aux objets de coûts ; 5. construire le coût de revient (charges directes + charges réparties).",
     },
@@ -183,7 +183,7 @@ export const methodeAbc: Chapter = {
       question:
         "Le produit C (2 000 unités, charges directes 70 €/u, 1,5 h-machine/u) consomme 300 commandes (600 €), 500 lots (1 000 €), 3 000 heures-machine (40 €) et 600 contrôles (700 €). Quel est son coût de revient unitaire en ABC ?",
       choices: ["175,00 €", "610,00 €", "680,00 €", "505,00 €"],
-      answer: 2,
+      answers: [2],
       explanation:
         "Charges indirectes : 300 × 600 + 500 × 1 000 + 3 000 × 40 + 600 × 700 = 180 000 + 500 000 + 120 000 + 420 000 = 1 220 000 €, soit 1 220 000 ÷ 2 000 = 610 € par unité. Coût de revient = 610 + 70 de charges directes = 680 €. 175 € est le coût en centres d'analyse (70 + 70 × 1,5) : vendu 300 €, le produit C perdrait en réalité 380 € par unité.",
     },
@@ -196,7 +196,7 @@ export const methodeAbc: Chapter = {
         "La carte des activités doit être tenue à jour, sous peine d'obsolescence",
         "Le découpage en activités n'est pas normalisé et diffère d'une entreprise à l'autre",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "L'ABC est bien une méthode de coût complet : elle répartit la totalité des charges indirectes (vérification chez Méca-Précision : 11 720 000 + 7 180 000 = 18 900 000 €). Ses vraies limites sont l'ambiguïté de la notion d'activité, la complexité, le coût de mise en œuvre (atténué par le numérique), la difficulté d'actualisation, le frein humain et la dissociation des responsabilités.",
     },
@@ -209,7 +209,7 @@ export const methodeAbc: Chapter = {
         "Entreprise dont les charges directes sont largement prépondérantes",
         "Charges indirectes élevées et production diversifiée en petites séries",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "L'ABC apporte le plus quand les charges indirectes sont importantes et la production diversifiée (cas de Méca-Précision : 18,9 M€ d'indirects, grande série standard vs petite série personnalisée). Pour une entreprise mono-produit à indirects faibles, les centres d'analyse suffisent : aucune méthode n'est supérieure dans l'absolu, on choisit selon le contexte.",
     },

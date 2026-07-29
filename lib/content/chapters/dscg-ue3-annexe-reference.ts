@@ -82,7 +82,7 @@ export const annexeReference: Chapter = {
         "Un budget recalculé pour le niveau d'activité réellement atteint, isolant l'écart sur volume de l'écart sur performance",
         "Un budget glissant réactualisé sur un horizon mobile",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Le budget flexible est recalculé pour l'activité réelle, ce qui permet de séparer l'écart dû au volume de l'écart de performance. La prévision glissante sur horizon mobile correspond, elle, au rolling forecast.",
     },
@@ -90,7 +90,7 @@ export const annexeReference: Chapter = {
       id: "q2",
       question: "Quel auteur a mis en évidence les effets comportementaux pervers de la pression budgétaire ?",
       choices: ["Chris Argyris", "Robert Simons", "Henri Bouquin", "Frederick Taylor"],
-      answer: 0,
+      answers: [0],
       explanation:
         "Chris Argyris est associé aux effets comportementaux pervers de la pression budgétaire (chapitre 7). Simons a proposé les leviers de contrôle (usage diagnostique / interactif), Bouquin la conception française du contrôle de gestion et du budget-contrat, Taylor l'organisation scientifique du travail et le coût standard.",
     },
@@ -103,7 +103,7 @@ export const annexeReference: Chapter = {
         "Hiérarchiser les risques selon probabilité et impact",
         "Décomposer les écarts budgétaires",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "La matrice de Kraljic segmente le portefeuille achats (risque / poids) — chapitre 3. La cartographie pouvoir / intérêt des parties prenantes est la matrice de Mendelow, et la hiérarchisation des risques passe par la matrice probabilité × impact.",
     },
@@ -116,7 +116,7 @@ export const annexeReference: Chapter = {
         "People, planet, profit",
         "Pouvoir, légitimité, urgence",
       ],
-      answer: 3,
+      answers: [3],
       explanation:
         "Ronald Mitchell hiérarchise les parties prenantes selon le pouvoir, la légitimité et l'urgence (chapitre 8). Pression/opportunité/rationalisation est le triangle de la fraude de Cressey, et people/planet/profit la triple bottom line d'Elkington.",
     },
@@ -129,7 +129,7 @@ export const annexeReference: Chapter = {
         "L'atteinte des objectifs, la fiabilité de l'information, la conformité et la protection du patrimoine",
         "La seule détection des fraudes internes",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Le contrôle interne (référentiel COSO, cinq composantes) est un dispositif de maîtrise des activités visant l'atteinte des objectifs, la fiabilité de l'information, la conformité et la protection du patrimoine. La certification des comptes relève de l'audit externe.",
     },
@@ -142,7 +142,7 @@ export const annexeReference: Chapter = {
         "Dave Ulrich — théorie du capital humain",
         "Michel Crozier — courbe du changement",
       ],
-      answer: 1,
+      answers: [1],
       explanation:
         "Jay Barney est l'auteur de la théorie des ressources (RBV) et du modèle VRIO. Les huit étapes du changement sont de Kotter (Lewin propose les trois phases décristallisation / transition / recristallisation), la théorie du capital humain est de Becker et Schultz (Ulrich : rôles de la fonction RH), et la courbe du changement est de Kübler-Ross (Crozier : analyse stratégique des organisations).",
     },
@@ -155,7 +155,7 @@ export const annexeReference: Chapter = {
         "Un reporting facultatif limité aux sociétés cotées américaines",
         "L'application du référentiel COSO ERM",
       ],
-      answer: 0,
+      answers: [0],
       explanation:
         "La CSRD (Corporate Sustainability Reporting Directive) est la directive européenne de reporting de durabilité : elle impose la double matérialité, l'application des normes ESRS (transversales, E1-E5, S1-S4, G1) et une vérification par un tiers.",
     },
@@ -169,7 +169,7 @@ export const annexeReference: Chapter = {
         "Mobilisée en transversal, sans chapitre dédié dans ce volume",
         "Hors programme de l'UE3",
       ],
-      answer: 2,
+      answers: [2],
       explanation:
         "Les huit chapitres couvrent la Partie 2 (2.1 à 2.6) et les volets majeurs de la Partie 3. La Partie 1 (diagnostic stratégique, choix stratégiques, création de valeur, ~60 h) est un prérequis mobilisé en transversal dans tous les chapitres, mais ne fait pas l'objet d'un chapitre dédié : l'étudiant doit la compléter pour une couverture exhaustive.",
     },

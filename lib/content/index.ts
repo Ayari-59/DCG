@@ -36,6 +36,7 @@ import { soutenance } from "./chapters/dcg-ue13-soutenance";
 import { annexeReference } from "./chapters/dscg-ue3-annexe-reference";
 import { methodesBySlug } from "./methodes";
 import { annalesBySlug } from "./annales";
+import { flashcardsQcmBySlug, quizQcmBySlug } from "./qcm";
 
 const rawPrograms: Program[] = [
   {
@@ -129,6 +130,13 @@ export const programs: Program[] = rawPrograms
     ...p,
     chapters: p.chapters.map((c) => ({
       ...c,
+      /*
+       * Les cartes tirées du corrigé QCM de l'auteur s'ajoutent à celles
+       * du chapitre ; son QCM, lui, remplace celui qui existait — il est
+       * plus fourni et c'est le sien.
+       */
+      flashcards: [...c.flashcards, ...(flashcardsQcmBySlug[c.slug] ?? [])],
+      quiz: quizQcmBySlug[c.slug]?.length ? quizQcmBySlug[c.slug] : c.quiz,
       ...(methodesBySlug[c.slug]?.length ? { methodes: methodesBySlug[c.slug] } : {}),
       ...(annalesBySlug[c.slug]?.length ? { annales: annalesBySlug[c.slug] } : {}),
     })),
