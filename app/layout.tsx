@@ -49,6 +49,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 DSCG · UE3
               </Link>
               <Link
+                href="/a-propos"
+                className="rounded-lg px-3 py-2 transition hover:bg-slate-100 hover:text-navy"
+              >
+                À propos
+              </Link>
+              <Link
                 href="/classe"
                 className="rounded-lg px-3 py-2 transition hover:bg-slate-100 hover:text-navy"
               >
@@ -88,6 +94,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 </Link>
                 <Link href="/dscg" className="transition hover:text-white/80">
                   DSCG · UE3
+                </Link>
+                <Link href="/a-propos" className="transition hover:text-white/80">
+                  À propos
                 </Link>
               </span>
             </div>
