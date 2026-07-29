@@ -163,9 +163,19 @@ export default function AProposPage() {
 
                   <div className="mt-6 space-y-3.5 text-[16px] leading-relaxed text-white/60">
                     <p>
-                      Tout le contenu de ce site est tiré de ses cours : les manuels, les démarches
-                      de méthode, les schémas et les cas ont été écrits pour ses classes avant
-                      d&apos;être publiés ici.
+                      Objectif-DCG est conçu et animé par un enseignant spécialisé dans la
+                      préparation au DCG et au DSCG. La méthode a été élaborée, testée et affinée
+                      au contact des étudiants — en cours, lors des révisions, et au fil des
+                      retours d&apos;expérience après les examens.
+                    </p>
+                    <p>
+                      Ce n&apos;est pas une plateforme généraliste :{" "}
+                      <strong className="font-semibold text-white/85">
+                        c&apos;est un outil pensé de l&apos;intérieur
+                      </strong>
+                      , par quelqu&apos;un qui connaît le diplôme pour l&apos;avoir enseigné, et
+                      qui sait exactement ce qui distingue un étudiant qui réussit d&apos;un
+                      étudiant qui stagne.
                     </p>
                     <p>
                       Passionné par ce que l&apos;intelligence artificielle peut apporter à
@@ -370,15 +380,17 @@ function Portrait() {
         <img
           src={`/${fichier}`}
           alt="Mohamed Ayari"
-          width={128}
-          height={128}
-          className="relative h-32 w-32 rounded-full object-cover ring-4 ring-brand"
+          width={160}
+          height={160}
+          // La photo est un cadrage large : le visage n'est pas au centre
+          // exact. Sur une image déjà carrée, object-position n'a aucun effet.
+          className="relative h-32 w-32 rounded-full object-cover object-[57%_center] ring-4 ring-brand sm:h-40 sm:w-40"
         />
       ) : (
         <span
           aria-label="Mohamed Ayari"
           role="img"
-          className="relative flex h-32 w-32 items-center justify-center rounded-full bg-navy font-serif text-4xl font-bold tracking-tight text-white ring-4 ring-brand"
+          className="relative flex h-32 w-32 items-center justify-center rounded-full bg-navy font-serif text-4xl font-bold tracking-tight text-white ring-4 ring-brand sm:h-40 sm:w-40 sm:text-5xl"
         >
           MA
         </span>
