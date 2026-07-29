@@ -218,9 +218,14 @@ export default function Home() {
             {programs.map((p, i) => {
               const a = programAccent[p.level];
               return (
-                <Reveal key={p.level} delay={i * 110}>
+                <Reveal key={p.ue} delay={i * 110}>
                   <Link
-                    href={`/${p.level.toLowerCase()}`}
+                    /*
+                     * L'adresse ne se déduit pas du diplôme : deux unités
+                     * portent le niveau « DCG ». Déduite ainsi, la carte de
+                     * l'UE13 renvoyait vers le programme de l'UE11.
+                     */
+                    href={p.ue === "UE11" ? "/dcg" : p.ue === "UE3" ? "/dscg" : "/ue13"}
                     className={`lift group block h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-md ${a.glowRing}`}
                   >
                     <div className={`h-1.5 w-full ${a.bar}`} />
