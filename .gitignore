@@ -42,3 +42,6 @@ next-env.d.ts
 
 # matériel pédagogique source (Word/PPT/Excel/PNG) — reste hors du dépôt
 /sources
+
+# extraits temporaires de PDF
+extrait.txt
