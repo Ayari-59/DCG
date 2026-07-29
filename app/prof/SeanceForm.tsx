@@ -24,7 +24,7 @@ export interface SeanceInitiale {
 }
 
 const champ =
-  "w-full rounded-xl border-2 border-line bg-white px-4 py-2.5 text-ink outline-none transition focus:border-brand";
+  "w-full rounded-xl border border-line bg-white px-4 py-2.5 text-ink outline-none transition focus:border-brand";
 const label = "block text-xs font-black uppercase tracking-[0.12em] text-muted";
 
 export function SeanceForm({
@@ -153,12 +153,12 @@ export function SeanceForm({
           type="checkbox"
           name="publiee"
           defaultChecked={initiale.publiee}
-          className="h-5 w-5 rounded border-2 border-line accent-[#f07e26]"
+          className="h-5 w-5 rounded border border-line accent-[#f07e26]"
         />
         Visible par les étudiants
       </label>
 
-      <div className="flex gap-3 border-t-2 border-line pt-6">
+      <div className="flex gap-3 border-t border-line pt-6">
         <button
           type="submit"
           className="lift rounded-xl bg-brand px-6 py-3 font-bold text-white elev-md hover:bg-orange-600"
@@ -167,7 +167,7 @@ export function SeanceForm({
         </button>
         <a
           href="/prof"
-          className="rounded-xl border-2 border-line bg-white px-6 py-3 font-bold text-muted transition hover:text-ink"
+          className="rounded-xl border border-line bg-white px-6 py-3 font-bold text-muted transition hover:text-ink"
         >
           Annuler
         </a>

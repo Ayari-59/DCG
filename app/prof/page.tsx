@@ -92,7 +92,7 @@ export default async function ProfPage({ searchParams }: Props) {
             + Nouvelle séance
           </Link>
           <form action={seDeconnecter}>
-            <button className="rounded-xl border-2 border-line bg-white px-5 py-2.5 font-bold text-muted transition hover:text-ink">
+            <button className="rounded-xl border border-line bg-white px-5 py-2.5 font-bold text-muted transition hover:text-ink">
               Déconnexion
             </button>
           </form>
@@ -100,7 +100,7 @@ export default async function ProfPage({ searchParams }: Props) {
       </div>
 
       {seances.length === 0 ? (
-        <p className="rounded-2xl border-2 border-dashed border-line px-6 py-10 text-center text-muted">
+        <p className="rounded-2xl border border-dashed border-line px-6 py-10 text-center text-muted">
           Aucune séance pour l&apos;instant. Créez la première.
         </p>
       ) : (
@@ -110,7 +110,7 @@ export default async function ProfPage({ searchParams }: Props) {
             return (
               <li
                 key={s.id}
-                className="elev-sm flex flex-wrap items-center gap-4 rounded-2xl border-2 border-line bg-white p-5"
+                className="elev-sm flex flex-wrap items-center gap-4 rounded-2xl border border-line bg-white p-5"
               >
                 <div className="min-w-0 flex-1">
                   <p className="flex flex-wrap items-center gap-2 text-xs font-bold text-muted">
@@ -140,13 +140,13 @@ export default async function ProfPage({ searchParams }: Props) {
                 <div className="flex gap-2">
                   <Link
                     href={`/prof?seance=${s.id}`}
-                    className="rounded-lg border-2 border-line px-4 py-2 text-sm font-bold text-muted transition hover:text-ink"
+                    className="rounded-lg border border-line px-4 py-2 text-sm font-bold text-muted transition hover:text-ink"
                   >
                     Modifier
                   </Link>
                   <form action={supprimerSeance}>
                     <input type="hidden" name="id" value={s.id} />
-                    <button className="rounded-lg border-2 border-rose-200 px-4 py-2 text-sm font-bold text-rose-700 transition hover:bg-rose-50">
+                    <button className="rounded-lg border border-rose-200 px-4 py-2 text-sm font-bold text-rose-700 transition hover:bg-rose-50">
                       Supprimer
                     </button>
                   </form>

@@ -91,7 +91,7 @@ export function Exercises({ exercises }: { exercises: Exercise[] }) {
 
   return (
     <div>
-      <div className="mb-6 rounded-xl border-2 border-blue-200 bg-blue-50 px-5 py-4">
+      <div className="mb-6 rounded-xl border border-blue-200 bg-blue-50 px-5 py-4">
         <h2 className="font-serif text-xl font-bold text-ink">Applications</h2>
         <p className="mt-0.5 text-sm text-muted">
           {exercises.length} exercice{exercises.length > 1 ? "s" : ""} du cahier, dont {corriges}{" "}

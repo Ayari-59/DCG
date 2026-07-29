@@ -24,7 +24,7 @@ export default async function ClassePage({
   if (!dbConfigured) {
     return (
       <Cadre>
-        <p className="rounded-2xl border-2 border-dashed border-line px-6 py-10 text-center text-muted">
+        <p className="rounded-2xl border border-dashed border-line px-6 py-10 text-center text-muted">
           Le cahier de texte n&apos;est pas encore activé.
         </p>
       </Cadre>
@@ -64,7 +64,7 @@ export default async function ClassePage({
       )}
 
       {echeances.length > 0 && (
-        <section className="elev-sm mb-10 rounded-3xl border-2 border-brand/40 bg-orange-50 p-6">
+        <section className="elev-sm mb-10 rounded-3xl border border-brand/40 bg-orange-50 p-6">
           <h2 className="text-xs font-black uppercase tracking-[0.15em] text-brand">
             À rendre prochainement
           </h2>
@@ -109,7 +109,7 @@ export default async function ClassePage({
 
       <h2 className="mb-4 font-serif text-2xl font-bold text-ink">Les séances</h2>
       {seances.length === 0 ? (
-        <p className="rounded-2xl border-2 border-dashed border-line px-6 py-10 text-center text-muted">
+        <p className="rounded-2xl border border-dashed border-line px-6 py-10 text-center text-muted">
           Aucune séance publiée pour l&apos;instant.
         </p>
       ) : (
@@ -121,7 +121,7 @@ export default async function ClassePage({
             return (
               <li
                 key={s.id}
-                className="elev-sm overflow-hidden rounded-3xl border-2 border-line bg-white"
+                className="elev-sm overflow-hidden rounded-3xl border border-line bg-white"
               >
                 <div className={`h-1.5 w-full ${theme.bar}`} />
                 <div className="p-6">
@@ -228,7 +228,7 @@ function Filtre({
   return (
     <Link
       href={href}
-      className={`rounded-full border-2 px-4 py-1.5 text-sm font-bold transition ${
+      className={`rounded-full border px-4 py-1.5 text-sm font-bold transition ${
         actif ? "border-brand bg-orange-50 text-brand" : "border-line bg-white text-muted hover:text-ink"
       }`}
     >

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { allChapters, programs } from "@/lib/content";
 import { familiesOf, getTheme } from "@/lib/content/theme";
 import { Reveal } from "@/components/Reveal";
+import { Icone } from "@/components/Icones";
 import { TargetMark } from "@/components/Logo";
 
 export const metadata: Metadata = {
@@ -97,7 +98,7 @@ export default function AProposPage() {
       <section className="grain relative overflow-hidden bg-navy-deep">
         <div className="relative mx-auto max-w-[860px] px-5 py-20 text-center sm:py-28">
           <Reveal>
-            <TargetMark className="mx-auto h-14 w-14" />
+            <TargetMark className="mx-auto h-14 w-14" onDark />
             <h1 className="mt-7 font-serif text-[2.6rem] font-bold leading-[1.05] tracking-[-0.03em] text-white sm:text-[3.6rem]">
               Le pourquoi du comment
             </h1>
@@ -210,7 +211,8 @@ export default function AProposPage() {
                     rel="noopener noreferrer"
                     className="lift mt-7 inline-flex items-center gap-2.5 rounded-xl bg-brand px-5 py-2.5 text-sm font-bold text-white elev-md hover:bg-orange-600"
                   >
-                    🎬 La chaîne Objectif-DCG
+                    <Icone nom="video" className="h-4 w-4" />
+                    La chaîne Objectif-DCG
                   </a>
                 </div>
               </div>
@@ -228,7 +230,7 @@ export default function AProposPage() {
               {programs.length} programmes entiers — l&apos;UE11 et l&apos;UE13 du DCG,
               l&apos;UE3 du DSCG — soit {c.chapitres} chapitres et {c.sections} sections.
             </p>
-            <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 rounded-3xl border-2 border-line bg-white px-8 py-7 elev-sm sm:grid-cols-3">
+            <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 rounded-3xl border border-line bg-white px-8 py-7 elev-sm sm:grid-cols-3">
               {[
                 { v: c.chapitres, l: "chapitres", couleur: "text-navy" },
                 { v: c.figures, l: "schémas", couleur: "text-brand" },
@@ -269,7 +271,7 @@ export default function AProposPage() {
               {etapes.map((e, i) => (
                 <li
                   key={e.titre}
-                  className="flex gap-5 rounded-2xl border-2 border-line bg-white p-6 elev-sm"
+                  className="flex gap-5 rounded-2xl border border-line bg-white p-6 elev-sm"
                 >
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-navy font-serif text-lg font-bold text-white">
                     {i + 1}
@@ -310,7 +312,7 @@ export default function AProposPage() {
               {familles.map((f) => (
                 <span
                   key={f.family}
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-line bg-white px-3.5 py-1.5 text-sm font-bold text-ink"
+                  className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-bold text-ink"
                 >
                   <span className={`h-2.5 w-2.5 rounded-full ${f.bar}`} />
                   {f.family}

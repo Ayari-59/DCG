@@ -14,6 +14,7 @@ import { Fiche } from "./Fiche";
 import { Methodologie, hasMethodologie } from "./Methodologie";
 import { Annales } from "./Annales";
 import { Exercises } from "./Exercises";
+import { Icone } from "./Icones";
 
 export interface VoisinChapitre {
   slug: string;
@@ -22,9 +23,22 @@ export interface VoisinChapitre {
   badge: string;
 }
 
-type TabId = "lecon" | "methode" | "fiche" | "annales" | "applications" | "flashcards" | "quiz";
+type TabId =
+  | "lecon"
+  | "methode"
+  | "fiche"
+  | "annales"
+  | "applications"
+  | "flashcards"
+  | "quiz";
 
-export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: VoisinChapitre }) {
+export function ChapterView({
+  chapter,
+  suivant,
+}: {
+  chapter: Chapter;
+  suivant?: VoisinChapitre;
+}) {
   // L'état de navigation vit dans l'URL : une page est ainsi partageable,
   // survit au rechargement, et le cahier de texte peut pointer une section.
   const router = useRouter();
@@ -40,18 +54,38 @@ export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: 
 
   const tabs: { id: TabId; label: string; badge?: number }[] = [
     { id: "lecon", label: "Leçon", badge: sections.length },
-    ...(hasMethodologie(chapter) ? [{ id: "methode" as const, label: "Méthode" }] : []),
+    ...(hasMethodologie(chapter)
+      ? [{ id: "methode" as const, label: "Méthode" }]
+      : []),
     ...(hasFiche(chapter) ? [{ id: "fiche" as const, label: "Fiche" }] : []),
     ...(chapter.annales?.length
-      ? [{ id: "annales" as const, label: "Annales", badge: chapter.annales.length }]
+      ? [
+          {
+            id: "annales" as const,
+            label: "Annales",
+            badge: chapter.annales.length,
+          },
+        ]
       : []),
     ...(chapter.exercises?.length
-      ? [{ id: "applications" as const, label: "Applications", badge: chapter.exercises.length }]
+      ? [
+          {
+            id: "applications" as const,
+            label: "Applications",
+            badge: chapter.exercises.length,
+          },
+        ]
       : []),
     // Un onglet vide n'a rien à proposer : il reste masqué tant que le
     // chapitre n'a pas de cartes ni de questions.
     ...(chapter.flashcards.length
-      ? [{ id: "flashcards" as const, label: "Flashcards", badge: chapter.flashcards.length }]
+      ? [
+          {
+            id: "flashcards" as const,
+            label: "Flashcards",
+            badge: chapter.flashcards.length,
+          },
+        ]
       : []),
     ...(chapter.quiz.length
       ? [{ id: "quiz" as const, label: "Quiz", badge: chapter.quiz.length }]
@@ -59,23 +93,26 @@ export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: 
   ];
 
   // Un onglet absent de ce chapitre ne doit pas produire une page vide.
-  const tab: TabId = tabs.some((t) => t.id === ongletDemande) ? ongletDemande : "lecon";
+  const tab: TabId = tabs.some((t) => t.id === ongletDemande)
+    ? ongletDemande
+    : "lecon";
 
   const naviguer = useCallback(
     (onglet: TabId, sectionIndex: number) => {
       const p = new URLSearchParams();
       if (onglet !== "lecon") p.set("onglet", onglet);
-      if (onglet === "lecon" && sectionIndex > 0) p.set("section", String(sectionIndex + 1));
+      if (onglet === "lecon" && sectionIndex > 0)
+        p.set("section", String(sectionIndex + 1));
       const q = p.toString();
       router.replace(q ? pathname + "?" + q : pathname, { scroll: false });
       window.scrollTo({ top: 0, behavior: "smooth" });
     },
-    [router, pathname]
+    [router, pathname],
   );
 
   const goTo = useCallback(
     (i: number) => naviguer("lecon", Math.max(0, Math.min(last, i))),
-    [naviguer, last]
+    [naviguer, last],
   );
 
   const setTab = useCallback((t: TabId) => naviguer(t, 0), [naviguer]);
@@ -110,13 +147,15 @@ export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: 
         <p
           className={`flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] ${theme.text}`}
         >
-          <span className="text-sm">{theme.emoji}</span>
+          <Icone nom={theme.icone} className="h-4 w-4" />
           {theme.family} · Chapitre {chapter.number}
         </p>
         <h1 className="mt-2 font-serif text-[2.4rem] font-bold leading-[1.05] tracking-[-0.03em] text-ink sm:text-[3.4rem]">
           {chapter.title}
         </h1>
-        <p className="mt-4 text-[17px] leading-relaxed text-muted">{chapter.description}</p>
+        <p className="mt-4 text-[17px] leading-relaxed text-muted">
+          {chapter.description}
+        </p>
       </header>
 
       <nav className="no-print mt-7 flex gap-1 overflow-x-auto border-b border-line">
@@ -124,7 +163,7 @@ export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: 
           <button
             key={t.id}
             onClick={() => setTab(t.id)}
-            className={`-mb-px shrink-0 border-b-2 px-4 py-3 text-sm font-medium transition ${
+            className={`-mb-px shrink-0 border-b px-4 py-3 text-sm font-medium transition ${
               tab === t.id
                 ? `border-current ${theme.text}`
                 : "border-transparent text-muted hover:text-ink"
@@ -197,12 +236,34 @@ export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: 
                   Ce chapitre
                 </p>
                 <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
-                  <li>⏱ {chapter.durationMin} min de lecture</li>
-                  <li>📖 {sections.length} sections</li>
-                  {chapter.annales?.length ? <li>📜 {chapter.annales.length} annales</li> : null}
-                  {chapter.exercises?.length ? <li>✏️ {chapter.exercises.length} applications</li> : null}
-                  <li>🃏 {chapter.flashcards.length} flashcards</li>
-                  <li>✅ {chapter.quiz.length} questions</li>
+                  <li className="flex items-center gap-2">
+                    <Icone nom="duree" className="h-4 w-4 text-muted" />
+                    {chapter.durationMin} min de lecture
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Icone nom="sections" className="h-4 w-4 text-muted" />
+                    {sections.length} sections
+                  </li>
+                  {chapter.annales?.length ? (
+                    <li className="flex items-center gap-2">
+                      <Icone nom="annales" className="h-4 w-4 text-muted" />
+                      {chapter.annales.length} annales
+                    </li>
+                  ) : null}
+                  {chapter.exercises?.length ? (
+                    <li className="flex items-center gap-2">
+                      <Icone nom="application" className="h-4 w-4 text-muted" />
+                      {chapter.exercises.length} applications
+                    </li>
+                  ) : null}
+                  <li className="flex items-center gap-2">
+                    <Icone nom="cartes" className="h-4 w-4 text-muted" />
+                    {chapter.flashcards.length} flashcards
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Icone nom="quiz" className="h-4 w-4 text-muted" />
+                    {chapter.quiz.length} questions
+                  </li>
                 </ul>
                 <button
                   onClick={() => setTab("lecon")}
@@ -222,7 +283,9 @@ export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: 
                 <div className="h-1 flex-1 overflow-hidden rounded-full bg-slate-200/70">
                   <div
                     className={`h-full rounded-full transition-all duration-300 ${theme.bar}`}
-                    style={{ width: `${((index + 1) / sections.length) * 100}%` }}
+                    style={{
+                      width: `${((index + 1) / sections.length) * 100}%`,
+                    }}
                   />
                 </div>
                 <span className="shrink-0 text-xs tabular-nums text-muted">
@@ -231,10 +294,16 @@ export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: 
               </div>
 
               {index === 0 && chapter.videos && chapter.videos.length > 0 && (
-                <div className={`mb-10 space-y-6 rounded-2xl border-2 p-5 ${theme.border} ${theme.soft}`}>
-                  <h2 className={`text-xs font-black uppercase tracking-[0.18em] ${theme.text}`}>
-                    🎬{" "}
-                    {chapter.videos.length > 1 ? "Vidéos du chapitre" : "Vidéo du chapitre"}
+                <div
+                  className={`mb-10 space-y-6 rounded-2xl border p-5 ${theme.border} ${theme.soft}`}
+                >
+                  <h2
+                    className={`text-xs font-black uppercase tracking-[0.18em] ${theme.text}`}
+                  >
+                    <Icone nom="video" className="h-4 w-4" />
+                    {chapter.videos.length > 1
+                      ? "Vidéos du chapitre"
+                      : "Vidéo du chapitre"}
                   </h2>
                   {chapter.videos.map((v) => (
                     <figure key={v.youtubeId}>
@@ -247,14 +316,18 @@ export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: 
                           allowFullScreen
                         />
                       </div>
-                      <figcaption className="mt-2 text-sm text-muted">{v.title}</figcaption>
+                      <figcaption className="mt-2 text-sm text-muted">
+                        {v.title}
+                      </figcaption>
                     </figure>
                   ))}
                 </div>
               )}
 
               <h2 className="mb-6 font-serif text-[1.75rem] font-bold leading-tight tracking-tight text-ink">
-                <span className={`mr-3 inline-block h-7 w-1.5 translate-y-0.5 rounded-full align-middle ${theme.bar}`} />
+                <span
+                  className={`mr-3 inline-block h-7 w-1.5 translate-y-0.5 rounded-full align-middle ${theme.bar}`}
+                />
                 {section.title}
               </h2>
               <Blocks blocks={section.blocks} />
@@ -289,7 +362,7 @@ export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: 
               {index === last && suivant && (
                 <Link
                   href={`/cours/${suivant.slug}`}
-                  className="lift elev-sm group mt-6 flex items-center gap-4 rounded-2xl border-2 border-line bg-white p-5"
+                  className="lift elev-sm group mt-6 flex items-center gap-4 rounded-2xl border border-line bg-white p-5"
                 >
                   <span
                     className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl font-serif text-lg font-bold text-white ${suivant.badge}`}

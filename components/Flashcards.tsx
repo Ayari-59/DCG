@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { Flashcard } from "@/lib/content/types";
 import { getTheme } from "@/lib/content/theme";
+import { TargetMark } from "./Logo";
 
 interface Props {
   slug: string;
@@ -86,7 +87,7 @@ export function Flashcards({ slug, cards }: Props) {
   if (!card) {
     return (
       <div className="rounded-xl border border-slate-200 bg-white p-8 text-center">
-        <div className="text-3xl">🎉</div>
+        <TargetMark className="mx-auto h-10 w-10" />
         <p className="mt-2 font-semibold text-slate-900">
           Toutes les cartes de ce chapitre sont acquises !
         </p>

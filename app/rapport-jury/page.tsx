@@ -47,7 +47,7 @@ export default function RapportJuryPage() {
       <div className="mx-auto max-w-[860px] px-5 py-20">
         {/* ── Le fait marquant ──────────────────────────────────────── */}
         <Reveal>
-          <section className="rounded-3xl border-2 border-brand bg-orange-50 p-8">
+          <section className="rounded-3xl border border-brand bg-orange-50 p-8">
             <p className="text-xs font-black uppercase tracking-[0.15em] text-brand">
               Le fait marquant
             </p>
@@ -131,7 +131,7 @@ export default function RapportJuryPage() {
                 forte baisse, mais s&apos;inscrit dans un mouvement d&apos;ensemble.
               </Point>
             </div>
-            <p className="mt-6 rounded-2xl border-2 border-amber-200 bg-amber-50 px-5 py-4 text-[15px] leading-relaxed text-amber-900">
+            <p className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-[15px] leading-relaxed text-amber-900">
               <strong className="font-bold">À distinguer :</strong> les chiffres ci-dessus sont ceux
               communiqués par le jury. Les commentaires qui les accompagnent sont les nôtres — le
               document de diffusion présente des statistiques, sans analyse des copies.
@@ -145,7 +145,7 @@ export default function RapportJuryPage() {
             <h2 className="font-serif text-3xl font-bold tracking-[-0.02em] text-ink">
               La session {SESSION} en chiffres
             </h2>
-            <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 rounded-3xl border-2 border-line bg-white px-8 py-7 elev-sm sm:grid-cols-4">
+            <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 rounded-3xl border border-line bg-white px-8 py-7 elev-sm sm:grid-cols-4">
               {[
                 { v: nb(SESSION_GLOBALE.candidats), l: "candidats" },
                 { v: `+${SESSION_GLOBALE.evolutionCandidats.toString().replace(".", ",")} %`, l: "d'inscrits en un an" },
@@ -167,10 +167,10 @@ export default function RapportJuryPage() {
             <h2 className="font-serif text-3xl font-bold tracking-[-0.02em] text-ink">
               Toutes les unités, session {SESSION}
             </h2>
-            <div className="mt-6 overflow-x-auto rounded-2xl border-2 border-line bg-white elev-sm">
+            <div className="mt-6 overflow-x-auto rounded-2xl border border-line bg-white elev-sm">
               <table className="w-full min-w-[34rem] text-[15px]">
                 <thead>
-                  <tr className="border-b-2 border-line bg-slate-50 text-left">
+                  <tr className="border-b border-line bg-slate-50 text-left">
                     <th className="px-4 py-3 font-bold text-ink">Unité</th>
                     <th className="px-4 py-3 text-right font-bold text-ink">Réussite</th>
                     <th className="px-4 py-3 text-right font-bold text-ink">Moyenne</th>
@@ -219,7 +219,7 @@ export default function RapportJuryPage() {
 
         {/* ── Conséquences pratiques ────────────────────────────────── */}
         <Reveal>
-          <section className="mt-16 rounded-3xl border-2 border-line bg-white p-8 elev-sm">
+          <section className="mt-16 rounded-3xl border border-line bg-white p-8 elev-sm">
             <h2 className="font-serif text-3xl font-bold tracking-[-0.02em] text-ink">
               Ce que ça change à la préparation
             </h2>
@@ -236,7 +236,7 @@ export default function RapportJuryPage() {
               </Link>
               <Link
                 href="/dcg"
-                className="lift rounded-xl border-2 border-line bg-white px-6 py-3 font-bold text-navy"
+                className="lift rounded-xl border border-line bg-white px-6 py-3 font-bold text-navy"
               >
                 Les chapitres de l&apos;UE11 →
               </Link>

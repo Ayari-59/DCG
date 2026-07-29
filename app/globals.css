@@ -16,7 +16,9 @@
   --color-paper: #f9f8f6;
   --color-ink: #14202e;
   --color-muted: #5a6779;
-  --color-line: #e3e2dd;
+  /* Les filets sont passés de 2 px à 1 px : ils doivent être un peu plus
+     denses pour rester lisibles à cette épaisseur. */
+  --color-line: #dcdad3;
 
   /* Objectif-DCG.fr : bleu marine, orange, ambre. */
   --color-navy: #16325c;
@@ -26,11 +28,16 @@
 }
 
 :root {
-  /* Élévation : ombres multi-couches plutôt qu'une ombre unique et plate. */
-  --shadow-sm: 0 1px 2px rgb(16 24 40 / 0.04), 0 1px 3px rgb(16 24 40 / 0.06);
-  --shadow-md: 0 2px 4px rgb(16 24 40 / 0.04), 0 6px 16px -4px rgb(16 24 40 / 0.08);
-  --shadow-lg: 0 4px 8px rgb(16 24 40 / 0.04), 0 16px 32px -8px rgb(16 24 40 / 0.12);
-  --shadow-xl: 0 8px 16px rgb(16 24 40 / 0.05), 0 32px 64px -12px rgb(16 24 40 / 0.18);
+  /*
+   * Élévation : ombres multi-couches, teintées du bleu de la marque plutôt
+   * que d'un gris neutre — une ombre grise sur un fond chaud vire au sale.
+   * Elles sont larges et très peu opaques : on doit sentir le relief sans
+   * voir l'ombre.
+   */
+  --shadow-sm: 0 1px 2px rgb(11 28 58 / 0.04), 0 1px 3px rgb(11 28 58 / 0.03);
+  --shadow-md: 0 2px 6px rgb(11 28 58 / 0.04), 0 8px 20px -6px rgb(11 28 58 / 0.07);
+  --shadow-lg: 0 4px 12px rgb(11 28 58 / 0.04), 0 20px 44px -12px rgb(11 28 58 / 0.1);
+  --shadow-xl: 0 8px 24px rgb(11 28 58 / 0.05), 0 44px 88px -20px rgb(11 28 58 / 0.14);
 }
 
 body {
@@ -38,10 +45,55 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Ligatures et lettres alternatives dessinées avec la fonte. */
+  font-feature-settings: "liga" 1, "calt" 1, "kern" 1;
 }
 
 [id] {
   scroll-margin-top: 5rem;
+}
+
+/* ── Détails typographiques ──────────────────────────────────────────── */
+
+/*
+ * Un titre coupé sur un mot isolé fait bâclé quelle que soit la qualité du
+ * reste. `balance` répartit les lignes d'un titre, `pretty` empêche la
+ * dernière ligne d'un paragraphe de tomber sur un seul mot.
+ */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+p,
+li {
+  text-wrap: pretty;
+}
+
+/* Les chiffres alignés en colonne dans les tableaux et les compteurs. */
+table,
+.chiffres {
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+/* ── Accessibilité ───────────────────────────────────────────────────── */
+
+/*
+ * Un seul anneau de focus pour tout le site, visible au clavier uniquement.
+ * Sans cette règle, le contour par défaut du navigateur casse les arrondis
+ * et change d'aspect d'un composant à l'autre.
+ */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 /* ── Matière ─────────────────────────────────────────────────────────── */

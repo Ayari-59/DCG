@@ -7,10 +7,13 @@
  * classes construits dynamiquement.
  */
 
+import type { NomIcone } from "@/components/Icones";
+
 export interface Theme {
   /** Nom de la famille, affiché comme intertitre dans le programme. */
   family: string;
-  emoji: string;
+  /** Icône de la famille, dessinée au trait comme le reste du site. */
+  icone: NomIcone;
   /** Pastille numérotée du chapitre. */
   badge: string;
   /** Texte d'accent (surtitres, liens actifs). */
@@ -32,7 +35,7 @@ export interface Theme {
 const THEMES: Record<string, Theme> = {
   fondements: {
     family: "Fondements",
-    emoji: "🧭",
+    icone: "fondements",
     badge: "bg-amber-500",
     text: "text-amber-600",
     textHover: "group-hover:text-amber-600",
@@ -45,7 +48,7 @@ const THEMES: Record<string, Theme> = {
   },
   analyse: {
     family: "Analyse & risque",
-    emoji: "📉",
+    icone: "analyse",
     badge: "bg-orange-600",
     text: "text-orange-700",
     textHover: "group-hover:text-orange-700",
@@ -58,7 +61,7 @@ const THEMES: Record<string, Theme> = {
   },
   couts: {
     family: "Calcul des coûts",
-    emoji: "🧮",
+    icone: "couts",
     badge: "bg-blue-700",
     text: "text-blue-700",
     textHover: "group-hover:text-blue-700",
@@ -71,7 +74,7 @@ const THEMES: Record<string, Theme> = {
   },
   budget: {
     family: "Gestion budgétaire",
-    emoji: "📊",
+    icone: "budget",
     badge: "bg-teal-600",
     text: "text-teal-700",
     textHover: "group-hover:text-teal-700",
@@ -84,7 +87,7 @@ const THEMES: Record<string, Theme> = {
   },
   controle: {
     family: "Contrôle & pilotage",
-    emoji: "🎯",
+    icone: "cible",
     badge: "bg-sky-500",
     text: "text-sky-600",
     textHover: "group-hover:text-sky-600",
@@ -97,7 +100,7 @@ const THEMES: Record<string, Theme> = {
   },
   performance: {
     family: "Performance & durabilité",
-    emoji: "🌱",
+    icone: "performance",
     badge: "bg-emerald-600",
     text: "text-emerald-700",
     textHover: "group-hover:text-emerald-700",
@@ -110,7 +113,7 @@ const THEMES: Record<string, Theme> = {
   },
   communication: {
     family: "Communication professionnelle",
-    emoji: "🗣️",
+    icone: "communication",
     badge: "bg-rose-600",
     text: "text-rose-700",
     textHover: "group-hover:text-rose-700",
@@ -123,7 +126,7 @@ const THEMES: Record<string, Theme> = {
   },
   organisation: {
     family: "Organisation & transformation",
-    emoji: "🔄",
+    icone: "organisation",
     badge: "bg-slate-600",
     text: "text-slate-700",
     textHover: "group-hover:text-slate-700",

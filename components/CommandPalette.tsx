@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { chercher, type EntreeRecherche } from "@/lib/search-index";
+import { Icone } from "./Icones";
 
 /**
  * Palette de recherche (Ctrl/⌘ + K). Le site compte 28 chapitres, 275
@@ -24,10 +25,13 @@ export function CommandPalette({ index }: { index: EntreeRecherche[] }) {
     setActif(0);
   }, []);
 
-  const ouvrir = useCallback((entree: EntreeRecherche) => {
-    fermer();
-    router.push(entree.h);
-  }, [fermer, router]);
+  const ouvrir = useCallback(
+    (entree: EntreeRecherche) => {
+      fermer();
+      router.push(entree.h);
+    },
+    [fermer, router],
+  );
 
   // Raccourci global.
   useEffect(() => {
@@ -58,16 +62,14 @@ export function CommandPalette({ index }: { index: EntreeRecherche[] }) {
         role="presentation"
       >
         <div
-          className="elev-xl w-full max-w-xl overflow-hidden rounded-2xl border-2 border-line bg-white"
+          className="elev-xl w-full max-w-xl overflow-hidden rounded-2xl border border-line bg-white"
           onClick={(e) => e.stopPropagation()}
           role="dialog"
           aria-modal="true"
           aria-label="Rechercher dans le site"
         >
-          <div className="flex items-center gap-3 border-b-2 border-line px-5">
-            <span aria-hidden className="text-muted">
-              ⌕
-            </span>
+          <div className="flex items-center gap-3 border-b border-line px-5">
+            <Icone nom="recherche" className="h-4 w-4 text-muted" />
             <input
               autoFocus
               value={requete}
@@ -96,12 +98,15 @@ export function CommandPalette({ index }: { index: EntreeRecherche[] }) {
           </div>
 
           {requete && resultats.length === 0 && (
-            <p className="px-5 py-8 text-center text-muted">Aucun résultat pour « {requete} ».</p>
+            <p className="px-5 py-8 text-center text-muted">
+              Aucun résultat pour « {requete} ».
+            </p>
           )}
 
           {!requete && (
             <p className="px-5 py-8 text-center text-sm text-muted">
-              Tapez pour chercher parmi les chapitres, les sections et les annales.
+              Tapez pour chercher parmi les chapitres, les sections et les
+              annales.
             </p>
           )}
 
@@ -118,8 +123,12 @@ export function CommandPalette({ index }: { index: EntreeRecherche[] }) {
                   >
                     <span className={`h-8 w-1 shrink-0 rounded-full ${r.b}`} />
                     <span className="min-w-0 flex-1">
-                      <span className="block truncate font-semibold text-ink">{r.t}</span>
-                      <span className="block truncate text-xs text-muted">{r.c}</span>
+                      <span className="block truncate font-semibold text-ink">
+                        {r.t}
+                      </span>
+                      <span className="block truncate text-xs text-muted">
+                        {r.c}
+                      </span>
                     </span>
                     <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-bold text-muted">
                       {r.g}
@@ -130,7 +139,7 @@ export function CommandPalette({ index }: { index: EntreeRecherche[] }) {
             </ul>
           )}
 
-          <div className="flex items-center gap-4 border-t-2 border-line px-5 py-2.5 text-[11px] text-muted">
+          <div className="flex items-center gap-4 border-t border-line px-5 py-2.5 text-[11px] text-muted">
             <span>
               <kbd className="font-semibold">↑↓</kbd> naviguer
             </span>
@@ -149,9 +158,9 @@ function Declencheur({ onOuvrir }: { onOuvrir: () => void }) {
     <button
       onClick={onOuvrir}
       aria-label="Rechercher"
-      className="flex items-center gap-2 rounded-lg border-2 border-line bg-white px-3 py-1.5 text-sm text-muted transition hover:border-brand hover:text-ink"
+      className="flex items-center gap-2 rounded-lg border border-line bg-white px-3 py-1.5 text-sm text-muted transition hover:border-brand hover:text-ink"
     >
-      <span aria-hidden>⌕</span>
+      <Icone nom="recherche" className="h-4 w-4" />
       <span className="hidden sm:inline">Rechercher</span>
       <kbd className="hidden rounded bg-slate-100 px-1.5 py-0.5 text-[11px] font-semibold md:inline">
         ⌘K

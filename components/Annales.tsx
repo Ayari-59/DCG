@@ -14,7 +14,7 @@ function AnnaleCard({ annale, chapterSlug }: { annale: Annale; chapterSlug: stri
   const [open, setOpen] = useState(false);
 
   return (
-    <article className="elev-sm overflow-hidden rounded-2xl border-2 border-line bg-white">
+    <article className="elev-sm overflow-hidden rounded-2xl border border-line bg-white">
       <button
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
@@ -38,7 +38,7 @@ function AnnaleCard({ annale, chapterSlug }: { annale: Annale; chapterSlug: stri
       </button>
 
       {open && (
-        <div className="border-t-2 border-line px-5 py-6 sm:px-7">
+        <div className="border-t border-line px-5 py-6 sm:px-7">
           <Blocks blocks={annale.blocks} />
         </div>
       )}
@@ -59,7 +59,7 @@ export function Annales({ chapter }: { chapter: Chapter }) {
 
   return (
     <div>
-      <div className={`mb-6 rounded-2xl border-2 px-5 py-4 ${theme.border} ${theme.soft}`}>
+      <div className={`mb-6 rounded-2xl border px-5 py-4 ${theme.border} ${theme.soft}`}>
         <h2 className="font-serif text-xl font-bold text-ink">Annales</h2>
         <p className="mt-0.5 text-sm text-muted">
           {annales.length} sujet{annales.length > 1 ? "s" : ""} d&apos;examen des sessions{" "}
@@ -72,7 +72,7 @@ export function Annales({ chapter }: { chapter: Chapter }) {
         <div className="mb-5 flex flex-wrap gap-2">
           <button
             onClick={() => setAnnee("toutes")}
-            className={`rounded-full border-2 px-4 py-1.5 text-sm font-bold transition ${
+            className={`rounded-full border px-4 py-1.5 text-sm font-bold transition ${
               annee === "toutes"
                 ? `${theme.border} ${theme.soft} ${theme.text}`
                 : "border-line bg-white text-muted hover:text-ink"
@@ -84,7 +84,7 @@ export function Annales({ chapter }: { chapter: Chapter }) {
             <button
               key={y}
               onClick={() => setAnnee(y)}
-              className={`rounded-full border-2 px-4 py-1.5 text-sm font-bold tabular-nums transition ${
+              className={`rounded-full border px-4 py-1.5 text-sm font-bold tabular-nums transition ${
                 annee === y
                   ? `${theme.border} ${theme.soft} ${theme.text}`
                   : "border-line bg-white text-muted hover:text-ink"

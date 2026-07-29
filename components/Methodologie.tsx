@@ -4,6 +4,7 @@ import type { Chapter, ContentBlock } from "@/lib/content/types";
 import { getTheme } from "@/lib/content/theme";
 import { Blocks } from "./ContentBlocks";
 import { renderInline } from "./inline";
+import { Icone } from "./Icones";
 
 /**
  * Encadrés « méthode » disséminés dans la leçon, regroupés ici. Le mot
@@ -12,7 +13,8 @@ import { renderInline } from "./inline";
  * annonce bien une démarche — et jamais une remarque ou un piège.
  */
 const NOT_METHODE = /^\s*(remarque|erreurs?\s+fr[ée]quentes?)/i;
-const IS_METHODE = /^\s*[^\p{L}]*\s*(la\s+)?(m[ée]thode|d[ée]marche|savoir-faire)\b/iu;
+const IS_METHODE =
+  /^\s*[^\p{L}]*\s*(la\s+)?(m[ée]thode|d[ée]marche|savoir-faire)\b/iu;
 
 function isMethodeCallout(title: string | undefined): boolean {
   if (!title || NOT_METHODE.test(title)) return false;
@@ -20,7 +22,10 @@ function isMethodeCallout(title: string | undefined): boolean {
 }
 
 function courseMethodes(chapter: Chapter) {
-  const out: { section: string; block: Extract<ContentBlock, { type: "callout" }> }[] = [];
+  const out: {
+    section: string;
+    block: Extract<ContentBlock, { type: "callout" }>;
+  }[] = [];
   for (const section of chapter.sections) {
     for (const block of section.blocks) {
       if (block.type === "callout" && isMethodeCallout(block.title)) {
@@ -32,7 +37,9 @@ function courseMethodes(chapter: Chapter) {
 }
 
 export function hasMethodologie(chapter: Chapter): boolean {
-  return Boolean(chapter.methodes?.length) || courseMethodes(chapter).length > 0;
+  return (
+    Boolean(chapter.methodes?.length) || courseMethodes(chapter).length > 0
+  );
 }
 
 export function Methodologie({ chapter }: { chapter: Chapter }) {
@@ -43,17 +50,20 @@ export function Methodologie({ chapter }: { chapter: Chapter }) {
   return (
     <div className="print-full">
       <div
-        className={`no-print mb-8 flex flex-wrap items-center justify-between gap-3 rounded-2xl border-2 px-5 py-4 ${theme.border} ${theme.soft}`}
+        className={`no-print mb-8 flex flex-wrap items-center justify-between gap-3 rounded-2xl border px-5 py-4 ${theme.border} ${theme.soft}`}
       >
         <div>
-          <h2 className="font-serif text-xl font-bold text-ink">Méthodologie</h2>
+          <h2 className="font-serif text-xl font-bold text-ink">
+            Méthodologie
+          </h2>
           <p className="mt-0.5 text-sm text-muted">
-            Les démarches à appliquer le jour de l&apos;épreuve, étape par étape.
+            Les démarches à appliquer le jour de l&apos;épreuve, étape par
+            étape.
           </p>
         </div>
         <button
           onClick={() => window.print()}
-          className={`rounded-xl border-2 bg-white px-5 py-2.5 text-sm font-bold shadow-sm transition hover:brightness-95 ${theme.border} ${theme.text}`}
+          className={`rounded-xl border bg-white px-5 py-2.5 text-sm font-bold shadow-sm transition hover:brightness-95 ${theme.border} ${theme.text}`}
         >
           Imprimer / PDF
         </button>
@@ -64,9 +74,11 @@ export function Methodologie({ chapter }: { chapter: Chapter }) {
           {demarches.map((m, i) => (
             <article
               key={m.id}
-              className="overflow-hidden rounded-2xl border-2 border-line bg-white shadow-sm"
+              className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm"
             >
-              <header className={`flex items-start gap-4 border-b-2 px-5 py-4 ${theme.border} ${theme.soft}`}>
+              <header
+                className={`flex items-start gap-4 border-b px-5 py-4 ${theme.border} ${theme.soft}`}
+              >
                 <span
                   className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl font-serif text-base font-bold text-white shadow-sm ${theme.badge}`}
                 >
@@ -81,9 +93,10 @@ export function Methodologie({ chapter }: { chapter: Chapter }) {
                       {m.competences.map((c, k) => (
                         <li
                           key={k}
-                          className="rounded-full bg-white/80 px-2.5 py-1 text-xs font-semibold text-slate-600 shadow-sm"
+                          className="flex items-center gap-1.5 rounded-full bg-white/80 px-2.5 py-1 text-xs font-semibold text-slate-600 shadow-sm"
                         >
-                          🏅 {c}
+                          <Icone nom="competence" className="h-3.5 w-3.5" />
+                          {c}
                         </li>
                       ))}
                     </ul>
@@ -105,9 +118,15 @@ export function Methodologie({ chapter }: { chapter: Chapter }) {
           </h3>
           <div className="space-y-4">
             {rappels.map(({ section, block }, i) => (
-              <div key={i} className="rounded-xl border-2 border-emerald-300 bg-emerald-50 px-5 py-4">
+              <div
+                key={i}
+                className="rounded-xl border border-emerald-300 bg-emerald-50 px-5 py-4"
+              >
                 <div className="mb-2 flex flex-wrap items-center gap-2 text-xs font-black uppercase tracking-[0.15em] text-emerald-700">
-                  <span>🧭 {block.title}</span>
+                  <span className="flex items-center gap-1.5">
+                    <Icone nom="methode" className="h-4 w-4" />
+                    {block.title}
+                  </span>
                   <span className="font-medium normal-case tracking-normal text-emerald-600/80">
                     · {section}
                   </span>
@@ -117,7 +136,10 @@ export function Methodologie({ chapter }: { chapter: Chapter }) {
                     .split("\n")
                     .filter(Boolean)
                     .map((line, k) => (
-                      <p key={k} className="text-[15px] leading-relaxed text-slate-700">
+                      <p
+                        key={k}
+                        className="text-[15px] leading-relaxed text-slate-700"
+                      >
                         {renderInline(line)}
                       </p>
                     ))}

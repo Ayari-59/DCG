@@ -114,7 +114,7 @@ export default function ReformePage() {
               {mouvements.map((m, i) => (
                 <li
                   key={m.verbe}
-                  className="flex gap-5 rounded-2xl border-2 border-line bg-white p-6 elev-sm"
+                  className="flex gap-5 rounded-2xl border border-line bg-white p-6 elev-sm"
                 >
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand font-serif text-lg font-bold text-white">
                     {i + 1}
@@ -129,7 +129,7 @@ export default function ReformePage() {
                 </li>
               ))}
             </ol>
-            <p className="mt-6 rounded-2xl border-2 border-blue-200 bg-blue-50 px-5 py-4 text-[15px] leading-relaxed text-blue-950">
+            <p className="mt-6 rounded-2xl border border-blue-200 bg-blue-50 px-5 py-4 text-[15px] leading-relaxed text-blue-950">
               Un candidat qui maîtrise la technique <em>et</em> sait lire ce qu&apos;elle produit
               répond au référentiel. Un candidat qui récite un modèle sans savoir interpréter un
               écart se trompe d&apos;épreuve.
@@ -168,7 +168,7 @@ export default function ReformePage() {
         <Reforme />
 
         <Reveal>
-          <section className="mt-20 rounded-3xl border-2 border-line bg-white p-8 elev-sm">
+          <section className="mt-20 rounded-3xl border border-line bg-white p-8 elev-sm">
             <h2 className="font-serif text-3xl font-bold tracking-[-0.02em] text-ink">
               Les réflexes que l&apos;épreuve récompense
             </h2>
@@ -196,7 +196,7 @@ export default function ReformePage() {
 function Reforme() {
   return (
     <Reveal>
-      <aside className="mt-20 rounded-2xl border-2 border-amber-200 bg-amber-50 px-6 py-5">
+      <aside className="mt-20 rounded-2xl border border-amber-200 bg-amber-50 px-6 py-5">
         <h2 className="text-xs font-black uppercase tracking-[0.15em] text-amber-800">
           Sur cette page
         </h2>

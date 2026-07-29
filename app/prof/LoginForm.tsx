@@ -22,12 +22,12 @@ export function LoginForm() {
           autoComplete="current-password"
           autoFocus
           required
-          className="w-full rounded-xl border-2 border-line bg-white px-4 py-2.5 text-ink outline-none transition focus:border-brand"
+          className="w-full rounded-xl border border-line bg-white px-4 py-2.5 text-ink outline-none transition focus:border-brand"
         />
       </div>
 
       {erreur && (
-        <p className="rounded-xl border-2 border-rose-300 bg-rose-50 px-4 py-3 text-sm font-semibold text-rose-800">
+        <p className="rounded-xl border border-rose-300 bg-rose-50 px-4 py-3 text-sm font-semibold text-rose-800">
           {erreur}
         </p>
       )}

@@ -12,7 +12,7 @@ export function Fiche({ chapter }: { chapter: Chapter }) {
 
   return (
     <div className="print-full">
-      <div className={`no-print mb-8 flex flex-wrap items-center justify-between gap-3 rounded-2xl border-2 px-5 py-4 ${theme.border} ${theme.soft}`}>
+      <div className={`no-print mb-8 flex flex-wrap items-center justify-between gap-3 rounded-2xl border px-5 py-4 ${theme.border} ${theme.soft}`}>
         <div>
           <h2 className="font-serif text-xl font-bold text-ink">Fiche de révision</h2>
           <p className="mt-0.5 text-sm text-muted">
@@ -22,7 +22,7 @@ export function Fiche({ chapter }: { chapter: Chapter }) {
         </div>
         <button
           onClick={() => window.print()}
-          className={`rounded-xl border-2 bg-white px-5 py-2.5 text-sm font-bold shadow-sm transition hover:brightness-95 ${theme.border} ${theme.text}`}
+          className={`rounded-xl border bg-white px-5 py-2.5 text-sm font-bold shadow-sm transition hover:brightness-95 ${theme.border} ${theme.text}`}
         >
           Imprimer / PDF
         </button>

@@ -3,45 +3,52 @@ import { programs, allChapters } from "@/lib/content";
 import { familiesOf } from "@/lib/content/theme";
 import { Reveal, Sheen } from "@/components/Reveal";
 import { TargetMark } from "@/components/Logo";
+import { Icone, type NomIcone } from "@/components/Icones";
 
-const features = [
+const features: {
+  icone: NomIcone;
+  title: string;
+  text: string;
+  chip: string;
+  hover: string;
+}[] = [
   {
-    icon: "📖",
+    icone: "cours",
     title: "Cours structurés",
     text: "Le programme officiel chapitre par chapitre, lu section par section — sans scroll interminable.",
     chip: "bg-violet-100 text-violet-700",
     hover: "hover:border-violet-300",
   },
   {
-    icon: "🧭",
+    icone: "methode",
     title: "Méthodologie",
     text: "Les démarches de l'épreuve, étape par étape, avec la compétence visée par chacune.",
     chip: "bg-emerald-100 text-emerald-700",
     hover: "hover:border-emerald-300",
   },
   {
-    icon: "🎬",
+    icone: "video",
     title: "Vidéos de cours",
     text: "Des vidéos courtes intégrées au chapitre, pour aborder la notion autrement.",
     chip: "bg-rose-100 text-rose-700",
     hover: "hover:border-rose-300",
   },
   {
-    icon: "📝",
+    icone: "fiche",
     title: "Fiches de révision",
     text: "La synthèse et les notions clés sur une page, imprimable en un clic.",
     chip: "bg-orange-100 text-orange-700",
     hover: "hover:border-orange-300",
   },
   {
-    icon: "🃏",
+    icone: "cartes",
     title: "Flashcards",
     text: "Définitions et formules à ancrer, avec retour automatique des cartes à revoir.",
     chip: "bg-sky-100 text-sky-700",
     hover: "hover:border-sky-300",
   },
   {
-    icon: "✅",
+    icone: "quiz",
     title: "Quiz corrigés",
     text: "Des QCM type examen, expliqués question par question.",
     chip: "bg-fuchsia-100 text-fuchsia-700",
@@ -68,9 +75,12 @@ export default function Home() {
       minutes: acc.minutes + c.durationMin,
       cards: acc.cards + c.flashcards.length,
       questions: acc.questions + c.quiz.length,
-      figures: acc.figures + c.sections.flatMap((s) => s.blocks).filter((b) => b.type === "image").length,
+      figures:
+        acc.figures +
+        c.sections.flatMap((s) => s.blocks).filter((b) => b.type === "image")
+          .length,
     }),
-    { minutes: 0, cards: 0, questions: 0, figures: 0 }
+    { minutes: 0, cards: 0, questions: 0, figures: 0 },
   );
 
   const families = familiesOf(allChapters.map((c) => c.slug));
@@ -82,7 +92,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-[1100px] px-5 py-28 text-center sm:py-36">
           <Reveal>
             <p className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white/80 backdrop-blur-md">
-              <TargetMark className="h-4 w-4" />
+              <TargetMark className="h-4 w-4" onDark compact />
               DCG UE11 · DSCG UE3
             </p>
           </Reveal>
@@ -91,16 +101,15 @@ export default function Home() {
             <h1 className="mx-auto max-w-4xl font-serif text-[3rem] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[5rem]">
               Réussir le
               <br />
-              <span className="text-brand">
-                contrôle de gestion
-              </span>
+              <span className="text-brand">contrôle de gestion</span>
             </h1>
           </Reveal>
 
           <Reveal delay={180}>
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/60 sm:text-xl">
-              L&apos;intégralité du programme, en quatre temps : comprendre le cours, appliquer la
-              méthode, mémoriser l&apos;essentiel, se tester.
+              L&apos;intégralité du programme, en quatre temps : comprendre le
+              cours, appliquer la méthode, mémoriser l&apos;essentiel, se
+              tester.
             </p>
           </Reveal>
 
@@ -150,16 +159,17 @@ export default function Home() {
             Une couleur par famille
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-[17px] leading-relaxed text-muted">
-            Le contrôle de gestion s&apos;organise en grands blocs. Chacun garde sa teinte sur tout
-            le site — sommaire, progression, boutons — pour vous situer d&apos;un coup d&apos;œil.
+            Le contrôle de gestion s&apos;organise en grands blocs. Chacun garde
+            sa teinte sur tout le site — sommaire, progression, boutons — pour
+            vous situer d&apos;un coup d&apos;œil.
           </p>
         </Reveal>
         <div className="mt-12 flex flex-wrap justify-center gap-3">
           {families.map((f, i) => (
             <Reveal key={f.family} delay={i * 60}>
-              <span className="lift elev-sm inline-flex items-center gap-2.5 rounded-full border-2 border-line bg-white px-5 py-2.5 text-sm font-bold text-ink">
-                <span className={`h-3 w-3 rounded-full ${f.bar}`} />
-                {f.emoji} {f.family}
+              <span className="lift elev-sm inline-flex items-center gap-2.5 rounded-full border border-line bg-white px-5 py-2.5 text-sm font-bold text-ink">
+                <Icone nom={f.icone} className={`h-4 w-4 ${f.text}`} />
+                {f.family}
               </span>
             </Reveal>
           ))}
@@ -177,15 +187,19 @@ export default function Home() {
           {features.map((f, i) => (
             <Reveal key={f.title} delay={(i % 3) * 80}>
               <Sheen
-                className={`lift elev-sm h-full rounded-3xl border-2 border-line bg-white p-7 ${f.hover}`}
+                className={`lift elev-sm h-full rounded-3xl border border-line bg-white p-7 ${f.hover}`}
               >
                 <div
-                  className={`relative flex h-14 w-14 items-center justify-center rounded-2xl text-2xl ${f.chip}`}
+                  className={`relative flex h-14 w-14 items-center justify-center rounded-2xl ${f.chip}`}
                 >
-                  {f.icon}
+                  <Icone nom={f.icone} className="h-7 w-7" />
                 </div>
-                <h3 className="relative mt-5 font-serif text-xl font-bold text-ink">{f.title}</h3>
-                <p className="relative mt-2.5 text-[15px] leading-relaxed text-muted">{f.text}</p>
+                <h3 className="relative mt-5 font-serif text-xl font-bold text-ink">
+                  {f.title}
+                </h3>
+                <p className="relative mt-2.5 text-[15px] leading-relaxed text-muted">
+                  {f.text}
+                </p>
               </Sheen>
             </Reveal>
           ))}
@@ -219,7 +233,9 @@ export default function Home() {
                           {p.chapters.length} chapitres
                         </span>
                       </div>
-                      <p className="mt-2 font-semibold text-white/80">{p.title}</p>
+                      <p className="mt-2 font-semibold text-white/80">
+                        {p.title}
+                      </p>
                       <p className="mt-4 text-[15px] leading-relaxed text-white/50">
                         {p.description}
                       </p>
@@ -227,7 +243,9 @@ export default function Home() {
                         className={`mt-7 inline-flex items-center gap-2 text-sm font-bold ${a.text}`}
                       >
                         Accéder au programme
-                        <span className="transition-transform group-hover:translate-x-1">→</span>
+                        <span className="transition-transform group-hover:translate-x-1">
+                          →
+                        </span>
                       </span>
                     </div>
                   </Link>

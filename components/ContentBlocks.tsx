@@ -1,10 +1,11 @@
 import type { ContentBlock } from "@/lib/content/types";
 import { renderInline } from "./inline";
+import { Icone, type NomIcone } from "./Icones";
 
 const calloutStyles = {
-  info: { box: "border-sky-300 bg-sky-50", label: "text-sky-700", title: "À savoir", icon: "💬" },
-  warning: { box: "border-rose-300 bg-rose-50", label: "text-rose-700", title: "Attention", icon: "⚠️" },
-  tip: { box: "border-emerald-300 bg-emerald-50", label: "text-emerald-700", title: "Méthode", icon: "🧭" },
+  info: { box: "border-sky-300 bg-sky-50", label: "text-sky-700", title: "À savoir", icone: "info" as NomIcone },
+  warning: { box: "border-rose-300 bg-rose-50", label: "text-rose-700", title: "Attention", icone: "alerte" as NomIcone },
+  tip: { box: "border-emerald-300 bg-emerald-50", label: "text-emerald-700", title: "Méthode", icone: "methode" as NomIcone },
 } as const;
 
 /**
@@ -12,42 +13,42 @@ const calloutStyles = {
  * ERREURS FRÉQUENTES…). On donne à chaque type sa couleur et son icône :
  * le lecteur identifie la nature de l'encadré avant même de le lire.
  */
-const CALLOUT_KINDS: { match: RegExp; box: string; label: string; icon: string }[] = [
+const CALLOUT_KINDS: { match: RegExp; box: string; label: string; icone: NomIcone }[] = [
   {
     match: /d[ée]finition|notion/i,
     box: "border-blue-300 bg-blue-50",
     label: "text-blue-700",
-    icon: "📘",
+    icone: "cours",
   },
   {
     match: /examen|à retenir|a retenir|essentiel/i,
     box: "border-sky-300 bg-sky-50",
     label: "text-sky-700",
-    icon: "🎯",
+    icone: "cible",
   },
   {
     match: /erreur|pi[èe]ge|attention|vigilance/i,
     box: "border-rose-300 bg-rose-50",
     label: "text-rose-700",
-    icon: "⚠️",
+    icone: "alerte",
   },
   {
     match: /m[ée]thode|d[ée]marche|savoir-faire|conseil/i,
     box: "border-emerald-300 bg-emerald-50",
     label: "text-emerald-700",
-    icon: "🧭",
+    icone: "methode",
   },
   {
     match: /illustration|exemple|application|cas /i,
     box: "border-amber-300 bg-amber-50",
     label: "text-amber-700",
-    icon: "💡",
+    icone: "exemple",
   },
   {
     match: /comp[ée]tence|objectif/i,
     box: "border-amber-300 bg-amber-50",
     label: "text-amber-800",
-    icon: "🏅",
+    icone: "competence",
   },
 ];
 
@@ -100,7 +101,7 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
 
     case "formula":
       return (
-        <div className="rounded-xl border-2 border-blue-200 bg-blue-50 px-5 py-4">
+        <div className="rounded-xl border border-blue-200 bg-blue-50 px-5 py-4">
           {block.label && (
             <div className="mb-1.5 text-xs font-black uppercase tracking-wider text-blue-700">
               {block.label}
@@ -116,7 +117,7 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
           <div className="overflow-x-auto rounded-xl border border-line bg-white shadow-sm">
             <table className="w-full min-w-[30rem] text-[15px]">
               <thead>
-                <tr className="border-b-2 border-blue-200 bg-blue-50 text-left">
+                <tr className="border-b border-blue-200 bg-blue-50 text-left">
                   {block.headers.map((h, i) => (
                     <th key={i} className="px-4 py-3 font-semibold text-ink">
                       {renderInline(h)}
@@ -148,11 +149,11 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
       const title = block.title ?? fallback.title;
       const kind = CALLOUT_KINDS.find((k) => k.match.test(title)) ?? fallback;
       return (
-        <aside className={`rounded-xl border-2 px-5 py-4 ${kind.box}`}>
+        <aside className={`rounded-xl border px-5 py-4 ${kind.box}`}>
           <div
             className={`mb-2 flex items-center gap-2 text-xs font-black uppercase tracking-[0.15em] ${kind.label}`}
           >
-            <span className="text-sm">{kind.icon}</span>
+            <Icone nom={kind.icone} className="h-4 w-4" />
             {title}
           </div>
           <div className="space-y-2">
@@ -172,7 +173,7 @@ export function ContentBlockView({ block }: { block: ContentBlock }) {
     case "image":
       return (
         <figure className="my-2">
-          <div className="overflow-hidden rounded-xl border-2 border-line bg-white p-3 shadow-sm">
+          <div className="overflow-hidden rounded-xl border border-line bg-white p-3 shadow-sm">
             {/* Figures issues des manuels : dimensions variables, rendu fluide. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
