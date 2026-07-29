@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
-import { CommandPalette } from "@/components/CommandPalette";
+import { Nav, type LienProgramme } from "@/components/Nav";
+import { programs } from "@/lib/content";
+import { construireIndex } from "@/lib/content/search";
+import { getTheme } from "@/lib/content/theme";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -22,6 +25,21 @@ export const metadata: Metadata = {
     "Cours, vidéos, méthodologie, fiches de révision, flashcards et quiz pour réussir le contrôle de gestion au DCG (UE11) et au DSCG (UE3).",
 };
 
+/**
+ * Le bandeau ne reçoit qu'un résumé des programmes : importer le contenu
+ * dans un composant client embarquerait les 28 chapitres dans le paquet
+ * envoyé au navigateur.
+ */
+const programmes: LienProgramme[] = programs.map((p) => ({
+  href: p.ue === "UE11" ? "/dcg" : p.ue === "UE3" ? "/dscg" : "/ue13",
+  diplome: p.level,
+  ue: p.ue,
+  titre: p.title,
+  chapitres: p.chapters.length,
+  heures: Math.round(p.chapters.reduce((n, c) => n + c.durationMin, 0) / 60),
+  bar: getTheme(p.chapters[0].slug).bar,
+}));
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
@@ -34,53 +52,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/" aria-label="Objectif-DCG.fr — accueil" className="transition hover:opacity-85">
               <Logo />
             </Link>
-            <div className="flex items-center gap-3">
-            <nav className="flex items-center gap-1 text-sm font-semibold text-muted">
-              <Link
-                href="/dcg"
-                className="rounded-lg px-3 py-2 transition hover:bg-orange-50 hover:text-brand"
-              >
-                DCG · UE11
-              </Link>
-              <Link
-                href="/ue13"
-                className="rounded-lg px-3 py-2 transition hover:bg-rose-50 hover:text-rose-700"
-              >
-                DCG · UE13
-              </Link>
-              <Link
-                href="/dscg"
-                className="rounded-lg px-3 py-2 transition hover:bg-slate-100 hover:text-navy"
-              >
-                DSCG · UE3
-              </Link>
-              <Link
-                href="/rapport-jury"
-                className="rounded-lg px-3 py-2 transition hover:bg-slate-100 hover:text-navy"
-              >
-                Rapport du jury
-              </Link>
-              <Link
-                href="/reforme"
-                className="rounded-lg px-3 py-2 transition hover:bg-slate-100 hover:text-navy"
-              >
-                Réforme
-              </Link>
-              <Link
-                href="/a-propos"
-                className="rounded-lg px-3 py-2 transition hover:bg-slate-100 hover:text-navy"
-              >
-                À propos
-              </Link>
-              <Link
-                href="/classe"
-                className="rounded-lg px-3 py-2 transition hover:bg-slate-100 hover:text-navy"
-              >
-                Ma classe
-              </Link>
-            </nav>
-            <CommandPalette />
-            </div>
+            <Nav programmes={programmes} indexRecherche={construireIndex()} />
           </div>
         </header>
 

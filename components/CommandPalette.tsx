@@ -2,21 +2,21 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { chercher, type EntreeRecherche } from "@/lib/content/search";
+import { chercher, type EntreeRecherche } from "@/lib/search-index";
 
 /**
  * Palette de recherche (Ctrl/⌘ + K). Le site compte 28 chapitres, 275
  * sections et 81 annales : sans elle, retrouver une notion précise oblige
  * à parcourir le programme à la main.
  */
-export function CommandPalette() {
+export function CommandPalette({ index }: { index: EntreeRecherche[] }) {
   const router = useRouter();
   const [ouverte, setOuverte] = useState(false);
   const [requete, setRequete] = useState("");
   const [actif, setActif] = useState(0);
   const listeRef = useRef<HTMLUListElement>(null);
 
-  const resultats = useMemo(() => chercher(requete), [requete]);
+  const resultats = useMemo(() => chercher(index, requete), [index, requete]);
 
   const fermer = useCallback(() => {
     setOuverte(false);
@@ -26,7 +26,7 @@ export function CommandPalette() {
 
   const ouvrir = useCallback((entree: EntreeRecherche) => {
     fermer();
-    router.push(entree.href);
+    router.push(entree.h);
   }, [fermer, router]);
 
   // Raccourci global.
@@ -108,7 +108,7 @@ export function CommandPalette() {
           {resultats.length > 0 && (
             <ul ref={listeRef} className="max-h-[52vh] overflow-y-auto py-2">
               {resultats.map((r, i) => (
-                <li key={r.href + r.titre}>
+                <li key={r.h + r.t}>
                   <button
                     onMouseEnter={() => setActif(i)}
                     onClick={() => ouvrir(r)}
@@ -116,13 +116,13 @@ export function CommandPalette() {
                       i === actif ? "bg-slate-100" : ""
                     }`}
                   >
-                    <span className={`h-8 w-1 shrink-0 rounded-full ${r.bar}`} />
+                    <span className={`h-8 w-1 shrink-0 rounded-full ${r.b}`} />
                     <span className="min-w-0 flex-1">
-                      <span className="block truncate font-semibold text-ink">{r.titre}</span>
-                      <span className="block truncate text-xs text-muted">{r.contexte}</span>
+                      <span className="block truncate font-semibold text-ink">{r.t}</span>
+                      <span className="block truncate text-xs text-muted">{r.c}</span>
                     </span>
                     <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-bold text-muted">
-                      {r.categorie}
+                      {r.g}
                     </span>
                   </button>
                 </li>
