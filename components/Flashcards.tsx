@@ -57,6 +57,27 @@ export function Flashcards({ slug, cards }: Props) {
     setFlipped(false);
   }
 
+  /**
+   * Réviser au clavier : Espace retourne la carte, 1 la remet dans la pile,
+   * 2 la marque acquise. C'est le geste des logiciels de mémorisation.
+   */
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      const el = document.activeElement;
+      if (el && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
+      if (e.key === " ") {
+        e.preventDefault();
+        setFlipped((v) => !v);
+      } else if (flipped && (e.key === "1" || e.key === "2")) {
+        e.preventDefault();
+        if (e.key === "1") markToReview();
+        else markKnown();
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
+
   if (!loaded) return null;
 
   const card = queue.length > 0 ? byId.get(queue[0]) : undefined;
@@ -97,7 +118,7 @@ export function Flashcards({ slug, cards }: Props) {
       </div>
       <div className="mb-4 h-1.5 overflow-hidden rounded-full bg-slate-100">
         <div
-          className="h-full rounded-full bg-emerald-500 transition-all"
+          className={`h-full rounded-full transition-all ${theme.bar}`}
           style={{ width: `${(done / cards.length) * 100}%` }}
         />
       </div>
@@ -122,18 +143,18 @@ export function Flashcards({ slug, cards }: Props) {
             onClick={markToReview}
             className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 font-medium text-amber-800 transition hover:bg-amber-100"
           >
-            À revoir
+            À revoir <kbd className="ml-1 text-xs opacity-60">1</kbd>
           </button>
           <button
             onClick={markKnown}
             className="rounded-lg border border-emerald-300 bg-emerald-50 px-4 py-3 font-medium text-emerald-800 transition hover:bg-emerald-100"
           >
-            Acquise ✓
+            Acquise ✓ <kbd className="ml-1 text-xs opacity-60">2</kbd>
           </button>
         </div>
       ) : (
         <p className="mt-4 text-center text-sm text-slate-400">
-          Essayez de répondre de tête, puis retournez la carte.
+          Essayez de répondre de tête, puis retournez la carte — <kbd className="font-semibold">Espace</kbd>
         </p>
       )}
     </div>

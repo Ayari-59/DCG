@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
+import { CommandPalette } from "@/components/CommandPalette";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/" aria-label="Objectif-DCG.fr — accueil" className="transition hover:opacity-85">
               <Logo />
             </Link>
+            <div className="flex items-center gap-3">
             <nav className="flex items-center gap-1 text-sm font-semibold text-muted">
               <Link
                 href="/dcg"
@@ -53,6 +55,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 Ma classe
               </Link>
             </nav>
+            <CommandPalette />
+            </div>
           </div>
         </header>
 

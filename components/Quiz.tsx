@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { QuizQuestion } from "@/lib/content/types";
 import { getTheme } from "@/lib/content/theme";
 
@@ -27,26 +27,61 @@ export function Quiz({ slug, questions }: Props) {
   const question = questions[current];
   const isCorrect = validated && selected === question.answer;
 
-  function validate() {
-    if (selected === null) return;
-    setValidated(true);
-    if (selected === question.answer) setScore((s) => s + 1);
-  }
+  /**
+   * La réponse choisie est doublée dans une référence : au clavier, « 2 »
+   * puis Entrée peuvent tomber dans le même cycle de rendu, et le
+   * gestionnaire lirait alors une valeur périmée — la validation serait
+   * silencieusement ignorée.
+   */
+  const selectedRef = useRef<number | null>(null);
+  useEffect(() => {
+    selectedRef.current = selected;
+  }, [selected]);
 
-  function next() {
+  const validate = useCallback(() => {
+    const choix = selectedRef.current;
+    if (choix === null) return;
+    setValidated(true);
+    if (choix === question.answer) setScore((s) => s + 1);
+  }, [question]);
+
+  const next = useCallback(() => {
     if (current + 1 >= questions.length) {
-      const final = score;
       setFinished(true);
-      if (best === null || final > best) {
-        setBest(final);
-        localStorage.setItem(storageKey, String(final));
+      if (best === null || score > best) {
+        setBest(score);
+        localStorage.setItem(storageKey, String(score));
       }
     } else {
       setCurrent((c) => c + 1);
       setSelected(null);
       setValidated(false);
     }
-  }
+  }, [current, questions.length, score, best, storageKey]);
+
+  /**
+   * Répondre au clavier : 1 à 4 pour choisir, Entrée pour valider puis
+   * enchaîner. Faire une série de dix questions ne demande plus la souris.
+   */
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      const el = document.activeElement;
+      if (el && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
+      if (finished) return;
+      const chiffre = Number(e.key);
+      if (!validated && chiffre >= 1 && chiffre <= question.choices.length) {
+        e.preventDefault();
+        selectedRef.current = chiffre - 1;
+        setSelected(chiffre - 1);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        if (validated) next();
+        else validate();
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [validated, finished, question, validate, next]);
 
   function restart() {
     setCurrent(0);
@@ -102,13 +137,13 @@ export function Quiz({ slug, questions }: Props) {
 
       <div className="mt-5 space-y-2.5">
         {question.choices.map((choice, i) => {
-          let cls = "border-slate-200 bg-white hover:border-violet-300 hover:bg-violet-50/50";
+          let cls = "border-line bg-white hover:border-brand/60 hover:bg-orange-50/50";
           if (validated) {
             if (i === question.answer) cls = "border-emerald-400 bg-emerald-50";
             else if (i === selected) cls = "border-rose-300 bg-rose-50";
             else cls = "border-slate-200 bg-white opacity-60";
           } else if (i === selected) {
-            cls = `border-violet-500 bg-violet-50 ring-2 ring-violet-400`;
+            cls = "border-brand bg-orange-50 ring-2 ring-brand/40";
           }
           return (
             <button
@@ -117,9 +152,9 @@ export function Quiz({ slug, questions }: Props) {
               onClick={() => setSelected(i)}
               className={`block w-full rounded-lg border px-4 py-3 text-left text-slate-800 transition ${cls}`}
             >
-              <span className="mr-2 font-semibold text-slate-400">
-                {String.fromCharCode(65 + i)}.
-              </span>
+              <kbd className="mr-3 inline-flex h-6 w-6 items-center justify-center rounded border border-line bg-slate-50 text-xs font-bold text-muted">
+                {i + 1}
+              </kbd>
               {choice}
             </button>
           );
@@ -139,7 +174,11 @@ export function Quiz({ slug, questions }: Props) {
         </div>
       )}
 
-      <div className="mt-6 flex justify-end">
+      <div className="mt-6 flex items-center justify-between gap-4">
+        <p className="hidden text-xs text-muted sm:block">
+          <kbd className="font-semibold">1</kbd>–<kbd className="font-semibold">{question.choices.length}</kbd> pour répondre ·{" "}
+          <kbd className="font-semibold">↵</kbd> pour valider
+        </p>
         {!validated ? (
           <button
             onClick={validate}

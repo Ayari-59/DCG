@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import type { Chapter } from "@/lib/content/types";
 import { hasFiche } from "@/lib/content/fiche";
@@ -13,11 +14,23 @@ import { Methodologie, hasMethodologie } from "./Methodologie";
 import { Annales } from "./Annales";
 import { Exercises } from "./Exercises";
 
+export interface VoisinChapitre {
+  slug: string;
+  numero: number;
+  titre: string;
+  badge: string;
+}
+
 type TabId = "lecon" | "methode" | "fiche" | "annales" | "applications" | "flashcards" | "quiz";
 
-export function ChapterView({ chapter }: { chapter: Chapter }) {
-  const [tab, setTab] = useState<TabId>("lecon");
-  const [index, setIndex] = useState(0);
+export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: VoisinChapitre }) {
+  // L'état de navigation vit dans l'URL : une page est ainsi partageable,
+  // survit au rechargement, et le cahier de texte peut pointer une section.
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useSearchParams();
+  const tab = (params.get("onglet") as TabId) || "lecon";
+  const index = Math.max(0, (Number(params.get("section")) || 1) - 1);
 
   const theme = getTheme(chapter.slug);
   const sections = chapter.sections;
@@ -38,13 +51,24 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
     { id: "quiz", label: "Quiz", badge: chapter.quiz.length },
   ];
 
-  const goTo = useCallback(
-    (i: number) => {
-      setIndex(Math.max(0, Math.min(last, i)));
+  const naviguer = useCallback(
+    (onglet: TabId, sectionIndex: number) => {
+      const p = new URLSearchParams();
+      if (onglet !== "lecon") p.set("onglet", onglet);
+      if (onglet === "lecon" && sectionIndex > 0) p.set("section", String(sectionIndex + 1));
+      const q = p.toString();
+      router.replace(q ? pathname + "?" + q : pathname, { scroll: false });
       window.scrollTo({ top: 0, behavior: "smooth" });
     },
-    [last]
+    [router, pathname]
   );
+
+  const goTo = useCallback(
+    (i: number) => naviguer("lecon", Math.max(0, Math.min(last, i))),
+    [naviguer, last]
+  );
+
+  const setTab = useCallback((t: TabId) => naviguer(t, 0), [naviguer]);
 
   // Navigation au clavier entre les sections de la leçon.
   useEffect(() => {
@@ -234,16 +258,38 @@ export function ChapterView({ chapter }: { chapter: Chapter }) {
                   </button>
                 ) : (
                   <button
-                    onClick={() => {
-                      setTab(chapter.exercises?.length ? "applications" : "quiz");
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
+                    onClick={() => setTab("quiz")}
                     className={`rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:brightness-110 ${theme.bar}`}
                   >
-                    {chapter.exercises?.length ? "Passer aux applications" : "Passer au quiz"} →
+                    Passer au quiz →
                   </button>
                 )}
               </div>
+
+              {/* Fin de chapitre : on ne laisse jamais l'étudiant dans une impasse. */}
+              {index === last && suivant && (
+                <Link
+                  href={`/cours/${suivant.slug}`}
+                  className="lift elev-sm group mt-6 flex items-center gap-4 rounded-2xl border-2 border-line bg-white p-5"
+                >
+                  <span
+                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl font-serif text-lg font-bold text-white ${suivant.badge}`}
+                  >
+                    {suivant.numero}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-xs font-black uppercase tracking-[0.15em] text-muted">
+                      Chapitre suivant
+                    </span>
+                    <span className="mt-0.5 block font-serif text-lg font-bold text-ink">
+                      {suivant.titre}
+                    </span>
+                  </span>
+                  <span className="shrink-0 text-2xl text-muted transition-transform group-hover:translate-x-1">
+                    →
+                  </span>
+                </Link>
+              )}
             </article>
           )}
 
