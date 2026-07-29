@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { programs } from "@/lib/content";
 
 /**
  * Image de partage : ce qui s'affiche quand un lien vers le site est collé
@@ -37,7 +38,8 @@ const SIGNE = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
 
 const marque = `data:image/svg+xml;base64,${Buffer.from(SIGNE).toString("base64")}`;
 
-const PROGRAMMES = ["DCG · UE11", "DCG · UE13", "DSCG · UE3"];
+/** Les pastilles suivent les programmes publiés. */
+const PROGRAMMES = programs.map((p) => `${p.level} · ${p.ue}`);
 
 export default function Image() {
   return new ImageResponse(

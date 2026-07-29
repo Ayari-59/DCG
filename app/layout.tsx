@@ -79,15 +79,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-white/40 sm:flex-row">
               <span>© {new Date().getFullYear()} Objectif-DCG.fr</span>
               <span className="flex gap-5">
-                <Link href="/dcg" className="transition hover:text-white/80">
-                  DCG · UE11
-                </Link>
-                <Link href="/ue13" className="transition hover:text-white/80">
-                  DCG · UE13
-                </Link>
-                <Link href="/dscg" className="transition hover:text-white/80">
-                  DSCG · UE3
-                </Link>
+                {/* Écrits depuis les programmes publiés, pas à la main : le
+                    pied de page pointait encore vers l'UE13 après son retrait. */}
+                {programmes.map((p) => (
+                  <Link key={p.href} href={p.href} className="transition hover:text-white/80">
+                    {p.diplome} · {p.ue}
+                  </Link>
+                ))}
                 <Link href="/reforme" className="transition hover:text-white/80">
                   Réforme
                 </Link>

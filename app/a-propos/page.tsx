@@ -14,6 +14,16 @@ export const metadata: Metadata = {
     "Un contenu pédagogique consultable au téléphone, pour que le temps de classe serve à l'application et à l'analyse. Par Mohamed Ayari, professeur de contrôle de gestion et de communication professionnelle.",
 };
 
+/**
+ * La liste des unités est écrite depuis le contenu publié, et non à la main :
+ * la phrase annonçait encore l'UE13 après son retrait du site.
+ */
+function enumereProgrammes() {
+  const noms = programs.map((p) => `l'${p.ue} du ${p.level}`);
+  if (noms.length < 2) return noms.join("");
+  return `${noms.slice(0, -1).join(", ")} et ${noms[noms.length - 1]}`;
+}
+
 /** Les chiffres sont calculés depuis le contenu : ils ne peuvent pas dater. */
 function chiffres() {
   const t = allChapters.reduce(
@@ -227,8 +237,8 @@ export default function AProposPage() {
               Ce que contient le site
             </h2>
             <p className="mt-4 text-[17px] leading-relaxed text-muted">
-              {programs.length} programmes entiers — l&apos;UE11 et l&apos;UE13 du DCG,
-              l&apos;UE3 du DSCG — soit {c.chapitres} chapitres et {c.sections} sections.
+              {programs.length} programmes entiers — {enumereProgrammes()} — soit {c.chapitres}{" "}
+              chapitres et {c.sections} sections.
             </p>
             <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 rounded-3xl border border-line bg-white px-8 py-7 elev-sm sm:grid-cols-3">
               {[

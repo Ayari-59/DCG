@@ -106,22 +106,33 @@ const rawPrograms: Program[] = [
 ];
 
 /**
+ * Unités publiées sur le site.
+ *
+ * L'UE13 en est retirée pour l'instant. Son contenu reste entier dans le
+ * dépôt — sept séances, leurs sections et leurs cent questions de quiz —
+ * et il suffit de remettre "UE13" dans cette liste pour la republier :
+ * navigation, recherche, page d'accueil et adresse /ue13 la reprennent
+ * d'elles-mêmes, puisque tout en découle.
+ */
+const UE_PUBLIEES = ["UE11", "UE3"];
+
+/**
  * Les applications issues des cahiers d'énoncés et de corrigés sont générées
  * dans lib/content/exercises mais volontairement pas publiées pour l'instant.
  * Pour les réactiver, rattacher exercisesBySlug aux chapitres ici :
  *   chapters: p.chapters.map((c) =>
  *     exercisesBySlug[c.slug]?.length ? { ...c, exercises: exercisesBySlug[c.slug] } : c)
  */
-export const programs: Program[] = rawPrograms.map((p) => ({
-  ...p,
-  chapters: p.chapters.map((c) =>
-    ({
+export const programs: Program[] = rawPrograms
+  .filter((p) => UE_PUBLIEES.includes(p.ue))
+  .map((p) => ({
+    ...p,
+    chapters: p.chapters.map((c) => ({
       ...c,
       ...(methodesBySlug[c.slug]?.length ? { methodes: methodesBySlug[c.slug] } : {}),
       ...(annalesBySlug[c.slug]?.length ? { annales: annalesBySlug[c.slug] } : {}),
-    })
-  ),
-}));
+    })),
+  }));
 
 export const allChapters: Chapter[] = programs.flatMap((p) => p.chapters);
 
