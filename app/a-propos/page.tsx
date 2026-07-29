@@ -365,9 +365,11 @@ export default function AProposPage() {
  * plutôt qu'une image cassée.
  */
 function Portrait() {
-  const fichier = ["jpg", "jpeg", "png", "webp"]
-    .map((ext) => `mohamed-ayari.${ext}`)
-    .find((nom) => fs.existsSync(path.join(process.cwd(), "public", nom)));
+  // Le nom réel du fichier est relevé tel qu'il est écrit sur le disque :
+  // Windows ignore la casse, mais le serveur qui sert le site, non.
+  const fichier = fs
+    .readdirSync(path.join(process.cwd(), "public"))
+    .find((nom) => /^mohamed-ayari\.(jpe?g|png|webp)$/i.test(nom));
 
   return (
     <div className="relative shrink-0">
@@ -376,16 +378,23 @@ function Portrait() {
         className="absolute -inset-1.5 rounded-full bg-brand/30 blur-[2px]"
       />
       {fichier ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={`/${fichier}`}
-          alt="Mohamed Ayari"
-          width={160}
-          height={160}
-          // La photo est un cadrage large : le visage n'est pas au centre
-          // exact. Sur une image déjà carrée, object-position n'a aucun effet.
-          className="relative h-32 w-32 rounded-full object-cover object-[57%_center] ring-4 ring-brand sm:h-40 sm:w-40"
-        />
+        /*
+         * La photo est un plan large au format paysage. Un simple
+         * `object-cover` remplirait la hauteur sans laisser de marge
+         * verticale : le visage resterait bloqué en haut du cercle, le
+         * pull en occupant la moitié basse. L'image est donc agrandie et
+         * décalée à la main pour cadrer le visage.
+         */
+        <div className="relative h-32 w-32 overflow-hidden rounded-full ring-4 ring-brand sm:h-40 sm:w-40">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`/${fichier}`}
+            alt="Mohamed Ayari"
+            width={1536}
+            height={1024}
+            className="absolute left-[-72%] top-[2%] w-[220%] max-w-none"
+          />
+        </div>
       ) : (
         <span
           aria-label="Mohamed Ayari"
