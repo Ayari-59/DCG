@@ -30,7 +30,7 @@ export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: 
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
-  const tab = (params.get("onglet") as TabId) || "lecon";
+  const ongletDemande = (params.get("onglet") as TabId) || "lecon";
   const index = Math.max(0, (Number(params.get("section")) || 1) - 1);
 
   const theme = getTheme(chapter.slug);
@@ -48,9 +48,18 @@ export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: 
     ...(chapter.exercises?.length
       ? [{ id: "applications" as const, label: "Applications", badge: chapter.exercises.length }]
       : []),
-    { id: "flashcards", label: "Flashcards", badge: chapter.flashcards.length },
-    { id: "quiz", label: "Quiz", badge: chapter.quiz.length },
+    // Un onglet vide n'a rien à proposer : il reste masqué tant que le
+    // chapitre n'a pas de cartes ni de questions.
+    ...(chapter.flashcards.length
+      ? [{ id: "flashcards" as const, label: "Flashcards", badge: chapter.flashcards.length }]
+      : []),
+    ...(chapter.quiz.length
+      ? [{ id: "quiz" as const, label: "Quiz", badge: chapter.quiz.length }]
+      : []),
   ];
+
+  // Un onglet absent de ce chapitre ne doit pas produire une page vide.
+  const tab: TabId = tabs.some((t) => t.id === ongletDemande) ? ongletDemande : "lecon";
 
   const naviguer = useCallback(
     (onglet: TabId, sectionIndex: number) => {
@@ -266,14 +275,14 @@ export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: 
                     Suivant : {sections[index + 1].title.slice(0, 34)}
                     {sections[index + 1].title.length > 34 ? "…" : ""} →
                   </button>
-                ) : (
+                ) : chapter.quiz.length ? (
                   <button
                     onClick={() => setTab("quiz")}
                     className={`rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:brightness-110 ${theme.bar}`}
                   >
                     Passer au quiz →
                   </button>
-                )}
+                ) : null}
               </div>
 
               {/* Fin de chapitre : on ne laisse jamais l'étudiant dans une impasse. */}

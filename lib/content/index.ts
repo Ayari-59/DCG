@@ -26,6 +26,13 @@ import { managementRisques } from "./chapters/dscg-ue3-management-risques";
 import { controleGestionSociale } from "./chapters/dscg-ue3-controle-gestion-sociale";
 import { gestionBudgetaire } from "./chapters/dscg-ue3-gestion-budgetaire";
 import { durabilitePerformanceGlobale } from "./chapters/dscg-ue3-durabilite-performance-globale";
+import { seanceZero } from "./chapters/dcg-ue13-seance-zero";
+import { decouvrirComPro } from "./chapters/dcg-ue13-decouvrir";
+import { rechercheInformation } from "./chapters/dcg-ue13-recherche-information";
+import { rechercheDeStage } from "./chapters/dcg-ue13-recherche-de-stage";
+import { analyserSituation } from "./chapters/dcg-ue13-analyser-situation";
+import { rapportDeStage } from "./chapters/dcg-ue13-rapport-de-stage";
+import { soutenance } from "./chapters/dcg-ue13-soutenance";
 import { annexeReference } from "./chapters/dscg-ue3-annexe-reference";
 import { methodesBySlug } from "./methodes";
 import { annalesBySlug } from "./annales";
@@ -57,6 +64,23 @@ const rawPrograms: Program[] = [
       coutCible,
       prixCessionInterne,
       performanceGlobaleDurabilite,
+    ],
+    upcoming: [],
+  },
+  {
+    level: "DCG",
+    ue: "UE13",
+    title: "Communication professionnelle",
+    description:
+      "Communiquer en milieu professionnel, rechercher l'information, analyser une situation de travail, puis rédiger le rapport de stage et le soutenir : l'UE13 du DCG, période par période.",
+    chapters: [
+      seanceZero,
+      decouvrirComPro,
+      rechercheInformation,
+      rechercheDeStage,
+      analyserSituation,
+      rapportDeStage,
+      soutenance,
     ],
     upcoming: [],
   },
@@ -105,6 +129,12 @@ export function getChapter(slug: string): Chapter | undefined {
   return allChapters.find((c) => c.slug === slug);
 }
 
+/** Premier programme du diplôme — le DCG en compte désormais deux. */
 export function getProgram(level: string): Program | undefined {
   return programs.find((p) => p.level.toLowerCase() === level.toLowerCase());
+}
+
+/** Programme d'une unité d'enseignement précise (UE11, UE13, UE3…). */
+export function getProgramByUe(ue: string): Program | undefined {
+  return programs.find((p) => p.ue.toLowerCase() === ue.toLowerCase());
 }

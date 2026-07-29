@@ -43,6 +43,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 DCG · UE11
               </Link>
               <Link
+                href="/ue13"
+                className="rounded-lg px-3 py-2 transition hover:bg-rose-50 hover:text-rose-700"
+              >
+                DCG · UE13
+              </Link>
+              <Link
                 href="/dscg"
                 className="rounded-lg px-3 py-2 transition hover:bg-slate-100 hover:text-navy"
               >
@@ -103,6 +109,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <span className="flex gap-5">
                 <Link href="/dcg" className="transition hover:text-white/80">
                   DCG · UE11
+                </Link>
+                <Link href="/ue13" className="transition hover:text-white/80">
+                  DCG · UE13
                 </Link>
                 <Link href="/dscg" className="transition hover:text-white/80">
                   DSCG · UE3
