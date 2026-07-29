@@ -13,8 +13,8 @@ export const chapter: Chapter = {
   "durationMin": 45,
   "sections": [
     {
-      "id": "preambule",
-      "title": "Préambule",
+      "id": "introduction-generale",
+      "title": "Introduction générale",
       "blocks": [
         {
           "type": "callout",
@@ -27,13 +27,7 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "COMPÉTENCES VISÉES",
           "text": "• Réaliser un contrôle budgétaire en analysant les écarts entre prévisions et réalisations.\n• Expliquer les résultats obtenus et en identifier les causes et les responsabilités.\n• Repérer les risques en proposant des indicateurs de suivi et des tableaux de bord.\n• Proposer des pistes d’amélioration et conseiller le décideur par un écrit structuré.\n• Analyser les intérêts et les limites des techniques prévisionnelles et du contrôle budgétaire.\n• Contrôle budgétaire : calcul et analyse des écarts sur chiffre d’affaires, marges, coûts et résultat. Tableaux de bord. L’écart total et l’écart global sont abordés.\n• REMARQUE — Périmètre du programme réformé\n• La construction des budgets n’est pas demandée : le chapitre se concentre sur le calcul et l’analyse des écarts entre prévisions et réalisations. Les problèmes relatifs aux en-cours de production sont exclus du programme (voir l’encadré « Hors programme » de la Partie 4). L’accent est mis sur l’interprétation, les indicateurs de suivi et la rédaction d’un écrit argumenté, autant que sur les calculs."
-        }
-      ]
-    },
-    {
-      "id": "introduction-generale",
-      "title": "Introduction générale",
-      "blocks": [
+        },
         {
           "type": "p",
           "text": "Une organisation qui a patiemment construit ses budgets — budget des ventes, budget de production, budget des approvisionnements, budget de la masse salariale — dispose d’une feuille de route chiffrée pour l’exercice à venir. Mais un budget n’a de valeur que s’il est confronté à la réalité. C’est précisément la mission du contrôle budgétaire : comparer périodiquement ce qui était prévu à ce qui s’est réellement produit, mesurer les écarts, en rechercher les causes, et déclencher les actions correctives nécessaires."

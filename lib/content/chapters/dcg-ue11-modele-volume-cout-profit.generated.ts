@@ -13,8 +13,8 @@ export const chapter: Chapter = {
   "durationMin": 30,
   "sections": [
     {
-      "id": "preambule",
-      "title": "Préambule",
+      "id": "introduction-generale",
+      "title": "Introduction générale",
       "blocks": [
         {
           "type": "callout",
@@ -27,13 +27,7 @@ export const chapter: Chapter = {
           "variant": "info",
           "title": "COMPÉTENCES VISÉES",
           "text": "• Identifier et analyser les données de charges et de produits issues des systèmes d’information.\n• Mettre en œuvre le modèle coût-volume-profit pour analyser la formation du résultat.\n• Calculer et interpréter seuils et marges en avenir certain (l’avenir aléatoire — loi normale — fait l’objet du chapitre dédié aux variables aléatoires, cf. chapitre 4).\n• Mobiliser le levier opérationnel et apprécier le risque d’exploitation.\n• Identifier intérêts et limites de l’approche dans des contextes variés : production, commerce, services, secteur public, associations."
-        }
-      ]
-    },
-    {
-      "id": "introduction-generale",
-      "title": "Introduction générale",
-      "blocks": [
+        },
         {
           "type": "callout",
           "variant": "tip",

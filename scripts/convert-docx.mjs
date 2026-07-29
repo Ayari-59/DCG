@@ -83,7 +83,9 @@ let sawStructure = false; // premier titre/encadré rencontré → fin de la pag
 
 function push(block) {
   if (!current) {
-    current = { id: "preambule", title: "Préambule", blocks: [] };
+    // Contenu situé avant le premier titre : cadrage du chapitre
+    // (positionnement, compétences) et souvent le texte d'introduction.
+    current = { id: "introduction", title: "Introduction", blocks: [] };
     sections.push(current);
   }
   current.blocks.push(block);
@@ -310,6 +312,25 @@ function processElement(el) {
 
 for (const el of $("body").children().toArray()) {
   processElement(el);
+}
+
+// Sort de la section d'ouverture, construite avec ce qui précède le premier
+// titre. Deux cas très différents selon le manuel :
+//  - page de garde (titre, UE, volume horaire) : le site affiche déjà tout
+//    cela dans son en-tête, la section est retirée ;
+//  - cadrage réel (positionnement, compétences, introduction) : conservé, et
+//    replié dans l'introduction du chapitre si celui-ci en a déjà une.
+// En mode auto, le titre du chapitre est le premier titre du document : ce
+// qui le précède est donc, par construction, la page de garde du manuel.
+// En mode --title, le premier titre est une grande partie, et ce qui le
+// précède constitue le cadrage réel du chapitre.
+if (sections.length > 1 && sections[0].id === "introduction") {
+  if (!forcedTitle) {
+    sections.shift();
+  } else if (/introduction/i.test(sections[1].title)) {
+    sections[1].blocks.unshift(...sections[0].blocks);
+    sections.shift();
+  }
 }
 
 // Dans le manuel, la légende suit la figure en italique : on la rattache

@@ -13,8 +13,8 @@ export const chapter: Chapter = {
   "durationMin": 50,
   "sections": [
     {
-      "id": "preambule",
-      "title": "Préambule",
+      "id": "introduction",
+      "title": "Introduction",
       "blocks": [
         {
           "type": "callout",

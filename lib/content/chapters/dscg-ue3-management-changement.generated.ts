@@ -13,37 +13,6 @@ export const chapter: Chapter = {
   "durationMin": 45,
   "sections": [
     {
-      "id": "preambule",
-      "title": "Préambule",
-      "blocks": [
-        {
-          "type": "p",
-          "text": "**DSCG — UE3**"
-        },
-        {
-          "type": "p",
-          "text": "Management et contrôle de gestion"
-        },
-        {
-          "type": "p",
-          "text": "**Le management du changement et la transformation des organisations**"
-        },
-        {
-          "type": "p",
-          "text": "*Manuel premium de préparation à l'épreuve nationale*"
-        },
-        {
-          "type": "p",
-          "text": "Partie 2 — Sous-partie 2.4 — Volume indicatif : 10 heures"
-        },
-        {
-          "type": "callout",
-          "variant": "info",
-          "text": "**Manuel premium de préparation à l'épreuve nationale du DSCG — UE3 « Management et contrôle de gestion »** Nouveau référentiel — Partie 2 « Favoriser le déploiement de la stratégie de l'organisation grâce à des outils de contrôle de gestion » — **Sous-partie 2.4 — Volume indicatif : 10 heures**"
-        }
-      ]
-    },
-    {
       "id": "note-de-conformite-au-referentiel-a-lire-avant-le-chapitre",
       "title": "Note de conformité au référentiel (à lire avant le chapitre)",
       "blocks": [

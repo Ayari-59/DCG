@@ -13,37 +13,6 @@ export const chapter: Chapter = {
   "durationMin": 60,
   "sections": [
     {
-      "id": "preambule",
-      "title": "Préambule",
-      "blocks": [
-        {
-          "type": "p",
-          "text": "**DSCG — UE3**"
-        },
-        {
-          "type": "p",
-          "text": "Management et contrôle de gestion"
-        },
-        {
-          "type": "p",
-          "text": "**La gestion budgétaire et le pilotage prévisionnel de la performance**"
-        },
-        {
-          "type": "p",
-          "text": "*Manuel premium de préparation à l'épreuve nationale*"
-        },
-        {
-          "type": "p",
-          "text": "Partie 3 — Volume indicatif : 20 heures"
-        },
-        {
-          "type": "callout",
-          "variant": "info",
-          "text": "**Manuel premium de préparation à l'épreuve nationale du DSCG — UE3 « Management et contrôle de gestion »** Nouveau référentiel — Partie 3 « Concevoir et mettre en place des outils permettant d'analyser et de piloter la performance » — **Volume indicatif : 20 heures**"
-        }
-      ]
-    },
-    {
       "id": "note-de-conformite-au-referentiel-a-lire-avant-le-chapitre",
       "title": "Note de conformité au référentiel (à lire avant le chapitre)",
       "blocks": [

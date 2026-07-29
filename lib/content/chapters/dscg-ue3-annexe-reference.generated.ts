@@ -13,41 +13,6 @@ export const chapter: Chapter = {
   "durationMin": 15,
   "sections": [
     {
-      "id": "preambule",
-      "title": "Préambule",
-      "blocks": [
-        {
-          "type": "p",
-          "text": "**DSCG — UE3**"
-        },
-        {
-          "type": "p",
-          "text": "Management et contrôle de gestion"
-        },
-        {
-          "type": "p",
-          "text": "**Annexe de référence**"
-        },
-        {
-          "type": "p",
-          "text": "*Manuel premium de préparation à l'épreuve nationale*"
-        },
-        {
-          "type": "p",
-          "text": "Glossaire · Répertoires · Bibliographie · Correspondances"
-        },
-        {
-          "type": "callout",
-          "variant": "info",
-          "text": "**Manuel premium de préparation à l'épreuve nationale du DSCG — UE3 « Management et contrôle de gestion »** Appareil de référence : glossaire, répertoires, bibliographie et table de correspondance avec le référentiel officiel."
-        },
-        {
-          "type": "p",
-          "text": "Cette annexe transforme l'ouvrage en instrument de référence pour la préparation de l'UE3. Elle rassemble, dans un format consultable rapidement, les définitions, les auteurs, les modèles, les schémas, les sources et la cartographie du programme couverts par les huit chapitres. Elle se lit transversalement, en complément des fiches de révision de chaque chapitre."
-        }
-      ]
-    },
-    {
       "id": "1-glossaire-complet-de-l-ue3",
       "title": "1. Glossaire complet de l'UE3",
       "blocks": [
