@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { Chapter } from "@/lib/content/types";
 import { hasFiche } from "@/lib/content/fiche";
 import { getTheme } from "@/lib/content/theme";
+import { titreSection } from "@/lib/content/sections";
 import { Blocks } from "./ContentBlocks";
 import { Quiz } from "./Quiz";
 import { Flashcards } from "./Flashcards";
@@ -144,32 +145,41 @@ export function ChapterView({ chapter, suivant }: { chapter: Chapter; suivant?: 
                 >
                   {sections.map((s, i) => (
                     <option key={s.id} value={i}>
-                      {i + 1}. {s.title}
+                      {titreSection(s.title).numero
+                        ? `${titreSection(s.title).numero}. ${titreSection(s.title).libelle}`
+                        : titreSection(s.title).libelle}
                     </option>
                   ))}
                 </select>
                 <ol className="hidden max-h-[calc(100vh-12rem)] space-y-0.5 overflow-y-auto pr-2 lg:block">
-                  {sections.map((s, i) => (
-                    <li key={s.id}>
-                      <button
-                        onClick={() => goTo(i)}
-                        className={`flex w-full gap-2.5 rounded-lg px-3 py-2 text-left text-[13px] leading-snug transition ${
-                          i === index
-                            ? `bg-white font-semibold shadow-sm ${theme.text}`
-                            : "text-muted hover:bg-white/70 hover:text-ink"
-                        }`}
-                      >
-                        <span
-                          className={`shrink-0 tabular-nums ${
-                            i === index ? theme.text : "text-slate-400"
+                  {sections.map((s, i) => {
+                    // Le numéro affiché est celui de la partie dans le manuel,
+                    // pas le rang dans la liste : l'introduction et les annexes
+                    // n'en portent aucun, et la numérotation reste celle du cours.
+                    const { numero, libelle } = titreSection(s.title);
+                    return (
+                      <li key={s.id}>
+                        <button
+                          onClick={() => goTo(i)}
+                          className={`flex w-full gap-2.5 rounded-lg px-3 py-2 text-left text-[13px] leading-snug transition ${
+                            i === index
+                              ? `bg-white font-semibold shadow-sm ${theme.text}`
+                              : "text-muted hover:bg-white/70 hover:text-ink"
                           }`}
                         >
-                          {i + 1}
-                        </span>
-                        <span className="line-clamp-3">{s.title}</span>
-                      </button>
-                    </li>
-                  ))}
+                          <span
+                            className={`w-4 shrink-0 text-right tabular-nums ${
+                              i === index ? theme.text : "text-slate-400"
+                            }`}
+                            aria-hidden={!numero}
+                          >
+                            {numero ?? "·"}
+                          </span>
+                          <span className="line-clamp-3">{libelle}</span>
+                        </button>
+                      </li>
+                    );
+                  })}
                 </ol>
               </>
             ) : (
