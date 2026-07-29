@@ -1,7 +1,9 @@
+import fs from "node:fs";
+import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { allChapters, programs } from "@/lib/content";
-import { familiesOf } from "@/lib/content/theme";
+import { familiesOf, getTheme } from "@/lib/content/theme";
 import { Reveal } from "@/components/Reveal";
 import { TargetMark } from "@/components/Logo";
 
@@ -141,30 +143,66 @@ export default function AProposPage() {
 
         {/* ── L'auteur ──────────────────────────────────────────────── */}
         <Reveal>
-          <section className="mt-16 rounded-3xl border-2 border-line bg-white p-8 elev-sm">
-            <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:items-start sm:text-left">
-              <Portrait />
-              <div className="min-w-0">
-                <h2 className="font-serif text-2xl font-bold tracking-[-0.02em] text-ink">
-                  Mohamed Ayari
-                </h2>
-                <p className="mt-1 font-semibold text-brand">
-                  Professeur de contrôle de gestion et de communication professionnelle
-                </p>
-                <p className="mt-4 text-[16px] leading-relaxed text-muted">
-                  J&apos;enseigne l&apos;UE11 et l&apos;UE13 du DCG. Tout le contenu de ce site est
-                  tiré de mes cours, et je suis passionné par ce que l&apos;intelligence
-                  artificielle peut apporter à l&apos;enseignement — ce site en est lui-même un
-                  terrain d&apos;expérimentation, du contenu jusqu&apos;à sa fabrication.
-                </p>
-                <a
-                  href="https://www.youtube.com/@Objectif-DCG"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-5 inline-flex items-center gap-2 rounded-xl border-2 border-line px-4 py-2 text-sm font-bold text-ink transition hover:border-brand"
-                >
-                  🎬 La chaîne Objectif-DCG
-                </a>
+          <section className="grain relative mt-20 overflow-hidden rounded-3xl bg-navy-deep elev-lg">
+            <div className="relative p-8 sm:p-10">
+              <div className="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-start sm:text-left">
+                <Portrait />
+
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-brand">
+                    L&apos;auteur
+                  </p>
+                  <h2 className="mt-2 font-serif text-[2.2rem] font-bold leading-none tracking-[-0.03em] text-white">
+                    Mohamed Ayari
+                  </h2>
+                  <p className="mt-2.5 text-[17px] font-semibold text-white/75">
+                    Professeur de contrôle de gestion
+                    <span className="text-white/40"> et de </span>
+                    communication professionnelle
+                  </p>
+
+                  <div className="mt-6 space-y-3.5 text-[16px] leading-relaxed text-white/60">
+                    <p>
+                      Tout le contenu de ce site est tiré de ses cours : les manuels, les démarches
+                      de méthode, les schémas et les cas ont été écrits pour ses classes avant
+                      d&apos;être publiés ici.
+                    </p>
+                    <p>
+                      Passionné par ce que l&apos;intelligence artificielle peut apporter à
+                      l&apos;enseignement, il en fait ici un terrain d&apos;expérimentation — du
+                      contenu jusqu&apos;à la fabrication du site.
+                    </p>
+                  </div>
+
+                  <p className="mt-7 text-xs font-black uppercase tracking-[0.15em] text-white/40">
+                    Ses cours sur le site
+                  </p>
+                  <ul className="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start">
+                    {programs.map((p) => (
+                      <li key={p.ue}>
+                        <Link
+                          href={p.ue === "UE11" ? "/dcg" : p.ue === "UE3" ? "/dscg" : "/ue13"}
+                          className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm font-semibold text-white/80 transition hover:border-white/40 hover:bg-white/10"
+                        >
+                          <span
+                            className={`h-2 w-2 rounded-full ${getTheme(p.chapters[0].slug).bar}`}
+                          />
+                          {p.level} · {p.ue}
+                          <span className="text-white/40">{p.title}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a
+                    href="https://www.youtube.com/@Objectif-DCG"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="lift mt-7 inline-flex items-center gap-2.5 rounded-xl bg-brand px-5 py-2.5 text-sm font-bold text-white elev-md hover:bg-orange-600"
+                  >
+                    🎬 La chaîne Objectif-DCG
+                  </a>
+                </div>
               </div>
             </div>
           </section>
@@ -309,17 +347,42 @@ export default function AProposPage() {
 }
 
 /**
- * Portrait de l'auteur. En attendant la photo, les initiales : une image
- * absente afficherait une icône cassée, ce qui est pire que pas d'image.
- * Déposer le fichier dans public/ et remplacer ce bloc par une balise img.
+ * Portrait de l'auteur.
+ *
+ * La photo est détectée à la construction : il suffit de déposer un fichier
+ * nommé `mohamed-ayari` dans public/ pour qu'elle remplace les initiales,
+ * sans toucher au code. Tant qu'elle est absente, on affiche le monogramme
+ * plutôt qu'une image cassée.
  */
 function Portrait() {
+  const fichier = ["jpg", "jpeg", "png", "webp"]
+    .map((ext) => `mohamed-ayari.${ext}`)
+    .find((nom) => fs.existsSync(path.join(process.cwd(), "public", nom)));
+
   return (
-    <span
-      aria-hidden
-      className="flex h-28 w-28 shrink-0 items-center justify-center rounded-full bg-navy font-serif text-3xl font-bold text-white elev-md"
-    >
-      MA
-    </span>
+    <div className="relative shrink-0">
+      <span
+        aria-hidden
+        className="absolute -inset-1.5 rounded-full bg-brand/30 blur-[2px]"
+      />
+      {fichier ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={`/${fichier}`}
+          alt="Mohamed Ayari"
+          width={128}
+          height={128}
+          className="relative h-32 w-32 rounded-full object-cover ring-4 ring-brand"
+        />
+      ) : (
+        <span
+          aria-label="Mohamed Ayari"
+          role="img"
+          className="relative flex h-32 w-32 items-center justify-center rounded-full bg-navy font-serif text-4xl font-bold tracking-tight text-white ring-4 ring-brand"
+        >
+          MA
+        </span>
+      )}
+    </div>
   );
 }
