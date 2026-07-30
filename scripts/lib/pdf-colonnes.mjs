@@ -20,6 +20,46 @@ const MEME_LIGNE = 3;
  * fréquents, qu'un seuil bas prend pour des colonnes.
  */
 const COLONNE_MINIMUM = 110;
+/** Marge de tolérance autour d'un bord de colonne, en points. */
+const TOLERANCE_BORD = 8;
+
+/**
+ * Intitulés de l'en-tête du tableau du programme officiel, dans l'ordre
+ * des colonnes. Toutes les unités n'en ont pas trois : le droit fiscal,
+ * l'économie ou la finance s'arrêtent aux savoirs associés.
+ */
+const EN_TETES = [
+  /^Compétences(\s+professionnelles)?$/i,
+  // « associés » passe à la ligne suivante dans certaines unités, et le
+  // troisième intitulé s'écrit tantôt « de », tantôt « des » connaissances.
+  /^Connaissances et savoirs/i,
+  /^Limites d(e|es) connaissances/i,
+];
+
+/**
+ * Nombre de colonnes du tableau d'une page, compté sur son en-tête.
+ *
+ * L'en-tête est répété en tête de chaque page du programme. On ne s'en sert
+ * que pour compter : son abscisse ne vaut pas bord de colonne, car il est
+ * centré dans sa cellule quand le corps, lui, est aligné à gauche — s'y
+ * fier renvoyait la colonne des limites dans celle des savoirs.
+ *
+ * Le compte, en revanche, est décisif : toutes les unités n'ont pas trois
+ * colonnes, et en forcer une troisième là où il n'y en a que deux
+ * dispersait le texte au hasard.
+ *
+ * @returns {number | null} 2, 3, ou null si la page ne porte pas d'en-tête
+ */
+export async function nombreDeColonnes(doc, numero) {
+  const page = await doc.getPage(numero);
+  const contenu = await page.getTextContent();
+
+  let compte = 0;
+  for (const motif of EN_TETES) {
+    if (contenu.items.some((i) => motif.test(i.str.trim()))) compte++;
+  }
+  return compte >= 2 ? compte : null;
+}
 
 /**
  * Repère les bords gauches des colonnes d'une page.
@@ -30,7 +70,7 @@ const COLONNE_MINIMUM = 110;
  * colonne — des dizaines de lignes commencent exactement à la même
  * abscisse, ce qui n'arrive jamais par hasard.
  */
-function frontieres(fragments, largeurPage) {
+function frontieres(fragments, largeurPage, nombreVoulu = null) {
   const comptes = new Map();
   for (const f of fragments) {
     const x = Math.round(f.x / 2) * 2;
@@ -39,6 +79,7 @@ function frontieres(fragments, largeurPage) {
 
   const bords = [];
   for (const [x] of [...comptes.entries()].sort((a, b) => b[1] - a[1])) {
+    if (nombreVoulu && bords.length >= nombreVoulu) break;
     if (bords.every((b) => Math.abs(b - x) >= COLONNE_MINIMUM)) bords.push(x);
   }
 
@@ -51,7 +92,7 @@ function frontieres(fragments, largeurPage) {
  *
  * @returns {{ y: number, cellules: string[], colonnes: number }[]}
  */
-export async function lirePageEnColonnes(doc, numero, bordsImposes = null) {
+export async function lirePageEnColonnes(doc, numero, nombreColonnes = null) {
   const page = await doc.getPage(numero);
   const { width } = page.getViewport({ scale: 1 });
   const contenu = await page.getTextContent();
@@ -65,21 +106,17 @@ export async function lirePageEnColonnes(doc, numero, bordsImposes = null) {
       largeur: i.width ?? 0,
     }));
 
-  if (!fragments.length) return { lignes: [], bornes: bordsImposes ?? [] };
+  if (!fragments.length) return { lignes: [], bornes: [] };
 
-  const bornes = bordsImposes ?? frontieres(fragments, width);
+  const bornes = frontieres(fragments, width, nombreColonnes);
   /*
-   * On retient la colonne la plus proche, et non la dernière dont le bord
-   * précède le fragment : d'une page à l'autre, une même colonne se décale
-   * de quelques points, et un test par infériorité stricte renvoie alors
-   * la cellule dans la colonne de gauche.
+   * La tolérance absorbe les cellules dont la première ligne est très
+   * légèrement en retrait du bord de colonne — c'est fréquent après une
+   * puce — sans pour autant happer la colonne voisine.
    */
   const colonne = (x) => {
-    let meilleure = 0;
-    for (let c = 1; c < bornes.length - 1; c++) {
-      if (Math.abs(x - bornes[c]) < Math.abs(x - bornes[meilleure])) meilleure = c;
-    }
-    return meilleure;
+    for (let c = bornes.length - 2; c >= 0; c--) if (x >= bornes[c] - TOLERANCE_BORD) return c;
+    return 0;
   };
 
   // Regroupement par ligne : le PDF descend, donc y décroît.

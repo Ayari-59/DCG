@@ -17,7 +17,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { ouvrir, lirePageEnColonnes, bordsDeColonnes } from "./lib/pdf-colonnes.mjs";
+import { ouvrir, lirePageEnColonnes, nombreDeColonnes } from "./lib/pdf-colonnes.mjs";
 
 const RACINE = process.cwd();
 const SOURCE = path.join(RACINE, "sources", "Referentiel");
@@ -36,27 +36,54 @@ const ANNEXES = [
   },
 ];
 
-/** En-tête d'unité : « DCG – UE 11 CONTROLE DE GESTION ». */
-const ENTETE = /^(?:DCG|DSCG)\s*[–—-]?\s*UE\s*(\d+)\s+(.+?)(?:\s*Volume horaire.*)?$/i;
+/**
+ * En-tête d'unité : « DCG – UE 11 CONTROLE DE GESTION ».
+ *
+ * Le motif n'est pas ancré en début de chaîne : sur la première page de
+ * chaque annexe, l'en-tête de l'UE1 partage la ligne avec le titre du
+ * document, et l'ancrage la faisait manquer — les deux annexes perdaient
+ * ainsi leur première unité.
+ */
+const ENTETE = /(?:DCG|DSCG)\s*[–—-]?\s*UE\s*(\d+)\s+(.+?)(?:\s*Volume horaire.*)?$/i;
 const VOLUME = /Volume horaire\s*:\s*(\d+)\s*heures?/i;
 /** « Partie 1 – Appréhender le contexte juridique (35 heures) ». */
 const PARTIE = /^Partie\s+(\d+)\s*[–—:-]\s*(.+?)(?:\s*\((\d+)\s*heures?\))?\s*$/i;
+/**
+ * Certaines unités numérotent leurs parties sans le mot « Partie » :
+ * « 1. Appréhender les fondements de la science économique ». Le motif est
+ * distinct de celui des sous-parties, qui portent deux niveaux (« 1.1 »).
+ */
+const PARTIE_NUE = /^(\d+)\.\s+([A-ZÀ-Ý].+?)(?:\s*\((\d+)\s*heures?\))?\s*$/;
 /** « 1.1 Rechercher les règles applicables (15 heures) ». */
 const SOUS_PARTIE = /^(\d+\.\d+)\s+(.+?)(?:\s*\((\d+)\s*heures?\))?\s*$/;
-/** Ligne d'en-tête du tableau : elle marque la fin de la prose. */
-const DEBUT_TABLEAU = /Connaissances et savoirs associ/i;
+/**
+ * Ligne d'en-tête du tableau : elle marque la fin de la prose. Le mot
+ * « associés » passe à la ligne suivante dans certaines unités : le tester
+ * faisait manquer le début du tableau, et tout le programme partait alors
+ * dans la prose.
+ */
+const DEBUT_TABLEAU = /Connaissances et savoirs/i;
 
 /** Découpe les unités d'enseignement d'après leurs pages d'en-tête. */
 async function reperer(doc) {
   const reperes = [];
   for (let p = 1; p <= doc.numPages; p++) {
     const { lignes } = await lirePageEnColonnes(doc, p);
+    /*
+     * La fenêtre couvre huit lignes : sur la première page de chaque
+     * annexe, le numéro d'unité et son intitulé sont sur deux lignes
+     * distinctes, précédés du titre du document.
+     */
     const debut = lignes
-      .slice(0, 3)
+      .slice(0, 8)
       .map((l) => l.cellules.join(" ").trim())
       .join(" ");
+    const page = lignes.map((l) => l.cellules.join(" ")).join(" ");
     const m = debut.match(ENTETE);
-    if (m) {
+    // Une page d'ouverture d'unité annonce toujours son volume horaire ou
+    // ses objectifs : sans ce garde-fou, une simple mention « UE 3 » dans
+    // la prose d'une autre unité passerait pour un nouveau chapitre.
+    if (m && (VOLUME.test(page) || /Objectifs/i.test(page))) {
       const volume = debut.match(VOLUME);
       reperes.push({
         numero: Number(m[1]),
@@ -90,16 +117,35 @@ function casseNormale(titre) {
     .join("");
 }
 
+/**
+ * Retire les puces d'une cellule et écarte celles qui n'en contiennent que.
+ *
+ * Word code ses puces de second niveau par la lettre « o », et chaque puce
+ * arrive dans son propre fragment, à sa propre abscisse : sans nettoyage,
+ * des cellules ressortaient en « o o o Cas spécifiques relatifs aux
+ * immobilisations ».
+ *
+ * @returns {string} la cellule nettoyée, ou une chaîne vide si elle est vide de sens
+ */
+function nettoyerPuces(cellule) {
+  const texte = (cellule ?? "").replace(/^(?:[-–—•·o]\s+)+/, "").trim();
+  return texte.length > 1 && !/^[-–—•·o]$/.test(texte) ? texte : "";
+}
+
 /** Rassemble les lignes d'une unité : prose d'abord, tableau ensuite. */
-async function lireUnite(doc, unite, bords) {
+async function lireUnite(doc, unite) {
   const prose = [];
   const parties = [];
   let dansTableau = false;
   let partie = null;
   let sousPartie = null;
+  let colonnes = null;
 
   for (let p = unite.premierePage; p <= unite.dernierePage; p++) {
-    const { lignes } = await lirePageEnColonnes(doc, p, bords);
+    // Le nombre de colonnes est recompté à chaque page ; à défaut
+    // d'en-tête, la page hérite de la disposition de la précédente.
+    colonnes = (await nombreDeColonnes(doc, p)) ?? colonnes;
+    const { lignes } = await lirePageEnColonnes(doc, p, colonnes);
 
     for (const { cellules } of lignes) {
       const entier = cellules.join(" ").replace(/\s+/g, " ").trim();
@@ -116,9 +162,13 @@ async function lireUnite(doc, unite, bords) {
         continue;
       }
 
+      // L'en-tête se répète en tête de chaque page : il ne se lit qu'une fois.
+      if (/^(Compétences|professionnelles$|associés$|Connaissances et savoirs|Limites d(e|es) connaissances)/i.test(entier))
+        continue;
+
       const gauche = cellules[0] ?? "";
 
-      const mp = gauche.match(PARTIE);
+      const mp = gauche.match(PARTIE) ?? gauche.match(PARTIE_NUE);
       if (mp) {
         partie = {
           numero: mp[1],
@@ -146,9 +196,10 @@ async function lireUnite(doc, unite, bords) {
       }
 
       if (!sousPartie) continue;
-      if (cellules[0]) sousPartie.competences.push(cellules[0]);
-      if (cellules[1]) sousPartie.savoirs.push(cellules[1]);
-      if (cellules[2]) sousPartie.limites.push(cellules[2]);
+      const [c0, c1, c2] = [0, 1, 2].map((i) => nettoyerPuces(cellules[i]));
+      if (c0) sousPartie.competences.push(c0);
+      if (c1) sousPartie.savoirs.push(c1);
+      if (c2) sousPartie.limites.push(c2);
     }
   }
 
@@ -169,18 +220,33 @@ function recoller(lignes, { phrases }) {
     const precedent = sortie[sortie.length - 1];
     const suite = phrases
       ? precedent && !/[.:!?]$/.test(precedent)
-      : precedent && /^[a-zà-öø-ÿ)»]|^et\b|^ou\b/.test(ligne);
+      : precedent && /^[a-zà-öø-ÿœæ)»;]|^et\b|^ou\b/.test(ligne);
     if (suite) sortie[sortie.length - 1] = `${precedent} ${ligne}`.replace(/\s+/g, " ");
     else sortie.push(ligne);
   }
   return sortie;
 }
 
-/** Les limites sont puces à tiret ; le tiret sert de séparateur. */
+/**
+ * Découpe la colonne des limites en énoncés lisibles.
+ *
+ * La plupart des unités y mettent des puces à tiret, qui servent alors de
+ * séparateur. D'autres — le droit fiscal notamment — écrivent des phrases
+ * à la suite : sans découpage, la cellule ressort en un pavé de deux mille
+ * signes que personne ne lit. On coupe alors à la fin des phrases.
+ */
 function decouperLimites(lignes) {
-  const texte = lignes.join(" ").replace(/\s+/g, " ");
+  const texte = lignes.join(" ").replace(/\s+/g, " ").trim();
+  if (!texte) return [];
+
+  const parTirets = texte
+    .split(/\s(?:[-–—])\s*/)
+    .map((t) => t.trim())
+    .filter((t) => t.length > 3);
+  if (parTirets.length > 1) return parTirets;
+
   return texte
-    .split(/\s*(?:^|\s)[-–—]\s*/)
+    .split(/(?<=\.)\s+(?=[A-ZÀ-Ý])/)
     .map((t) => t.trim())
     .filter((t) => t.length > 3);
 }
@@ -201,9 +267,7 @@ async function main() {
     console.log(`\n${annexe.diplome} — ${doc.numPages} pages, ${reperes.length} unités`);
 
     for (const repere of reperes) {
-      // Les bords de colonnes sont propres à chaque unité.
-      const bords = await bordsDeColonnes(doc, repere.premierePage, repere.dernierePage);
-      const { prose, parties } = await lireUnite(doc, repere, bords);
+      const { prose, parties } = await lireUnite(doc, repere);
 
       for (const partie of parties) {
         for (const sp of partie.sousParties) {
