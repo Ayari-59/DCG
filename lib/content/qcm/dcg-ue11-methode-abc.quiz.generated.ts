@@ -1,9 +1,9 @@
 // Généré par scripts/convert-qcm.mjs — ne pas modifier à la main.
 // Source : sources/UE 11 - CDG/QCM/_json/
-// QCM du manuel, complet.
+// Banque complète du manuel ; le site joue la sélection `quiz`.
 import type { QuizQuestion } from "../types";
 
-export const quiz: QuizQuestion[] = [
+export const banque: QuizQuestion[] = [
   {
     "id": "qcm1",
     "question": "Quel principe fonde la méthode ABC ?",
@@ -363,3 +363,8 @@ export const quiz: QuizQuestion[] = [
     "explanation": "Faux : l'ABM agit sur les causes (inducteurs) pour piloter la valeur, il ne fait pas que constater."
   }
 ];
+
+/** Sélection jouée sur le site — voir docs/selection-qcm.md. */
+const SELECTION = [0, 1, 3, 4, 5, 6, 8, 9, 10, 11, 13, 14, 15, 16, 18, 19, 20, 21, 23, 24];
+
+export const quiz: QuizQuestion[] = SELECTION.map((i) => banque[i]);

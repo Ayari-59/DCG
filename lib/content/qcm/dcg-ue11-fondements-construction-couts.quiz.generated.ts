@@ -1,9 +1,9 @@
 // Généré par scripts/convert-qcm.mjs — ne pas modifier à la main.
 // Source : sources/UE 11 - CDG/QCM/_json/
-// QCM du manuel, complet.
+// Banque complète du manuel ; le site joue la sélection `quiz`.
 import type { QuizQuestion } from "../types";
 
-export const quiz: QuizQuestion[] = [
+export const banque: QuizQuestion[] = [
   {
     "id": "qcm1",
     "question": "Une charge se définit en comptabilité de gestion comme :",
@@ -356,3 +356,8 @@ export const quiz: QuizQuestion[] = [
     "explanation": "Vrai : le coût complet « durable » intègre cycle de vie et externalités (ESG)."
   }
 ];
+
+/** Sélection jouée sur le site — voir docs/selection-qcm.md. */
+const SELECTION = [0, 1, 3, 4, 5, 6, 8, 9, 10, 11, 13, 14, 15, 16, 18, 19, 20, 21, 23, 24];
+
+export const quiz: QuizQuestion[] = SELECTION.map((i) => banque[i]);

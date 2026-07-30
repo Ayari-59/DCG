@@ -1,9 +1,9 @@
 // Généré par scripts/convert-qcm.mjs — ne pas modifier à la main.
 // Source : sources/UE 11 - CDG/QCM/_json/
-// QCM du manuel, complet.
+// Banque complète du manuel ; le site joue la sélection `quiz`.
 import type { QuizQuestion } from "../types";
 
-export const quiz: QuizQuestion[] = [
+export const banque: QuizQuestion[] = [
   {
     "id": "qcm1",
     "question": "Quel est le rang du budget des ventes dans la construction budgétaire ?",
@@ -372,3 +372,8 @@ export const quiz: QuizQuestion[] = [
     "explanation": "Faux : c'est l'inverse, le programme est en quantités et le budget en valeur (CA)."
   }
 ];
+
+/** Sélection jouée sur le site — voir docs/selection-qcm.md. */
+const SELECTION = [0, 1, 3, 4, 6, 7, 8, 10, 11, 13, 14, 15, 16, 18, 19, 20, 21, 22, 24, 25];
+
+export const quiz: QuizQuestion[] = SELECTION.map((i) => banque[i]);

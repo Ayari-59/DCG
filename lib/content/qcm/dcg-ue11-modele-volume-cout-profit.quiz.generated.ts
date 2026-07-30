@@ -1,9 +1,9 @@
 // Généré par scripts/convert-qcm.mjs — ne pas modifier à la main.
 // Source : sources/UE 11 - CDG/QCM/_json/
-// QCM du manuel, complet.
+// Banque complète du manuel ; le site joue la sélection `quiz`.
 import type { QuizQuestion } from "../types";
 
-export const quiz: QuizQuestion[] = [
+export const banque: QuizQuestion[] = [
   {
     "id": "qcm1",
     "question": "La marge sur coût variable (MCV) est égale à :",
@@ -341,3 +341,8 @@ export const quiz: QuizQuestion[] = [
     "explanation": "Le modèle gère mal la saisonnalité fine : ce n'est pas un atout mais une limite."
   }
 ];
+
+/** Sélection jouée sur le site — voir docs/selection-qcm.md. */
+const SELECTION = [0, 1, 2, 3, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23];
+
+export const quiz: QuizQuestion[] = SELECTION.map((i) => banque[i]);

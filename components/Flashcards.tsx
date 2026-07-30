@@ -10,23 +10,53 @@ interface Props {
   cards: Flashcard[];
 }
 
+/**
+ * Les cartes se révisent par sessions de vingt.
+ *
+ * Un chapitre porte jusqu'à quarante-deux cartes : affichées d'un bloc,
+ * elles découragent — on ouvre, on voit l'ampleur, on referme. Vingt
+ * cartes font une session de quelques minutes, le format d'un trajet de
+ * bus. Les cartes acquises sortent de la rotation, et chaque nouvelle
+ * session pioche au hasard parmi celles qui restent.
+ */
+const TAILLE_SESSION = 20;
+
+/** Mélange de Fisher-Yates, sans toucher au tableau d'origine. */
+function melanger<T>(tableau: T[]): T[] {
+  const copie = [...tableau];
+  for (let i = copie.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copie[i], copie[j]] = [copie[j], copie[i]];
+  }
+  return copie;
+}
+
 export function Flashcards({ slug, cards }: Props) {
   const theme = getTheme(slug);
   const storageKey = `dcga:cards:${slug}`;
   const [known, setKnown] = useState<Set<string>>(new Set());
-  const [queue, setQueue] = useState<string[]>(() => cards.map((c) => c.id));
+  const [queue, setQueue] = useState<string[]>([]);
+  const [tailleSession, setTailleSession] = useState(0);
   const [flipped, setFlipped] = useState(false);
-  const [reviewAll, setReviewAll] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
   const byId = useMemo(() => new Map(cards.map((c) => [c.id, c])), [cards]);
+
+  function nouvelleSession(acquises: Set<string>) {
+    const restantes = cards.filter((c) => !acquises.has(c.id)).map((c) => c.id);
+    const session = melanger(restantes).slice(0, TAILLE_SESSION);
+    setQueue(session);
+    setTailleSession(session.length);
+    setFlipped(false);
+  }
 
   useEffect(() => {
     const saved = localStorage.getItem(storageKey);
     const savedKnown = saved ? new Set<string>(JSON.parse(saved) as string[]) : new Set<string>();
     setKnown(savedKnown);
-    setQueue(cards.filter((c) => !savedKnown.has(c.id)).map((c) => c.id));
+    nouvelleSession(savedKnown);
     setLoaded(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [storageKey, cards]);
 
   function persist(next: Set<string>) {
@@ -41,21 +71,16 @@ export function Flashcards({ slug, cards }: Props) {
     setFlipped(false);
   }
 
+  /** « À revoir » garde la carte dans la session : elle reviendra avant la fin. */
   function markToReview() {
     const [head, ...rest] = queue;
     setQueue([...rest, head]);
     setFlipped(false);
   }
 
-  function resetSession(all: boolean) {
-    if (all) {
-      persist(new Set());
-      setQueue(cards.map((c) => c.id));
-    } else {
-      setQueue(cards.filter((c) => !known.has(c.id)).map((c) => c.id));
-    }
-    setReviewAll(all);
-    setFlipped(false);
+  function reinitialiser() {
+    persist(new Set());
+    nouvelleSession(new Set());
   }
 
   /**
@@ -82,36 +107,57 @@ export function Flashcards({ slug, cards }: Props) {
   if (!loaded) return null;
 
   const card = queue.length > 0 ? byId.get(queue[0]) : undefined;
-  const done = cards.length - queue.length;
+  const restantes = cards.length - known.size;
 
+  // ── Fin de session, ou fin du chapitre ─────────────────────────────
   if (!card) {
+    if (restantes === 0) {
+      return (
+        <div className="rounded-xl border border-slate-200 bg-white p-8 text-center">
+          <TargetMark className="mx-auto h-10 w-10" />
+          <p className="mt-2 font-semibold text-slate-900">
+            Toutes les cartes de ce chapitre sont acquises !
+          </p>
+          <p className="mt-1 text-sm text-slate-500">
+            {cards.length} cartes maîtrisées. Revenez-y dans quelques jours pour ancrer la
+            mémorisation.
+          </p>
+          <button
+            onClick={reinitialiser}
+            className={`mt-6 rounded-xl px-6 py-3 font-bold text-white shadow-md transition hover:brightness-110 ${theme.bar}`}
+          >
+            Tout revoir depuis le début
+          </button>
+        </div>
+      );
+    }
     return (
       <div className="rounded-xl border border-slate-200 bg-white p-8 text-center">
-        <TargetMark className="mx-auto h-10 w-10" />
-        <p className="mt-2 font-semibold text-slate-900">
-          Toutes les cartes de ce chapitre sont acquises !
-        </p>
-        <p className="mt-1 text-sm text-slate-500">
-          {cards.length} cartes maîtrisées. Revenez-y dans quelques jours pour ancrer la mémorisation.
+        <p className="font-serif text-3xl font-bold text-ink">Session terminée</p>
+        <p className="mt-2 text-sm text-slate-500">
+          {known.size} cartes acquises sur {cards.length}. Il en reste {restantes} — la prochaine
+          session en pioche {Math.min(TAILLE_SESSION, restantes)} au hasard.
         </p>
         <button
-          onClick={() => resetSession(true)}
+          onClick={() => nouvelleSession(known)}
           className={`mt-6 rounded-xl px-6 py-3 font-bold text-white shadow-md transition hover:brightness-110 ${theme.bar}`}
         >
-          Tout revoir depuis le début
+          Nouvelle session
         </button>
       </div>
     );
   }
 
+  const faites = tailleSession - queue.length;
+
   return (
     <div>
       <div className="mb-3 flex items-center justify-between text-sm text-slate-500">
         <span>
-          {done} / {cards.length} acquises{reviewAll ? " (session complète)" : ""}
+          Session : {faites} / {tailleSession} · {known.size} acquises sur {cards.length}
         </span>
         <button
-          onClick={() => resetSession(true)}
+          onClick={reinitialiser}
           className="text-xs text-slate-400 underline-offset-2 hover:underline"
         >
           Réinitialiser
@@ -120,7 +166,7 @@ export function Flashcards({ slug, cards }: Props) {
       <div className="mb-4 h-1.5 overflow-hidden rounded-full bg-slate-100">
         <div
           className={`h-full rounded-full transition-all ${theme.bar}`}
-          style={{ width: `${(done / cards.length) * 100}%` }}
+          style={{ width: `${(faites / tailleSession) * 100}%` }}
         />
       </div>
 
@@ -155,7 +201,8 @@ export function Flashcards({ slug, cards }: Props) {
         </div>
       ) : (
         <p className="mt-4 text-center text-sm text-slate-400">
-          Essayez de répondre de tête, puis retournez la carte — <kbd className="font-semibold">Espace</kbd>
+          Essayez de répondre de tête, puis retournez la carte —{" "}
+          <kbd className="font-semibold">Espace</kbd>
         </p>
       )}
     </div>
