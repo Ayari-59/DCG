@@ -1,6 +1,6 @@
 // Généré par scripts/convert-qcm.mjs — ne pas modifier à la main.
-// Source : sources/UE 11 - CDG/QCM - refonte fil rouge/
-// QCM complet, propositions comprises.
+// Source : sources/UE 11 - CDG/QCM/_json/
+// QCM du manuel, complet.
 import type { QuizQuestion } from "../types";
 
 export const quiz: QuizQuestion[] = [
@@ -123,7 +123,10 @@ export const quiz: QuizQuestion[] = [
   {
     "id": "qcm9",
     "question": "On peut être efficace tout en gaspillant des moyens, car efficacité et efficience ne se confondent pas.",
-    "choices": [],
+    "choices": [
+      "Vrai",
+      "Faux"
+    ],
     "answers": [
       0
     ],
@@ -146,7 +149,10 @@ export const quiz: QuizQuestion[] = [
   {
     "id": "qcm11",
     "question": "Un SI performant garantit à lui seul un bon pilotage de l'organisation.",
-    "choices": [],
+    "choices": [
+      "Vrai",
+      "Faux"
+    ],
     "answers": [
       1
     ],
@@ -169,7 +175,10 @@ export const quiz: QuizQuestion[] = [
   {
     "id": "qcm13",
     "question": "La qualification d'une unité en type de centre dépend du nom de l'unité plutôt que de son périmètre de contrôlabilité.",
-    "choices": [],
+    "choices": [
+      "Vrai",
+      "Faux"
+    ],
     "answers": [
       1
     ],
@@ -194,7 +203,10 @@ export const quiz: QuizQuestion[] = [
   {
     "id": "qcm15",
     "question": "La data visualisation vise à rendre l'information immédiatement compréhensible et à faire apparaître tendances, écarts ou anomalies.",
-    "choices": [],
+    "choices": [
+      "Vrai",
+      "Faux"
+    ],
     "answers": [
       0
     ],
@@ -279,7 +291,10 @@ export const quiz: QuizQuestion[] = [
   {
     "id": "qcm21",
     "question": "Réduire le pilotage aux seuls chiffres financiers est une approche complète et recommandée.",
-    "choices": [],
+    "choices": [
+      "Vrai",
+      "Faux"
+    ],
     "answers": [
       1
     ],
@@ -287,17 +302,17 @@ export const quiz: QuizQuestion[] = [
   },
   {
     "id": "qcm22",
-    "question": "Boréal SI : MCV unitaire 50 €, 4 000 produits, charges fixes 200 000 €. Le résultat est :",
+    "question": "Boréal SI : MCV unitaire 52 €, 4 000 produits, charges fixes 208 000 €. Le résultat est :",
     "choices": [
-      "+50 000 €",
-      "+200 000 €",
+      "+52 000 €",
+      "+208 000 €",
       "0 € (seuil atteint)",
-      "−200 000 €"
+      "−208 000 €"
     ],
     "answers": [
       2
     ],
-    "explanation": "MCV globale = 50 × 4 000 = 200 000 € ; Résultat = 200 000 − 200 000 = 0 € : seuil de profitabilité atteint."
+    "explanation": "MCV globale = 52 × 4 000 = 208 000 € ; Résultat = 208 000 − 208 000 = 0 € : seuil de profitabilité atteint."
   },
   {
     "id": "qcm23",
@@ -329,17 +344,17 @@ export const quiz: QuizQuestion[] = [
   },
   {
     "id": "qcm25",
-    "question": "Dans l'application Boréal SI (prix 90 €, coût variable unitaire 40 €), la marge sur coût variable unitaire est de :",
+    "question": "Dans l'application Boréal SI (prix 90 €, coût variable unitaire 38 €), la marge sur coût variable unitaire est de :",
     "choices": [
-      "50 €",
+      "52 €",
       "90 €",
-      "40 €",
-      "130 €"
+      "38 €",
+      "128 €"
     ],
     "answers": [
       0
     ],
-    "explanation": "MCV unitaire = 90 − 40 = 50 €."
+    "explanation": "MCV unitaire = 90 − 38 = 52 €."
   },
   {
     "id": "qcm26",

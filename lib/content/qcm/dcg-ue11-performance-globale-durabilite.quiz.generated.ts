@@ -1,6 +1,6 @@
 // Généré par scripts/convert-qcm.mjs — ne pas modifier à la main.
-// Source : sources/UE 11 - CDG/QCM - refonte fil rouge/
-// QCM complet, propositions comprises.
+// Source : sources/UE 11 - CDG/QCM/_json/
+// QCM du manuel, complet.
 import type { QuizQuestion } from "../types";
 
 export const quiz: QuizQuestion[] = [
@@ -138,7 +138,10 @@ export const quiz: QuizQuestion[] = [
   {
     "id": "qcm10",
     "question": "Améliorer une dimension de la performance peut en dégrader une autre.",
-    "choices": [],
+    "choices": [
+      "Vrai",
+      "Faux"
+    ],
     "answers": [
       0
     ],
@@ -147,7 +150,10 @@ export const quiz: QuizQuestion[] = [
   {
     "id": "qcm11",
     "question": "Le prix de cession interne peut servir à aligner les centres sur la stratégie RSE.",
-    "choices": [],
+    "choices": [
+      "Vrai",
+      "Faux"
+    ],
     "answers": [
       0
     ],
@@ -211,17 +217,17 @@ export const quiz: QuizQuestion[] = [
   },
   {
     "id": "qcm16",
-    "question": "Une rupture de 170 unités est évitée grâce à l'analyse prédictive (MCV unitaire 50 €). Quelle marge est préservée ?",
+    "question": "Une rupture de 170 unités est évitée grâce à l'analyse prédictive (MCV unitaire 52 €). Quelle marge est préservée ?",
     "choices": [
-      "50 €",
-      "8 500 €",
+      "52 €",
+      "8 840 €",
       "170 €",
-      "13 600 €"
+      "11 390 €"
     ],
     "answers": [
       1
     ],
-    "explanation": "Marge préservée = 170 × 50 = 8 500 € (valeur créée par l'anticipation de la rupture)."
+    "explanation": "Marge préservée = 170 × 52 = 8 840 € (valeur créée par l'anticipation de la rupture)."
   },
   {
     "id": "qcm17",
@@ -258,7 +264,10 @@ export const quiz: QuizQuestion[] = [
   {
     "id": "qcm19",
     "question": "Un résultat financier en hausse peut masquer une destruction de valeur future.",
-    "choices": [],
+    "choices": [
+      "Vrai",
+      "Faux"
+    ],
     "answers": [
       0
     ],
@@ -267,7 +276,10 @@ export const quiz: QuizQuestion[] = [
   {
     "id": "qcm20",
     "question": "Le bon point de départ est l'outil technologique, dont on déduit ensuite les besoins de pilotage.",
-    "choices": [],
+    "choices": [
+      "Vrai",
+      "Faux"
+    ],
     "answers": [
       1
     ],
@@ -332,7 +344,10 @@ export const quiz: QuizQuestion[] = [
   {
     "id": "qcm25",
     "question": "La centralisation des données dans un ERP crée un point de vulnérabilité unique en matière de cybersécurité.",
-    "choices": [],
+    "choices": [
+      "Vrai",
+      "Faux"
+    ],
     "answers": [
       0
     ],
@@ -340,16 +355,16 @@ export const quiz: QuizQuestion[] = [
   },
   {
     "id": "qcm26",
-    "question": "Pour 8 370 unités vendues avec une marge sur coût variable unitaire de 50 €, quelle est la MCV totale (niveau descriptif) ?",
+    "question": "Pour 8 370 unités vendues avec une marge sur coût variable unitaire de 52 €, quelle est la MCV totale (niveau descriptif) ?",
     "choices": [
       "753 300 €",
       "8 370 €",
       "160 €",
-      "418 500 €"
+      "435 240 €"
     ],
     "answers": [
       3
     ],
-    "explanation": "MCV = 8 370 × 50 = 418 500 € (niveau descriptif : constat)."
+    "explanation": "MCV = 8 370 × 52 = 435 240 € (niveau descriptif : constat)."
   }
 ];

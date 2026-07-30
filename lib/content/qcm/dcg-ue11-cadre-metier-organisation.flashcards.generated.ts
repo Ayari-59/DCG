@@ -1,6 +1,6 @@
 // Généré par scripts/convert-qcm.mjs — ne pas modifier à la main.
-// Source : sources/UE 11 - CDG/QCM - refonte fil rouge/
-// Flashcards tirées du corrigé : énoncé au recto, justification au verso.
+// Source : sources/UE 11 - CDG/QCM/_json/
+// Flashcards tirées du QCM : énoncé au recto, justification au verso.
 import type { Flashcard } from "../types";
 
 export const flashcards: Flashcard[] = [
@@ -111,8 +111,8 @@ export const flashcards: Flashcard[] = [
   },
   {
     "id": "qcm22",
-    "front": "Boréal SI : MCV unitaire 50 €, 4 000 produits, charges fixes 200 000 €. Le résultat est :",
-    "back": "MCV globale = 50 × 4 000 = 200 000 € ; Résultat = 200 000 − 200 000 = 0 € : seuil de profitabilité atteint."
+    "front": "Boréal SI : MCV unitaire 52 €, 4 000 produits, charges fixes 208 000 €. Le résultat est :",
+    "back": "MCV globale = 52 × 4 000 = 208 000 € ; Résultat = 208 000 − 208 000 = 0 € : seuil de profitabilité atteint."
   },
   {
     "id": "qcm23",
@@ -126,8 +126,8 @@ export const flashcards: Flashcard[] = [
   },
   {
     "id": "qcm25",
-    "front": "Dans l'application Boréal SI (prix 90 €, coût variable unitaire 40 €), la marge sur coût variable unitaire est de :",
-    "back": "MCV unitaire = 90 − 40 = 50 €."
+    "front": "Dans l'application Boréal SI (prix 90 €, coût variable unitaire 38 €), la marge sur coût variable unitaire est de :",
+    "back": "MCV unitaire = 90 − 38 = 52 €."
   },
   {
     "id": "qcm26",

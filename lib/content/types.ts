@@ -42,12 +42,6 @@ export interface QuizQuestion {
    */
   answers: number[];
   explanation: string;
-  /**
-   * Vrai lorsque les propositions n'ont pas été écrites par l'auteur mais
-   * reconstituées : l'énoncé, la bonne réponse et la justification viennent
-   * de son corrigé, les distracteurs restent à relire.
-   */
-  distracteursARelire?: boolean;
 }
 
 export interface ChapterVideo {

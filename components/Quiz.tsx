@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { QuizQuestion } from "@/lib/content/types";
 import { getTheme } from "@/lib/content/theme";
-import { Icone } from "./Icones";
 
 interface Props {
   slug: string;
@@ -212,16 +211,6 @@ export function Quiz({ slug, questions }: Props) {
           <span className="font-semibold">{isCorrect ? "Bonne réponse ! " : "Incorrect. "}</span>
           {question.explanation}
         </div>
-      )}
-
-      {/* Les propositions reconstituées sont signalées : l'étudiant doit
-          savoir ce qui vient du manuel et ce qui ne s'y trouvait pas. */}
-      {validated && question.distracteursARelire && (
-        <p className="mt-3 flex items-start gap-2 text-xs leading-relaxed text-muted">
-          <Icone nom="info" className="mt-px h-3.5 w-3.5" />
-          Énoncé, bonne réponse et justification sont ceux du manuel. Les propositions fausses ont
-          été reconstituées et n&apos;ont pas encore été relues.
-        </p>
       )}
 
       <div className="mt-6 flex items-center justify-between gap-4">

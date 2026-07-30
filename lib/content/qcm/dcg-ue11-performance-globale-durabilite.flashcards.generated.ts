@@ -1,6 +1,6 @@
 // Généré par scripts/convert-qcm.mjs — ne pas modifier à la main.
-// Source : sources/UE 11 - CDG/QCM - refonte fil rouge/
-// Flashcards tirées du corrigé : énoncé au recto, justification au verso.
+// Source : sources/UE 11 - CDG/QCM/_json/
+// Flashcards tirées du QCM : énoncé au recto, justification au verso.
 import type { Flashcard } from "../types";
 
 export const flashcards: Flashcard[] = [
@@ -81,8 +81,8 @@ export const flashcards: Flashcard[] = [
   },
   {
     "id": "qcm16",
-    "front": "Une rupture de 170 unités est évitée grâce à l'analyse prédictive (MCV unitaire 50 €). Quelle marge est préservée ?",
-    "back": "Marge préservée = 170 × 50 = 8 500 € (valeur créée par l'anticipation de la rupture)."
+    "front": "Une rupture de 170 unités est évitée grâce à l'analyse prédictive (MCV unitaire 52 €). Quelle marge est préservée ?",
+    "back": "Marge préservée = 170 × 52 = 8 840 € (valeur créée par l'anticipation de la rupture)."
   },
   {
     "id": "qcm17",
@@ -131,7 +131,7 @@ export const flashcards: Flashcard[] = [
   },
   {
     "id": "qcm26",
-    "front": "Pour 8 370 unités vendues avec une marge sur coût variable unitaire de 50 €, quelle est la MCV totale (niveau descriptif) ?",
-    "back": "MCV = 8 370 × 50 = 418 500 € (niveau descriptif : constat)."
+    "front": "Pour 8 370 unités vendues avec une marge sur coût variable unitaire de 52 €, quelle est la MCV totale (niveau descriptif) ?",
+    "back": "MCV = 8 370 × 52 = 435 240 € (niveau descriptif : constat)."
   }
 ];

@@ -1,43 +1,31 @@
 /**
  * Conversion des QCM du manuel UE11.
  *
- * Deux sources, de richesse très inégale :
+ * Source : sources/UE 11 - CDG/QCM — le jeu complet de l'auteur, 482
+ * questions sur les dix-neuf chapitres. Chaque chapitre y existe en trois
+ * formats (MS Forms, Wooclap, JSON) ; on lit le JSON, qui porte tout :
+ * énoncé, propositions, bonnes réponses, justification.
  *
- * — `_json/chNN.json` donne des questions complètes : énoncé, propositions,
- *   bonnes réponses, justification. Il n'existe que pour les chapitres 1 et
- *   19, seuls retouchés lors de la refonte du fil rouge.
- * — `QCM_CORRIGES_tous_chapitres.docx` couvre les dix-neuf chapitres, mais
- *   c'est un corrigé : il donne l'énoncé, la lettre de la bonne réponse et
- *   la justification, jamais le texte des propositions.
+ * Le script en tire deux choses :
  *
- * Le script en tire donc deux choses de nature différente :
- *
- * 1. les QCM complets des chapitres 1 et 19 ;
- * 2. une flashcard par question pour les dix-neuf chapitres — l'énoncé au
- *    recto, la justification au verso. Rien n'y est inventé : le corrigé
- *    est déjà un couple question/réponse, il suffit de le retourner.
- *
- * Les propositions manquantes des chapitres 2 à 18 sont rédigées à part
- * (voir scripts/rediger-distracteurs.mjs) : ce script se contente de
- * préparer le chantier dans `_a-completer.json`.
+ * 1. le QCM de chaque chapitre, tel quel ;
+ * 2. une flashcard par question — l'énoncé au recto, la justification au
+ *    verso. Rien n'y est inventé : une question corrigée est déjà un
+ *    couple question/réponse, il suffit de le retourner.
  *
  *   node scripts/convert-qcm.mjs
  */
 
 import fs from "node:fs";
 import path from "node:path";
-import mammoth from "mammoth";
 
 const RACINE = process.cwd();
-const SOURCE = path.join(RACINE, "sources", "UE 11 - CDG", "QCM - refonte fil rouge");
-const CORRIGES = path.join(SOURCE, "QCM_CORRIGES_tous_chapitres.docx");
-const JSONS = path.join(SOURCE, "_json");
+const SOURCE = path.join(RACINE, "sources", "UE 11 - CDG", "QCM", "_json");
 const SORTIE = path.join(RACINE, "lib", "content", "qcm");
 
 /**
- * Les chapitres du corrigé suivent exactement l'ordre du programme sur le
- * site : la correspondance est donc positionnelle, et vérifiée par le
- * rapprochement des intitulés affiché en fin d'exécution.
+ * Les fichiers ch01 à ch19 suivent exactement l'ordre du programme sur le
+ * site : la correspondance est positionnelle.
  */
 const SLUGS = [
   "dcg-ue11-cadre-metier-organisation",
@@ -61,78 +49,40 @@ const SLUGS = [
   "dcg-ue11-performance-globale-durabilite",
 ];
 
-const LETTRES = ["A", "B", "C", "D", "E", "F"];
-
-/** Lit le corrigé : dix-neuf chapitres, énoncé + lettres + justification. */
-async function lireCorriges() {
-  const { value } = await mammoth.extractRawText({ path: CORRIGES });
-  const lignes = value.split("\n").map((l) => l.trim()).filter(Boolean);
-
-  const chapitres = [];
-  let courant = null;
-  let question = null;
-
-  for (const ligne of lignes) {
-    const entete = ligne.match(/^Chapitre\s+(\d+)\s*:\s*(.+)$/);
-    if (entete) {
-      courant = { numero: Number(entete[1]), titre: entete[2].trim(), questions: [] };
-      chapitres.push(courant);
-      question = null;
-      continue;
-    }
-
-    const enonce = ligne.match(/^(\d+)\.\s+(.+)$/);
-    if (enonce && courant) {
-      question = { numero: Number(enonce[1]), enonce: enonce[2].trim() };
-      courant.questions.push(question);
-      continue;
-    }
-
-    // « → Réponse : A, B, D. Silos, optimisation locale… »
-    const reponse = ligne.match(/^→\s*Réponse\s*:\s*([A-F](?:\s*,\s*[A-F])*)\s*\.?\s*(.*)$/);
-    if (reponse && question) {
-      question.lettres = reponse[1].split(",").map((l) => l.trim());
-      question.justification = reponse[2].trim();
-    }
-  }
-
-  return chapitres;
-}
-
-/** Lit les questions complètes, quand elles existent. */
-function lireJson(numero) {
-  const fichier = path.join(JSONS, `ch${String(numero).padStart(2, "0")}.json`);
-  if (!fs.existsSync(fichier)) return null;
-  return JSON.parse(fs.readFileSync(fichier, "utf8"));
-}
+/**
+ * Propositions d'une question vrai/faux.
+ *
+ * Le kit les laisse vides (« options: [] ») parce que les plateformes de
+ * diffusion les fournissent d'elles-mêmes. Le site, lui, ne les devine
+ * pas : sans ce repli, les questions vrai/faux s'affichaient sans aucune
+ * case à cocher et bloquaient le quiz. Le corrigé du manuel confirme la
+ * correspondance sans une exception sur 87 questions : Vrai = A, Faux = B.
+ */
+const VRAI_FAUX = ["Vrai", "Faux"];
 
 /**
- * Une question du corrigé devient une flashcard.
- *
- * La lettre de la bonne réponse est retirée : sans les propositions elle ne
- * désigne rien, et « B » au verso d'une carte n'apprend rien à personne.
- * C'est la justification qui porte le savoir.
+ * La justification d'une question vrai/faux commence par « Vrai : » ou
+ * « Faux : » — redondant sur une flashcard dont c'est tout le verso, mais
+ * indispensable tel quel dans un quiz. On la garde entière.
  */
 function versFlashcard(question, i) {
   return {
     id: `qcm${i + 1}`,
-    front: question.enonce,
-    back: question.justification,
+    front: String(question.q).trim(),
+    back: String(question.explain ?? "").trim(),
   };
 }
 
-function entete(slug, quoi) {
+function entete(quoi) {
   return `// Généré par scripts/convert-qcm.mjs — ne pas modifier à la main.
-// Source : sources/UE 11 - CDG/QCM - refonte fil rouge/
+// Source : sources/UE 11 - CDG/QCM/_json/
 // ${quoi}
 `;
 }
 
 /** Un slug devient un identifiant JavaScript : dcg-ue11-cout-cible → coutCible. */
 function variable(slug) {
-  return slug
-    .replace(/^dcg-ue11-/, "")
-    .replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase());
+  return slug.replace(/^dcg-ue11-/, "").replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase());
 }
 
 /**
@@ -141,30 +91,12 @@ function variable(slug) {
  * ne se remarque qu'au moment où une carte manque sur le site.
  */
 function ecrireIndex() {
-  const fichiers = fs
-    .readdirSync(SORTIE)
-    .filter((n) => n.endsWith(".generated.ts"));
-  const cartes = fichiers.filter((n) => n.includes(".flashcards."));
-  const quiz = fichiers.filter((n) => n.includes(".quiz."));
+  const imports = SLUGS.flatMap((slug) => [
+    `import { flashcards as fc${variable(slug)} } from "./${slug}.flashcards.generated";`,
+    `import { quiz as qz${variable(slug)} } from "./${slug}.quiz.generated";`,
+  ]);
 
-  const imports = [
-    ...cartes.map(
-      (n) =>
-        `import { flashcards as fc${variable(n.replace(".flashcards.generated.ts", ""))} } from "./${n.replace(".ts", "")}";`
-    ),
-    ...quiz.map(
-      (n) =>
-        `import { quiz as qz${variable(n.replace(".quiz.generated.ts", ""))} } from "./${n.replace(".ts", "")}";`
-    ),
-  ];
-
-  const table = (liste, suffixe, prefixe) =>
-    liste
-      .map((n) => {
-        const slug = n.replace(suffixe, "");
-        return `  "${slug}": ${prefixe}${variable(slug)},`;
-      })
-      .join("\n");
+  const table = (prefixe) => SLUGS.map((s) => `  "${s}": ${prefixe}${variable(s)},`).join("\n");
 
   fs.writeFileSync(
     path.join(SORTIE, "index.ts"),
@@ -172,119 +104,85 @@ function ecrireIndex() {
 import type { Flashcard, QuizQuestion } from "../types";
 ${imports.join("\n")}
 
-/** Flashcards tirées du corrigé QCM du manuel, par slug de chapitre. */
+/** Flashcards tirées des QCM du manuel, par slug de chapitre. */
 export const flashcardsQcmBySlug: Record<string, Flashcard[]> = {
-${table(cartes, ".flashcards.generated.ts", "fc")}
+${table("fc")}
 };
 
-/** QCM complets, là où les propositions existent dans les sources. */
+/** QCM du manuel, complets — ils remplacent les questions générées. */
 export const quizQcmBySlug: Record<string, QuizQuestion[]> = {
-${table(quiz, ".quiz.generated.ts", "qz")}
+${table("qz")}
 };
 `
   );
 }
 
-async function main() {
-  if (!fs.existsSync(CORRIGES)) {
-    console.error(`Corrigé introuvable : ${CORRIGES}`);
-    process.exit(1);
-  }
+function main() {
   fs.mkdirSync(SORTIE, { recursive: true });
 
-  const chapitres = await lireCorriges();
-  if (chapitres.length !== SLUGS.length) {
-    console.error(
-      `Le corrigé compte ${chapitres.length} chapitres, le programme ${SLUGS.length} : ` +
-        `la correspondance positionnelle n'est plus valable.`
-    );
-    process.exit(1);
+  // L'ancien état — deux chapitres complets, le reste en attente — laissait
+  // des fichiers que ce script ne réécrit plus ; on repart à blanc.
+  for (const ancien of fs.readdirSync(SORTIE)) {
+    fs.rmSync(path.join(SORTIE, ancien));
   }
 
-  const aCompleter = [];
   let cartes = 0;
-  let questionsCompletes = 0;
-  const rapport = [];
+  let questions = 0;
 
-  for (const [i, chapitre] of chapitres.entries()) {
-    const slug = SLUGS[i];
-    const complet = lireJson(chapitre.numero);
+  for (const [i, slug] of SLUGS.entries()) {
+    const fichier = path.join(SOURCE, `ch${String(i + 1).padStart(2, "0")}.json`);
+    if (!fs.existsSync(fichier)) {
+      console.error(`Fichier absent : ${fichier}`);
+      process.exit(1);
+    }
+    const { title, questions: brutes } = JSON.parse(fs.readFileSync(fichier, "utf8"));
 
-    // ── Flashcards : disponibles pour tous les chapitres ──────────────
-    const flashcards = chapitre.questions
-      .filter((q) => q.justification)
-      .map(versFlashcard);
+    const quiz = brutes.map((q, k) => ({
+      id: `qcm${k + 1}`,
+      question: String(q.q).trim(),
+      choices: q.options?.length ? q.options.map((o) => String(o).trim()) : VRAI_FAUX,
+      answers: [...q.correct].sort((a, b) => a - b),
+      explanation: String(q.explain ?? "").trim(),
+    }));
+
+    // Garde-fous : une question sans proposition ou dont une bonne réponse
+    // pointe hors des propositions bloque ou fausse le quiz.
+    for (const q of quiz) {
+      if (!q.choices.length) {
+        console.error(`${slug} · ${q.id} : aucune proposition`);
+        process.exit(1);
+      }
+      if (!q.answers.length || q.answers.some((a) => a < 0 || a >= q.choices.length)) {
+        console.error(`${slug} · ${q.id} : réponse hors des propositions`);
+        process.exit(1);
+      }
+    }
+
+    const flashcards = brutes.map(versFlashcard);
     cartes += flashcards.length;
+    questions += quiz.length;
 
     fs.writeFileSync(
+      path.join(SORTIE, `${slug}.quiz.generated.ts`),
+      entete("QCM du manuel, complet.") +
+        `import type { QuizQuestion } from "../types";\n\n` +
+        `export const quiz: QuizQuestion[] = ${JSON.stringify(quiz, null, 2)};\n`
+    );
+    fs.writeFileSync(
       path.join(SORTIE, `${slug}.flashcards.generated.ts`),
-      entete(slug, "Flashcards tirées du corrigé : énoncé au recto, justification au verso.") +
+      entete("Flashcards tirées du QCM : énoncé au recto, justification au verso.") +
         `import type { Flashcard } from "../types";\n\n` +
         `export const flashcards: Flashcard[] = ${JSON.stringify(flashcards, null, 2)};\n`
     );
 
-    // ── QCM : seulement là où les propositions existent ───────────────
-    if (complet) {
-      const quiz = complet.questions.map((q, k) => ({
-        id: `qcm${k + 1}`,
-        question: String(q.q).trim(),
-        choices: q.options.map((o) => String(o).trim()),
-        answers: [...q.correct].sort((a, b) => a - b),
-        explanation: String(q.explain ?? "").trim(),
-      }));
-      questionsCompletes += quiz.length;
-
-      fs.writeFileSync(
-        path.join(SORTIE, `${slug}.quiz.generated.ts`),
-        entete(slug, "QCM complet, propositions comprises.") +
-          `import type { QuizQuestion } from "../types";\n\n` +
-          `export const quiz: QuizQuestion[] = ${JSON.stringify(quiz, null, 2)};\n`
-      );
-      rapport.push(
-        `  ch${String(chapitre.numero).padStart(2)} ${flashcards.length
-          .toString()
-          .padStart(2)} cartes · ${quiz.length.toString().padStart(2)} questions complètes   ${chapitre.titre}`
-      );
-    } else {
-      // Le chantier des propositions manquantes, prêt à être rédigé.
-      aCompleter.push({
-        chapitre: chapitre.numero,
-        slug,
-        titre: chapitre.titre,
-        questions: chapitre.questions
-          .filter((q) => q.lettres?.length)
-          .map((q, k) => ({
-            id: `qcm${k + 1}`,
-            question: q.enonce,
-            /** Positions à respecter : le corrigé imprimé fait foi. */
-            answers: q.lettres.map((l) => LETTRES.indexOf(l)).sort((a, b) => a - b),
-            explanation: q.justification,
-          })),
-      });
-      rapport.push(
-        `  ch${String(chapitre.numero).padStart(2)} ${flashcards.length
-          .toString()
-          .padStart(2)} cartes · propositions à rédiger        ${chapitre.titre}`
-      );
-    }
+    console.log(
+      `  ch${String(i + 1).padStart(2)} ${String(quiz.length).padStart(3)} questions · ` +
+        `${String(flashcards.length).padStart(3)} cartes   ${(title ?? slug).replace(/^QCM — /, "").slice(0, 60)}`
+    );
   }
 
-  fs.writeFileSync(
-    path.join(SORTIE, "_a-completer.json"),
-    JSON.stringify(aCompleter, null, 2)
-  );
-
   ecrireIndex();
-
-  console.log(rapport.join("\n"));
-  const restant = aCompleter.reduce((n, c) => n + c.questions.length, 0);
-  console.log(
-    `\n${cartes} flashcards · ${questionsCompletes} questions complètes · ` +
-      `${restant} questions en attente de leurs propositions`
-  );
+  console.log(`\n${questions} questions · ${cartes} flashcards, sur ${SLUGS.length} chapitres`);
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+main();
