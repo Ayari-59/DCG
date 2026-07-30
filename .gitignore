@@ -45,3 +45,6 @@ next-env.d.ts
 
 # extraits temporaires de PDF
 extrait.txt
+
+# Extraction du référentiel encore approximative : pas publiée.
+lib/content/referentiel/unites.generated.json
