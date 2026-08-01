@@ -4,6 +4,8 @@ import { familiesOf } from "@/lib/content/theme";
 import { Reveal, Sheen } from "@/components/Reveal";
 import { TargetMark } from "@/components/Logo";
 import { Icone, type NomIcone } from "@/components/Icones";
+import { Portrait } from "@/components/Portrait";
+import { LIEN_LINKEDIN } from "@/lib/liens";
 
 const features: {
   icone: NomIcone;
@@ -148,6 +150,29 @@ export default function Home() {
                 </div>
               ))}
             </dl>
+          </Reveal>
+
+          <Reveal delay={440}>
+            <a
+              href={LIEN_LINKEDIN}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="lift mt-16 inline-flex items-center gap-4 rounded-2xl border border-white/15 bg-white/5 py-3 pl-3 pr-6 text-left backdrop-blur-md hover:border-white/30 hover:bg-white/10"
+            >
+              <Portrait petit />
+              <span className="min-w-0">
+                <span className="block font-serif text-lg font-bold leading-tight text-white">
+                  Mohamed Ayari
+                </span>
+                <span className="block text-[13px] text-white/55">
+                  Professeur de contrôle de gestion
+                </span>
+                <span className="mt-1 flex items-center gap-1.5 text-[13px] font-bold text-brand">
+                  <Icone nom="linkedin" className="h-3.5 w-3.5" />
+                  Suivre sur LinkedIn
+                </span>
+              </span>
+            </a>
           </Reveal>
         </div>
       </section>
