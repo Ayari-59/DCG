@@ -12,6 +12,33 @@ datasource db {
   provider = "postgresql"
 }
 
+/// Compte enseignant. Le fondateur invite ses collègues ; chaque
+/// enseignant gère ses propres classes dans le cahier de texte.
+model Enseignant {
+  id        String              @id @default(cuid())
+  email     String              @unique
+  prenom    String
+  /// « fondateur » invite, voit tout et règle la visibilité des
+  /// ressources ; « enseignant » gère ses classes.
+  role      String              @default("enseignant")
+  /// Empreinte scrypt du mot de passe, au format « sel.empreinte » (hex).
+  empreinte String
+  createdAt DateTime            @default(now())
+  sessions  SessionEnseignant[]
+  seances   Seance[]
+}
+
+model SessionEnseignant {
+  /// Empreinte SHA-256 du jeton : le jeton en clair ne vit que dans le cookie.
+  jeton        String     @id
+  enseignantId String
+  enseignant   Enseignant @relation(fields: [enseignantId], references: [id], onDelete: Cascade)
+  expire       DateTime
+  createdAt    DateTime   @default(now())
+
+  @@index([enseignantId])
+}
+
 model Seance {
   id        String   @id @default(cuid())
   /// Date de la séance en classe.
@@ -28,10 +55,15 @@ model Seance {
   remarques String?
   /// Une séance non publiée reste invisible côté étudiant.
   publiee   Boolean  @default(true)
+  /// L'enseignant qui a créé la séance ; chacun ne gère que les siennes,
+  /// le fondateur les voit toutes.
+  enseignantId String?
+  enseignant   Enseignant? @relation(fields: [enseignantId], references: [id], onDelete: SetNull)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([classe, date])
+  @@index([enseignantId])
 }
 
 /// Compte apprenant. Facultatif : le site entier se consulte sans compte,

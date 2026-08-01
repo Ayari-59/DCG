@@ -3,24 +3,142 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
-import { fermerSession, motDePasseValide, ouvrirSession, sessionOuverte } from "@/lib/auth";
-import { CLE_RESSOURCES_RESERVEES, RESSOURCES_RESERVABLES } from "@/lib/apprenant";
+import { motDePasseValide } from "@/lib/auth";
+import {
+  hacherMotDePasse,
+  motDePasseCorrespond,
+  CLE_RESSOURCES_RESERVEES,
+  RESSOURCES_RESERVABLES,
+} from "@/lib/apprenant";
+import {
+  enseignantConnecte,
+  estFondateur,
+  fermerSessionEnseignant,
+  ouvrirSessionEnseignant,
+} from "@/lib/enseignant";
+
+export type EtatProf = { erreur?: string; fait?: string };
+
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 async function exigerSession() {
-  if (!(await sessionOuverte())) throw new Error("Session expirée");
+  const enseignant = await enseignantConnecte();
+  if (!enseignant) throw new Error("Session expirée");
+  return enseignant;
 }
 
-export async function seConnecter(_etat: string | null, form: FormData): Promise<string | null> {
-  const saisi = String(form.get("motDePasse") ?? "");
-  if (!motDePasseValide(saisi)) return "Mot de passe incorrect.";
-  await ouvrirSession();
+async function exigerFondateur() {
+  const enseignant = await exigerSession();
+  if (!estFondateur(enseignant)) throw new Error("Réservé au fondateur");
+  return enseignant;
+}
+
+// ── Comptes ──────────────────────────────────────────────────────────
+
+/**
+ * Création du compte fondateur — une seule fois, tant que la table est
+ * vide. La clé d'activation est l'ADMIN_PASSWORD de l'environnement : ce
+ * qui protégeait hier l'espace entier ne sert plus qu'à l'amorcer.
+ */
+export async function creerFondateur(_: EtatProf, form: FormData): Promise<EtatProf> {
+  if ((await prisma.enseignant.count()) > 0) {
+    return { erreur: "Le compte fondateur existe déjà." };
+  }
+  if (!motDePasseValide(String(form.get("cleActivation") ?? ""))) {
+    return { erreur: "Clé d'activation incorrecte." };
+  }
+
+  const prenom = String(form.get("prenom") ?? "").trim();
+  const email = String(form.get("email") ?? "").trim().toLowerCase();
+  const motDePasse = String(form.get("motDePasse") ?? "");
+  if (!prenom) return { erreur: "Le prénom est requis." };
+  if (!EMAIL.test(email)) return { erreur: "L'adresse e-mail n'est pas valide." };
+  if (motDePasse.length < 8)
+    return { erreur: "Le mot de passe doit compter au moins 8 caractères." };
+
+  const fondateur = await prisma.enseignant.create({
+    data: { prenom, email, empreinte: hacherMotDePasse(motDePasse), role: "fondateur" },
+  });
+  await ouvrirSessionEnseignant(fondateur.id);
+  redirect("/prof");
+}
+
+export async function seConnecter(_: EtatProf, form: FormData): Promise<EtatProf> {
+  const email = String(form.get("email") ?? "").trim().toLowerCase();
+  const motDePasse = String(form.get("motDePasse") ?? "");
+
+  const enseignant = await prisma.enseignant.findUnique({ where: { email } });
+  // Même réponse que le compte existe ou non : ne renseigne pas un curieux.
+  if (!enseignant || !motDePasseCorrespond(motDePasse, enseignant.empreinte)) {
+    return { erreur: "Adresse ou mot de passe incorrect." };
+  }
+  await ouvrirSessionEnseignant(enseignant.id);
   redirect("/prof");
 }
 
 export async function seDeconnecter() {
-  await fermerSession();
+  await fermerSessionEnseignant();
   redirect("/prof");
 }
+
+/**
+ * Invitation d'un collègue : le fondateur crée le compte avec un mot de
+ * passe provisoire qu'il lui communique de vive voix — pas de service
+ * d'e-mail à configurer. Le collègue le change depuis son espace.
+ */
+export async function inviterCollegue(_: EtatProf, form: FormData): Promise<EtatProf> {
+  await exigerFondateur();
+
+  const prenom = String(form.get("prenom") ?? "").trim();
+  const email = String(form.get("email") ?? "").trim().toLowerCase();
+  const motDePasse = String(form.get("motDePasse") ?? "");
+  if (!prenom) return { erreur: "Le prénom est requis." };
+  if (!EMAIL.test(email)) return { erreur: "L'adresse e-mail n'est pas valide." };
+  if (motDePasse.length < 8)
+    return { erreur: "Le mot de passe provisoire doit compter au moins 8 caractères." };
+  if (await prisma.enseignant.findUnique({ where: { email } })) {
+    return { erreur: "Un compte existe déjà avec cette adresse." };
+  }
+
+  await prisma.enseignant.create({
+    data: { prenom, email, empreinte: hacherMotDePasse(motDePasse) },
+  });
+  revalidatePath("/prof");
+  return { fait: `Compte créé pour ${prenom}. Communiquez-lui son mot de passe provisoire.` };
+}
+
+export async function retirerCollegue(form: FormData) {
+  await exigerFondateur();
+  const id = String(form.get("id") ?? "");
+  const cible = id ? await prisma.enseignant.findUnique({ where: { id } }) : null;
+  // Le fondateur ne peut pas être retiré — il n'y aurait plus personne
+  // pour administrer. Les séances du collègue retiré survivent
+  // (enseignantId passe à null) : le fondateur les récupère.
+  if (cible && cible.role !== "fondateur") {
+    await prisma.enseignant.delete({ where: { id } });
+  }
+  revalidatePath("/prof");
+}
+
+export async function changerMotDePasse(_: EtatProf, form: FormData): Promise<EtatProf> {
+  const enseignant = await exigerSession();
+  const actuel = String(form.get("actuel") ?? "");
+  const nouveau = String(form.get("nouveau") ?? "");
+
+  if (!motDePasseCorrespond(actuel, enseignant.empreinte)) {
+    return { erreur: "Le mot de passe actuel est incorrect." };
+  }
+  if (nouveau.length < 8)
+    return { erreur: "Le nouveau mot de passe doit compter au moins 8 caractères." };
+
+  await prisma.enseignant.update({
+    where: { id: enseignant.id },
+    data: { empreinte: hacherMotDePasse(nouveau) },
+  });
+  return { fait: "Mot de passe changé." };
+}
+
+// ── Cahier de texte ──────────────────────────────────────────────────
 
 /** Une date de formulaire vide vaut « non renseignée ». */
 function dateOuNull(valeur: FormDataEntryValue | null): Date | null {
@@ -35,8 +153,16 @@ function texteOuNull(valeur: FormDataEntryValue | null): string | null {
   return s || null;
 }
 
+/** Chacun ne touche qu'à ses séances ; le fondateur, à toutes. */
+async function seanceModifiable(id: string, enseignant: { id: string; role: string }) {
+  const seance = await prisma.seance.findUnique({ where: { id } });
+  if (!seance) return null;
+  if (enseignant.role !== "fondateur" && seance.enseignantId !== enseignant.id) return null;
+  return seance;
+}
+
 export async function enregistrerSeance(form: FormData) {
-  await exigerSession();
+  const enseignant = await exigerSession();
 
   const id = texteOuNull(form.get("id"));
   const date = dateOuNull(form.get("date"));
@@ -58,8 +184,12 @@ export async function enregistrerSeance(form: FormData) {
     publiee: form.get("publiee") === "on",
   };
 
-  if (id) await prisma.seance.update({ where: { id }, data: donnees });
-  else await prisma.seance.create({ data: donnees });
+  if (id) {
+    if (!(await seanceModifiable(id, enseignant))) throw new Error("Séance introuvable");
+    await prisma.seance.update({ where: { id }, data: donnees });
+  } else {
+    await prisma.seance.create({ data: { ...donnees, enseignantId: enseignant.id } });
+  }
 
   revalidatePath("/classe");
   revalidatePath("/prof");
@@ -67,21 +197,24 @@ export async function enregistrerSeance(form: FormData) {
 }
 
 export async function supprimerSeance(form: FormData) {
-  await exigerSession();
+  const enseignant = await exigerSession();
   const id = String(form.get("id") ?? "");
-  if (id) await prisma.seance.delete({ where: { id } });
+  if (id && (await seanceModifiable(id, enseignant))) {
+    await prisma.seance.delete({ where: { id } });
+  }
   revalidatePath("/classe");
   revalidatePath("/prof");
   redirect("/prof");
 }
 
+// ── Visibilité des ressources ────────────────────────────────────────
+
 /**
  * Enregistre les types de ressources réservés aux apprenants connectés.
- * L'application est faite côté serveur au rendu des chapitres : ce qui est
- * réservé n'est pas envoyé au navigateur d'un visiteur non connecté.
+ * Décision d'établissement, pas de classe : réservée au fondateur.
  */
 export async function enregistrerRessourcesReservees(form: FormData) {
-  await exigerSession();
+  await exigerFondateur();
   const valides = new Set(RESSOURCES_RESERVABLES.map((r) => r.id));
   const ids = form
     .getAll("ressource")
