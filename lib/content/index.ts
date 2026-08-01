@@ -124,22 +124,41 @@ const UE_PUBLIEES = ["UE11", "UE3"];
  *   chapters: p.chapters.map((c) =>
  *     exercisesBySlug[c.slug]?.length ? { ...c, exercises: exercisesBySlug[c.slug] } : c)
  */
+/** Nombre de cartes visé par chapitre : une session et quelques restes. */
+const TAILLE_PAQUET = 25;
+
+/**
+ * Composition du paquet de flashcards d'un chapitre, arrêtée avec
+ * l'auteur : les cartes rédigées restent la base — définitions et
+ * formules, ce que les QCM ne portent pas — et quelques cartes tirées de
+ * ses QCM les complètent jusqu'à vingt-cinq. Pas davantage : ses
+ * questions vivent déjà dans l'onglet Quiz, les dupliquer toutes en
+ * cartes faisait un paquet de quarante et un mur devant l'étudiant.
+ * Le complément est régulièrement espacé le long du chapitre, comme la
+ * sélection du quiz.
+ */
+function paquetDeCartes(c: Chapter) {
+  const base = c.flashcards;
+  const reserve = flashcardsQcmBySlug[c.slug] ?? [];
+  const manque = Math.min(Math.max(0, TAILLE_PAQUET - base.length), reserve.length);
+  if (manque === 0) return base;
+
+  const retenues = new Set<number>();
+  for (let k = 0; k < manque; k++) {
+    let i = Math.round((k * (reserve.length - 1)) / (manque - 1 || 1));
+    while (retenues.has(i)) i++;
+    retenues.add(i);
+  }
+  return [...base, ...[...retenues].sort((a, b) => a - b).map((i) => reserve[i])];
+}
+
 export const programs: Program[] = rawPrograms
   .filter((p) => UE_PUBLIEES.includes(p.ue))
   .map((p) => ({
     ...p,
     chapters: p.chapters.map((c) => ({
       ...c,
-      /*
-       * Les cartes tirées des QCM de l'auteur remplacent les cartes
-       * générées, comme son QCM remplace les questions générées. Les deux
-       * jeux couvraient les mêmes notions : les cumuler donnait plus de
-       * quarante cartes par chapitre — un mur — dont la moitié n'était
-       * pas de sa main.
-       */
-      flashcards: flashcardsQcmBySlug[c.slug]?.length
-        ? flashcardsQcmBySlug[c.slug]
-        : c.flashcards,
+      flashcards: paquetDeCartes(c),
       quiz: quizQcmBySlug[c.slug]?.length ? quizQcmBySlug[c.slug] : c.quiz,
       ...(methodesBySlug[c.slug]?.length ? { methodes: methodesBySlug[c.slug] } : {}),
       ...(annalesBySlug[c.slug]?.length ? { annales: annalesBySlug[c.slug] } : {}),
