@@ -22,6 +22,8 @@ try {
 export default defineConfig({
   schema: "prisma/schema.prisma",
   datasource: {
-    url: process.env.DATABASE_URL ?? "",
+    // Même tolérance que lib/db.ts : l'intégration Neon de Vercel nomme
+    // sa variable STORAGE_URL.
+    url: process.env.DATABASE_URL ?? process.env.STORAGE_URL ?? "",
   },
 });

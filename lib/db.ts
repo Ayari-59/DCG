@@ -8,13 +8,20 @@ import { PrismaPg } from "@prisma/adapter-pg";
  * sa propre connexion.
  */
 
+/**
+ * L'intégration Neon de Vercel nomme sa variable STORAGE_URL ; en local et
+ * ailleurs elle s'appelle DATABASE_URL. Le code accepte les deux plutôt
+ * que d'exiger un renommage à chaque environnement.
+ */
+const urlBase = () => process.env.DATABASE_URL ?? process.env.STORAGE_URL;
+
 /** La base n'est pas indispensable au site : les cours restent statiques. */
-export const dbConfigured = Boolean(process.env.DATABASE_URL);
+export const dbConfigured = Boolean(urlBase());
 
 const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
 
 function creerClient(): PrismaClient {
-  const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
+  const adapter = new PrismaPg({ connectionString: urlBase() });
   return new PrismaClient({ adapter });
 }
 

@@ -55,9 +55,10 @@ export default function ConfidentialitePage() {
         <section>
           <h2 className="font-serif text-xl font-bold text-ink">Où et combien de temps</h2>
           <p className="mt-2">
-            Les données sont hébergées dans une base PostgreSQL fournie par Neon Inc. Elles sont
-            conservées tant que le compte existe, et supprimées avec lui. Les sessions de
-            connexion expirent après 90 jours.
+            Les données sont hébergées dans une base PostgreSQL fournie par Neon Inc., située
+            dans l&apos;Union européenne (Francfort, Allemagne). Elles sont conservées tant que
+            le compte existe, et supprimées avec lui. Les sessions de connexion expirent après
+            90 jours.
           </p>
         </section>
 
