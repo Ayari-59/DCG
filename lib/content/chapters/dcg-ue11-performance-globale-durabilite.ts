@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-performance-globale-durabilite.
  */
 export const performanceGlobaleDurabilite: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "aNjmqO_ox18", title: "Performance globale, durabilité et contrôle de gestion numérique" }],
   description:
     "Du pilotage financier au pilotage multidimensionnel : performance globale et ses cinq dimensions, critères ESG, reporting de durabilité (CSRD) et prix de cession interne. Puis la transformation numérique du contrôle de gestion : ERP, Business Intelligence, Data Analytics, Big Data, IA et contrôleur augmenté.",
   flashcards: [
