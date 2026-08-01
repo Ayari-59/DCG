@@ -180,6 +180,16 @@ export function Nav({
 
       <CommandPalette index={indexRecherche} />
 
+      {/* L'emplacement du compte, réservé depuis la refonte du menu. */}
+      <Link
+        href="/compte"
+        className={`hidden rounded-lg border border-line px-3 py-1.5 text-sm font-semibold transition hover:border-brand hover:text-ink lg:block ${
+          actif("/compte") ? "border-brand text-brand" : "text-muted"
+        }`}
+      >
+        Mon espace
+      </Link>
+
       {/* ── Mobile ──────────────────────────────────────────────── */}
       <button
         onClick={() => setDrawer((d) => !d)}
@@ -234,6 +244,14 @@ export function Nav({
             ))}
           </ul>
 
+          <div className="mt-6 border-t border-line pt-5">
+            <Link
+              href="/compte"
+              className="block rounded-xl border border-line bg-white px-3 py-2.5 text-center font-bold text-ink"
+            >
+              Mon espace
+            </Link>
+          </div>
         </div>
       )}
     </div>

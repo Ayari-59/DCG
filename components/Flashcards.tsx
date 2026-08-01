@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { Flashcard } from "@/lib/content/types";
 import { getTheme } from "@/lib/content/theme";
 import { TargetMark } from "./Logo";
+import { synchroniser } from "./sync";
 
 interface Props {
   slug: string;
@@ -62,6 +63,7 @@ export function Flashcards({ slug, cards }: Props) {
   function persist(next: Set<string>) {
     setKnown(next);
     localStorage.setItem(storageKey, JSON.stringify([...next]));
+    synchroniser({ chapitre: slug, cartes: [...next] });
   }
 
   function markKnown() {

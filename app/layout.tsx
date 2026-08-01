@@ -95,6 +95,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <Link href="/a-propos" className="transition hover:text-white/80">
                   À propos
                 </Link>
+                <Link href="/confidentialite" className="transition hover:text-white/80">
+                  Confidentialité
+                </Link>
                 <a
                   href="https://www.youtube.com/@Objectif-DCG"
                   target="_blank"

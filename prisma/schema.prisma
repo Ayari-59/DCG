@@ -33,3 +33,56 @@ model Seance {
 
   @@index([classe, date])
 }
+
+/// Compte apprenant. Facultatif : le site entier se consulte sans compte,
+/// celui-ci n'ajoute que la sauvegarde de la progression et l'accès aux
+/// ressources que l'auteur choisit de réserver.
+model Apprenant {
+  id           String             @id @default(cuid())
+  email        String             @unique
+  prenom       String
+  /// Empreinte scrypt du mot de passe, au format « sel.empreinte » (hex).
+  /// Le mot de passe lui-même n'est jamais stocké.
+  empreinte    String
+  /// Horodatage du consentement donné à l'inscription (RGPD).
+  consentement DateTime
+  createdAt    DateTime           @default(now())
+  sessions     SessionApprenant[]
+  progressions Progression[]
+}
+
+model SessionApprenant {
+  /// Empreinte SHA-256 du jeton : le jeton en clair ne vit que dans le
+  /// cookie de l'apprenant — un vol de base ne vole pas les sessions.
+  jeton       String    @id
+  apprenantId String
+  apprenant   Apprenant @relation(fields: [apprenantId], references: [id], onDelete: Cascade)
+  expire      DateTime
+  createdAt   DateTime  @default(now())
+
+  @@index([apprenantId])
+}
+
+/// Progression d'un apprenant sur un chapitre : meilleur score au quiz et
+/// cartes acquises. Une ligne par couple apprenant × chapitre.
+model Progression {
+  id          String    @id @default(cuid())
+  apprenantId String
+  apprenant   Apprenant @relation(fields: [apprenantId], references: [id], onDelete: Cascade)
+  /// Slug du chapitre (ex. « dcg-ue11-methode-abc »).
+  chapitre    String
+  quizScore   Int?
+  quizTotal   Int?
+  /// Identifiants des flashcards acquises.
+  cartes      Json      @default("[]")
+  updatedAt   DateTime  @updatedAt
+
+  @@unique([apprenantId, chapitre])
+}
+
+/// Réglages du site modifiables depuis l'espace professeur — notamment la
+/// liste des ressources réservées aux apprenants connectés.
+model Reglage {
+  cle    String @id
+  valeur String
+}

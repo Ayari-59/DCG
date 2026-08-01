@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { QuizQuestion } from "@/lib/content/types";
 import { getTheme } from "@/lib/content/theme";
+import { synchroniser } from "./sync";
 
 interface Props {
   slug: string;
@@ -70,6 +71,9 @@ export function Quiz({ slug, questions }: Props) {
   const next = useCallback(() => {
     if (current + 1 >= questions.length) {
       setFinished(true);
+      // Le compte conserve lui aussi le meilleur score : la fusion est
+      // faite côté serveur, l'envoi peut donc partir sans condition.
+      synchroniser({ chapitre: slug, quizScore: score, quizTotal: questions.length });
       if (best === null || score > best) {
         setBest(score);
         localStorage.setItem(storageKey, String(score));
