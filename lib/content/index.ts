@@ -161,3 +161,28 @@ export function getProgram(level: string): Program | undefined {
 export function getProgramByUe(ue: string): Program | undefined {
   return programs.find((p) => p.ue.toLowerCase() === ue.toLowerCase());
 }
+
+/**
+ * Estimation du travail total d'un chapitre — pas seulement sa lecture.
+ *
+ * « 10 h de cours » ne comptait que le temps de lecture des leçons, comme
+ * si les vidéos, les quiz, les cartes et les annales ne demandaient rien.
+ * Les barèmes sont volontairement prudents : huit minutes par vidéo (leur
+ * durée réelle), une minute par question de quiz, trente secondes par
+ * flashcard pour une seule passe, trente minutes par annale — lire le
+ * sujet et comprendre son corrigé, pas le rédiger. Le chiffre affiché
+ * reste une estimation : il est présenté avec un « ≈ ».
+ */
+export function minutesDeTravail(c: Chapter): number {
+  return (
+    c.durationMin +
+    (c.videos?.length ?? 0) * 8 +
+    c.quiz.length * 1 +
+    Math.round(c.flashcards.length * 0.5) +
+    (c.annales?.length ?? 0) * 30
+  );
+}
+
+export function heuresDeTravail(chapitres: Chapter[]): number {
+  return Math.round(chapitres.reduce((n, c) => n + minutesDeTravail(c), 0) / 60);
+}

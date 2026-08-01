@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { programs, allChapters } from "@/lib/content";
+import { programs, allChapters, heuresDeTravail } from "@/lib/content";
 import { familiesOf } from "@/lib/content/theme";
 import { Reveal, Sheen } from "@/components/Reveal";
 import { TargetMark } from "@/components/Logo";
@@ -156,7 +156,7 @@ export default function Home() {
             <dl className="mx-auto mt-20 grid max-w-3xl grid-cols-2 gap-y-10 sm:grid-cols-4">
               {[
                 { v: allChapters.length, l: "chapitres" },
-                { v: `${Math.round(totals.minutes / 60)} h`, l: "de cours" },
+                { v: `≈ ${heuresDeTravail(allChapters)} h`, l: "de travail" },
                 { v: totals.figures, l: "schémas" },
                 { v: totals.cards + totals.questions, l: "cartes & questions" },
               ].map((s) => (

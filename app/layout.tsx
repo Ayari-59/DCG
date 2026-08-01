@@ -5,7 +5,7 @@ import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { Nav, type LienProgramme } from "@/components/Nav";
-import { programs } from "@/lib/content";
+import { programs, heuresDeTravail } from "@/lib/content";
 import { construireIndex } from "@/lib/content/search";
 import { getTheme } from "@/lib/content/theme";
 import "./globals.css";
@@ -38,7 +38,7 @@ const programmes: LienProgramme[] = programs.map((p) => ({
   ue: p.ue,
   titre: p.title,
   chapitres: p.chapters.length,
-  heures: Math.round(p.chapters.reduce((n, c) => n + c.durationMin, 0) / 60),
+  heures: heuresDeTravail(p.chapters),
   bar: getTheme(p.chapters[0].slug).bar,
 }));
 

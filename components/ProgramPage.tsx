@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Chapter, Program } from "@/lib/content/types";
+import { heuresDeTravail } from "@/lib/content";
 import { getTheme } from "@/lib/content/theme";
 import { Reveal } from "@/components/Reveal";
 import { Icone } from "@/components/Icones";
@@ -18,8 +19,8 @@ export function ProgramPage({ program }: { program: Program }) {
   const stats = [
     { value: program.chapters.length, label: "chapitres", color: "text-navy" },
     {
-      value: `${Math.round(totals.minutes / 60)} h`,
-      label: "de cours",
+      value: `≈ ${heuresDeTravail(program.chapters)} h`,
+      label: "de travail",
       color: "text-brand",
     },
     ...(totals.videos

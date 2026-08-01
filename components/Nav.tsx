@@ -145,7 +145,7 @@ export function Nav({
                       {p.titre}
                     </span>
                     <span className="block text-xs text-muted">
-                      {p.chapitres} chapitres · {p.heures} h
+                      {p.chapitres} chapitres · ≈ {p.heures} h de travail
                     </span>
                   </span>
                 </Link>
