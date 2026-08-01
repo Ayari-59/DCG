@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import Link from "next/link";
@@ -40,13 +42,29 @@ const programmes: LienProgramme[] = programs.map((p) => ({
   bar: getTheme(p.chapters[0].slug).bar,
 }));
 
+/**
+ * Image de fond du site, choisie par l'auteur : déposer fond.jpg (ou
+ * .jpeg, .png, .webp) dans public/ suffit, la retirer revient au fond
+ * papier uni. L'image passe sous un voile papier presque opaque — réglé
+ * dans globals.css — pour que la lecture ne paie rien.
+ */
+function imageDeFond(): string | undefined {
+  return ["jpg", "jpeg", "png", "webp"]
+    .map((ext) => `fond.${ext}`)
+    .find((nom) => fs.existsSync(path.join(process.cwd(), "public", nom)));
+}
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const fond = imageDeFond();
   return (
     <html
       lang="fr"
       className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
+      <body
+        className={`flex min-h-full flex-col ${fond ? "avec-fond" : ""}`}
+        style={fond ? ({ "--image-de-fond": `url(/${fond})` } as React.CSSProperties) : undefined}
+      >
         <header className="no-print sticky top-0 z-30 border-b border-line/80 bg-paper/70 backdrop-blur-xl backdrop-saturate-150">
           <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-3">
             <Link href="/" aria-label="Objectif-DCG.fr — accueil" className="transition hover:opacity-85">

@@ -98,6 +98,34 @@ table,
 
 /* ── Matière ─────────────────────────────────────────────────────────── */
 
+/*
+ * Image de fond sous voile papier. L'image est fixe et couvre l'écran ;
+ * le voile — la couleur papier à 92 % — la laisse seulement affleurer,
+ * pour que le texte se lise comme sur fond uni. Monter l'opacité du
+ * voile efface l'image, la baisser la révèle.
+ * Le pseudo-élément porte l'image ET le voile : le fond du body reste
+ * transparent, sans quoi il peindrait par-dessus.
+ */
+.avec-fond {
+  background: transparent;
+}
+.avec-fond::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgb(249 248 246 / 0.92), rgb(249 248 246 / 0.92)),
+    var(--image-de-fond);
+  background-size: cover;
+  background-position: center;
+}
+@media print {
+  .avec-fond::before {
+    display: none;
+  }
+}
+
 /* Grain fin : casse l'aplat numérique et donne de la matière aux fonds. */
 .grain::after {
   content: "";
