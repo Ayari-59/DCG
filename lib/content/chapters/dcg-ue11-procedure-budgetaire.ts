@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-procedure-budgetaire.generated"
  */
 export const procedureBudgetaire: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "NDuevSYElNM", title: "Procédure budgétaire" }],
   description:
     "La démarche budgétaire comme outil de pilotage : fondements et finalités du budget, articulation plan — programmes — budgets, cycle annuel et navette budgétaire, centres de responsabilité, budget flexible, BBZ, et regard critique (slack, Beyond Budgeting).",
   flashcards: [

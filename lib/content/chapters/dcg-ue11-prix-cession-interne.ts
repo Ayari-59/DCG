@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-prix-cession-interne.generated"
  */
 export const prixCessionInterne: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "R5A7gsKeAUA", title: "Prix de cession interne" }],
   description:
     "Valorisation des échanges entre centres de responsabilité : définition et objectifs du prix de cession interne, modes de fixation (prix de marché, coût réel, coût variable, coût standard, prix négocié), impact sur l'évaluation des centres et convergence des objectifs locaux avec la performance globale.",
   flashcards: [

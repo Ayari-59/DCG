@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-gestion-approvisionnements.gene
  */
 export const gestionApprovisionnements: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "o8F31-fMiMU", title: "La gestion des stocks" }],
   description:
     "Coûts des stocks (passation, possession, rupture), modèle de Wilson (Q*, n*, T*) et ses adaptations — stock de sécurité, stock d'alerte, tarif dégressif, avenir aléatoire — jusqu'à la budgétisation des approvisionnements et le pilotage de la supply chain.",
   flashcards: [
