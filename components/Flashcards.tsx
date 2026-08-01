@@ -53,7 +53,16 @@ export function Flashcards({ slug, cards }: Props) {
 
   useEffect(() => {
     const saved = localStorage.getItem(storageKey);
-    const savedKnown = saved ? new Set<string>(JSON.parse(saved) as string[]) : new Set<string>();
+    /*
+     * Le paquet évolue avec le contenu : des cartes acquises autrefois
+     * peuvent ne plus exister. On ne garde que les identifiants encore
+     * présents, sans quoi les compteurs dérivent — jusqu'à annoncer plus
+     * de cartes acquises que le chapitre n'en compte.
+     */
+    const existantes = new Set(cards.map((c) => c.id));
+    const savedKnown = new Set<string>(
+      (saved ? (JSON.parse(saved) as string[]) : []).filter((id) => existantes.has(id))
+    );
     setKnown(savedKnown);
     nouvelleSession(savedKnown);
     setLoaded(true);

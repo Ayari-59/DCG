@@ -131,11 +131,15 @@ export const programs: Program[] = rawPrograms
     chapters: p.chapters.map((c) => ({
       ...c,
       /*
-       * Les cartes tirées du corrigé QCM de l'auteur s'ajoutent à celles
-       * du chapitre ; son QCM, lui, remplace celui qui existait — il est
-       * plus fourni et c'est le sien.
+       * Les cartes tirées des QCM de l'auteur remplacent les cartes
+       * générées, comme son QCM remplace les questions générées. Les deux
+       * jeux couvraient les mêmes notions : les cumuler donnait plus de
+       * quarante cartes par chapitre — un mur — dont la moitié n'était
+       * pas de sa main.
        */
-      flashcards: [...c.flashcards, ...(flashcardsQcmBySlug[c.slug] ?? [])],
+      flashcards: flashcardsQcmBySlug[c.slug]?.length
+        ? flashcardsQcmBySlug[c.slug]
+        : c.flashcards,
       quiz: quizQcmBySlug[c.slug]?.length ? quizQcmBySlug[c.slug] : c.quiz,
       ...(methodesBySlug[c.slug]?.length ? { methodes: methodesBySlug[c.slug] } : {}),
       ...(annalesBySlug[c.slug]?.length ? { annales: annalesBySlug[c.slug] } : {}),
