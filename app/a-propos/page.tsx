@@ -338,17 +338,14 @@ export default function AProposPage() {
             <h2 className="font-serif text-3xl font-bold tracking-[-0.02em] text-ink">
               Ce qui arrive
             </h2>
+            {/* Le cahier de texte n'est pas lié : la page /classe est
+                réservée aux étudiants de l'auteur, qui en reçoivent
+                l'adresse directement. */}
             <p className="mt-4 text-[17px] leading-relaxed text-muted">
-              Un{" "}
-              <Link
-                href="/classe"
-                className="font-semibold text-brand underline-offset-2 hover:underline"
-              >
-                cahier de texte
-              </Link>{" "}
-              suit les séances et le travail à faire, chaque entrée renvoyant aux sections du cours
-              concernées. Viendront ensuite le suivi de progression personnelle et un plan de
-              révision déduit du calendrier.
+              Un <strong className="font-semibold text-ink">cahier de texte</strong> suit les
+              séances et le travail à faire de la classe de l&apos;auteur, chaque entrée renvoyant
+              aux sections du cours concernées. Viendront ensuite le suivi de progression
+              personnelle et un plan de révision déduit du calendrier.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               {programs.map((p) => (

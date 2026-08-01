@@ -114,14 +114,12 @@ export function Nav({
             setOuvert((o) => (o === "ressources" ? null : "ressources"))
           }
         />
-        <Link
-          href="/classe"
-          className={`rounded-lg px-3 py-2 transition hover:bg-white hover:text-ink ${
-            actif("/classe") ? "text-brand" : ""
-          }`}
-        >
-          Ma classe
-        </Link>
+        {/*
+         * « Ma classe » et « Espace prof » ne figurent pas dans le menu :
+         * ces pages concernent la classe de l'auteur, pas le visiteur. Elles
+         * restent servies à leur adresse (/classe, /prof), communiquée
+         * directement aux étudiants.
+         */}
       </nav>
 
       {ouvert === "programmes" && (
@@ -182,14 +180,6 @@ export function Nav({
 
       <CommandPalette index={indexRecherche} />
 
-      {/* Emplacement du compte : aujourd'hui l'espace professeur. */}
-      <Link
-        href="/prof"
-        className="hidden rounded-lg border border-line px-3 py-1.5 text-sm font-semibold text-muted transition hover:border-brand hover:text-ink lg:block"
-      >
-        Espace prof
-      </Link>
-
       {/* ── Mobile ──────────────────────────────────────────────── */}
       <button
         onClick={() => setDrawer((d) => !d)}
@@ -244,20 +234,6 @@ export function Nav({
             ))}
           </ul>
 
-          <div className="mt-6 flex flex-col gap-2 border-t border-line pt-5">
-            <Link
-              href="/classe"
-              className="rounded-xl px-3 py-2.5 font-semibold text-ink"
-            >
-              Ma classe
-            </Link>
-            <Link
-              href="/prof"
-              className="rounded-xl px-3 py-2.5 font-semibold text-muted"
-            >
-              Espace professeur
-            </Link>
-          </div>
         </div>
       )}
     </div>
