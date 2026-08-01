@@ -69,17 +69,6 @@ export interface Annale {
   blocks: ContentBlock[];
 }
 
-/**
- * Champ de réponse défini par l'auteur pour un exercice — l'étage
- * « cellules précises » : quand il est renseigné, il remplace la
- * détection automatique des consignes.
- */
-export interface ChampReponse {
-  intitule: string;
-  type: "nombre" | "texte";
-  unite?: string;
-}
-
 export interface Exercise {
   id: string;
   /** Repère du cahier source : « A1.1 », « Cas2 »… */
@@ -89,8 +78,6 @@ export interface Exercise {
   difficulty?: number;
   durationMin?: number;
   statement: ContentBlock[];
-  /** Cellules de réponse définies par l'auteur (facultatif). */
-  champs?: ChampReponse[];
   /** Vide si le cahier de corrigés ne couvre pas cet exercice. */
   correction: ContentBlock[];
 }

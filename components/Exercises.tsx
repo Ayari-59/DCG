@@ -1,32 +1,25 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import type { Exercise } from "@/lib/content/types";
 import { Blocks } from "./ContentBlocks";
 import { Icone } from "./Icones";
 import { synchroniser } from "./sync";
-import {
-  ReponseExercice,
-  aRepondu as reponseEngagee,
-  type ReponsesExercice,
-} from "./ReponseExercice";
 
 /**
- * Applications : répondre avant de comparer.
+ * Applications : chercher sur son brouillon, comparer, se situer.
  *
- * Le corrigé reste fermé tant que l'apprenant n'a pas posé sa réponse —
- * c'est l'engagement qui fait travailler, pas la lecture de la solution.
- * Une échappatoire assumée existe (« voir le corrigé sans répondre »),
- * mais c'est elle qui doit se justifier, pas l'inverse. Corrigé ouvert,
- * l'apprenant se positionne : Réussi, Partiel, À revoir. La réponse reste
- * dans son navigateur ; le statut, lui, part vers son compte s'il est
- * connecté et nourrit son tableau de bord.
+ * Pas de zone de saisie — essayée puis retirée à la demande de l'auteur :
+ * un exercice de contrôle de gestion se travaille sur un brouillon, pas
+ * dans un formulaire. Le site garde l'essentiel : le corrigé, et
+ * l'auto-évaluation une fois la comparaison faite — Réussi, Partiel,
+ * À revoir. Le statut part vers le compte si l'apprenant est connecté et
+ * nourrit son tableau de bord.
  */
 
 export type StatutApplication = "reussi" | "partiel" | "a-revoir";
 
 interface EtatExercice {
-  reponses?: ReponsesExercice;
   statut?: StatutApplication;
 }
 
@@ -76,18 +69,15 @@ function ExerciseCard({
   exercise,
   index,
   etat,
-  onReponse,
   onStatut,
 }: {
   exercise: Exercise;
   index: number;
   etat: EtatExercice;
-  onReponse: (reponses: ReponsesExercice) => void;
   onStatut: (statut: StatutApplication) => void;
 }) {
   const [open, setOpen] = useState(index === 0);
   const [showCorrection, setShowCorrection] = useState(false);
-  const aRepondu = reponseEngagee(etat.reponses ?? {});
 
   return (
     <article className="overflow-hidden rounded-xl border border-line bg-white shadow-sm">
@@ -131,33 +121,15 @@ function ExerciseCard({
         <div className="border-t border-line px-5 py-6 sm:px-7">
           <Blocks blocks={exercise.statement} />
 
-          {/* ── Vos réponses, consigne par consigne ───────────────── */}
-          <ReponseExercice
-            exercise={exercise}
-            reponses={etat.reponses ?? {}}
-            onChange={onReponse}
-          />
-
           {exercise.correction.length > 0 ? (
-            <div className="mt-5">
+            <div className="mt-8">
               {!showCorrection ? (
-                <div className="flex flex-wrap items-center gap-4">
-                  <button
-                    onClick={() => setShowCorrection(true)}
-                    disabled={!aRepondu}
-                    className="rounded-lg bg-ink px-5 py-2.5 text-sm font-medium text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
-                  >
-                    Comparer au corrigé
-                  </button>
-                  {!aRepondu && (
-                    <button
-                      onClick={() => setShowCorrection(true)}
-                      className="text-xs text-muted underline-offset-2 hover:underline"
-                    >
-                      voir le corrigé sans répondre
-                    </button>
-                  )}
-                </div>
+                <button
+                  onClick={() => setShowCorrection(true)}
+                  className="rounded-lg bg-ink px-5 py-2.5 text-sm font-medium text-white transition hover:bg-slate-700"
+                >
+                  Comparer au corrigé
+                </button>
               ) : (
                 <div className="rounded-xl border border-emerald-200 bg-emerald-50/40 px-5 py-5 sm:px-6">
                   <div className="mb-4 flex items-center justify-between">
@@ -196,7 +168,7 @@ function ExerciseCard({
               )}
             </div>
           ) : (
-            <p className="mt-5 rounded-lg border border-amber-200 bg-amber-50/60 px-4 py-3 text-sm text-amber-900">
+            <p className="mt-8 rounded-lg border border-amber-200 bg-amber-50/60 px-4 py-3 text-sm text-amber-900">
               Le cahier de corrigés ne couvre pas cet exercice.
             </p>
           )}
@@ -210,7 +182,6 @@ export function Exercises({ slug, exercises }: { slug: string; exercises: Exerci
   const storageKey = `dcga:applis:${slug}`;
   const [etats, setEtats] = useState<Record<string, EtatExercice>>({});
   const [loaded, setLoaded] = useState(false);
-  const sauvegarde = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => {
     try {
@@ -221,21 +192,16 @@ export function Exercises({ slug, exercises }: { slug: string; exercises: Exerci
     setLoaded(true);
   }, [storageKey]);
 
-  /** Écrit en local en absorbant la frappe, et pousse les statuts au compte. */
-  function persister(suivants: Record<string, EtatExercice>, statutsChanges: boolean) {
+  /** Écrit en local et pousse les statuts au compte. */
+  function persister(suivants: Record<string, EtatExercice>) {
     setEtats(suivants);
-    clearTimeout(sauvegarde.current);
-    sauvegarde.current = setTimeout(() => {
-      localStorage.setItem(storageKey, JSON.stringify(suivants));
-    }, 400);
-    if (statutsChanges) {
-      const statuts = Object.fromEntries(
-        Object.entries(suivants)
-          .filter(([, e]) => e.statut)
-          .map(([id, e]) => [id, e.statut as string])
-      );
-      synchroniser({ chapitre: slug, applications: statuts });
-    }
+    localStorage.setItem(storageKey, JSON.stringify(suivants));
+    const statuts = Object.fromEntries(
+      Object.entries(suivants)
+        .filter(([, e]) => e.statut)
+        .map(([id, e]) => [id, e.statut as string])
+    );
+    synchroniser({ chapitre: slug, applications: statuts });
   }
 
   if (!loaded) return null;
@@ -250,8 +216,8 @@ export function Exercises({ slug, exercises }: { slug: string; exercises: Exerci
         <h2 className="font-serif text-xl font-bold text-ink">Applications</h2>
         <p className="mt-0.5 text-sm text-muted">
           {exercises.length} exercice{exercises.length > 1 ? "s" : ""} du cahier, dont {corriges}{" "}
-          corrigé{corriges > 1 ? "s" : ""}. Répondez d&apos;abord, comparez ensuite, puis
-          situez-vous.
+          corrigé{corriges > 1 ? "s" : ""}. Cherchez d&apos;abord sur votre brouillon, comparez
+          ensuite, puis situez-vous.
         </p>
         {evalues > 0 && (
           <p className="mt-1.5 text-sm font-semibold text-blue-800">
@@ -266,12 +232,7 @@ export function Exercises({ slug, exercises }: { slug: string; exercises: Exerci
             exercise={e}
             index={i}
             etat={etats[e.id] ?? {}}
-            onReponse={(reponses) =>
-              persister({ ...etats, [e.id]: { ...etats[e.id], reponses } }, false)
-            }
-            onStatut={(statut) =>
-              persister({ ...etats, [e.id]: { ...etats[e.id], statut } }, true)
-            }
+            onStatut={(statut) => persister({ ...etats, [e.id]: { statut } })}
           />
         ))}
       </div>
