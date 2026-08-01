@@ -29,6 +29,7 @@ export type NomIcone =
   | "duree"
   // Habillage de la navigation.
   | "recherche"
+  | "verrou"
   | "menu"
   | "fermer"
   | "chevron"
@@ -166,6 +167,13 @@ const CHEMINS: Record<NomIcone, React.ReactNode> = {
     </>
   ),
   menu: <path d="M3.5 7h17M3.5 12h17M3.5 17h17" />,
+  // Cadenas : la ressource réservée aux apprenants connectés.
+  verrou: (
+    <>
+      <rect x="4.5" y="10.5" width="15" height="10" rx="2.5" />
+      <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.8v1.9" />
+    </>
+  ),
   fermer: <path d="M6 6l12 12M18 6L6 18" />,
   chevron: <path d="M6 9.5l6 6 6-6" />,
 

@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { fermerSession, motDePasseValide, ouvrirSession, sessionOuverte } from "@/lib/auth";
+import { CLE_RESSOURCES_RESERVEES, RESSOURCES_RESERVABLES } from "@/lib/apprenant";
 
 async function exigerSession() {
   if (!(await sessionOuverte())) throw new Error("Session expirée");
@@ -72,4 +73,25 @@ export async function supprimerSeance(form: FormData) {
   revalidatePath("/classe");
   revalidatePath("/prof");
   redirect("/prof");
+}
+
+/**
+ * Enregistre les types de ressources réservés aux apprenants connectés.
+ * L'application est faite côté serveur au rendu des chapitres : ce qui est
+ * réservé n'est pas envoyé au navigateur d'un visiteur non connecté.
+ */
+export async function enregistrerRessourcesReservees(form: FormData) {
+  await exigerSession();
+  const valides = new Set(RESSOURCES_RESERVABLES.map((r) => r.id));
+  const ids = form
+    .getAll("ressource")
+    .map(String)
+    .filter((id) => valides.has(id as (typeof RESSOURCES_RESERVABLES)[number]["id"]));
+  const valeur = JSON.stringify(ids);
+  await prisma.reglage.upsert({
+    where: { cle: CLE_RESSOURCES_RESERVEES },
+    create: { cle: CLE_RESSOURCES_RESERVEES, valeur },
+    update: { valeur },
+  });
+  revalidatePath("/prof");
 }

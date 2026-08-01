@@ -16,6 +16,9 @@ import { Annales } from "./Annales";
 import { Exercises } from "./Exercises";
 import { Icone } from "./Icones";
 
+/** Onglets pouvant être réservés aux apprenants connectés. */
+export type OngletVerrouille = "methode" | "fiche" | "annales" | "flashcards" | "quiz";
+
 export interface VoisinChapitre {
   slug: string;
   numero: number;
@@ -35,9 +38,13 @@ type TabId =
 export function ChapterView({
   chapter,
   suivant,
+  verrouilles = [],
 }: {
   chapter: Chapter;
   suivant?: VoisinChapitre;
+  /** Ressources réservées : le contenu n'a pas été envoyé, l'onglet reste
+      visible avec un cadenas et invite à se connecter. */
+  verrouilles?: OngletVerrouille[];
 }) {
   // L'état de navigation vit dans l'URL : une page est ainsi partageable,
   // survit au rechargement, et le cahier de texte peut pointer une section.
@@ -52,21 +59,30 @@ export function ChapterView({
   const last = sections.length - 1;
   const section = sections[index];
 
-  const tabs: { id: TabId; label: string; badge?: number }[] = [
+  const verrou = (id: OngletVerrouille) => verrouilles.includes(id);
+  const tabs: { id: TabId; label: string; badge?: number; verrouille?: boolean }[] = [
     { id: "lecon", label: "Leçon", badge: sections.length },
-    ...(hasMethodologie(chapter)
-      ? [{ id: "methode" as const, label: "Méthode" }]
-      : []),
-    ...(hasFiche(chapter) ? [{ id: "fiche" as const, label: "Fiche" }] : []),
-    ...(chapter.annales?.length
-      ? [
-          {
-            id: "annales" as const,
-            label: "Annales",
-            badge: chapter.annales.length,
-          },
-        ]
-      : []),
+    ...(verrou("methode")
+      ? [{ id: "methode" as const, label: "Méthode", verrouille: true }]
+      : hasMethodologie(chapter)
+        ? [{ id: "methode" as const, label: "Méthode" }]
+        : []),
+    ...(verrou("fiche")
+      ? [{ id: "fiche" as const, label: "Fiche", verrouille: true }]
+      : hasFiche(chapter)
+        ? [{ id: "fiche" as const, label: "Fiche" }]
+        : []),
+    ...(verrou("annales")
+      ? [{ id: "annales" as const, label: "Annales", verrouille: true }]
+      : chapter.annales?.length
+        ? [
+            {
+              id: "annales" as const,
+              label: "Annales",
+              badge: chapter.annales.length,
+            },
+          ]
+        : []),
     ...(chapter.exercises?.length
       ? [
           {
@@ -78,24 +94,28 @@ export function ChapterView({
       : []),
     // Un onglet vide n'a rien à proposer : il reste masqué tant que le
     // chapitre n'a pas de cartes ni de questions.
-    ...(chapter.flashcards.length
-      ? [
-          {
-            id: "flashcards" as const,
-            label: "Flashcards",
-            badge: chapter.flashcards.length,
-          },
-        ]
-      : []),
-    ...(chapter.quiz.length
-      ? [{ id: "quiz" as const, label: "Quiz", badge: chapter.quiz.length }]
-      : []),
+    ...(verrou("flashcards")
+      ? [{ id: "flashcards" as const, label: "Flashcards", verrouille: true }]
+      : chapter.flashcards.length
+        ? [
+            {
+              id: "flashcards" as const,
+              label: "Flashcards",
+              badge: chapter.flashcards.length,
+            },
+          ]
+        : []),
+    ...(verrou("quiz")
+      ? [{ id: "quiz" as const, label: "Quiz", verrouille: true }]
+      : chapter.quiz.length
+        ? [{ id: "quiz" as const, label: "Quiz", badge: chapter.quiz.length }]
+        : []),
   ];
-
   // Un onglet absent de ce chapitre ne doit pas produire une page vide.
   const tab: TabId = tabs.some((t) => t.id === ongletDemande)
     ? ongletDemande
     : "lecon";
+  const ongletVerrouille = tabs.find((t) => t.id === tab)?.verrouille === true;
 
   const naviguer = useCallback(
     (onglet: TabId, sectionIndex: number) => {
@@ -170,6 +190,9 @@ export function ChapterView({
             }`}
           >
             {t.label}
+            {t.verrouille && (
+              <Icone nom="verrou" className="ml-1.5 inline-block h-3.5 w-3.5 align-[-2px] text-slate-400" />
+            )}
             {t.badge !== undefined && (
               <span className="ml-1.5 text-xs text-slate-400">{t.badge}</span>
             )}
@@ -385,18 +408,37 @@ export function ChapterView({
             </article>
           )}
 
-          {tab === "methode" && <Methodologie chapter={chapter} />}
-          {tab === "fiche" && <Fiche chapter={chapter} />}
-          {tab === "annales" && <Annales chapter={chapter} />}
+          {ongletVerrouille && (
+            <div className="mx-auto max-w-md rounded-2xl border border-line bg-white p-8 text-center elev-sm">
+              <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-navy text-white">
+                <Icone nom="verrou" className="h-7 w-7" />
+              </span>
+              <h2 className="mt-5 font-serif text-2xl font-bold text-ink">Ressource réservée</h2>
+              <p className="mt-2 text-[15px] leading-relaxed text-muted">
+                Cette ressource est réservée aux apprenants connectés. Le compte est gratuit et
+                sauvegarde en plus votre progression d&apos;un appareil à l&apos;autre.
+              </p>
+              <Link
+                href="/compte"
+                className="lift mt-6 inline-block rounded-xl bg-brand px-6 py-3 font-bold text-white elev-md hover:bg-orange-600"
+              >
+                Se connecter ou créer un compte
+              </Link>
+            </div>
+          )}
+
+          {!ongletVerrouille && tab === "methode" && <Methodologie chapter={chapter} />}
+          {!ongletVerrouille && tab === "fiche" && <Fiche chapter={chapter} />}
+          {tab === "annales" && !ongletVerrouille && <Annales chapter={chapter} />}
           {tab === "applications" && chapter.exercises && (
             <Exercises exercises={chapter.exercises} />
           )}
-          {tab === "flashcards" && (
+          {tab === "flashcards" && !ongletVerrouille && (
             <div className="max-w-2xl">
               <Flashcards slug={chapter.slug} cards={chapter.flashcards} />
             </div>
           )}
-          {tab === "quiz" && (
+          {tab === "quiz" && !ongletVerrouille && (
             <div className="max-w-2xl">
               <Quiz slug={chapter.slug} questions={chapter.quiz} />
             </div>

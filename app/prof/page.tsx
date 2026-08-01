@@ -6,7 +6,8 @@ import { allChapters } from "@/lib/content";
 import { dateCourte, dateIso } from "@/lib/seances";
 import { LoginForm } from "./LoginForm";
 import { SeanceForm, type ChapitreOption } from "./SeanceForm";
-import { seDeconnecter, supprimerSeance } from "./actions";
+import { enregistrerRessourcesReservees, seDeconnecter, supprimerSeance } from "./actions";
+import { RESSOURCES_RESERVABLES, ressourcesReservees } from "@/lib/apprenant";
 
 export const metadata: Metadata = { title: "Espace professeur", robots: { index: false } };
 export const dynamic = "force-dynamic";
@@ -52,6 +53,7 @@ export default async function ProfPage({ searchParams }: Props) {
 
   const seances = await prisma.seance.findMany({ orderBy: { date: "desc" } });
   const classes = [...new Set(seances.map((s) => s.classe))];
+  const reservees = await ressourcesReservees();
 
   // Formulaire de création ou d'édition
   if (nouvelle || seanceId) {
@@ -79,6 +81,36 @@ export default async function ProfPage({ searchParams }: Props) {
 
   return (
     <Cadre titre="Cahier de texte">
+      {/* ── Visibilité des ressources ─────────────────────────────── */}
+      <section className="mb-10 rounded-2xl border border-line bg-white p-6 elev-sm">
+        <h2 className="font-serif text-xl font-bold text-ink">
+          Ressources réservées aux apprenants connectés
+        </h2>
+        <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
+          Ce qui est coché n&apos;est visible que pour les apprenants connectés à leur compte —
+          le contenu réservé n&apos;est même pas envoyé au navigateur des autres visiteurs. La
+          leçon, elle, reste toujours publique : c&apos;est la vitrine du site.
+        </p>
+        <form action={enregistrerRessourcesReservees} className="mt-5">
+          <div className="flex flex-wrap gap-x-6 gap-y-3">
+            {RESSOURCES_RESERVABLES.map((r) => (
+              <label key={r.id} className="flex items-center gap-2 text-sm font-semibold text-ink">
+                <input
+                  type="checkbox"
+                  name="ressource"
+                  value={r.id}
+                  defaultChecked={reservees.includes(r.id)}
+                />
+                {r.libelle}
+              </label>
+            ))}
+          </div>
+          <button className="mt-5 rounded-xl bg-navy px-5 py-2.5 text-sm font-bold text-white transition hover:bg-navy-deep">
+            Enregistrer la visibilité
+          </button>
+        </form>
+      </section>
+
       <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
         <p className="text-muted">
           {seances.length} séance{seances.length > 1 ? "s" : ""}
