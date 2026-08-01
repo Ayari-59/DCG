@@ -5,6 +5,11 @@ import type { Exercise } from "@/lib/content/types";
 import { Blocks } from "./ContentBlocks";
 import { Icone } from "./Icones";
 import { synchroniser } from "./sync";
+import {
+  ReponseExercice,
+  aRepondu as reponseEngagee,
+  type ReponsesExercice,
+} from "./ReponseExercice";
 
 /**
  * Applications : répondre avant de comparer.
@@ -21,7 +26,7 @@ import { synchroniser } from "./sync";
 export type StatutApplication = "reussi" | "partiel" | "a-revoir";
 
 interface EtatExercice {
-  reponse?: string;
+  reponses?: ReponsesExercice;
   statut?: StatutApplication;
 }
 
@@ -77,12 +82,12 @@ function ExerciseCard({
   exercise: Exercise;
   index: number;
   etat: EtatExercice;
-  onReponse: (texte: string) => void;
+  onReponse: (reponses: ReponsesExercice) => void;
   onStatut: (statut: StatutApplication) => void;
 }) {
   const [open, setOpen] = useState(index === 0);
   const [showCorrection, setShowCorrection] = useState(false);
-  const aRepondu = Boolean(etat.reponse?.trim());
+  const aRepondu = reponseEngagee(etat.reponses ?? {});
 
   return (
     <article className="overflow-hidden rounded-xl border border-line bg-white shadow-sm">
@@ -126,23 +131,12 @@ function ExerciseCard({
         <div className="border-t border-line px-5 py-6 sm:px-7">
           <Blocks blocks={exercise.statement} />
 
-          {/* ── Votre réponse ─────────────────────────────────────── */}
-          <div className="mt-8">
-            <label
-              htmlFor={`reponse-${exercise.id}`}
-              className="mb-1.5 block text-xs font-black uppercase tracking-[0.15em] text-muted"
-            >
-              Votre réponse
-            </label>
-            <textarea
-              id={`reponse-${exercise.id}`}
-              value={etat.reponse ?? ""}
-              onChange={(e) => onReponse(e.target.value)}
-              rows={6}
-              placeholder="Posez vos calculs et votre raisonnement ici — la réponse est enregistrée automatiquement, sur cet appareil."
-              className="w-full rounded-xl border border-line bg-white px-4 py-3 text-[15px] leading-relaxed text-ink outline-none transition focus:border-brand"
-            />
-          </div>
+          {/* ── Vos réponses, consigne par consigne ───────────────── */}
+          <ReponseExercice
+            exercise={exercise}
+            reponses={etat.reponses ?? {}}
+            onChange={onReponse}
+          />
 
           {exercise.correction.length > 0 ? (
             <div className="mt-5">
@@ -272,8 +266,8 @@ export function Exercises({ slug, exercises }: { slug: string; exercises: Exerci
             exercise={e}
             index={i}
             etat={etats[e.id] ?? {}}
-            onReponse={(texte) =>
-              persister({ ...etats, [e.id]: { ...etats[e.id], reponse: texte } }, false)
+            onReponse={(reponses) =>
+              persister({ ...etats, [e.id]: { ...etats[e.id], reponses } }, false)
             }
             onStatut={(statut) =>
               persister({ ...etats, [e.id]: { ...etats[e.id], statut } }, true)
