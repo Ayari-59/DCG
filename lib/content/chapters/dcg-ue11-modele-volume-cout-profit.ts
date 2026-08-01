@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-modele-volume-cout-profit.gener
  */
 export const modeleVolumeCoutProfit: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "lSaQxUX6Qf4", title: "Modèle volume-coût-profit" }],
   description:
     "Le modèle volume-coût-profit (CVP) relie coûts, volume d'activité et résultat : marge sur coût variable, seuil de profitabilité, point mort, marge et indice de sécurité, levier opérationnel. Un outil de diagnostic du risque d'exploitation et d'aide à la décision, dont il faut aussi connaître les hypothèses et les limites.",
   flashcards: [

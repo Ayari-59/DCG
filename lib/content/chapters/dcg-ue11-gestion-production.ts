@@ -11,6 +11,7 @@ export const gestionProduction: Chapter = {
   videos: [
     { youtubeId: "M2AuPAmlCL0", title: "Gestion de production" },
     { youtubeId: "kgWHdnypwvw", title: "Méthode MPM pas à pas" },
+    { youtubeId: "Zvpx0Yyo6Og", title: "Optimiser sous contrainte" },
   ],
   description:
     "Budget de production (Production = Ventes + Stock final − Stock initial), programmation linéaire (méthode graphique et facteur rare), pilotage MRP par l'amont et ordonnancement MPM : chemin critique, marges totales et libres.",
