@@ -8,6 +8,11 @@ import { chapter as generated } from "./dcg-ue11-controle-budgetaire-ecarts.gene
  */
 export const controleBudgetaireEcarts: Chapter = {
   ...generated,
+  videos: [
+    { youtubeId: "xiQIMir9skE", title: "Écarts sur coûts directs" },
+    { youtubeId: "G3LQpHeObFM", title: "Écarts sur coûts indirects" },
+    { youtubeId: "CjaEzzsBOgA", title: "Ventes — effet mix" },
+  ],
   description:
     "Le contrôle budgétaire confronte réalisations et prévisions selon la convention Réel − Prévu : écarts sur chiffre d'affaires, sur marge et sur coûts (volume, prix, quantité, temps), budget flexible et écarts sur charges indirectes (rendement, activité, budget), puis interprétation des causes, des responsabilités et des limites (Beyond Budgeting).",
   flashcards: [

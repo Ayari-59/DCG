@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-gestion-masse-salariale.generat
  */
 export const gestionMasseSalariale: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "REfPRc8TMFU", title: "Masse salariale" }],
   description:
     "Prévision de la masse salariale par la méthode des indices (effectif stable, sortants, embauchés), analyse des écarts entre prévu et réalisé (effectif, structure professionnelle, taux nominal) et indicateurs de pilotage RH. En ouverture DSCG : les effets niveau, masse, report, GVT et noria.",
   flashcards: [
