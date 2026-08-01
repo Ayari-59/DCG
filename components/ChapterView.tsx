@@ -17,7 +17,13 @@ import { Exercises } from "./Exercises";
 import { Icone } from "./Icones";
 
 /** Onglets pouvant être réservés aux apprenants connectés. */
-export type OngletVerrouille = "methode" | "fiche" | "annales" | "flashcards" | "quiz";
+export type OngletVerrouille =
+  | "methode"
+  | "fiche"
+  | "annales"
+  | "applications"
+  | "flashcards"
+  | "quiz";
 
 export interface VoisinChapitre {
   slug: string;
@@ -83,15 +89,17 @@ export function ChapterView({
             },
           ]
         : []),
-    ...(chapter.exercises?.length
-      ? [
-          {
-            id: "applications" as const,
-            label: "Applications",
-            badge: chapter.exercises.length,
-          },
-        ]
-      : []),
+    ...(verrou("applications")
+      ? [{ id: "applications" as const, label: "Applications", verrouille: true }]
+      : chapter.exercises?.length
+        ? [
+            {
+              id: "applications" as const,
+              label: "Applications",
+              badge: chapter.exercises.length,
+            },
+          ]
+        : []),
     // Un onglet vide n'a rien à proposer : il reste masqué tant que le
     // chapitre n'a pas de cartes ni de questions.
     ...(verrou("flashcards")
@@ -430,7 +438,7 @@ export function ChapterView({
           {!ongletVerrouille && tab === "methode" && <Methodologie chapter={chapter} />}
           {!ongletVerrouille && tab === "fiche" && <Fiche chapter={chapter} />}
           {tab === "annales" && !ongletVerrouille && <Annales chapter={chapter} />}
-          {tab === "applications" && chapter.exercises && (
+          {tab === "applications" && !ongletVerrouille && chapter.exercises && (
             <Exercises exercises={chapter.exercises} />
           )}
           {tab === "flashcards" && !ongletVerrouille && (

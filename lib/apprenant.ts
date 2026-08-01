@@ -104,6 +104,7 @@ export const RESSOURCES_RESERVABLES = [
   { id: "methodes", libelle: "Méthodologie" },
   { id: "fiche", libelle: "Fiches de révision" },
   { id: "annales", libelle: "Annales" },
+  { id: "applications", libelle: "Applications" },
   { id: "flashcards", libelle: "Flashcards" },
   { id: "quiz", libelle: "Quiz" },
   { id: "videos", libelle: "Vidéos" },

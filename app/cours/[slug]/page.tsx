@@ -79,6 +79,10 @@ export default async function ChapterPage({ params }: Props) {
     visible.annales = undefined;
     verrouilles.push("annales");
   }
+  if (reserve("applications") && chapter.exercises?.length) {
+    visible.exercises = undefined;
+    verrouilles.push("applications");
+  }
   if (reserve("flashcards") && chapter.flashcards.length) {
     visible.flashcards = [];
     verrouilles.push("flashcards");
