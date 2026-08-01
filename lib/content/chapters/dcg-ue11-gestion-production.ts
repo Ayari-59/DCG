@@ -8,7 +8,10 @@ import { chapter as generated } from "./dcg-ue11-gestion-production.generated";
  */
 export const gestionProduction: Chapter = {
   ...generated,
-  videos: [{ youtubeId: "M2AuPAmlCL0", title: "Gestion de production" }],
+  videos: [
+    { youtubeId: "M2AuPAmlCL0", title: "Gestion de production" },
+    { youtubeId: "kgWHdnypwvw", title: "Méthode MPM pas à pas" },
+  ],
   description:
     "Budget de production (Production = Ventes + Stock final − Stock initial), programmation linéaire (méthode graphique et facteur rare), pilotage MRP par l'amont et ordonnancement MPM : chemin critique, marges totales et libres.",
   flashcards: [

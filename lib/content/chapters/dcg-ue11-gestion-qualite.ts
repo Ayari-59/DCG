@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-gestion-qualite.generated";
  */
 export const gestionQualite: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "9q2eNG-x5r4", title: "Le coût de la qualité" }],
   description:
     "De la définition ISO de la qualité au coût d'obtention de la qualité (prévention, évaluation, défaillances interne et externe) et aux coûts cachés de Savall, en passant par les outils du pilotage : PDCA, Pareto, Ishikawa, cercles de qualité, estimation par échantillonnage et certification ISO 9001.",
   flashcards: [

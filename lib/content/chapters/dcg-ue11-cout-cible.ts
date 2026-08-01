@@ -8,6 +8,7 @@ import { chapter as generated } from "./dcg-ue11-cout-cible.generated";
  */
 export const coutCible: Chapter = {
   ...generated,
+  videos: [{ youtubeId: "DVgD8T1xI1k", title: "Méthode du coût cible" }],
   description:
     "La démarche du coût cible (target costing) : partir du prix imposé par le marché pour déterminer le coût maximal admissible, le décomposer par fonction et par composant selon la valeur perçue par le client, puis résorber le cost gap par l'analyse de la valeur et le kaizen costing.",
   flashcards: [
