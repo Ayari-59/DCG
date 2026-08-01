@@ -37,6 +37,7 @@ import { annexeReference } from "./chapters/dscg-ue3-annexe-reference";
 import { methodesBySlug } from "./methodes";
 import { annalesBySlug } from "./annales";
 import { flashcardsQcmBySlug, quizQcmBySlug } from "./qcm";
+import { exercisesBySlug } from "./exercises";
 
 const rawPrograms: Program[] = [
   {
@@ -117,13 +118,6 @@ const rawPrograms: Program[] = [
  */
 const UE_PUBLIEES = ["UE11", "UE3"];
 
-/**
- * Les applications issues des cahiers d'énoncés et de corrigés sont générées
- * dans lib/content/exercises mais volontairement pas publiées pour l'instant.
- * Pour les réactiver, rattacher exercisesBySlug aux chapitres ici :
- *   chapters: p.chapters.map((c) =>
- *     exercisesBySlug[c.slug]?.length ? { ...c, exercises: exercisesBySlug[c.slug] } : c)
- */
 /** Nombre de cartes visé par chapitre : une session et quelques restes. */
 const TAILLE_PAQUET = 25;
 
@@ -162,6 +156,12 @@ export const programs: Program[] = rawPrograms
       quiz: quizQcmBySlug[c.slug]?.length ? quizQcmBySlug[c.slug] : c.quiz,
       ...(methodesBySlug[c.slug]?.length ? { methodes: methodesBySlug[c.slug] } : {}),
       ...(annalesBySlug[c.slug]?.length ? { annales: annalesBySlug[c.slug] } : {}),
+      /*
+       * Les applications des cahiers d'énoncés et de corrigés, longtemps
+       * gardées hors ligne : publiées depuis août 2026 à la demande de
+       * l'auteur.
+       */
+      ...(exercisesBySlug[c.slug]?.length ? { exercises: exercisesBySlug[c.slug] } : {}),
     })),
   }));
 
@@ -188,8 +188,9 @@ export function getProgramByUe(ue: string): Program | undefined {
  * si les vidéos, les quiz, les cartes et les annales ne demandaient rien.
  * Les barèmes sont volontairement prudents : huit minutes par vidéo (leur
  * durée réelle), une minute par question de quiz, trente secondes par
- * flashcard pour une seule passe, trente minutes par annale — lire le
- * sujet et comprendre son corrigé, pas le rédiger. Le chiffre affiché
+ * flashcard pour une seule passe, vingt minutes par application, trente
+ * minutes par annale — lire le sujet et comprendre son corrigé, pas le
+ * rédiger. Le chiffre affiché
  * reste une estimation : il est présenté avec un « ≈ ».
  */
 export function minutesDeTravail(c: Chapter): number {
@@ -198,6 +199,7 @@ export function minutesDeTravail(c: Chapter): number {
     (c.videos?.length ?? 0) * 8 +
     c.quiz.length * 1 +
     Math.round(c.flashcards.length * 0.5) +
+    (c.exercises?.length ?? 0) * 20 +
     (c.annales?.length ?? 0) * 30
   );
 }
