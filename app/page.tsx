@@ -56,6 +56,16 @@ const features: {
   },
 ];
 
+/**
+ * La chaîne YouTube de l'auteur. L'adresse d'abonnement ouvre la boîte de
+ * confirmation directement, sans étape intermédiaire.
+ */
+const CHAINE = {
+  nom: "Objectif-DCG",
+  url: "https://www.youtube.com/@Objectif-DCG",
+  abonnement: "https://www.youtube.com/@Objectif-DCG?sub_confirmation=1",
+};
+
 const programAccent = {
   DCG: {
     bar: "bg-brand",
@@ -84,6 +94,18 @@ export default function Home() {
   );
 
   const families = familiesOf(allChapters.map((c) => c.slug));
+
+  /*
+   * Les vidéos mises en avant sont piochées dans les chapitres, pas
+   * déclarées à la main : la vitrine suit le contenu. Quatre suffisent —
+   * régulièrement espacées le long du programme pour montrer l'étendue.
+   */
+  const toutesLesVideos = allChapters.flatMap((c) =>
+    (c.videos ?? []).map((v) => ({ chapitre: c, video: v })),
+  );
+  const vitrine = [0, 1, 2, 3].map(
+    (k) => toutesLesVideos[Math.round((k * (toutesLesVideos.length - 1)) / 3)],
+  );
 
   return (
     <div>
@@ -204,6 +226,81 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* ── La chaîne ────────────────────────────────────────────────── */}
+      <section className="mx-auto max-w-[1100px] px-5 pb-24">
+        <Reveal>
+          <div className="text-center">
+            <p className="inline-flex items-center gap-2 rounded-full bg-rose-100 px-4 py-1.5 text-xs font-black uppercase tracking-[0.2em] text-rose-700">
+              <Icone nom="video" className="h-4 w-4" />
+              La chaîne
+            </p>
+            <h2 className="mt-5 font-serif text-4xl font-bold tracking-[-0.02em] text-ink sm:text-5xl">
+              Le programme, aussi en vidéo
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-[17px] leading-relaxed text-muted">
+              {toutesLesVideos.length} vidéos courtes, gratuites, déjà intégrées en tête de chaque
+              chapitre — et rassemblées sur la chaîne {CHAINE.nom}.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {vitrine.map(({ chapitre, video }, i) => (
+            <Reveal key={video.youtubeId} delay={(i % 4) * 70}>
+              <Link
+                href={`/cours/${chapitre.slug}`}
+                className="lift elev-sm group block h-full overflow-hidden rounded-2xl border border-line bg-white"
+              >
+                <span className="relative block aspect-video overflow-hidden bg-navy-deep">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`https://i.ytimg.com/vi/${video.youtubeId}/mqdefault.jpg`}
+                    alt=""
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <span className="absolute inset-0 flex items-center justify-center">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-navy-deep/70 text-white backdrop-blur-sm transition group-hover:bg-brand">
+                      <Icone nom="video" className="h-5 w-5" />
+                    </span>
+                  </span>
+                </span>
+                <span className="block p-4">
+                  <span className="block font-serif text-[15px] font-bold leading-snug text-ink">
+                    {video.title}
+                  </span>
+                  <span className="mt-1.5 block text-xs text-muted">
+                    Chapitre {chapitre.number} · {chapitre.title}
+                  </span>
+                </span>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href={CHAINE.abonnement}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="lift inline-flex items-center gap-2.5 rounded-2xl bg-brand px-8 py-3.5 font-bold text-white elev-md hover:bg-orange-600"
+            >
+              <Icone nom="video" className="h-5 w-5" />
+              S&apos;abonner à la chaîne
+            </a>
+            <a
+              href={CHAINE.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-muted underline-offset-4 transition hover:text-ink hover:underline"
+            >
+              Voir toutes les vidéos
+            </a>
+          </div>
+        </Reveal>
       </section>
 
       {/* ── Diplômes ─────────────────────────────────────────────────── */}
