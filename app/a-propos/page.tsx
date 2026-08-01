@@ -1,12 +1,12 @@
-import fs from "node:fs";
-import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { allChapters, programs } from "@/lib/content";
 import { familiesOf, getTheme } from "@/lib/content/theme";
+import { LIEN_LINKEDIN, LIEN_YOUTUBE } from "@/lib/liens";
 import { Reveal } from "@/components/Reveal";
 import { Icone } from "@/components/Icones";
 import { TargetMark } from "@/components/Logo";
+import { Portrait } from "@/components/Portrait";
 
 export const metadata: Metadata = {
   title: "À propos",
@@ -215,15 +215,26 @@ export default function AProposPage() {
                     ))}
                   </ul>
 
-                  <a
-                    href="https://www.youtube.com/@Objectif-DCG"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="lift mt-7 inline-flex items-center gap-2.5 rounded-xl bg-brand px-5 py-2.5 text-sm font-bold text-white elev-md hover:bg-orange-600"
-                  >
-                    <Icone nom="video" className="h-4 w-4" />
-                    La chaîne Objectif-DCG
-                  </a>
+                  <div className="mt-7 flex flex-wrap justify-center gap-3 sm:justify-start">
+                    <a
+                      href={LIEN_YOUTUBE}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="lift inline-flex items-center gap-2.5 rounded-xl bg-brand px-5 py-2.5 text-sm font-bold text-white elev-md hover:bg-orange-600"
+                    >
+                      <Icone nom="video" className="h-4 w-4" />
+                      La chaîne Objectif-DCG
+                    </a>
+                    <a
+                      href={LIEN_LINKEDIN}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="lift inline-flex items-center gap-2.5 rounded-xl border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-bold text-white backdrop-blur-md hover:bg-white/10"
+                    >
+                      <Icone nom="linkedin" className="h-4 w-4" />
+                      Mon profil LinkedIn
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -364,58 +375,6 @@ export default function AProposPage() {
           </section>
         </Reveal>
       </div>
-    </div>
-  );
-}
-
-/**
- * Portrait de l'auteur.
- *
- * La photo est détectée à la construction : il suffit de déposer un fichier
- * nommé `mohamed-ayari` dans public/ pour qu'elle remplace les initiales,
- * sans toucher au code. Tant qu'elle est absente, on affiche le monogramme
- * plutôt qu'une image cassée.
- */
-function Portrait() {
-  // Le nom réel du fichier est relevé tel qu'il est écrit sur le disque :
-  // Windows ignore la casse, mais le serveur qui sert le site, non.
-  const fichier = fs
-    .readdirSync(path.join(process.cwd(), "public"))
-    .find((nom) => /^mohamed-ayari\.(jpe?g|png|webp)$/i.test(nom));
-
-  return (
-    <div className="relative shrink-0">
-      <span
-        aria-hidden
-        className="absolute -inset-1.5 rounded-full bg-brand/30 blur-[2px]"
-      />
-      {fichier ? (
-        /*
-         * La photo est un plan large au format paysage. Un simple
-         * `object-cover` remplirait la hauteur sans laisser de marge
-         * verticale : le visage resterait bloqué en haut du cercle, le
-         * pull en occupant la moitié basse. L'image est donc agrandie et
-         * décalée à la main pour cadrer le visage.
-         */
-        <div className="relative h-32 w-32 overflow-hidden rounded-full ring-4 ring-brand sm:h-40 sm:w-40">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`/${fichier}`}
-            alt="Mohamed Ayari"
-            width={1536}
-            height={1024}
-            className="absolute left-[-72%] top-[2%] w-[220%] max-w-none"
-          />
-        </div>
-      ) : (
-        <span
-          aria-label="Mohamed Ayari"
-          role="img"
-          className="relative flex h-32 w-32 items-center justify-center rounded-full bg-navy font-serif text-4xl font-bold tracking-tight text-white ring-4 ring-brand sm:h-40 sm:w-40 sm:text-5xl"
-        >
-          MA
-        </span>
-      )}
     </div>
   );
 }

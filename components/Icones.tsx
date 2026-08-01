@@ -27,6 +27,7 @@ export type NomIcone =
   | "annales"
   | "application"
   | "duree"
+  | "linkedin"
   // Habillage de la navigation.
   | "recherche"
   | "menu"
@@ -151,6 +152,14 @@ const CHEMINS: Record<NomIcone, React.ReactNode> = {
       <circle cx="12" cy="13.2" r="7.8" />
       <path d="M12 9.4v3.8h2.9" />
       <path d="M9.6 2.6h4.8" />
+    </>
+  ),
+  // Sigle LinkedIn, redessiné au trait pour suivre la grille du jeu.
+  linkedin: (
+    <>
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v2a6 6 0 0 1 2-2z" />
+      <rect x="2" y="9" width="4" height="12" />
+      <circle cx="4" cy="4" r="2" />
     </>
   ),
 

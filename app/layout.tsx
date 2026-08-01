@@ -6,6 +6,7 @@ import { Nav, type LienProgramme } from "@/components/Nav";
 import { programs } from "@/lib/content";
 import { construireIndex } from "@/lib/content/search";
 import { getTheme } from "@/lib/content/theme";
+import { LIEN_LINKEDIN } from "@/lib/liens";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -95,6 +96,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <Link href="/a-propos" className="transition hover:text-white/80">
                   À propos
                 </Link>
+                <a
+                  href={LIEN_LINKEDIN}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-white/80"
+                >
+                  LinkedIn
+                </a>
               </span>
             </div>
           </div>
