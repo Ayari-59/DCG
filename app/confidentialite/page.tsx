@@ -41,7 +41,9 @@ export default function ConfidentialitePage() {
             <li>votre prénom — pour vous saluer ;</li>
             <li>votre adresse e-mail — c&apos;est votre identifiant de connexion ;</li>
             <li>
-              votre progression — meilleurs scores de quiz et cartes acquises, par chapitre.
+              votre progression — meilleurs scores de quiz, cartes acquises et auto-évaluation
+              des applications, par chapitre. Vos réponses rédigées aux applications, elles,
+              restent dans votre navigateur et ne sont jamais transmises.
             </li>
           </ul>
           <p className="mt-3">

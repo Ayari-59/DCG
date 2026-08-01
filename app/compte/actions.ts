@@ -96,7 +96,11 @@ interface ProgressionEnvoyee {
   quizScore?: number;
   quizTotal?: number;
   cartes?: string[];
+  /** Auto-évaluation des applications : idExercice → statut. */
+  applications?: Record<string, string>;
 }
+
+const STATUTS_APPLICATION = new Set(["reussi", "partiel", "a-revoir"]);
 
 /** Une entrée est plausible si le chapitre existe et les valeurs sont saines. */
 function assainir(p: ProgressionEnvoyee): ProgressionEnvoyee | null {
@@ -105,12 +109,20 @@ function assainir(p: ProgressionEnvoyee): ProgressionEnvoyee | null {
   const cartes = Array.isArray(p.cartes)
     ? p.cartes.filter((c) => typeof c === "string").slice(0, 500)
     : undefined;
+  const applications =
+    p.applications && typeof p.applications === "object"
+      ? Object.fromEntries(
+          Object.entries(p.applications)
+            .filter(([, v]) => STATUTS_APPLICATION.has(String(v)))
+            .slice(0, 100)
+        )
+      : undefined;
   const score =
     typeof p.quizScore === "number" && typeof p.quizTotal === "number" &&
     p.quizScore >= 0 && p.quizTotal > 0 && p.quizScore <= p.quizTotal
       ? { quizScore: Math.floor(p.quizScore), quizTotal: Math.floor(p.quizTotal) }
       : {};
-  return { chapitre: p.chapitre, ...score, cartes };
+  return { chapitre: p.chapitre, ...score, cartes, applications };
 }
 
 /**
@@ -136,6 +148,15 @@ async function enregistrerPour(apprenantId: string, entree: ProgressionEnvoyee):
   const cartesFusionnees = [
     ...new Set([...((existante?.cartes as string[] | null) ?? []), ...(propre.cartes ?? [])]),
   ];
+  /*
+   * Les statuts d'applications fusionnent clé par clé, dernier mot au plus
+   * récent : contrairement au score, un statut peut légitimement reculer —
+   * on croyait avoir réussi, le professeur a montré que non.
+   */
+  const applicationsFusionnees = {
+    ...((existante?.applications as Record<string, string> | null) ?? {}),
+    ...(propre.applications ?? {}),
+  };
   const meilleurScore =
     propre.quizScore !== undefined &&
     (existante?.quizScore == null || propre.quizScore > existante.quizScore)
@@ -150,8 +171,9 @@ async function enregistrerPour(apprenantId: string, entree: ProgressionEnvoyee):
       quizScore: propre.quizScore,
       quizTotal: propre.quizTotal,
       cartes: propre.cartes ?? [],
+      applications: propre.applications ?? {},
     },
-    update: { ...meilleurScore, cartes: cartesFusionnees },
+    update: { ...meilleurScore, cartes: cartesFusionnees, applications: applicationsFusionnees },
   });
 }
 

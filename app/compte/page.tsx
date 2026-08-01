@@ -44,7 +44,12 @@ export default async function ComptePage() {
   const lignes = allChapters.map((c) => {
     const p = parChapitre.get(c.slug);
     const cartes = ((p?.cartes as string[] | null) ?? []).length;
+    const applications = Object.keys(
+      (p?.applications as Record<string, string> | null) ?? {}
+    ).length;
     return {
+      applications,
+      applicationsTotal: c.exercises?.length ?? 0,
       chapitre: c,
       theme: getTheme(c.slug),
       quiz: p?.quizScore != null ? `${p.quizScore}/${p.quizTotal}` : null,
@@ -58,6 +63,7 @@ export default async function ComptePage() {
   const commences = lignes.filter((l) => l.commence).length;
   const cartesAcquises = lignes.reduce((n, l) => n + l.cartes, 0);
   const quizJoues = lignes.filter((l) => l.quiz).length;
+  const applicationsTravaillees = lignes.reduce((n, l) => n + l.applications, 0);
 
   return (
     <div className="mx-auto max-w-[1100px] px-5 py-14">
@@ -75,11 +81,12 @@ export default async function ComptePage() {
         </form>
       </div>
 
-      <dl className="chiffres mt-8 grid grid-cols-3 gap-6 rounded-2xl border border-line bg-white px-6 py-5 elev-sm sm:max-w-lg">
+      <dl className="chiffres mt-8 grid grid-cols-2 gap-6 rounded-2xl border border-line bg-white px-6 py-5 elev-sm sm:max-w-2xl sm:grid-cols-4">
         {[
           { v: commences, l: "chapitres commencés" },
           { v: quizJoues, l: "quiz joués" },
           { v: cartesAcquises, l: "cartes acquises" },
+          { v: applicationsTravaillees, l: "applications travaillées" },
         ].map((s) => (
           <div key={s.l}>
             <dt className="font-serif text-3xl font-bold text-navy">{s.v}</dt>
@@ -91,7 +98,18 @@ export default async function ComptePage() {
       </dl>
 
       <div className="mt-10 space-y-2.5">
-        {lignes.map(({ chapitre, theme, quiz, quizPct, cartes, cartesTotal, commence }) => (
+        {lignes.map(
+          ({
+            chapitre,
+            theme,
+            quiz,
+            quizPct,
+            cartes,
+            cartesTotal,
+            commence,
+            applications,
+            applicationsTotal,
+          }) => (
           <Link
             key={chapitre.slug}
             href={`/cours/${chapitre.slug}`}
@@ -123,9 +141,18 @@ export default async function ComptePage() {
                 <Icone nom="cartes" className="h-4 w-4" />
                 {cartes}/{cartesTotal}
               </span>
+              {applicationsTotal > 0 && (
+                <span
+                  className={`flex items-center gap-1.5 ${applications ? "text-muted" : "text-slate-300"}`}
+                >
+                  <Icone nom="application" className="h-4 w-4" />
+                  {applications}/{applicationsTotal}
+                </span>
+              )}
             </span>
           </Link>
-        ))}
+          )
+        )}
       </div>
 
       {/* ── Données ─────────────────────────────────────────────────── */}

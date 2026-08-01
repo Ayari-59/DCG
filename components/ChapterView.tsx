@@ -439,7 +439,7 @@ export function ChapterView({
           {!ongletVerrouille && tab === "fiche" && <Fiche chapter={chapter} />}
           {tab === "annales" && !ongletVerrouille && <Annales chapter={chapter} />}
           {tab === "applications" && !ongletVerrouille && chapter.exercises && (
-            <Exercises exercises={chapter.exercises} />
+            <Exercises slug={chapter.slug} exercises={chapter.exercises} />
           )}
           {tab === "flashcards" && !ongletVerrouille && (
             <div className="max-w-2xl">

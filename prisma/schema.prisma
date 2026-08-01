@@ -107,6 +107,8 @@ model Progression {
   quizTotal   Int?
   /// Identifiants des flashcards acquises.
   cartes      Json      @default("[]")
+  /// Auto-évaluation des applications : { idExercice: "reussi" | "partiel" | "a-revoir" }.
+  applications Json     @default("{}")
   updatedAt   DateTime  @updatedAt
 
   @@unique([apprenantId, chapitre])

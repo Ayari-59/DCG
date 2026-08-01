@@ -16,6 +16,7 @@ interface EntreeLocale {
   quizScore?: number;
   quizTotal?: number;
   cartes?: string[];
+  applications?: Record<string, string>;
 }
 
 /**
@@ -27,7 +28,7 @@ function progressionLocale(): EntreeLocale[] {
   const parChapitre = new Map<string, EntreeLocale>();
   for (let i = 0; i < localStorage.length; i++) {
     const cle = localStorage.key(i)!;
-    const [, type, chapitre] = cle.match(/^dcga:(quiz|cards):(.+)$/) ?? [];
+    const [, type, chapitre] = cle.match(/^dcga:(quiz|cards|applis):(.+)$/) ?? [];
     if (!type || !chapitre) continue;
     const entree = parChapitre.get(chapitre) ?? { chapitre };
     try {
@@ -35,8 +36,18 @@ function progressionLocale(): EntreeLocale[] {
       if (type === "quiz") {
         entree.quizScore = Number(valeur);
         entree.quizTotal = 20;
-      } else {
+      } else if (type === "cards") {
         entree.cartes = JSON.parse(valeur) as string[];
+      } else {
+        // Applications : seuls les statuts d'auto-évaluation partent au
+        // compte, jamais les réponses rédigées.
+        const etats = JSON.parse(valeur) as Record<string, { statut?: string }>;
+        const statuts = Object.fromEntries(
+          Object.entries(etats)
+            .filter(([, e]) => e.statut)
+            .map(([id, e]) => [id, e.statut as string])
+        );
+        if (Object.keys(statuts).length) entree.applications = statuts;
       }
       parChapitre.set(chapitre, entree);
     } catch {
