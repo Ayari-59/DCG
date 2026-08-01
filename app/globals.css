@@ -120,6 +120,16 @@ table,
   background-size: cover;
   background-position: center;
 }
+/*
+ * L'image transparaît aussi sous les bandeaux marine : leur fond passe à
+ * 90 % d'opacité, et l'image fixe se devine dessous — voile marine ici,
+ * voile papier ailleurs. Le texte blanc garde son contraste : le voile
+ * reste très couvrant.
+ */
+.avec-fond .bg-navy-deep {
+  background-color: rgb(14 34 68 / 0.8);
+}
+
 @media print {
   .avec-fond::before {
     display: none;
