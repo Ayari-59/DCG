@@ -5,6 +5,11 @@ import type { Exercise } from "@/lib/content/types";
 import { Blocks } from "./ContentBlocks";
 import { Icone } from "./Icones";
 import { synchroniser } from "./sync";
+import {
+  cleCompetence,
+  competencesDe,
+  competencesDuChapitre,
+} from "@/lib/content/competences";
 
 /**
  * Applications : chercher sur son brouillon, comparer, se situer.
@@ -166,6 +171,27 @@ export function Exercises({ slug, exercises }: { slug: string; exercises: Exerci
   const storageKey = `dcga:applis:${slug}`;
   const [etats, setEtats] = useState<Record<string, EtatExercice>>({});
   const [loaded, setLoaded] = useState(false);
+  /*
+   * Filtre par compétence : les compétences viennent des blocs
+   * « Compétences visées » des énoncés eux-mêmes. Sélection multiple ;
+   * un exercice reste affiché s'il travaille l'une des compétences
+   * cochées.
+   */
+  const [filtres, setFiltres] = useState<Set<string>>(new Set());
+  const competences = competencesDuChapitre(exercises);
+  const basculer = (cle: string) =>
+    setFiltres((f) => {
+      const suivant = new Set(f);
+      if (suivant.has(cle)) suivant.delete(cle);
+      else suivant.add(cle);
+      return suivant;
+    });
+  const visibles =
+    filtres.size === 0
+      ? exercises
+      : exercises.filter((e) =>
+          competencesDe(e).some((c) => filtres.has(cleCompetence(c)))
+        );
 
   useEffect(() => {
     try {
@@ -209,12 +235,52 @@ export function Exercises({ slug, exercises }: { slug: string; exercises: Exerci
           </p>
         )}
       </div>
+
+      {/* ── Filtrer par compétence ─────────────────────────────────── */}
+      {competences.length > 1 && (
+        <div className="mb-6">
+          <p className="mb-2 text-xs font-black uppercase tracking-[0.15em] text-muted">
+            Filtrer par compétence
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {competences.map((c) => (
+              <button
+                key={c.cle}
+                onClick={() => basculer(c.cle)}
+                aria-pressed={filtres.has(c.cle)}
+                className={`rounded-full border px-3.5 py-1.5 text-left text-sm font-medium transition ${
+                  filtres.has(c.cle)
+                    ? "border-brand bg-orange-50 text-ink ring-1 ring-brand/40"
+                    : "border-line bg-white text-slate-600 hover:border-brand/50"
+                }`}
+              >
+                {c.texte}
+                <span className="ml-1.5 text-xs text-muted">{c.applications}</span>
+              </button>
+            ))}
+            {filtres.size > 0 && (
+              <button
+                onClick={() => setFiltres(new Set())}
+                className="rounded-full px-3 py-1.5 text-sm font-semibold text-brand underline-offset-2 hover:underline"
+              >
+                Tout afficher
+              </button>
+            )}
+          </div>
+          {filtres.size > 0 && (
+            <p className="mt-2 text-xs text-muted">
+              {visibles.length} application{visibles.length > 1 ? "s" : ""} sur {exercises.length} —
+              les exercices sans compétences déclarées sont masqués pendant le filtrage.
+            </p>
+          )}
+        </div>
+      )}
       <div className="space-y-3">
-        {exercises.map((e, i) => (
+        {visibles.map((e) => (
           <ExerciseCard
             key={e.id}
             exercise={e}
-            index={i}
+            index={exercises.indexOf(e)}
             etat={etats[e.id] ?? {}}
             onStatut={(statut) => persister({ ...etats, [e.id]: { statut } })}
           />
