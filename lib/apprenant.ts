@@ -124,3 +124,27 @@ export async function ressourcesReservees(): Promise<RessourceReservable[]> {
     return [];
   }
 }
+
+// ── Sélection des applications par chapitre ──────────────────────────
+
+export const CLE_APPLICATIONS_CHOISIES = "applications-choisies";
+
+/**
+ * Sélection des applications publiées, chapitre par chapitre — décidée
+ * par le fondateur dans l'espace professeur. Un chapitre absent de la
+ * carte publie toutes ses applications : le réglage n'existe que là où
+ * l'auteur a restreint.
+ */
+export async function applicationsChoisies(): Promise<Record<string, string[]>> {
+  if (!dbConfigured) return {};
+  const reglage = await prisma.reglage.findUnique({
+    where: { cle: CLE_APPLICATIONS_CHOISIES },
+  });
+  if (!reglage) return {};
+  try {
+    const carte = JSON.parse(reglage.valeur) as Record<string, string[]>;
+    return typeof carte === "object" && carte !== null ? carte : {};
+  } catch {
+    return {};
+  }
+}

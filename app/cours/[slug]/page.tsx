@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getChapter, programs } from "@/lib/content";
 import { getTheme } from "@/lib/content/theme";
 import { hasFiche } from "@/lib/content/fiche";
-import { apprenantConnecte, ressourcesReservees } from "@/lib/apprenant";
+import { apprenantConnecte, applicationsChoisies, ressourcesReservees } from "@/lib/apprenant";
 import {
   ChapterView,
   type OngletVerrouille,
@@ -55,6 +55,7 @@ export default async function ChapterPage({ params }: Props) {
   const chapter = getChapter(slug);
   if (!chapter) notFound();
 
+  const choix = await applicationsChoisies();
   const reservees = await ressourcesReservees();
   const connecte = reservees.length > 0 && Boolean(await apprenantConnecte());
   const reserve = (id: (typeof reservees)[number]) => !connecte && reservees.includes(id);
@@ -68,6 +69,17 @@ export default async function ChapterPage({ params }: Props) {
   const verrouilles: OngletVerrouille[] = [];
   const visible = { ...chapter };
 
+  /*
+   * La sélection du fondateur passe avant tout : un chapitre présent dans
+   * le réglage ne publie que les applications cochées dans l'espace
+   * professeur ; absent, il les publie toutes.
+   */
+  if (chapter.exercises && choix[slug]) {
+    const retenues = new Set(choix[slug]);
+    visible.exercises = chapter.exercises.filter((e) => retenues.has(e.id));
+    if (!visible.exercises.length) visible.exercises = undefined;
+  }
+
   if (reserve("methodes") && chapter.methodes?.length) {
     visible.methodes = undefined;
     verrouilles.push("methode");
@@ -79,7 +91,7 @@ export default async function ChapterPage({ params }: Props) {
     visible.annales = undefined;
     verrouilles.push("annales");
   }
-  if (reserve("applications") && chapter.exercises?.length) {
+  if (reserve("applications") && visible.exercises?.length) {
     visible.exercises = undefined;
     verrouilles.push("applications");
   }

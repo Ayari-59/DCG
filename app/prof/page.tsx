@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { prisma, dbConfigured } from "@/lib/db";
 import { cleActivationConfiguree } from "@/lib/auth";
-import { RESSOURCES_RESERVABLES, ressourcesReservees } from "@/lib/apprenant";
+import {
+  RESSOURCES_RESERVABLES,
+  applicationsChoisies,
+  ressourcesReservees,
+} from "@/lib/apprenant";
 import { enseignantConnecte, estFondateur } from "@/lib/enseignant";
 import { allChapters } from "@/lib/content";
 import { dateCourte, dateIso } from "@/lib/seances";
@@ -10,6 +14,7 @@ import { LoginForm, BootstrapForm } from "./LoginForm";
 import { InvitationForm, MotDePasseForm } from "./CompteForms";
 import { SeanceForm, type ChapitreOption } from "./SeanceForm";
 import {
+  enregistrerApplicationsChoisies,
   enregistrerRessourcesReservees,
   retirerCollegue,
   seDeconnecter,
@@ -114,6 +119,10 @@ export default async function ProfPage({ searchParams }: Props) {
   }
 
   const reservees = fondateur ? await ressourcesReservees() : [];
+  const choixApplications = fondateur ? await applicationsChoisies() : {};
+  const chapitresAvecApplications = fondateur
+    ? allChapters.filter((c) => c.exercises?.length)
+    : [];
   const equipe = fondateur
     ? await prisma.enseignant.findMany({ orderBy: [{ role: "desc" }, { createdAt: "asc" }] })
     : [];
@@ -274,6 +283,64 @@ export default async function ProfPage({ searchParams }: Props) {
               Enregistrer la visibilité
             </button>
           </form>
+        </section>
+      )}
+
+      {/* ── Applications publiées, chapitre par chapitre ────────────── */}
+      {fondateur && chapitresAvecApplications.length > 0 && (
+        <section className="mt-6 rounded-2xl border border-line bg-white p-6 elev-sm">
+          <h2 className="font-serif text-xl font-bold text-ink">Applications par chapitre</h2>
+          <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
+            Vous décidez des applications publiées sur chaque chapitre : décochez celles à
+            retirer, puis enregistrez le chapitre. Tout coché est l&apos;état normal — la
+            restriction est l&apos;exception.
+          </p>
+          <div className="mt-4 space-y-2">
+            {chapitresAvecApplications.map((c) => {
+              const exercices = c.exercises ?? [];
+              const cochees = new Set(choixApplications[c.slug] ?? exercices.map((e) => e.id));
+              return (
+                <details key={c.slug} className="rounded-xl border border-line">
+                  <summary className="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-ink transition hover:bg-slate-50">
+                    {c.number}. {c.title}
+                    <span className="ml-2 text-xs font-bold text-muted">
+                      {cochees.size}/{exercices.length} publiée{cochees.size > 1 ? "s" : ""}
+                    </span>
+                  </summary>
+                  <form
+                    action={enregistrerApplicationsChoisies}
+                    className="border-t border-line px-4 py-4"
+                  >
+                    <input type="hidden" name="chapitre" value={c.slug} />
+                    <ul className="space-y-2">
+                      {exercices.map((e) => (
+                        <li key={e.id}>
+                          <label className="flex items-start gap-2.5 text-sm text-slate-700">
+                            <input
+                              type="checkbox"
+                              name="exercice"
+                              value={e.id}
+                              defaultChecked={cochees.has(e.id)}
+                              className="mt-0.5"
+                            />
+                            <span>
+                              <span className="font-semibold text-ink">{e.title}</span>
+                              <span className="ml-2 rounded bg-slate-100 px-1.5 py-0.5 text-xs font-medium text-muted">
+                                {e.label}
+                              </span>
+                            </span>
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
+                    <button className="mt-4 rounded-xl bg-navy px-5 py-2.5 text-sm font-bold text-white transition hover:bg-navy-deep">
+                      Enregistrer ce chapitre
+                    </button>
+                  </form>
+                </details>
+              );
+            })}
+          </div>
         </section>
       )}
 

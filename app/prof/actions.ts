@@ -3,11 +3,13 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
+import { getChapter } from "@/lib/content";
 import { motDePasseValide } from "@/lib/auth";
 import {
   hacherMotDePasse,
   motDePasseCorrespond,
   CLE_RESSOURCES_RESERVEES,
+  CLE_APPLICATIONS_CHOISIES,
   RESSOURCES_RESERVABLES,
 } from "@/lib/apprenant";
 import {
@@ -224,6 +226,42 @@ export async function enregistrerRessourcesReservees(form: FormData) {
   await prisma.reglage.upsert({
     where: { cle: CLE_RESSOURCES_RESERVEES },
     create: { cle: CLE_RESSOURCES_RESERVEES, valeur },
+    update: { valeur },
+  });
+  revalidatePath("/prof");
+}
+
+/**
+ * Sélection des applications publiées pour un chapitre, décidée par le
+ * fondateur. Tout coché — l'état normal — s'enregistre comme une absence
+ * de réglage : la restriction est l'exception, pas la règle.
+ */
+export async function enregistrerApplicationsChoisies(form: FormData) {
+  await exigerFondateur();
+  const slug = String(form.get("chapitre") ?? "");
+  const chapitre = getChapter(slug);
+  if (!chapitre?.exercises?.length) return;
+
+  const valides = new Set(chapitre.exercises.map((e) => e.id));
+  const cochees = form
+    .getAll("exercice")
+    .map(String)
+    .filter((id) => valides.has(id));
+
+  const reglage = await prisma.reglage.findUnique({ where: { cle: CLE_APPLICATIONS_CHOISIES } });
+  let carte: Record<string, string[]> = {};
+  try {
+    carte = reglage ? (JSON.parse(reglage.valeur) as Record<string, string[]>) : {};
+  } catch {
+    carte = {};
+  }
+  if (cochees.length === chapitre.exercises.length) delete carte[slug];
+  else carte[slug] = cochees;
+
+  const valeur = JSON.stringify(carte);
+  await prisma.reglage.upsert({
+    where: { cle: CLE_APPLICATIONS_CHOISIES },
+    create: { cle: CLE_APPLICATIONS_CHOISIES, valeur },
     update: { valeur },
   });
   revalidatePath("/prof");
