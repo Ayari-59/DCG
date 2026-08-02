@@ -5,7 +5,7 @@ import type { Exercise } from "../types";
 export const exercises: Exercise[] = [
   {
     "id": "ex1",
-    "label": "A2",
+    "label": "A1",
     "title": "CSR Cakes",
     "statement": [
       {
@@ -110,49 +110,479 @@ export const exercises: Exercise[] = [
     "correction": [
       {
         "type": "p",
-        "text": "**À partir du calcul du coût de revient élaboré pour CRS Cakes, apprécier les intérêts et les limites de la méthode utilisée.**"
+        "text": "**Étapes 1 et 2 — Schéma de production et flux (quantités)**"
       },
       {
         "type": "p",
-        "text": "La méthode de calcul des centres d’analyse cherche à affecter aux coûts des produits, l’ensemble des charges générées par l’activité. Nous avons affaire à un processus de transformation simple : des matières premières alimentaires qui sont transformées en plats cuisinés et conditionnées en boîtes de taille différente."
+        "text": "**Étape 3 — Choix des charges à intégrer**"
       },
       {
         "type": "p",
-        "text": "Plusieurs points peuvent être analysés pour apprécier les intérêts et les limites de méthode :"
+        "text": "Les charges directes ne sont que les achats de MP. Les charges indirectes = total des charges du compte de résultat diminué des charges exceptionnelles : 719 300 − 52 000 = 667 300 €."
       },
       {
         "type": "p",
-        "text": "•Les centres d’analyse proposés correspondent bien au processus de transformation des deux produits (centres principaux : approvisionnement, fabrication, conditionnement et distribution)."
+        "text": "**Étape 4 — Traitement des charges indirectes (tableau de répartition)**"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "",
+          "**Total**",
+          "**Approv.**",
+          "**Fabrication**",
+          "**Conditionn.**",
+          "**Distribution**"
+        ],
+        "rows": [
+          [
+            "**Répartition secondaire**",
+            "667 300",
+            "42 125",
+            "418 275",
+            "103 125",
+            "103 775"
+          ],
+          [
+            "**Nature de l'UO**",
+            "",
+            "tonne de MP achetée",
+            "tonne de produits obtenus",
+            "1 000 boîtes cond.",
+            "1 000 € de CAHT"
+          ],
+          [
+            "**Nombre d'UO**",
+            "",
+            "625",
+            "531",
+            "687,5",
+            "2 967,1"
+          ],
+          [
+            "**Coût d'unité d'œuvre**",
+            "",
+            "**67,4**",
+            "**845**",
+            "**150**",
+            "**35**"
+          ]
+        ]
       },
       {
         "type": "p",
-        "text": "•Le découpage du coût complet est tout à fait représentatif du processus de transformation effectué par l’entreprise."
+        "text": "*625 = 300+200+125 t achetées · 531 t de produits obtenus · 687,5 = (137 500+550 000)/1 000 · 2 967,1 = CAHT (2 967 100 €)/1 000.*"
       },
       {
         "type": "p",
-        "text": "•Les clés de répartition suscitent plus de limites : si l’affectation des charges directes ne pose pas de problème de traçabilité, l’imputation des charges indirectes est discutable. Une clé de répartition pertinente doit exprimer au mieux la réalité de la consommation des ressources par les produits. Ici, les clés de répartition choisies sont liées au volume oeuvré. L’activité de chaque centre est en lien avec le volume ; cependant, pour le conditionnement, la clé de répartition « unité de boîtes » ne tient pas compte de la taille des boîtes (la boîte de 800 g devrait valoir deux fois celle de 400 g), influant pourtant sur la consommation des ressources."
+        "text": "**Étape 5 — Coût d'achat des matières premières (en tonnes)**"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "**Élément**",
+          "**Jambon**",
+          "**Lait**",
+          "**Courgettes**"
+        ],
+        "rows": [
+          [
+            "Qté",
+            "CU",
+            "Mt",
+            "Qté",
+            "CU",
+            "Mt",
+            "Qté",
+            "CU",
+            "Mt"
+          ],
+          [
+            "**Achat de MP**",
+            "300",
+            "3 800",
+            "1 140 000",
+            "200",
+            "890",
+            "178 000",
+            "125",
+            "2 200",
+            "275 000"
+          ],
+          [
+            "**Centre approvisionnement**",
+            "300",
+            "67,4",
+            "20 220",
+            "200",
+            "67,4",
+            "13 480",
+            "125",
+            "67,4",
+            "8 425"
+          ],
+          [
+            "**Coût d'achat des matières**",
+            "**300**",
+            "**3 867,4**",
+            "**1 160 220**",
+            "**200**",
+            "**957,4**",
+            "**191 480**",
+            "**125**",
+            "**2 267,4**",
+            "**283 425**"
+          ]
+        ]
       },
       {
         "type": "p",
-        "text": "•Le modèle choisi dans le contexte : la méthode paraît adaptée au processus industriel pour suivre la consommation des ressources et contrôler la productivité des hommes et des machines. En revanche, les résultats donnés par la méthode sont trop globaux et ne peuvent pas permettre une analyse de la structure précise des coûts."
+        "text": "**Étape 6 — Comptes de stock des matières premières (CUMP, en tonnes)**"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "**Élément**",
+          "**Jambon**",
+          "**Lait**",
+          "**Courgettes**"
+        ],
+        "rows": [
+          [
+            "Qté",
+            "CU",
+            "Mt",
+            "Qté",
+            "CU",
+            "Mt",
+            "Qté",
+            "CU",
+            "Mt"
+          ],
+          [
+            "**Stock initial**",
+            "10",
+            "4 010",
+            "40 100",
+            "7",
+            "916",
+            "6 412",
+            "15",
+            "2 263,6",
+            "33 955"
+          ],
+          [
+            "**Achats de la période**",
+            "300",
+            "3 867,4",
+            "1 160 220",
+            "200",
+            "957,4",
+            "191 480",
+            "125",
+            "2 267,4",
+            "283 425"
+          ],
+          [
+            "**Total**",
+            "**310**",
+            "**3 872**",
+            "**1 200 320**",
+            "**207**",
+            "**956**",
+            "**197 892**",
+            "**140**",
+            "**2 267**",
+            "**317 380**"
+          ],
+          [
+            "**Consommations**",
+            "300",
+            "3 872",
+            "1 161 600",
+            "160",
+            "956",
+            "152 960",
+            "96",
+            "2 267",
+            "217 632"
+          ],
+          [
+            "**Stock final**",
+            "10",
+            "3 872",
+            "38 720",
+            "47",
+            "956",
+            "44 932",
+            "44",
+            "2 267",
+            "99 748"
+          ]
+        ]
       },
       {
         "type": "p",
-        "text": "**Argumentaire sur les résultats**"
+        "text": "**Étape 7 — Coût de production des produits finis**"
       },
       {
         "type": "p",
-        "text": "**Compétences visées**• Rédiger un argumentaire afin de conseiller le décideur• Une argumentation est comparable à une chaîne, les maillons étant formés par les arguments, lesquels peuvent notamment :"
+        "text": "**Coût de fabrication d'un kilo de produits finis :**"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "**Élément**",
+          "**Quantité**",
+          "**Coût unit.**",
+          "**Montant**"
+        ],
+        "rows": [
+          [
+            "**Charges directes — Jambon**",
+            "300 000",
+            "3,872",
+            "1 161 600"
+          ],
+          [
+            "**Charges directes — Lait**",
+            "160 000",
+            "0,956",
+            "152 960"
+          ],
+          [
+            "**Charges directes — Courgettes**",
+            "96 000",
+            "2,267",
+            "217 632"
+          ],
+          [
+            "**Charges indirectes — Fabrication**",
+            "531",
+            "845",
+            "448 695"
+          ],
+          [
+            "**Charges de la période**",
+            "",
+            "",
+            "1 980 887"
+          ],
+          [
+            "**Coût d'évacuation des déchets (300 000 − 294 000)**",
+            "6 000",
+            "2",
+            "+ 12 000"
+          ],
+          [
+            "**Coût de production**",
+            "**495 000**",
+            "**4,002**",
+            "**1 962 467**"
+          ]
+        ]
       },
       {
         "type": "p",
-        "text": "**Méthode***–apporter une preuve destinée à étayer une proposition ou, au contraire, à l’infirmer, à la rejeter ;*–apporter une preuve destinée à établir la justesse ou la véracité d’une proposition ;–réfuter une proposition, en apportant un refus partiel ou total à un argument précédent ;–expliquer une notion, légitimer une position ou une décision, valider un résultat.Un argumentaire vise à convaincre son destinataire du bien-fondé d’une analyse, d’une interprétation, d’une démarche intellectuelle.Il s’agit d’élaborer l’argumentaire puis de le rédiger en contextualisant :–trouver et collecter les idées, les éléments de preuve, les faits, les facteurs, les causes et les conséquences qui alimentent une situation, une organisation, un problème ;–ordonner les arguments et en structurer l’enchaînement afin de présenter le fil du raisonnement (plan de l’argumentaire) ;–rédiger l’argumentaire lui-même."
+        "text": "**Coût d'une boîte conditionnée**(137 500 × 0,400 kg = 55 000 kg ; 550 000 × 0,800 kg = 440 000 kg) :"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "**Élément**",
+          "**Boîtes 400 g**",
+          "**Boîtes 800 g**"
+        ],
+        "rows": [
+          [
+            "Quantité",
+            "Coût unit.",
+            "Montant",
+            "Quantité",
+            "Coût unit.",
+            "Montant"
+          ],
+          [
+            "**Charges directes — Cupcakes (préparation)**",
+            "55 000",
+            "4,002",
+            "220 100",
+            "440 000",
+            "4,002",
+            "1 760 880"
+          ],
+          [
+            "**Charges directes — Boîtes**",
+            "137 500",
+            "0,10",
+            "13 750",
+            "550 000",
+            "0,16",
+            "88 000"
+          ],
+          [
+            "**Charges indirectes — Conditionnement**",
+            "137,5",
+            "150",
+            "20 625",
+            "550",
+            "150",
+            "82 500"
+          ],
+          [
+            "**Coût d'un cupcake conditionné**",
+            "**137 500**",
+            "**1,8507**",
+            "**254 475**",
+            "**550 000**",
+            "**3,5116**",
+            "**1 931 380**"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "text": "**Étape 8 — Inventaire permanent des stocks de produits finis**"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "**Stock de boîtes**",
+          "**Boîtes 400 g**",
+          "**Boîtes 800 g**"
+        ],
+        "rows": [
+          [
+            "Quantité",
+            "Coût unit.",
+            "Montant",
+            "Quantité",
+            "Coût unit.",
+            "Montant"
+          ],
+          [
+            "**Stock initial**",
+            "24 500",
+            "0,8496",
+            "20 815",
+            "22 000",
+            "1,49",
+            "32 780"
+          ],
+          [
+            "**Production**",
+            "137 500",
+            "1,8507",
+            "254 471",
+            "550 000",
+            "3,5116",
+            "1 931 380"
+          ],
+          [
+            "**Total (CUMP)**",
+            "**162 000**",
+            "**1,700**",
+            "**275 286**",
+            "**572 000**",
+            "**3,434**",
+            "**1 964 160**"
+          ],
+          [
+            "**Ventes**",
+            "150 000",
+            "1,700",
+            "253 050",
+            "529 000",
+            "3,434",
+            "1 816 586"
+          ],
+          [
+            "**Stock final**",
+            "12 000",
+            "1,700",
+            "22 236",
+            "43 000",
+            "3,434",
+            "147 662"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "text": "**Étapes 9 et 10 — Coûts hors production et coût de revient**"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "",
+          "**Boîtes 400 g**",
+          "**Boîtes 800 g**"
+        ],
+        "rows": [
+          [
+            "Quantité",
+            "Coût unit.",
+            "Montant",
+            "Quantité",
+            "Coût unit.",
+            "Montant"
+          ],
+          [
+            "**Coût de production des produits vendus**",
+            "150 000",
+            "1,700",
+            "255 000",
+            "529 000",
+            "3,434",
+            "1 816 586"
+          ],
+          [
+            "**Charges indirectes de distribution**",
+            "375",
+            "35",
+            "13 125",
+            "2 592,1",
+            "35",
+            "90 723"
+          ],
+          [
+            "**Coût de revient**",
+            "**150 000**",
+            "**1,7875**",
+            "**268 125**",
+            "**529 000**",
+            "**3,605**",
+            "**1 907 309**"
+          ],
+          [
+            "**Ventes**",
+            "150 000",
+            "2,50",
+            "375 000",
+            "529 000",
+            "4,90",
+            "2 592 100"
+          ],
+          [
+            "**Résultat analytique**",
+            "**150 000**",
+            "**0,7125**",
+            "**106 875**",
+            "**529 000**",
+            "**1,2945**",
+            "**684 791**"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "text": "**Résultat analytique global = 106 875 + 684 791 = 791 666 €**, soit 26,7 % du chiffre d'affaires (2 967 100 €)."
       }
     ]
   },
   {
     "id": "ex2",
-    "label": "A3",
+    "label": "A2",
     "title": "Fonderie du lac",
     "statement": [
       {
@@ -309,6 +739,46 @@ export const exercises: Exercise[] = [
       {
         "type": "p",
         "text": "Résolution du système :"
+      },
+      {
+        "type": "p",
+        "text": "Système : A = 5 550 + 0,1 B"
+      },
+      {
+        "type": "p",
+        "text": "B = 3 300 + 0,2 A"
+      },
+      {
+        "type": "p",
+        "text": "Substitution de A dans la 2e équation :"
+      },
+      {
+        "type": "p",
+        "text": "B = 3 300 + 0,2 × (5 550 + 0,1 B)"
+      },
+      {
+        "type": "p",
+        "text": "B = 3 300 + 1 110 + 0,02 B"
+      },
+      {
+        "type": "p",
+        "text": "B = 4 410 + 0,02 B"
+      },
+      {
+        "type": "p",
+        "text": "0,98 B = 4 410"
+      },
+      {
+        "type": "p",
+        "text": "B = 4 500"
+      },
+      {
+        "type": "p",
+        "text": "D'où : A = 5 550 + 0,1 × 4 500 = 5 550 + 450 = 6 000"
+      },
+      {
+        "type": "p",
+        "text": "**Résultat : A = 6 000 ; B = 4 500**"
       },
       {
         "type": "table",
@@ -684,7 +1154,7 @@ export const exercises: Exercise[] = [
   },
   {
     "id": "ex3",
-    "label": "A1",
+    "label": "A3",
     "title": "CSR Cake",
     "statement": [
       {
@@ -698,10 +1168,63 @@ export const exercises: Exercise[] = [
       {
         "type": "p",
         "text": "**Compétences visées**• Rédiger un argumentaire afin de conseiller le décideur"
+      }
+    ],
+    "correction": [
+      {
+        "type": "p",
+        "text": "**À partir du calcul du coût de revient élaboré pour CRS Cakes, apprécier les intérêts et les limites de la méthode utilisée.**"
       },
       {
         "type": "p",
+        "text": "La méthode de calcul des centres d’analyse cherche à affecter aux coûts des produits, l’ensemble des charges générées par l’activité. Nous avons affaire à un processus de transformation simple : des matières premières alimentaires qui sont transformées en plats cuisinés et conditionnées en boîtes de taille différente."
+      },
+      {
+        "type": "p",
+        "text": "Plusieurs points peuvent être analysés pour apprécier les intérêts et les limites de méthode :"
+      },
+      {
+        "type": "p",
+        "text": "•Les centres d’analyse proposés correspondent bien au processus de transformation des deux produits (centres principaux : approvisionnement, fabrication, conditionnement et distribution)."
+      },
+      {
+        "type": "p",
+        "text": "•Le découpage du coût complet est tout à fait représentatif du processus de transformation effectué par l’entreprise."
+      },
+      {
+        "type": "p",
+        "text": "•Les clés de répartition suscitent plus de limites : si l’affectation des charges directes ne pose pas de problème de traçabilité, l’imputation des charges indirectes est discutable. Une clé de répartition pertinente doit exprimer au mieux la réalité de la consommation des ressources par les produits. Ici, les clés de répartition choisies sont liées au volume oeuvré. L’activité de chaque centre est en lien avec le volume ; cependant, pour le conditionnement, la clé de répartition « unité de boîtes » ne tient pas compte de la taille des boîtes (la boîte de 800 g devrait valoir deux fois celle de 400 g), influant pourtant sur la consommation des ressources."
+      },
+      {
+        "type": "p",
+        "text": "•Le modèle choisi dans le contexte : la méthode paraît adaptée au processus industriel pour suivre la consommation des ressources et contrôler la productivité des hommes et des machines. En revanche, les résultats donnés par la méthode sont trop globaux et ne peuvent pas permettre une analyse de la structure précise des coûts."
+      },
+      {
+        "type": "p",
+        "text": "**Argumentaire sur les résultats**"
+      },
+      {
+        "type": "p",
+        "text": "**Compétences visées**• Rédiger un argumentaire afin de conseiller le décideur• Une argumentation est comparable à une chaîne, les maillons étant formés par les arguments, lesquels peuvent notamment :"
+      },
+      {
+        "type": "p",
+        "text": "**Méthode***–apporter une preuve destinée à étayer une proposition ou, au contraire, à l’infirmer, à la rejeter ;*–apporter une preuve destinée à établir la justesse ou la véracité d’une proposition ;–réfuter une proposition, en apportant un refus partiel ou total à un argument précédent ;–expliquer une notion, légitimer une position ou une décision, valider un résultat.Un argumentaire vise à convaincre son destinataire du bien-fondé d’une analyse, d’une interprétation, d’une démarche intellectuelle.Il s’agit d’élaborer l’argumentaire puis de le rédiger en contextualisant :–trouver et collecter les idées, les éléments de preuve, les faits, les facteurs, les causes et les conséquences qui alimentent une situation, une organisation, un problème ;–ordonner les arguments et en structurer l’enchaînement afin de présenter le fil du raisonnement (plan de l’argumentaire) ;–rédiger l’argumentaire lui-même."
+      }
+    ]
+  },
+  {
+    "id": "ex4",
+    "label": "A4",
+    "title": "CSR Cake",
+    "statement": [
+      {
+        "type": "p",
         "text": "**Méthode***Comme la note de synthèse ( chapitre 2), la structure de l’argumentaire doit partir du global pour atteindre le particulier (la « profitabilité » du produit).*"
+      },
+      {
+        "type": "p",
+        "text": "**Rédiger un argumentaire sur les coûts calculés pour aider le gestionnaire de CSR Cakes.**"
       }
     ],
     "correction": [
@@ -752,13 +1275,331 @@ export const exercises: Exercise[] = [
     ]
   },
   {
-    "id": "ex4",
+    "id": "ex5",
     "label": "Cas",
     "title": "société Paltiv",
     "statement": [
       {
         "type": "p",
         "text": "**Compétences visées**• Calculer et interpréter des coûts, des marges et des résultats dans un contexte donné• Rédiger un argumentaire afin de conseiller le décideur"
+      },
+      {
+        "type": "p",
+        "text": "La société Paltiv fabrique un seul produit fini, PF, à partir de deux matières premières,"
+      },
+      {
+        "type": "p",
+        "text": "MP1 et MP2. Le processus de fabrication conduit à l’obtention d’un sous-produit SP vendable après traitement et d’un déchet D, sans valeur, qu’il convient d’épurer avant évacuation pour éviter la pollution de l’environnement."
+      },
+      {
+        "type": "p",
+        "text": "**Quatre ateliers assurent cette production :**"
+      },
+      {
+        "type": "p",
+        "text": "• **Atelier A1 :** utilisation de la matière première MP1 pour obtenir le produit intermédiaire PI livré en continu (sans stockage) à l’atelier A2."
+      },
+      {
+        "type": "p",
+        "text": "• **Atelier A2 :** adjonction de la matière première MP2 au produit intermédiaire PI pour obtenir le produit fini PF ; cette opération donne naissance au sous-produit SP et au déchet D."
+      },
+      {
+        "type": "p",
+        "text": "• **Atelier A3 :** traitement du sous-produit SP pour le rendre commercialisable."
+      },
+      {
+        "type": "p",
+        "text": "• **Atelier A4 :** épuration chimique du déchet D avant évacuation par épandage canalisé, au fur et à mesure de la production, donc sans stockage."
+      },
+      {
+        "type": "p",
+        "text": "Le contrôleur de gestion souhaite connaître les coûts à chaque stade et le résultat analytique des produits. Il se questionne également sur la qualité des unités d’oeuvre retenues par son prédécesseur. Il vous demande de lui proposer d’autres unités d’oeuvre pour le centre d’approvisionnement."
+      },
+      {
+        "type": "p",
+        "text": "**Données d’inventaire au 1er janvier de l’exercice**"
+      },
+      {
+        "type": "p",
+        "text": "• MP1 : 500 kg à 8,10 €/kg"
+      },
+      {
+        "type": "p",
+        "text": "• MP2 : 900 kg à 50,40 €/kg"
+      },
+      {
+        "type": "p",
+        "text": "• Produit fini PF : 184 unités à 120 €/unité"
+      },
+      {
+        "type": "p",
+        "text": "• Sous-produit SP : 80 kg à 200 €/kg"
+      },
+      {
+        "type": "p",
+        "text": "• Déchet D : néant"
+      },
+      {
+        "type": "p",
+        "text": "**Achats de l’exercice**"
+      },
+      {
+        "type": "p",
+        "text": "• Matière MP1 : 1 500 kg à 7,80 €/kg"
+      },
+      {
+        "type": "p",
+        "text": "• Matière MP2 : 2 500 kg à 51,40 €/kg"
+      },
+      {
+        "type": "p",
+        "text": "**Consommations de l’exercice**"
+      },
+      {
+        "type": "p",
+        "text": "• Matière MP1 : 1 400 kg"
+      },
+      {
+        "type": "p",
+        "text": "• Matière MP2 : 3 200 kg"
+      },
+      {
+        "type": "p",
+        "text": "• Eau (pour évacuer D) : 142,5 m3 pour une valeur de 270,50 €"
+      },
+      {
+        "type": "p",
+        "text": "• Produit chimique : 45 kg à 6,50 €/kg"
+      },
+      {
+        "type": "p",
+        "text": "**Main-d’oeuvre directe utilisée**"
+      },
+      {
+        "type": "p",
+        "text": "• Atelier A1 : 510 heures à 48,50 €/h"
+      },
+      {
+        "type": "p",
+        "text": "• Atelier A2 : 1 500 heures à 51,00 €/h"
+      },
+      {
+        "type": "p",
+        "text": "• Atelier A3 : 605 heures à 52,40 €/h"
+      },
+      {
+        "type": "p",
+        "text": "• Atelier A4 : 169 heures à 45,00 €/h"
+      },
+      {
+        "type": "p",
+        "text": "• Distribution : 210 heures à 62,00 €/h"
+      },
+      {
+        "type": "p",
+        "text": "**Le tableau de répartition des charges indirectes est fourni en annexe.**"
+      },
+      {
+        "type": "p",
+        "text": "**Production de l’exercice**"
+      },
+      {
+        "type": "p",
+        "text": "• Produit PF : 2 660 unités"
+      },
+      {
+        "type": "p",
+        "text": "• Sous-produit : 250 kg"
+      },
+      {
+        "type": "p",
+        "text": "• Déchet D : 142,50 m3"
+      },
+      {
+        "type": "p",
+        "text": "**Ventes de l’exercice**"
+      },
+      {
+        "type": "p",
+        "text": "• Produit PF : 2 800 unités à 150 €/l’unité"
+      },
+      {
+        "type": "p",
+        "text": "• Sous-produit SP : 270 kg à 208 €/kg"
+      },
+      {
+        "type": "p",
+        "text": "Données d’inventaire au 31 décembre"
+      },
+      {
+        "type": "p",
+        "text": "• Matière MP1 : 580 kg"
+      },
+      {
+        "type": "p",
+        "text": "• Matière MP2 : 205 kg"
+      },
+      {
+        "type": "p",
+        "text": "• Produit PF : 44 unités"
+      },
+      {
+        "type": "p",
+        "text": "• Sous-produit SP : 60 kg"
+      },
+      {
+        "type": "p",
+        "text": "• Déchet D : Néant"
+      },
+      {
+        "type": "p",
+        "text": "**Règles de valorisation retenues par l’entreprise**"
+      },
+      {
+        "type": "p",
+        "text": "Toutes les sorties de stock sont valorisées selon la méthode PEPS."
+      },
+      {
+        "type": "p",
+        "text": "• Il est admis que le coût de production du sous-produit SP à la sortie de l’atelier A3 est égal au prix de vente moyen sur le marché de ce sous-produit. Pour l’exercice concerné, l’entreprise a prévu et retenu un prix de 210 €/kg."
+      },
+      {
+        "type": "p",
+        "text": "• L’ensemble des charges de distribution est imputé uniquement sur les coûts du produit PF."
+      },
+      {
+        "type": "p",
+        "text": "**Travail à faire**"
+      },
+      {
+        "type": "p",
+        "text": "**1. Calculer et interpréter les coûts et résultats dans le contexte de l’entreprise Paltiv.**"
+      },
+      {
+        "type": "p",
+        "text": "**2. Rédiger unargumentaire pour le contrôleur de gestion sur la qualité des unités d’oeuvre, avec des propositions d’amélioration.**"
+      },
+      {
+        "type": "p",
+        "text": "**Tableau de répartition des charges indirectes**"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "**Charges**",
+          "**Totaux**",
+          "**Centres auxiliaires**",
+          "**Centres principaux opérationnels**",
+          "**Centre de structure**"
+        ],
+        "rows": [
+          [
+            "**Gestion du matériel**",
+            "**Gestion du personnel**",
+            "**Appro.**",
+            "**Atelier 1**",
+            "**Atelier 2**",
+            "**Atelier 3**",
+            "**Atelier 4**",
+            "**Distrib.**",
+            "**Administratif**"
+          ],
+          [
+            "**Totaux primaires**",
+            "100 350",
+            "3 750",
+            "4 600",
+            "2 000",
+            "40 000",
+            "20 000",
+            "15 000",
+            "5 000",
+            "3 000",
+            "7 000"
+          ],
+          [
+            "**• Gestion matériel**",
+            "",
+            "– 4 000",
+            "400",
+            "1 000",
+            "800",
+            "800",
+            "200",
+            "200",
+            "600",
+            "–"
+          ],
+          [
+            "**• Gestion personnel**",
+            "",
+            "250",
+            "– 5 000",
+            "750",
+            "1 250",
+            "1 250",
+            "250",
+            "500",
+            "500",
+            "250"
+          ],
+          [
+            "**Totaux secondaires**",
+            "100 350",
+            "0",
+            "0",
+            "3 750",
+            "42 050",
+            "22 050",
+            "15 450",
+            "5 700",
+            "4 100",
+            "7 250"
+          ],
+          [
+            "**Nature UO**",
+            "",
+            "",
+            "",
+            "kg de MP achetée",
+            "kg de MP1 consom.",
+            "HMOD",
+            "kg sous-produit S obtenu",
+            "m³ de déchet D traité",
+            "",
+            ""
+          ],
+          [
+            "**Nombre UO**",
+            "",
+            "",
+            "",
+            "4 000",
+            "1 400",
+            "1 500",
+            "250",
+            "142,5",
+            "",
+            ""
+          ],
+          [
+            "**Coût UO**",
+            "",
+            "",
+            "",
+            "0,9375",
+            "30,0357",
+            "14,70",
+            "61,80",
+            "40,00",
+            "",
+            ""
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "text": "UO : unité d’œuvre ; MOD : main-d’œuvre directe ; HMOD : heures de main-d’œuvre directe."
       }
     ],
     "correction": [
@@ -1226,332 +2067,6 @@ export const exercises: Exercise[] = [
         "text": "•Pour les charges indirectes : trouver un critère d’affectation plus proche des besoins réels des centres opérationnels, par exemple le nombre d’heures travaillées pour la gestion du matériel pour l’atelier A1 ou la surface de matériel utilisée. Là encore, il faut observer ce qui enclenche la consommation des ressources pour le fonctionnement réel des centres opérationnels."
       }
     ]
-  },
-  {
-    "id": "ex5",
-    "label": "Cas1",
-    "title": "Paltiv",
-    "statement": [
-      {
-        "type": "p",
-        "text": "La société Paltiv fabrique un seul produit fini, PF, à partir de deux matières premières,"
-      },
-      {
-        "type": "p",
-        "text": "MP1 et MP2. Le processus de fabrication conduit à l’obtention d’un sous-produit SP vendable après traitement et d’un déchet D, sans valeur, qu’il convient d’épurer avant évacuation pour éviter la pollution de l’environnement."
-      },
-      {
-        "type": "p",
-        "text": "**Quatre ateliers assurent cette production :**"
-      },
-      {
-        "type": "p",
-        "text": "• **Atelier A1 :** utilisation de la matière première MP1 pour obtenir le produit intermédiaire PI livré en continu (sans stockage) à l’atelier A2."
-      },
-      {
-        "type": "p",
-        "text": "• **Atelier A2 :** adjonction de la matière première MP2 au produit intermédiaire PI pour obtenir le produit fini PF ; cette opération donne naissance au sous-produit SP et au déchet D."
-      },
-      {
-        "type": "p",
-        "text": "• **Atelier A3 :** traitement du sous-produit SP pour le rendre commercialisable."
-      },
-      {
-        "type": "p",
-        "text": "• **Atelier A4 :** épuration chimique du déchet D avant évacuation par épandage canalisé, au fur et à mesure de la production, donc sans stockage."
-      },
-      {
-        "type": "p",
-        "text": "Le contrôleur de gestion souhaite connaître les coûts à chaque stade et le résultat analytique des produits. Il se questionne également sur la qualité des unités d’oeuvre retenues par son prédécesseur. Il vous demande de lui proposer d’autres unités d’oeuvre pour le centre d’approvisionnement."
-      },
-      {
-        "type": "p",
-        "text": "**Données d’inventaire au 1er janvier de l’exercice**"
-      },
-      {
-        "type": "p",
-        "text": "• MP1 : 500 kg à 8,10 €/kg"
-      },
-      {
-        "type": "p",
-        "text": "• MP2 : 900 kg à 50,40 €/kg"
-      },
-      {
-        "type": "p",
-        "text": "• Produit fini PF : 184 unités à 120 €/unité"
-      },
-      {
-        "type": "p",
-        "text": "• Sous-produit SP : 80 kg à 200 €/kg"
-      },
-      {
-        "type": "p",
-        "text": "• Déchet D : néant"
-      },
-      {
-        "type": "p",
-        "text": "**Achats de l’exercice**"
-      },
-      {
-        "type": "p",
-        "text": "• Matière MP1 : 1 500 kg à 7,80 €/kg"
-      },
-      {
-        "type": "p",
-        "text": "• Matière MP2 : 2 500 kg à 51,40 €/kg"
-      },
-      {
-        "type": "p",
-        "text": "**Consommations de l’exercice**"
-      },
-      {
-        "type": "p",
-        "text": "• Matière MP1 : 1 400 kg"
-      },
-      {
-        "type": "p",
-        "text": "• Matière MP2 : 3 200 kg"
-      },
-      {
-        "type": "p",
-        "text": "• Eau (pour évacuer D) : 142,5 m3 pour une valeur de 270,50 €"
-      },
-      {
-        "type": "p",
-        "text": "• Produit chimique : 45 kg à 6,50 €/kg"
-      },
-      {
-        "type": "p",
-        "text": "**Main-d’oeuvre directe utilisée**"
-      },
-      {
-        "type": "p",
-        "text": "• Atelier A1 : 510 heures à 48,50 €/h"
-      },
-      {
-        "type": "p",
-        "text": "• Atelier A2 : 1 500 heures à 51,00 €/h"
-      },
-      {
-        "type": "p",
-        "text": "• Atelier A3 : 605 heures à 52,40 €/h"
-      },
-      {
-        "type": "p",
-        "text": "• Atelier A4 : 169 heures à 45,00 €/h"
-      },
-      {
-        "type": "p",
-        "text": "• Distribution : 210 heures à 62,00 €/h"
-      },
-      {
-        "type": "p",
-        "text": "**Le tableau de répartition des charges indirectes est fourni en annexe.**"
-      },
-      {
-        "type": "p",
-        "text": "**Production de l’exercice**"
-      },
-      {
-        "type": "p",
-        "text": "• Produit PF : 2 660 unités"
-      },
-      {
-        "type": "p",
-        "text": "• Sous-produit : 250 kg"
-      },
-      {
-        "type": "p",
-        "text": "• Déchet D : 142,50 m3"
-      },
-      {
-        "type": "p",
-        "text": "**Ventes de l’exercice**"
-      },
-      {
-        "type": "p",
-        "text": "• Produit PF : 2 800 unités à 150 €/l’unité"
-      },
-      {
-        "type": "p",
-        "text": "• Sous-produit SP : 270 kg à 208 €/kg"
-      },
-      {
-        "type": "p",
-        "text": "Données d’inventaire au 31 décembre"
-      },
-      {
-        "type": "p",
-        "text": "• Matière MP1 : 580 kg"
-      },
-      {
-        "type": "p",
-        "text": "• Matière MP2 : 205 kg"
-      },
-      {
-        "type": "p",
-        "text": "• Produit PF : 44 unités"
-      },
-      {
-        "type": "p",
-        "text": "• Sous-produit SP : 60 kg"
-      },
-      {
-        "type": "p",
-        "text": "• Déchet D : Néant"
-      },
-      {
-        "type": "p",
-        "text": "**Règles de valorisation retenues par l’entreprise**"
-      },
-      {
-        "type": "p",
-        "text": "Toutes les sorties de stock sont valorisées selon la méthode PEPS."
-      },
-      {
-        "type": "p",
-        "text": "• Il est admis que le coût de production du sous-produit SP à la sortie de l’atelier A3 est égal au prix de vente moyen sur le marché de ce sous-produit. Pour l’exercice concerné, l’entreprise a prévu et retenu un prix de 210 €/kg."
-      },
-      {
-        "type": "p",
-        "text": "• L’ensemble des charges de distribution est imputé uniquement sur les coûts du produit PF."
-      },
-      {
-        "type": "p",
-        "text": "**Travail à faire**"
-      },
-      {
-        "type": "p",
-        "text": "**1. Calculer et interpréter les coûts et résultats dans le contexte de l’entreprise Paltiv.**"
-      },
-      {
-        "type": "p",
-        "text": "**2. Rédiger unargumentaire pour le contrôleur de gestion sur la qualité des unités d’oeuvre, avec des propositions d’amélioration.**"
-      },
-      {
-        "type": "p",
-        "text": "**Tableau de répartition des charges indirectes**"
-      },
-      {
-        "type": "table",
-        "headers": [
-          "**Charges**",
-          "**Totaux**",
-          "**Centres auxiliaires**",
-          "**Centres principaux opérationnels**",
-          "**Centre de structure**"
-        ],
-        "rows": [
-          [
-            "**Gestion du matériel**",
-            "**Gestion du personnel**",
-            "**Appro.**",
-            "**Atelier 1**",
-            "**Atelier 2**",
-            "**Atelier 3**",
-            "**Atelier 4**",
-            "**Distrib.**",
-            "**Administratif**"
-          ],
-          [
-            "**Totaux primaires**",
-            "100 350",
-            "3 750",
-            "4 600",
-            "2 000",
-            "40 000",
-            "20 000",
-            "15 000",
-            "5 000",
-            "3 000",
-            "7 000"
-          ],
-          [
-            "**• Gestion matériel**",
-            "",
-            "– 4 000",
-            "400",
-            "1 000",
-            "800",
-            "800",
-            "200",
-            "200",
-            "600",
-            "–"
-          ],
-          [
-            "**• Gestion personnel**",
-            "",
-            "250",
-            "– 5 000",
-            "750",
-            "1 250",
-            "1 250",
-            "250",
-            "500",
-            "500",
-            "250"
-          ],
-          [
-            "**Totaux secondaires**",
-            "100 350",
-            "0",
-            "0",
-            "3 750",
-            "42 050",
-            "22 050",
-            "15 450",
-            "5 700",
-            "4 100",
-            "7 250"
-          ],
-          [
-            "**Nature UO**",
-            "",
-            "",
-            "",
-            "kg de MP achetée",
-            "kg de MP1 consom.",
-            "HMOD",
-            "kg sous-produit S obtenu",
-            "m³ de déchet D traité",
-            "",
-            ""
-          ],
-          [
-            "**Nombre UO**",
-            "",
-            "",
-            "",
-            "4 000",
-            "1 400",
-            "1 500",
-            "250",
-            "142,5",
-            "",
-            ""
-          ],
-          [
-            "**Coût UO**",
-            "",
-            "",
-            "",
-            "0,9375",
-            "30,0357",
-            "14,70",
-            "61,80",
-            "40,00",
-            "",
-            ""
-          ]
-        ]
-      },
-      {
-        "type": "p",
-        "text": "UO : unité d’œuvre ; MOD : main-d’œuvre directe ; HMOD : heures de main-d’œuvre directe."
-      }
-    ],
-    "correction": []
   },
   {
     "id": "ex6",
@@ -2475,8 +2990,6 @@ export const exercises: Exercise[] = [
     "id": "ex7",
     "label": "Cas",
     "title": "Léonie",
-    "difficulty": 2,
-    "durationMin": 60,
     "statement": [
       {
         "type": "p",
@@ -2520,15 +3033,15 @@ export const exercises: Exercise[] = [
       },
       {
         "type": "p",
-        "text": "*1. Calculer et interpréter les coûts et les résultats des deux produits obtenus en mettant en place la méthode des centres d’analyse.*"
+        "text": "**1. Calculer et interpréter les coûts et les résultats des deux produits obtenus en mettant en place la méthode des centres d’analyse.**"
       },
       {
         "type": "p",
-        "text": "*2. Apprécier les intérêts et les limites de la méthode de calcul des coûts dans le cadre du contexte Léonie.*"
+        "text": "**2. Apprécier les intérêts et les limites de la méthode de calcul des coûts dans le cadre du contexte Léonie.**"
       },
       {
         "type": "p",
-        "text": "*3. Rédiger un argumentaire afin de conseiller le dirigeant de l’entreprise Léonie sur la poursuite ou non de la production des deux produits.*"
+        "text": "**3. Rédiger un argumentaire afin de conseiller le dirigeant de l’entreprise Léonie sur la poursuite ou non de la production des deux produits.**"
       },
       {
         "type": "p",
@@ -2895,8 +3408,6 @@ export const exercises: Exercise[] = [
     "id": "ex8",
     "label": "Cas",
     "title": "Netplus",
-    "difficulty": 3,
-    "durationMin": 40,
     "statement": [
       {
         "type": "p",
@@ -2920,11 +3431,11 @@ export const exercises: Exercise[] = [
       },
       {
         "type": "p",
-        "text": "*1. Calculer et interpréter le résultat mensuel en fonction de chaque catégorie de clients. Arrondir chaque coût unitaire à la quatrième décimale.*"
+        "text": "**1. Calculer et interpréter le résultat mensuel en fonction de chaque catégorie de clients. Arrondir chaque coût unitaire à la quatrième décimale.**"
       },
       {
         "type": "p",
-        "text": "*2. Apprécier les intérêts et les limites de la méthode des coûts complets par les centres d’analyse.*"
+        "text": "**2. Apprécier les intérêts et les limites de la méthode des coûts complets par les centres d’analyse.**"
       },
       {
         "type": "p",
@@ -3238,8 +3749,6 @@ export const exercises: Exercise[] = [
     "id": "ex9",
     "label": "Cas",
     "title": "Agrilin",
-    "difficulty": 3,
-    "durationMin": 60,
     "statement": [
       {
         "type": "p",
@@ -3263,15 +3772,15 @@ export const exercises: Exercise[] = [
       },
       {
         "type": "p",
-        "text": "*1. Calculer et interpréter les coûts, les marges et les résultats des deux produits obtenus en mettant en place la méthode des centres d’analyse.*"
+        "text": "**1. Calculer et interpréter les coûts, les marges et les résultats des deux produits obtenus en mettant en place la méthode des centres d’analyse.**"
       },
       {
         "type": "p",
-        "text": "*2. Rédiger un argumentaire afin de conseiller le président de la coopérative Agrilin sur la poursuite ou non de la production des deux types de produits.*"
+        "text": "**2. Rédiger un argumentaire afin de conseiller le président de la coopérative Agrilin sur la poursuite ou non de la production des deux types de produits.**"
       },
       {
         "type": "p",
-        "text": "*3. Apprécier les intérêts et les limites de la méthode de calcul des coûts dans le cadre du contexte Agrilin.*"
+        "text": "**3. Apprécier les intérêts et les limites de la méthode de calcul des coûts dans le cadre du contexte Agrilin.**"
       },
       {
         "type": "p",
