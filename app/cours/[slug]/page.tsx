@@ -7,9 +7,11 @@ import { hasFiche } from "@/lib/content/fiche";
 import {
   apprenantConnecte,
   applicationsChoisies,
+  chapitreCompetences,
   competencesAttribuees,
   ressourcesReservees,
 } from "@/lib/apprenant";
+import { applicationsParCompetences } from "@/lib/content/competences";
 import {
   ChapterView,
   type OngletVerrouille,
@@ -61,12 +63,14 @@ export default async function ChapterPage({ params }: Props) {
   if (!chapter) notFound();
 
   const choix = await applicationsChoisies();
+  const chaines = await chapitreCompetences();
+  const attributionsGlobales = await competencesAttribuees();
   /*
    * Attributions de compétences du fondateur, ramenées aux exercices de
    * ce chapitre : « slug:idExercice » → « idExercice ».
    */
-  const attributions = Object.fromEntries(
-    Object.entries(await competencesAttribuees())
+  let attributions = Object.fromEntries(
+    Object.entries(attributionsGlobales)
       .filter(([cle]) => cle.startsWith(slug + ":"))
       .map(([cle, comps]) => [cle.slice(slug.length + 1), comps])
   );
@@ -84,13 +88,30 @@ export default async function ChapterPage({ params }: Props) {
   const visible = { ...chapter };
 
   /*
-   * La sélection du fondateur passe avant tout : un chapitre présent dans
-   * le réglage ne publie que les applications cochées dans l'espace
-   * professeur ; absent, il les publie toutes.
+   * Chaîne par compétences : un chapitre rattaché à des compétences dans
+   * l'espace professeur publie les applications qui les travaillent —
+   * d'où qu'elles viennent. Sans rattachement, il garde celles de son
+   * propre cahier.
    */
-  if (chapter.exercises && choix[slug]) {
+  if (chaines[slug]?.length) {
+    const derive = applicationsParCompetences(
+      slug,
+      chaines[slug],
+      programs.flatMap((p) => p.chapters),
+      attributionsGlobales
+    );
+    visible.exercises = derive.exercises.length ? derive.exercises : undefined;
+    attributions = derive.attributionsAffichees;
+  }
+
+  /*
+   * Le sélecteur direct du fondateur reste la surcharge fine : un
+   * chapitre présent dans le réglage ne publie que les applications
+   * cochées ; absent, il publie tout le vivier.
+   */
+  if (visible.exercises && choix[slug]) {
     const retenues = new Set(choix[slug]);
-    visible.exercises = chapter.exercises.filter((e) => retenues.has(e.id));
+    visible.exercises = visible.exercises.filter((e) => retenues.has(e.id));
     if (!visible.exercises.length) visible.exercises = undefined;
   }
 

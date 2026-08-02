@@ -3,13 +3,19 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
-import { getChapter } from "@/lib/content";
+import { getChapter, allChapters } from "@/lib/content";
+import {
+  applicationsParCompetences,
+  cleCompetence,
+  toutesLesCompetences,
+} from "@/lib/content/competences";
 import { motDePasseValide } from "@/lib/auth";
 import {
   hacherMotDePasse,
   motDePasseCorrespond,
   CLE_RESSOURCES_RESERVEES,
   CLE_APPLICATIONS_CHOISIES,
+  CLE_CHAPITRE_COMPETENCES,
   CLE_COMPETENCES_EXERCICES,
   RESSOURCES_RESERVABLES,
 } from "@/lib/apprenant";
@@ -232,39 +238,89 @@ export async function enregistrerRessourcesReservees(form: FormData) {
   revalidatePath("/prof");
 }
 
+/** Lit un réglage-carte « clé → libellés », tolérant au JSON illisible. */
+async function lireCarte(cle: string): Promise<Record<string, string[]>> {
+  const reglage = await prisma.reglage.findUnique({ where: { cle } });
+  if (!reglage) return {};
+  try {
+    const carte = JSON.parse(reglage.valeur) as Record<string, string[]>;
+    return typeof carte === "object" && carte !== null ? carte : {};
+  } catch {
+    return {};
+  }
+}
+
+async function ecrireCarte(cle: string, carte: Record<string, string[]>) {
+  const valeur = JSON.stringify(carte);
+  await prisma.reglage.upsert({
+    where: { cle },
+    create: { cle, valeur },
+    update: { valeur },
+  });
+}
+
+/**
+ * Rattache un chapitre à ses compétences — le premier maillon de la
+ * chaîne chapitre → compétences → applications. Un chapitre rattaché
+ * publie les applications qui travaillent ses compétences, quel que soit
+ * leur cahier d'origine ; tout décocher le ramène à son propre cahier.
+ */
+export async function enregistrerChapitreCompetences(form: FormData) {
+  await exigerFondateur();
+  const slug = String(form.get("chapitre") ?? "");
+  if (!allChapters.some((c) => c.slug === slug)) return;
+
+  const attributions = await lireCarte(CLE_COMPETENCES_EXERCICES);
+  const connues = new Map(
+    toutesLesCompetences(allChapters, attributions).map((c) => [c.cle, c.texte])
+  );
+  const cochees = [
+    ...new Set(
+      form
+        .getAll("competence")
+        .map((t) => connues.get(cleCompetence(String(t))))
+        .filter((t): t is string => Boolean(t))
+    ),
+  ];
+
+  const carte = await lireCarte(CLE_CHAPITRE_COMPETENCES);
+  if (cochees.length) carte[slug] = cochees;
+  else delete carte[slug];
+  await ecrireCarte(CLE_CHAPITRE_COMPETENCES, carte);
+  revalidatePath("/prof");
+}
+
 /**
  * Sélection des applications publiées pour un chapitre, décidée par le
- * fondateur. Tout coché — l'état normal — s'enregistre comme une absence
- * de réglage : la restriction est l'exception, pas la règle.
+ * fondateur — la surcharge fine de la chaîne par compétences : elle
+ * s'applique au vivier que la chaîne produit, ou au cahier du chapitre
+ * s'il n'est rattaché à aucune compétence. Tout coché — l'état normal —
+ * s'enregistre comme une absence de réglage : la restriction est
+ * l'exception, pas la règle.
  */
 export async function enregistrerApplicationsChoisies(form: FormData) {
   await exigerFondateur();
   const slug = String(form.get("chapitre") ?? "");
-  const chapitre = getChapter(slug);
-  if (!chapitre?.exercises?.length) return;
+  const chapitre = allChapters.find((c) => c.slug === slug);
+  if (!chapitre) return;
 
-  const valides = new Set(chapitre.exercises.map((e) => e.id));
+  const chaines = await lireCarte(CLE_CHAPITRE_COMPETENCES);
+  const attributions = await lireCarte(CLE_COMPETENCES_EXERCICES);
+  const vivier = chaines[slug]?.length
+    ? applicationsParCompetences(slug, chaines[slug], allChapters, attributions).exercises
+    : chapitre.exercises ?? [];
+  if (!vivier.length) return;
+
+  const valides = new Set(vivier.map((e) => e.id));
   const cochees = form
     .getAll("exercice")
     .map(String)
     .filter((id) => valides.has(id));
 
-  const reglage = await prisma.reglage.findUnique({ where: { cle: CLE_APPLICATIONS_CHOISIES } });
-  let carte: Record<string, string[]> = {};
-  try {
-    carte = reglage ? (JSON.parse(reglage.valeur) as Record<string, string[]>) : {};
-  } catch {
-    carte = {};
-  }
-  if (cochees.length === chapitre.exercises.length) delete carte[slug];
+  const carte = await lireCarte(CLE_APPLICATIONS_CHOISIES);
+  if (cochees.length === vivier.length) delete carte[slug];
   else carte[slug] = cochees;
-
-  const valeur = JSON.stringify(carte);
-  await prisma.reglage.upsert({
-    where: { cle: CLE_APPLICATIONS_CHOISIES },
-    create: { cle: CLE_APPLICATIONS_CHOISIES, valeur },
-    update: { valeur },
-  });
+  await ecrireCarte(CLE_APPLICATIONS_CHOISIES, carte);
   revalidatePath("/prof");
 }
 

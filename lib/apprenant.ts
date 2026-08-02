@@ -172,3 +172,27 @@ export async function competencesAttribuees(): Promise<Record<string, string[]>>
     return {};
   }
 }
+
+// ── Compétences rattachées aux chapitres ─────────────────────────────
+
+export const CLE_CHAPITRE_COMPETENCES = "chapitre-competences";
+
+/**
+ * Compétences portées par chaque chapitre, décidées par le fondateur :
+ * « slug » → libellés. Un chapitre présent ici tire ses applications de
+ * ses compétences — y compris depuis d'autres cahiers ; absent, il garde
+ * les applications de son propre cahier, comme avant.
+ */
+export async function chapitreCompetences(): Promise<Record<string, string[]>> {
+  if (!dbConfigured) return {};
+  const reglage = await prisma.reglage.findUnique({
+    where: { cle: CLE_CHAPITRE_COMPETENCES },
+  });
+  if (!reglage) return {};
+  try {
+    const carte = JSON.parse(reglage.valeur) as Record<string, string[]>;
+    return typeof carte === "object" && carte !== null ? carte : {};
+  } catch {
+    return {};
+  }
+}

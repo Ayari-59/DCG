@@ -234,8 +234,8 @@ export function Exercises({
       <div className="mb-6 rounded-xl border border-blue-200 bg-blue-50 px-5 py-4">
         <h2 className="font-serif text-xl font-bold text-ink">Applications</h2>
         <p className="mt-0.5 text-sm text-muted">
-          {exercises.length} exercice{exercises.length > 1 ? "s" : ""} du cahier, dont {corriges}{" "}
-          corrigé{corriges > 1 ? "s" : ""}. Cherchez d&apos;abord sur votre brouillon, comparez
+          {exercises.length} exercice{exercises.length > 1 ? "s" : ""}, dont {corriges} corrigé
+          {corriges > 1 ? "s" : ""}. Cherchez d&apos;abord sur votre brouillon, comparez
           ensuite, puis situez-vous.
         </p>
         {evalues > 0 && (

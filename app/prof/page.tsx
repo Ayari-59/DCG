@@ -5,10 +5,17 @@ import { cleActivationConfiguree } from "@/lib/auth";
 import {
   RESSOURCES_RESERVABLES,
   applicationsChoisies,
+  chapitreCompetences,
   competencesAttribuees,
   ressourcesReservees,
 } from "@/lib/apprenant";
-import { competencesDe, competencesDuChapitre } from "@/lib/content/competences";
+import {
+  applicationsParCompetences,
+  cleCompetence,
+  competencesDe,
+  competencesDuChapitre,
+  toutesLesCompetences,
+} from "@/lib/content/competences";
 import { enseignantConnecte, estFondateur } from "@/lib/enseignant";
 import { allChapters } from "@/lib/content";
 import { dateCourte, dateIso } from "@/lib/seances";
@@ -17,6 +24,7 @@ import { InvitationForm, MotDePasseForm } from "./CompteForms";
 import { SeanceForm, type ChapitreOption } from "./SeanceForm";
 import {
   enregistrerApplicationsChoisies,
+  enregistrerChapitreCompetences,
   enregistrerCompetencesExercices,
   enregistrerRessourcesReservees,
   retirerCollegue,
@@ -124,9 +132,19 @@ export default async function ProfPage({ searchParams }: Props) {
   const reservees = fondateur ? await ressourcesReservees() : [];
   const choixApplications = fondateur ? await applicationsChoisies() : {};
   const attributions = fondateur ? await competencesAttribuees() : {};
+  const chaines = fondateur ? await chapitreCompetences() : {};
+  /* La banque : toutes les compétences que les applications du site
+   * travaillent, cahiers et attributions confondus. */
+  const banque = fondateur ? toutesLesCompetences(allChapters, attributions) : [];
   const chapitresAvecApplications = fondateur
     ? allChapters.filter((c) => c.exercises?.length)
     : [];
+  /* Vivier d'applications d'un chapitre : ce que la chaîne par
+   * compétences produit s'il est rattaché, son cahier sinon. */
+  const vivierDe = (c: (typeof allChapters)[number]) =>
+    chaines[c.slug]?.length
+      ? applicationsParCompetences(c.slug, chaines[c.slug], allChapters, attributions).exercises
+      : c.exercises ?? [];
   const equipe = fondateur
     ? await prisma.enseignant.findMany({ orderBy: [{ role: "desc" }, { createdAt: "asc" }] })
     : [];
@@ -290,18 +308,95 @@ export default async function ProfPage({ searchParams }: Props) {
         </section>
       )}
 
+      {/* ── Compétences par chapitre : la chaîne ────────────────────── */}
+      {fondateur && banque.length > 0 && (
+        <section className="mt-6 rounded-2xl border border-line bg-white p-6 elev-sm">
+          <h2 className="font-serif text-xl font-bold text-ink">Compétences par chapitre</h2>
+          <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
+            Rattachez chaque chapitre à ses compétences : il publiera alors les applications qui
+            les travaillent, y compris celles venues d&apos;autres cahiers. Un chapitre sans
+            rattachement garde les applications de son propre cahier, comme aujourd&apos;hui.
+            Tout décocher retire le rattachement.
+          </p>
+          <div className="mt-4 space-y-2">
+            {allChapters.map((c) => {
+              const rattachees = chaines[c.slug];
+              const propres = new Set(
+                competencesDuChapitre(
+                  c.exercises ?? [],
+                  Object.fromEntries(
+                    Object.entries(attributions)
+                      .filter(([cle]) => cle.startsWith(c.slug + ":"))
+                      .map(([cle, comps]) => [cle.slice(c.slug.length + 1), comps])
+                  )
+                ).map((comp) => comp.cle)
+              );
+              const cochee = (cle: string) =>
+                rattachees ? rattachees.some((t) => cleCompetence(t) === cle) : propres.has(cle);
+              return (
+                <details key={c.slug} className="rounded-xl border border-line">
+                  <summary className="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-ink transition hover:bg-slate-50">
+                    {c.number}. {c.title}
+                    {rattachees?.length ? (
+                      <span className="ml-2 rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-bold text-emerald-800">
+                        {rattachees.length} compétence{rattachees.length > 1 ? "s" : ""} ·{" "}
+                        {vivierDe(c).length} application{vivierDe(c).length > 1 ? "s" : ""}
+                      </span>
+                    ) : (
+                      <span className="ml-2 rounded-full bg-slate-100 px-2 py-0.5 text-xs font-bold text-muted">
+                        cahier · {(c.exercises ?? []).length} application
+                        {(c.exercises ?? []).length > 1 ? "s" : ""}
+                      </span>
+                    )}
+                  </summary>
+                  <form
+                    action={enregistrerChapitreCompetences}
+                    className="border-t border-line px-4 py-4"
+                  >
+                    <input type="hidden" name="chapitre" value={c.slug} />
+                    <div className="flex flex-wrap gap-x-5 gap-y-1.5">
+                      {banque.map((comp) => (
+                        <label
+                          key={comp.cle}
+                          className="flex items-start gap-1.5 text-sm text-slate-700"
+                        >
+                          <input
+                            type="checkbox"
+                            name="competence"
+                            value={comp.texte}
+                            defaultChecked={cochee(comp.cle)}
+                            className="mt-1"
+                          />
+                          {comp.texte}
+                          <span className="text-xs text-muted">{comp.applications}</span>
+                        </label>
+                      ))}
+                    </div>
+                    <button className="mt-4 rounded-xl bg-navy px-5 py-2.5 text-sm font-bold text-white transition hover:bg-navy-deep">
+                      Enregistrer ce chapitre
+                    </button>
+                  </form>
+                </details>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
       {/* ── Applications publiées, chapitre par chapitre ────────────── */}
       {fondateur && chapitresAvecApplications.length > 0 && (
         <section className="mt-6 rounded-2xl border border-line bg-white p-6 elev-sm">
           <h2 className="font-serif text-xl font-bold text-ink">Applications par chapitre</h2>
           <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
-            Vous décidez des applications publiées sur chaque chapitre : décochez celles à
-            retirer, puis enregistrez le chapitre. Tout coché est l&apos;état normal — la
-            restriction est l&apos;exception.
+            La retouche fine, après la chaîne par compétences : vous décidez des applications
+            publiées sur chaque chapitre parmi son vivier — décochez celles à retirer, puis
+            enregistrez le chapitre. Tout coché est l&apos;état normal — la restriction est
+            l&apos;exception.
           </p>
           <div className="mt-4 space-y-2">
-            {chapitresAvecApplications.map((c) => {
-              const exercices = c.exercises ?? [];
+            {allChapters.map((c) => {
+              const exercices = vivierDe(c);
+              if (!exercices.length) return null;
               const cochees = new Set(choixApplications[c.slug] ?? exercices.map((e) => e.id));
               return (
                 <details key={c.slug} className="rounded-xl border border-line">

@@ -66,3 +66,64 @@ export function competencesDuChapitre(
   }
   return [...vues.values()];
 }
+
+/**
+ * Toutes les compétences connues du site — cahiers et attributions du
+ * fondateur confondus — avec leur nombre d'applications. C'est la banque
+ * dans laquelle un chapitre puise les siennes.
+ */
+export function toutesLesCompetences(
+  chapitres: { slug: string; exercises?: Exercise[] }[],
+  attributions: Record<string, string[]> = {}
+): { texte: string; cle: string; applications: number }[] {
+  const vues = new Map<string, { texte: string; cle: string; applications: number }>();
+  for (const ch of chapitres) {
+    for (const ex of ch.exercises ?? []) {
+      for (const texte of competencesDe(ex, attributions[`${ch.slug}:${ex.id}`])) {
+        const cle = cleCompetence(texte);
+        const existante = vues.get(cle);
+        if (existante) existante.applications++;
+        else vues.set(cle, { texte, cle, applications: 1 });
+      }
+    }
+  }
+  return [...vues.values()];
+}
+
+/**
+ * Applications d'un chapitre lorsque sa chaîne de compétences est active :
+ * tout exercice du site — quel que soit son cahier d'origine — dont une
+ * compétence croise celles du chapitre.
+ *
+ * Les exercices venus d'un autre cahier sont ré-identifiés en
+ * « slug:d'origine:id » — deux cahiers numérotent tous deux « ex1 » — et
+ * leur repère signale le chapitre d'origine. Le second résultat donne,
+ * par identifiant affiché, les compétences attribuées à transmettre au
+ * filtre client.
+ */
+export function applicationsParCompetences(
+  slug: string,
+  competencesDuChap: string[],
+  chapitres: { slug: string; number: number; exercises?: Exercise[] }[],
+  attributions: Record<string, string[]> = {}
+): { exercises: Exercise[]; attributionsAffichees: Record<string, string[]> } {
+  const cles = new Set(competencesDuChap.map(cleCompetence));
+  const exercises: Exercise[] = [];
+  const attributionsAffichees: Record<string, string[]> = {};
+
+  for (const ch of chapitres) {
+    for (const ex of ch.exercises ?? []) {
+      const attribuees = attributions[`${ch.slug}:${ex.id}`] ?? [];
+      const comps = competencesDe(ex, attribuees);
+      if (!comps.some((c) => cles.has(cleCompetence(c)))) continue;
+
+      const affiche =
+        ch.slug === slug
+          ? ex
+          : { ...ex, id: `${ch.slug}:${ex.id}`, label: `${ex.label} · ch. ${ch.number}` };
+      exercises.push(affiche);
+      if (attribuees.length) attributionsAffichees[affiche.id] = attribuees;
+    }
+  }
+  return { exercises, attributionsAffichees };
+}
