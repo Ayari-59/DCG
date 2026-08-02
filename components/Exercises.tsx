@@ -56,15 +56,6 @@ const LIBELLE: Record<StatutApplication, string> = {
   "a-revoir": "À revoir",
 };
 
-function Difficulty({ level }: { level: number }) {
-  return (
-    <span className="text-amber-500" title={`Difficulté ${level}/3`}>
-      {"★".repeat(level)}
-      <span className="text-slate-300">{"★".repeat(Math.max(0, 3 - level))}</span>
-    </span>
-  );
-}
-
 function ExerciseCard({
   exercise,
   index,
@@ -92,13 +83,6 @@ function ExerciseCard({
           <span className="block font-semibold text-ink">{exercise.title}</span>
           <span className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted">
             <span className="rounded bg-slate-100 px-1.5 py-0.5 font-medium">{exercise.label}</span>
-            {exercise.difficulty && <Difficulty level={exercise.difficulty} />}
-            {exercise.durationMin && (
-              <span className="flex items-center gap-1">
-                <Icone nom="duree" className="h-3.5 w-3.5" />
-                {exercise.durationMin} min
-              </span>
-            )}
             {exercise.correction.length === 0 && (
               <span className="text-amber-600">corrigé non disponible</span>
             )}
