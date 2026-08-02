@@ -45,12 +45,15 @@ export function ChapterView({
   chapter,
   suivant,
   verrouilles = [],
+  competencesAttribuees = {},
 }: {
   chapter: Chapter;
   suivant?: VoisinChapitre;
   /** Ressources réservées : le contenu n'a pas été envoyé, l'onglet reste
       visible avec un cadenas et invite à se connecter. */
   verrouilles?: OngletVerrouille[];
+  /** Compétences rattachées par le fondateur, par identifiant d'exercice. */
+  competencesAttribuees?: Record<string, string[]>;
 }) {
   // L'état de navigation vit dans l'URL : une page est ainsi partageable,
   // survit au rechargement, et le cahier de texte peut pointer une section.
@@ -439,7 +442,11 @@ export function ChapterView({
           {!ongletVerrouille && tab === "fiche" && <Fiche chapter={chapter} />}
           {tab === "annales" && !ongletVerrouille && <Annales chapter={chapter} />}
           {tab === "applications" && !ongletVerrouille && chapter.exercises && (
-            <Exercises slug={chapter.slug} exercises={chapter.exercises} />
+            <Exercises
+              slug={chapter.slug}
+              exercises={chapter.exercises}
+              attributions={competencesAttribuees}
+            />
           )}
           {tab === "flashcards" && !ongletVerrouille && (
             <div className="max-w-2xl">

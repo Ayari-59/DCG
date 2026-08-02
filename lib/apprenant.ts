@@ -148,3 +148,27 @@ export async function applicationsChoisies(): Promise<Record<string, string[]>> 
     return {};
   }
 }
+
+// ── Compétences attribuées aux applications ──────────────────────────
+
+export const CLE_COMPETENCES_EXERCICES = "competences-exercices";
+
+/**
+ * Compétences rattachées par le fondateur aux applications que les
+ * cahiers ne couvrent pas, sous la forme « slug:idExercice » → libellés.
+ * Elles s'ajoutent aux compétences déclarées dans les énoncés — jamais ne
+ * les remplacent : le cahier reste la source première.
+ */
+export async function competencesAttribuees(): Promise<Record<string, string[]>> {
+  if (!dbConfigured) return {};
+  const reglage = await prisma.reglage.findUnique({
+    where: { cle: CLE_COMPETENCES_EXERCICES },
+  });
+  if (!reglage) return {};
+  try {
+    const carte = JSON.parse(reglage.valeur) as Record<string, string[]>;
+    return typeof carte === "object" && carte !== null ? carte : {};
+  } catch {
+    return {};
+  }
+}

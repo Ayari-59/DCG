@@ -5,8 +5,10 @@ import { cleActivationConfiguree } from "@/lib/auth";
 import {
   RESSOURCES_RESERVABLES,
   applicationsChoisies,
+  competencesAttribuees,
   ressourcesReservees,
 } from "@/lib/apprenant";
+import { competencesDe, competencesDuChapitre } from "@/lib/content/competences";
 import { enseignantConnecte, estFondateur } from "@/lib/enseignant";
 import { allChapters } from "@/lib/content";
 import { dateCourte, dateIso } from "@/lib/seances";
@@ -15,6 +17,7 @@ import { InvitationForm, MotDePasseForm } from "./CompteForms";
 import { SeanceForm, type ChapitreOption } from "./SeanceForm";
 import {
   enregistrerApplicationsChoisies,
+  enregistrerCompetencesExercices,
   enregistrerRessourcesReservees,
   retirerCollegue,
   seDeconnecter,
@@ -120,6 +123,7 @@ export default async function ProfPage({ searchParams }: Props) {
 
   const reservees = fondateur ? await ressourcesReservees() : [];
   const choixApplications = fondateur ? await applicationsChoisies() : {};
+  const attributions = fondateur ? await competencesAttribuees() : {};
   const chapitresAvecApplications = fondateur
     ? allChapters.filter((c) => c.exercises?.length)
     : [];
@@ -340,6 +344,91 @@ export default async function ProfPage({ searchParams }: Props) {
                 </details>
               );
             })}
+          </div>
+        </section>
+      )}
+
+      {/* ── Compétences des applications ────────────────────────────── */}
+      {fondateur && chapitresAvecApplications.length > 0 && (
+        <section className="mt-6 rounded-2xl border border-line bg-white p-6 elev-sm">
+          <h2 className="font-serif text-xl font-bold text-ink">Compétences des applications</h2>
+          <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
+            Règle du site : toute application porte au moins une compétence. La plupart la
+            tiennent par leur bloc « Compétences visées » du cahier ; celles listées ici en sont
+            dépourvues — cochez une compétence du chapitre ou saisissez-en une nouvelle.
+          </p>
+          <div className="mt-4 space-y-2">
+            {chapitresAvecApplications.map((c) => {
+              const exercices = c.exercises ?? [];
+              const attribueesDe = (id: string) => attributions[`${c.slug}:${id}`] ?? [];
+              const sansCompetence = exercices.filter(
+                (e) => competencesDe(e, attribueesDe(e.id)).length === 0
+              );
+              if (sansCompetence.length === 0) return null;
+              const banque = competencesDuChapitre(exercices, {});
+              return (
+                <details key={c.slug} className="rounded-xl border border-line">
+                  <summary className="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-ink transition hover:bg-slate-50">
+                    {c.number}. {c.title}
+                    <span className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-bold text-amber-800">
+                      {sansCompetence.length} sans compétence
+                    </span>
+                  </summary>
+                  <form
+                    action={enregistrerCompetencesExercices}
+                    className="space-y-5 border-t border-line px-4 py-4"
+                  >
+                    <input type="hidden" name="chapitre" value={c.slug} />
+                    {sansCompetence.map((e) => (
+                      <div key={e.id}>
+                        <input type="hidden" name="exercices" value={e.id} />
+                        <p className="text-sm font-semibold text-ink">
+                          {e.title}
+                          <span className="ml-2 rounded bg-slate-100 px-1.5 py-0.5 text-xs font-medium text-muted">
+                            {e.label}
+                          </span>
+                        </p>
+                        {banque.length > 0 && (
+                          <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1.5">
+                            {banque.map((comp) => (
+                              <label
+                                key={comp.cle}
+                                className="flex items-start gap-1.5 text-sm text-slate-700"
+                              >
+                                <input
+                                  type="checkbox"
+                                  name={`comp-${e.id}`}
+                                  value={comp.texte}
+                                  className="mt-1"
+                                />
+                                {comp.texte}
+                              </label>
+                            ))}
+                          </div>
+                        )}
+                        <input
+                          name={`libre-${e.id}`}
+                          placeholder="Ou une nouvelle compétence…"
+                          className="mt-2 w-full rounded-lg border border-line bg-white px-3 py-2 text-sm text-ink outline-none transition focus:border-brand"
+                        />
+                      </div>
+                    ))}
+                    <button className="rounded-xl bg-navy px-5 py-2.5 text-sm font-bold text-white transition hover:bg-navy-deep">
+                      Enregistrer ce chapitre
+                    </button>
+                  </form>
+                </details>
+              );
+            })}
+            {chapitresAvecApplications.every((c) =>
+              (c.exercises ?? []).every(
+                (e) => competencesDe(e, attributions[`${c.slug}:${e.id}`] ?? []).length > 0
+              )
+            ) && (
+              <p className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-800">
+                Toutes les applications sont rattachées à au moins une compétence.
+              </p>
+            )}
           </div>
         </section>
       )}

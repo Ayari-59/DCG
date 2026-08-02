@@ -4,7 +4,12 @@ import { notFound } from "next/navigation";
 import { getChapter, programs } from "@/lib/content";
 import { getTheme } from "@/lib/content/theme";
 import { hasFiche } from "@/lib/content/fiche";
-import { apprenantConnecte, applicationsChoisies, ressourcesReservees } from "@/lib/apprenant";
+import {
+  apprenantConnecte,
+  applicationsChoisies,
+  competencesAttribuees,
+  ressourcesReservees,
+} from "@/lib/apprenant";
 import {
   ChapterView,
   type OngletVerrouille,
@@ -56,6 +61,15 @@ export default async function ChapterPage({ params }: Props) {
   if (!chapter) notFound();
 
   const choix = await applicationsChoisies();
+  /*
+   * Attributions de compétences du fondateur, ramenées aux exercices de
+   * ce chapitre : « slug:idExercice » → « idExercice ».
+   */
+  const attributions = Object.fromEntries(
+    Object.entries(await competencesAttribuees())
+      .filter(([cle]) => cle.startsWith(slug + ":"))
+      .map(([cle, comps]) => [cle.slice(slug.length + 1), comps])
+  );
   const reservees = await ressourcesReservees();
   const connecte = reservees.length > 0 && Boolean(await apprenantConnecte());
   const reserve = (id: (typeof reservees)[number]) => !connecte && reservees.includes(id);
@@ -111,7 +125,12 @@ export default async function ChapterPage({ params }: Props) {
     // ChapterView lit l'onglet et la section dans l'URL : Next impose une
     // frontière Suspense autour de useSearchParams.
     <Suspense fallback={<div className="mx-auto max-w-[1400px] px-5 py-20" />}>
-      <ChapterView chapter={visible} suivant={chapitreSuivant(slug)} verrouilles={verrouilles} />
+      <ChapterView
+        chapter={visible}
+        suivant={chapitreSuivant(slug)}
+        verrouilles={verrouilles}
+        competencesAttribuees={attributions}
+      />
     </Suspense>
   );
 }

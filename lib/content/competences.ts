@@ -25,18 +25,25 @@ function nettoyer(texte: string): string {
     .trim();
 }
 
-/** Compétences déclarées par un exercice, dans l'ordre du cahier. */
-export function competencesDe(exercise: Exercise): string[] {
+/**
+ * Compétences d'un exercice : celles déclarées dans le cahier, plus
+ * celles attribuées par le fondateur depuis l'espace professeur pour les
+ * exercices que le cahier ne couvre pas.
+ */
+export function competencesDe(exercise: Exercise, attribuees: string[] = []): string[] {
   const bloc = exercise.statement.find(
     (b): b is Extract<ContentBlock, { type: "p" }> =>
       b.type === "p" && BLOC_COMPETENCES.test(b.text)
   );
-  if (!bloc) return [];
+  const ajouts = attribuees.map(nettoyer).filter((t) => t.length > 3);
+  if (!bloc) return ajouts;
   const apres = bloc.text.replace(new RegExp(`^.*?${BLOC_COMPETENCES.source}`, "i"), "");
-  return apres
+  const declarees = apres
     .split("•")
     .map(nettoyer)
     .filter((t) => t.length > 3);
+  const cles = new Set(declarees.map(cleCompetence));
+  return [...declarees, ...ajouts.filter((a) => !cles.has(cleCompetence(a)))];
 }
 
 /**
@@ -45,11 +52,12 @@ export function competencesDe(exercise: Exercise): string[] {
  * apparition dans le cahier.
  */
 export function competencesDuChapitre(
-  exercises: Exercise[]
+  exercises: Exercise[],
+  attributions: Record<string, string[]> = {}
 ): { texte: string; cle: string; applications: number }[] {
   const vues = new Map<string, { texte: string; cle: string; applications: number }>();
   for (const ex of exercises) {
-    for (const texte of competencesDe(ex)) {
+    for (const texte of competencesDe(ex, attributions[ex.id])) {
       const cle = cleCompetence(texte);
       const existante = vues.get(cle);
       if (existante) existante.applications++;

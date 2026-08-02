@@ -167,7 +167,16 @@ function ExerciseCard({
   );
 }
 
-export function Exercises({ slug, exercises }: { slug: string; exercises: Exercise[] }) {
+export function Exercises({
+  slug,
+  exercises,
+  attributions = {},
+}: {
+  slug: string;
+  exercises: Exercise[];
+  /** Compétences rattachées par le fondateur, par identifiant d'exercice. */
+  attributions?: Record<string, string[]>;
+}) {
   const storageKey = `dcga:applis:${slug}`;
   const [etats, setEtats] = useState<Record<string, EtatExercice>>({});
   const [loaded, setLoaded] = useState(false);
@@ -178,7 +187,7 @@ export function Exercises({ slug, exercises }: { slug: string; exercises: Exerci
    * cochées.
    */
   const [filtres, setFiltres] = useState<Set<string>>(new Set());
-  const competences = competencesDuChapitre(exercises);
+  const competences = competencesDuChapitre(exercises, attributions);
   const basculer = (cle: string) =>
     setFiltres((f) => {
       const suivant = new Set(f);
@@ -190,7 +199,7 @@ export function Exercises({ slug, exercises }: { slug: string; exercises: Exerci
     filtres.size === 0
       ? exercises
       : exercises.filter((e) =>
-          competencesDe(e).some((c) => filtres.has(cleCompetence(c)))
+          competencesDe(e, attributions[e.id]).some((c) => filtres.has(cleCompetence(c)))
         );
 
   useEffect(() => {

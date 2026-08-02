@@ -10,6 +10,7 @@ import {
   motDePasseCorrespond,
   CLE_RESSOURCES_RESERVEES,
   CLE_APPLICATIONS_CHOISIES,
+  CLE_COMPETENCES_EXERCICES,
   RESSOURCES_RESERVABLES,
 } from "@/lib/apprenant";
 import {
@@ -262,6 +263,49 @@ export async function enregistrerApplicationsChoisies(form: FormData) {
   await prisma.reglage.upsert({
     where: { cle: CLE_APPLICATIONS_CHOISIES },
     create: { cle: CLE_APPLICATIONS_CHOISIES, valeur },
+    update: { valeur },
+  });
+  revalidatePath("/prof");
+}
+
+/**
+ * Rattache des compétences aux applications d'un chapitre que le cahier
+ * ne couvre pas — pour tenir la règle de l'auteur : toute application
+ * porte au moins une compétence. Les attributions s'ajoutent au cahier,
+ * elles ne le remplacent jamais.
+ */
+export async function enregistrerCompetencesExercices(form: FormData) {
+  await exigerFondateur();
+  const slug = String(form.get("chapitre") ?? "");
+  const chapitre = getChapter(slug);
+  if (!chapitre?.exercises?.length) return;
+  const valides = new Set(chapitre.exercises.map((e) => e.id));
+
+  const reglage = await prisma.reglage.findUnique({ where: { cle: CLE_COMPETENCES_EXERCICES } });
+  let carte: Record<string, string[]> = {};
+  try {
+    carte = reglage ? (JSON.parse(reglage.valeur) as Record<string, string[]>) : {};
+  } catch {
+    carte = {};
+  }
+
+  for (const id of form.getAll("exercices").map(String)) {
+    if (!valides.has(id)) continue;
+    const cochees = form.getAll(`comp-${id}`).map(String);
+    const libres = String(form.get(`libre-${id}`) ?? "")
+      .split(/[•;]/)
+      .map((t) => t.trim())
+      .filter((t) => t.length > 3);
+    const toutes = [...new Set([...cochees, ...libres])].slice(0, 10);
+    const cle = `${slug}:${id}`;
+    if (toutes.length) carte[cle] = toutes;
+    else delete carte[cle];
+  }
+
+  const valeur = JSON.stringify(carte);
+  await prisma.reglage.upsert({
+    where: { cle: CLE_COMPETENCES_EXERCICES },
+    create: { cle: CLE_COMPETENCES_EXERCICES, valeur },
     update: { valeur },
   });
   revalidatePath("/prof");
