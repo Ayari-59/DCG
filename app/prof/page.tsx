@@ -283,9 +283,165 @@ export default async function ProfPage({ searchParams }: Props) {
         </ul>
       )}
 
-      {/* ── Équipe (fondateur) ──────────────────────────────────────── */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {/* ── Bloc enseignant ────────────────────────────────────────── */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      <div className="mt-14 border-t-2 border-slate-200 pt-8">
+        <p className="mb-4 text-xs font-black uppercase tracking-[0.2em] text-muted">
+          Enseignant
+        </p>
+      </div>
+
+      {/* ── Annonces ─────────────────────────────────────────────────── */}
+      <details className="group rounded-2xl border border-line bg-white elev-sm">
+        <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+          Annonces
+        </summary>
+        <div className="border-t border-line px-6 pb-6 pt-4">
+        <div className="mb-4 flex justify-end">
+          <Link
+            href="/prof?nouvelleAnnonce=1"
+            className="rounded-xl bg-brand px-5 py-2 text-sm font-bold text-white transition hover:bg-orange-600"
+          >
+            + Nouvelle annonce
+          </Link>
+        </div>
+        <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
+          Les annonces apparaissent sur la page classe et sur la page d&apos;accueil.
+          Ciblez une classe ou laissez vide pour une annonce générale.
+        </p>
+        {annonces.length === 0 ? (
+          <p className="mt-4 rounded-xl border border-dashed border-line px-4 py-6 text-center text-sm text-muted">
+            Aucune annonce pour l&apos;instant.
+          </p>
+        ) : (
+          <ul className="mt-4 space-y-2">
+            {annonces.map((a) => (
+              <li
+                key={a.id}
+                className="flex flex-wrap items-center gap-3 rounded-xl border border-line px-4 py-3"
+              >
+                <div className="min-w-0 flex-1">
+                  <p className="flex flex-wrap items-center gap-2 text-sm">
+                    <span className="font-bold text-ink">{a.titre}</span>
+                    {a.classe && (
+                      <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-bold text-muted">
+                        {a.classe}
+                      </span>
+                    )}
+                    {a.epinglee && (
+                      <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-bold text-amber-800">
+                        épinglée
+                      </span>
+                    )}
+                    {!a.publiee && (
+                      <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-bold text-muted">
+                        brouillon
+                      </span>
+                    )}
+                    {fondateur && a.enseignant && (
+                      <span className="rounded-full bg-sky-100 px-2 py-0.5 text-xs font-bold text-sky-800">
+                        {a.enseignant.prenom}
+                      </span>
+                    )}
+                  </p>
+                  <p className="mt-1 text-sm text-muted line-clamp-1">{a.contenu}</p>
+                </div>
+                <div className="flex gap-2">
+                  <Link
+                    href={`/prof?annonce=${a.id}`}
+                    className="rounded-lg border border-line px-3 py-1.5 text-xs font-bold text-muted transition hover:text-ink"
+                  >
+                    Modifier
+                  </Link>
+                  <form action={supprimerAnnonce}>
+                    <input type="hidden" name="id" value={a.id} />
+                    <button className="rounded-lg border border-rose-200 px-3 py-1.5 text-xs font-bold text-rose-700 transition hover:bg-rose-50">
+                      Supprimer
+                    </button>
+                  </form>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+        </div>
+      </details>
+
+      {/* ── Emploi du temps ──────────────────────────────────────────── */}
+      <details className="group mt-3 rounded-2xl border border-line bg-white elev-sm">
+        <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+          Emploi du temps
+        </summary>
+        <div className="border-t border-line px-6 pb-6 pt-4">
+        <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
+          Collez l&apos;URL d&apos;intégration de votre agenda pour le publier sur{" "}
+          <Link href="/planning" className="font-semibold text-brand underline-offset-2 hover:underline">
+            /planning
+          </Link>.
+        </p>
+        <AgendaForm urlActuelle={urlAgenda ?? ""} />
+        </div>
+      </details>
+
+      {/* ── Matières visibles ─────────────────────────────────────── */}
+      <details className="group mt-3 rounded-2xl border border-line bg-white elev-sm">
+        <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+          Matières publiées sur le site
+        </summary>
+        <div className="border-t border-line px-6 pb-6 pt-4">
+        <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
+          Décochez une matière pour la masquer du site : ses cours, quiz et chapitres
+          disparaîtront de la navigation et des pages publiques. Le contenu reste intact
+          dans le dépôt — il suffit de recocher pour le republier.
+        </p>
+        <form action={enregistrerMatieresVisibles} className="mt-5">
+          <div className="flex flex-wrap gap-x-6 gap-y-3">
+            {programs.map((p) => (
+              <label
+                key={p.ue}
+                className="flex items-center gap-2 text-sm font-semibold text-ink"
+              >
+                <input
+                  type="checkbox"
+                  name="matiere"
+                  value={p.ue}
+                  defaultChecked={!masquees.includes(p.ue)}
+                />
+                {p.level} {p.ue} — {p.title}
+              </label>
+            ))}
+          </div>
+          <button className="mt-5 rounded-xl bg-navy px-5 py-2.5 text-sm font-bold text-white transition hover:bg-navy-deep">
+            Enregistrer
+          </button>
+        </form>
+        </div>
+      </details>
+
+      {/* ── Mon compte ──────────────────────────────────────────────── */}
+      <details className="group mt-3 rounded-2xl border border-line bg-white elev-sm">
+        <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+          Mon compte
+        </summary>
+        <div className="border-t border-line px-6 pb-6 pt-4">
+        <MotDePasseForm />
+        </div>
+      </details>
+
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {/* ── Bloc fondateur ─────────────────────────────────────────── */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
       {fondateur && (
-        <details className="group mt-12 rounded-2xl border border-line bg-white elev-sm">
+        <>
+        <div className="mt-14 border-t-2 border-brand/30 pt-8">
+          <p className="mb-4 text-xs font-black uppercase tracking-[0.2em] text-brand">
+            Administration
+          </p>
+        </div>
+
+      {/* ── Équipe (fondateur) ──────────────────────────────────────── */}
+        <details className="group rounded-2xl border border-line bg-white elev-sm">
           <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
             Équipe enseignante
           </summary>
@@ -322,46 +478,9 @@ export default async function ProfPage({ searchParams }: Props) {
           <InvitationForm />
           </div>
         </details>
-      )}
 
-      {/* ── Matières visibles ─────────────────────────────────────── */}
-      <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
-        <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
-          Matières publiées sur le site
-        </summary>
-        <div className="border-t border-line px-6 pb-6 pt-4">
-        <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
-          Décochez une matière pour la masquer du site : ses cours, quiz et chapitres
-          disparaîtront de la navigation et des pages publiques. Le contenu reste intact
-          dans le dépôt — il suffit de recocher pour le republier.
-        </p>
-        <form action={enregistrerMatieresVisibles} className="mt-5">
-          <div className="flex flex-wrap gap-x-6 gap-y-3">
-            {programs.map((p) => (
-              <label
-                key={p.ue}
-                className="flex items-center gap-2 text-sm font-semibold text-ink"
-              >
-                <input
-                  type="checkbox"
-                  name="matiere"
-                  value={p.ue}
-                  defaultChecked={!masquees.includes(p.ue)}
-                />
-                {p.level} {p.ue} — {p.title}
-              </label>
-            ))}
-          </div>
-          <button className="mt-5 rounded-xl bg-navy px-5 py-2.5 text-sm font-bold text-white transition hover:bg-navy-deep">
-            Enregistrer
-          </button>
-        </form>
-        </div>
-      </details>
-
-      {/* ── Visibilité des ressources (fondateur) ───────────────────── */}
-      {fondateur && (
-        <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
+      {/* ── Visibilité des ressources ───────────────────────────────── */}
+        <details className="group mt-3 rounded-2xl border border-line bg-white elev-sm">
           <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
             Ressources réservées aux apprenants connectés
           </summary>
@@ -394,11 +513,10 @@ export default async function ProfPage({ searchParams }: Props) {
           </form>
           </div>
         </details>
-      )}
 
       {/* ── Compétences par chapitre : la chaîne ────────────────────── */}
-      {fondateur && banque.length > 0 && (
-        <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
+      {banque.length > 0 && (
+        <details className="group mt-3 rounded-2xl border border-line bg-white elev-sm">
           <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
             Compétences par chapitre
           </summary>
@@ -477,8 +595,8 @@ export default async function ProfPage({ searchParams }: Props) {
       )}
 
       {/* ── Applications publiées, chapitre par chapitre ────────────── */}
-      {fondateur && chapitresAvecApplications.length > 0 && (
-        <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
+      {chapitresAvecApplications.length > 0 && (
+        <details className="group mt-3 rounded-2xl border border-line bg-white elev-sm">
           <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
             Applications par chapitre
           </summary>
@@ -541,8 +659,8 @@ export default async function ProfPage({ searchParams }: Props) {
       )}
 
       {/* ── Compétences des applications ────────────────────────────── */}
-      {fondateur && chapitresAvecApplications.length > 0 && (
-        <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
+      {chapitresAvecApplications.length > 0 && (
+        <details className="group mt-3 rounded-2xl border border-line bg-white elev-sm">
           <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
             Compétences des applications
           </summary>
@@ -628,108 +746,8 @@ export default async function ProfPage({ searchParams }: Props) {
           </div>
         </details>
       )}
-
-      {/* ── Annonces ─────────────────────────────────────────────────── */}
-      <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
-        <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
-          Annonces
-        </summary>
-        <div className="border-t border-line px-6 pb-6 pt-4">
-        <div className="mb-4 flex justify-end">
-          <Link
-            href="/prof?nouvelleAnnonce=1"
-            className="rounded-xl bg-brand px-5 py-2 text-sm font-bold text-white transition hover:bg-orange-600"
-          >
-            + Nouvelle annonce
-          </Link>
-        </div>
-        <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
-          Les annonces apparaissent sur la page classe et sur la page d&apos;accueil.
-          Ciblez une classe ou laissez vide pour une annonce générale.
-        </p>
-        {annonces.length === 0 ? (
-          <p className="mt-4 rounded-xl border border-dashed border-line px-4 py-6 text-center text-sm text-muted">
-            Aucune annonce pour l&apos;instant.
-          </p>
-        ) : (
-          <ul className="mt-4 space-y-2">
-            {annonces.map((a) => (
-              <li
-                key={a.id}
-                className="flex flex-wrap items-center gap-3 rounded-xl border border-line px-4 py-3"
-              >
-                <div className="min-w-0 flex-1">
-                  <p className="flex flex-wrap items-center gap-2 text-sm">
-                    <span className="font-bold text-ink">{a.titre}</span>
-                    {a.classe && (
-                      <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-bold text-muted">
-                        {a.classe}
-                      </span>
-                    )}
-                    {a.epinglee && (
-                      <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-bold text-amber-800">
-                        épinglée
-                      </span>
-                    )}
-                    {!a.publiee && (
-                      <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-bold text-muted">
-                        brouillon
-                      </span>
-                    )}
-                    {fondateur && a.enseignant && (
-                      <span className="rounded-full bg-sky-100 px-2 py-0.5 text-xs font-bold text-sky-800">
-                        {a.enseignant.prenom}
-                      </span>
-                    )}
-                  </p>
-                  <p className="mt-1 text-sm text-muted line-clamp-1">{a.contenu}</p>
-                </div>
-                <div className="flex gap-2">
-                  <Link
-                    href={`/prof?annonce=${a.id}`}
-                    className="rounded-lg border border-line px-3 py-1.5 text-xs font-bold text-muted transition hover:text-ink"
-                  >
-                    Modifier
-                  </Link>
-                  <form action={supprimerAnnonce}>
-                    <input type="hidden" name="id" value={a.id} />
-                    <button className="rounded-lg border border-rose-200 px-3 py-1.5 text-xs font-bold text-rose-700 transition hover:bg-rose-50">
-                      Supprimer
-                    </button>
-                  </form>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-        </div>
-      </details>
-
-      {/* ── Emploi du temps ──────────────────────────────────────────── */}
-      <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
-        <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
-          Emploi du temps
-        </summary>
-        <div className="border-t border-line px-6 pb-6 pt-4">
-        <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
-          Collez l&apos;URL d&apos;intégration de votre agenda pour le publier sur{" "}
-          <Link href="/planning" className="font-semibold text-brand underline-offset-2 hover:underline">
-            /planning
-          </Link>.
-        </p>
-        <AgendaForm urlActuelle={urlAgenda ?? ""} />
-        </div>
-      </details>
-
-      {/* ── Mon compte ──────────────────────────────────────────────── */}
-      <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
-        <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
-          Mon compte
-        </summary>
-        <div className="border-t border-line px-6 pb-6 pt-4">
-        <MotDePasseForm />
-        </div>
-      </details>
+        </>
+      )}
     </Cadre>
   );
 }
