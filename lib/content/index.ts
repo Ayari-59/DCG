@@ -26,7 +26,6 @@ import { managementRisques } from "./chapters/dscg-ue3-management-risques";
 import { controleGestionSociale } from "./chapters/dscg-ue3-controle-gestion-sociale";
 import { gestionBudgetaire } from "./chapters/dscg-ue3-gestion-budgetaire";
 import { durabilitePerformanceGlobale } from "./chapters/dscg-ue3-durabilite-performance-globale";
-import { seanceZero } from "./chapters/dcg-ue13-seance-zero";
 import { decouvrirComPro } from "./chapters/dcg-ue13-decouvrir";
 import { rechercheInformation } from "./chapters/dcg-ue13-recherche-information";
 import { rechercheDeStage } from "./chapters/dcg-ue13-recherche-de-stage";
@@ -76,7 +75,6 @@ const rawPrograms: Program[] = [
     description:
       "Communiquer en milieu professionnel, rechercher l'information, analyser une situation de travail, puis rédiger le rapport de stage et le soutenir : l'UE13 du DCG, période par période.",
     chapters: [
-      seanceZero,
       decouvrirComPro,
       rechercheInformation,
       rechercheDeStage,
@@ -116,7 +114,7 @@ const rawPrograms: Program[] = [
  * navigation, recherche, page d'accueil et adresse /ue13 la reprennent
  * d'elles-mêmes, puisque tout en découle.
  */
-const UE_PUBLIEES = ["UE11", "UE3"];
+const UE_PUBLIEES = ["UE11", "UE13", "UE3"];
 
 /** Nombre de cartes visé par chapitre : une session et quelques restes. */
 const TAILLE_PAQUET = 25;

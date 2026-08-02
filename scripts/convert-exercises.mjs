@@ -13,7 +13,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { docxToHtml, load, tableRows, slugify } from "./lib/docx-blocks.mjs";
+import { docxToHtml, imageExtractor, load, mammoth, tableRows, slugify } from "./lib/docx-blocks.mjs";
 
 const args = process.argv.slice(2);
 function opt(name, fallback) {
@@ -61,22 +61,54 @@ function parseHeading(raw) {
   };
 }
 
+/**
+ * Dimensions des figures extraites, par URL — renseignées pendant la
+ * conversion Word et relues au moment de fabriquer les blocs image.
+ */
+const imageSizes = {};
+
 /** Découpe un document en exercices : [{ label, name, blocks }] */
 function extractExercises(html) {
   const { $, inline } = load(html);
   const exercises = [];
   let current = null;
+  /*
+   * Les cahiers annoncent leurs schémas par un intertitre — « Étapes 1 et
+   * 2 — Schéma de production et flux » : il fait un bien meilleur texte
+   * alternatif que le nom de l'exercice.
+   */
+  let dernierTexte = "";
 
   const push = (block) => {
     if (current) current.blocks.push(block);
+  };
+
+  /** Sort les figures d'un élément en blocs à part, avant son texte. */
+  const pushImages = (imgs) => {
+    for (const img of imgs) {
+      const src = $(img).attr("src");
+      if (!src?.startsWith("/figures/")) continue;
+      const alt =
+        dernierTexte && dernierTexte.length < 90
+          ? dernierTexte
+          : `Figure — ${current?.name ?? "application"}`;
+      push({ type: "image", src, alt, ...(imageSizes[src] ?? {}) });
+    }
   };
 
   for (const el of $("body").children().toArray()) {
     const $el = $(el);
     const text = inline($el);
 
+    if (el.name === "img") {
+      pushImages([el]);
+      continue;
+    }
+
     if (el.name === "p") {
+      pushImages($el.find("img").toArray());
       if (!text) continue;
+      dernierTexte = text.replace(/\*/g, "").trim();
       const head = parseHeading(text);
       if (head) {
         current = { ...head, blocks: [] };
@@ -134,10 +166,25 @@ function matchKey(ex) {
   return slugify(ex.name).split("-").filter((w) => w.length > 3).join("-");
 }
 
-const enonces = extractExercises(await docxToHtml(enoncePath));
+/*
+ * Les schémas de production des cahiers — flux de matières, ateliers,
+ * stocks — portent une part du raisonnement que le texte seul ne rend
+ * pas. On les extrait dans public/figures/applications-<slug>/ ; le
+ * préfixe distingue les figures de l'énoncé de celles du corrigé, qui
+ * sont numérotées à partir de 1 chacune de leur côté.
+ */
+const figuresDir = path.join("public", "figures", `applications-${slug}`);
+fs.rmSync(figuresDir, { recursive: true, force: true });
+fs.mkdirSync(figuresDir, { recursive: true });
+const options = (prefix) => ({
+  convertImage: imageExtractor(mammoth, figuresDir, `/figures/applications-${slug}`, imageSizes, prefix),
+});
+
+const enonces = extractExercises(await docxToHtml(enoncePath, options("e")));
 const corriges = corrigePath && fs.existsSync(corrigePath)
-  ? extractExercises(await docxToHtml(corrigePath))
+  ? extractExercises(await docxToHtml(corrigePath, options("c")))
   : [];
+if (!fs.readdirSync(figuresDir).length) fs.rmSync(figuresDir, { recursive: true, force: true });
 
 // Appariement : d'abord par nom, puis par rang pour les restants.
 const usedCorriges = new Set();

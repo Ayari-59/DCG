@@ -113,6 +113,13 @@ export const exercises: Exercise[] = [
         "text": "**Étapes 1 et 2 — Schéma de production et flux (quantités)**"
       },
       {
+        "type": "image",
+        "src": "/figures/applications-dcg-ue11-methode-couts-complets/c01.png",
+        "alt": "Étapes 1 et 2 — Schéma de production et flux (quantités)",
+        "width": 475,
+        "height": 197
+      },
+      {
         "type": "p",
         "text": "**Étape 3 — Choix des charges à intégrer**"
       },
@@ -4159,6 +4166,13 @@ export const exercises: Exercise[] = [
       {
         "type": "p",
         "text": "Le schéma technique traduit le processus industriel de transformation de ressources. Dans le cas d’Agrilin, il est le suivant :"
+      },
+      {
+        "type": "image",
+        "src": "/figures/applications-dcg-ue11-methode-couts-complets/c02.png",
+        "alt": "Figure — Agrilin",
+        "width": 1461,
+        "height": 693
       },
       {
         "type": "p",

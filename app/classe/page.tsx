@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { prisma, dbConfigured } from "@/lib/db";
+import { agendaUrl } from "@/lib/apprenant";
 import { allChapters } from "@/lib/content";
 import { getTheme } from "@/lib/content/theme";
 import { dateJour, dateCourte, numerosDeSections } from "@/lib/seances";
@@ -31,13 +32,20 @@ export default async function ClassePage({
     );
   }
 
-  const toutes = await prisma.seance.findMany({
-    where: { publiee: true },
-    orderBy: { date: "desc" },
-  });
+  const [toutes, annoncesDb, urlAgenda] = await Promise.all([
+    prisma.seance.findMany({ where: { publiee: true }, orderBy: { date: "desc" } }),
+    prisma.annonce.findMany({
+      where: { publiee: true },
+      orderBy: [{ epinglee: "desc" }, { createdAt: "desc" }],
+    }),
+    agendaUrl(),
+  ]);
 
   const classes = [...new Set(toutes.map((s) => s.classe))];
   const seances = classeFiltre ? toutes.filter((s) => s.classe === classeFiltre) : toutes;
+  const annonces = annoncesDb.filter(
+    (a) => !a.classe || a.classe === classeFiltre,
+  );
 
   const aujourdhui = new Date();
   aujourdhui.setHours(0, 0, 0, 0);
@@ -60,6 +68,43 @@ export default async function ClassePage({
               {c}
             </Filtre>
           ))}
+        </div>
+      )}
+
+      {annonces.length > 0 && (
+        <section className="mb-8 space-y-3">
+          {annonces.map((a) => (
+            <div
+              key={a.id}
+              className={`rounded-2xl border p-5 ${
+                a.epinglee
+                  ? "border-brand/40 bg-orange-50"
+                  : "border-line bg-white elev-sm"
+              }`}
+            >
+              <p className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.12em] text-brand">
+                {a.epinglee ? "📌 " : ""}Annonce
+                {a.classe && (
+                  <span className="rounded-full bg-slate-100 px-2 py-0.5 font-bold normal-case tracking-normal text-muted">
+                    {a.classe}
+                  </span>
+                )}
+              </p>
+              <p className="mt-1.5 font-serif text-lg font-bold text-ink">{a.titre}</p>
+              <p className="mt-1 text-[15px] leading-relaxed text-muted">{a.contenu}</p>
+            </div>
+          ))}
+        </section>
+      )}
+
+      {urlAgenda && (
+        <div className="mb-8">
+          <Link
+            href="/planning"
+            className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2 text-sm font-bold text-slate-700 transition hover:bg-slate-200"
+          >
+            📅 Voir l&apos;emploi du temps →
+          </Link>
         </div>
       )}
 
@@ -170,6 +215,17 @@ export default async function ClassePage({
 
                   {s.remarques && (
                     <p className="mt-3 text-[15px] italic text-muted">{s.remarques}</p>
+                  )}
+
+                  {s.lienVisio && (
+                    <a
+                      href={s.lienVisio}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-indigo-700"
+                    >
+                      🎥 Rejoindre la visioconférence
+                    </a>
                   )}
 
                   {chapitre && (

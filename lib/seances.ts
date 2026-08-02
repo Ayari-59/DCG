@@ -13,6 +13,7 @@ export interface SeanceAffichee {
   travail: string | null;
   pourLe: Date | null;
   remarques: string | null;
+  lienVisio: string | null;
   publiee: boolean;
 }
 

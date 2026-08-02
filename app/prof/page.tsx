@@ -4,9 +4,11 @@ import { prisma, dbConfigured } from "@/lib/db";
 import { cleActivationConfiguree } from "@/lib/auth";
 import {
   RESSOURCES_RESERVABLES,
+  agendaUrl,
   applicationsChoisies,
   chapitreCompetences,
   competencesAttribuees,
+  matieresMasquees,
   ressourcesReservees,
 } from "@/lib/apprenant";
 import {
@@ -17,18 +19,22 @@ import {
   toutesLesCompetences,
 } from "@/lib/content/competences";
 import { enseignantConnecte, estFondateur } from "@/lib/enseignant";
-import { allChapters } from "@/lib/content";
+import { allChapters, programs } from "@/lib/content";
 import { dateCourte, dateIso } from "@/lib/seances";
 import { LoginForm, BootstrapForm } from "./LoginForm";
 import { InvitationForm, MotDePasseForm } from "./CompteForms";
 import { SeanceForm, type ChapitreOption } from "./SeanceForm";
+import { AgendaForm } from "./AgendaForm";
+import { AnnonceForm } from "./AnnonceForm";
 import {
   enregistrerApplicationsChoisies,
   enregistrerChapitreCompetences,
   enregistrerCompetencesExercices,
+  enregistrerMatieresVisibles,
   enregistrerRessourcesReservees,
   retirerCollegue,
   seDeconnecter,
+  supprimerAnnonce,
   supprimerSeance,
 } from "./actions";
 
@@ -36,7 +42,12 @@ export const metadata: Metadata = { title: "Espace professeur", robots: { index:
 export const dynamic = "force-dynamic";
 
 interface Props {
-  searchParams: Promise<{ seance?: string; nouvelle?: string }>;
+  searchParams: Promise<{
+    seance?: string;
+    nouvelle?: string;
+    annonce?: string;
+    nouvelleAnnonce?: string;
+  }>;
 }
 
 const chapitresOptions = (): ChapitreOption[] =>
@@ -49,7 +60,7 @@ const chapitresOptions = (): ChapitreOption[] =>
   }));
 
 export default async function ProfPage({ searchParams }: Props) {
-  const { seance: seanceId, nouvelle } = await searchParams;
+  const { seance: seanceId, nouvelle, annonce: annonceId, nouvelleAnnonce } = await searchParams;
 
   if (!dbConfigured) {
     return (
@@ -122,6 +133,7 @@ export default async function ProfPage({ searchParams }: Props) {
             travail: existante?.travail ?? "",
             pourLe: dateIso(existante?.pourLe),
             remarques: existante?.remarques ?? "",
+            lienVisio: existante?.lienVisio ?? "",
             publiee: existante?.publiee ?? true,
           }}
         />
@@ -129,6 +141,36 @@ export default async function ProfPage({ searchParams }: Props) {
     );
   }
 
+  // ── Formulaire de création ou d'édition d'annonce ────────────────
+  if (nouvelleAnnonce || annonceId) {
+    const annonces = await prisma.annonce.findMany({
+      where: fondateur ? {} : { enseignantId: enseignant.id },
+    });
+    const existante = annonceId ? annonces.find((a) => a.id === annonceId) : undefined;
+    return (
+      <Cadre titre={existante ? "Modifier l'annonce" : "Nouvelle annonce"}>
+        <AnnonceForm
+          classesConnues={classes}
+          initiale={{
+            id: existante?.id,
+            titre: existante?.titre ?? "",
+            contenu: existante?.contenu ?? "",
+            classe: existante?.classe ?? "",
+            publiee: existante?.publiee ?? true,
+            epinglee: existante?.epinglee ?? false,
+          }}
+        />
+      </Cadre>
+    );
+  }
+
+  const masquees = await matieresMasquees();
+  const urlAgenda = await agendaUrl();
+  const annonces = await prisma.annonce.findMany({
+    where: fondateur ? {} : { enseignantId: enseignant.id },
+    orderBy: [{ epinglee: "desc" }, { createdAt: "desc" }],
+    include: { enseignant: { select: { prenom: true } } },
+  });
   const reservees = fondateur ? await ressourcesReservees() : [];
   const choixApplications = fondateur ? await applicationsChoisies() : {};
   const attributions = fondateur ? await competencesAttribuees() : {};
@@ -195,6 +237,11 @@ export default async function ProfPage({ searchParams }: Props) {
                         {s.enseignant.prenom}
                       </span>
                     )}
+                    {s.lienVisio && (
+                      <span className="rounded-full bg-indigo-100 px-2 py-0.5 text-indigo-800">
+                        visio
+                      </span>
+                    )}
                     {!s.publiee && (
                       <span className="rounded-full bg-amber-100 px-2 py-0.5 text-amber-800">
                         brouillon
@@ -238,8 +285,11 @@ export default async function ProfPage({ searchParams }: Props) {
 
       {/* ── Équipe (fondateur) ──────────────────────────────────────── */}
       {fondateur && (
-        <section className="mt-12 rounded-2xl border border-line bg-white p-6 elev-sm">
-          <h2 className="font-serif text-xl font-bold text-ink">Équipe enseignante</h2>
+        <details className="group mt-12 rounded-2xl border border-line bg-white elev-sm">
+          <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+            Équipe enseignante
+          </summary>
+          <div className="border-t border-line px-6 pb-6 pt-4">
           <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
             Chaque collègue a son compte et gère ses propres classes dans le cahier de texte.
             Créez son compte avec un mot de passe provisoire, communiquez-le-lui : il le
@@ -270,15 +320,52 @@ export default async function ProfPage({ searchParams }: Props) {
             ))}
           </ul>
           <InvitationForm />
-        </section>
+          </div>
+        </details>
       )}
+
+      {/* ── Matières visibles ─────────────────────────────────────── */}
+      <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
+        <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+          Matières publiées sur le site
+        </summary>
+        <div className="border-t border-line px-6 pb-6 pt-4">
+        <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
+          Décochez une matière pour la masquer du site : ses cours, quiz et chapitres
+          disparaîtront de la navigation et des pages publiques. Le contenu reste intact
+          dans le dépôt — il suffit de recocher pour le republier.
+        </p>
+        <form action={enregistrerMatieresVisibles} className="mt-5">
+          <div className="flex flex-wrap gap-x-6 gap-y-3">
+            {programs.map((p) => (
+              <label
+                key={p.ue}
+                className="flex items-center gap-2 text-sm font-semibold text-ink"
+              >
+                <input
+                  type="checkbox"
+                  name="matiere"
+                  value={p.ue}
+                  defaultChecked={!masquees.includes(p.ue)}
+                />
+                {p.level} {p.ue} — {p.title}
+              </label>
+            ))}
+          </div>
+          <button className="mt-5 rounded-xl bg-navy px-5 py-2.5 text-sm font-bold text-white transition hover:bg-navy-deep">
+            Enregistrer
+          </button>
+        </form>
+        </div>
+      </details>
 
       {/* ── Visibilité des ressources (fondateur) ───────────────────── */}
       {fondateur && (
-        <section className="mt-6 rounded-2xl border border-line bg-white p-6 elev-sm">
-          <h2 className="font-serif text-xl font-bold text-ink">
+        <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
+          <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
             Ressources réservées aux apprenants connectés
-          </h2>
+          </summary>
+          <div className="border-t border-line px-6 pb-6 pt-4">
           <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
             Ce qui est coché n&apos;est visible que pour les apprenants connectés à leur compte —
             le contenu réservé n&apos;est même pas envoyé au navigateur des autres visiteurs. La
@@ -305,13 +392,17 @@ export default async function ProfPage({ searchParams }: Props) {
               Enregistrer la visibilité
             </button>
           </form>
-        </section>
+          </div>
+        </details>
       )}
 
       {/* ── Compétences par chapitre : la chaîne ────────────────────── */}
       {fondateur && banque.length > 0 && (
-        <section className="mt-6 rounded-2xl border border-line bg-white p-6 elev-sm">
-          <h2 className="font-serif text-xl font-bold text-ink">Compétences par chapitre</h2>
+        <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
+          <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+            Compétences par chapitre
+          </summary>
+          <div className="border-t border-line px-6 pb-6 pt-4">
           <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
             Rattachez chaque chapitre à ses compétences : il publiera alors les applications qui
             les travaillent, y compris celles venues d&apos;autres cahiers. Un chapitre sans
@@ -328,7 +419,8 @@ export default async function ProfPage({ searchParams }: Props) {
                     Object.entries(attributions)
                       .filter(([cle]) => cle.startsWith(c.slug + ":"))
                       .map(([cle, comps]) => [cle.slice(c.slug.length + 1), comps])
-                  )
+                  ),
+                  c.slug,
                 ).map((comp) => comp.cle)
               );
               const cochee = (cle: string) =>
@@ -380,13 +472,17 @@ export default async function ProfPage({ searchParams }: Props) {
               );
             })}
           </div>
-        </section>
+          </div>
+        </details>
       )}
 
       {/* ── Applications publiées, chapitre par chapitre ────────────── */}
       {fondateur && chapitresAvecApplications.length > 0 && (
-        <section className="mt-6 rounded-2xl border border-line bg-white p-6 elev-sm">
-          <h2 className="font-serif text-xl font-bold text-ink">Applications par chapitre</h2>
+        <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
+          <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+            Applications par chapitre
+          </summary>
+          <div className="border-t border-line px-6 pb-6 pt-4">
           <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
             La retouche fine, après la chaîne par compétences : vous décidez des applications
             publiées sur chaque chapitre parmi son vivier — décochez celles à retirer, puis
@@ -440,13 +536,17 @@ export default async function ProfPage({ searchParams }: Props) {
               );
             })}
           </div>
-        </section>
+          </div>
+        </details>
       )}
 
       {/* ── Compétences des applications ────────────────────────────── */}
       {fondateur && chapitresAvecApplications.length > 0 && (
-        <section className="mt-6 rounded-2xl border border-line bg-white p-6 elev-sm">
-          <h2 className="font-serif text-xl font-bold text-ink">Compétences des applications</h2>
+        <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
+          <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+            Compétences des applications
+          </summary>
+          <div className="border-t border-line px-6 pb-6 pt-4">
           <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
             Règle du site : toute application porte au moins une compétence. La plupart la
             tiennent par leur bloc « Compétences visées » du cahier ; celles listées ici en sont
@@ -457,10 +557,10 @@ export default async function ProfPage({ searchParams }: Props) {
               const exercices = c.exercises ?? [];
               const attribueesDe = (id: string) => attributions[`${c.slug}:${id}`] ?? [];
               const sansCompetence = exercices.filter(
-                (e) => competencesDe(e, attribueesDe(e.id)).length === 0
+                (e) => competencesDe(e, attribueesDe(e.id), c.slug).length === 0
               );
               if (sansCompetence.length === 0) return null;
-              const banque = competencesDuChapitre(exercices, {});
+              const banque = competencesDuChapitre(exercices, {}, c.slug);
               return (
                 <details key={c.slug} className="rounded-xl border border-line">
                   <summary className="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-ink transition hover:bg-slate-50">
@@ -517,7 +617,7 @@ export default async function ProfPage({ searchParams }: Props) {
             })}
             {chapitresAvecApplications.every((c) =>
               (c.exercises ?? []).every(
-                (e) => competencesDe(e, attributions[`${c.slug}:${e.id}`] ?? []).length > 0
+                (e) => competencesDe(e, attributions[`${c.slug}:${e.id}`] ?? [], c.slug).length > 0
               )
             ) && (
               <p className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-800">
@@ -525,14 +625,111 @@ export default async function ProfPage({ searchParams }: Props) {
               </p>
             )}
           </div>
-        </section>
+          </div>
+        </details>
       )}
 
+      {/* ── Annonces ─────────────────────────────────────────────────── */}
+      <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
+        <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+          Annonces
+        </summary>
+        <div className="border-t border-line px-6 pb-6 pt-4">
+        <div className="mb-4 flex justify-end">
+          <Link
+            href="/prof?nouvelleAnnonce=1"
+            className="rounded-xl bg-brand px-5 py-2 text-sm font-bold text-white transition hover:bg-orange-600"
+          >
+            + Nouvelle annonce
+          </Link>
+        </div>
+        <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
+          Les annonces apparaissent sur la page classe et sur la page d&apos;accueil.
+          Ciblez une classe ou laissez vide pour une annonce générale.
+        </p>
+        {annonces.length === 0 ? (
+          <p className="mt-4 rounded-xl border border-dashed border-line px-4 py-6 text-center text-sm text-muted">
+            Aucune annonce pour l&apos;instant.
+          </p>
+        ) : (
+          <ul className="mt-4 space-y-2">
+            {annonces.map((a) => (
+              <li
+                key={a.id}
+                className="flex flex-wrap items-center gap-3 rounded-xl border border-line px-4 py-3"
+              >
+                <div className="min-w-0 flex-1">
+                  <p className="flex flex-wrap items-center gap-2 text-sm">
+                    <span className="font-bold text-ink">{a.titre}</span>
+                    {a.classe && (
+                      <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-bold text-muted">
+                        {a.classe}
+                      </span>
+                    )}
+                    {a.epinglee && (
+                      <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-bold text-amber-800">
+                        épinglée
+                      </span>
+                    )}
+                    {!a.publiee && (
+                      <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-bold text-muted">
+                        brouillon
+                      </span>
+                    )}
+                    {fondateur && a.enseignant && (
+                      <span className="rounded-full bg-sky-100 px-2 py-0.5 text-xs font-bold text-sky-800">
+                        {a.enseignant.prenom}
+                      </span>
+                    )}
+                  </p>
+                  <p className="mt-1 text-sm text-muted line-clamp-1">{a.contenu}</p>
+                </div>
+                <div className="flex gap-2">
+                  <Link
+                    href={`/prof?annonce=${a.id}`}
+                    className="rounded-lg border border-line px-3 py-1.5 text-xs font-bold text-muted transition hover:text-ink"
+                  >
+                    Modifier
+                  </Link>
+                  <form action={supprimerAnnonce}>
+                    <input type="hidden" name="id" value={a.id} />
+                    <button className="rounded-lg border border-rose-200 px-3 py-1.5 text-xs font-bold text-rose-700 transition hover:bg-rose-50">
+                      Supprimer
+                    </button>
+                  </form>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+        </div>
+      </details>
+
+      {/* ── Emploi du temps ──────────────────────────────────────────── */}
+      <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
+        <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+          Emploi du temps
+        </summary>
+        <div className="border-t border-line px-6 pb-6 pt-4">
+        <p className="mt-1.5 max-w-2xl text-sm leading-relaxed text-muted">
+          Collez l&apos;URL d&apos;intégration de votre agenda pour le publier sur{" "}
+          <Link href="/planning" className="font-semibold text-brand underline-offset-2 hover:underline">
+            /planning
+          </Link>.
+        </p>
+        <AgendaForm urlActuelle={urlAgenda ?? ""} />
+        </div>
+      </details>
+
       {/* ── Mon compte ──────────────────────────────────────────────── */}
-      <section className="mt-6 rounded-2xl border border-line bg-white p-6 elev-sm">
-        <h2 className="font-serif text-xl font-bold text-ink">Mon compte</h2>
+      <details className="group mt-6 rounded-2xl border border-line bg-white elev-sm">
+        <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+          Mon compte
+        </summary>
+        <div className="border-t border-line px-6 pb-6 pt-4">
         <MotDePasseForm />
-      </section>
+        </div>
+      </details>
     </Cadre>
   );
 }

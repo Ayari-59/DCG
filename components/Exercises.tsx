@@ -187,7 +187,7 @@ export function Exercises({
    * cochées.
    */
   const [filtres, setFiltres] = useState<Set<string>>(new Set());
-  const competences = competencesDuChapitre(exercises, attributions);
+  const competences = competencesDuChapitre(exercises, attributions, slug);
   const basculer = (cle: string) =>
     setFiltres((f) => {
       const suivant = new Set(f);
@@ -199,7 +199,7 @@ export function Exercises({
     filtres.size === 0
       ? exercises
       : exercises.filter((e) =>
-          competencesDe(e, attributions[e.id]).some((c) => filtres.has(cleCompetence(c)))
+          competencesDe(e, attributions[e.id], slug).some((c) => filtres.has(cleCompetence(c)))
         );
 
   useEffect(() => {

@@ -20,6 +20,7 @@ export interface SeanceInitiale {
   travail: string;
   pourLe: string;
   remarques: string;
+  lienVisio: string;
   publiee: boolean;
 }
 
@@ -144,6 +145,20 @@ export function SeanceForm({
           name="remarques"
           rows={3}
           defaultValue={initiale.remarques}
+          className={champ}
+        />
+      </div>
+
+      <div className="space-y-1.5">
+        <label className={label} htmlFor="lienVisio">
+          Lien visioconférence
+        </label>
+        <input
+          id="lienVisio"
+          name="lienVisio"
+          type="url"
+          defaultValue={initiale.lienVisio}
+          placeholder="https://zoom.us/j/… ou https://teams.microsoft.com/…"
           className={champ}
         />
       </div>

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { programs, allChapters, heuresDeTravail } from "@/lib/content";
+import { matieresMasquees } from "@/lib/apprenant";
+import { prisma, dbConfigured } from "@/lib/db";
 import { familiesOf } from "@/lib/content/theme";
 import { Reveal, Sheen } from "@/components/Reveal";
 import { TargetMark } from "@/components/Logo";
@@ -79,8 +81,19 @@ const programAccent = {
   },
 } as const;
 
-export default function Home() {
-  const totals = allChapters.reduce(
+export default async function Home() {
+  const masquees = await matieresMasquees();
+  const annoncesGenerales = dbConfigured
+    ? await prisma.annonce.findMany({
+        where: { publiee: true, classe: null },
+        orderBy: [{ epinglee: "desc" }, { createdAt: "desc" }],
+        take: 3,
+      })
+    : [];
+  const programmesVisibles = programs.filter((p) => !masquees.includes(p.ue));
+  const chapitresVisibles = programmesVisibles.flatMap((p) => p.chapters);
+
+  const totals = chapitresVisibles.reduce(
     (acc, c) => ({
       minutes: acc.minutes + c.durationMin,
       cards: acc.cards + c.flashcards.length,
@@ -93,14 +106,14 @@ export default function Home() {
     { minutes: 0, cards: 0, questions: 0, figures: 0 },
   );
 
-  const families = familiesOf(allChapters.map((c) => c.slug));
+  const families = familiesOf(chapitresVisibles.map((c) => c.slug));
 
   /*
    * Les vidéos mises en avant sont piochées dans les chapitres, pas
    * déclarées à la main : la vitrine suit le contenu. Quatre suffisent —
    * régulièrement espacées le long du programme pour montrer l'étendue.
    */
-  const toutesLesVideos = allChapters.flatMap((c) =>
+  const toutesLesVideos = chapitresVisibles.flatMap((c) =>
     (c.videos ?? []).map((v) => ({ chapitre: c, video: v })),
   );
   const vitrine = [0, 1, 2, 3].map(
@@ -115,7 +128,7 @@ export default function Home() {
           <Reveal>
             <p className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white/80 backdrop-blur-md">
               <TargetMark className="h-4 w-4" onDark compact />
-              DCG UE11 · DSCG UE3
+              {programmesVisibles.map((p) => `${p.level} ${p.ue}`).join(" · ")}
             </p>
           </Reveal>
 
@@ -155,8 +168,8 @@ export default function Home() {
           <Reveal delay={360}>
             <dl className="mx-auto mt-20 grid max-w-3xl grid-cols-2 gap-y-10 sm:grid-cols-4">
               {[
-                { v: allChapters.length, l: "chapitres" },
-                { v: `≈ ${heuresDeTravail(allChapters)} h`, l: "de travail" },
+                { v: chapitresVisibles.length, l: "chapitres" },
+                { v: `≈ ${heuresDeTravail(chapitresVisibles)} h`, l: "de travail" },
                 { v: totals.figures, l: "schémas" },
                 { v: totals.cards + totals.questions, l: "cartes & questions" },
               ].map((s) => (
@@ -173,6 +186,30 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      {/* ── Annonces ────────────────────────────────────────────────── */}
+      {annoncesGenerales.length > 0 && (
+        <section className="mx-auto max-w-[1100px] px-5 pt-10">
+          <div className="space-y-3">
+            {annoncesGenerales.map((a) => (
+              <div
+                key={a.id}
+                className={`flex items-start gap-3 rounded-2xl border px-5 py-4 ${
+                  a.epinglee
+                    ? "border-brand/40 bg-orange-50"
+                    : "border-line bg-white elev-sm"
+                }`}
+              >
+                <span className="mt-0.5 text-brand">ℹ️</span>
+                <div className="min-w-0 flex-1">
+                  <p className="font-semibold text-ink">{a.titre}</p>
+                  <p className="mt-0.5 text-sm text-muted line-clamp-2">{a.contenu}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* ── Familles ─────────────────────────────────────────────────── */}
       <section className="mx-auto max-w-[1100px] px-5 py-24">
@@ -312,7 +349,7 @@ export default function Home() {
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {programs.map((p, i) => {
+            {programmesVisibles.map((p, i) => {
               const a = programAccent[p.level];
               return (
                 <Reveal key={p.ue} delay={i * 110}>

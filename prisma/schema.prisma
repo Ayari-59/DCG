@@ -26,6 +26,7 @@ model Enseignant {
   createdAt DateTime            @default(now())
   sessions  SessionEnseignant[]
   seances   Seance[]
+  annonces  Annonce[]
 }
 
 model SessionEnseignant {
@@ -53,6 +54,8 @@ model Seance {
   /// Échéance du travail à faire.
   pourLe    DateTime?
   remarques String?
+  /// Lien vers la visioconférence (Zoom, Teams, Meet…).
+  lienVisio String?
   /// Une séance non publiée reste invisible côté étudiant.
   publiee   Boolean  @default(true)
   /// L'enseignant qui a créé la séance ; chacun ne gère que les siennes,
@@ -112,6 +115,26 @@ model Progression {
   updatedAt   DateTime  @updatedAt
 
   @@unique([apprenantId, chapitre])
+}
+
+/// Annonce visible sur la page classe et/ou la page d'accueil.
+model Annonce {
+  id           String      @id @default(cuid())
+  titre        String
+  contenu      String
+  /// Classe ciblée ; null = toutes les classes (annonce générale).
+  classe       String?
+  /// Une annonce non publiée reste invisible côté étudiant.
+  publiee      Boolean     @default(true)
+  /// Une annonce épinglée reste en tête de liste.
+  epinglee     Boolean     @default(false)
+  enseignantId String?
+  enseignant   Enseignant? @relation(fields: [enseignantId], references: [id], onDelete: SetNull)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  @@index([enseignantId])
+  @@index([publiee, classe])
 }
 
 /// Réglages du site modifiables depuis l'espace professeur — notamment la

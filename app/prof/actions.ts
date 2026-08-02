@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
-import { getChapter, allChapters } from "@/lib/content";
+import { getChapter, allChapters, programs } from "@/lib/content";
 import {
   applicationsParCompetences,
   cleCompetence,
@@ -17,6 +17,8 @@ import {
   CLE_APPLICATIONS_CHOISIES,
   CLE_CHAPITRE_COMPETENCES,
   CLE_COMPETENCES_EXERCICES,
+  CLE_MATIERES_MASQUEES,
+  CLE_AGENDA_URL,
   RESSOURCES_RESERVABLES,
 } from "@/lib/apprenant";
 import {
@@ -190,6 +192,7 @@ export async function enregistrerSeance(form: FormData) {
     travail: texteOuNull(form.get("travail")),
     pourLe: dateOuNull(form.get("pourLe")),
     remarques: texteOuNull(form.get("remarques")),
+    lienVisio: texteOuNull(form.get("lienVisio")),
     publiee: form.get("publiee") === "on",
   };
 
@@ -364,5 +367,94 @@ export async function enregistrerCompetencesExercices(form: FormData) {
     create: { cle: CLE_COMPETENCES_EXERCICES, valeur },
     update: { valeur },
   });
+  revalidatePath("/prof");
+}
+
+// ── Matières visibles ───────────────────────────────────────────────
+
+// ── Agenda externe ──────────────────────────────────────────────────
+
+export async function enregistrerAgendaUrl(form: FormData) {
+  await exigerSession();
+  const url = String(form.get("url") ?? "").trim();
+  if (url) {
+    await prisma.reglage.upsert({
+      where: { cle: CLE_AGENDA_URL },
+      create: { cle: CLE_AGENDA_URL, valeur: url },
+      update: { valeur: url },
+    });
+  } else {
+    await prisma.reglage.deleteMany({ where: { cle: CLE_AGENDA_URL } });
+  }
+  revalidatePath("/prof");
+  revalidatePath("/planning");
+  revalidatePath("/classe");
+}
+
+// ── Annonces ────────────────────────────────────────────────────────
+
+async function annonceModifiable(id: string, enseignant: { id: string; role: string }) {
+  const annonce = await prisma.annonce.findUnique({ where: { id } });
+  if (!annonce) return null;
+  if (enseignant.role !== "fondateur" && annonce.enseignantId !== enseignant.id) return null;
+  return annonce;
+}
+
+export async function enregistrerAnnonce(form: FormData) {
+  const enseignant = await exigerSession();
+
+  const id = texteOuNull(form.get("id"));
+  const titre = String(form.get("titre") ?? "").trim();
+  const contenu = String(form.get("contenu") ?? "").trim();
+  const classe = texteOuNull(form.get("classe"));
+  const publiee = form.get("publiee") === "on";
+  const epinglee = form.get("epinglee") === "on";
+
+  if (!titre || !contenu) throw new Error("Le titre et le contenu sont obligatoires.");
+
+  const donnees = { titre, contenu, classe, publiee, epinglee };
+
+  if (id) {
+    if (!(await annonceModifiable(id, enseignant))) throw new Error("Annonce introuvable");
+    await prisma.annonce.update({ where: { id }, data: donnees });
+  } else {
+    await prisma.annonce.create({ data: { ...donnees, enseignantId: enseignant.id } });
+  }
+
+  revalidatePath("/classe");
+  revalidatePath("/prof");
+  revalidatePath("/");
+  redirect("/prof");
+}
+
+export async function supprimerAnnonce(form: FormData) {
+  const enseignant = await exigerSession();
+  const id = String(form.get("id") ?? "");
+  if (id && (await annonceModifiable(id, enseignant))) {
+    await prisma.annonce.delete({ where: { id } });
+  }
+  revalidatePath("/classe");
+  revalidatePath("/prof");
+  revalidatePath("/");
+  redirect("/prof");
+}
+
+// ── Matières visibles ───────────────────────────────────────────────
+
+export async function enregistrerMatieresVisibles(form: FormData) {
+  await exigerSession();
+  const toutesLesUe = programs.map((p) => p.ue);
+  const visibles = form
+    .getAll("matiere")
+    .map(String)
+    .filter((ue) => toutesLesUe.includes(ue));
+  const masquees = toutesLesUe.filter((ue) => !visibles.includes(ue));
+  const valeur = JSON.stringify(masquees);
+  await prisma.reglage.upsert({
+    where: { cle: CLE_MATIERES_MASQUEES },
+    create: { cle: CLE_MATIERES_MASQUEES, valeur },
+    update: { valeur },
+  });
+  revalidatePath("/", "layout");
   revalidatePath("/prof");
 }

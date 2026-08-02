@@ -39,13 +39,17 @@ export function pngSize(buffer) {
 /**
  * Écrit les images du document dans `outDir` et les référence par `urlBase`.
  * À passer en option `convertImage` de docxToHtml.
+ *
+ * `prefix` distingue deux documents qui alimentent le même dossier — un
+ * cahier d'énoncés et son cahier de corrigés numérotent tous deux leurs
+ * images à partir de 1.
  */
-export function imageExtractor(mammothRef, outDir, urlBase, sizes) {
+export function imageExtractor(mammothRef, outDir, urlBase, sizes, prefix = "") {
   let n = 0;
   return mammothRef.images.imgElement(async (image) => {
     const buffer = await image.read();
     const ext = (image.contentType?.split("/")[1] ?? "png").replace("jpeg", "jpg");
-    const name = `${String(++n).padStart(2, "0")}.${ext}`;
+    const name = `${prefix}${String(++n).padStart(2, "0")}.${ext}`;
     fs.writeFileSync(nodePath.join(outDir, name), buffer);
     const size = pngSize(buffer);
     if (size) sizes[`${urlBase}/${name}`] = size;

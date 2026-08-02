@@ -9,6 +9,7 @@ import {
   applicationsChoisies,
   chapitreCompetences,
   competencesAttribuees,
+  matieresMasquees,
   ressourcesReservees,
 } from "@/lib/apprenant";
 import { applicationsParCompetences } from "@/lib/content/competences";
@@ -61,6 +62,10 @@ export default async function ChapterPage({ params }: Props) {
   const { slug } = await params;
   const chapter = getChapter(slug);
   if (!chapter) notFound();
+
+  const masquees = await matieresMasquees();
+  const programmeActuel = programs.find((p) => p.chapters.some((c) => c.slug === slug));
+  if (programmeActuel && masquees.includes(programmeActuel.ue)) notFound();
 
   const choix = await applicationsChoisies();
   const chaines = await chapitreCompetences();

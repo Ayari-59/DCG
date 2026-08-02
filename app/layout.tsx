@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { Nav, type LienProgramme } from "@/components/Nav";
 import { programs, heuresDeTravail } from "@/lib/content";
+import { matieresMasquees } from "@/lib/apprenant";
 import { construireIndex } from "@/lib/content/search";
 import { getTheme } from "@/lib/content/theme";
 import "./globals.css";
@@ -27,20 +28,9 @@ export const metadata: Metadata = {
     "Cours, vidéos, méthodologie, fiches de révision, flashcards et quiz pour réussir le contrôle de gestion au DCG (UE11) et au DSCG (UE3).",
 };
 
-/**
- * Le bandeau ne reçoit qu'un résumé des programmes : importer le contenu
- * dans un composant client embarquerait les 28 chapitres dans le paquet
- * envoyé au navigateur.
- */
-const programmes: LienProgramme[] = programs.map((p) => ({
-  href: p.ue === "UE11" ? "/dcg" : p.ue === "UE3" ? "/dscg" : "/ue13",
-  diplome: p.level,
-  ue: p.ue,
-  titre: p.title,
-  chapitres: p.chapters.length,
-  heures: heuresDeTravail(p.chapters),
-  bar: getTheme(p.chapters[0].slug).bar,
-}));
+function hrefDe(ue: string): string {
+  return ue === "UE11" ? "/dcg" : ue === "UE3" ? "/dscg" : "/ue13";
+}
 
 /**
  * Image de fond du site, choisie par l'auteur : déposer fond.jpg (ou
@@ -54,7 +44,19 @@ function imageDeFond(): string | undefined {
     .find((nom) => fs.existsSync(path.join(process.cwd(), "public", nom)));
 }
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const masquees = await matieresMasquees();
+  const programmes: LienProgramme[] = programs
+    .filter((p) => !masquees.includes(p.ue))
+    .map((p) => ({
+      href: hrefDe(p.ue),
+      diplome: p.level,
+      ue: p.ue,
+      titre: p.title,
+      chapitres: p.chapters.length,
+      heures: heuresDeTravail(p.chapters),
+      bar: getTheme(p.chapters[0].slug).bar,
+    }));
   const fond = imageDeFond();
   return (
     <html

@@ -173,6 +173,31 @@ export async function competencesAttribuees(): Promise<Record<string, string[]>>
   }
 }
 
+// ── Matières masquées ────────────────────────────────────────────────
+
+export const CLE_MATIERES_MASQUEES = "matieres-masquees";
+
+export async function matieresMasquees(): Promise<string[]> {
+  if (!dbConfigured) return [];
+  const reglage = await prisma.reglage.findUnique({ where: { cle: CLE_MATIERES_MASQUEES } });
+  if (!reglage) return [];
+  try {
+    return JSON.parse(reglage.valeur) as string[];
+  } catch {
+    return [];
+  }
+}
+
+// ── URL de l'agenda externe ──────────────────────────────────────────
+
+export const CLE_AGENDA_URL = "agenda-url";
+
+export async function agendaUrl(): Promise<string | null> {
+  if (!dbConfigured) return null;
+  const reglage = await prisma.reglage.findUnique({ where: { cle: CLE_AGENDA_URL } });
+  return reglage?.valeur || null;
+}
+
 // ── Compétences rattachées aux chapitres ─────────────────────────────
 
 export const CLE_CHAPITRE_COMPETENCES = "chapitre-competences";

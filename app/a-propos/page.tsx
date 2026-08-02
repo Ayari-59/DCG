@@ -3,6 +3,7 @@ import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { allChapters, programs } from "@/lib/content";
+import { matieresMasquees } from "@/lib/apprenant";
 import { familiesOf, getTheme } from "@/lib/content/theme";
 import { Reveal } from "@/components/Reveal";
 import { Icone } from "@/components/Icones";
@@ -14,19 +15,14 @@ export const metadata: Metadata = {
     "Un contenu pédagogique consultable au téléphone, pour que le temps de classe serve à l'application et à l'analyse. Par Mohamed Ayari, professeur de contrôle de gestion et de communication professionnelle.",
 };
 
-/**
- * La liste des unités est écrite depuis le contenu publié, et non à la main :
- * la phrase annonçait encore l'UE13 après son retrait du site.
- */
-function enumereProgrammes() {
-  const noms = programs.map((p) => `l'${p.ue} du ${p.level}`);
+function enumereProgrammes(progs: typeof programs) {
+  const noms = progs.map((p) => `l'${p.ue} du ${p.level}`);
   if (noms.length < 2) return noms.join("");
   return `${noms.slice(0, -1).join(", ")} et ${noms[noms.length - 1]}`;
 }
 
-/** Les chiffres sont calculés depuis le contenu : ils ne peuvent pas dater. */
-function chiffres() {
-  const t = allChapters.reduce(
+function chiffres(chapitres: typeof allChapters) {
+  const t = chapitres.reduce(
     (a, c) => ({
       minutes: a.minutes + c.durationMin,
       sections: a.sections + c.sections.length,
@@ -40,7 +36,7 @@ function chiffres() {
     }),
     { minutes: 0, sections: 0, figures: 0, annales: 0, methodes: 0, cartes: 0, questions: 0 }
   );
-  return { ...t, chapitres: allChapters.length, heures: Math.round(t.minutes / 60) };
+  return { ...t, chapitres: chapitres.length, heures: Math.round(t.minutes / 60) };
 }
 
 const etapes = [
@@ -99,9 +95,12 @@ const choix = [
   },
 ];
 
-export default function AProposPage() {
-  const c = chiffres();
-  const familles = familiesOf(allChapters.map((x) => x.slug));
+export default async function AProposPage() {
+  const masquees = await matieresMasquees();
+  const programmesVisibles = programs.filter((p) => !masquees.includes(p.ue));
+  const chapitresVisibles = programmesVisibles.flatMap((p) => p.chapters);
+  const c = chiffres(chapitresVisibles);
+  const familles = familiesOf(chapitresVisibles.map((x) => x.slug));
 
   return (
     <div>
@@ -199,7 +198,7 @@ export default function AProposPage() {
                     Ses cours sur le site
                   </p>
                   <ul className="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start">
-                    {programs.map((p) => (
+                    {programmesVisibles.map((p) => (
                       <li key={p.ue}>
                         <Link
                           href={p.ue === "UE11" ? "/dcg" : p.ue === "UE3" ? "/dscg" : "/ue13"}
@@ -237,7 +236,7 @@ export default function AProposPage() {
               Ce que contient le site
             </h2>
             <p className="mt-4 text-[17px] leading-relaxed text-muted">
-              {programs.length} programmes entiers — {enumereProgrammes()} — soit {c.chapitres}{" "}
+              {programmesVisibles.length} programmes entiers — {enumereProgrammes(programmesVisibles)} — soit {c.chapitres}{" "}
               chapitres et {c.sections} sections.
             </p>
             <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 rounded-3xl border border-line bg-white px-8 py-7 elev-sm sm:grid-cols-3">
@@ -348,7 +347,7 @@ export default function AProposPage() {
               personnelle et un plan de révision déduit du calendrier.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              {programs.map((p) => (
+              {programmesVisibles.map((p) => (
                 <Link
                   key={p.ue}
                   href={p.ue === "UE11" ? "/dcg" : p.ue === "UE3" ? "/dscg" : "/ue13"}
