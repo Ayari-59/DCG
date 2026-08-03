@@ -32,11 +32,18 @@ export function synchroniser(entree: {
   quizTotal?: number;
   cartes?: string[];
   applications?: Record<string, string>;
+  sectionsLues?: string[];
 }): void {
   if (!connecte()) return;
   const cle =
     entree.chapitre +
-    (entree.quizScore !== undefined ? ":quiz" : entree.applications ? ":applis" : ":cartes");
+    (entree.quizScore !== undefined
+      ? ":quiz"
+      : entree.applications
+        ? ":applis"
+        : entree.sectionsLues
+          ? ":sections"
+          : ":cartes");
   clearTimeout(enAttente.get(cle));
   enAttente.set(
     cle,

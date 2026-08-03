@@ -108,6 +108,8 @@ model Progression {
   chapitre    String
   quizScore   Int?
   quizTotal   Int?
+  /// Identifiants des sections de leçon consultées.
+  sectionsLues Json     @default("[]")
   /// Identifiants des flashcards acquises.
   cartes      Json      @default("[]")
   /// Auto-évaluation des applications : { idExercice: "reussi" | "partiel" | "a-revoir" }.

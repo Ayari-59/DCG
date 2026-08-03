@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import type { Chapter } from "@/lib/content/types";
@@ -15,6 +15,7 @@ import { Methodologie, hasMethodologie } from "./Methodologie";
 import { Annales } from "./Annales";
 import { Exercises } from "./Exercises";
 import { Icone } from "./Icones";
+import { synchroniser } from "./sync";
 
 /** Onglets pouvant être réservés aux apprenants connectés. */
 export type OngletVerrouille =
@@ -148,6 +149,68 @@ export function ChapterView({
 
   const setTab = useCallback((t: TabId) => naviguer(t, 0), [naviguer]);
 
+  // ── Progression locale ──────────────────────────────────────────
+  const [pctLocal, setPctLocal] = useState<number | null>(null);
+  const totaux = useMemo(
+    () => ({
+      sections: chapter.sections.length,
+      quiz: chapter.quiz.length,
+      cartes: chapter.flashcards.length,
+      applis: chapter.exercises?.length ?? 0,
+    }),
+    [chapter],
+  );
+  useEffect(() => {
+    function lire() {
+      const sl = JSON.parse(localStorage.getItem(`dcga:sections:${chapter.slug}`) ?? "[]").length;
+      const qs = localStorage.getItem(`dcga:quiz:${chapter.slug}`);
+      const ca = JSON.parse(localStorage.getItem(`dcga:cards:${chapter.slug}`) ?? "[]").length;
+      const ap = Object.keys(
+        JSON.parse(localStorage.getItem(`dcga:applis:${chapter.slug}`) ?? "{}"),
+      ).length;
+      const pLecon = totaux.sections > 0 ? sl / totaux.sections : 0;
+      const pQuiz = totaux.quiz > 0 && qs ? Number(qs) / totaux.quiz : 0;
+      const pCartes = totaux.cartes > 0 ? ca / totaux.cartes : 0;
+      const pApplis = totaux.applis > 0 ? ap / totaux.applis : 0;
+      const w = { lecon: 0.4, quiz: 0.25, cartes: 0.2, applis: 0.15 };
+      const sw =
+        (totaux.sections > 0 ? w.lecon : 0) +
+        (totaux.quiz > 0 ? w.quiz : 0) +
+        (totaux.cartes > 0 ? w.cartes : 0) +
+        (totaux.applis > 0 ? w.applis : 0);
+      const pct =
+        sw > 0
+          ? Math.round(
+              ((w.lecon * pLecon + w.quiz * pQuiz + w.cartes * pCartes + w.applis * pApplis) / sw) *
+                100,
+            )
+          : 0;
+      setPctLocal(Math.min(100, pct));
+    }
+    lire();
+    window.addEventListener("storage", lire);
+    const timer = setInterval(lire, 5000);
+    return () => {
+      window.removeEventListener("storage", lire);
+      clearInterval(timer);
+    };
+  }, [chapter.slug, totaux]);
+
+  // Marquer la section comme lue après 5 secondes de consultation.
+  useEffect(() => {
+    if (tab !== "lecon" || !section) return;
+    const cle = `dcga:sections:${chapter.slug}`;
+    const timer = setTimeout(() => {
+      const lues: string[] = JSON.parse(localStorage.getItem(cle) ?? "[]");
+      if (!lues.includes(section.id)) {
+        const maj = [...lues, section.id];
+        localStorage.setItem(cle, JSON.stringify(maj));
+        synchroniser({ chapitre: chapter.slug, sectionsLues: maj });
+      }
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [tab, section, chapter.slug]);
+
   // Navigation au clavier entre les sections de la leçon.
   useEffect(() => {
     if (tab !== "lecon") return;
@@ -263,6 +326,19 @@ export function ChapterView({
                     );
                   })}
                 </ol>
+                {pctLocal != null && pctLocal > 0 && (
+                  <div className="mt-4 hidden items-center gap-2 lg:flex">
+                    <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-slate-200/70">
+                      <div
+                        className={`h-full rounded-full transition-all duration-500 ${theme.bar}`}
+                        style={{ width: `${pctLocal}%` }}
+                      />
+                    </div>
+                    <span className="text-xs font-bold tabular-nums text-muted">
+                      {pctLocal} %
+                    </span>
+                  </div>
+                )}
               </>
             ) : (
               <div className="hidden rounded-xl border border-line bg-white p-5 shadow-sm lg:block">
@@ -299,6 +375,24 @@ export function ChapterView({
                     {chapter.quiz.length} questions
                   </li>
                 </ul>
+                {pctLocal != null && pctLocal > 0 && (
+                  <div className="mt-5 border-t border-line pt-4">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-muted">
+                      Progression
+                    </p>
+                    <div className="mt-2 flex items-center gap-2">
+                      <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-200/70">
+                        <div
+                          className={`h-full rounded-full transition-all duration-500 ${theme.bar}`}
+                          style={{ width: `${pctLocal}%` }}
+                        />
+                      </div>
+                      <span className="text-xs font-bold tabular-nums text-muted">
+                        {pctLocal} %
+                      </span>
+                    </div>
+                  </div>
+                )}
                 <button
                   onClick={() => setTab("lecon")}
                   className={`mt-4 text-sm font-semibold underline-offset-2 hover:underline ${theme.text}`}

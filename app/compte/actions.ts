@@ -98,6 +98,8 @@ interface ProgressionEnvoyee {
   cartes?: string[];
   /** Auto-évaluation des applications : idExercice → statut. */
   applications?: Record<string, string>;
+  /** Identifiants des sections de leçon consultées. */
+  sectionsLues?: string[];
 }
 
 const STATUTS_APPLICATION = new Set(["reussi", "partiel", "a-revoir"]);
@@ -106,6 +108,9 @@ const STATUTS_APPLICATION = new Set(["reussi", "partiel", "a-revoir"]);
 function assainir(p: ProgressionEnvoyee): ProgressionEnvoyee | null {
   const chapitre = getChapter(p.chapitre);
   if (!chapitre) return null;
+  const sectionsLues = Array.isArray(p.sectionsLues)
+    ? p.sectionsLues.filter((s) => typeof s === "string").slice(0, 100)
+    : undefined;
   const cartes = Array.isArray(p.cartes)
     ? p.cartes.filter((c) => typeof c === "string").slice(0, 500)
     : undefined;
@@ -122,7 +127,7 @@ function assainir(p: ProgressionEnvoyee): ProgressionEnvoyee | null {
     p.quizScore >= 0 && p.quizTotal > 0 && p.quizScore <= p.quizTotal
       ? { quizScore: Math.floor(p.quizScore), quizTotal: Math.floor(p.quizTotal) }
       : {};
-  return { chapitre: p.chapitre, ...score, cartes, applications };
+  return { chapitre: p.chapitre, ...score, sectionsLues, cartes, applications };
 }
 
 /**
@@ -145,6 +150,9 @@ async function enregistrerPour(apprenantId: string, entree: ProgressionEnvoyee):
     where: { apprenantId_chapitre: { apprenantId, chapitre: propre.chapitre } },
   });
 
+  const sectionsFusionnees = [
+    ...new Set([...((existante?.sectionsLues as string[] | null) ?? []), ...(propre.sectionsLues ?? [])]),
+  ];
   const cartesFusionnees = [
     ...new Set([...((existante?.cartes as string[] | null) ?? []), ...(propre.cartes ?? [])]),
   ];
@@ -170,10 +178,16 @@ async function enregistrerPour(apprenantId: string, entree: ProgressionEnvoyee):
       chapitre: propre.chapitre,
       quizScore: propre.quizScore,
       quizTotal: propre.quizTotal,
+      sectionsLues: propre.sectionsLues ?? [],
       cartes: propre.cartes ?? [],
       applications: propre.applications ?? {},
     },
-    update: { ...meilleurScore, cartes: cartesFusionnees, applications: applicationsFusionnees },
+    update: {
+      ...meilleurScore,
+      sectionsLues: sectionsFusionnees,
+      cartes: cartesFusionnees,
+      applications: applicationsFusionnees,
+    },
   });
 }
 

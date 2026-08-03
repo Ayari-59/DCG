@@ -18,6 +18,7 @@ import {
   competencesDuChapitre,
   toutesLesCompetences,
 } from "@/lib/content/competences";
+import { progressionDuChapitre } from "@/lib/progression";
 import { enseignantConnecte, estFondateur } from "@/lib/enseignant";
 import { allChapters, programs } from "@/lib/content";
 import { dateCourte, dateIso } from "@/lib/seances";
@@ -189,6 +190,13 @@ export default async function ProfPage({ searchParams }: Props) {
       : c.exercises ?? [];
   const equipe = fondateur
     ? await prisma.enseignant.findMany({ orderBy: [{ role: "desc" }, { createdAt: "asc" }] })
+    : [];
+
+  const apprenants = fondateur
+    ? await prisma.apprenant.findMany({
+        orderBy: { prenom: "asc" },
+        include: { progressions: true },
+      })
     : [];
 
   return (
@@ -513,6 +521,89 @@ export default async function ProfPage({ searchParams }: Props) {
           </form>
           </div>
         </details>
+
+      {/* ── Suivi des apprenants (gradebook) ──────────────────────── */}
+      {apprenants.length > 0 && (
+        <details className="group mt-3 rounded-2xl border border-line bg-white elev-sm">
+          <summary className="cursor-pointer list-none px-6 py-4 font-serif text-xl font-bold text-ink transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+            Suivi des apprenants
+            <span className="ml-2 text-base font-semibold text-muted">
+              {apprenants.length} inscrit{apprenants.length > 1 ? "s" : ""}
+            </span>
+          </summary>
+          <div className="border-t border-line px-6 pb-6 pt-4">
+            <p className="mb-4 max-w-2xl text-sm leading-relaxed text-muted">
+              Progression de chaque apprenant inscrit sur le site, par chapitre.
+              La barre combine leçon, quiz, flashcards et applications.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[600px] text-sm">
+                <thead>
+                  <tr className="border-b border-line text-left text-xs font-bold uppercase tracking-wide text-muted">
+                    <th className="pb-3 pr-4">Apprenant</th>
+                    <th className="pb-3 pr-4">Chapitres</th>
+                    <th className="pb-3 pr-4">Progression</th>
+                    <th className="pb-3 pr-4 text-right">Quiz</th>
+                    <th className="pb-3 text-right">Cartes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {apprenants.map((a) => {
+                    const progs = new Map(a.progressions.map((p) => [p.chapitre, p]));
+                    const chapProgression = allChapters.map((c) => {
+                      const p = progs.get(c.slug);
+                      return progressionDuChapitre(c, {
+                        sectionsLues: (p?.sectionsLues as string[] | null) ?? [],
+                        quizScore: p?.quizScore,
+                        quizTotal: p?.quizTotal,
+                        cartes: (p?.cartes as string[] | null) ?? [],
+                        applications: (p?.applications as Record<string, string> | null) ?? {},
+                      });
+                    });
+                    const pctMoyen = Math.round(
+                      (chapProgression.reduce((s, p) => s + p.global, 0) / chapProgression.length) * 100,
+                    );
+                    const commences = a.progressions.length;
+                    const quizJoues = a.progressions.filter((p) => p.quizScore != null).length;
+                    const cartesTotal = a.progressions.reduce(
+                      (n, p) => n + ((p.cartes as string[] | null) ?? []).length,
+                      0,
+                    );
+                    return (
+                      <tr key={a.id} className="border-b border-line/50 last:border-0">
+                        <td className="py-3 pr-4">
+                          <span className="font-semibold text-ink">{a.prenom}</span>
+                          <span className="ml-2 text-xs text-muted">{a.email}</span>
+                        </td>
+                        <td className="py-3 pr-4 tabular-nums text-muted">
+                          {commences}/{allChapters.length}
+                        </td>
+                        <td className="py-3 pr-4">
+                          <div className="flex items-center gap-2">
+                            <div className="h-2 w-24 overflow-hidden rounded-full bg-slate-200/70">
+                              <div
+                                className="h-full rounded-full bg-brand transition-all"
+                                style={{ width: `${pctMoyen}%` }}
+                              />
+                            </div>
+                            <span className="text-xs font-bold tabular-nums text-muted">
+                              {pctMoyen} %
+                            </span>
+                          </div>
+                        </td>
+                        <td className="py-3 pr-4 text-right tabular-nums text-muted">
+                          {quizJoues}
+                        </td>
+                        <td className="py-3 text-right tabular-nums text-muted">{cartesTotal}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+      )}
 
       {/* ── Compétences par chapitre : la chaîne ────────────────────── */}
       {banque.length > 0 && (
