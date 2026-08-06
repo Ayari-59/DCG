@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   },
   description:
     "Cours, vidéos, méthodologie, fiches de révision, flashcards et quiz pour réussir le contrôle de gestion au DCG (UE11) et au DSCG (UE3).",
+  other: {
+    "facebook-domain-verification": "cg3g0zron0ps9isogw8nbgp8uq44zt",
+  },
 };
 
 function hrefDe(ue: string): string {
