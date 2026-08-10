@@ -33,6 +33,11 @@ export interface LienProgramme {
 
 const RESSOURCES = [
   {
+    href: "/notions",
+    titre: "Banque de notions",
+    texte: "Toutes les définitions et formules clés, classées par chapitre.",
+  },
+  {
     href: "/reforme",
     titre: "La réforme",
     texte: "Ce que change le programme rénové et ce que l'épreuve attend.",

@@ -109,6 +109,9 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                     {p.diplome} · {p.ue}
                   </Link>
                 ))}
+                <Link href="/notions" className="transition hover:text-white/80">
+                  Notions
+                </Link>
                 <Link href="/reforme" className="transition hover:text-white/80">
                   Réforme
                 </Link>
