@@ -5,7 +5,13 @@ import { getTheme } from "@/lib/content/theme";
 import { Reveal } from "@/components/Reveal";
 import { Icone } from "@/components/Icones";
 
-export function ProgramPage({ program }: { program: Program }) {
+export function ProgramPage({
+  program,
+  notions,
+}: {
+  program: Program;
+  notions?: { count: number; href: string };
+}) {
   const totals = program.chapters.reduce(
     (acc, c) => ({
       minutes: acc.minutes + c.durationMin,
@@ -65,6 +71,28 @@ export function ProgramPage({ program }: { program: Program }) {
           </div>
         ))}
       </dl>
+
+      {notions && (
+        <Link
+          href={notions.href}
+          className="lift elev-sm sheen group mt-8 flex items-center gap-4 rounded-3xl border border-line bg-white p-5 sm:p-6 hover:border-brand/40"
+        >
+          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0f2547] to-navy text-2xl text-white">
+            📚
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block font-serif text-xl font-bold leading-snug text-ink transition group-hover:text-brand">
+              Banque de notions
+            </span>
+            <span className="mt-0.5 block text-[15px] text-muted">
+              {notions.count} fiches de révision : définitions, formules, méthodes et pièges classés par chapitre.
+            </span>
+          </span>
+          <span className="hidden shrink-0 text-2xl text-brand transition-transform group-hover:translate-x-1 sm:block">
+            →
+          </span>
+        </Link>
+      )}
 
       <div className="mt-12 space-y-12">
         {groups.map((group) => {
