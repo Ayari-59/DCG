@@ -82,6 +82,19 @@ export interface Exercise {
   correction: ContentBlock[];
 }
 
+export interface Notion {
+  cat: string;
+  ch: string;
+  titre: string;
+  definition: string;
+  points: string[];
+  formules: string[];
+  methode: string[];
+  piege: string;
+  retenir: string;
+  svg: string;
+}
+
 export interface Chapter {
   slug: string;
   level: Level;
@@ -101,6 +114,8 @@ export interface Chapter {
   methodes?: Methode[];
   /** Sujets d'annales rattachés au thème du chapitre. */
   annales?: Annale[];
+  /** Fiches de la banque de notions rattachées au chapitre. */
+  notions?: Notion[];
 }
 
 /** Chapitre annoncé mais pas encore publié */

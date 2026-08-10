@@ -37,6 +37,13 @@ import { methodesBySlug } from "./methodes";
 import { annalesBySlug } from "./annales";
 import { flashcardsQcmBySlug, quizQcmBySlug } from "./qcm";
 import { exercisesBySlug } from "./exercises";
+import { fiches as fichesUE11 } from "./notions/dcg-ue11.generated";
+import type { Notion } from "./types";
+
+const notionsByChNum: Record<string, Notion[]> = {};
+for (const f of fichesUE11) {
+  (notionsByChNum[f.ch] ??= []).push(f);
+}
 
 const rawPrograms: Program[] = [
   {
@@ -160,6 +167,10 @@ export const programs: Program[] = rawPrograms
        * l'auteur.
        */
       ...(exercisesBySlug[c.slug]?.length ? { exercises: exercisesBySlug[c.slug] } : {}),
+      ...(() => {
+        const chNum = String(c.number).padStart(2, "0");
+        return notionsByChNum[chNum]?.length ? { notions: notionsByChNum[chNum] } : {};
+      })(),
     })),
   }));
 

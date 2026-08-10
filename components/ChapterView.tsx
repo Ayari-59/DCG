@@ -14,6 +14,7 @@ import { Fiche } from "./Fiche";
 import { Methodologie, hasMethodologie } from "./Methodologie";
 import { Annales } from "./Annales";
 import { Exercises } from "./Exercises";
+import { Notions } from "./Notions";
 import { Icone } from "./Icones";
 import { synchroniser } from "./sync";
 
@@ -24,7 +25,8 @@ export type OngletVerrouille =
   | "annales"
   | "applications"
   | "flashcards"
-  | "quiz";
+  | "quiz"
+  | "notions";
 
 export interface VoisinChapitre {
   slug: string;
@@ -40,7 +42,8 @@ type TabId =
   | "annales"
   | "applications"
   | "flashcards"
-  | "quiz";
+  | "quiz"
+  | "notions";
 
 export function ChapterView({
   chapter,
@@ -121,6 +124,11 @@ export function ChapterView({
       ? [{ id: "quiz" as const, label: "Quiz", verrouille: true }]
       : chapter.quiz.length
         ? [{ id: "quiz" as const, label: "Quiz", badge: chapter.quiz.length }]
+        : []),
+    ...(verrou("notions")
+      ? [{ id: "notions" as const, label: "Notions", verrouille: true }]
+      : chapter.notions?.length
+        ? [{ id: "notions" as const, label: "Notions", badge: chapter.notions.length }]
         : []),
   ];
   // Un onglet absent de ce chapitre ne doit pas produire une page vide.
@@ -551,6 +559,9 @@ export function ChapterView({
             <div className="max-w-2xl">
               <Quiz slug={chapter.slug} questions={chapter.quiz} />
             </div>
+          )}
+          {tab === "notions" && !ongletVerrouille && chapter.notions && (
+            <Notions fiches={chapter.notions} />
           )}
         </div>
       </div>

@@ -107,6 +107,7 @@ export const RESSOURCES_RESERVABLES = [
   { id: "applications", libelle: "Applications" },
   { id: "flashcards", libelle: "Flashcards" },
   { id: "quiz", libelle: "Quiz" },
+  { id: "notions", libelle: "Notions" },
   { id: "videos", libelle: "Vidéos" },
 ] as const;
 

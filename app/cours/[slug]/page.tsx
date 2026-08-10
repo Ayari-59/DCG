@@ -143,6 +143,10 @@ export default async function ChapterPage({ params }: Props) {
     visible.quiz = [];
     verrouilles.push("quiz");
   }
+  if (reserve("notions") && chapter.notions?.length) {
+    visible.notions = undefined;
+    verrouilles.push("notions");
+  }
   if (reserve("videos")) {
     visible.videos = undefined;
   }
