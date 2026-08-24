@@ -5,6 +5,7 @@ import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { Nav, type LienProgramme } from "@/components/Nav";
+import { RegisterSW } from "@/components/RegisterSW";
 import { programs, heuresDeTravail } from "@/lib/content";
 import { matieresMasquees } from "@/lib/apprenant";
 import { construireIndex } from "@/lib/content/search";
@@ -26,8 +27,14 @@ export const metadata: Metadata = {
   },
   description:
     "Cours, vidéos, méthodologie, fiches de révision, flashcards et quiz pour réussir le contrôle de gestion au DCG (UE11) et au DSCG (UE3).",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Objectif-DCG",
+  },
   other: {
     "facebook-domain-verification": "cg3g0zron0ps9isogw8nbgp8uq44zt",
+    "mobile-web-app-capable": "yes",
   },
 };
 
@@ -66,6 +73,10 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       lang="fr"
       className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} h-full antialiased`}
     >
+      <head>
+        <meta name="theme-color" content="#16325c" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+      </head>
       <body
         className={`flex min-h-full flex-col ${fond ? "avec-fond" : ""}`}
         style={fond ? ({ "--image-de-fond": `url(/${fond})` } as React.CSSProperties) : undefined}
@@ -79,6 +90,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           </div>
         </header>
 
+        <RegisterSW />
         <main className="flex-1">{children}</main>
 
         <footer className="no-print bg-navy-deep text-white">
