@@ -986,7 +986,7 @@ export const chapter: Chapter = {
           "type": "callout",
           "variant": "info",
           "title": "APPLICATION 1 — L'imputation rationnelle dans un atelier (sous-activité)",
-          "text": "L'atelier Finition (peinture et contrôle qualité des produits) a été conçu pour une activité normale de 25 000 produits par mois. Ses charges variables s'élèvent à 12 €/produit ; ses charges fixes mensuelles à 300 000 €.\nEn mars, l'atelier n'a traité que 20 000 produits. Le produit finie est cédée en interne 30 € à l'atelier d'expédition.\nTravail à faire : (1) coefficient d'activité ; (2) coût IR unitaire ; (3) coût de sous-activité ; (4) décomposition du résultat ; (5) recommandation."
+          "text": "L'atelier Finition (peinture et contrôle qualité des produits) a été conçu pour une activité normale de 25 000 produits par mois. Ses charges variables s'élèvent à 12 €/produit ; ses charges fixes mensuelles à 300 000 €.\nEn mars, l'atelier n'a traité que 20 000 produits. Le produit fini est cédé en interne à 30 € à l'atelier d'expédition.\nTravail à faire : (1) coefficient d'activité ; (2) coût IR unitaire ; (3) coût de sous-activité ; (4) décomposition du résultat ; (5) recommandation."
         },
         {
           "type": "p",

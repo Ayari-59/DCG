@@ -12,7 +12,7 @@ export const methodes: Methode[] = [
     "blocks": [
       {
         "type": "p",
-        "text": "*Cette compétence est transversale à tous les Cette méthode est transversale à tous les outils de gestion de la qualité : il s’agit outils de gestion de d’exploiter tout le potentiel de l’analyse de la valeur. Pour une analyse de la valeur la qualité : il s’agit ici d’exploiter la méthode adaptée à un produit ou service, vous devez : de l’analyse de la valeur.*"
+        "text": "*Cette méthode est transversale à tous les outils de gestion de la qualité : il s’agit d’exploiter tout le potentiel de l’analyse de la valeur. Pour une analyse de la valeur adaptée à un produit ou service, vous devez :*"
       },
       {
         "type": "ol",

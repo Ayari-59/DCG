@@ -45,7 +45,7 @@ export const methodes: Methode[] = [
           "le choix des centres d’analyse (périmètre, pertinence, stabilité)",
           "la pertinence des clés de répartition",
           "la répartition primaire et secondaire des charges indirectes",
-          "le découpage du coût complet selon les processus de production, d’approvisionnement, de stockage, de production, de distribution, etc",
+          "le découpage du coût complet selon les processus d’approvisionnement, de stockage, de production, de distribution, etc.",
           "la simplicité du modèle (avantages et limites d’une représentation réaliste)"
         ]
       }

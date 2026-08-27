@@ -1301,7 +1301,7 @@ export const chapter: Chapter = {
         },
         {
           "type": "p",
-          "text": "Le coût de revient complet fournit un plancher de tarification : vendre durablement en dessous détruit de la valeur. Dans une logique de coût majoré (cost-plus), le prix s’obtient en ajoutant une marge au coût de revient. Pour l’le produit, le coût de revient de 76 € laisse une marge de 14 € au prix de 90 € — un éclairage direct pour la politique tarifaire."
+          "text": "Le coût de revient complet fournit un plancher de tarification : vendre durablement en dessous détruit de la valeur. Dans une logique de coût majoré (cost-plus), le prix s’obtient en ajoutant une marge au coût de revient. Pour le produit, le coût de revient de 76 € laisse une marge de 14 € au prix de 90 € — un éclairage direct pour la politique tarifaire."
         },
         {
           "type": "h3",

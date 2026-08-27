@@ -7,7 +7,7 @@ export const methodes: Methode[] = [
     "id": "m1",
     "theme": "Le rôle du contrôle de gestion",
     "competences": [
-      "Identifier le rôle et la place du contrôle de gestion en fonction des caractéristiques de l’organisation (taille, activité, envi ronnement) et du type d’activité (production, service)"
+      "Identifier le rôle et la place du contrôle de gestion en fonction des caractéristiques de l’organisation (taille, activité, environnement) et du type d’activité (production, service)"
     ],
     "blocks": [
       {
@@ -40,8 +40,8 @@ export const methodes: Methode[] = [
         "type": "ul",
         "items": [
           "préciser les différences, dans le contexte de chaque organisation, entre les types de performance recherchés (performances financière, sociale, sociétale)",
-          "relever les facteurs explicatifs du pilotage (ex. : degré de centralisation, autono mie accordée)",
-          "pointer les indicateurs utilisés pour pilotage les dimensions de la performance retenues"
+          "relever les facteurs explicatifs du pilotage (ex. : degré de centralisation, autonomie accordée)",
+          "pointer les indicateurs utilisés pour piloter les dimensions de la performance retenues"
         ]
       }
     ]

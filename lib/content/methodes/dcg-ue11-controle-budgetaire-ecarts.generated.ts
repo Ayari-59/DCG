@@ -12,7 +12,7 @@ export const methodes: Methode[] = [
     "blocks": [
       {
         "type": "p",
-        "text": "*La note de synthèse part du global (écart de résultat) pour s’intéresser au particulier (les résultats par centres de responsabilité, premier niveau de décomposition). • Il s’agit d’analyser, étape par étape (et donc paragraphe par paragraphe), les écarts des facteurs les plus élémentaires. La valeur relative • Il faut intégrer le contexte, les spécificités de l’organisation et les objectifs du décid’un écart se calcule deur pour expliquer l’importance des écarts. en référence à l’élément prévisionnel.*"
+        "text": "*La note de synthèse part du global (écart de résultat) pour s’intéresser au particulier (les résultats par centres de responsabilité, premier niveau de décomposition). Il s’agit d’analyser, étape par étape (et donc paragraphe par paragraphe), les écarts des facteurs les plus élémentaires. La valeur relative d’un écart se calcule en référence à l’élément prévisionnel. Il faut intégrer le contexte, les spécificités de l’organisation et les objectifs du décideur pour expliquer l’importance des écarts.*"
       }
     ]
   }

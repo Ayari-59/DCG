@@ -18,7 +18,7 @@ export const exercises: Exercise[] = [
       },
       {
         "type": "p",
-        "text": "Chez Danone, les unités de production n’ont pas la même formule de calcul duprix du lait, mais toutes intègrent un indicateur coût de production."
+        "text": "Chez Danone, les unités de production n’ont pas la même formule de calcul du prix du lait, mais toutes intègrent un indicateur coût de production."
       },
       {
         "type": "p",
@@ -201,7 +201,7 @@ export const exercises: Exercise[] = [
     "statement": [
       {
         "type": "p",
-        "text": "Hugo Frosse est contrôleur de gestion senior dans une entreprise de logistique possé dant une grande flotte de camions aux capacités variées. Son assistante lui commu nique son planning du 28 août :"
+        "text": "Hugo Frosse est contrôleur de gestion senior dans une entreprise de logistique possédant une grande flotte de camions aux capacités variées. Son assistante lui communique son planning du 28 août :"
       },
       {
         "type": "p",

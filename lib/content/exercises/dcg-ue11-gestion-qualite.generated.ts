@@ -191,7 +191,7 @@ export const exercises: Exercise[] = [
       },
       {
         "type": "p",
-        "text": "**Exploiter les outils de gestion de la qualité pour identifier les problems de pilotage des coûts d’Adaptibois. Coûts liés à la qualité et à la non-qualité inclus dans le coût de production de la gamme Brindisi (en k€)**"
+        "text": "**Exploiter les outils de gestion de la qualité pour identifier les problèmes de pilotage des coûts d’Adaptibois. Coûts liés à la qualité et à la non-qualité inclus dans le coût de production de la gamme Brindisi (en k€)**"
       },
       {
         "type": "p",

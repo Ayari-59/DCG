@@ -190,7 +190,7 @@ export const exercises: Exercise[] = [
           [
             "**Pôle « médical »**",
             "Centre de coûts",
-            "Volume des actes par spécialité, durée moyenne d’hospitvalisation"
+            "Volume des actes par spécialité, durée moyenne d’hospitalisation"
           ],
           [
             "**Pôle « maison médicalisée »**",

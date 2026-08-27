@@ -234,7 +234,7 @@ export const chapter: Chapter = {
           "type": "callout",
           "variant": "info",
           "title": "ILLUSTRATION — Calculer — élasticités croisées du produit",
-          "text": "**Substitut.**Un concurrent baisse le prix de sa produit de 10 %, et la demande du produit recule de 8 % : e = −8 % ÷ −10 % = +0,80 (> 0). Les deux produits sont substituables.\n**Complément. Le prix des accessoires compatibles avec le produit augmente de 10 %, et la demande pour le produit recule de 3 % : e = −3 % ÷ +10 % = −0,30 (< 0). le produit et l’accessoire sont complémentaires.**"
+          "text": "**Substitut.**Un concurrent baisse le prix de son produit de 10 %, et la demande du produit recule de 8 % : e = −8 % ÷ −10 % = +0,80 (> 0). Les deux produits sont substituables.\n**Complément. Le prix des accessoires compatibles avec le produit augmente de 10 %, et la demande pour le produit recule de 3 % : e = −3 % ÷ +10 % = −0,30 (< 0). le produit et l’accessoire sont complémentaires.**"
         },
         {
           "type": "p",
@@ -780,7 +780,7 @@ export const chapter: Chapter = {
         {
           "type": "callout",
           "variant": "info",
-          "text": "**ILLUSTRATION — Application — confronter la prévision à la capacité (la version Trail)**\nL’ajustement exponentiel prévoit 65 milliers d’la version Trail en N+1. Or l’atelier dédié ne peut en produire que 55 milliers à capacité actuelle. Deux lectures s’imposent au contrôleur :\n**– Plafonner**la prévision à 55 (le budget des ventes ne peut excéder ce que l’on sait produire et livrer), au risque de laisser filer 10 milliers d’unités de demande vers la concurrence ;\n**– Investir**pour porter la capacité à 65, si la marge sur coût variable (90 − 38 = 52 €/u) sur ces 10 milliers supplémentaires — soit 520 k€ — couvre le coût de l’extension.\n*La prévision n’est donc pas une fin en soi : elle nourrit un arbitrage économique. Le budget des ventes dialogue avec le budget de production et les décisions d’investissement.*"
+          "text": "**ILLUSTRATION — Application — confronter la prévision à la capacité (la version Trail)**\nL’ajustement exponentiel prévoit 65 milliers d’unités de la version Trail en N+1. Or l’atelier dédié ne peut en produire que 55 milliers à capacité actuelle. Deux lectures s’imposent au contrôleur :\n**– Plafonner**la prévision à 55 (le budget des ventes ne peut excéder ce que l’on sait produire et livrer), au risque de laisser filer 10 milliers d’unités de demande vers la concurrence ;\n**– Investir**pour porter la capacité à 65, si la marge sur coût variable (90 − 38 = 52 €/u) sur ces 10 milliers supplémentaires — soit 520 k€ — couvre le coût de l’extension.\n*La prévision n’est donc pas une fin en soi : elle nourrit un arbitrage économique. Le budget des ventes dialogue avec le budget de production et les décisions d’investissement.*"
         },
         {
           "type": "callout",

@@ -7,7 +7,7 @@ export const methodes: Methode[] = [
     "id": "m1",
     "theme": "Coûts, marges, résultats",
     "competences": [
-      "Calculer et interpréter des coûts, des marges et des résul tats dans un contexte donné"
+      "Calculer et interpréter des coûts, des marges et des résultats dans un contexte donné"
     ],
     "blocks": [
       {
@@ -20,7 +20,7 @@ export const methodes: Methode[] = [
           "toutes les charges variables ? directes ou indirectes ? ou seulement les charges variables directes ?",
           "tous les coûts directs ? indirects ? Par exemple, un arbitrage de rentabilité entre plusieurs produits dans une entreprise nécessitera une analyse en deux temps :",
           "calcul de la marge sur coût variable par produit et en global",
-          "calcul de la marge sur coûts spécifiques par produit et en global. Vous devez systématiquement repérer les données pour décomposer les charges. Pour interpréter vos résultats, comparezles résultats aux objectifs et listez les ana lyses complémentaires pour une décision éclairée"
+          "calcul de la marge sur coûts spécifiques par produit et en global. Vous devez systématiquement repérer les données pour décomposer les charges. Pour interpréter vos résultats, comparez les résultats aux objectifs et listez les analyses complémentaires pour une décision éclairée"
         ]
       }
     ]

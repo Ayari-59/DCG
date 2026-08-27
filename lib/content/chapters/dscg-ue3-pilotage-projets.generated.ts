@@ -127,7 +127,7 @@ export const chapter: Chapter = {
         },
         {
           "type": "p",
-          "text": "Le projet n'est pas une invention récente : les cathédrales, les pyramides ou les grands chantiers d'infrastructure du XIXᵉ siècle étaient déjà des projets au sens plein du terme — des entreprises uniques, bornées dans le temps, mobilisant des ressources considérables vers un objectif spécifié. Ce qui est récent, en revanche, c'est l'érection du **management de projet en discipline structurée**, dotée de méthodes, d'outils et de référentiels normalisés. Cette formalisation est née des grands programmes du milieu du XXᵉ siècle : le **projet Manhattan**, puis le **programme Polaris** de l'US Navy (qui donna naissance à la méthode PERT en 1958) et le **programme Apollo** de la NASA. Ces programmes, d'une complexité inédite, ont imposé d'inventer des techniques capables de coordonner des milliers de tâches interdépendantes sous contrainte simultanée de délai, de coût et de performance technique."
+          "text": "Le projet n'est pas une invention récente : les cathédrales, les pyramides ou les grands chantiers d'infrastructure du XIXᵉ siècle étaient déjà des projets au sens plein du terme — des entreprises uniques, bornées dans le temps, mobilisant des ressources considérables vers un objectif spécifié. Ce qui est récent, en revanche, c'est l'élévation du **management de projet en discipline structurée**, dotée de méthodes, d'outils et de référentiels normalisés. Cette formalisation est née des grands programmes du milieu du XXᵉ siècle : le **projet Manhattan**, puis le **programme Polaris** de l'US Navy (qui donna naissance à la méthode PERT en 1958) et le **programme Apollo** de la NASA. Ces programmes, d'une complexité inédite, ont imposé d'inventer des techniques capables de coordonner des milliers de tâches interdépendantes sous contrainte simultanée de délai, de coût et de performance technique."
         },
         {
           "type": "p",
@@ -139,7 +139,7 @@ export const chapter: Chapter = {
         },
         {
           "type": "p",
-          "text": "Pourquoi cette montée en puissance ? Parce que la structure permanente — l'organisation fonctionnelle hiérarchique étudiée au chapitre précédent — est mal armée pour traiter des activités **non répétitives, transversales et temporaires**. Une organisation fonctionnelle excelle à reproduire des opérations stables (produire en série, traiter des dossiers récurrents) ; elle peine à mobiliser ponctuellement des compétences éclatées entre plusieurs directions pour réaliser un objectif unique dans un délai serré. L'ancien cours INTEC le formulait clairement : les entreprises ont dû « faire coexister une structure permanente (résumée par l'organigramme) et des structures temporaires (les projets) ». Le projet est précisément le dispositif qui réconcilie la verticalité des métiers et l'horizontalité d'un objectif transversal."
+          "text": "Pourquoi cette montée en puissance ? Parce que la structure permanente — l'organisation fonctionnelle hiérarchique étudiée au chapitre précédent — est mal armée pour traiter des activités **non répétitives, transversales et temporaires**. Une organisation fonctionnelle excelle à reproduire des opérations stables (produire en série, traiter des dossiers récurrents) ; elle peine à mobiliser ponctuellement des compétences éclatées entre plusieurs directions pour réaliser un objectif unique dans un délai serré. Les entreprises ont dû « faire coexister une structure permanente (résumée par l'organigramme) et des structures temporaires (les projets) ». Le projet est précisément le dispositif qui réconcilie la verticalité des métiers et l'horizontalité d'un objectif transversal."
         },
         {
           "type": "h3",
@@ -462,7 +462,7 @@ export const chapter: Chapter = {
         },
         {
           "type": "p",
-          "text": "L'ancien cours INTEC recense les solutions expérimentées pour faire coexister structure permanente et projet, que l'on présente classiquement sur un continuum d'autonomie croissante du projet."
+          "text": "On recense classiquement les solutions expérimentées pour faire coexister structure permanente et projet, que l'on présente sur un continuum d'autonomie croissante du projet."
         },
         {
           "type": "ul",
@@ -1598,7 +1598,7 @@ export const chapter: Chapter = {
             ],
             [
               "Structures projet",
-              "Mintzberg (adhocratie) ; ancien cours INTEC",
+              "Mintzberg (adhocratie)",
               "Adapter l'organisation au degré d'autonomie du projet",
               "Conflits d'autorité (matrice) ; coût (projet sorti)",
               "Choix d'organisation"

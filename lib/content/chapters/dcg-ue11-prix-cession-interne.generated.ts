@@ -80,7 +80,7 @@ export const chapter: Chapter = {
         },
         {
           "type": "p",
-          "text": "Chaque responsable de centre dispose d’une autonomie de gestion et reçoit une prime indexée sur la performance de son centre. Très vite, des tensions apparaissent : le responsable Production veut « vendre cher » ses produits en interne pour gonfler sa marge ; le responsable E-commerce veut « acheter bas » pour préserver la sienne. La même produit, selon le prix retenu, fait apparaître un centre comme performant et l’autre comme déficitaire — alors que la marge réelle pour le groupe, elle, n’a pas bougé."
+          "text": "Chaque responsable de centre dispose d’une autonomie de gestion et reçoit une prime indexée sur la performance de son centre. Très vite, des tensions apparaissent : le responsable Production veut « vendre cher » ses produits en interne pour gonfler sa marge ; le responsable E-commerce veut « acheter bas » pour préserver la sienne. Le même produit, selon le prix retenu, fait apparaître un centre comme performant et l’autre comme déficitaire — alors que la marge réelle pour le groupe, elle, n’a pas bougé."
         },
         {
           "type": "p",

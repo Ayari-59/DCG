@@ -210,7 +210,7 @@ export const exercises: Exercise[] = [
           ],
           [
             "Qualité des prestations",
-            "La qualité consiste à minimiser les indisponiblités des camions et à les faire « tourner » au mieux",
+            "La qualité consiste à minimiser les indisponibilités des camions et à les faire « tourner » au mieux",
             "• Nombre d’arrêts d’extraction dus aux transports• Nombre de rotations de camions carrière/traitement"
           ],
           [

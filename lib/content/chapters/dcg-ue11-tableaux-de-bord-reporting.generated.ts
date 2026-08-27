@@ -305,7 +305,7 @@ export const chapter: Chapter = {
           "type": "callout",
           "variant": "info",
           "title": "ILLUSTRATION — Les facteurs clés de succès de Rakéo",
-          "text": "La direction de Rakéo identifie quatre FCS à partir de sa stratégie (« être le référent du sport écoresponsable, en ligne et en B2B ») :\n**Qualité et innovation produit — le produit doit rester techniquement compétitive.**\n**Excellence logistique** — livrer vite et sans erreur, condition de la satisfaction e-commerce.\n**Maîtrise des coûts industriels** — préserver la marge malgré des matières recyclées plus chères.\n**Performance environnementale** — l’écoresponsabilité est un argument commercial autant qu’un engagement."
+          "text": "La direction de Rakéo identifie quatre FCS à partir de sa stratégie (« être le référent du sport écoresponsable, en ligne et en B2B ») :\n**Qualité et innovation produit — le produit doit rester techniquement compétitif.**\n**Excellence logistique** — livrer vite et sans erreur, condition de la satisfaction e-commerce.\n**Maîtrise des coûts industriels** — préserver la marge malgré des matières recyclées plus chères.\n**Performance environnementale** — l’écoresponsabilité est un argument commercial autant qu’un engagement."
         },
         {
           "type": "h3",

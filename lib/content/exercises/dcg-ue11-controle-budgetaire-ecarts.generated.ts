@@ -2423,7 +2423,7 @@ export const exercises: Exercise[] = [
       },
       {
         "type": "p",
-        "text": "La société Fonéa est spécialisée dans la prestation de formations. Conscient du caractère très concurrentiel du marché de la formation, monsieur Goulard, dirigeant de la société Fonéo, a souhaité qu’un contrôle budgétaire des ventes soit mis en place en année N avant de lancer de nouvelles offres. Les prestations sont proposées à un prix établi mais des négociations sont parfois effectuées, notamment par les entreprises clientes qui envoient régulièrement leurs collaborateurs en formation."
+        "text": "La société Fonéa est spécialisée dans la prestation de formations. Conscient du caractère très concurrentiel du marché de la formation, monsieur Goulard, dirigeant de la société Fonéa, a souhaité qu’un contrôle budgétaire des ventes soit mis en place en année N avant de lancer de nouvelles offres. Les prestations sont proposées à un prix établi mais des négociations sont parfois effectuées, notamment par les entreprises clientes qui envoient régulièrement leurs collaborateurs en formation."
       },
       {
         "type": "p",

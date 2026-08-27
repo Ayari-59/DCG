@@ -10,7 +10,7 @@ export const exercises: Exercise[] = [
     "statement": [
       {
         "type": "p",
-        "text": "La SARL Dubois est une entreprise artisanale qui fabrique des baby-foot en bois. Dans ce marché du jouet d’adultes, les prévisions de la demande sont difficiles. Face à ces aléas, l’entreprise considère que les ventes des trois modèles sont indépendantes et suivent une loi normale."
+        "text": "La SARL Dubois est une entreprise artisanale qui fabrique des baby-foot en bois. Dans ce marché des jeux de loisirs pour adultes, les prévisions de la demande sont difficiles. Face à ces aléas, l’entreprise considère que les ventes des trois modèles sont indépendantes et suivent une loi normale."
       },
       {
         "type": "table",
